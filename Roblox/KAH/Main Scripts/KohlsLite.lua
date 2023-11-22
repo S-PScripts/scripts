@@ -2376,7 +2376,7 @@ task.spawn(function()
 							            task.wait()
     							            firetouchinterest(cre, spr, 0)
 							            if pad.Name ~= game.Players.LocalPlayer.Name.."'s admin" then
-							                	fireclickdetector(adminFlr.Regen.ClickDetector, 0)
+                      							fireclickdetector(game:GetService("Workspace").Terrain["_Game"].Admin.Regen.ClickDetector, 0)
 							            end
 						           end)()
 					        end)()
@@ -2402,7 +2402,7 @@ task.spawn(function()
 						                                firetouchinterest(cre, spr, 1)
 						                                firetouchinterest(cre, spr, 0)
 						                              	if pad.Name ~= game.Players.LocalPlayer.Name.."'s admin" then
-								                                fireclickdetector(adminFlr.Regen.ClickDetector, 0)
+                      									fireclickdetector(game:GetService("Workspace").Terrain["_Game"].Admin.Regen.ClickDetector, 0)
 							                              end
 					                          	end)()
 					                  end)()
