@@ -2418,7 +2418,7 @@ task.spawn(function()
         task.wait()
         coroutine.wrap(function()
 			      local spr = game.Players.LocalPlayer.Character:FindFirstChild("Head")
-			      if perm ~= true or adminFlr.Pads:FindFirstChild(game.Players.LocalPlayer.Name.."'s admin") ~= nil then 
+			      if perm ~= true or workspace.Terrain._Game.Admin.Pads:FindFirstChild(game.Players.LocalPlayer.Name.."'s admin") ~= nil then 
 			      else
 				    pcall(function()
 					      local pad = adminFlr.Pads:FindFirstChild("Touch to get admin")
@@ -2440,7 +2440,7 @@ task.spawn(function()
     task.wait()
     coroutine.wrap(function()
 			local spr = game.Players.LocalPlayer.Character:FindFirstChild("Head")
-			if perm2 ~= true or adminFlr.Pads:FindFirstChild(game.Players.LocalPlayer.Name.."'s admin") ~= nil then 
+			if perm2 ~= true or workspace.Terrain._Game.Admin.Pads:FindFirstChild(game.Players.LocalPlayer.Name.."'s admin") ~= nil then 
 			else
 				pcall(function()
 					local pad = adminFlr.Pads:FindFirstChild("Touch to get admin")
