@@ -1,2 +1,2 @@
 # script-stuff
-Some scripts I've made.
+Some lua scripts I've made.
