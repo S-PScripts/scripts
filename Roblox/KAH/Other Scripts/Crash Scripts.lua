@@ -23,4 +23,4 @@ for i = 1,100 do
     game.Players:Chat("unsize me me me")
 end
 
-print("sorry, the server could not be crashed.")
+print("the server should be crashed! sorry if it didn't.")
