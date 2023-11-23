@@ -2424,7 +2424,7 @@ task.spawn(function()
 			      if perm ~= true or workspace.Terrain._Game.Admin.Pads:FindFirstChild(game.Players.LocalPlayer.Name.."'s admin") ~= nil then 
 			      else
 				    pcall(function()
-					      local pad = adminFlr.Pads:FindFirstChild("Touch to get admin")
+					      local pad = workspace.Terrain._Game.Admin.Pads:FindFirstChild("Touch to get admin")
 					      local a = pad.Head
 					      firetouchinterest(a, spr, 1)
                 			      firetouchinterest(a, spr, 0)
@@ -2446,7 +2446,7 @@ task.spawn(function()
 			if perm2 ~= true or workspace.Terrain._Game.Admin.Pads:FindFirstChild(game.Players.LocalPlayer.Name.."'s admin") ~= nil then 
 			else
 				pcall(function()
-					local pad = adminFlr.Pads:FindFirstChild("Touch to get admin")
+					local pad = workspace.Terrain._Game.Admin.Pads:FindFirstChild("Touch to get admin")
 					local a = pad.Head
 					firetouchinterest(a, spr, 1)
 					task.wait()
