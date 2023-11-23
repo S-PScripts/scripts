@@ -11,8 +11,8 @@ local slockenabled = false
 local musiclist = {"9048375035", "6680495507", "6529070845", "6917155909", "6913550990"}
 local musicnames = {"All dropping 8 beats", "Meow meow", "Loud music", "They trying to be cray", "TLT FNAF 2"}
 
-local padbanned = {"placeholder"} -- MIGHT ADD CUZ OTHER SCRIPTS HAVE IT
-local padreinforcements = false -- MIGHT ADD CUZ OTHER SCRIPTS HAVE IT
+local Padbanned = {"placeholder"} 
+local padreinforcements = false 
 
 local FAdmins = {} -- all admin but for individual users
 local alladmin = false -- all admin
@@ -78,7 +78,7 @@ end
 local permpassid = 66254 or 64354 -- don't edit
 local personpassid = 35748 or 37127 -- don't edit
 
-print("Thank you for using KohlsLite.")
+print("Thank you for using KohlsLite. Created by S_P.")
 Chat("h \n\n\n KohlsLite executed. FULL RELEASE v1.0 \n\n\n")
 
 if string.match(game:HttpGet("https://inventory.roblox.com/v1/users/" .. userId .. "/items/GamePass/" .. permpassid), permpassid) then
@@ -1231,6 +1231,13 @@ print("fastpads - quickly tp to all the pads")
 print("regen - regenerate the admin pads")
 print("sregen - spam regenerate the admin pads")
 print("unsregen - stop spam regenerating the admin pads")
+
+print("---")
+print("padban - stop a user from using the admin pads")
+print("unpadban - allow user to use admin pads again")
+print("padreinf - stop users from taking more than 2 admin pads")
+print("unpadreinf - allow users to take more than 2 admin pads again")
+
 	
 print("---")
 print("wl - whitelist a player from serverlocks")
@@ -2379,7 +2386,7 @@ task.spawn(function()
 							            task.wait()
     							            firetouchinterest(cre, spr, 0)
 							            if pad.Name ~= game.Players.LocalPlayer.Name.."'s admin" then
-                      							fireclickdetector(game:GetService("Workspace").Terrain["_Game"].Admin.Regen.ClickDetector, 0)
+									Regen()
 							            end
 						           end)()
 					        end)()
@@ -2405,8 +2412,8 @@ task.spawn(function()
 						                                firetouchinterest(cre, spr, 1)
 						                                firetouchinterest(cre, spr, 0)
 						                              	if pad.Name ~= game.Players.LocalPlayer.Name.."'s admin" then
-                      									fireclickdetector(game:GetService("Workspace").Terrain["_Game"].Admin.Regen.ClickDetector, 0)
-							                              end
+											Regen()
+										end
 					                          	end)()
 					                  end)()
 				            end
@@ -2475,11 +2482,44 @@ task.spawn(function()
                       pad.CFrame = padCFrame
                       pad.CanCollide = true
                   else
-                      fireclickdetector(game:GetService("Workspace").Terrain["_Game"].Admin.Regen.ClickDetector, 0)
+			Regen()
                   end
             end
         end
   end
+end)
+
+-- PAD REINFORCEMENTS AND PADBANNED
+task.spawn(function()
+	while true do
+		
+		for i,player in pairs(Padbanned) do
+			for i,pad in pairs(game:GetService("Workspace").Terrain["_Game"].Admin.Pads:GetDescendants()) do
+				if pad.Name == player.."'s admin" then
+					Chat("skydive "..player)
+					Chat("h \n\n\n [KohlsLite]: Sorry, "..player..", you're banned from using the admin pads! \n\n\n")
+					Regen()
+				end
+			end
+		end
+		
+		if padreinforcements == true then
+			for i,v in pairs(game.Players:GetChildren()) do
+				local times = 0
+				for i,pad in pairs(game:GetService("Workspace").Terrain["_Game"].Admin.Pads:GetDescendants()) do
+					if pad.Name == v.Name.."'s admin" then
+						times = times + 1
+					end
+				end
+				if times >= 2 then
+					Chat("skydive "..v.Name)
+					Chat("h \n\n\n [KohlsLite]: The pads have been reset because "..v.Name.." tried to take them all! \n\n\n")
+					Regen()
+				end
+			end
+		end
+	task.wait(0)
+	end
 end)
 
 -- MUSIC RELATED
