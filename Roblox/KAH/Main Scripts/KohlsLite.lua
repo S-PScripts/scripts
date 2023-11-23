@@ -289,8 +289,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
     if string.sub(msg, 1, #prefix + 9)  == prefix..'musiclist' then
          for i = 1, #musiclist do
- 		 print(musiclist[i])
-		 print(musicnames[i])
+ 		 print(musiclist[i].."-"..musicnames[i])
 	 end
     end
 		
