@@ -11,6 +11,9 @@ local slockenabled = false
 local musiclist = {"9048375035", "6680495507", "6529070845", "6917155909", "6913550990"}
 local musicnames = {"All dropping 8 beats", "Meow meow", "Loud music", "They trying to be cray", "TLT FNAF 2"}
 
+local padbanned = {"placeholder"} -- MIGHT ADD CUZ OTHER SCRIPTS HAVE IT
+local padreinforcements = false -- MIGHT ADD CUZ OTHER SCRIPTS HAVE IT
+
 local FAdmins = {} -- all admin but for individual users
 local alladmin = false -- all admin
 local amon = 100 -- super command times
