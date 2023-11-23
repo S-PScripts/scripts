@@ -419,6 +419,30 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	SCrash()
 	end
     end
+
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'rkick' then
+	if haspersons == false then
+	   print([["Sorry, you don't have Person's to perform this command!
+		Commands required: rocket"]])
+	else
+		rkicker = (string.sub(msg:lower(), #prefix + 7))
+		RKick()
+	end
+    end
+
+   if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'srkick' then
+	if haspersons == false then
+	   print([["Sorry, you don't have Person's to perform this command!
+		Commands required: rocket"]])
+	else
+		rkicker = (string.sub(msg:lower(), #prefix + 8))
+		srkick = true
+	end
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'unsrkick' then
+		srkick = true
+    end
 		
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'dcrash' then
        DCrash()
@@ -1414,6 +1438,11 @@ print("fcrash - crash with clone and freeze commands")
 print("[PERSONS REQUIRED] scrash - crash with the shield and clone commands")
 
 print("---")
+print("[PERSONS REQUIRED] rkick - attempt to rocket kick a player")
+print("srkick - spam rocket kick a player")
+print("unsrkick - stop trying to rocket kick a player")
+
+print("---")
 print("anticrash - anti-crash with vg or osas")
 print("anticrash2 - anti-crash with vg or osas")
 print("antigear - stop users from using gears")
@@ -1422,7 +1451,9 @@ print("antigb - stop users from using the portable justice and car gear")
 print("antiattach2 - stop users from using the Ivory Periastron")
 
 print("---")
-print("There are also many antis!")
+print("antichat - stop people chatting by spamming h command full of emojis")
+print("unantichat - allow people to chat again") -- i will add one for individual players too, please wait!
+print("There are also many other antis (for you or for everyone)!")
 
 print("---")
 print("KohlsLite, since 2023. Created by S_P")
@@ -2049,7 +2080,7 @@ for i = 1,25 do
     Chat('tp',number,".",number2,".",number3,".",number4)
 end
 
-time.wait(4)
+task.wait(4)
 Chat('h \n\n\n Whoops, that was the wrong thing! \n\n\n')
 task.wait(4)
 
@@ -2558,7 +2589,7 @@ while true do
 				    Chat("music "..mymusiconlyid)
       end
     end
-    time.wait(0)  
+    task.wait(0)  
   end
 end)
 
@@ -2606,6 +2637,23 @@ local function SCrash()
       end
 end
 
+-- ROCKET KICK
+local function RKick()
+      for i = 1,100 do
+          Chat("rocket/"..rkicker.."/"..rkicker.."/"..rkicker)
+      end
+end
+
+-- SPAM ROCKET KICK
+task.spawn(function()
+   while true do
+	task.wait(0)
+	if srkick then
+	   RKick()
+        end
+   end
+end)
+
 
 -- LOG SPAM
 local function LogSpam()
@@ -2617,7 +2665,7 @@ end
 -- NAME HECK
 task.spawn(function()
       while true do
-      time.wait(0)
+      task.wait(0)
       if SName == true then
 	         Chat("name ".. nameuser .." [BROKE]")
       end
@@ -2630,7 +2678,7 @@ task.spawn(function()
 	task.wait(0)
 	if SlowP == true then
               Chat("gear ".. caruser .." 253519495")
-              time.wait(0)
+              task.wait(0)
         end
 	end
 end)
