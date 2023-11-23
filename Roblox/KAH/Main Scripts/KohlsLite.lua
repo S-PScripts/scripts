@@ -8,6 +8,9 @@ local whitelist = {"me_123eq","me_crashking","ScriptingProgrammer","t_echr"} -- 
 local newplrslocked = {} -- don't edit!!
 local GWhitelisted = {"me_123eq","me_crashking","ScriptingProgrammer","t_echr"} -- gear whitelisted
 local slockenabled = false
+local rkick_on_sight = {"sgoslee"} -- rocket kick player when they join
+local crash_on_sight = {"sgoslee"} -- crash server when player joins
+local mcrash_on_sight = {"sgoslee"} -- crash player with pm spam when they join
 
 local musiclist = {"9048375035", "6680495507", "6529070845", "6917155909", "6913550990"}
 local musicnames = {"All dropping 8 beats", "Meow meow", "Loud music", "They trying to be cray", "TLT FNAF 2"}
@@ -2926,6 +2929,24 @@ local function onPlayerAdded(player)
 	 print(player.Name.." joined the server. They were auto-banned for being under 21 days old.")
          table.insert(newplrslocked, player)
     end
+
+    if table.find(rkick_on_sight, player.Name) then
+		Chat("h \n\n\n [KohlsLite]: Auto rocket kicking "..player.Name.." as they are blacklisted. \n\n\n")
+		srkick = true
+		rkicker = player.Name
+		RKick()   
+    end
+
+    if table.find(mcrash_on_sight, player.Name) then
+		Chat("h \n\n\n [KohlsLite]: Auto message kicking "..player.Name.." as they are blacklisted. \n\n\n")
+		antichatplr = true
+		acplr = player.Name
+    end
+
+    if table.find(crash_on_sight, player.Name) then
+	Chat("h \n\n\n [KohlsLite]: Server automatically crashed due to blacklisted user ("..player.Name..") joining. \n\n\n")
+	DCrash()  
+    end
     task.wait()
 end
 
@@ -2933,6 +2954,15 @@ local function onPlayerLeaving(player)
     if welcomemsg == true then
     	 Chat("h \n\n\n [KohlsLite]: Goodbye, " .. player.Name .. ". \n\n\n")
 	 print(player.Name.." left the server.")
+    end
+		
+    if table.find(rkick_on_sight, player.Name) then
+		srkick = false
+    end
+
+
+    if table.find(mcrash_on_sight, player.Name) then
+		antichatplr = false
     end
     task.wait()
 end
