@@ -102,8 +102,8 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         end
 
     	if string.sub(msg:lower(), 1, #prefix + 2) == prefix.."iy" then
-	   LuaScript = 'https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'
-	   Execute()
+	   LuaScript = "https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"
+	   GExecute()
 	end
 		
 	if string.sub(msg, 1, #prefix + 2)  == prefix..'wl' then
@@ -2579,6 +2579,12 @@ end)
 local function Execute()
       loadstring(LuaScript)()
 end
+
+-- LUA EXECUTE
+local function GExecute()
+         loadstring(game:HttpGet(LuaScript))()
+end
+
 
 -- ANNOUNCEMENTS
 local function Announce()
