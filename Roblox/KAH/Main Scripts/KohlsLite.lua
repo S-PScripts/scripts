@@ -11,7 +11,7 @@ local slockenabled = false
 local musiclist = {"9048375035", "6680495507", "6529070845", "6917155909", "6913550990"}
 local musicnames = {"All dropping 8 beats", "Meow meow", "Loud music", "They trying to be cray", "TLT FNAF 2"}
 
-local Padbanned = {"placeholder"} 
+local padbanned = {"placeholder"} 
 local padreinforcements = false 
 
 local FAdmins = {} -- all admin but for individual users
@@ -553,6 +553,38 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	SRegen = false
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'padban' then
+	 local dasplayer = string.sub(msg:lower(), #prefix + 8)
+         PLAYERCHECK(dasplayer)
+         if player ~= nil then
+                Chat("h \n\n\n [KohlsLite]: "..player.." has been padbanned. \n\n\n")
+                table.insert(padbanned, player)
+         else
+                print('Cannot find player with the name: '..dasplayer)
+         end
+    end
+		
+    if string.sub(msg, 1, #prefix + 8) == prefix..'unpadban' then
+         local dasplayer = string.sub(msg:lower(), #prefix + 10)
+         PLAYERCHECK(dasplayer)
+         if player ~= nil then
+                Chat("h \n\n\n [KohlsLite]: "..player.." has been unpadbanned! \n\n\n")
+                table.remove(padbanned, table.find(padbanned, player))
+         else
+                print('Cannot find player with the name: '..dasplayer)
+         end
+    end
+
+    if string.sub(msg, 1, #prefix + 8) == prefix..'padreinf' then
+       Chat("h \n\n\n [KohlsLite]: Pad reinforcements are on. \n\n\n")
+       padreinforcements = true
+    end
+
+    if string.sub(msg, 1, #prefix + 10) == prefix..'unpadreinf' then
+       Chat("h \n\n\n [KohlsLite]: Pad reinforcements are off! \n\n\n")
+       padreinforcements = false
+    end
+			
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'qattach' then
 	QAttach()
     end
