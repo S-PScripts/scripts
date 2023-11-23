@@ -1,6 +1,14 @@
--- SCRIPT IS FUNCTIONAL!!!!!! :D :D :D
--- AT SOME POINT I WILL ADD THE FIX PARTS COMMANDS
+-- KOHLSLITE BY TS2021/S_P
 -- CREDITS TO MANY (tech, random stuff from https://github.com/S-PScripts/kah-fork)
+
+--[[ Things this script doesn't have...
+fixing parts, moving parts, finding parts, -- DON'T WORRY, THIS WILL COME OUT EVENTUALLY
+click annoy, click fard, click explode, -- MIGHT COME OUT TOO
+get all gears (for example all periastrons), themes, random commands
+antivoid (i feel as this could be annoying so it's not here)
+visualiser -- maybe i'll add!
+waterflood/removewater -- maybe i'll add
+paint some stuff only]]
 
 local prefix =  "!" -- ANY LENGTH :D
 local blacklist = {"sgoslee"} -- slocked users
