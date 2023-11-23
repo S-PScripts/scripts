@@ -338,6 +338,19 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 			      print("Current Music ID: "..workspace.Terrain._Game.Folder.Sound.SoundId)
 	      end
     end
+
+    if string.sub(msg:lower(), 0, 7) == prefix.."pbspeed" then
+		local newPlaybackSpeed = tonumber(string.sub(msg:lower(), 9))
+		local Sound = game:GetService("Workspace").Terrain["_Game"].Folder.Sound
+		Sound.PlaybackSpeed = newPlaybackSpeed
+    end
+
+    if string.sub(msg:lower(), 0, 8) == prefix.."cpbspeed" then
+		if workspace.Terrain._Game.Folder:FindFirstChild("Sound") then
+				print("Current PlayBack speed: "..workspace.Terrain._Game.Folder.Sound.PlaybackSpeed)
+		end
+    end
+		
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'cvol' then
 	      if workspace.Terrain._Game.Folder:FindFirstChild("Sound") then
 			      print("Current Volume: "..workspace.Terrain._Game.Folder.Sound.Volume)
@@ -1361,11 +1374,11 @@ print("pingcsystem - ping you when someone uses /c system (or /w)")
 print("logspam - spam the logs")
 
 print("---")
-print("gearban - stop a user frm using gears with the portable justice")
+print("gearban - stop a user from using gears with the portable justice")
 	
 print("---")
 print("supercmd - spam text a set amount of times")
-print("supert - times the spam should happen")
+print("supert - times the spam should happen (anything above 128 exceeds the rate limit)")
 
 print("---")
 print("permmusic - your music only, if someone tries to change or stop it changes back")
@@ -1378,8 +1391,10 @@ print("unantimusic - lets people use music again")
 print("---")
 print("remusic - restart the current music")
 print("volm - set the volume of the music")
-print("cvol - current volume of music")
-print("musicid - the current music id")
+print("cvol - print thecurrent volume of music")
+print("musicid - print the current music id")
+print("pbspeed - set the playback speed")
+print("cpbspeed - print the current playback speed")
 
 print("---")
 print("pausem - pause the music")
@@ -1409,6 +1424,9 @@ print("antiattach2 - stop users from using the Ivory Periastron")
 
 print("---")
 print("There are also many antis!")
+
+print("---")
+print("KohlsLite, since 2023. Created by S_P")
 end
 
 -- this is similar to CMD's system :D
