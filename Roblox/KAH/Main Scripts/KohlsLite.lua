@@ -1,6 +1,7 @@
 -- SCRIPT IS FUNCTIONAL!!!!!! :D :D :D
 -- AT SOME POINT I WILL ADD THE FIX PARTS COMMANDS
 -- CREDITS TO MANY (tech, random stuff from https://github.com/S-PScripts/kah-fork)
+
 local prefix =  "!" -- ANY LENGTH :D
 local blacklist = {"sgoslee"} -- slocked users
 local whitelist = {"me_123eq","me_crashking","ScriptingProgrammer","t_echr"} -- not affected by slock
@@ -1270,6 +1271,16 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	antichat = false
 	antimsg = false
     end
+
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'msgcrash' then
+	local acplr = string.sub(msg:lower(), #prefix + 10)
+	antichatplr = true
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unmsgcrash' then
+	antichatplr = false
+	Chat("clear")
+    end
 		
 end)
 
@@ -1479,12 +1490,16 @@ print("anticrash - anti-crash with vg or osas")
 print("anticrash2 - anti-crash with vg or osas")
 print("antigear - stop users from using gears")
 print("antipaint - stop users from using the paint bucket and Subspace Tripmine")
-print("antigb - stop users from using the portable justice and car gear")
+print("antigb - stop users from using the portable justice and car gear") -- ik car gear isn't a gear ban gear but i'm lazy
 print("antiattach2 - stop users from using the Ivory Periastron")
 
 print("---")
 print("antichat - stop people chatting by spamming h command full of emojis")
-print("unantichat - allow people to chat again") -- i will add one for individual players too, please wait!
+print("unantichat - allow people to chat again")
+print("msgcrash - crash players with emojis. could be called antichatplr but h is harder to crash people than pm")
+print("unmsgcrash - stop trying to crash players with emojis")
+
+print("---")
 print("There are also many other antis (for you or for everyone)!")
 
 print("---")
@@ -1548,6 +1563,19 @@ task.spawn(function()
   end
 end)
 
+-- anti chat/msg-crash
+task.spawn(function()
+	while true do
+	task.wait()
+		if antichat == true then
+			Chat("h \n\n\n [KohlsLite]: 😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀 \n\n\n")
+		end
+		if antichatplr == true then
+			Chat("pm"..acplr.." [KohlsLite]: 😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀")
+		end
+	end
+end)
+
 -- ANTIS FOR YOU ONLY
 task.spawn(function()
 	while true do
@@ -1559,11 +1587,7 @@ task.spawn(function()
                 end
             end
 	end
-
-	if antichat == true then
-		Chat("h \n\n\n [KohlsLite]: 😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀 \n\n\n")
-	end
-
+			
 	if antigs == true then
 		if game.Workspace.CurrentCamera:FindFirstChild("GrayScale") then
 			game.Workspace.CurrentCamera:FindFirstChild("GrayScale"):Destroy()	
