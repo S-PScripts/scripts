@@ -234,6 +234,26 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          end
        end
 
+      if string.sub(msg, 1, #prefix + 9) == prefix..'checkperm' then
+         local dasplayer = string.sub(msg:lower(), #prefix + 11)
+         PLAYERCHECK(dasplayer)
+         if player ~= nil then
+		checkforperm()
+         else
+                print('Cannot find player with the name: '..dasplayer)
+         end
+       end
+
+       if string.sub(msg, 1, #prefix + 12) == prefix..'checkpersons' then
+         local dasplayer = string.sub(msg:lower(), #prefix + 14)
+         PLAYERCHECK(dasplayer)
+         if player ~= nil then
+		checkforpersons()
+         else
+                print('Cannot find player with the name: '..dasplayer)
+         end
+        end
+		
 	if string.sub(msg, 1, #prefix + 6)  == prefix..'bllist' then
          for i = 1, #blacklist do
  		 print(blacklist[i])
@@ -1421,7 +1441,11 @@ print("spawn - teleport to spawn")
 print("---")
 print("infjump - infinite jump")
 print("uninfjump - stop infinite jump")
-	
+
+print("---")
+print("checkperm - check player for perm")
+print("checkpersons - check player for persons")
+
 print("---")
 print("spamt - start spamming something")
 print("unspamt - stop spamming")
@@ -1535,11 +1559,21 @@ print("KohlsLite, since 2023. Created by S_P")
 end
 
 -- CHECK FOR PERM
-function checkforpermuser()
+function checkforperm()
+	if string.match(game:HttpGet("https://inventory.roblox.com/v1/users/" .. cplr.userId .. "/items/GamePass/" .. permpassid), permpassid) then
+	   print(player.." has perm!")
+	else
+	   print(player.."does not have perm!")
+	end
 end
 
 -- CHECK FOR PERSONS
 function checkforpersons()
+	if string.match(game:HttpGet("https://inventory.roblox.com/v1/users/" .. cplr.userId .. "/items/GamePass/" .. personpassid), personpassid) then
+	   print(player.." has persons!")
+	else
+	   print(player.."does not have persons!")
+	end
 end
 
 -- this is similar to CMD's system :D
@@ -1973,6 +2007,7 @@ function PLAYERCHECK(plr)
   for i, v in pairs(game.Players:GetPlayers()) do
       if string.sub(v.Name:lower(), 1, #plr) == plr then
           player = v.Name
+	  cplr = v
           print("Found"..player)
       end
   end
