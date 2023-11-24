@@ -1534,6 +1534,14 @@ print("---")
 print("KohlsLite, since 2023. Created by S_P")
 end
 
+-- CHECK FOR PERM
+function checkforpermuser()
+end
+
+-- CHECK FOR PERSONS
+function checkforpersons()
+end
+
 -- this is similar to CMD's system :D
 -- SLOCK/BL/WL
 task.spawn(function()
