@@ -66,6 +66,7 @@ local loopgrab2 = false
 local anticrash = true
 local anticrash2 = false
 local antigear = false
+local antigear2 = false
 local antigb = true
 local antipaint = false
 local antiattach2 = false
@@ -867,6 +868,14 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	antigear = false
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antigear2' then
+	antigear2 = true
+    end
+		
+    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantigear2' then
+	antigear2 = false
+    end
+		
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'antigb' then
 	antigb = true
     end
@@ -1502,6 +1511,7 @@ print("---")
 print("anticrash - anti-crash with vg or osas")
 print("anticrash2 - anti-crash with vg or osas")
 print("antigear - stop users from using gears")
+print("antigear2 - stop users from using gears")
 print("antipaint - stop users from using the paint bucket and Subspace Tripmine")
 print("antigb - stop users from using the portable justice and car gear") -- ik car gear isn't a gear ban gear but i'm lazy
 print("antiattach2 - stop users from using the Ivory Periastron")
@@ -1962,17 +1972,26 @@ game:GetService("RunService").RenderStepped:Connect(function()
                if Player ~= game.Players.LocalPlayer then
                 Chat("ungear ".. Player.Name)
                 Chat("punish ".. Player.Name)
-                Chat("h \n\n\n [KohsLite] Sorry, ".. Player.Name.. ", you cannot use the Vampire Vanquisher due to anti crash. \n\n\n")
+                Chat("h \n\n\n [KohlsLite]: Sorry, ".. Player.Name.. ", you cannot use the Vampire Vanquisher due to anti crash. \n\n\n")
                end
             end
             if Player.Backpack:FindFirstChild("OrinthianSwordAndShield") or Player.Character:FindFirstChild("OrinthianSwordAndShield") and anticrash2 then
                if Player ~= game.Players.LocalPlayer then
                 Chat("ungear ".. Player.Name)
                 Chat("punish ".. Player.Name)
-                Chat("h \n\n\n [KohsLite] Sorry, ".. Player.Name.. ", you cannot use the Orinthian Sword and Shield due to anti crash. \n\n\n")
+                Chat("h \n\n\n [KohlsLite]: Sorry, ".. Player.Name.. ", you cannot use the Orinthian Sword and Shield due to anti crash. \n\n\n")
                end
             end
-        end
+	    for _, gear in pairs(Player.Backpack:GetChildren()) do
+            	if gear:IsA("Tool") and antigear2 == true then
+               		if Player ~= game.Players.LocalPlayer then
+				Chat("ungear ".. Player.Name)
+				Chat("punish ".. Player.Name)
+                		Chat("h \n\n\n [KohlsLite]: Sorry, ".. Player.Name.. ", you cannot use gears due to anti gear. \n\n\n")
+			end
+            	end
+       	    end
+     end 
 end)
 
 -- ANTIS FOR CRASHING ATTACHING GEARBANNING AND HAVING A GEAR
