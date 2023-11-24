@@ -683,6 +683,10 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'sspawn' then
 		SSpawn()
     end
+
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'pspawn' then
+		Pspawn()
+    end
 		
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'gsspawn' then
 		Spawn()
@@ -1376,6 +1380,7 @@ print("ipboom - who's ip address is that?")
 print("---")
 print("sspawn - save your position")
 print("gsspawn - go to saved position")
+print("pspawn - print your current position")
 
 print("---")
 print("prefix - set the prefix")
@@ -2800,6 +2805,12 @@ end
 -- SET SPAWN
 function SSpawn()
         savspawn = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+	print("Your saved spawn is:"..savspawn)
+end
+
+-- CURRENT POS
+function PSpawn()
+	print("Your current position is:"..game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame)
 end
 
 -- HOUSE
