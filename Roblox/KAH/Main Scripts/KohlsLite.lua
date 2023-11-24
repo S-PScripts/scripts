@@ -17,6 +17,7 @@ local newplrslocked = {} -- don't edit!!
 local newplrautoslock = true -- if new players under 21 days join they get blacklisted
 local GWhitelisted = {"me_123eq","me_crashking","ScriptingProgrammer","t_echr"} -- gear whitelisted
 local slockenabled = false -- slock!
+
 local rkick_on_sight = {"sgoslee"} -- rocket kick player when they join
 local crash_on_sight = {"sgoslee"} -- crash server when player joins
 local mcrash_on_sight = {"sgoslee"} -- crash player with pm spam when they join
