@@ -57,6 +57,11 @@ local YOUantispeed = true
 local YOUantistun = true
 local YOUantiswag = true ]]
 
+local autocrash = false -- autocrash bc why not
+if autocrash == true then
+    DCrash()
+end 
+
 local perm = false
 local perm2 = false
 local perm3 = false
