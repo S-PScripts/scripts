@@ -12,10 +12,10 @@ paint some stuff only]]
 
 local prefix =  "!" -- ANY LENGTH :D
 local blacklist = {"sgoslee"} -- slocked users
-local whitelist = {"me_123eq","me_crashking","ScriptingProgrammer","t_echr"} -- not affected by slock
+local whitelist = {"me_123eq","me_crashking","ScriptingProgrammer","G_ODt","BANNter_Original"} -- not affected by slock
 local newplrslocked = {} -- don't edit!!
 local newplrautoslock = true -- if new players under 21 days join they get blacklisted
-local GWhitelisted = {"me_123eq","me_crashking","ScriptingProgrammer","t_echr"} -- gear whitelisted
+local GWhitelisted = {"me_123eq","me_crashking","ScriptingProgrammer","G_ODt","BANNter_Original"} -- gear whitelisted
 local slockenabled = false -- slock!
 
 local rkick_on_sight = {"sgoslee"} -- rocket kick player when they join
