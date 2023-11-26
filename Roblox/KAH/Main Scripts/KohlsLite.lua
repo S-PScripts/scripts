@@ -2021,6 +2021,7 @@ end
 
 -- ANTI CRASH 2
 game:GetService("RunService").RenderStepped:Connect(function()
+	task.wait(0)
         for _, Player in pairs(game.Players:GetChildren()) do
             if Player.Backpack:FindFirstChild("VampireVanquisher") or Player.Character:FindFirstChild("VampireVanquisher") and anticrash2 then
                if Player ~= game.Players.LocalPlayer then
@@ -2179,6 +2180,7 @@ game.Players.PlayerAdded:Connect(function(player)
 end)
 
 game:GetService("RunService").Heartbeat:Connect(function()
+    task.wait(0)
     for _, player in ipairs(game.Players:GetPlayers()) do
         if player.Character then
             checkPlayerBackpack(player)
@@ -2191,6 +2193,7 @@ game:GetService("RunService").Heartbeat:Connect(function()
 end)
 
 for _, player in ipairs(game.Players:GetPlayers()) do
+    task.wait(0)
     if player.Character then
             checkPlayerBackpack(player)
 	    checkPlayerGBackpack(player)
@@ -2287,7 +2290,8 @@ noobs = true
 
 		
 plr.Chatted:Connect(function(msg)
-    if noobs then 
+    while noobs do
+	task.wait(0)
         for _, v in pairs(game.Players:GetPlayers()) do
                 if message:lower() == "gif" and v.Name == randomPlayer then
         		    noobs = false
@@ -3084,21 +3088,21 @@ end)
 local UserInputService = game:GetService("UserInputService")
     
 UserInputService.WindowFocusReleased:Connect(function()
+    task.wait(0)
     if autoafk == true then
     	Chat("name me AFK")
     	Chat("ff me")
     	hat("god me")
     end
-    task.wait()
 end)
 
 UserInputService.WindowFocused:Connect(function()
+    task.wait(0)
     if autoafk == true then
         Chat("reset me")
         Chat("unff me")
         Chat("ungod me")
     end
-    task.wait()	
 end)
 
 -- REGEN
