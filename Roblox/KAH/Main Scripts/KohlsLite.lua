@@ -2320,8 +2320,12 @@ else
 end
 end
 
+for i,v in pairs(game.Players:GetChildren()) do
+	start(v)
+end
 
 -- For Some Antis, Admin Stuff
+function start(v)
 plr.Chatted:Connect(function(msg)
      task.spawn(function()
 	while true do
@@ -2550,7 +2554,7 @@ plr.Chatted:Connect(function(msg)
 			end
 		end)
 end)
-						
+end					
 
 -- Backpack checker
 local function CheckBackpack()
@@ -2998,6 +3002,7 @@ end
 
 -- WELCOME/LEAVE MSG
 local function onPlayerAdded(player)
+     start(player)
     if welcomemsg == true and alladmin == true and table.find(whitelist, player.Name) then
     	 Chat("h \n\n\n [KohlsLite]: Welcome to the server, " .. player.Name .. ". Chat any comand. You are whitelisted from serverlocks! \n\n\n")
 	 print(player.Name.."joined the server.")
