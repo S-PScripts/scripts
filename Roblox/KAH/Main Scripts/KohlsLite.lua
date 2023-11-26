@@ -1585,6 +1585,7 @@ end
 -- SLOCK/BL/WL
 task.spawn(function()
     while true do
+    task.wait(0)
     local players = game.Players:GetPlayers()
     for i, v in pairs(game.Workspace:GetChildren()) do
         if v.Name ~= game.Players.LocalPlayer.Name and not table.find(whitelist, v.Name) then
@@ -2320,6 +2321,7 @@ end
 plr.Chatted:Connect(function(msg)
      task.spawn(function()
 	while true do
+	task.wait(0)
         for _, v in pairs(game.Players:GetPlayers()) do
                 if message:lower():find("/w") or message:lower():find("/c system") and v ~= game.Players.LocalPlayer then
                    if PingCsystem then
@@ -2468,6 +2470,7 @@ plr.Chatted:Connect(function(msg)
     end)
 			task.spawn(function()
 			while true do
+			task.wait(0)
 			for i,player in pairs(FAdmins) do
 				if plr.Name == player then
           
@@ -2681,7 +2684,7 @@ end)
 -- PAD REINFORCEMENTS AND PADBANNED
 task.spawn(function()
 	while true do
-		
+		task.wait(0)
 		for i,player in pairs(Padbanned) do
 			for i,pad in pairs(game:GetService("Workspace").Terrain["_Game"].Admin.Pads:GetDescendants()) do
 				if pad.Name == player.."'s admin" then
@@ -2707,13 +2710,13 @@ task.spawn(function()
 				end
 			end
 		end
-	task.wait(0)
 	end
 end)
 
 -- MUSIC RELATED
 task.spawn(function()
 while true do
+    task.wait(0)
     if antimusic == true then
 		  if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
 				 Chat("music antimusic is on!")
@@ -2730,7 +2733,6 @@ while true do
 				    Chat("music "..mymusiconlyid)
       end
     end
-    task.wait(0)  
   end
 end)
 
