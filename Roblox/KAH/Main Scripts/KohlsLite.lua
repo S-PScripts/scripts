@@ -10,7 +10,7 @@ visualiser -- maybe i'll add!
 waterflood/removewater -- maybe i'll add
 paint some stuff only]]
 
-local prefix =  "." -- ANY LENGTH :D
+local prefix = "." -- ANY LENGTH :D
 local blacklist = {"sgoslee"} -- slocked users
 local whitelist = {"me_123eq","me_crashking","ScriptingProgrammer","G_ODt","BANNter_Original"} -- not affected by slock
 local newplrslocked = {} -- don't edit!!
