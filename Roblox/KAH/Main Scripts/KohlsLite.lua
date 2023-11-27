@@ -2321,11 +2321,11 @@ end
 end
 
 for i,v in pairs(game.Players:GetChildren()) do
-	start(v)
+	PLRSTART(v)
 end
 
 -- For Some Antis, Admin Stuff
-function start(v)
+function PLRSTART(v)
 plr.Chatted:Connect(function(msg)
      task.spawn(function()
 	while true do
@@ -2404,7 +2404,7 @@ plr.Chatted:Connect(function(msg)
 
                     
 -- ADMIN FOR ALL
-            if alladmin == true then
+            if alladmin == true and not table.find(blacklist, v.Name) and not table.find(newplrslocked, v.Name) then
             	local command = string.gsub(msg:lower(), "me", v.Name)
             	if string.sub(command, 1, 1) == ":" then
               	 	command = ""
@@ -3002,7 +3002,7 @@ end
 
 -- WELCOME/LEAVE MSG
 local function onPlayerAdded(player)
-     start(player)
+     PLRSTART(player)
     if welcomemsg == true and alladmin == true and table.find(whitelist, player.Name) then
     	 Chat("h \n\n\n [KohlsLite]: Welcome to the server, " .. player.Name .. ". Chat any comand. You are whitelisted from serverlocks! \n\n\n")
 	 print(player.Name.."joined the server.")
