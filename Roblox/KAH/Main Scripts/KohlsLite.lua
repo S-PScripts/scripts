@@ -3018,22 +3018,22 @@ end)
 -- AUTOAFK
 local UserInputService = game:GetService("UserInputService")
     
-UserInputService.WindowFocusReleased:Connect(function()
-    task.wait(0)
-    if autoafk == true then
-    	Chat("name me AFK")
-    	Chat("ff me")
-    	hat("god me")
-    end
+UserInputService.WindowFocusReleased:Connect(
+    function()
+    	if autoafk == true then
+    		Chat("name me AFK")
+    		Chat("ff me")
+    		Chat("god me")
+   	 end
 end)
 
-UserInputService.WindowFocused:Connect(function()
-    task.wait(0)
-    if autoafk == true then
-        Chat("reset me")
-        Chat("unff me")
-        Chat("ungod me")
-    end
+UserInputService.WindowFocused:Connect(
+    function()
+    	if autoafk == true then
+        	Chat("reset me")
+        	Chat("unff me")
+        	Chat("ungod me")
+   	 end
 end)
 
 -- REGEN
