@@ -2330,9 +2330,6 @@ end
 function PLRSTART(v)
 plr.Chatted:Connect(function(msg)
      task.spawn(function()
-	while true do
-	task.wait(0)
-        for _, v in pairs(game.Players:GetPlayers()) do
                 if message:lower():find("/w") or message:lower():find("/c system") and v ~= game.Players.LocalPlayer then
                    if PingCsystem then
                         print(v.Name..' is using /c system or whispering commands.')
@@ -2475,8 +2472,8 @@ plr.Chatted:Connect(function(msg)
                Chat(command)
             end
           end
-        end
-	end
+        
+	
     end)
 		
 end)
