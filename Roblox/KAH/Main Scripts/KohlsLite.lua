@@ -58,7 +58,8 @@ local YOUantistun = true
 local YOUantiswag = true ]]
 
 local autocrash = false -- autocrash bc why not
-if autocrash == true then
+if autocrash == true then 
+    loopgrab = true
     DCrash()
 end 
 
@@ -99,8 +100,9 @@ local permpassid = 66254 or 64354 -- don't edit
 local personpassid = 35748 or 37127 -- don't edit
 
 print("Thank you for using KohlsLite. Created by S_P.")
-Chat("h \n\n\n KohlsLite executed. FULL RELEASE v1.0 \n\n\n")
+Chat("h \n\n\n KohlsLite executed. FULL RELEASE v1.02 \n\n\n")
 
+-- due to an issue this is temporarily removed
 --[[ if string.match(game:HttpGet("https://inventory.roblox.com/v1/users/" .. userId .. "/items/GamePass/" .. permpassid), permpassid) then
         perm = false 
 	hasperm = true -- unused
@@ -2403,8 +2405,8 @@ plr.Chatted:Connect(function(msg)
 
 
                     
--- ADMIN FOR ALL
-            if alladmin == true and not table.find(blacklist, v.Name) and not table.find(newplrslocked, v.Name) then
+-- ADMIN
+            if alladmin == true or table.find(FAdmins, v.Name) and not table.find(blacklist, v.Name) and not table.find(newplrslocked, v.Name) then
             	local command = string.gsub(msg:lower(), "me", v.Name)
             	if string.sub(command, 1, 1) == ":" then
               	 	command = ""
@@ -2476,83 +2478,7 @@ plr.Chatted:Connect(function(msg)
         end
 	end
     end)
-			task.spawn(function()
-			while true do
-			task.wait(0)
-			for i,player in pairs(FAdmins) do
-				if plr.Name == player then
-          
-					local command = string.gsub(msg:lower(), "me", plr.Name)
-					if string.sub(command, 1, 1) == ":" then
-						command = ""
-						Chat("pm "..plr.Name.." [KohlsLite]: Please use commands without : . Thanks!")
-					end
-            
-					if string.sub(command, 1, 1) == "/" then
-						command = ""
-					end
-            
-					if string.sub(command, 1, 1) == prefix then
-						command = ""
-					end
-
-					if string.sub(command, 1, 5) == "music" then
-						local MUSIC = string.sub(command, 7)
-						Chat("music "..MUSIC)
-              
-					elseif string.sub(command, 1, 2) == "m " then
-						local message = string.sub(command, 3)
-						Chat('m '..plr.Name..': '..message)
-              
-					elseif string.sub(command, 1, 7) == "size me" then
-						local NUMBER = string.sub(command, 9)
-						Chat("size "..plr.Name.." "..NUMBER)
-              
-					elseif string.sub(command, 1, 12) == "jumppower me" then
-						local JPP = string.sub(command, 14)
-						Chat("jumppower "..plr.Name.." "..JPP)
-              
-					elseif string.sub(command, 1, 7) == "name me" then
-						local NAME = string.sub(command, 9)
-						Chat("name "..plr.Name.." "..NAME)
-              
-					elseif string.sub(command, 1, 7) == "message" then
-						local message = string.sub(command, 9)
-						Chat('message '..plr.Name..': '..message)
-              
-					elseif string.sub(command, 1, 3) == "pm " then
-						Chat("pm "..plr.Name.." [KohlsLite]: I can't make you private message because due to limitations. Sorry!")
-              
-					elseif string.sub(command, 1, 5) == "hint " then
-						local message = string.sub(command, 6)
-						Chat('h '..plr.Name..': '..message)
-              
-					elseif string.sub(command, 1, 2) == "h " then
-						local message = string.sub(command, 3)
-						Chat('h '..plr.Name..': '..message)
-              
-					elseif string.sub(command, 1, 4) == "logs" then
-						Chat("pm "..plr.Name.." [KohlsLite]: I can't make you see logs because it's client sided. Sorry!")
-              
-					elseif string.sub(command, 1, 4) == "cmds" then
-						Chat("pm "..plr.Name.." [KohlsLite]: I can't make you see commands because it's client sided. Sorry!")
-              
-					elseif string.sub(command, 1, 8) == "commands" then
-						Chat("pm "..plr.Name.." [KohlsLite]: I can't make you see commands because it's client sided. Sorry!")
-              
-					elseif string.sub(command, 1, 9) == "musiclist" then
-						Chat("pm "..plr.Name.." [KohlsLite]: I can't make you see the music list because it's client sided. Sorry!")
-              
-					elseif string.sub(command, 1, 11) == "packagelist" then
-						Chat("pm "..plr.Name.." [KohlsLite]: I can't make you see the package list because it's client sided. Sorry!")
-              
-					else
-						Chat(command)
-					end
-				end
-			end
-			end
-		end)
+		
 end)
 end					
 
@@ -2693,7 +2619,7 @@ end)
 task.spawn(function()
 	while true do
 		task.wait(0)
-		for i,player in pairs(Padbanned) do
+		for i,player in pairs(padbanned) do
 			for i,pad in pairs(game:GetService("Workspace").Terrain["_Game"].Admin.Pads:GetDescendants()) do
 				if pad.Name == player.."'s admin" then
 					Chat("skydive "..player)
