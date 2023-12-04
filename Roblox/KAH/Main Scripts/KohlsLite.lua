@@ -57,10 +57,12 @@ local YOUantispeed = true
 local YOUantistun = true
 local YOUantiswag = true ]]
 
-local autocrash = false -- autocrash bc why not
+local autocrash = false -- autocrash bc why not. put in auto exec
 if autocrash == true then 
     loopgrab = true
     DCrash()
+    task.wait(2) -- adjust
+    SERVERHOP()
 end 
 
 local perm = false
@@ -447,12 +449,20 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'vgcrash' then
 	VGCrash()
     end
+
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'pcrash' then
+	PCrash()
+    end
 		
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'fcrash' then
 	FCrash()
     end
+		
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'dcrash' then
+       DCrash()
+    end
 
-    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'scrash' then
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'scrash' then -- not a silent crash!
 	if haspersons == false then
 	   print([["Sorry, you don't have Person's to perform this command!
 		Commands required: shield"]])
@@ -485,10 +495,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		srkick = true
     end
 		
-    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'dcrash' then
-       DCrash()
-    end
-
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'welmsg' then
 	welcomemsg = true
     end
@@ -1535,6 +1541,7 @@ print("---")
 print("vgcrash - crash with the vg")
 print("dcrash - crash with clone and dog commands") 
 print("fcrash - crash with clone and freeze commands")
+print("pcrash - crash with the osas")
 print("[PERSONS REQUIRED] scrash - crash with the shield and clone commands")
 
 print("---")
@@ -2905,6 +2912,20 @@ local function VGCrash()
       Chat("gear me 000000000000000000000000000000000000094794847")
       local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
       game.Players.LocalPlayer.Backpack:WaitForChild("VampireVanquisher")
+      for _, v in ipairs(Backpack:GetChildren()) do
+             v.Parent = game.Players.LocalPlayer.Character
+             v:Activate()
+      end
+      wait(.15)
+      for i = 1,100 do
+          Chat("unsize me me me")
+      end
+end
+
+local function PCrash()
+      Chat("gear me 00000000000000000000000000000092628079")
+      local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
+      game.Players.LocalPlayer.Backpack:WaitForChild("OrinthianSwordAndShield")
       for _, v in ipairs(Backpack:GetChildren()) do
              v.Parent = game.Players.LocalPlayer.Character
              v:Activate()
