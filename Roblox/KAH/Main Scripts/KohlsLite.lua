@@ -102,8 +102,7 @@ local personpassid = 35748 or 37127 -- don't edit
 print("Thank you for using KohlsLite. Created by S_P.")
 Chat("h \n\n\n KohlsLite executed. FULL RELEASE v1.02 \n\n\n")
 
--- due to an issue this is temporarily removed
---[[ if string.match(game:HttpGet("https://inventory.roblox.com/v1/users/" .. userId .. "/items/GamePass/" .. permpassid), permpassid) then
+if string.match(game:HttpGet("https://inventory.roblox.com/v1/users/" .. game.Players.LocalPlayer.UserId .. "/items/GamePass/" .. permpassid), permpassid) then
         perm = false 
 	hasperm = true -- unused
 	print("A perm pad was not given - you have the Perm Admin gamepass!")
@@ -113,13 +112,13 @@ else
 	print("A perm pad was given - you don't have the Perm Admin gamepass!")
 end
 
-if string.match(game:HttpGet("https://inventory.roblox.com/v1/users/" .. userId .. "/items/GamePass/" .. personpassid), personpassid) then
+if string.match(game:HttpGet("https://inventory.roblox.com/v1/users/" .. game.Players.LocalPlayer.UserId .. "/items/GamePass/" .. personpassid), personpassid) then
 	haspersons = true -- used!
 	print("You have Person299's Admin!")
 else
 	haspersons = false -- used!
 	print("You do not have Person299's Admin!")
-end ]]
+end
 
 game.Players.LocalPlayer.Chatted:Connect(function(msg)
     	if string.sub(msg:lower(), 1, #prefix + 4) == prefix.."cmds" then
