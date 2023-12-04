@@ -2266,7 +2266,7 @@ local function SERVERHOP()
 end
 
 -- GIF OR JIF
-local function GIFORJIF()
+function GIFORJIF()
 game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Hey you", "All")
 task.wait(2)
 game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Yes, you!", "All")
@@ -2289,22 +2289,7 @@ task.wait(2)
 game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("Is it GIF or JIF?", "All")
 noobs = true
 
-		
-plr.Chatted:Connect(function(msg)
-    while noobs do
-	task.wait(0)
-        for _, v in pairs(game.Players:GetPlayers()) do
-                if message:lower() == "gif" and v.Name == randomPlayer then
-        		    noobs = false
-                    resultg = false
-                end
-                if message:lower() == "jif" and v.Name == randomPlayer then
-                    noobs = false
-        		    resultg = true
-            	end
-        end
-    end
-end)
+repeat task.wait() until noobs == false
 
 if resultg == false then
     task.wait(2)
@@ -2345,6 +2330,14 @@ plr.Chatted:Connect(function(msg)
         		   end
                 end
 
+		if message:lower() == "gif" and v.Name == randomPlayer and noobs == true then
+        	    noobs = false
+                    resultg = false
+                end
+		if message:lower() == "jif" and v.Name == randomPlayer and noobs == true then
+                    noobs = false
+        	    resultg = true
+            	end
 					
         	if message:lower() == "sit me" or message:lower() == ":sit me" and v ~= game.Players.LocalPlayer then
                    if antiattach then
