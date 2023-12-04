@@ -3,12 +3,7 @@
 
 --[[ Things this script doesn't have...
 fixing parts, moving parts, finding parts, -- DON'T WORRY, THIS WILL COME OUT EVENTUALLY
-click annoy, click fard, click explode, -- MIGHT COME OUT TOO
-get all gears (for example all periastrons), themes, random commands
-antivoid (i feel as this could be annoying so it's not here)
-visualiser -- maybe i'll add!
-waterflood/removewater -- maybe i'll add
-paint some stuff only]]
+click annoy, click fard, click explode]]
 
 local prefix = "." -- ANY LENGTH :D
 local blacklist = {"sgoslee"} -- slocked users
@@ -20,7 +15,7 @@ local slockenabled = false -- slock!
 
 local rkick_on_sight = {"sgoslee"} -- rocket kick player when they join
 local crash_on_sight = {"sgoslee"} -- crash server when player joins
-local mcrash_on_sight = {"sgoslee"} -- crash player with pm spam when they join
+local mkick_on_sight = {"sgoslee"} -- kick player with pm spam when they join
 
 local musiclist = {"9048375035", "6680495507", "6529070845", "6917155909", "6913550990"}
 local musicnames = {"All dropping 8 beats", "Meow meow", "Loud music", "They trying to be cray", "TLT FNAF 2"}
@@ -102,7 +97,7 @@ local permpassid = 66254 or 64354 -- don't edit
 local personpassid = 35748 or 37127 -- don't edit
 
 print("Thank you for using KohlsLite. Created by S_P.")
-Chat("h \n\n\n KohlsLite executed. FULL RELEASE v1.02 \n\n\n")
+Chat("h \n\n\n KohlsLite executed. FULL RELEASE v1.03 \n\n\n")
 
 if string.match(game:HttpGet("https://inventory.roblox.com/v1/users/" .. game.Players.LocalPlayer.UserId .. "/items/GamePass/" .. permpassid), permpassid) then
         perm = false 
@@ -1330,12 +1325,12 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	antimsg = false
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'msgcrash' then
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'mkick' then
 	local acplr = string.sub(msg:lower(), #prefix + 10)
 	antichatplr = true
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unmsgcrash' then
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'unmkick' then
 	antichatplr = false
 	Chat("clear")
     end
@@ -1561,14 +1556,15 @@ print("antiattach2 - stop users from using the Ivory Periastron")
 print("---")
 print("antichat - stop people chatting by spamming h command full of emojis")
 print("unantichat - allow people to chat again")
-print("msgcrash - crash players with emojis. could be called antichatplr but h is harder to crash people than pm")
-print("unmsgcrash - stop trying to crash players with emojis")
+print("mkick - crash players with emojis using pm. You can use this instead of h as pm can be more effective.")
+print("unmkick - stop trying to crash players with emojis")
 
 print("---")
 print("There are also many other antis (for you or for everyone)!")
 
 print("---")
 print("KohlsLite, since 2023. Created by S_P")
+print("Version is: v1.03 - December 4th Build")
 end
 
 -- CHECK FOR PERM
@@ -2972,7 +2968,7 @@ local function onPlayerAdded(player)
 		RKick()   
     end
 
-    if table.find(mcrash_on_sight, player.Name) then
+    if table.find(mkick_on_sight, player.Name) then
 		Chat("h \n\n\n [KohlsLite]: Auto message kicking "..player.Name.." as they are blacklisted. \n\n\n")
 		antichatplr = true
 		acplr = player.Name
@@ -2996,7 +2992,7 @@ local function onPlayerLeaving(player)
     end
 
 
-    if table.find(mcrash_on_sight, player.Name) then
+    if table.find(mkick_on_sight, player.Name) then
 		antichatplr = false
     end
     task.wait()
