@@ -10,8 +10,15 @@ for i = 1,100 do
     game.Players:Chat("clone all all all")
 end
 
+print("trying rocket/shield crash...")
+for i = 1,100 do
+    game.Players:Chat("shield/all/all/all")
+    game.Players:Chat("rocket/all/all/all")
+    game.Players:Chat("clone/all/all/all")
+end
+
 print("trying vg crash...")
-game.Players:Chat("gear me 94794847")
+game.Players:Chat("gear me 0000000000000000000000000094794847")
 local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
 game.Players.LocalPlayer.Backpack:WaitForChild("VampireVanquisher")
 for _, v in ipairs(Backpack:GetChildren()) do
