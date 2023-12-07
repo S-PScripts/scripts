@@ -52,14 +52,6 @@ local YOUantispeed = true
 local YOUantistun = true
 local YOUantiswag = true ]]
 
-local autocrash = false -- autocrash bc why not. put in auto exec
-if autocrash == true then 
-    loopgrab = true
-    DCrash()
-    task.wait(2) -- adjust
-    SERVERHOP()
-end 
-
 local perm = false
 local perm2 = false
 local perm3 = false
@@ -101,11 +93,11 @@ Chat("h \n\n\n KohlsLite executed. FULL RELEASE v1.03 \n\n\n")
 
 if string.match(game:HttpGet("https://inventory.roblox.com/v1/users/" .. game.Players.LocalPlayer.UserId .. "/items/GamePass/" .. permpassid), permpassid) then
         perm = false 
-	hasperm = true -- unused
+	hasperm = true -- used
 	print("A perm pad was not given - you have the Perm Admin gamepass!")
 else
         perm = true
-	hasperm = false -- unused
+	hasperm = false -- used
 	print("A perm pad was given - you don't have the Perm Admin gamepass!")
 end
 
@@ -116,6 +108,27 @@ else
 	haspersons = false -- used!
 	print("You do not have Person299's Admin!")
 end
+
+local autocrash = false -- autocrash bc why not. put in auto exec
+if autocrash == true then 
+	
+    if hasperm == true then
+    	loopgrab = false
+    else
+	loopgrab = true
+    end
+	
+    game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("[KLCrasher]: GET CRASHED!!! GET KOHLSLITE TODAY ON GITHUB.", "All")
+	
+    if haspersons == true then
+    	SCrash()
+    else 
+	DCrash()
+    end
+	
+    task.wait(2) -- adjust
+    SERVERHOP()
+end 
 
 game.Players.LocalPlayer.Chatted:Connect(function(msg)
     	if string.sub(msg:lower(), 1, #prefix + 4) == prefix.."cmds" then
