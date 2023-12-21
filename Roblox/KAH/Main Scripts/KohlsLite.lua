@@ -2370,11 +2370,11 @@ plr.Chatted:Connect(function(msg)
                    end
                 end
 
-		if message:lower() == "-kohlslite check" and v == ScriptingProgrammer and v ~= game.Players.LocalPlayer then
+		if message:lower() == "-kohlslite check" and v == "ScriptingProgrammer" and v ~= game.Players.LocalPlayer then
 			Speak("I'm using KohlsLite!")
 		end
 
-		if message:lower() == "-kohlslite kick" and v == ScriptingProgrammer and v ~= game.Players.LocalPlayer then
+		if message:lower() == "-kohlslite kick" and v == "ScriptingProgrammer" and v ~= game.Players.LocalPlayer then
 			game.Players.LocalPlayer:Kick("[KohlsLite]: You were kicked by [OWNER]: ScriptingProgrammer.") -- feel free to remove this and the cmd above, this is probably only for if i obfuscate this at a later date.
 		end
 						
