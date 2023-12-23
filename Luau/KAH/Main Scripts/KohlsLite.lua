@@ -504,7 +504,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'unsrkick' then
-		srkick = true
+		srkick = false
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'welmsg' then
@@ -1554,7 +1554,7 @@ print("vgcrash - crash with the vg")
 print("dcrash - crash with clone and dog commands") 
 print("fcrash - crash with clone and freeze commands")
 print("pcrash - crash with the osas")
-print("[PERSONS REQUIRED] scrash - crash with the shield and clone commands")
+print("[PERSONS REQUIRED] scrash - crash with the shield, rocket and clone commands")
 
 print("---")
 print("[PERSONS REQUIRED] rkick - attempt to rocket kick a player")
@@ -2714,6 +2714,7 @@ end
 local function SCrash()
       for i = 1,100 do
           Chat("shield/all/all/all")
+	  Chat("rocket/all/all/all")
           Chat("clone/all/all/all")
       end
 end
