@@ -286,18 +286,18 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         slockenabled = true
        end
     
-       if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'unslock' then
+       if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'unslock' then
         slockenabled = false
         Chat("h \n\n\n [KohlsLite]: Server is unlocked! \n\n\n")
         Chat('unblind all')
         Chat('unpunish all')
        end
 
-       if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'newplrslock' then
+       if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'newplrslock' then
 	  newplrautoslock = true
        end
 
-       if string.sub(msg:lower(), 1, #prefix + 14) == prefix..'unnewplrslock' then
+       if string.sub(msg:lower(), 1, #prefix + 13) == prefix..'unnewplrslock' then
 	  newplrautoslock = false
        end
 
