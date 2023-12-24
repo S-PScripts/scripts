@@ -24,6 +24,9 @@ local musicnames = {"All dropping 8 beats", "Meow meow", "Loud music", "They try
 local padbanned = {"placeholder"} 
 local padreinforcements = false 
 
+local housekeybind = "h" -- wow i added keybind???
+local rekeybind = "r"
+
 local FAdmins = {} -- all admin but for individual users
 local alladmin = false -- all admin
 local amon = 100 -- super command times
@@ -1582,7 +1585,7 @@ print("There are also many other antis (for you or for everyone)!")
 
 print("---")
 print("KohlsLite, since 2023. Created by S_P")
-print("Version is: v1.03 - December 4th Build")
+print("Version is: v1.04 - December 24th Build")
 end
 
 -- CHECK FOR PERM
@@ -2288,6 +2291,16 @@ local function SERVERHOP()
         end    
 end
 
+-- keybinds
+game.Players.LocalPlayer:GetMouse().KeyDown:connect(function(key)
+	if key:lower() == housekeybind then
+		House()
+	end
+	if key:lower() == rekeybind then
+		Chat("reset me")
+	end	
+end
+	
 -- GIF OR JIF
 function GIFORJIF()
 Speak("Hey you")
