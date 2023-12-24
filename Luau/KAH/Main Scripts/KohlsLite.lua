@@ -15,7 +15,8 @@ local slockenabled = false -- slock!
 
 local rkick_on_sight = {"sgoslee"} -- rocket kick player when they join
 local crash_on_sight = {"sgoslee"} -- crash server when player joins
-local mkick_on_sight = {"sgoslee"} -- kick player with pm spam when they join
+local mkick_on_sight = {"sgoslee"} -- kick player with pm spam when they join ONLY WORKS WITH ONE PLAYER
+local suser_on_sight = {"sgoslee"} -- slow a user when they join with car gear ONLY WORKS WITH ONE PLAYER
 
 local musiclist = {"9048375035", "6680495507", "6529070845", "6917155909", "6913550990"}
 local musicnames = {"All dropping 8 beats", "Meow meow", "Loud music", "They trying to be cray", "TLT FNAF 2"}
@@ -2981,6 +2982,12 @@ local function onPlayerAdded(player)
 		srkick = true
 		rkicker = player.Name
 		RKick()   
+    end
+
+	if table.find(suser_on_sight, player.Name) then
+		Chat("h \n\n\n [KohlsLite]: Auto SLOWING "..player.Name.." as they are blacklisted. \n\n\n")
+		caruser = player.Name
+		SlowP = true
     end
 
     if table.find(mkick_on_sight, player.Name) then
