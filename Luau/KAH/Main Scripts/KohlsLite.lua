@@ -18,7 +18,7 @@ local crash_on_sight = {"sgoslee"} -- crash server when player joins
 local mkick_on_sight = {"sgoslee"} -- kick player with pm spam when they join ONLY WORKS WITH ONE PLAYER
 local suser_on_sight = {"sgoslee"} -- slow a user when they join with car gear ONLY WORKS WITH ONE PLAYER
 
-local musiclist = {"9048375035", "6680495507", "6529070845", "6917155909", "6913550990"}
+local musiclist = {"0000000000000000000009048375035", "0000000000000000000006680495507", "0000000000000000000006529070845", "0000000000000000000006917155909", "0000000000000000000006913550990"}
 local musicnames = {"All dropping 8 beats", "Meow meow", "Loud music", "They trying to be cray", "TLT FNAF 2"}
 
 local padbanned = {"placeholder"} 
@@ -594,7 +594,21 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
   if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'spamon' then
 	spamon = true
     end
-	
+
+  if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'ecrash' then -- goofy ahh mrkrabs shortcut v2
+	    Chat([["h \n \n \n   
+	  ___ _ __ _ __ ___  _ __ 
+	 / _ \ '__| '__/ _ \| '__| Sorry, something went wrong!
+	|  __/ |  | | | (_) | |    Contact agspureiam if this error continues.
+ 	 \___|_|  |_|  \___/|_|    Kohls Admin House 2013-2023®
+                          
+                           \n \n \n"]])
+            Chat("music 0000000000000000000006917155909")
+            Chat("fogcolor 0 0 0")
+            Chat("fogend 0")
+	    DCrash()	
+		end
+			
     if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'unslowplayer' then
 	SlowP = false
     end
