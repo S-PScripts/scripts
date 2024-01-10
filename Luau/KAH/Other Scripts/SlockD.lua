@@ -21,7 +21,7 @@ print("-bl/unbl -> Serverlock a particular individual.")
 
 print("-dcrash -> dog crash the server")
 print("-fcrash -> freeze crash the server")
-print("-mcrash -> messagee crash the server")
+print("-mcrash -> message crash the server")
 print("-rcrash -> rocket crash the server")
 print("-scrash -> shield crash the server")
 print("-vcrash -> vamp crash the server")
