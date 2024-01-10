@@ -97,7 +97,7 @@ local permpassid = 66254 or 64354 -- don't edit
 local personpassid = 35748 or 37127 -- don't edit
 
 print("Thank you for using KohlsLite. Created by S_P.")
-Chat("h \n\n\n KohlsLite executed. FULL RELEASE v1.03 \n\n\n")
+Chat("h \n\n\n KohlsLite executed. FULL RELEASE v1.032 \n\n\n")
 
 if string.match(game:HttpGet("https://inventory.roblox.com/v1/users/" .. game.Players.LocalPlayer.UserId .. "/items/GamePass/" .. permpassid), permpassid) then
         perm = false 
@@ -595,7 +595,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	spamon = true
     end
 
-  if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'ecrash' then -- goofy ahh mrkrabs shortcut v2
+  if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'ecrash' then
 	    Chat([["h \n \n \n   
 	  ___ _ __ _ __ ___  _ __ 
 	 / _ \ '__| '__/ _ \| '__| Sorry, something went wrong!
@@ -671,7 +671,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'biglogs' then
-    	plr.PlayerGui:FindFirstChild("ScrollGui").TextButton.Frame.Size = UDim2.new(0,1000,0,1000)
+    	game.Players.LocalPlayer.PlayerGui:FindFirstChild("ScrollGui").TextButton.Frame.Size = UDim2.new(0,1000,0,1000)
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'regen' then
@@ -2706,8 +2706,8 @@ end)
 
 -- GOTO
 local function Goto()
-	  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = gotou.Character.HumanoidRootPart.CFrame
-       --[[   Chat("tp me"..gotou)]]
+	 -- game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = gotou.Character.HumanoidRootPart.CFrame
+          Chat("tp me"..gotou)
 end
 
 -- BRING
