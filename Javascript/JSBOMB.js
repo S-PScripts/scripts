@@ -9,7 +9,7 @@ var csrf = "insert here" // scratch X-CSRFToken
 
 var xtoken = "insert here" // scratch x-token
 
-var body = 'insert here' // project.json of what you want the remixes to look like.
+var bodyjs = 'insert here' // project.json of what you want the remixes to look like.
 
 var cookies = `` // scratch browser cookies
 
@@ -71,7 +71,7 @@ e = await fetch("https://projects.scratch.mit.edu/?is_remix=1&original_id=" + e 
 
         "referrer": "https://scratch.mit.edu/",
 
-        "body": body,
+        "body": bodyjs,
 
         "method": "POST",
 
