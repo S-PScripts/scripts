@@ -3,11 +3,13 @@
 
 var e = 1 // id of starting project
 
-var h = 1 // number of remixes 
+var h = 1 // next remix number will be this
 
 var csrf = "insert here" // scratch X-CSRFToken
 
 var xtoken = "insert here" // scratch x-token
+
+var body = 'insert here' // project.json of what you want the remixes to look like.
 
 var cookies = `` // scratch browser cookies
 
@@ -69,7 +71,7 @@ e = await fetch("https://projects.scratch.mit.edu/?is_remix=1&original_id=" + e 
 
         "referrer": "https://scratch.mit.edu/",
 
-        "body": 'insert here', // project.json of what you want the remixes to look like.
+        "body": body,
 
         "method": "POST",
 
