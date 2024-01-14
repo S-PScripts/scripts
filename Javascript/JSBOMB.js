@@ -1,4 +1,4 @@
-// jsbomb made by derv, not me
+// scratch jsbomb made by derv, not me (TS2021)
 // execute the code in console
 
 var e = 1 // id of starting project
@@ -114,3 +114,8 @@ jsbomb();
 // open the zip
 // open the folder created by the zip
 // copy the json file in it
+
+// JSBOMB Places
+// Github: https://raw.githubusercontent.com/S-PScripts/scripts/main/Javascript/JSBOMB.js
+// Github Gist: https://gist.github.com/S-PScripts/f0ca6967c9cc14cd4d1a90935a630cc5
+// Pastebin: https://pastebin.com/raw/1vANhnPM
