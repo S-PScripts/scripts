@@ -22,10 +22,18 @@ local suser_on_sight = {"sgoslee"} -- slow a user when they join with car gear O
 local musiclist = {"0000000000000000000009048375035", "0000000000000000000006680495507", "0000000000000000000006529070845", "0000000000000000000006917155909", "0000000000000000000006913550990"}
 local musicnames = {"All dropping 8 beats", "Meow meow", "Loud music", "They trying to be cray", "TLT FNAF 2"}
 
+--[[ local theoptions = {
+  "KohlsJoy",
+  "KohlsLite",
+  "KohlsDefender"
+}
+
+local NameItem = theoptions[math.random(#theoptions)] ]]
+
 local padbanned = {"placeholder"} 
 local padreinforcements = false 
 
-local housekeybind = "h" -- wow i added keybind???
+local housekeybind = "h" -- Keybinds?!
 local rekeybind = "r"
 
 local FAdmins = {} -- all admin but for individual users
@@ -77,7 +85,7 @@ local antichat = false
 local antiattach = false
 local antigs = false
 
-local PingLogs = true
+local PingLogs = true -- it's caps because caps
 local PingCsystem = true
 local AntiLogs = false
 
@@ -121,7 +129,7 @@ end
 local autocrash = false -- autocrash bc why not. put in auto exec
 if autocrash == true then 
 	
-    Speak("[KLCrasher]: GET CRASHED!!! GET KOHLSLITE TODAY ON GITHUB.")
+    Speak("skidcraft is the best game amirite")
 	
     if haspersons == true and hasperm == false then
 	loopgrab = true
@@ -598,13 +606,16 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
   if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'ecrash' then
-	    Chat([["h \n \n \n   
-	  ___ _ __ _ __ ___  _ __ 
-	 / _ \ '__| '__/ _ \| '__| Sorry, something went wrong!
-	|  __/ |  | | | (_) | |    Contact agspureiam if this error continues.
- 	 \___|_|  |_|  \___/|_|    Kohls Admin House 2013-2023®
-                          
-                           \n \n \n"]])
+	Chat("h \n\n\n"..
+	[[   
+___   ___  ________  ___   ___     
+|\  \ |\  \|\   __  \|\  \ |\  \      [KohlsDefender]
+\ \  \\_\  \ \  \|\  \ \  \\_\  \     Sorry, something went wrong!
+ \ \______  \ \  \\\  \ \______  \    Contact agspureiam if this error continues.
+  \|_____|\  \ \  \\\  \|_____|\  \   Kohls Admin House 2013-2023®
+         \ \__\ \_______\     \ \__\
+          \|__|\|_______|      \|__|    ]].."\n\n\n")
+			
             Chat("music 0000000000000000000006917155909")
             Chat("fogcolor 0 0 0")
             Chat("fogend 0")
