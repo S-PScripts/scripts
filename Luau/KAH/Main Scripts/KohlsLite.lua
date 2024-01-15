@@ -605,7 +605,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	spamon = true
     end
 
-  if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'ecrash' then
+  if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'ecrash' then
 	Chat("h \n\n\n"..
 	[[   
 ___   ___  ________  ___   ___     
