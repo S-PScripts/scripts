@@ -1,5 +1,6 @@
- -- KOHLSLITE BY TS2021/S_P
--- CREDITS TO MANY (tech, random stuff from https://github.com/S-PScripts/kah-fork)
+-- KOHLSLITE BY TS2021/S_P
+-- CREDITS TO MANY (stuff from https://github.com/S-PScripts/kah-fork)
+-- compiler used: https://www.tutorialspoint.com/execute_lua_online.php
 
 --[[ Things this script doesn't have...
 fixing parts, moving parts, finding parts, -- DON'T WORRY, THIS WILL COME OUT EVENTUALLY
@@ -11,7 +12,7 @@ local whitelist = {"me_123eq","me_crashking","ScriptingProgrammer","G_ODt","BANN
 local newplrslocked = {} -- don't edit!!
 local newplrautoslock = true -- if new players under 21 days join they get blacklisted
 local GWhitelisted = {"me_123eq","me_crashking","ScriptingProgrammer","G_ODt","BANNter_Original"} -- gear whitelisted
-local slockenabled = false -- slock!
+local slockenabled = false -- slock but tbh use slockd
 
 local rkick_on_sight = {"sgoslee"} -- rocket kick player when they join
 local crash_on_sight = {"sgoslee"} -- crash server when player joins
@@ -96,8 +97,8 @@ end
 local permpassid = 66254 or 64354 -- don't edit
 local personpassid = 35748 or 37127 -- don't edit
 
-print("Thank you for using KohlsLite. Created by S_P.")
-Chat("h \n\n\n KohlsLite executed. FULL RELEASE v1.032 \n\n\n")
+print("~~~Thank you for using KohlsLite. Created by S_P.~~~")
+Chat("h \n\n\n KohlsLite executed. FULL RELEASE v1.045 \n\n\n")
 
 if string.match(game:HttpGet("https://inventory.roblox.com/v1/users/" .. game.Players.LocalPlayer.UserId .. "/items/GamePass/" .. permpassid), permpassid) then
         perm = false 
@@ -120,17 +121,18 @@ end
 local autocrash = false -- autocrash bc why not. put in auto exec
 if autocrash == true then 
 	
-    if hasperm == true then
-    	loopgrab = false
-    else
-	loopgrab = true
-    end
-	
     Speak("[KLCrasher]: GET CRASHED!!! GET KOHLSLITE TODAY ON GITHUB.")
 	
-    if haspersons == true then
+    if haspersons == true and hasperm == false then
+	loopgrab = true
     	SCrash()
-    else 
+    elseif haspersons == true and hasperm == true then
+	SCrash()
+	DCrash()
+    elseif haspersons == false and hasperm == true then
+	DCrash()
+    else
+	loopgrab = true
 	DCrash()
     end
 	
@@ -1576,8 +1578,8 @@ print("[PERSONS REQUIRED] scrash - crash with the shield, rocket and clone comma
 
 print("---")
 print("[PERSONS REQUIRED] rkick - attempt to rocket kick a player")
-print("srkick - spam rocket kick a player")
-print("unsrkick - stop trying to rocket kick a player")
+print("[PERSONS REQUIRED] srkick - spam rocket kick a player")
+print("[PERSONS REQUIRED] unsrkick - stop trying to rocket kick a player")
 
 print("---")
 print("anticrash - anti-crash with vg or osas")
@@ -1599,7 +1601,7 @@ print("There are also many other antis (for you or for everyone)!")
 
 print("---")
 print("KohlsLite, since 2023. Created by S_P")
-print("Version is: v1.04 - December 24th Build")
+print("Version is: v1.045 - 15th January 2024 Build")
 end
 
 -- CHECK FOR PERM
@@ -2324,7 +2326,7 @@ task.wait(2)
 local Players = game:GetService("Players"):GetPlayers()
 local randomPlayer = "Placeholder"
 task.wait(2)
-if #Players > 0 then
+if #Players > 0 then -- so it don't pick yourself
     repeat
     randomPlayer = Players[math.random(#Players)] 
     until randomPlayer ~= game.Players.LocalPlayer
@@ -2341,9 +2343,9 @@ if resultg == false then
     Speak("No death for you!")
 else
     task.wait(2)
-    Speak("The all seeing eye is coming...")
+    Speak("I sense that the illuminati is coming...")
     task.wait(2)
-    Speak("Game over.")
+    Speak("Is this game over...?")
     task.wait(2)
     Chat("fogend 0")
     Chat("time 0")
@@ -2355,7 +2357,7 @@ for i,v in pairs(game.Players:GetChildren()) do
 	PLRSTART(v)
 end
 
--- For Some Antis, Admin Stuff
+-- some antis and admin system
 function PLRSTART(v)
 plr.Chatted:Connect(function(msg)
      task.spawn(function()
@@ -2401,11 +2403,11 @@ plr.Chatted:Connect(function(msg)
                 end
 
 		if message:lower() == "-kohlslite check" and v == "ScriptingProgrammer" and v ~= game.Players.LocalPlayer then
-			Speak("I'm using KohlsLite!")
+			Speak("I'm using KohlsLite, the UK's number one skidded KAH script!")
 		end
 
 		if message:lower() == "-kohlslite kick" and v == "ScriptingProgrammer" and v ~= game.Players.LocalPlayer then
-			game.Players.LocalPlayer:Kick("[KohlsLite]: You were kicked by [OWNER]: ScriptingProgrammer.") -- feel free to remove this and the cmd above, this is probably only for if i obfuscate this at a later date.
+			game.Players.LocalPlayer:Kick("[KohlsLite]: You were kicked by [OWNER]: SkiddingProgrammer.") -- feel free to remove this and the cmd above, this is probably only for if i obfuscate this at a later date.
 		end
 						
 		if noobdetect == true then
@@ -2656,7 +2658,7 @@ task.spawn(function()
 		for i,player in pairs(padbanned) do
 			for i,pad in pairs(game:GetService("Workspace").Terrain["_Game"].Admin.Pads:GetDescendants()) do
 				if pad.Name == player.."'s admin" then
-					Chat("skydive "..player)
+					Chat("respawn "..player)
 					Chat("h \n\n\n [KohlsLite]: Sorry, "..player..", you're banned from using the admin pads! \n\n\n")
 					Regen()
 				end
@@ -2672,7 +2674,7 @@ task.spawn(function()
 					end
 				end
 				if times >= 2 then
-					Chat("skydive "..v.Name)
+					Chat("respawn "..v.Name)
 					Chat("h \n\n\n [KohlsLite]: The pads have been reset because "..v.Name.." tried to take them all! \n\n\n")
 					Regen()
 				end
@@ -2885,7 +2887,7 @@ end
 
 -- PING
 local function GetPing()
-   local RSP = math.floor(game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValue() + 0.5) -- i can't be bothered to make a more precise version. it's only a 1ms difference if it's rounded wrong xd
+   local RSP = math.floor(game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValue() + 0.5) -- i can't be bothered to use a more precise version. it's only a 1ms difference if it's rounded wrong xd
    print("Ping is " .. RSP .. "ms.")
 end
 
@@ -2994,8 +2996,8 @@ local function onPlayerAdded(player)
     end 
 	
     if player.Name == "ScriptingProgrammer" and player.Name ~= game.Players.LocalPlayer then
-	 Chat("h \n\n\n [KohlsLite]: !!! Is that S_P? WOW! IT IS! \n\n\n")
-	 print("ScriptingProgrammer [OWNER] joined the server!!!")
+	 Chat("h \n\n\n [KohlsLite]: !!! OMG DID A SKID JOIN \n\n\n")
+	 print("SkiddingProgrammer [OWNER] joined the server!!!")
     end
 	
     if player.AccountAge < 21 == true and newplrautoslock == true then
