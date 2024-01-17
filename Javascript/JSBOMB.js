@@ -121,3 +121,4 @@ jsbomb();
 // Pastebin: https://pastebin.com/raw/1vANhnPM
 // Rentry: https://rentry.co/jsbomb
 // ProtectedText: https://www.protectedtext.com/jsbombt-101 - PASSWORD is myjsbomb123
+// CodedPad: https://www.codedpad.com/ - the code is jsbombt-101
