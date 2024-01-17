@@ -116,9 +116,17 @@ jsbomb();
 // copy the json file in it
 
 // JSBOMB Places - These are the ONLY official links. Any other places are FAKE.
+// GITHUB is the most updated, followed by Pastebin and Github Gist!
+
+// Safe (only edited by me):
 // Github: https://raw.githubusercontent.com/S-PScripts/scripts/main/Javascript/JSBOMB.js
 // Github Gist: https://gist.github.com/S-PScripts/f0ca6967c9cc14cd4d1a90935a630cc5
 // Pastebin: https://pastebin.com/raw/1vANhnPM
 // Rentry: https://rentry.co/jsbomb
+// JustPasteIt: https://justpaste.it/aos1w
+// aNotepad: https://anotepad.com/notes/x2ipdcmw
+
+// Dangerous (can be edited by anyone):
 // ProtectedText: https://www.protectedtext.com/jsbombt-101 - PASSWORD is myjsbomb123
 // CodedPad: https://www.codedpad.com/ - the code is jsbombt-101
+// Shrib: https://shrib.com/#Idris5M4E2Wq
