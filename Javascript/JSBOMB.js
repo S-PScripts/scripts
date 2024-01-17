@@ -115,7 +115,9 @@ jsbomb();
 // open the folder created by the zip
 // copy the json file in it
 
-// JSBOMB Places
+// JSBOMB Places - These are the ONLY official links. Any other places are FAKE.
 // Github: https://raw.githubusercontent.com/S-PScripts/scripts/main/Javascript/JSBOMB.js
 // Github Gist: https://gist.github.com/S-PScripts/f0ca6967c9cc14cd4d1a90935a630cc5
 // Pastebin: https://pastebin.com/raw/1vANhnPM
+// Rentry: https://rentry.co/jsbomb
+// ProtectedText: https://www.protectedtext.com/jsbombt-101 - PASSWORD is myjsbomb123
