@@ -1,3 +1,5 @@
+# calculating i made for some school project
+
 forms = ["9BPE", "9JMC", "9RUN", "9LSO", "9HBU", "9IAD", "9CTA", "9GSI"]
 prices = ["247", "421.90", "211.95", "71.68", "230.23", "349.98", "126.12", "193.48"]
 
