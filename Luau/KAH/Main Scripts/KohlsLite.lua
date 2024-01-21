@@ -49,7 +49,8 @@ local musiclist = {"00000000000000000000009048375035", -- 1
                    "00000000000000000000001846368080", -- 28
                    "00000000000000000000001840511219", -- 29
                    "00000000000000000000001839404854", -- 30
-                   "00000000000000000000006674211522"} -- 31
+                   "00000000000000000000006674211522", -- 31
+		   "00000000000000000000006984999899"} -- 32
       
 
 local musicnames = {"All dropping 8 beats", -- 1
@@ -82,7 +83,8 @@ local musicnames = {"All dropping 8 beats", -- 1
                     "PARTY", -- 28
                     "Fanfare", -- 29
 		    "Rock On", -- 30
-		    "LOUD MUSIC INTERUPT"} -- 31
+		    "LOUD MUSIC INTERUPT", -- 31
+		    "AAAAAAAAAAAAAAAAAAAAA"} -- 32
 
 --[[ local theoptions = {
   "KohlsJoy",
