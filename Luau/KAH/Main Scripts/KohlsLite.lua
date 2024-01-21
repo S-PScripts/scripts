@@ -19,8 +19,45 @@ local crash_on_sight = {"sgoslee"} -- crash server when player joins
 local mkick_on_sight = {"sgoslee"} -- kick player with pm spam when they join ONLY WORKS WITH ONE PLAYER
 local suser_on_sight = {"sgoslee"} -- slow a user when they join with car gear ONLY WORKS WITH ONE PLAYER
 
-local musiclist = {"0000000000000000000009048375035", "0000000000000000000006680495507", "0000000000000000000006529070845", "0000000000000000000006917155909", "0000000000000000000006913550990"}
-local musicnames = {"All dropping 8 beats", "Meow meow", "Loud music", "They trying to be cray", "TLT FNAF 2"}
+local musiclist = {"00000000000000000000009048375035", -- 1
+		   "00000000000000000000006680495507", -- 2
+		   "00000000000000000000006529070845", -- 3
+		   "00000000000000000000006917155909", -- 4
+		   "00000000000000000000006913550990", -- 5
+		   "00000000000000000000006847929757", -- 6
+                   "00000000000000000000001839029458", -- 7
+                   "00000000000000000000000035930009", -- 8
+	           "00000000000000000000006772846771", -- 9
+	           "00000000000000000000011808880515", -- 10
+	           "00000000000000000000006681840651", -- 11
+	           "00000000000000000000001841647093", -- 12
+	           "00000000000000000000001837070127", -- 13
+	           "00000000000000000000006806140478", -- 14
+	           "00000000000000000000006703926669", -- 15
+	           "00000000000000000000002042581436", -- 16
+	           "00000000000000000000006872126938", -- 17
+	           "00000000000000000000006695430066", -- 18
+	           "00000000000000000000005216738441"} -- 19
+
+local musicnames = {"All dropping 8 beats", -- 1
+		    "Meow meow", -- 2
+	            "Loud music", -- 3
+	            "They trying to be cray", -- 4
+	            "TLT FNAF 2", -- 5
+                    "LONER", -- 6
+	            "fUn cAmPiNg mUsIc", -- 7
+	            "the loop", -- 8
+	            "FIRE IN THE HOLE", -- 9
+	            "women sings", -- 10
+	            "gun shots", -- 11
+	            "chill elevator", -- 12
+	            "fresh air", -- 13
+	            "the end", -- 14
+		    "memories", -- 15
+		    "AHHHH", -- 16 
+		    "walter white", -- 17
+		    "nuts", -- 18
+	            "obamium 3d"} -- 19
 
 --[[ local theoptions = {
   "KohlsJoy",
