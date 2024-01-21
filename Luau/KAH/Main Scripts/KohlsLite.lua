@@ -2730,7 +2730,7 @@ end
 
 
 local function VFix()
-    for i,v in pairs(workspace.Terrain["_Game"]:GetDescendants()) do
+    for i,v in pairs(game:GetService("Workspace").Terrain._Game.Workspace:GetDescendants()) do
         if v:IsA("BasePart") then
             v.Velocity = Vector3.new(0,0,0)
         end
