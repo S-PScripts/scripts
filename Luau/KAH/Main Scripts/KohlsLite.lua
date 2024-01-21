@@ -3172,7 +3172,7 @@ local function Gearban()
 				          game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame
 				          task.wait(0.25)
 				          local JailPlayer = v.Name
-				          workspace[game.Players.LocalPlayer.Name].PortableJustice.MouseClick:FireServer(workspace[JailPlayer])
+				          game:GetService("Workspace").Terrain._Game.Workspace[game.Players.LocalPlayer.Name].PortableJustice.MouseClick:FireServer(game:GetService("Workspace").Terrain._Game.Workspace[JailPlayer])
 				          task.wait(0.25)
 				          Chat("reset "..v.Name)
                   Chat("pm "..v.Name.. "No gears for you now! Rejoin if you want them.")
