@@ -363,7 +363,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'pausem' then
-       for i,v in pairs(workspace.Terrain._Game.Folder:GetDescendants()) do
+       for i,v in pairs(game:GetService("Workspace").Terrain["_Game"].Folder:GetDescendants()) do
 	          if v:IsA("Sound") and v.Playing then
               	     v.Playing = false
           	  end
@@ -371,7 +371,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'playm' then
-      	for i,v in pairs(workspace.Terrain._Game.Folder:GetDescendants()) do
+      	for i,v in pairs(game:GetService("Workspace").Terrain["_Game"].Folder:GetDescendants()) do
           	  if v:IsA("Sound") and not v.Playing then
               	     v.Playing = true
                   end
@@ -396,14 +396,14 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'volm' then
    	    local newVolume = tonumber(string.sub(msg:lower(), #prefix + 6))
-   	    if newVolume ~= nil and workspace.Terrain._Game.Folder:FindFirstChild("Sound") then
-      		    workspace.Terrain._Game.Folder.Sound.Volume = newVolume
+   	    if newVolume ~= nil and game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
+      		    game:GetService("Workspace").Terrain["_Game"].Folder.Sound.Volume = newVolume
        	end
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'musicid' then
-	      if workspace.Terrain._Game.Folder:FindFirstChild("Sound") then
-			      print("Current Music ID: "..workspace.Terrain._Game.Folder.Sound.SoundId)
+	      if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
+			      print("Current Music ID: "..game:GetService("Workspace").Terrain["_Game"].Folder.Sound.SoundId)
 	      end
     end
 
@@ -414,14 +414,14 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 0, 8) == prefix.."cpbspeed" then
-		if workspace.Terrain._Game.Folder:FindFirstChild("Sound") then
-				print("Current PlayBack speed: "..workspace.Terrain._Game.Folder.Sound.PlaybackSpeed)
+		if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
+				print("Current PlayBack speed: "..game:GetService("Workspace").Terrain["_Game"].Folder.Sound.PlaybackSpeed)
 		end
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'cvol' then
-	      if workspace.Terrain._Game.Folder:FindFirstChild("Sound") then
-			      print("Current Volume: "..workspace.Terrain._Game.Folder.Sound.Volume)
+	      if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
+			      print("Current Volume: "..game:GetService("Workspace").Terrain["_Game"].Folder.Sound.Volume)
 	      end	
     end
 		
@@ -466,8 +466,8 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'remusic' then
-       if workspace.Terrain._Game.Folder:FindFirstChild("Sound") then
-	  local myid  = workspace.Terrain._Game.Folder.Sound.SoundId 
+       if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
+	  local myid  = game:GetService("Workspace").Terrain["_Game"].Folder.Sound.SoundId 
 	  Chat("music "..myid)
        end
      end
