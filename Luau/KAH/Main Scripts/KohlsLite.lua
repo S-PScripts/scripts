@@ -12,7 +12,10 @@ local whitelist = {"me_123eq","me_crashking","ScriptingProgrammer","G_ODt","BANN
 local newplrslocked = {} -- don't edit!!
 local newplrautoslock = true -- if new players under 21 days join they get blacklisted
 local GWhitelisted = {"me_123eq","me_crashking","ScriptingProgrammer","G_ODt","BANNter_Original"} -- gear whitelisted
-local slockenabled = false -- slock but tbh use slockd
+local slockenabled = false -- slock
+
+local permusers = {} -- users that use perm
+local personsusers = {} -- users that use persons
 
 local rkick_on_sight = {"sgoslee"} -- rocket kick player when they join
 local crash_on_sight = {"sgoslee"} -- crash server when player joins
@@ -176,7 +179,11 @@ local permpassid = 66254 or 64354 -- don't edit
 local personpassid = 35748 or 37127 -- don't edit
 
 print("~~~Thank you for using KohlsLite. Created by S_P.~~~")
-Chat("h \n\n\n KohlsLite executed. FULL RELEASE v1.045 \n\n\n")
+Chat("h \n\n\n [KohlsLite]: Executed! v1.048 \n\n\n")
+
+if not game.Players.LocalPlayer.Name == "ScriptingProgrammer" then
+	Chat("pm me Thank you for using KohlsLite v1.048. \n\n\n")
+end
 
 if string.match(game:HttpGet("https://inventory.roblox.com/v1/users/" .. game.Players.LocalPlayer.UserId .. "/items/GamePass/" .. permpassid), permpassid) then
         perm = false 
@@ -361,6 +368,18 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	if string.sub(msg, 1, #prefix + 6)  == prefix..'bllist' then
          for i = 1, #blacklist do
  		 print(blacklist[i])
+	 end
+        end
+
+	if string.sub(msg, 1, #prefix + 9)  == prefix..'permusers' then
+         for i = 1, #permusers do
+ 		 print(permusers[i])
+	 end
+        end
+
+	if string.sub(msg, 1, #prefix + 12)  == prefix..'personsusers' then
+         for i = 1, #personsusers do
+ 		 print(personsusers[i])
 	 end
         end
     
@@ -956,8 +975,13 @@ ___   ___  ________  ___   ___
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'checkbp' then
-	checker = string.sub(msg:lower(), #prefix + 9)
-	CheckBackpack()
+	local checker = string.sub(msg:lower(), #prefix + 9)
+        PLAYERCHECK(checker)
+        if player ~= nil then 
+		CheckBackpack()
+        else
+                print('Cannot find player with the name: '..checker)
+        end
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'stonemap' then
@@ -1496,8 +1520,8 @@ print("gearwl - whitelist a user to use gears with antigear/anticrash etc. on")
 print("admin - give a user free admin that can be used off yours")
 	
 print("---")
-print("unwl - whitelist a player from serverlocks")
-print("unbl - unblacklist a player)")
+print("unwl - unwhitelist a player from serverlocks")
+print("unbl - unblacklist a player")
 print("ungearwl - unwhitelist a user to use gears with antigear/anticrash etc. on")
 print("unadmin - remove a user's free admin")
 
@@ -1507,6 +1531,8 @@ print("bllist - print all blacklisted players")
 print("gearwllist - print all gear whitelisted players")
 print("adminlist - print all admined players")
 print("musiclist - print all the saved musics")
+print("permusers - users that use perm")
+print("personsusers - users that use persons")
 
 print("---")
 print("slock - serverlock a server")
@@ -1548,7 +1574,7 @@ print("nocam/breakcam - break the camera")
 print("fixvelo - fix your velocity")
 
 print("---")
-print("goto - goto a player using cframes")
+print("goto - alt to tp me plr")
 print("bring - alt to tp plr me")
 
 print("---")
@@ -1570,7 +1596,8 @@ print("uninfjump - stop infinite jump")
 print("---")
 print("checkperm - check player for perm")
 print("checkpersons - check player for persons")
-
+print("checkbp - check a player's backpack")
+	
 print("---")
 print("spamt - start spamming something")
 print("unspamt - stop spamming")
@@ -1682,13 +1709,14 @@ print("There are also many other antis (for you or for everyone)!")
 
 print("---")
 print("KohlsLite, since 2023. Created by S_P")
-print("Version is: v1.045 - 15th January 2024 Build")
+print("Version is: v1.048 - 15th January 2024 Build")
 end
 
 -- CHECK FOR PERM
 function checkforperm()
 	if string.match(game:HttpGet("https://inventory.roblox.com/v1/users/" .. cplr.userId .. "/items/GamePass/" .. permpassid), permpassid) then
 	   print(player.." has perm!")
+	   table.insert(permusers,player)
 	else
 	   print(player.."does not have perm!")
 	end
@@ -1698,6 +1726,7 @@ end
 function checkforpersons()
 	if string.match(game:HttpGet("https://inventory.roblox.com/v1/users/" .. cplr.userId .. "/items/GamePass/" .. personpassid), personpassid) then
 	   print(player.." has persons!")
+	   table.insert(personsusers,player)
 	else
 	   print(player.."does not have persons!")
 	end
