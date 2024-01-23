@@ -13,7 +13,7 @@ local persons = (MarketplaceService:UserOwnsGamePassAsync(LocalPlayer.UserId, 35
 local perm = (MarketplaceService:UserOwnsGamePassAsync(LocalPlayer.UserId, 66254) or MarketplaceService:UserOwnsGamePassAsync(LocalPlayer.UserId, 64354))
 
 
--- // function shit \\ --
+-- // function discord \\ --
 
 -- // chat function \\ --
 local function Chat(msg)
@@ -77,46 +77,46 @@ end
 -- // perm/no perm but admin crash \\ --
 local function KillServer()
     for i = 1,52 do
-            Chat("dog all all all                                                                             fuck")
+            Chat("dog all all all                                                                             discord")
     end
     for i = 1,51 do
-            Chat("clone all all all                                                                           fuck")
+            Chat("clone all all all                                                                           discord")
     end
 end
 
 -- // persons part of ultra/persons only crash \\ --
 local function RCrash()
-   Chat("gear all 4842204072                                                                                    fuck")
+   Chat("gear all 4842204072                                                                                    discord")
    for i = 1,50 do
-       Chat("rocket/all all all                                                                                 fuck")
+       Chat("rocket/all all all                                                                                 discord")
    end
    for i = 1,50 do
-       Chat("shield/all all all                                                                                 fuck")
+       Chat("shield/all all all                                                                                 discord")
    end
 end
 
 -- // perm part of ultra/persons only crash \\ --
 local function PCrash()
-   Chat("respawn all                                                                                            fuck")
-   Chat("gear all 000000000000000000000000000000004842204072                                                    fuck")
+   Chat("respawn all                                                                                            discord")
+   Chat("gear all 000000000000000000000000000000004842204072                                                    discord")
    for i = 1,10 do
-        Chat("dog all all all                                                                                   fuck")
+        Chat("dog all all all                                                                                   discord")
    end
    for i = 1,10 do
         Chat("size all .3")
    end
    for i = 1,10 do
-        Chat("freeze all all all                                                                                fuck")
+        Chat("freeze all all all                                                                                discord")
    end                                                                            
    for i = 1,10 do
          Chat("size all 10")
    end
    for i = 1,50 do
-         Chat("clone all all all                                                                                 fuck")
+         Chat("clone all all all                                                                                 discord")
    end
    wait(1.1)
    for i = 1,50 do
-          Chat("clone all all all                                                                                 fuck")
+          Chat("clone all all all                                                                                 discord")
    end
 end
 
@@ -214,4 +214,4 @@ else
 print("ERROR!")
 end
 
--- after the crash shit add a serverhop
+-- after the crash discord add a serverhop
