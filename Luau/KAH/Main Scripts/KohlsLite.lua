@@ -695,15 +695,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
   if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'ecrash' then
-	Chat("h \n\n\n"..
-	[[   
-___   ___  ________  ___   ___     
-|\  \ |\  \|\   __  \|\  \ |\  \      [KohlsDefender]
-\ \  \\_\  \ \  \|\  \ \  \\_\  \     Sorry, something went wrong!
- \ \______  \ \  \\\  \ \______  \    Contact agspureiam if this error continues.
-  \|_____|\  \ \  \\\  \|_____|\  \   Kohls Admin House 2013-2023®
-         \ \__\ \_______\     \ \__\
-          \|__|\|_______|      \|__|    ]].."\n\n\n")
+	Chat("h \n\n\n Sorry, something went wrong! \n\n\n")
 			
             Chat("music 0000000000000000000006917155909")
             Chat("fogcolor 0 0 0")
