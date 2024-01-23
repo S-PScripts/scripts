@@ -59,7 +59,7 @@ local function FindPad()
           task.wait(.49)
       end
     end)
-    wait(1.5)
+    task.wait(1.5)
     if persons then
           RCrash()
           PCrash()
@@ -114,7 +114,7 @@ local function PCrash()
    for i = 1,50 do
          Chat("clone all all all                                                                                 discord")
    end
-   wait(1.1)
+   task.wait(1.1)
    for i = 1,50 do
           Chat("clone all all all                                                                                 discord")
    end
@@ -124,7 +124,7 @@ end
 local function NAK()
  task.spawn(function()
             getgenv().on = true
-            while wait(1.3) do --// s
+            while task.wait(1.3) do --// s
                 if on then
                     game:GetService("NetworkClient"):SetOutgoingKBPSLimit(0/0)
                     local function getmaxvalue(val)
@@ -183,11 +183,11 @@ if not persons and perm then
 elseif not persons and not perm then
         PadCheck = true
         GetPad()
-        wait(1.5) 
+        task.wait(1.5) 
         if adminFlr.Pads:FindFirstChild(game.Players.LocalPlayer.Name.."'s admin") == nil then
               FindPad() -- no perm or persons, admin cannot be found
         else
-              wait(1.5)
+              task.wait(1.5)
               KillServer() -- no perm or persons, admin can be found
         end
 
@@ -200,11 +200,11 @@ elseif persons and perm then
 elseif persons and not perm then
        PadCheck = true
        GetPad()
-       wait(1.5) 
+       task.wait(1.5) 
        if adminFlr.Pads:FindFirstChild(game.Players.LocalPlayer.Name.."'s admin") == nil then
               FindPad() -- admin cannot be found
        else
-              wait(1.5)
+              task.wait(1.5)
               RCrash()
               PCrash() -- admin can be found
        end
