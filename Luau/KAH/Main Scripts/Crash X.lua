@@ -1,4 +1,5 @@
 -- Created by tech, modified by ts2021
+print("Crash X booted.")
 
 -- // variables \\ --
 local MarketplaceService = game:GetService("MarketplaceService")
@@ -212,3 +213,5 @@ elseif persons and not perm then
 else
 print("ERROR!")
 end
+
+-- after the crash shit add a serverhop
