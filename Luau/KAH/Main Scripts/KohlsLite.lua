@@ -107,6 +107,9 @@ local NameItem = theoptions[math.random(#theoptions)] ]]
 local padbanned = {"placeholder"} 
 local padreinforcements = false 
 
+local themes = {} -- one day...
+local themecode = {}
+
 local housekeybind = "h" -- Keybinds?!
 local rekeybind = "r"
 
