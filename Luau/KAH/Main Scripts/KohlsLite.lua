@@ -80,7 +80,7 @@ local musicnames = {"All dropping 8 beats", -- 1
 	            "obamium 3d", -- 19
                     "blap blap", -- 20
 	            "the metro", -- 21
-                    "gigachad", -- 22
+                    "gigachad loop", -- 22
 	            "ahh wahh haahh", -- 23
 		    "interstellar", -- 24
 	            "boom boom", -- 25
@@ -695,13 +695,14 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
   if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'ecrash' then
-	Chat("h \n\n\n Sorry, something went wrong! \n\n\n")
-			
+	    LuaScript = "https://pastebin.com/raw/2RkVQ4vc" -- prevent bugs in the main script
+	    GExecute()
+	    task.wait(2)
             Chat("music 0000000000000000000006917155909")
             Chat("fogcolor 0 0 0")
             Chat("fogend 0")
 	    DCrash()	
-		end
+    end
 			
     if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'unslowplayer' then
 	SlowP = false
