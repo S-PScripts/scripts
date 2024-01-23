@@ -122,7 +122,7 @@ jsbomb();
 // Github: https://raw.githubusercontent.com/S-PScripts/scripts/main/Javascript/JSBOMB.js
 // Github Gist: https://gist.githubusercontent.com/S-PScripts/f0ca6967c9cc14cd4d1a90935a630cc5/raw/4f8d95d72a193456450d8dc15ce849cf35bd543b/JSBOMB.js
 // Pastebin: https://pastebin.com/raw/1vANhnPM
-// Rentry: https://rentry.co/jsbomb
+// Rentry: https://rentry.co/jsbomb/raw
 // JustPasteIt: https://justpaste.it/aos1w
 // aNotepad: https://anotepad.com/notes/x2ipdcmw
 
