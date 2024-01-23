@@ -1,4 +1,4 @@
--- KOHLSLITE BY TS2021/S_P
+-- KOHLSLITE BY TS2021/S_P FOR KOHLS ADMIN HOUSE
 -- CREDITS TO MANY (stuff from https://github.com/S-PScripts/kah-fork)
 -- compiler used: https://www.tutorialspoint.com/execute_lua_online.php
 
