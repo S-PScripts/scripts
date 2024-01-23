@@ -1,4 +1,5 @@
 -- Created by tech, modified by ts2021
+-- where it says discord i mean the s word and f word (school filter :P)
 print("Crash X booted.")
 
 -- // variables \\ --
