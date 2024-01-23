@@ -4,6 +4,7 @@
 
 --[[ Things this script doesn't have...
 fixing parts, moving parts, finding parts, -- DON'T WORRY, THIS WILL COME OUT EVENTUALLY
+visualiser and parts because i have no persons wHaT a ShaME
 click annoy, click fard, click explode]]
 
 local prefix = "." -- ANY LENGTH :D
