@@ -204,12 +204,12 @@ else
 	print("You do not have Person299's Admin!")
 end
 
-local autocrash = false -- autocrash bc why not. put in auto exec
+local autocrash = false -- autocrash (bad but ah well)
 if autocrash == true then 
 	
-    Speak("skidcraft is the best game amirite")
+    Speak("skidblox is the best game amirite")
 	
-    if haspersons == true and hasperm == false then
+    --[[if haspersons == true and hasperm == false then
 	loopgrab = true
     	SCrash()
     elseif haspersons == true and hasperm == true then
@@ -220,7 +220,9 @@ if autocrash == true then
     else
 	loopgrab = true
 	DCrash()
-    end
+    end]]
+
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/Main%20Scripts/Crash%20X.lua"))()
 	
     task.wait(2) -- adjust
     SERVERHOP()
@@ -1703,7 +1705,7 @@ print("There are also many other antis (for you or for everyone)!")
 
 print("---")
 print("KohlsLite, since 2023. Created by S_P")
-print("Version is: v1.048 - 15th January 2024 Build")
+print("Version is: v1.048 - 23rd January 2024 Build")
 end
 
 -- CHECK FOR PERM
