@@ -1,0 +1,15 @@
+local Players = game:GetService("Players"):GetPlayers()
+local randomPlayer = "Placeholder"
+task.wait(2)
+if #Players > 0 then -- so it don't pick yourself
+    repeat
+    randomPlayer = Players[math.random(#Players)] 
+    until randomPlayer ~= game.Players.LocalPlayer
+end
+
+local StarterGui = game:GetService("StarterGui")
+
+-- Prompts the current player to block the given Player.
+StarterGui:SetCore("PromptBlockPlayer", randomPlayer)
+
+-- serverhop script...
