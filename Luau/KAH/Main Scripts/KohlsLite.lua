@@ -189,7 +189,7 @@ if not game.Players.LocalPlayer.Name == "ScriptingProgrammer" then
 	Chat("pm me Thank you for using KohlsLite v1.048. \n\n\n")
 end
 
-if string.match(game:HttpGet("https://inventory.roblox.com/v1/users/" .. game.Players.LocalPlayer.UserId .. "/items/GamePass/" .. permpassid), permpassid) then
+if string.match(game:HttpGet("https://inventory.roproxy.com/v1/users/" .. game.Players.LocalPlayer.UserId .. "/items/GamePass/" .. permpassid), permpassid) then
         perm = false 
 	hasperm = true -- used
 	print("A perm pad was not given - you have the Perm Admin gamepass!")
@@ -199,7 +199,7 @@ else
 	print("A perm pad was given - you don't have the Perm Admin gamepass!")
 end
 
-if string.match(game:HttpGet("https://inventory.roblox.com/v1/users/" .. game.Players.LocalPlayer.UserId .. "/items/GamePass/" .. personpassid), personpassid) then
+if string.match(game:HttpGet("https://inventory.roproxy.com/v1/users/" .. game.Players.LocalPlayer.UserId .. "/items/GamePass/" .. personpassid), personpassid) then
 	haspersons = true -- used!
 	print("You have Person299's Admin!")
 else
