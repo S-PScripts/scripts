@@ -2466,6 +2466,7 @@ local Playerrs = game:GetService("Players"):GetPlayers()
 if #Playerrs > 1 then
 	for i,v in pairs(game.Players:GetPlayers()) do
 		PLRSTART(v)
+	end
 end
 
 -- some antis and admin system
