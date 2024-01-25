@@ -2462,7 +2462,7 @@ else
 end
 end
 
-for i,v in pairs(game.Players:GetChildren()) do
+for i,v in pairs(game.Players:GetPlayers()) do
 	PLRSTART(v)
 end
 
@@ -3163,7 +3163,7 @@ game.Players.PlayerRemoving:Connect(onPlayerLeaving)
 
 -- SUPER COMMAND
 local function SuperCMD()
-        for i in 1,amon do
+        for i = 1,amon do
                  Chat(supermessage)
                  task.wait()
         end
