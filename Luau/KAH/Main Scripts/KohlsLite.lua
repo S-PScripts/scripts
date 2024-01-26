@@ -2849,16 +2849,16 @@ end
 -- FREEZE CRASH
 local function FCrash()
       for i = 1,100 do
-          Chat("clone all all all")
-          Chat("freeze all all all")
+          Chat("clone all all all				fuck")
+          Chat("freeze all all all				fuck")
       end
 end
 
 -- DOG CRASH
 local function DCrash()
       for i = 1,100 do
-          Chat("clone all all all")
-          Chat("dog all all all")
+          Chat("clone all all all				fuck")
+          Chat("dog all all all					fuck")
       end
 end
 
