@@ -2462,9 +2462,10 @@ else
 end
 end
 
-local Playerrs = game:GetService("Players"):GetPlayers()
-if #Playerrs > 1 then
+local playercount = game:GetService("Players"):GetPlayers()
+if #playercount > 1 then
 	for i,v in pairs(game.Players:GetPlayers()) do
+		task.wait(0)
 		PLRSTART(v)
 	end
 end
@@ -2473,6 +2474,7 @@ end
 function PLRSTART(v)
 plr.Chatted:Connect(function(msg)
      task.spawn(function()
+		task.wait(0)
                 if message:lower():find("/w") or message:lower():find("/c system") and v ~= game.Players.LocalPlayer then
                    if PingCsystem then
                         print(v.Name..' is using /c system or whispering commands.')
