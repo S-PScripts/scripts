@@ -896,6 +896,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	 game.Players.LocalPlayer.Character.Humanoid.Health = tonumber(string.sub(msg:lower(), #prefix + 6))
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'ufly' then
+	LuaScript = "https://raw.githubusercontent.com/S-PScripts/techls-fork/main/KAH%20Fly.lua"
+	GExecute()
+    end
+		
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'nocam' then
 		NoCam()
     end
@@ -1620,6 +1625,7 @@ print("---")
 print("sp - set your speed without the command")
 print("jp - set your jump power without the command")
 print("hlth - set your health without the command")
+print("ufly - the kah fly but without actually using the cmd!")
 	
 print("---")
 print("rejoin - rejoin the server you're in")
