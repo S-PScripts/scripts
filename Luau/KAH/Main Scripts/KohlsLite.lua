@@ -2667,7 +2667,7 @@ end
 -- LOOPGRAB 1
 --[[task.spawn(function()
     while true do 
-        task.wait()
+        task.wait(0)
         coroutine.wrap(function()
 			      if loopgrab == true then
 				        local pads = game:GetService("Workspace").Terrain["_Game"].Admin.Pads:GetChildren("Head")
@@ -2696,7 +2696,7 @@ end)
 -- LOOPGRAB 2
 task.spawn(function()
     while true do 
-        task.wait()
+        task.wait(0)
         coroutine.wrap(function()
 			        if loopgrab2 == true then
 				            local pads = game:GetService("Workspace").Terrain["_Game"].Admin.Pads:GetChildren("Head")
@@ -2721,7 +2721,7 @@ end)
 -- PERM 1
 task.spawn(function()
     while true do 
-        task.wait()
+        task.wait(0)
         coroutine.wrap(function()
 			      local spr = game.Players.LocalPlayer.Character:FindFirstChild("Head")
 			      if perm ~= true or workspace.Terrain._Game.Admin.Pads:FindFirstChild(game.Players.LocalPlayer.Name.."'s admin") ~= nil then 
@@ -2743,7 +2743,7 @@ end)
 -- PERM 2
 task.spawn(function()
     while true do
-    task.wait()
+    task.wait(0)
     coroutine.wrap(function()
 			local spr = game.Players.LocalPlayer.Character:FindFirstChild("Head")
 			if perm2 ~= true or workspace.Terrain._Game.Admin.Pads:FindFirstChild(game.Players.LocalPlayer.Name.."'s admin") ~= nil then 
@@ -2841,7 +2841,7 @@ while true do
 end)
 
 -- GOTO
---[[local function Goto()
+local function Goto()
 	 -- game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = gotou.Character.HumanoidRootPart.CFrame
           Chat("tp me"..gotou)
 end
@@ -2986,7 +2986,7 @@ local function NoCam()
 end
 
 -- INFINITE JUMP
-game:GetService("UserInputService").JumpRequest:Connect(function()
+--[[game:GetService("UserInputService").JumpRequest:Connect(function()
 	    task.wait(0)
             if INFJUMP == true then
                game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass('Humanoid'):ChangeState("Jumping")
