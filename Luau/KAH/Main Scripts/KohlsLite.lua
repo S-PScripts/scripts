@@ -2490,7 +2490,7 @@ if #playercount > 1 then
 end]]
 
 -- some antis and admin system
-function PLRSTART(plr)
+--[[function PLRSTART(plr)
 plr.Chatted:Connect(function(msg)
      task.wait(0)
      task.spawn(function()
@@ -2650,7 +2650,7 @@ plr.Chatted:Connect(function(msg)
     end)
 		
 end)
-end					
+end		]]			
 
 -- Backpack checker
 local function CheckBackpack()
@@ -2913,21 +2913,22 @@ end
 -- NAME HECK
 task.spawn(function()
       while true do
-      task.wait(0)
-      if SName == true then
-	         Chat("name ".. nameuser .." [BROKE]")
-      end
+      		task.wait(0)
+      		if SName == true then
+	         	Chat("name ".. nameuser .." [BROKE]")
+			task.wait(0)
+      		end
       end
 end)
 
 -- SLOW PLAYER
 task.spawn(function()
 	while true do
-	task.wait(0)
-	if SlowP == true then
-              Chat("gear ".. caruser .." 253519495")
-              task.wait(0)
-        end
+		task.wait(0)
+		if SlowP == true then
+              		Chat("gear ".. caruser .." 253519495")
+              		task.wait(0)
+        	end
 	end
 end)
 
@@ -2986,6 +2987,7 @@ end
 
 -- INFINITE JUMP
 game:GetService("UserInputService").JumpRequest:Connect(function()
+	    task.wait(0)
             if INFJUMP == true then
                game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass('Humanoid'):ChangeState("Jumping")
             end
@@ -3199,11 +3201,11 @@ end
 -- SPAM
 task.spawn(function()
 	while true do
-	task.wait(0)
-	if spam == true and spamon == true then
-            Chat(spamtext)
-            task.wait(spamwait)
-        end
+		task.wait(0)
+		if spam == true and spamon == true then
+            		Chat(spamtext)
+            		task.wait(spamwait)
+        	end
 	end
 end)
 
