@@ -1729,7 +1729,7 @@ print("Version is: v1.048 - 23rd January 2024 Build")
 end
 
 -- CHECK FOR PERM
---[[function checkforperm()
+function checkforperm()
 	if string.match(game:HttpGet("https://inventory.roblox.com/v1/users/" .. cplr.userId .. "/items/GamePass/" .. permpassid), permpassid) then
 	   print(player.." has perm!")
 	   table.insert(permusers,player)
@@ -2189,7 +2189,7 @@ function PLAYERCHECK(plr)
 end
 
 -- ANTI CRASH 2
-game:GetService("RunService").RenderStepped:Connect(function()
+--[[game:GetService("RunService").RenderStepped:Connect(function()
 	task.wait(0)
         for _, Player in pairs(game.Players:GetChildren()) do
             if Player.Backpack:FindFirstChild("VampireVanquisher") or Player.Character:FindFirstChild("VampireVanquisher") and anticrash2 then
