@@ -700,6 +700,16 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	spamon = true
     end
 
+  if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'boombox' then -- shortcut cmd lol
+	local ubox = string.sub(msg:lower(), #prefix + 9)
+	if ubox ~= "" then
+		Chat("gear "..ubox.." 000000000000000000212641536")
+		Chat("pm"..ubox.." play your music on the boombox pls")
+	else
+		Chat("gear me 000000000000000000212641536")
+	end
+  end
+
   if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'ecrash' then
 	    LuaScript = "https://pastebin.com/raw/2RkVQ4vc" -- prevent bugs in the main script
 	    GExecute()
