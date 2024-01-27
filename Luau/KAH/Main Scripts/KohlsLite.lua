@@ -232,6 +232,7 @@ if autocrash == true then
 end 
 
 game.Players.LocalPlayer.Chatted:Connect(function(msg)
+	task.wait(0)
     	if string.sub(msg:lower(), 1, #prefix + 4) == prefix.."cmds" then
           CMDPrint()
         end
@@ -2333,6 +2334,7 @@ local function checkPlayerPBackpack(player)
 end
 
 game.Players.PlayerAdded:Connect(function(player)
+    task.wait(0)
     player.CharacterAdded:Connect(function(character)
             checkPlayerBackpack(player)
 	    checkPlayerGBackpack(player)
@@ -2434,6 +2436,7 @@ end
 
 -- keybinds
 game.Players.LocalPlayer:GetMouse().KeyDown:connect(function(key)
+	task.wait(0)
 	if key:lower() == housekeybind then
 		House()
 	end
@@ -2489,6 +2492,7 @@ end
 -- some antis and admin system
 function PLRSTART(v)
 plr.Chatted:Connect(function(msg)
+     task.wait(0)
      task.spawn(function()
 		task.wait(0)
                 if message:lower():find("/w") or message:lower():find("/c system") and v ~= game.Players.LocalPlayer then
@@ -3109,6 +3113,7 @@ end
 
 -- WELCOME/LEAVE MSG
 local function onPlayerAdded(player)
+    task.wait(0)
      PLRSTART(player)
     if welcomemsg == true and alladmin == true and table.find(whitelist, player.Name) then
     	 Chat("h \n\n\n [KohlsLite]: Welcome to the server, " .. player.Name .. ". Chat any comand. You are whitelisted from serverlocks! \n\n\n")
@@ -3163,6 +3168,7 @@ local function onPlayerAdded(player)
 end
 
 local function onPlayerLeaving(player)
+    task.wait(0)
     if welcomemsg == true then
     	 Chat("h \n\n\n [KohlsLite]: Goodbye, " .. player.Name .. ". \n\n\n")
 	 print(player.Name.." left the server.")
@@ -3205,8 +3211,8 @@ end)
 -- AUTOAFK
 local UserInputService = game:GetService("UserInputService")
     
-UserInputService.WindowFocusReleased:Connect(
-    function()
+UserInputService.WindowFocusReleased:Connect(function()
+	task.wait(0)
     	if autoafk == true then
     		Chat("name me AFK")
     		Chat("ff me")
@@ -3214,8 +3220,8 @@ UserInputService.WindowFocusReleased:Connect(
    	 end
 end)
 
-UserInputService.WindowFocused:Connect(
-    function()
+UserInputService.WindowFocused:Connect(function()
+	task.wait(0)
     	if autoafk == true then
         	Chat("reset me")
         	Chat("unff me")
