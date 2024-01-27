@@ -6,7 +6,10 @@ execu = true
 
 -- KohlsLite
 task.spawn(function()
-    if execu == true then
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/Main%20Scripts/KohlsLite.lua"))()
-      end
+    while true do
+        task.wait(0)
+        if execu == true then
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/Main%20Scripts/KohlsLite.lua"))()
+        end
+    end
 end)
