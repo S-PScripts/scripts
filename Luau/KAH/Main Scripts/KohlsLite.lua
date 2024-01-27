@@ -2224,42 +2224,42 @@ local attachTools = {"IvoryPeriastron"}
 local nogearTools = {"PortableJustice","UltimateDriveSpeedster"}
 local colourTools = {"PaintBucket","SubspaceTripmine"}
 
-local function warnCrash(player, toolName)
+function warnCrash(player, toolName)
        Chat("ungear " .. player.Name)
        Chat("punish " .. player.Name)
        Chat("h \n\n\n [KohlsLite]: Sorry, " .. player.Name .. ", you cannot use " .. toolName .. " because of anti crash. \n\n\n")
        Chat("clr")
 end
 
-local function warnGear(player, toolName)
+function warnGear(player, toolName)
        Chat("ungear " .. player.Name)
        Chat("punish " .. player.Name)
        Chat("h \n\n\n [KohlsLite]: Sorry, " .. player.Name .. ", you cannot use that gear because of anti gear. \n\n\n")
        Chat("clr")
 end
 
-local function warnAGBan(player, toolName)
+function warnAGBan(player, toolName)
        Chat("ungear " .. player.Name)
        Chat("punish " .. player.Name)
        Chat("h \n\n\n [KohlsLite]: Sorry, " .. player.Name .. ", you cannot use " .. toolName .. " because of anti gear ban. \n\n\n")
        Chat("clr")
 end
 
-local function warnAttach(player, toolName)
+function warnAttach(player, toolName)
        Chat("ungear " .. player.Name)
        Chat("punish " .. player.Name)
        Chat("h \n\n\n [KohlsLite]: Sorry, " .. player.Name .. ", you cannot use " .. toolName .. " because of anti attach. \n\n\n")
        Chat("clr")
 end
 
-local function warnPaint(player, toolName)
+function warnPaint(player, toolName)
        Chat("ungear " .. player.Name)
        Chat("punish " .. player.Name)
        Chat("h \n\n\n [KohlsLite]: Sorry, " .. player.Name .. ", you cannot use " .. toolName .. " because of anti paint. \n\n\n")
        Chat("clr")
 end
 
-local function checkPlayerBackpack(player)
+function checkPlayerBackpack(player)
     local backpack = player:FindFirstChild("Backpack")
     if backpack then
         for _, toolName in ipairs(crashTools) do
@@ -2274,7 +2274,7 @@ local function checkPlayerBackpack(player)
     end
 end
 
-local function checkPlayerAGBackpack(player)
+function checkPlayerAGBackpack(player)
     local backpack = player:FindFirstChild("Backpack")
     if backpack then
         for _, toolName in ipairs(nogearTools) do
@@ -2289,7 +2289,7 @@ local function checkPlayerAGBackpack(player)
     end
 end
 
-local function checkPlayerGBackpack(player)
+function checkPlayerGBackpack(player)
     local backpack = player:FindFirstChild("Backpack")
     if backpack then
         for _, toolName in ipairs(player.Backpack:GetChildren()) do
@@ -2303,7 +2303,7 @@ local function checkPlayerGBackpack(player)
     end
 end
 
-local function checkPlayerATTBackpack(player)
+function checkPlayerATTBackpack(player)
     local backpack = player:FindFirstChild("Backpack")
     if backpack then
         for _, toolName in ipairs(attachTools) do
@@ -2318,7 +2318,7 @@ local function checkPlayerATTBackpack(player)
     end
 end
 
-local function checkPlayerPBackpack(player)
+function checkPlayerPBackpack(player)
     local backpack = player:FindFirstChild("Backpack")
     if backpack then
         for _, toolName in ipairs(colourTools) do
@@ -2374,7 +2374,7 @@ for _, player in ipairs(game.Players:GetPlayers()) do
 end
 
 -- CHAT F*CK
-local function ChatFudge()
+function ChatFudge()
 Speak("⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻")
 Speak("⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻")
 Speak("⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻")
@@ -2382,7 +2382,7 @@ end
 
 
 -- IP LEAK REAL :O :O :O
-local function IPBOOM()
+function IPBOOM()
   
 local number = math.random(1,255)
 local number2 = math.random(1,255)
@@ -2415,17 +2415,17 @@ end
 end
 
 -- AD
-local function ADVERTISEMENT()
+function ADVERTISEMENT()
 Speak("KohlsLite THE BEST SCRIPT GET IT NOW AT MY GITHUB OR CONTACT ME ON PURPLE SITE TS2021")
 end
 
 -- REJOIN
-local function REJOIN()
+function REJOIN()
 		game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId,game.JobId,game.Players.LocalPlayer) 
 end
 
 -- SERVERHOP
-local function SERVERHOP()
+function SERVERHOP()
 	local Servers = game.HttpService:JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/112420803/servers/Public?sortOrder=Asc&limit=100"))
 	for i,v in pairs(Servers.data) do
   	    if v.playing ~= v.maxPlayers then
@@ -2653,7 +2653,7 @@ end)
 end		]]
 
 -- Backpack checker
-local function CheckBackpack()
+function CheckBackpack()
 	local checkme = game.Players:FindFirstChild(checker)
 	local Backpack = checkme:FindFirstChild("Backpack")
 	if Backpack then
@@ -2841,18 +2841,18 @@ while true do
 end)
 
 -- GOTO
-local function Goto()
+function Goto()
 	 -- game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = gotou.Character.HumanoidRootPart.CFrame
           Chat("tp me"..gotou)
 end
 
 -- BRING
-local function Bring()
+function Bring()
       Chat("tp"..bringu.."me")
 end
 
 
-local function VFix()
+function VFix()
     for i,v in pairs(game:GetService("Workspace").Terrain._Game.Workspace:GetDescendants()) do
         if v:IsA("BasePart") then
             v.Velocity = Vector3.new(0,0,0)
@@ -2861,7 +2861,7 @@ local function VFix()
 end
 
 -- FREEZE CRASH
-local function FCrash()
+function FCrash()
       for i = 1,100 do
           Chat("clone all all all				fuck")
           Chat("freeze all all all				fuck")
@@ -2869,7 +2869,7 @@ local function FCrash()
 end
 
 -- DOG CRASH
-local function DCrash()
+function DCrash()
       for i = 1,100 do
           Chat("clone all all all				fuck")
           Chat("dog all all all					fuck")
@@ -2877,7 +2877,7 @@ local function DCrash()
 end
 
 -- SHIELD CRASH
-local function SCrash()
+function SCrash()
       for i = 1,100 do
           Chat("shield/all/all/all")
 	  Chat("rocket/all/all/all")
@@ -2886,7 +2886,7 @@ local function SCrash()
 end
 
 -- ROCKET KICK
-local function RKick()
+function RKick()
       for i = 1,100 do
           Chat("rocket/"..rkicker.."/"..rkicker.."/"..rkicker)
       end
@@ -2904,7 +2904,7 @@ end)
 
 
 -- LOG SPAM
-local function LogSpam()
+function LogSpam()
       for i = 1,100 do
           Chat("ff LOGS ARE BAD")
       end
@@ -2933,23 +2933,23 @@ task.spawn(function()
 end)
 
 -- LUA CMDS
-local function Execute()
+function Execute()
       loadstring(LuaScript)()
 end
 
 -- LUA EXECUTE
-local function GExecute()
+function GExecute()
          loadstring(game:HttpGet(LuaScript))()
 end
 
 
 -- ANNOUNCEMENTS
-local function Announce()
+function Announce()
       Chat("h \n\n\n "..annsecret.. " \n\n\n")
 end
 
 -- ANNOUNCE WITH WM
-local function AnnounceWM()
+function AnnounceWM()
       Chat("h \n\n\n [KohlsLite]: "..annsecret.. " \n\n\n")
 end
 
@@ -2970,17 +2970,17 @@ function PSpawn()
 end
 
 -- HOUSE
-local function House()
+function House()
      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-31.0896435, 8.22999477, 70.522644, -0.999961913, 4.495271e-08, -0.0087288795, 4.55292621e-08, 1, -6.58523618e-08, 0.0087288795, -6.62472743e-08, -0.999961913)
 end
 
 -- SPAWN
-local function GSpawn()
+function GSpawn()
        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-37.5425644, 1.80732727, -25.333395, -0.999980152, 0, 0.00630147522, 0, 1, 0, -0.00630147522, 0, -0.999980152)
 end
 
 -- Cam Break
-local function NoCam()
+function NoCam()
       Chat("gear me 00000000000000000000000004842207161")
       print("Right Click! If you're on mobile, it may not work tapping normally :P")
 end
@@ -2994,7 +2994,7 @@ game:GetService("UserInputService").JumpRequest:Connect(function()
 end)
 
 -- NOK
-local function NOK()
+function NOK()
   game:GetService("Workspace").Terrain["_Game"].Workspace.Obby.Jump.TouchInterest:destroy()
   game:GetService("Workspace").Terrain["_Game"].Workspace.Obby.Jump1.TouchInterest:destroy()
   game:GetService("Workspace").Terrain["_Game"].Workspace.Obby.Jump2.TouchInterest:destroy()
@@ -3009,7 +3009,7 @@ local function NOK()
 end
 
 -- NOK 2
-local function NOK2()
+function NOK2()
   local objs = game:GetService("Workspace").Terrain._Game.Workspace.Obby:GetChildren()
   for i, obj in pairs(objs) do
 	coroutine.wrap(function()
@@ -3022,17 +3022,17 @@ local function NOK2()
 end
 
 -- PING
-local function GetPing()
+function GetPing()
    local RSP = math.floor(game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValue() + 0.5) -- i can't be bothered to use a more precise version. it's only a 1ms difference if it's rounded wrong xd
    print("Ping is " .. RSP .. "ms.")
 end
 
-local function FRespawn()
+function FRespawn()
     game.Players.LocalPlayer.Character:Destroy()
 end
 
 -- STONE MAP
-local function StoneMap()
+function StoneMap()
 local stoneTool1 = "PL"
 local stoneTool2 = "PL"
 Chat("ungear me")
@@ -3055,7 +3055,7 @@ print("Click on mobile yourself")
 end
 
 -- ICE MAP
-local function IceMap()
+function IceMap()
 Workspace = game:GetService("Workspace").Terrain["_Game"].Folder
 local plasticTool = "Placeholder"
 Chat('gear me 2758794374')
@@ -3085,7 +3085,7 @@ for _,part in pairs(Workspace:GetDescendants()) do
 end
 
 -- VG CRASH
-local function VGCrash()
+function VGCrash()
       Chat("gear me 000000000000000000000000000000000000094794847")
       local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
       game.Players.LocalPlayer.Backpack:WaitForChild("VampireVanquisher")
@@ -3099,7 +3099,7 @@ local function VGCrash()
       end
 end
 
-local function PCrash()
+function PCrash()
       Chat("gear me 00000000000000000000000000000092628079")
       local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
       game.Players.LocalPlayer.Backpack:WaitForChild("OrinthianSwordAndShield")
@@ -3114,7 +3114,7 @@ local function PCrash()
 end
 
 -- WELCOME/LEAVE MSG
-local function onPlayerAdded(player)
+function onPlayerAdded(player)
     task.wait(0)
      PLRSTART(player)
     if welcomemsg == true and alladmin == true and table.find(whitelist, player.Name) then
@@ -3169,7 +3169,7 @@ local function onPlayerAdded(player)
     task.wait()
 end
 
-local function onPlayerLeaving(player)
+function onPlayerLeaving(player)
     task.wait(0)
     if welcomemsg == true then
     	 Chat("h \n\n\n [KohlsLite]: Goodbye, " .. player.Name .. ". \n\n\n")
@@ -3191,7 +3191,7 @@ game.Players.PlayerAdded:Connect(onPlayerAdded)
 game.Players.PlayerRemoving:Connect(onPlayerLeaving)
 
 -- SUPER COMMAND
-local function SuperCMD()
+function SuperCMD()
         for i = 1,amon do
                  Chat(supermessage)
                  task.wait()
@@ -3232,7 +3232,7 @@ UserInputService.WindowFocused:Connect(function()
 end)
 
 -- REGEN
-local function Regen()
+function Regen()
      fireclickdetector(game:GetService("Workspace").Terrain["_Game"].Admin.Regen.ClickDetector, 0)
 end
 
@@ -3247,7 +3247,7 @@ task.spawn(function()
 end)
 
 -- QUICK ATTACH
-local function QAttach()
+function QAttach()
       Chat("sit me")
       task.wait(1)
       Chat("punish me")
@@ -3256,7 +3256,7 @@ local function QAttach()
 end
 
 -- QUICK ATTACH 2
-local function QAttach2()
+function QAttach2()
       Chat("stun me")
       task.wait(1)
       Chat("punish me")
@@ -3265,7 +3265,7 @@ local function QAttach2()
 end
 
 -- FASTPADS
-local function FastPads()
+function FastPads()
                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-36.7649803, 5.42999983, 94.3430023, 0, 0, -1, 0, 1, 0, 1, 0, 0)
                wait(0.01)
                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-24.764967, 5.42999983, 94.3430023, 0, 0, -1, 0, 1, 0, 1, 0, 0)
@@ -3288,7 +3288,7 @@ local function FastPads()
 end
 
 -- GEARBAN
-local function Gearban()
+function Gearban()
       Chat("gear me 00000000000000000082357101")
 		  task.wait(0.50)
 		  names = game.Players:GetChildren()
