@@ -2189,7 +2189,7 @@ function PLAYERCHECK(plr)
 end
 
 -- ANTI CRASH 2
---[[game:GetService("RunService").RenderStepped:Connect(function()
+game:GetService("RunService").RenderStepped:Connect(function()
 	task.wait(0)
         for _, Player in pairs(game.Players:GetChildren()) do
             if Player.Backpack:FindFirstChild("VampireVanquisher") or Player.Character:FindFirstChild("VampireVanquisher") and anticrash2 then
@@ -2481,7 +2481,7 @@ else
 end
 end
 
-local playercount = game:GetService("Players"):GetPlayers()
+--[[local playercount = game:GetService("Players"):GetPlayers()
 if #playercount > 1 then
 	for i,v in pairs(game.Players:GetPlayers()) do
 		task.wait(0)
