@@ -836,11 +836,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
        Chat("h \n\n\n [KohlsLite]: Everyone has been given admin! Chat any command. \n\n\n")
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'NOK' then
+    if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'nok' then
 		NOK()
     end
 		
-    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'NOK2' then
+    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'nok2' then
 		NOK2()
     end
 
