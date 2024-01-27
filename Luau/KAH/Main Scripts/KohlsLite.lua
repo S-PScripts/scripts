@@ -2665,7 +2665,7 @@ end
 
 
 -- LOOPGRAB 1
---[[task.spawn(function()
+task.spawn(function()
     while true do 
         task.wait(0)
         coroutine.wrap(function()
@@ -2783,7 +2783,7 @@ task.spawn(function()
             end
         end
   end
-end)]]
+end)
 
 -- PAD REINFORCEMENTS AND PADBANNED
 task.spawn(function()
