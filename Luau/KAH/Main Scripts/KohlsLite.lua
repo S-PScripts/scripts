@@ -2481,7 +2481,7 @@ else
 end
 end
 
---[[local playercount = game:GetService("Players"):GetPlayers()
+local playercount = game:GetService("Players"):GetPlayers()
 if #playercount > 1 then
 	for i,v in pairs(game.Players:GetPlayers()) do
 		task.wait(0)
@@ -2665,7 +2665,7 @@ end
 
 
 -- LOOPGRAB 1
-task.spawn(function()
+--[[task.spawn(function()
     while true do 
         task.wait()
         coroutine.wrap(function()
