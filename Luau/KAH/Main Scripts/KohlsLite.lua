@@ -2481,7 +2481,7 @@ else
 end
 end
 
-local playercount = game:GetService("Players"):GetPlayers()
+--[[local playercount = game:GetService("Players"):GetPlayers()
 if #playercount > 1 then
 	for i,v in pairs(game.Players:GetPlayers()) do
 		task.wait(0)
@@ -2650,7 +2650,7 @@ plr.Chatted:Connect(function(msg)
     end)
 		
 end)
-end			
+end		]]	
 
 -- Backpack checker
 local function CheckBackpack()
@@ -2665,7 +2665,7 @@ end
 
 
 -- LOOPGRAB 1
---[[task.spawn(function()
+task.spawn(function()
     while true do 
         task.wait()
         coroutine.wrap(function()
@@ -2841,7 +2841,7 @@ while true do
 end)
 
 -- GOTO
-local function Goto()
+--[[local function Goto()
 	 -- game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = gotou.Character.HumanoidRootPart.CFrame
           Chat("tp me"..gotou)
 end
