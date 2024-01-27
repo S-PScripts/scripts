@@ -182,7 +182,7 @@ end
 local permpassid = 66254 or 64354 -- don't edit
 local personpassid = 35748 or 37127 -- don't edit
 
-print("~~~Thank you for using KohlsLiteT. Created by S_P.~~~")
+print("~~~Thank you for using KohlsLiteLol. Created by S_P.~~~")
 Chat("h \n\n\n [KohlsLite]: Executed! v1.048 \n\n\n")
 
 if not game.Players.LocalPlayer.Name == "ScriptingProgrammer" then
@@ -3114,7 +3114,7 @@ local function PCrash()
 end
 
 -- WELCOME/LEAVE MSG
---[[local function onPlayerAdded(player)
+local function onPlayerAdded(player)
     task.wait(0)
      PLRSTART(player)
     if welcomemsg == true and alladmin == true and table.find(whitelist, player.Name) then
@@ -3308,7 +3308,7 @@ local function Gearban()
 end
 
 -- PAINT ESSENTIALS
-function COLOURURL()
+--[[function COLOURURL()
 colorAPI = {}
  
 colorAPI.color = function(Part, color)
@@ -3566,5 +3566,4 @@ end)
 		end)
 wait(0.6)
 Chat("ungear 000000000000000000000000000000000000000000000000000000000 me "..math.random(1,1000))
-end
-]]
+end]]
