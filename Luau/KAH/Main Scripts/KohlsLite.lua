@@ -2481,16 +2481,16 @@ else
 end
 end
 
-local playercount = game:GetService("Players"):GetPlayers()
+--[[local playercount = game:GetService("Players"):GetPlayers()
 if #playercount > 1 then
 	for i,v in pairs(game.Players:GetPlayers()) do
 		task.wait(0)
 		PLRSTART(v)
 	end
-end
+end]]
 
 -- some antis and admin system
-function PLRSTART(v)
+function PLRSTART(plr)
 plr.Chatted:Connect(function(msg)
      task.wait(0)
      task.spawn(function()
