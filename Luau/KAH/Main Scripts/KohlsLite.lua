@@ -182,7 +182,7 @@ end
 local permpassid = 66254 or 64354 -- don't edit
 local personpassid = 35748 or 37127 -- don't edit
 
-print("~~~Thank you for using KohlsLite. Created by S_P.~~~")
+print("~~~Thank you for using KohlsLiteT. Created by S_P.~~~")
 Chat("h \n\n\n [KohlsLite]: Executed! v1.048 \n\n\n")
 
 if not game.Players.LocalPlayer.Name == "ScriptingProgrammer" then
@@ -2665,7 +2665,7 @@ end
 
 
 -- LOOPGRAB 1
-task.spawn(function()
+--[[task.spawn(function()
     while true do 
         task.wait(0)
         coroutine.wrap(function()
@@ -2783,7 +2783,7 @@ task.spawn(function()
             end
         end
   end
-end)
+end)]]
 
 -- PAD REINFORCEMENTS AND PADBANNED
 task.spawn(function()
@@ -2986,7 +2986,7 @@ local function NoCam()
 end
 
 -- INFINITE JUMP
---[[game:GetService("UserInputService").JumpRequest:Connect(function()
+game:GetService("UserInputService").JumpRequest:Connect(function()
 	    task.wait(0)
             if INFJUMP == true then
                game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass('Humanoid'):ChangeState("Jumping")
@@ -3114,7 +3114,7 @@ local function PCrash()
 end
 
 -- WELCOME/LEAVE MSG
-local function onPlayerAdded(player)
+--[[local function onPlayerAdded(player)
     task.wait(0)
      PLRSTART(player)
     if welcomemsg == true and alladmin == true and table.find(whitelist, player.Name) then
