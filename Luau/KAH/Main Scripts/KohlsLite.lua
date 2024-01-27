@@ -1729,7 +1729,7 @@ print("Version is: v1.048 - 23rd January 2024 Build")
 end
 
 -- CHECK FOR PERM
-function checkforperm()
+--[[function checkforperm()
 	if string.match(game:HttpGet("https://inventory.roblox.com/v1/users/" .. cplr.userId .. "/items/GamePass/" .. permpassid), permpassid) then
 	   print(player.." has perm!")
 	   table.insert(permusers,player)
@@ -2435,7 +2435,7 @@ local function SERVERHOP()
 end
 
 -- keybinds
---[[game.Players.LocalPlayer:GetMouse().KeyDown:connect(function(key)
+game.Players.LocalPlayer:GetMouse().KeyDown:connect(function(key)
 	task.wait(0)
 	if key:lower() == housekeybind then
 		House()
@@ -2443,7 +2443,7 @@ end
 	if key:lower() == rekeybind then
 		Chat("reset me")
 	end	
-end)]]
+end)
 	
 -- GIF OR JIF
 function GIFORJIF()
@@ -2481,16 +2481,16 @@ else
 end
 end
 
---[[local playercount = game:GetService("Players"):GetPlayers()
+local playercount = game:GetService("Players"):GetPlayers()
 if #playercount > 1 then
 	for i,v in pairs(game.Players:GetPlayers()) do
 		task.wait(0)
 		PLRSTART(v)
 	end
-end]]
+end
 
 -- some antis and admin system
---[[function PLRSTART(plr)
+function PLRSTART(plr)
 plr.Chatted:Connect(function(msg)
      task.wait(0)
      task.spawn(function()
@@ -2650,7 +2650,7 @@ plr.Chatted:Connect(function(msg)
     end)
 		
 end)
-end		]]			
+end			
 
 -- Backpack checker
 local function CheckBackpack()
@@ -2986,12 +2986,12 @@ local function NoCam()
 end
 
 -- INFINITE JUMP
---[[game:GetService("UserInputService").JumpRequest:Connect(function()
+game:GetService("UserInputService").JumpRequest:Connect(function()
 	    task.wait(0)
             if INFJUMP == true then
                game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass('Humanoid'):ChangeState("Jumping")
             end
-end)]]
+end)
 
 -- NOK
 local function NOK()
@@ -3211,7 +3211,7 @@ end)
 
 
 -- AUTOAFK
---[[local UserInputService = game:GetService("UserInputService")
+local UserInputService = game:GetService("UserInputService")
     
 UserInputService.WindowFocusReleased:Connect(function()
 	task.wait(0)
@@ -3229,7 +3229,7 @@ UserInputService.WindowFocused:Connect(function()
         	Chat("unff me")
         	Chat("ungod me")
    	 end
-end)]]
+end)
 
 -- REGEN
 local function Regen()
@@ -3567,3 +3567,4 @@ end)
 wait(0.6)
 Chat("ungear 000000000000000000000000000000000000000000000000000000000 me "..math.random(1,1000))
 end
+]]
