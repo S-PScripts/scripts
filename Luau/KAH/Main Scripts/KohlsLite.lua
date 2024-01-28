@@ -561,12 +561,12 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         musicoff = false
     end
 		
-    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'remusic' then
+ --[[   if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'remusic' then
        if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
 	  local myid  = game:GetService("Workspace").Terrain["_Game"].Folder.Sound.SoundId 
 	  Chat("music "..myid)
        end
-     end
+     end]]
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'vgcrash' then
 	VGCrash()
