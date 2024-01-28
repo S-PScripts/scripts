@@ -938,7 +938,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'perm' then
 	perm = true
     end
-    end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'perm2' then
 	perm3 = true
@@ -2446,8 +2445,9 @@ for i,v in pairs(game.Players:GetPlayers()) do
 end
 
 -- some antis and admin system
-function PLRSTART(plr)
-plr.Chatted:Connect(function(msg)
+function PLRSTART(v)
+while true do
+v.Chatted:Connect(function(msg)
      task.wait(0)
      task.spawn(function()
 		task.wait(0)
@@ -2606,7 +2606,8 @@ plr.Chatted:Connect(function(msg)
     end)
 		
 end)
-end		]]
+end
+end		
 
 -- Backpack checker
 function CheckBackpack()
@@ -2692,7 +2693,7 @@ task.spawn(function()
             end
         end
   end
-end)]]
+end)
 
 -- PAD REINFORCEMENTS AND PADBANNED
 task.spawn(function()
