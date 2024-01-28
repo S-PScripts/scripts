@@ -1,23 +1,17 @@
 function kick()
     vk = game:GetService("Workspace").Remote.votekick
     vs = workspace.Remote.votekick
+    local plr = game.Players[player]
     for i = 1,100 do
-	    print("kicking"..cplr.."that's cool")
-	    print("kicking 2"..cplr.."that's cool")
+	    print("kicking a player")
 	    vk:InvokeServer(unpack(explosion))
-	    vk:InvokeServer(unpack(explosion2))
 	    vs:InvokeServer(unpack(explosion))
-	    vs:InvokeServer(unpack(explosion2))
-	    vk:InvokeServer("Start",game.Players[cplr])
-	    vk:InvokeServer("Start",game.Players[player])
-	    vs:InvokeServer("Start",game.Players[cplr])
-	    vs:InvokeServer("Start",game.Players[player])
+	    vk:InvokeServer("Start",plr)
+	    vs:InvokeServer("Start",plr)
 	    vk:InvokeServer("Vote")
             vs:InvokeServer("Vote")
-            vk:InvokeServer("Vote",game.Players[cplr])
-	    vk:InvokeServer("Vote",game.Players[player])
-	    vs:InvokeServer("Vote",game.Players[cplr])
-	    vs:InvokeServer("Vote",game.Players[player])
+	    vk:InvokeServer("Vote",plr)
+	    vs:InvokeServer("Vote",plr)
     end
 end
 
@@ -43,7 +37,6 @@ function PLAYERCHECK(plr)
           player = v.Name
 	  cplr = v
 	  explosion = {"Start", player}
-	  explosion2 = {"Start", cplr}
           print("Found"..player)
       end
   end
