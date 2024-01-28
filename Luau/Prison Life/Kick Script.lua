@@ -2,8 +2,8 @@ function kick()
     vk = game:GetService("Workspace").Remote.votekick
     vs = workspace.Remote.votekick
     for i = 1,100 do
-	    print("kicking"..cplr)
-	    print("kicking 2"..player)
+	    print("kicking"..cplr.."that's cool")
+	    print("kicking 2"..cplr.."that's cool")
 	    vk:InvokeServer(unpack(explosion))
 	    vk:InvokeServer(unpack(explosion2))
 	    vs:InvokeServer(unpack(explosion))
