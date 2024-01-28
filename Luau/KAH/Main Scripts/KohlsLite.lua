@@ -7,6 +7,13 @@ fixing parts, moving parts, finding parts, -- DON'T WORRY, THIS WILL COME OUT EV
 visualiser and parts because i have no persons wHaT a ShaME
 click annoy, click fard, click explode]]
 
+if shared.executed then 
+	return 
+	print("Did you execute this script twice?") 
+end
+
+shared.executed = true
+
 local prefix = "." -- ANY LENGTH :D
 local blacklist = {"sgoslee"} -- slocked users
 local whitelist = {"me_123eq","me_crashking","ScriptingProgrammer","G_ODt","BANNter_Original","witnessfox22"} -- not affected by slock
