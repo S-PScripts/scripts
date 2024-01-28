@@ -1,6 +1,6 @@
 function kick()
     local vk = game:GetService("Workspace").Remote.votekick
-    vk:InvokeServer("Start",game.Players[cplr])
+    vk:InvokeServer(unpack(explosion))
     for i = 1,1000 do
             vk:InvokeServer("Vote")
     end
@@ -26,7 +26,8 @@ function PLAYERCHECK(plr)
   for i, v in pairs(game.Players:GetPlayers()) do
       if string.sub(v.Name:lower(), 1, #plr) == plr then
           player = v.Name
-	        cplr = v
+	  cplr = v
+	  explosion = {"Start", cplr}
           print("Found"..player)
       end
   end
