@@ -143,10 +143,8 @@ local YOUantistun = true
 local YOUantiswag = true ]]
 
 local perm = false
-local perm2 = false
 local perm3 = false
 local loopgrab = false
-local loopgrab2 = false
 
 local anticrash = true
 local anticrash2 = false
@@ -211,19 +209,6 @@ local autocrash = false -- autocrash (bad but ah well)
 if autocrash == true then 
 	
     Speak("skidblox is the best game amirite")
-	
-    --[[if haspersons == true and hasperm == false then
-	loopgrab = true
-    	SCrash()
-    elseif haspersons == true and hasperm == true then
-	SCrash()
-	DCrash()
-    elseif haspersons == false and hasperm == true then
-	DCrash()
-    else
-	loopgrab = true
-	DCrash()
-    end]]
 
     loadstring(game:HttpGet("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/Main%20Scripts/Crash%20X.lua"))()
 	
@@ -561,12 +546,13 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         musicoff = false
     end
 		
- --[[   if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'remusic' then
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'remusic' then
        if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
 	  local myid  = game:GetService("Workspace").Terrain["_Game"].Folder.Sound.SoundId 
-	  Chat("music "..myid)
+	  local myidfix = myid:match("(%d+)$")
+	  Chat("music "..myidfix)
        end
-     end]]
+     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'vgcrash' then
 	VGCrash()
@@ -940,14 +926,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
      if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'fastpads' then
 		FastPads()
      end
-		
-    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'loopgrab2' then
-	loopgrab2 = true
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'lg2' then
-	loopgrab2 = true
-    end
 
     if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unloopgrab' then
 	loopgrab = false
@@ -957,23 +935,12 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	loopgrab = false
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unloopgrab2' then
-	loopgrab2 = false
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'unlg2' then
-	loopgrab2 = false
-    end
-
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'perm' then
 	perm = true
     end
-
-    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'perm2' then
-	perm2 = true
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'perm3' then
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'perm2' then
 	perm3 = true
     end
 		
@@ -982,10 +949,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'unperm2' then
-	perm2 = false
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'unperm3' then
 	perm3 = false
     end
 		
@@ -1499,21 +1462,17 @@ print("-COMMAND LIST FOR KOHLSLITE-")
 
 print("---")
 print("perm - loopgrab a random pad (touch interest)")
-print("perm2 - loopgrab a random pad (touch interest)")
-print("perm3 - loopgrab a random pad (collisions)")
+print("perm2 - loopgrab a random pad (collisions)")
 
 print("---")
 print("unperm - stop loopgrabing a pad(perm)")
 print("unperm2 - stop loopgrabing a pad (perm2)")
-print("unperm2 - stop loopgrabing a pad (perm3)")
 
 print("---")
 print("loopgrab/lg - loopgrab all the pads (touch interest)")
-print("loopgrab2/lg2 - loopgrab all the pads (touch interest)")
 
 print("---")
 print("unloopgrab/unlg - stop loopgrabing all the pads")
-print("unloopgrab2/unlg2 - stop loopgrabing all the pads")
 
 print("---")
 print("fastpads - quickly tp to all the pads")
@@ -2481,12 +2440,9 @@ else
 end
 end
 
---[[local playercount = game:GetService("Players"):GetPlayers()
-if #playercount > 1 then
-	for i,v in pairs(game.Players:GetPlayers()) do
-		task.wait(0)
-		PLRSTART(v)
-	end
+for i,v in pairs(game.Players:GetPlayers()) do
+	task.wait(0)
+	PLRSTART(v)
 end
 
 -- some antis and admin system
@@ -2665,7 +2621,7 @@ end
 
 
 -- LOOPGRAB 1
---[[task.spawn(function()
+task.spawn(function()
     while true do 
         task.wait(0)
         coroutine.wrap(function()
@@ -2688,32 +2644,6 @@ end
 					        end)()
 				        end
              end
-        end)
-    end
-end)
-
-
--- LOOPGRAB 2
-task.spawn(function()
-    while true do 
-        task.wait(0)
-        coroutine.wrap(function()
-			        if loopgrab2 == true then
-				            local pads = game:GetService("Workspace").Terrain["_Game"].Admin.Pads:GetChildren("Head")
-				            for i, pad in pairs(pads) do
-					                  coroutine.wrap(function()
-						                          pcall(function()
-							                              local cre = pad.Head
-						                	              local spr = game.Players.LocalPlayer.Character:FindFirstChild("Head")
-						                                firetouchinterest(cre, spr, 1)
-						                                firetouchinterest(cre, spr, 0)
-						                              	if pad.Name ~= game.Players.LocalPlayer.Name.."'s admin" then
-											Regen()
-										end
-					                          	end)()
-					                  end)()
-				            end
-			        end
         end)
     end
 end)
@@ -2741,27 +2671,6 @@ task.spawn(function()
 end)
 
 -- PERM 2
-task.spawn(function()
-    while true do
-    task.wait(0)
-    coroutine.wrap(function()
-			local spr = game.Players.LocalPlayer.Character:FindFirstChild("Head")
-			if perm2 ~= true or workspace.Terrain._Game.Admin.Pads:FindFirstChild(game.Players.LocalPlayer.Name.."'s admin") ~= nil then 
-			else
-				pcall(function()
-					local pad = workspace.Terrain._Game.Admin.Pads:FindFirstChild("Touch to get admin")
-					local a = pad.Head
-					firetouchinterest(a, spr, 1)
-					task.wait()
-					firetouchinterest(a, spr, 0)
-				end)
-			end
-        end)()
-    end
-end)
-
-
--- PERM 3
 task.spawn(function()
     while true do
         task.wait(0)
@@ -3308,7 +3217,7 @@ function Gearban()
 end
 
 -- PAINT ESSENTIALS
---[[function COLOURURL()
+function COLOURURL()
 colorAPI = {}
  
 colorAPI.color = function(Part, color)
@@ -3566,4 +3475,4 @@ end)
 		end)
 wait(0.6)
 Chat("ungear 000000000000000000000000000000000000000000000000000000000 me "..math.random(1,1000))
-end]]
+end
