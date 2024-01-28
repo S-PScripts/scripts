@@ -27,7 +27,7 @@ function PLAYERCHECK(plr)
       if string.sub(v.Name:lower(), 1, #plr) == plr then
           player = v.Name
 	  cplr = v
-	  explosion = {"Start", cplr}
+	  explosion = {"Start", player}
           print("Found"..player)
       end
   end
