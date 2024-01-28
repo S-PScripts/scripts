@@ -1,21 +1,19 @@
+--broken
+
 function kick()
     vk = game:GetService("Workspace").Remote.votekick
     vs = workspace.Remote.votekick
     local plr = game.Players[player]
-	while plswork < 100 do
+	for i = 1,10 do
 	    print("kicking a player")
 	    vk:InvokeServer(unpack(explosion))
 	    vs:InvokeServer(unpack(explosion))
-	    vk:InvokeServer("Start",plr)
-	    vs:InvokeServer("Start",plr)
 	    vk:InvokeServer("Vote")
             vs:InvokeServer("Vote")
-	    plswork = plswork + 1
     end
 end
 
 prefix = "!"
-plswork = 0
 
 print("Prison Kicker executed!")
 game.Players.LocalPlayer.Chatted:Connect(function(msg)
