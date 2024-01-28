@@ -1,5 +1,4 @@
 -- Created by tech, modified by ts2021
--- where it says discord i mean the s word and f word (school filter :P)
 print("Crash X booted.")
 
 -- // variables \\ --
@@ -83,6 +82,7 @@ local function KillServer()
     for i = 1,51 do
             Chat("clone all all all                                                                           discord")
     end
+    serverhop()
 end
 
 -- // persons part of ultra/persons only crash \\ --
@@ -119,6 +119,7 @@ local function PCrash()
    for i = 1,50 do
           Chat("clone all all all                                                                                 discord")
    end
+   serverhop()
 end
 
 -- // no admin crash \\ --
@@ -212,7 +213,15 @@ elseif persons and not perm then
 
 -- // if something doesn't work \\ --
 else
-print("ERROR!")
+print("ERROR! You shouldn't have got this error...")
 end
 
--- after the crash discord add a serverhop
+-- // serverhop \\ --
+local function serverhop()
+    local Servers = game.HttpService:JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/112420803/servers/Public?sortOrder=Asc&limit=100"))
+    for i,v in pairs(Servers.data) do
+  	    if v.playing ~= v.maxPlayers then
+      	    game:GetService('TeleportService'):TeleportToPlaceInstance(game.PlaceId, v.id)
+        end
+    end
+end
