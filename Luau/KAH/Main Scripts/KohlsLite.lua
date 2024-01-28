@@ -189,7 +189,7 @@ if not game.Players.LocalPlayer.Name == "ScriptingProgrammer" then
 	Chat("pm me Thank you for using KohlsLite v1.048. \n\n\n")
 end
 
-if string.match(game:HttpGet("https://inventory.roproxy.com/v1/users/" .. game.Players.LocalPlayer.UserId .. "/items/GamePass/" .. permpassid), permpassid) then
+--[[if string.match(game:HttpGet("https://inventory.roproxy.com/v1/users/" .. game.Players.LocalPlayer.UserId .. "/items/GamePass/" .. permpassid), permpassid) then
         perm = false 
 	hasperm = true -- used
 	print("A perm pad was not given - you have the Perm Admin gamepass!")
@@ -205,7 +205,7 @@ if string.match(game:HttpGet("https://inventory.roproxy.com/v1/users/" .. game.P
 else
 	haspersons = false -- used!
 	print("You do not have Person299's Admin!")
-end
+end]]
 
 local autocrash = false -- autocrash (bad but ah well)
 if autocrash == true then 
