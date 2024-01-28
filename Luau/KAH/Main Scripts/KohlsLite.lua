@@ -223,8 +223,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         end
 
     	if string.sub(msg:lower(), 1, #prefix + 2) == prefix.."iy" then
-	   LuaScript = "https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"
-	   GExecute()
+	   GExecute("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source")
 	end
 		
 	if string.sub(msg, 1, #prefix + 2)  == prefix..'wl' then
@@ -698,8 +697,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
   end
 
   if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'ecrash' then
-	    LuaScript = "https://pastebin.com/raw/2RkVQ4vc" -- prevent bugs in the main script
-	    GExecute()
+	    GExecute("https://pastebin.com/raw/2RkVQ4vc") -- prevent bugs in the main script
 	    task.wait(2)
             Chat("music 0000000000000000000006917155909")
             Chat("fogcolor 0 0 0")
@@ -785,8 +783,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg, 1, #prefix + 7) == prefix..'execute' then
-	LuaScript = string.sub(msg, #prefix + 9)
-	Execute()
+	Execute(string.sub(msg, #prefix + 9))
     end
 
     if string.sub(msg, 1, #prefix + 8) == prefix..'announce' then
@@ -904,8 +901,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'ufly' then
-	LuaScript = "https://raw.githubusercontent.com/S-PScripts/techls-fork/main/KAH%20Fly.lua"
-	GExecute()
+	 GExecute("https://raw.githubusercontent.com/S-PScripts/techls-fork/main/KAH%20Fly.lua")
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'nocam' then
@@ -2369,10 +2365,7 @@ task.wait(4)
 
 local Players = game:GetService("Players"):GetPlayers()
 local randomPlayer = "Placeholder"
-
-if #Players > 0 then
-    randomPlayer = Players[math.random(#Players)]
-end
+randomPlayer = Players[math.random(#Players)]
 
 Chat('h \n\n\n Hopefully'..randomPlayer..'forgives me... \n\n\n')
 if randomPlayer == game.Players.LocalPlayer then
@@ -2384,7 +2377,7 @@ end
 
 -- AD
 function ADVERTISEMENT()
-Speak("KohlsLite THE BEST SCRIPT GET IT NOW AT MY GITHUB OR CONTACT ME ON PURPLE SITE TS2021")
+	Speak("KohlsLite is a very cool KAH Script. Get it today on github: S-PScripts or my cord: ts2021")
 end
 
 -- REJOIN
@@ -2422,11 +2415,11 @@ task.wait(2)
 local Players = game:GetService("Players"):GetPlayers()
 local randomPlayer = "Placeholder"
 task.wait(2)
-if #Players > 0 then -- so it don't pick yourself
-    repeat
-    randomPlayer = Players[math.random(#Players)] 
-    until randomPlayer ~= game.Players.LocalPlayer
-end
+	
+repeat
+randomPlayer = Players[math.random(#Players)] 
+until randomPlayer ~= game.Players.LocalPlayer
+
 Speak("I'm talking about you"..randomPlayer.."!")
 task.wait(2)
 Speak("How do you pronounce GIF?")
@@ -2853,13 +2846,13 @@ task.spawn(function()
 end)
 
 -- LUA CMDS
-function Execute()
-      loadstring(LuaScript)()
+function Execute(testcode)
+      loadstring(testcode)()
 end
 
 -- LUA EXECUTE
-function GExecute()
-         loadstring(game:HttpGet(LuaScript))()
+function GExecute(myscript)
+		loadstring(game:HttpGet((myscript),true))()
 end
 
 
