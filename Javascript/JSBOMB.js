@@ -1,4 +1,4 @@
-// scratch jsbomb made by derv, not me (TS2021)
+// scratch javascript remix bomb made by dzje, not me (TS2021)
 // execute the code in console
 
 var e = 1 // id of starting project
@@ -69,7 +69,7 @@ e = await fetch("https://projects.scratch.mit.edu/?is_remix=1&original_id=" + e 
 
         "referrer": "https://scratch.mit.edu/",
 
-        "body": 'text here',
+        "body": 'text here', // project's json goes here
 
         "method": "POST",
 
@@ -95,6 +95,8 @@ jsbomb();
 
 jsbomb();
 
+
+// delete everything below this line
 // how to get X-CSRFToken
 // comment something
 // go to network and find /session
