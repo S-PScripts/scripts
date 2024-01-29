@@ -15,7 +15,7 @@ end
 shared.executed = true
 
 local prefix = "." -- ANY LENGTH :D
-local blacklist = {"sgoslee"} -- slocked users
+local blacklist = {"sgoslee","Szymex03"} -- slocked users
 local whitelist = {"me_123eq","me_crashking","ScriptingProgrammer","G_ODt","BANNter_Original","witnessfox22"} -- not affected by slock
 local newplrslocked = {} -- don't edit!!
 local newplrautoslock = true -- if new players under 21 days join they get blacklisted
@@ -25,10 +25,10 @@ local slockenabled = false -- slock
 local permusers = {} -- users that use perm
 local personsusers = {} -- users that use persons
 
-local rkick_on_sight = {"sgoslee"} -- rocket kick player when they join
-local crash_on_sight = {"sgoslee"} -- crash server when player joins
-local mkick_on_sight = {"sgoslee"} -- kick player with pm spam when they join ONLY WORKS WITH ONE PLAYER
-local suser_on_sight = {"sgoslee"} -- slow a user when they join with car gear ONLY WORKS WITH ONE PLAYER
+local rkick_on_sight = {""} -- rocket kick player when they join
+local crash_on_sight = {""} -- crash server when player joins
+local mkick_on_sight = {""} -- kick player with pm spam when they join ONLY WORKS WITH ONE PLAYER
+local suser_on_sight = {""} -- slow a user when they join with car gear ONLY WORKS WITH ONE PLAYER
 
 local musiclist = {"00000000000000000000009048375035", -- 1
 		   "00000000000000000000006680495507", -- 2
