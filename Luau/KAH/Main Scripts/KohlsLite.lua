@@ -1,5 +1,5 @@
 -- KOHLSLITE BY TS2021/S_P FOR KOHLS ADMIN HOUSE
--- CREDITS TO MANY (stuff from https://github.com/S-PScripts/kah-fork)
+-- CREDITS TO MANY (tech + stuff from https://github.com/S-PScripts/kah-fork)
 -- compiler used: https://www.tutorialspoint.com/execute_lua_online.php
 
 --[[ Things this script doesn't have...
@@ -7,12 +7,12 @@ fixing parts, moving parts, finding parts, -- DON'T WORRY, THIS WILL COME OUT EV
 visualiser and parts because i have no persons wHaT a ShaME
 click annoy, click fard, click explode]]
 
-if shared.executed then 
+if _G.executed then 
 	return 
 	print("Did you execute this script twice?") 
 end
 
-shared.executed = true
+_G.executed = true
 
 local prefix = "." -- ANY LENGTH :D
 local blacklist = {"sgoslee","Szymex03"} -- slocked users
@@ -103,14 +103,6 @@ local musicnames = {"All dropping 8 beats", -- 1
 		    "dubstep", -- 34
 		    "mumbai moon"} -- 35
 
---[[ local theoptions = {
-  "KohlsJoy",
-  "KohlsLite",
-  "KohlsDefender"
-}
-
-local NameItem = theoptions[math.random(#theoptions)] ]]
-
 local padbanned = {"placeholder"} 
 local padreinforcements = false 
 
@@ -124,30 +116,6 @@ local FAdmins = {} -- all admin but for individual users
 local alladmin = false -- all admin
 local amon = 100 -- super command times
 local spamwait = 0 -- spam command wait
-
---[[ local YOUantiblind = true
-local YOUanticlone = true
-local YOUantifire = true
-local YOUantifreeze = true
-local YOUantifly = true
-local YOUantiff = true
-local YOUantiglow = true
-local YOUantihealthc = true
-local YOUantijail = true
-local YOUantijump = true
-local YOUantikill = true
-local YOUantimsg = true
-local YOUantiname = true
-local YOUantiparticles = true
-local YOUantipunish = true
-local YOUantirocket = true
-local YOUantisit = true
-local YOUantiseizure = true
-local YOUantismoke = true
-local YOUantisparkles = true
-local YOUantispeed = true
-local YOUantistun = true
-local YOUantiswag = true ]]
 
 local perm = false
 local perm3 = false
@@ -190,10 +158,7 @@ local personpassid = 35748 or 37127 -- don't edit
 print("~~~Thank you for using KohlsLiteLol. Created by S_P.~~~")
 Chat("h \n\n\n [KohlsLite]: Executed! v1.048 \n\n\n")
 
-if not game.Players.LocalPlayer.Name == "ScriptingProgrammer" then
-	Chat("pm me Thank you for using KohlsLite v1.048. \n\n\n")
-end
-
+-- delta broke this, it was working before an update :P
 --[[if string.match(game:HttpGet("https://inventory.roproxy.com/v1/users/" .. game.Players.LocalPlayer.UserId .. "/items/GamePass/" .. permpassid), permpassid) then
         perm = false 
 	hasperm = true -- used
@@ -212,20 +177,9 @@ else
 	print("You do not have Person299's Admin!")
 end]]
 
-local autocrash = false -- autocrash (bad but ah well)
-if autocrash == true then 
-	
-    Speak("skidblox is the best game amirite")
-
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/Main%20Scripts/Crash%20X.lua"))()
-	
-    task.wait(2) -- adjust
-    SERVERHOP()
-end 
-
 game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	task.wait(0)
-    	if string.sub(msg:lower(), 1, #prefix + 4) == prefix.."cmds" then
+    	if string.sub(msg:lower(), 1, #prefix + 5) == prefix.."kcmds" then
           CMDPrint()
         end
 
