@@ -1,5 +1,5 @@
--- serverlock with blacklisting and whitelisting
--- use with permium Z
+-- SlockD
+
 print("SlockD by S_P. Since 2023.")
 
 local prefix = '-'
