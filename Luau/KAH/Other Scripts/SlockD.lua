@@ -18,8 +18,7 @@ print("-Commands-")
 print("-slock/-unslock -> Serverlock the whole server.")
 print("-wl/-unwl -> Let a user bypass the serverlock.")
 print("-bl/unbl -> Serverlock a particular individual.")
-
-print("SlockD by S_P. The simple base for KohlsLite.")
+print("SlockD by S_P. Since 2023.")
 
 -- this is similar to CMD's system :D
 task.spawn(function()
