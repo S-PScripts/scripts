@@ -111,7 +111,7 @@ local themecode = {}
 local housekeybind = "h" -- Keybinds?!
 local rekeybind = "r"
 
-local clickexplode = true -- wip
+local clickexplode = true
 
 local FAdmins = {} -- all admin but for individual users
 local alladmin = false -- all admin
@@ -570,6 +570,14 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'unwelmsg' then
 	welcomemsg = false
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'clickexplode' then
+	clickexplode = true
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 14) == prefix..'unclickexplode' then
+	clickexplode = false
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antidisco' then
