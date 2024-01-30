@@ -4,8 +4,7 @@
 
 --[[ Things this script doesn't have...
 fixing parts, moving parts, finding parts, -- DON'T WORRY, THIS WILL COME OUT EVENTUALLY
-visualiser and parts because i have no persons wHaT a ShaME
-click annoy, click fard, click explode]]
+visualiser and parts because i have no persons wHaT a ShaME ]]
 
 if _G.executed then 
 	return 
@@ -111,6 +110,8 @@ local themecode = {}
 
 local housekeybind = "h" -- Keybinds?!
 local rekeybind = "r"
+
+local clickexplode = true -- wip
 
 local FAdmins = {} -- all admin but for individual users
 local alladmin = false -- all admin
@@ -3115,6 +3116,26 @@ UserInputService.WindowFocused:Connect(function()
         	Chat("unff me")
         	Chat("ungod me")
    	 end
+end)
+
+-- CLICK
+mymouse = game.Players.LocalPlayer:GetMouse()
+mymouse.Button1Down:Connect(function()
+	pcall(function()
+		local clickplr = mymouse.Target.Parent.Parent
+		for i,v in pairs(game.Players:GetPlayers()) do
+			pcall(function()
+				if mymouse.Target.Parent:FindFirstChild("Humanoid") then
+					clickplr = mymouse.Target.Parent
+				end
+			end)
+		end
+		if clickplr ~= nil then
+			if clickexplode then
+				chat("explode "..clickplr.Name)
+			end
+		end
+	end)
 end)
 
 -- REGEN
