@@ -1,5 +1,6 @@
 -- serverlock with blacklisting and whitelisting
 -- use with permium Z
+print("SlockD by S_P. Since 2023.")
 
 local prefix = '-'
 local whitelist = {"scriptingprogrammer","me_123eq","me_crashking"}
@@ -17,11 +18,11 @@ function checkforplayer(plr)
 end
 
 game.Players:Chat("h \n\n\n [SlockD] Please be careful, this server is protected. \n\n\n")
+
 print("-Commands-")
 print("-slock/-unslock -> Serverlock the whole server.")
 print("-wl/-unwl -> Let a user bypass the serverlock.")
 print("-bl/unbl -> Serverlock a particular individual.")
-print("SlockD by S_P. Since 2023.")
 
 -- this is similar to CMD's system :D
 task.spawn(function()
