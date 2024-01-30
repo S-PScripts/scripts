@@ -1,5 +1,5 @@
 -- Created by tech, modified by ts2021
-print("Crash X booted.")
+print("Crash X booted. Created by S_P.")
 
 -- // variables \\ --
 local MarketplaceService = game:GetService("MarketplaceService")
