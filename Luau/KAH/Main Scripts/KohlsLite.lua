@@ -1942,7 +1942,7 @@ task.spawn(function()
 	while true do
 	task.wait()
 	for _, player in ipairs(game.Players:GetPlayers()) do
-
+	if player ~= game.Players.LocalPlayer then
 	if ALLanticlone == true then
 	    if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild(player.Name) then
                 Chat("unclone"..player.Name)
@@ -2098,7 +2098,7 @@ task.spawn(function()
                     end
              end
 	end
-				
+	end		
 	end
 	end
 end)
@@ -2404,7 +2404,7 @@ else
 end
 end
 
-for i,v in pairs(game.Players:GetPlayers()) do
+for i,v in ipairs(game.Players:GetPlayers()) do
 	task.wait(0)
 	PLRSTART(v)
 end
