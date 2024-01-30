@@ -2916,10 +2916,11 @@ end
 
 function FRespawn()
     game.Players.LocalPlayer.Character:Destroy()
+    print("lol this doesn't actually work lol")
 end
 
 -- STONE MAP
-function StoneMap()
+function StoneMap() -- cmd pi
 local stoneTool1 = "PL"
 local stoneTool2 = "PL"
 Chat("ungear me")
@@ -2942,7 +2943,7 @@ print("Click on mobile yourself")
 end
 
 -- ICE MAP
-function IceMap()
+function IceMap() -- cmd pi
 Workspace = game:GetService("Workspace").Terrain["_Game"].Folder
 local plasticTool = "Placeholder"
 Chat('gear me 2758794374')
@@ -3172,7 +3173,7 @@ function QAttach2()
 end
 
 -- FASTPADS
-function FastPads()
+function FastPads() -- if no touchinterest or idk
                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-36.7649803, 5.42999983, 94.3430023, 0, 0, -1, 0, 1, 0, 1, 0, 0)
                wait(0.01)
                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-24.764967, 5.42999983, 94.3430023, 0, 0, -1, 0, 1, 0, 1, 0, 0)
