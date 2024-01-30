@@ -1,4 +1,6 @@
 -- Created by tech, modified by ts2021
+-- Crash X, autocrasher for KAH
+
 print("Crash X booted. Created by S_P.")
 
 -- // variables \\ --
