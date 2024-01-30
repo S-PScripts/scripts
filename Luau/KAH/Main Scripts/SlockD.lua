@@ -1,3 +1,6 @@
+-- serverlock with blacklisting and whitelisting
+-- use with permium Z
+
 local prefix = '-'
 local whitelist = {"scriptingprogrammer","me_123eq","me_crashking"}
 local blacklist = {}
