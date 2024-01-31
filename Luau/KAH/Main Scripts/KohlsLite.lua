@@ -491,7 +491,18 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         gotou = (string.sub(msg:lower(), #prefix + 6))
 	Goto()
     end
-		
+
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'goto2' then
+  	 local dasplayer = string.sub(msg:lower(), #prefix + 7)
+         PLAYERCHECK(dasplayer)
+         if player ~= nil then
+		gotou = player
+		Goto2()
+         else
+                print('Cannot find player with the name: '..dasplayer)
+         end
+    end
+				
     if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unpermmusic' then
         mymusiconly = false
         musicoff = true
@@ -2725,8 +2736,12 @@ end)
 
 -- GOTO
 function Goto()
-	 -- game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = gotou.Character.HumanoidRootPart.CFrame
           Chat("tp me"..gotou)
+end
+
+-- for cframe goto
+function Goto2()
+	  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = gotou.Character.HumanoidRootPart.CFrame
 end
 
 -- BRING
