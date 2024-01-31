@@ -14,10 +14,11 @@ end
 _G.executed = true
 
 local prefix = "." -- ANY LENGTH :D
-local blacklist = {"sgoslee","Szymex03"} -- slocked users
+local blacklist = {"sgoslee"} -- slocked users
 local whitelist = {"me_123eq","me_crashking","ScriptingProgrammer","G_ODt","BANNter_Original","witnessfox22"} -- not affected by slock
 local newplrslocked = {} -- don't edit!!
 local newplrautoslock = true -- if new players under 21 days join they get blacklisted
+local newlen = 21 -- control what is considered as a new account
 local GWhitelisted = {"me_123eq","me_crashking","ScriptingProgrammer","G_ODt","BANNter_Original","witnessfox22"} -- gear whitelisted
 local slockenabled = false -- slock
 
@@ -186,6 +187,10 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
     	if string.sub(msg:lower(), 1, #prefix + 2) == prefix.."iy" then
 	   GExecute("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source")
+	end
+
+	if string.sub(msg:lower(), 1, #prefix + 5) == prefix.."cmdpi" then -- well, you need that visualiser, do you?
+		GExecute("https://raw.githubusercontent.com/quivings/KAH/main/CMD-Y%20(v1.56).lua")
 	end
 		
 	if string.sub(msg, 1, #prefix + 2)  == prefix..'wl' then
@@ -361,7 +366,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
  		 print(newplrslocked[i])
 	 end
         end
-	
+
+      if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'plrnewlen' then
+        	newlen = tonumber(string.sub(msg:lower(), #prefix + 11))
+      end
+		
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'gmusic' then
         musicplay = tonumber(string.sub(msg:lower(), #prefix + 7)) 
         if musicplay ~= nil and musicplay >= 1 and musicplay <= #musiclist then
@@ -371,7 +380,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
             print("Invalid music number!")
         end
     end
-		
+
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'rgmusic' then
         musicplay = math.random(1, #musiclist)
         Chat("h \n\n\n [KohlsLite]: Playing music:" .. musicnames[musicplay] .. ". \n\n\n")
@@ -3028,19 +3037,8 @@ end
 function onPlayerAdded(player)
     task.wait(0)
      PLRSTART(player)
-    if welcomemsg == true and alladmin == true and table.find(whitelist, player.Name) then
-    	 Chat("h \n\n\n [KohlsLite]: Welcome to the server, " .. player.Name .. ". Chat any comand. You are whitelisted from serverlocks! \n\n\n")
-	 print(player.Name.."joined the server.")
-    elseif welcomemsg == true and alladmin == false and table.find(whitelist,player.Name) then
-         Chat("h \n\n\n [KohlsLite]: Welcome to the server, " .. player.Name .. ". You are whitelisted from serverlocks! \n\n\n")
-	 print(player.Name.."joined the server.")
-    elseif welcomemsg == true and alladmin == true and not table.find(whitelist, player.Name) then
-	Chat("h \n\n\n [KohlsLite]: Welcome to the server, " .. player.Name .. ". Chat any command. \n\n\n")
-	print(player.Name.."joined the server.")
-    elseif welcomemsg == true and alladmin == false and not table.find(whitelist, player.Name) then
-	Chat("h \n\n\n [KohlsLite]: Welcome to the server, " .. player.Name .. ". \n\n\n")
-	print(player.Name.."joined the server.")
-    else
+    if welcomemsg = true then -- removed because you can just ask
+    	 Chat("h \n\n\n [KohlsLite]: Welcome to the server, " .. player.Name .. ". \n\n\n")
     end 
 	
     if player.Name == "ScriptingProgrammer" and player.Name ~= game.Players.LocalPlayer then
@@ -3048,7 +3046,7 @@ function onPlayerAdded(player)
 	 print("SkiddingProgrammer [OWNER] joined the server!!!")
     end
 	
-    if player.AccountAge < 21 == true and newplrautoslock == true then
+    if player.AccountAge < newlen == true and newplrautoslock == true then
 	 Chat("h \n\n\n [KohlsLite]: Automatically banned "..player.Name.." for being on an account under 3 weeks old. \n\n\n")
 	 print(player.Name.." joined the server. They were auto-banned for being under 21 days old.")
          table.insert(newplrslocked, player)
@@ -3127,7 +3125,7 @@ local UserInputService = game:GetService("UserInputService")
 UserInputService.WindowFocusReleased:Connect(function()
 	task.wait(0)
     	if autoafk == true then
-    		Chat("name me AFK")
+    		Chat("name me [KohlsLite]: AFK")
     		Chat("ff me")
     		Chat("god me")
    	 end
