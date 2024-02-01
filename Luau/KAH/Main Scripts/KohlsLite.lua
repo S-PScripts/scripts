@@ -103,6 +103,8 @@ local musicnames = {"All dropping 8 beats", -- 1
 		    "dubstep", -- 34
 		    "mumbai moon"} -- 35
 
+local antilog = "0000000000000000000000" -- for music
+
 local padbanned = {"placeholder"} 
 local padreinforcements = false 
 
