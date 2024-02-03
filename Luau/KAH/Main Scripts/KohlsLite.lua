@@ -2458,7 +2458,7 @@ else
 end
 end
 
-for i,v in pairs(game.Players:GetChildren()) do
+for i, v in pairs(game.Players:GetPlayers()) do
 	task.wait(0)
 	PLRSTART(v)
 end
@@ -2625,7 +2625,7 @@ plr.Chatted:Connect(function(msg)
 		
 end)
 end
-end		
+		
 
 -- Backpack checker
 function CheckBackpack()
