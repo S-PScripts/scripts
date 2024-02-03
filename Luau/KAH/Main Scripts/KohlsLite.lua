@@ -2464,7 +2464,7 @@ plr.Chatted:Connect(function(msg)
      task.wait(0)
      task.spawn(function()
 		task.wait(0)
-                if message:lower():find("/w") or message:lower():find("/c system") and v ~= game.Players.LocalPlayer then
+                if msg:lower():find("/w") or msg:lower():find("/c system") and v ~= game.Players.LocalPlayer then
                    if PingCsystem then
                         print(v.Name..' is using /c system or whispering commands.')
                         Chat('h [KohlsLite]: '..v.Name..' is using /c system or whispering commands.')
@@ -2480,16 +2480,16 @@ plr.Chatted:Connect(function(msg)
         		   end
                 end
 
-		if message:lower() == "gif" and v.Name == randomPlayer and noobs == true then
+		if msg:lower() == "gif" and v.Name == randomPlayer and noobs == true then
         	    noobs = false
                     resultg = false
                 end
-		if message:lower() == "jif" and v.Name == randomPlayer and noobs == true then
+		if msg:lower() == "jif" and v.Name == randomPlayer and noobs == true then
                     noobs = false
         	    resultg = true
             	end
 					
-        	if message:lower() == "sit me" or message:lower() == ":sit me" and v ~= game.Players.LocalPlayer then
+        	if msg:lower() == "sit me" or msg:lower() == ":sit me" and v ~= game.Players.LocalPlayer then
                    if antiattach then
                      Chat("unsit"..v.Name)
                      print(v.Name..' tried to sit')
@@ -2497,7 +2497,7 @@ plr.Chatted:Connect(function(msg)
                    end
                 end
 						
-                if message:lower() == "stun me" or message:lower() == ":stun me" and v ~= game.Players.LocalPlayer then
+                if msg:lower() == "stun me" or msg:lower() == ":stun me" and v ~= game.Players.LocalPlayer then
                    if antiattach then
                      Chat("unstun"..v.Name)
                      print(v.Name..' tried to stun.')
@@ -2505,36 +2505,36 @@ plr.Chatted:Connect(function(msg)
                    end
                 end
 
-		if message:lower() == "-kohlslite check" and v == "ScriptingProgrammer" and v ~= game.Players.LocalPlayer then
+		if msg:lower() == "-kohlslite check" and v == "ScriptingProgrammer" and v ~= game.Players.LocalPlayer then
 			Speak("I'm using KohlsLite, the UK's number one skidded KAH script!")
 		end
 
-		if message:lower() == "-kohlslite kick" and v == "ScriptingProgrammer" and v ~= game.Players.LocalPlayer then
+		if msg:lower() == "-kohlslite kick" and v == "ScriptingProgrammer" and v ~= game.Players.LocalPlayer then
 			game.Players.LocalPlayer:Kick("[KohlsLite]: You were kicked by [OWNER]: SkiddingProgrammer.") -- feel free to remove this and the cmd above, this is probably only for if i obfuscate this at a later date.
 		end
 						
 		if noobdetect == true then
-    	        if message:lower() == ";fly" and v ~= game.Players.LocalPlayer then
+    	        if msg:lower() == ";fly" and v ~= game.Players.LocalPlayer then
                    print(v.Name..' is a noob.')
                    Chat('h [KohlsLite]: '..v.Name..', it is fly me, not ;fly!!')
                 end
-                if message:lower():find(";poop") or message:lower():find(":poop") or message:lower():find("poop") then
+                if msg:lower():find(";poop") or msg:lower():find(":poop") or msg:lower():find("poop") then
                    print(v.Name..' is a noob.')
                    Chat('h [KohlsLite]: '..v.Name..', go back to FREE ADMIN, POOP IS NOT A COMMAND!!')
                 end
-                if message:lower():find(";morph") or message:lower():find(":morph") or message:lower():find("morph") then
+                if msg:lower():find(";morph") or msg:lower():find(":morph") or msg:lower():find("morph") then
                    print(v.Name..' is a noob.')
                    Chat('h [KohlsLite]: '..v.Name..', go back to FREE ADMIN, MORPH IS NOT A COMMAND!!')
                 end
-                if message:lower() == ";fly me" then
+                if msg:lower() == ";fly me" then
                    print(v.Name..' is a noob.') 
                    Chat('h [KohlsLite]: '..v.Name..', imagine using the ; prefix! You dont need any!!')
                 end
-                if message:lower():find(";bring") or message:lower():find(":bring") or message:lower():find("bring") and v ~= game.Players.LocalPlayer then
+                if msg:lower():find(";bring") or msg:lower():find(":bring") or msg:lower():find("bring") and v ~= game.Players.LocalPlayer then
                    print(v.Name..' is a noob.')
                    Chat('h [KohlsLite]: '..v.Name..', it is tp (plr) me, not ;bring!!')
                 end
-                if message:lower():find(";goto") or message:lower():find(":goto") or message:lower():find("goto") and v ~= game.Players.LocalPlayer then
+                if msg:lower():find(";goto") or msg:lower():find(":goto") or msg:lower():find("goto") and v ~= game.Players.LocalPlayer then
                    print(v.Name..' is a noob.') 
                    Chat('h [KohlsLite]: '..v.Name..', it is tp me (plr), not ;goto!!')
             	end
