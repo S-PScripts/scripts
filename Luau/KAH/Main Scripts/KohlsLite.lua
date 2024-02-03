@@ -2531,11 +2531,11 @@ v.Chatted:Connect(function(msg)
                    print(v.Name..' is a noob.') 
                    Chat('h \n\n\n [KohlsLite]: '..v.Name..', imagine using the ; prefix! You dont need any!! \n\n\n')
                 end
-                if msg:lower():find(";bring") or msg:lower():find(":bring") or msg:lower():find("bring") and v ~= game.Players.LocalPlayer then
+                if msg:lower():find(";bring") or msg:lower():find(":bring") or msg:lower():find("bring") and v.Name ~= game.Players.LocalPlayer then
                    print(v.Name..' is a noob.')
                    Chat('h \n\n\n [KohlsLite]: '..v.Name..', it is tp (plr) me, not ;bring!! \n\n\n')
                 end
-                if msg:lower():find(";goto") or msg:lower():find(":goto") or msg:lower():find("goto") and v ~= game.Players.LocalPlayer then
+                if msg:lower():find(";goto") or msg:lower():find(":goto") or msg:lower():find("goto") and v.Name ~= game.Players.LocalPlayer then
                    print(v.Name..' is a noob.') 
                    Chat('h \n\n\n [KohlsLite]: '..v.Name..', it is tp me (plr), not ;goto!! \n\n\n')
             	end
