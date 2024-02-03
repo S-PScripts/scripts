@@ -173,7 +173,7 @@ end
 local permpassid = 66254 or 64354 -- don't edit
 local personpassid = 35748 or 37127 -- don't edit
 
-print("~~~Thank you for using KohlsLiteLol. Created by S_P.~~~")
+print("~~~Thank you for using KohlsLite! Created by S_P.~~~")
 Chat("h \n\n\n [KohlsLite]: Executed! v1.048 \n\n\n")
 
 -- delta broke this, it was working before an update :P
@@ -699,6 +699,15 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		Chat("pm"..ubox.." play your music on the boombox pls")
 	else
 		Chat("gear me 000000000000000000212641536")
+	end
+  end
+
+  if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'furry' then
+	local furry = string.sub(msg:lower(), 1, #prefix + 7)
+	if furry ~= "" then
+		Chat("char "..furry.." 0000000000000000003654651146")
+	else
+		Chat("char me 0000000000000000003654651146")
 	end
   end
 
@@ -1607,6 +1616,7 @@ print("sp - set your speed without the command")
 print("jp - set your jump power without the command")
 print("hlth - set your health without the command")
 print("ufly - the kah fly but without actually using the cmd!")
+print("furry - HAHIUSHJDIKH")
 	
 print("---")
 print("rejoin - rejoin the server you're in")
