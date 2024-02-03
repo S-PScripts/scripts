@@ -808,7 +808,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
     if string.sub(msg, 1, #prefix + 10) == prefix..'wmannounce' then
 	annsecret = string.sub(msg, #prefix + 12)
-	AnnounceWL()
+	AnnounceWM()
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'prefix' then
