@@ -2458,11 +2458,6 @@ else
 end
 end
 
-for i, v in pairs(game.Players:GetPlayers()) do
-	task.wait(0)
-	PLRSTART(v)
-end
-
 -- some antis and admin system
 function PLRSTART(plr)
 plr.Chatted:Connect(function(msg)
@@ -3520,4 +3515,9 @@ end)
 		end)
 wait(0.6)
 Chat("ungear 0000000000000 me "..math.random(1,1000))
+end
+
+for i, v in pairs(game.Players:GetPlayers()) do
+	task.wait(0)
+	PLRSTART(v)
 end
