@@ -175,7 +175,7 @@ local permpassid = 66254 or 64354 -- don't edit
 local personpassid = 35748 or 37127 -- don't edit
 
 print("~~~Thank you for using KohlsLite! Created by S_P.~~~")
-Chat("h \n\n\n [KohlsLite]: Executed! v1.048 \n\n\n")
+Chat("h \n\n\n [KohlsLite]: Executed! v1.048 ALANKEY \n\n\n")
 
 -- delta broke this, it was working before an update :P
 --[[if string.match(game:HttpGet("https://inventory.roproxy.com/v1/users/" .. game.Players.LocalPlayer.UserId .. "/items/GamePass/" .. permpassid), permpassid) then
@@ -2550,6 +2550,7 @@ v.Chatted:Connect(function(msg)
 		end
 					
                 if msg:lower():find(";goto") or msg:lower():find(":goto") or msg:lower():find("goto") and v.Name ~= game.Players.LocalPlayer then
+		if noobdetect then
                    print(v.Name..' is a noob.') 
                    Chat('h \n\n\n [KohlsLite]: '..v.Name..', it is tp me (plr), not ;goto!! \n\n\n')
             	end
