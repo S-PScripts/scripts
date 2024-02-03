@@ -2383,7 +2383,7 @@ end
 
 -- AD
 function ADVERTISEMENT()
-	Speak("KohlsLite is a very cool KAH Script. Get it today on github: S-PScripts or my cord: ts2021")
+	Speak("KohlsLite is a very 'cool' KAH Script. Get it today on git-hub: S-PScripts or my purple: ts2021")
 end
 
 -- REJOIN
