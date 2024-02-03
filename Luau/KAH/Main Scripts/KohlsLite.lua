@@ -703,7 +703,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
   end
 
   if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'furry' then
-	local furry = string.sub(msg:lower(), 1, #prefix + 7)
+	local furry = string.sub(msg:lower(), #prefix + 7)
 	if furry ~= "" then
 		Chat("char "..furry.." 0000000000000000003654651146")
 	else
