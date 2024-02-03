@@ -1,6 +1,7 @@
 -- KOHLSLITE BY TS2021/S_P FOR KOHLS ADMIN HOUSE
 -- CREDITS TO MANY (tech + stuff from https://github.com/S-PScripts/kah-fork)
 -- compiler used: https://www.tutorialspoint.com/execute_lua_online.php
+-- not the best script in the world, i know, but decent enough
 
 --[[ Things this script doesn't have...
 fixing parts, moving parts, finding parts, -- DON'T WORRY, THIS WILL COME OUT EVENTUALLY
