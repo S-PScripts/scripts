@@ -154,7 +154,7 @@ local antichat = false
 local antiattach = false
 local antigs = false
 
-local PingLogs = true -- it's caps because caps
+local PingLogs = false -- it's caps because caps
 local PingCsystem = true
 local AntiLogs = false
 
@@ -2465,16 +2465,16 @@ v.Chatted:Connect(function(msg)
      task.wait(0)
      task.spawn(function()
 		task.wait(0)
-                if msg:lower():find("/w") or msg:lower():find("/c system") and v ~= game.Players.LocalPlayer then
+                if msg:lower():find("/w") or msg:lower():find("/c system") and v.Name ~= game.Players.LocalPlayer then
                    if PingCsystem then
                         print(v.Name..' is using /c system or whispering commands.')
                         Chat('h \n\n\n [KohlsLite]: '..v.Name..' is using /c system or whispering commands. \n\n\n')
                    end
                 end
-                if string.sub(msg:lower(), 0, 4) == "logs" or string.sub(msg:lower(), 0, 5) == ":logs" and v ~= game.Players.LocalPlayer then
+                if string.sub(msg:lower(), 0, 4) == "logs" or string.sub(msg:lower(), 0, 5) == ":logs" and v.Name ~= game.Players.LocalPlayer then
                    if PingLogs then
                         print(v.Name..' is using logs.')
-                        Chat('h [\n\n\n KohlsLite]: '..v.Name..' is using logs. \n\n\n')
+                        Chat('h \n\n\n [KohlsLite]: '..v.Name..' is using logs. \n\n\n')
                    end
         		   if AntiLogs then
             			LogSpam()
@@ -2490,7 +2490,7 @@ v.Chatted:Connect(function(msg)
         	    resultg = true
             	end
 					
-        	if msg:lower() == "sit me" or msg:lower() == ":sit me" and v ~= game.Players.LocalPlayer then
+        	if msg:lower() == "sit me" or msg:lower() == ":sit me" and v.Name ~= game.Players.LocalPlayer then
                    if antiattach then
                      Chat("unsit"..v.Name)
                      print(v.Name..' tried to sit')
@@ -2498,7 +2498,7 @@ v.Chatted:Connect(function(msg)
                    end
                 end
 						
-                if msg:lower() == "stun me" or msg:lower() == ":stun me" and v ~= game.Players.LocalPlayer then
+                if msg:lower() == "stun me" or msg:lower() == ":stun me" and v.Name ~= game.Players.LocalPlayer then
                    if antiattach then
                      Chat("unstun"..v.Name)
                      print(v.Name..' tried to stun.')
@@ -2506,16 +2506,16 @@ v.Chatted:Connect(function(msg)
                    end
                 end
 
-		if msg:lower() == "-kohlslite check" and v == "ScriptingProgrammer" and v ~= game.Players.LocalPlayer then
+		if msg:lower() == "-kohlslite check" and v.Name == "ScriptingProgrammer" and v.Name ~= game.Players.LocalPlayer then
 			Speak("I'm using KohlsLite, the UK's number one skidded KAH script!")
 		end
 
-		if msg:lower() == "-kohlslite kick" and v == "ScriptingProgrammer" and v ~= game.Players.LocalPlayer then
+		if msg:lower() == "-kohlslite kick" and v.Name == "ScriptingProgrammer" and v.Name ~= game.Players.LocalPlayer then
 			game.Players.LocalPlayer:Kick("[KohlsLite]: You were kicked by [OWNER]: SkiddingProgrammer.") -- feel free to remove this and the cmd above, this is probably only for if i obfuscate this at a later date.
 		end
 						
 		if noobdetect == true then
-    	        if msg:lower() == ";fly" and v ~= game.Players.LocalPlayer then
+    	        if msg:lower() == ";fly" and v.Name ~= game.Players.LocalPlayer then
                    print(v.Name..' is a noob.')
                    Chat('h \n\n\n [KohlsLite]: '..v.Name..', it is fly me, not ;fly!! \n\n\n')
                 end
