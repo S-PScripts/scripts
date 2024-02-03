@@ -68,7 +68,8 @@ local musiclist = {"9048375035", -- 1
 		   "14145620056", -- 36
 		   "13530437708", -- 37 
 		   "14145627857", -- 38
-		   "14145624031"} -- 39
+		   "14145624031", -- 39
+		   "13530438299"} -- 40
       
 
 local musicnames = {"All dropping 8 beats", -- 1
@@ -109,9 +110,10 @@ local musicnames = {"All dropping 8 beats", -- 1
 		    "phonk 1", -- 36
 		    "phonk 2", -- 37 
 		    "phonk 3", -- 38
-		    "phonk 4"} -- 39
+		    "phonk 4", -- 39
+		    "phonk 5"} -- 40
 
-local antilog = "" -- for music
+local antilog = "00000000000000000000000000000000000" -- for music
 
 local padbanned = {"placeholder"} 
 local padreinforcements = false 
