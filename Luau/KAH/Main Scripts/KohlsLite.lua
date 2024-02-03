@@ -2459,8 +2459,8 @@ end
 end
 
 -- some antis and admin system
-function PLRSTART(plr)
-plr.Chatted:Connect(function(msg)
+function PLRSTART(v)
+v.Chatted:Connect(function(msg)
      task.wait(0)
      task.spawn(function()
 		task.wait(0)
