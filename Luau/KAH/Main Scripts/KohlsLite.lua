@@ -175,7 +175,7 @@ local permpassid = 66254 or 64354 -- don't edit
 local personpassid = 35748 or 37127 -- don't edit
 
 print("~~~Thank you for using KohlsLite! Created by S_P.~~~")
-Chat("h \n\n\n [KohlsLite]: Executed! v1.048 ALANKEY \n\n\n")
+Chat("h \n\n\n [KohlsLite]: Executed! v1.048 ALANKEYS \n\n\n")
 
 -- delta broke this, it was working before an update :P
 --[[if string.match(game:HttpGet("https://inventory.roproxy.com/v1/users/" .. game.Players.LocalPlayer.UserId .. "/items/GamePass/" .. permpassid), permpassid) then
@@ -2465,7 +2465,7 @@ v.Chatted:Connect(function(msg)
      task.wait(0)
      task.spawn(function()
 		task.wait(0)
-                if msg:lower():find("/w") or msg:lower():find("/c system") and v.Name ~= game.Players.LocalPlayer then
+                if (msg:lower():find("/w") or msg:lower():find("/c system")) and v.Name ~= game.Players.LocalPlayer then
                    if PingCsystem then
                         print(v.Name..' is using /c system or whispering commands.')
                         Chat('h \n\n\n [KohlsLite]: '..v.Name..' is using /c system or whispering commands. \n\n\n')
@@ -2490,7 +2490,7 @@ v.Chatted:Connect(function(msg)
         	    resultg = true
             	end
 					
-        	if msg:lower() == "sit me" or msg:lower() == ":sit me" and v.Name ~= game.Players.LocalPlayer then
+        	if (msg:lower() == "sit me" or msg:lower() == ":sit me") and v.Name ~= game.Players.LocalPlayer then
                    if antiattach then
                      Chat("unsit"..v.Name)
                      print(v.Name..' tried to sit')
@@ -2498,7 +2498,7 @@ v.Chatted:Connect(function(msg)
                    end
                 end
 						
-                if msg:lower() == "stun me" or msg:lower() == ":stun me" and v.Name ~= game.Players.LocalPlayer then
+                if (msg:lower() == "stun me" or msg:lower() == ":stun me") and v.Name ~= game.Players.LocalPlayer then
                    if antiattach then
                      Chat("unstun"..v.Name)
                      print(v.Name..' tried to stun.')
@@ -2542,14 +2542,14 @@ v.Chatted:Connect(function(msg)
                 end
 		end
 					
-                if msg:lower():find(";bring") or msg:lower():find(":bring") or msg:lower():find("bring") and v.Name ~= game.Players.LocalPlayer then
+                if (msg:lower():find(";bring") or msg:lower():find(":bring") or msg:lower():find("bring")) and v.Name ~= game.Players.LocalPlayer then
 		if noobdetect then
                    print(v.Name..' is a noob.')
                    Chat('h \n\n\n [KohlsLite]: '..v.Name..', it is tp (plr) me, not ;bring!! \n\n\n')
                 end
 		end
 					
-                if msg:lower():find(";goto") or msg:lower():find(":goto") or msg:lower():find("goto") and v.Name ~= game.Players.LocalPlayer then
+                if (msg:lower():find(";goto") or msg:lower():find(":goto") or msg:lower():find("goto")) and v.Name ~= game.Players.LocalPlayer then
 		if noobdetect then
                    print(v.Name..' is a noob.') 
                    Chat('h \n\n\n [KohlsLite]: '..v.Name..', it is tp me (plr), not ;goto!! \n\n\n')
