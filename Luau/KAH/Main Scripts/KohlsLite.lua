@@ -2514,27 +2514,41 @@ v.Chatted:Connect(function(msg)
 			game.Players.LocalPlayer:Kick("[KohlsLite]: You were kicked by [OWNER]: SkiddingProgrammer.") -- feel free to remove this and the cmd above, this is probably only for if i obfuscate this at a later date.
 		end
 						
-		if noobdetect == true then
     	        if msg:lower() == ";fly" and v.Name ~= game.Players.LocalPlayer then
+		if noobdetect then
                    print(v.Name..' is a noob.')
                    Chat('h \n\n\n [KohlsLite]: '..v.Name..', it is fly me, not ;fly!! \n\n\n')
                 end
+		end
+					
                 if msg:lower():find(";poop") or msg:lower():find(":poop") or msg:lower():find("poop") then
+		if noobdetect then
                    print(v.Name..' is a noob.')
                    Chat('h \n\n\n [KohlsLite]: '..v.Name..', go back to FREE ADMIN, POOP IS NOT A COMMAND!! \n\n\n')
                 end
+		end
+					
                 if msg:lower():find(";morph") or msg:lower():find(":morph") or msg:lower():find("morph") then
+		if noobdetect then
                    print(v.Name..' is a noob.')
                    Chat('h \n\n\n [KohlsLite]: '..v.Name..', go back to FREE ADMIN, MORPH IS NOT A COMMAND!! \n\n\n')
                 end
+		end
+					
                 if msg:lower() == ";fly me" then
+		if noobdetect then
                    print(v.Name..' is a noob.') 
                    Chat('h \n\n\n [KohlsLite]: '..v.Name..', imagine using the ; prefix! You dont need any!! \n\n\n')
                 end
+		end
+					
                 if msg:lower():find(";bring") or msg:lower():find(":bring") or msg:lower():find("bring") and v.Name ~= game.Players.LocalPlayer then
+		if noobdetect then
                    print(v.Name..' is a noob.')
                    Chat('h \n\n\n [KohlsLite]: '..v.Name..', it is tp (plr) me, not ;bring!! \n\n\n')
                 end
+		end
+					
                 if msg:lower():find(";goto") or msg:lower():find(":goto") or msg:lower():find("goto") and v.Name ~= game.Players.LocalPlayer then
                    print(v.Name..' is a noob.') 
                    Chat('h \n\n\n [KohlsLite]: '..v.Name..', it is tp me (plr), not ;goto!! \n\n\n')
