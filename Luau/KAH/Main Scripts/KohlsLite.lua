@@ -2458,15 +2458,14 @@ else
 end
 end
 
-for i,v in ipairs(game.Players:GetPlayers()) do
+for i,v in pairs(game.Players:GetChildren()) do
 	task.wait(0)
 	PLRSTART(v)
 end
 
 -- some antis and admin system
-function PLRSTART(v)
-while true do
-v.Chatted:Connect(function(msg)
+function PLRSTART(plr)
+plr.Chatted:Connect(function(msg)
      task.wait(0)
      task.spawn(function()
 		task.wait(0)
