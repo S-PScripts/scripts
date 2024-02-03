@@ -2468,13 +2468,13 @@ v.Chatted:Connect(function(msg)
                 if msg:lower():find("/w") or msg:lower():find("/c system") and v ~= game.Players.LocalPlayer then
                    if PingCsystem then
                         print(v.Name..' is using /c system or whispering commands.')
-                        Chat('h [KohlsLite]: '..v.Name..' is using /c system or whispering commands.')
+                        Chat('h \n\n\n [KohlsLite]: '..v.Name..' is using /c system or whispering commands. \n\n\n')
                    end
                 end
                 if string.sub(msg:lower(), 0, 4) == "logs" or string.sub(msg:lower(), 0, 5) == ":logs" and v ~= game.Players.LocalPlayer then
                    if PingLogs then
                         print(v.Name..' is using logs.')
-                        Chat('h [KohlsLite]: '..v.Name..' is using logs.')
+                        Chat('h [\n\n\n KohlsLite]: '..v.Name..' is using logs. \n\n\n')
                    end
         		   if AntiLogs then
             			LogSpam()
@@ -2494,7 +2494,7 @@ v.Chatted:Connect(function(msg)
                    if antiattach then
                      Chat("unsit"..v.Name)
                      print(v.Name..' tried to sit')
-                     Chat('h [KohlsLite]: '..v.Name..', You cannot sit due to anti-attach')
+                     Chat('h \n\n\n [KohlsLite]: '..v.Name..', You cannot sit due to anti-attach \n\n\n')
                    end
                 end
 						
@@ -2502,7 +2502,7 @@ v.Chatted:Connect(function(msg)
                    if antiattach then
                      Chat("unstun"..v.Name)
                      print(v.Name..' tried to stun.')
-                     Chat('h [KohlsLite]: '..v.Name..', you cannot stun due to anti-attach')
+                     Chat('h \n\n\n [KohlsLite]: '..v.Name..', you cannot stun due to anti-attach \n\n\n')
                    end
                 end
 
@@ -2517,27 +2517,27 @@ v.Chatted:Connect(function(msg)
 		if noobdetect == true then
     	        if msg:lower() == ";fly" and v ~= game.Players.LocalPlayer then
                    print(v.Name..' is a noob.')
-                   Chat('h [KohlsLite]: '..v.Name..', it is fly me, not ;fly!!')
+                   Chat('h \n\n\n [KohlsLite]: '..v.Name..', it is fly me, not ;fly!! \n\n\n')
                 end
                 if msg:lower():find(";poop") or msg:lower():find(":poop") or msg:lower():find("poop") then
                    print(v.Name..' is a noob.')
-                   Chat('h [KohlsLite]: '..v.Name..', go back to FREE ADMIN, POOP IS NOT A COMMAND!!')
+                   Chat('h \n\n\n [KohlsLite]: '..v.Name..', go back to FREE ADMIN, POOP IS NOT A COMMAND!! \n\n\n')
                 end
                 if msg:lower():find(";morph") or msg:lower():find(":morph") or msg:lower():find("morph") then
                    print(v.Name..' is a noob.')
-                   Chat('h [KohlsLite]: '..v.Name..', go back to FREE ADMIN, MORPH IS NOT A COMMAND!!')
+                   Chat('h \n\n\n [KohlsLite]: '..v.Name..', go back to FREE ADMIN, MORPH IS NOT A COMMAND!! \n\n\n')
                 end
                 if msg:lower() == ";fly me" then
                    print(v.Name..' is a noob.') 
-                   Chat('h [KohlsLite]: '..v.Name..', imagine using the ; prefix! You dont need any!!')
+                   Chat('h \n\n\n [KohlsLite]: '..v.Name..', imagine using the ; prefix! You dont need any!! \n\n\n')
                 end
                 if msg:lower():find(";bring") or msg:lower():find(":bring") or msg:lower():find("bring") and v ~= game.Players.LocalPlayer then
                    print(v.Name..' is a noob.')
-                   Chat('h [KohlsLite]: '..v.Name..', it is tp (plr) me, not ;bring!!')
+                   Chat('h \n\n\n [KohlsLite]: '..v.Name..', it is tp (plr) me, not ;bring!! \n\n\n')
                 end
                 if msg:lower():find(";goto") or msg:lower():find(":goto") or msg:lower():find("goto") and v ~= game.Players.LocalPlayer then
                    print(v.Name..' is a noob.') 
-                   Chat('h [KohlsLite]: '..v.Name..', it is tp me (plr), not ;goto!!')
+                   Chat('h \n\n\n [KohlsLite]: '..v.Name..', it is tp me (plr), not ;goto!! \n\n\n')
             	end
 		end
 
