@@ -30,41 +30,45 @@ local crash_on_sight = {""} -- crash server when player joins
 local mkick_on_sight = {""} -- kick player with pm spam when they join ONLY WORKS WITH ONE PLAYER
 local suser_on_sight = {""} -- slow a user when they join with car gear ONLY WORKS WITH ONE PLAYER
 
-local musiclist = {"00000000000000000000009048375035", -- 1
-		   "00000000000000000000006680495507", -- 2
-		   "00000000000000000000006529070845", -- 3
-		   "00000000000000000000006917155909", -- 4
-		   "00000000000000000000006913550990", -- 5
-		   "00000000000000000000006847929757", -- 6
-                   "00000000000000000000001839029458", -- 7
-                   "00000000000000000000000035930009", -- 8
-	           "00000000000000000000006772846771", -- 9
-	           "00000000000000000000011808880515", -- 10
-	           "00000000000000000000006681840651", -- 11
-	           "00000000000000000000001841647093", -- 12
-	           "00000000000000000000001837070127", -- 13
-	           "00000000000000000000006806140478", -- 14
-	           "00000000000000000000006703926669", -- 15
-	           "00000000000000000000002042581436", -- 16
-	           "00000000000000000000006872126938", -- 17
-	           "00000000000000000000006695430066", -- 18
-	           "00000000000000000000005216738441", -- 19
-                   "00000000000000000000009038620433", -- 20
-	           "00000000000000000000006819593773", -- 21
-                   "00000000000000000000008147012902", -- 22
-                   "00000000000000000000006893776529", -- 23
-                   "00000000000000000000006788646778", -- 24
-     		   "00000000000000000000009124780123", -- 25
-                   "00000000000000000000006897686359", -- 26
-	           "00000000000000000000000142376088", -- 27
-                   "00000000000000000000001846368080", -- 28
-                   "00000000000000000000001840511219", -- 29
-                   "00000000000000000000001839404854", -- 30
-                   "00000000000000000000006674211522", -- 31
-		   "00000000000000000000006984999899", -- 32
-		   "00000000000000000000001838097718", -- 33
-		   "00000000000000000000009038845849", -- 34
-		   "00000000000000000000001843622301"} -- 35
+local musiclist = {"9048375035", -- 1
+		   "6680495507", -- 2
+		   "6529070845", -- 3
+		   "6917155909", -- 4
+		   "6913550990", -- 5
+		   "6847929757", -- 6
+                   "1839029458", -- 7
+                   "0035930009", -- 8
+	           "6772846771", -- 9
+	           "11808880515", -- 10
+	           "6681840651", -- 11
+	           "1841647093", -- 12
+	           "1837070127", -- 13
+	           "6806140478", -- 14
+	           "6703926669", -- 15
+	           "2042581436", -- 16
+	           "6872126938", -- 17
+	           "6695430066", -- 18
+	           "5216738441", -- 19
+                   "9038620433", -- 20
+	           "6819593773", -- 21
+                   "8147012902", -- 22
+                   "6893776529", -- 23
+                   "6788646778", -- 24
+     		   "9124780123", -- 25
+                   "6897686359", -- 26
+	           "0142376088", -- 27
+                   "1846368080", -- 28
+                   "1840511219", -- 29
+                   "1839404854", -- 30
+                   "6674211522", -- 31
+		   "6984999899", -- 32
+		   "1838097718", -- 33
+		   "9038845849", -- 34
+		   "1843622301", -- 35
+		   "14145620056", -- 36
+		   "13530437708", -- 37 
+		   "14145627857", -- 38
+		   "14145624031"} -- 39
       
 
 local musicnames = {"All dropping 8 beats", -- 1
@@ -101,9 +105,13 @@ local musicnames = {"All dropping 8 beats", -- 1
 		    "AAAAAAAAAAAAAAAAAAAAA", -- 32
 		    "Fanfare 2", -- 33
 		    "dubstep", -- 34
-		    "mumbai moon"} -- 35
+		    "mumbai moon", -- 35
+		    "phonk 1", -- 36
+		    "phonk 2", -- 37 
+		    "phonk 3", -- 38
+		    "phonk 4"} -- 39
 
-local antilog = "0000000000000000000000" -- for music
+local antilog = "" -- for music
 
 local padbanned = {"placeholder"} 
 local padreinforcements = false 
@@ -2890,7 +2898,7 @@ end
 
 -- Cam Break
 function NoCam()
-      Chat("gear me 00000000000000000000000004842207161")
+      Chat("gear me 0004842207161")
       print("Right Click! If you're on mobile, it may not work tapping normally :P")
 end
 
@@ -3008,7 +3016,7 @@ end
 
 -- VG CRASH
 function VGCrash()
-      Chat("gear me 000000000000000000000000000000000000094794847")
+      Chat("gear me 00000000000000094794847")
       local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
       game.Players.LocalPlayer.Backpack:WaitForChild("VampireVanquisher")
       for _, v in ipairs(Backpack:GetChildren()) do
@@ -3022,7 +3030,7 @@ function VGCrash()
 end
 
 function PCrash()
-      Chat("gear me 00000000000000000000000000000092628079")
+      Chat("gear me 0000000092628079")
       local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
       game.Players.LocalPlayer.Backpack:WaitForChild("OrinthianSwordAndShield")
       for _, v in ipairs(Backpack:GetChildren()) do
@@ -3039,7 +3047,7 @@ end
 function onPlayerAdded(player)
     task.wait(0)
      PLRSTART(player)
-    if welcomemsg = true then -- removed because you can just ask
+    if welcomemsg == true then -- removed because you can just ask
     	 Chat("h \n\n\n [KohlsLite]: Welcome to the server, " .. player.Name .. ". \n\n\n")
     end 
 	
@@ -3395,7 +3403,7 @@ end
 
 -- FIX PAINT
 function FixPaint() 
-Chat("gear me 00000000000000000000000000000000000000000018474459")
+Chat("gear me 0000000000000000000018474459")
 		wait(0.5)
     local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack") 
     game.Players.LocalPlayer.Backpack:WaitForChild("PaintBucket")
@@ -3443,12 +3451,12 @@ end)
 			colorAPI.colorPads(colorAPI.transformToColor3(BrickColor.new("Bright green")))
 		end)
 wait(0.6)
-Chat("ungear 000000000000000000000000000000000000000000000000000000000 me "..math.random(1,1000))
+Chat("ungear 0000000000000 me "..math.random(1,1000))
 end
 
 -- Paint Map Colour
 function PaintMap()
-Chat("gear me 00000000000000000000000000000000000000000018474459")
+Chat("gear me 0000000000000000000018474459")
 		wait(0.5)
     local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack") 
     game.Players.LocalPlayer.Backpack:WaitForChild("PaintBucket")
@@ -3496,5 +3504,5 @@ end)
 			colorAPI.colorPads(colorAPI.transformToColor3(BrickColor.new(ColourHere)))
 		end)
 wait(0.6)
-Chat("ungear 000000000000000000000000000000000000000000000000000000000 me "..math.random(1,1000))
+Chat("ungear 0000000000000 me "..math.random(1,1000))
 end
