@@ -552,6 +552,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                 print('Cannot find player with the name: '..dasplayer)
          end
     end
+
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'moveregen' then
+	print("BETA EDITION")
+	RegenMover()
+    end
 				
     if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unpermmusic' then
         mymusiconly = false
@@ -3011,6 +3016,37 @@ end
 function FRespawn()
     game.Players.LocalPlayer.Character:Destroy()
     print("lol this doesn't actually work lol")
+end
+
+-- regen mover
+function RegenMover()
+    print("Attempting to move REGEN pad...")
+    adminfolder = game:GetService("Workspace").Terrain["_Game"].Workspace.Admin
+    if adminfolder.Regen.CFrame.Y < 500 then
+	repeat wait() 
+	until game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")
+	local cf = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
+	local moveregen = true
+	task.spawn(function()
+		while true do
+			task.wait(0)
+			game:GetService('RunService').Heartbeat:Wait()
+			game.Players.LocalPlayer.Character['Humanoid']:ChangeState(11)
+			cf.CFrame = adminfolder.Regen.CFrame * CFrame.new(-1*(adminfolder.Regen.Size.X/2)-(game.Players.LocalPlayer.Character['Torso'].Size.X/2), 0, 0)
+			if not moveregen then 
+				break 
+			end
+		end
+	end)
+    end
+				
+	task.spawn(function() 
+		while moveregen do 
+			task.wait(0)
+			wait(.1) 
+			Chat('unpunish me') 
+		end 
+	end)
 end
 
 -- STONE MAP
