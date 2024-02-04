@@ -3054,6 +3054,7 @@ function RegenMover()
 	task.wait(0.3)
 	moveregen = false
 	for i = 1,10 do
+		task.wait(0.2)
 		Chat("skydive me")
 	end
 	Chat("respawn me")
