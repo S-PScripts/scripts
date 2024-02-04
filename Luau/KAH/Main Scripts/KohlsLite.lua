@@ -2737,7 +2737,9 @@ task.spawn(function()
     task.wait(0)
     if antimusic == true then
 		  if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
-				 Chat("music antimusic is on!")
+				if game:GetService("Workspace").Terrain["_Game"].Folder.Sound.SoundId == "http://www.roblox.com/asset/?id="..mymusiconlyid then
+				 	Chat("music antimusic is on!")
+				end
       		  end
     end
     if mymusiconly == true and musicoff == false then
