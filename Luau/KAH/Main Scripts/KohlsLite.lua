@@ -137,7 +137,7 @@ local amon = 100 -- super command times
 local spamwait = 0 -- spam command wait
 
 local perm = false
-local perm3 = false
+local perm2 = true
 local loopgrab = false
 
 local anticrash = true
@@ -175,7 +175,7 @@ local permpassid = 66254 or 64354 -- don't edit
 local personpassid = 35748 or 37127 -- don't edit
 
 print("~~~Thank you for using KohlsLite! Created by S_P.~~~")
-Chat("h \n\n\n [KohlsLite]: Executed! v1.048 ALANKEYsS \n\n\n")
+Chat("h \n\n\n [KohlsLite]: Executed! v1.050 keyword \n\n\n")
 
 -- delta broke this, it was working before an update :P
 --[[if string.match(game:HttpGet("https://inventory.roproxy.com/v1/users/" .. game.Players.LocalPlayer.UserId .. "/items/GamePass/" .. permpassid), permpassid) then
@@ -989,7 +989,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'perm2' then
-	perm3 = true
+	perm2 = true
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'unperm' then
@@ -997,7 +997,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'unperm2' then
-	perm3 = false
+	perm2 = false
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'checkbp' then
@@ -1781,7 +1781,7 @@ task.spawn(function()
 			if not game.Lighting:FindFirstChild(v.Name) then
                                 Chat('punish '..v.Name)
                                 Chat('blind '..v.Name)
-                                Chat('pm [KohlsLite]: '..v.Name..' sorry, you are blacklisted for having an account under 21 days old!')
+                                Chat('pm [KohlsLite]: '..v.Name..' sorry, you are blacklisted for having an account under the account age limit!')
                         end
 		    else
                     end
@@ -2722,7 +2722,7 @@ end)
 task.spawn(function()
     while true do
         task.wait(0)
-        if perm3 == true then
+        if perm2 == true then
             if not game:GetService("Workspace").Terrain["_Game"].Admin.Pads:FindFirstChild(game.Players.LocalPlayer.Name .. "'s admin") then
                   if game:GetService("Workspace").Terrain["_Game"].Admin.Pads:FindFirstChild("Touch to get admin") then
                       local pad = game:GetService("Workspace").Terrain["_Game"].Admin.Pads:FindFirstChild("Touch to get admin"):FindFirstChild("Head")
@@ -3109,8 +3109,8 @@ function onPlayerAdded(player)
     end
 	
     if player.AccountAge < newlen == true and newplrautoslock == true then
-	 Chat("h \n\n\n [KohlsLite]: Automatically banned "..player.Name.." for being on an account under 3 weeks old. \n\n\n")
-	 print(player.Name.." joined the server. They were auto-banned for being under 21 days old.")
+	 Chat("h \n\n\n [KohlsLite]: Automatically banned "..player.Name.." for being on an account under the account age limit. \n\n\n")
+	 print(player.Name.." joined the server. They were auto-banned for being under the account age limit.")
          table.insert(newplrslocked, player.Name)
     end
 
@@ -3298,6 +3298,7 @@ function Gearban()
 		  end
 end
 
+-- ballin
 for i, v in pairs(game.Players:GetPlayers()) do
 	task.wait(0)
 	PLRSTART(v)
