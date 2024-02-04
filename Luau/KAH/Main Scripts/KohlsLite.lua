@@ -1025,7 +1025,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
  	IceMap()
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'fixpaint' then
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'fixpaint' then
 	GExecute("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/Main%20Scripts/Fix Paint.lua")
      end
 
