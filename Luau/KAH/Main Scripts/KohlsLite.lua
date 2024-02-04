@@ -3021,8 +3021,10 @@ end
 -- regen mover
 function RegenMover()
     print("Attempting to move REGEN pad...")
-    adminfolder = game:GetService("Workspace").Terrain["_Game"].Workspace.Admin
-    if adminfolder.Regen.CFrame.Y < 500 then
+    local Game_Folder = game:GetService("Workspace").Terrain["_Game"]
+    local Workspace_Folder = Game_Folder.Workspace
+    local Admin_Folder = Game_Folder.Admin
+    if Admin_Folder.Regen.CFrame.Y < 500 then
 	repeat wait() 
 	until game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")
 	local cf = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
@@ -3032,7 +3034,7 @@ function RegenMover()
 			task.wait(0)
 			game:GetService('RunService').Heartbeat:Wait()
 			game.Players.LocalPlayer.Character['Humanoid']:ChangeState(11)
-			cf.CFrame = adminfolder.Regen.CFrame * CFrame.new(-1*(adminfolder.Regen.Size.X/2)-(game.Players.LocalPlayer.Character['Torso'].Size.X/2), 0, 0)
+			cf.CFrame = Admin_Folder.Regen.CFrame * CFrame.new(-1*(Admin_Folder.Regen.Size.X/2)-(game.Players.LocalPlayer.Character['Torso'].Size.X/2), 0, 0)
 			if not moveregen then 
 				break 
 			end
