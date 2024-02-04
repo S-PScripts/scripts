@@ -3049,6 +3049,13 @@ function RegenMover()
 			Chat('unpunish me') 
 		end 
 	end)
+
+	task.wait(0.3)
+	moveregen = false
+	for i = 1,10 do
+		Chat("skydive me")
+	end
+	Chat("respawn me")
 end
 
 -- STONE MAP
