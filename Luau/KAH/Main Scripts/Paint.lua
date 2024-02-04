@@ -1,4 +1,5 @@
 -- https://github.com/Qltxi/scripts/blob/main/Color%20API%202.0
+-- This is for KohlsLite.
 
 ColourHere = "UNUSED"
 colorAPI = {}
