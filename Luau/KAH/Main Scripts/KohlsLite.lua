@@ -2033,40 +2033,40 @@ task.spawn(function()
 	end
 				
 	if ALLantifire == true then
-	    if player.Name.Character:FindFirstChild("Torso") then
-                if player.Name.Character.Torso:FindFirstChild("Fire") then
+	    if player.Character:FindFirstChild("Torso") then
+                if player.Character.Torso:FindFirstChild("Fire") then
                     Chat("unfire"..player.Name)
                 end
             end
 	end
 				
 	if ALLantifreeze == true then
-	     if player.Name.Character:FindFirstChild("ice") then
+	     if player.Character:FindFirstChild("ice") then
                 Chat("thaw"..player.Name)
             end
 	end
 				
 	if ALLantifly == true then
-	    if not player.Name.Character:FindFirstChild("Seizure") and player.Name.Character.Humanoid:GetState().Name == "PlatformStanding" then
+	    if not player.Character:FindFirstChild("Seizure") and player.Character.Humanoid:GetState().Name == "PlatformStanding" then
                 Chat("unfly"..player.Name)
                 Chat("clip"..player.Name)
             end
 	end
 				
 	if ALLantiff == true then
-	 if player.Name.Character:FindFirstChild("ForceField") then
+	 if player.Character:FindFirstChild("ForceField") then
                 Chat("unff"..player.Name)
             end
 	end
 				
 	if ALLantiglow == true then
-	   if player.Name.Character:FindFirstChild("PointLight") then
+	   if player.Character:FindFirstChild("PointLight") then
                   Chat("unglow"..player.Name)
             end
 	end
 				
 	if ALLantihealthc == true then
-	   if not player.Name.Character.Humanoid.Health == 100 then
+	   if not player.Character.Humanoid.Health == 100 then
 		Chat("health"..player.Name.."100")
 	   end
         end
@@ -2078,13 +2078,13 @@ task.spawn(function()
         end
 				
 	if ALLantijump == true then
-	    if not player.Name.Character.Humanoid.JumpPower == 50 then
+	    if not player.Character.Humanoid.JumpPower == 50 then
 		Chat("normaljump"..player.Name)
             end
 	end
 				
 	if ALLantikill == true then
-	   if player.Name.Character.Humanoid.Health == 0 then
+	   if player.Character.Humanoid.Health == 0 then
                     Chat("reset"..player.Name)
                 end
 	end
@@ -2101,7 +2101,7 @@ task.spawn(function()
 	end
 				
 	if ALLantiparticles == true then
-	   if player.Name.Character:FindFirstChild("ParticleEmitter") then
+	   if player.Character:FindFirstChild("ParticleEmitter") then
                   Chat("unparticle"..player.Name)
             end
 	end
@@ -2113,7 +2113,7 @@ task.spawn(function()
 	end
 				
 	if ALLantirocket == true then
-	   if player.Name.Character:FindFirstChild("Rocket") then
+	   if player.Character:FindFirstChild("Rocket") then
                 Chat("reload"..player.Name)
             end
 	end
@@ -2129,13 +2129,13 @@ task.spawn(function()
 	end
 				
 	if ALLantiseizure == true then
-	        if player.Name.Character:FindFirstChild("Seizure") then
+	        if player.Character:FindFirstChild("Seizure") then
                 Chat("unseizure"..player.Name)
             end
 	end
 				
 	if ALLantismoke == true then
-	     if player.Name.Character:FindFirstChild("Torso") then
+	     if player.Character:FindFirstChild("Torso") then
                 if player.Name.Character.Torso:FindFirstChild("Smoke") then
                     Chat("unsmoke"..player.Name)
                 end
@@ -2143,15 +2143,15 @@ task.spawn(function()
 	end
 				
 	if ALLantisparkles == true then
-	    if player.Name.Character:FindFirstChild("Torso") then
-                if player.Name.Character.Torso:FindFirstChild("Sparkles") then
+	    if player.Character:FindFirstChild("Torso") then
+                if player.Character.Torso:FindFirstChild("Sparkles") then
                     Chat("unsparkles"..player.Name)
                 end
             end
 	end
 				
 	if ALLantispeed == true then
-	    if not player.Name.Character.Humanoid.WalkSpeed == 16 then
+	    if not player.Character.Humanoid.WalkSpeed == 16 then
 		Chat("speed"..player.Name.."16")
 	    end
 	end
@@ -2167,7 +2167,7 @@ task.spawn(function()
 	end
 				
 	if ALLantiswag == true then
-		if player.Name.Character:FindFirstChild("EpicCape") then
+		if player.Character:FindFirstChild("EpicCape") then
                 	Chat("normal"..player.Name)
 		end
 	end
