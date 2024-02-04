@@ -1026,7 +1026,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'fixpaint' then
-	GExecute("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/Main%20Scripts/Paint.lua")
+	GExecute("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/Main%20Scripts/Fix Paint.lua")
      end
 
    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'anticrash' then
