@@ -2465,13 +2465,13 @@ v.Chatted:Connect(function(msg)
      task.wait(0)
      task.spawn(function()
 		task.wait(0)
-                if string.sub(msg:lower(), 0, 2) == "/w" or string.sub(msg:lower(), 0, 9) == "/c system" and v.Name ~= game.Players.LocalPlayer then
+                if (string.sub(msg:lower(), 0, 2) == "/w" or string.sub(msg:lower(), 0, 9) == "/c system") and v.Name ~= game.Players.LocalPlayer then
                    if PingCsystem then
                         print(v.Name..' is using /c system or whispering commands.')
                         Chat('h \n\n\n [KohlsLite]: '..v.Name..' is using /c system or whispering commands. \n\n\n')
                    end
                 end
-                if string.sub(msg:lower(), 0, 4) == "logs" or string.sub(msg:lower(), 0, 5) == ":logs" and v.Name ~= game.Players.LocalPlayer then
+                if (string.sub(msg:lower(), 0, 4) == "logs" or string.sub(msg:lower(), 0, 5) == ":logs") and v.Name ~= game.Players.LocalPlayer then
                    if PingLogs then
                         print(v.Name..' is using logs.')
                         Chat('h \n\n\n [KohlsLite]: '..v.Name..' is using logs. \n\n\n')
@@ -2490,7 +2490,7 @@ v.Chatted:Connect(function(msg)
         	    resultg = true
             	end
 					
-        	if string.sub(msg:lower(), 0, 3) == "sit" or string.sub(msg:lower(), 0, 4) == ":sit" and v.Name ~= game.Players.LocalPlayer then
+        	if (string.sub(msg:lower(), 0, 3) == "sit" or string.sub(msg:lower(), 0, 4) == ":sit") and v.Name ~= game.Players.LocalPlayer then
                    if antiattach then
                      Chat("unsit"..v.Name)
                      print(v.Name..' tried to sit')
@@ -2498,7 +2498,7 @@ v.Chatted:Connect(function(msg)
                    end
                 end
 						
-                if string.sub(msg:lower(), 0, 4) == "stun" or string.sub(msg:lower(), 0, 5) == ":stun" and v.Name ~= game.Players.LocalPlayer then
+                if (string.sub(msg:lower(), 0, 4) == "stun" or string.sub(msg:lower(), 0, 5) == ":stun") and v.Name ~= game.Players.LocalPlayer then
                    if antiattach then
                      Chat("unstun"..v.Name)
                      print(v.Name..' tried to stun.')
@@ -2534,14 +2534,14 @@ v.Chatted:Connect(function(msg)
                 end
 		end
 					
-                if string.sub(msg:lower(), 0, 6) == ";bring" or string.sub(msg:lower(), 0, 6) == ":bring" or string.sub(msg:lower(), 0, 5) == "bring" and v.Name ~= game.Players.LocalPlayer then
+                if (string.sub(msg:lower(), 0, 6) == ";bring" or string.sub(msg:lower(), 0, 6) == ":bring" or string.sub(msg:lower(), 0, 5) == "bring") and v.Name ~= game.Players.LocalPlayer then
 		if noobdetect then
                    print(v.Name..' is a noob.')
                    Chat('h \n\n\n [KohlsLite]: '..v.Name..', it is tp (plr) me, not ;bring!! \n\n\n')
                 end
 		end
 					
-                if string.sub(msg:lower(), 0, 5) == ";goto" or string.sub(msg:lower(), 0, 5) == ":goto" or string.sub(msg:lower(), 0, 4) == "goto" and v.Name ~= game.Players.LocalPlayer then
+                if (string.sub(msg:lower(), 0, 5) == ";goto" or string.sub(msg:lower(), 0, 5) == ":goto" or string.sub(msg:lower(), 0, 4) == "goto") and v.Name ~= game.Players.LocalPlayer then
 		if noobdetect then
                    print(v.Name..' is a noob.') 
                    Chat('h \n\n\n [KohlsLite]: '..v.Name..', it is tp me (plr), not ;goto!! \n\n\n')
@@ -3077,7 +3077,7 @@ function onPlayerAdded(player)
     if player.AccountAge < newlen == true and newplrautoslock == true then
 	 Chat("h \n\n\n [KohlsLite]: Automatically banned "..player.Name.." for being on an account under 3 weeks old. \n\n\n")
 	 print(player.Name.." joined the server. They were auto-banned for being under 21 days old.")
-         table.insert(newplrslocked, player)
+         table.insert(newplrslocked, player.Name)
     end
 
     if table.find(rkick_on_sight, player.Name) then
