@@ -118,7 +118,7 @@ local musicnames = {"All dropping 8 beats", -- 1
 		    "hayayaya", -- 41
 		    "seize"} -- 42
 
-local antilog = "00000000000000000000000000000000000" -- for music
+local antimlog = false -- for music
 
 local padbanned = {"placeholder"} 
 local padreinforcements = false 
@@ -239,6 +239,14 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
  		 print(whitelist[i])
 	 end
         end
+
+	if string.sub(msg, 1, #prefix + 8)  == prefix..'antimlog' then
+		antimlog = true
+	end
+
+	if string.sub(msg, 1, #prefix + 10)  == prefix..'unantimlog' then
+		antimlog = false
+	end
 
 	if string.sub(msg, 1, #prefix + 5)  == prefix..'admin' then
          local dasplayer = string.sub(msg:lower(), #prefix + 7)
@@ -392,7 +400,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         musicplay = tonumber(string.sub(msg:lower(), #prefix + 7)) 
         if musicplay ~= nil and musicplay >= 1 and musicplay <= #musiclist then
             Chat("h \n\n\n [KohlsLite]: Playing music:" .. musicnames[musicplay] .. ". \n\n\n")
-            Chat("music " .. musiclist[musicplay])
+	    if antimlog then
+            	Chat("music 00000000000000000000000000" .. musiclist[musicplay])
+	    else
+		Chat("music " .. musiclist[musicplay])
+	    end
         else
             print("Invalid music number!")
         end
@@ -401,7 +413,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'rgmusic' then
         musicplay = math.random(1, #musiclist)
         Chat("h \n\n\n [KohlsLite]: Playing music:" .. musicnames[musicplay] .. ". \n\n\n")
-        Chat("music " .. musiclist[musicplay])
+         if antimlog then
+            	Chat("music 00000000000000000000000000" .. musiclist[musicplay])
+	 else
+		Chat("music " .. musiclist[musicplay])
+	 end
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'nmusic' then
@@ -411,7 +427,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
           musicplay = musicplay + 1
        end
        Chat("h \n\n\n [KohlsLite]: Playing music:" .. musicnames[musicplay] .. ". \n\n\n")
-       Chat("music " .. musiclist[musicplay])
+       if antimlog then
+            	Chat("music 00000000000000000000000000" .. musiclist[musicplay])
+	else
+		Chat("music " .. musiclist[musicplay])
+	end
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'pmusic' then
@@ -421,7 +441,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
           musicplay = musicplay - 1
        end
        Chat("h \n\n\n [KohlsLite]: Playing music:" .. musicnames[musicplay] .. ". \n\n\n")
-       Chat("music " .. musiclist[musicplay])
+        if antimlog then
+            	Chat("music 00000000000000000000000000" .. musiclist[musicplay])
+	else
+		Chat("music " .. musiclist[musicplay])
+	end
     end
 
     if string.sub(msg, 1, #prefix + 9)  == prefix..'musiclist' then
@@ -548,7 +572,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
        if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
 	  local myid  = game:GetService("Workspace").Terrain["_Game"].Folder.Sound.SoundId 
 	  local myidfix = myid:match("(%d+)$")
-	  Chat("music "..myidfix)
+	  if antimlog then
+            	Chat("music 00000000000000000000000000" .. myidfix)
+	  else
+		Chat("music " .. myidfix)
+	  end
        end
      end
 
@@ -696,19 +724,19 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
   if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'boombox' then -- shortcut cmd lol
 	local ubox = string.sub(msg:lower(), #prefix + 9)
 	if ubox ~= "" then
-		Chat("gear "..ubox.." 000000000000000000212641536")
+		Chat("gear "..ubox.." 212641536")
 		Chat("pm"..ubox.." play your music on the boombox pls")
 	else
-		Chat("gear me 000000000000000000212641536")
+		Chat("gear me 212641536")
 	end
   end
 
   if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'furry' then
 	local furry = string.sub(msg:lower(), #prefix + 7)
 	if furry ~= "" then
-		Chat("char "..furry.." 0000000000000000003654651146")
+		Chat("char "..furry.." 0000000000000000004844006008")
 	else
-		Chat("char me 0000000000000000003654651146")
+		Chat("char me 0000000000000000004844006008")
 	end
   end
 
@@ -2748,22 +2776,30 @@ end)
 
 -- MUSIC RELATED
 task.spawn(function()
-while true do
+ while true do
     task.wait(0)
     if antimusic == true then
 		  if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
 				 Chat("music antimusic is on!")
-      end
+      		  end
     end
     if mymusiconly == true and musicoff == false then
 		  if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
 				if game:GetService("Workspace").Terrain["_Game"].Folder.Sound.SoundId == "http://www.roblox.com/asset/?id="..mymusiconlyid then
-    		else
-    			  Chat("music "..mymusiconlyid)
+    		  		else
+				   if antimlog then
+            				Chat("music 00000000000000000000000000" .. mymusiconlyid)
+	    			   else
+    			  		Chat("music "..mymusiconlyid)
+	    			    end
 				end
-      end
+      		  end
       if not game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
-				    Chat("music "..mymusiconlyid)
+				     if antimlog then
+            				Chat("music 00000000000000000000000000" .. mymusiconlyid)
+	    			   else
+    			  		Chat("music "..mymusiconlyid)
+	    			    end
       end
     end
   end
