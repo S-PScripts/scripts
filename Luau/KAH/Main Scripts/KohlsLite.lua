@@ -2406,7 +2406,7 @@ task.wait(4)
 Chat('h \n\n\n Whoops, that was the wrong thing! \n\n\n')
 task.wait(4)
 
-local Players = game:GetService("Players"):GetPlayers()
+local Players = game.Players:GetPlayers()
 local randomPlayer = "Placeholder"
 randomPlayer = Players[math.random(#Players)]
 
@@ -2455,7 +2455,7 @@ Speak("Hey you")
 task.wait(2)
 Speak("Yes, you!")
 task.wait(2)
-local Players = game:GetService("Players"):GetPlayers()
+local Players = game.Players:GetPlayers()
 local randomPlayer = "Placeholder"
 task.wait(2)
 	
