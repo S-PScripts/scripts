@@ -666,7 +666,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	antiflash = false
     end
 		
-    if string.sub(msg:lower(), 1, #prefix + 2) == prefix..'ad' then
+    if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'adv' then
        ADVERTISEMENT()
     end
 
