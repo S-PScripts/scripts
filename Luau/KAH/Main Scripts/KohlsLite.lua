@@ -450,7 +450,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
     if string.sub(msg, 1, #prefix + 9)  == prefix..'musiclist' then
          for i = 1, #musiclist do
- 		 print(musiclist[i].."-"..musicnames[i])
+ 		 print("gmusic"..i.." - "..musiclist[i].." - "..musicnames[i])
 	 end
     end
 		
@@ -673,10 +673,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'ipboom' then
        IPBOOM()
     end
-
-    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'giforjif' then
-       GIFORJIF()
-    end
 		
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'logspam' then
        LogSpam()
@@ -748,10 +744,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
   if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'ecrash' then
 	    GExecute("https://pastebin.com/raw/2RkVQ4vc") -- prevent bugs in the main script
-	    task.wait(2)
+	    task.wait(1)
             Chat("music 0000000000000000000006917155909")
             Chat("fogcolor 0 0 0")
             Chat("fogend 0")
+	    task.wait(1)
 	    DCrash()	
     end
 			
@@ -1572,7 +1569,6 @@ print("adminall - give everyone's free admin")
 print("unadminall - remove everyone's free admin")
 
 print("---")
-print("giforjif - the famous question")
 print("ipboom - who's ip address is that?")
 
 print("---")
@@ -1738,7 +1734,7 @@ print("There are also many other antis (for you or for everyone)!")
 
 print("---")
 print("KohlsLite, since 2023. Created by S_P")
-print("Version is: v1.048 - 23rd January 2024 Build")
+print("Version is: v1.050 - 4th February 2024 Build")
 end
 
 -- CHECK FOR PERM
@@ -2419,7 +2415,7 @@ randomPlayer = Players[math.random(#Players)]
 Chat('h \n\n\n Hopefully'..randomPlayer..'forgives me... \n\n\n')
 if randomPlayer == game.Players.LocalPlayer then
    task.wait(4)
-   Chat("h \n\n\n Wait a second... that's me!!!!!!!")
+   Chat("h \n\n\n Wait a second... that's me!!!!!!! \n\n\n")
 end
 
 end
@@ -2455,42 +2451,6 @@ game.Players.LocalPlayer:GetMouse().KeyDown:connect(function(key)
 	end	
 end)
 	
--- GIF OR JIF
-function GIFORJIF()
-Speak("Hey you")
-task.wait(2)
-Speak("Yes, you!")
-task.wait(2)
-local Players = game.Players:GetPlayers()
-local randomPlayer = "Placeholder"
-task.wait(2)
-	
-repeat
-randomPlayer = Players[math.random(#Players)] 
-until randomPlayer ~= game.Players.LocalPlayer
-
-Speak("I'm talking about you"..randomPlayer.."!")
-task.wait(2)
-Speak("How do you pronounce GIF?")
-task.wait(2)
-Speak("Is it GIF or JIF?")
-noobs = true
-repeat task.wait() until noobs == false
-if resultg == false then
-    task.wait(2)
-    Speak("No death for you!")
-else
-    task.wait(2)
-    Speak("I sense that the illuminati is coming...")
-    task.wait(2)
-    Speak("Is this game over...?")
-    task.wait(2)
-    Chat("fogend 0")
-    Chat("time 0")
-    DCrash()
-end
-end
-
 -- some antis and admin system
 function PLRSTART(v)
 v.Chatted:Connect(function(msg)
@@ -2512,15 +2472,6 @@ v.Chatted:Connect(function(msg)
             			LogSpam()
         		   end
                 end
-
-		if string.sub(msg:lower(), 0, 3) == "gif" and v.Name == randomPlayer and noobs == true then
-        	    noobs = false
-                    resultg = false
-                end
-		if string.sub(msg:lower(), 0, 3) == "jif" and v.Name == randomPlayer and noobs == true then
-                    noobs = false
-        	    resultg = true
-            	end
 					
         	if (string.sub(msg:lower(), 0, 3) == "sit" or string.sub(msg:lower(), 0, 4) == ":sit") and v.Name ~= game.Players.LocalPlayer.Name then
                    if antiattach then
