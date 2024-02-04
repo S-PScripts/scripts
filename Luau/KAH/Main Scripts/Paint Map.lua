@@ -1,6 +1,6 @@
 -- https://github.com/Qltxi/scripts/blob/main/Color%20API%202.0
+-- This is for KohlsLite.
 
-ColourHere = "UNUSED"
 colorAPI = {}
  
 colorAPI.color = function(Part, color)
@@ -189,18 +189,18 @@ game.Players:Chat("gear me 00000000000000000000000000000000000000000018474459")
 		RR = colorAPI.transformToColor3(BrickColor.new(_G.ColourHere))	
 	})
 end)
-		colorAPI.color(game.Workspace.Terrain["_Game"].Workspace["Baseplate"], colorAPI.transformToColor3(BrickColor.new("Bright green")))
+		colorAPI.color(game.Workspace.Terrain["_Game"].Workspace["Baseplate"], colorAPI.transformToColor3(BrickColor.new(_G.ColourHere)))
 		spawn(function()
-			colorAPI.colorObbyBox(colorAPI.transformToColor3(BrickColor.new("Teal")))
+			colorAPI.colorObbyBox(colorAPI.transformToColor3(BrickColor.new(_G.ColourHere)))
 		end)
 		spawn(function()
-			colorAPI.colorObbyBricks(colorAPI.transformToColor3(BrickColor.new("Bright red")))
+			colorAPI.colorObbyBricks(colorAPI.transformToColor3(BrickColor.new(_G.ColourHere)))
 		end)
 		spawn(function()
-			colorAPI.colorAdminDivs(colorAPI.transformToColor3(BrickColor.new("Dark stone grey")))
+			colorAPI.colorAdminDivs(colorAPI.transformToColor3(BrickColor.new(_G.ColourHere)))
 		end)
 		spawn(function()
-			colorAPI.colorPads(colorAPI.transformToColor3(BrickColor.new("Bright green")))
+			colorAPI.colorPads(colorAPI.transformToColor3(BrickColor.new(_G.ColourHere)))
 		end)
 wait(0.6)
 game.Players:Chat("ungear 000000000000000000000000000000000000000000000000000000000 me "..math.random(99999))
