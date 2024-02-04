@@ -2813,7 +2813,7 @@ end)
 
 -- GOTO
 function Goto()
-          Chat("tp me"..gotou)
+          Chat("tp me "..gotou)
 end
 
 -- for cframe goto
@@ -2823,7 +2823,7 @@ end
 
 -- BRING
 function Bring()
-      Chat("tp"..bringu.."me")
+      Chat("tp "..bringu.." me")
 end
 
 
