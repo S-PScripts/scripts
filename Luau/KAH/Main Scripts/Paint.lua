@@ -1,7 +1,6 @@
 -- https://github.com/Qltxi/scripts/blob/main/Color%20API%202.0
--- This is for KohlsLite.
 
-ColourHere = "UNUSED"
+ColourHere = "Put Your Colour Here"
 colorAPI = {}
  
 colorAPI.color = function(Part, color)
@@ -156,15 +155,10 @@ end
  
 -------------------------------------------------------------------- BASIC API STUFF HERE --------------------------------------------------------------------
  
-game.Players:Chat("gear me 00000000000000000000000000000000000000000018474459")
+game:GetService("Players"):Chat("gear me 00000000000000000000000000000000000000000018474459")
 		wait(0.5)
-    local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack") 
-    game.Players.LocalPlayer.Backpack:WaitForChild("PaintBucket")
-    for _, v in ipairs(Backpack:GetChildren()) do
-          v.Parent = game.Players.LocalPlayer.Character
-          v:Activate()
-    end		
-    wait(0.50)
+		game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack.PaintBucket)
+		wait(0.50)
 		coroutine.wrap(function()
 			colorAPI.colorHouse({
 				wallsC = colorAPI.transformToColor3(BrickColor.new("Brick yellow")),
