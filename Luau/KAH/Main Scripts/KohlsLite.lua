@@ -848,7 +848,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'paintmap' then
-	_G.ColourHere = string.sub(msg:lower(), #prefix + 10)
+	_G.ColourHere = string.sub(msg, #prefix + 10)
 	GExecute("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/Main%20Scripts/Paint Map.lua")
     end
 		
