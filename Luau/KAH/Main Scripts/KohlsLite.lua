@@ -743,7 +743,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
   end
 
   if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'ecrash' then
-	    GExecute("https://pastebin.com/raw/2RkVQ4vc") -- prevent bugs in the main script
+	    Chat("h \n\n\n [KohlsDefender]: This server was crashed because of an issue. \n\n\n")
 	    task.wait(1)
             Chat("music 0000000000000000000006917155909")
             Chat("fogcolor 0 0 0")
