@@ -689,6 +689,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'supercmd' then
 	supermessage = string.sub(msg:lower(), #prefix + 10)
+	SuperCMD()
     end
 
    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'supert' then
