@@ -155,7 +155,7 @@ end
  
 -------------------------------------------------------------------- BASIC API STUFF HERE --------------------------------------------------------------------
  
-game:GetService("Players"):Chat("gear me 00000000000000000000000000000000000000000018474459")
+game.Players:Chat("gear me 00000000000000000000000000000000000000000018474459")
 		wait(0.5)
     local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack") 
     game.Players.LocalPlayer.Backpack:WaitForChild("PaintBucket")
