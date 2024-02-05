@@ -3002,8 +3002,7 @@ function RegenMover()
 				
 	task.spawn(function() 
 		while moveregen do 
-			task.wait(0)
-			wait(.1) 
+			task.wait(0.1)
 			Chat('unpunish me') 
 		end 
 	end)
@@ -3011,7 +3010,9 @@ function RegenMover()
 	task.wait(0.3)
 	moveregen = false
 	for i = 1,10 do
-		task.wait(0.2)
+		task.wait(0.1)
+		Chat("skydive me")
+		task.wait(0)
 		Chat("skydive me")
 	end
 	Chat("respawn me")
