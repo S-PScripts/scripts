@@ -1953,14 +1953,15 @@ task.spawn(function()
 	end
 			
 	if YOUantiname == true then
-	   local player = game.Players:FindFirstChild(game.Players.LocalPlayer)
-          	if player and player.Character then
-                  	local modelName = player.Character.Name
-                  	local actualName = player.Name
-                 	 if modelName ~= actualName then
-                        	Chat("reset me")
-                 	 end
-         	 end
+	     if game.Players.LocalPlayer.Character:FindFirstChild("Nametag") then
+		Chat("reset me")
+	     end
+	end
+
+	if YOUantiexplode == true then
+	     if game.Players.LocalPlayer.Character:FindFirstChild("Explosion") then
+		Chat("reset me")
+	     end
 	end
 
 	if YOUantichar == true then
@@ -2121,6 +2122,12 @@ task.spawn(function()
 		Chat("normaljump "..v.Name)
             end
 	end
+
+	if ALLantiexplode == true then
+	     if v.Character:FindFirstChild("Explosion") then
+		Chat("reset "..v.Name)
+	     end
+	end
 				
 	if ALLantikill == true then
 	   if v.Character.Humanoid.Health == 0 then
@@ -2135,14 +2142,9 @@ task.spawn(function()
 	end
 
 	if ALLantiname == true then
-	   local player = game.Players:FindFirstChild(v)
-          	if player and player.Character then
-                  	local modelName = player.Character.Name
-                  	local actualName = player.Name
-                 	 if modelName ~= actualName then
-                        	Chat("reset "..player.Name)
-                 	 end
-         	 end
+	   if v.Character:FindFirstChild("Nametag") then
+		Chat("reset me")
+	     end
 	end
 				
 	if ALLantiparticles == true then
