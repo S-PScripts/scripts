@@ -3045,9 +3045,17 @@ function GetPing()
    print("Ping is " .. RSP .. "ms.")
 end
 
-function FRespawn()
-    game.Players.LocalPlayer.Character:Destroy()
-    print("lol this doesn't actually work lol")
+function FRespawn() -- cmdy
+    local char = PlayerService.LocalPlayer.Character
+    if char:FindFirstChildOfClass("Humanoid") then char:FindFirstChildOfClass("Humanoid"):ChangeState(15) end
+		char:ClearAllChildren()
+		local newChar = Instance.new("Model")
+		newChar.Parent = workspace
+		PlayerService.LocalPlayer.Character = newChar
+		task.wait(0)
+		PlayerService.LocalPlayer.Character = char
+		newChar:Destroy()
+    end
 end
 
 -- regen mover
