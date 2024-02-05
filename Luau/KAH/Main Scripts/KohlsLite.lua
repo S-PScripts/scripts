@@ -175,8 +175,8 @@ end
 local permpassid = 66254 or 64354 -- don't edit
 local personpassid = 35748 or 37127 -- don't edit
 
-print("~~~Thank you for using KohlsLite! Created by S_P.~~~")
-Chat("h \n\n\n [KohlsLite]: Executed! v1.050 keyword \n\n\n")
+print("Thank you for using KohlsLite! Created by S_P.")
+Chat("h \n\n\n [KohlsLite]: Executed! v1.050 \n\n\n")
 
 -- delta broke this, it was working before an update :P
 --[[if string.match(game:HttpGet("https://inventory.roproxy.com/v1/users/" .. game.Players.LocalPlayer.UserId .. "/items/GamePass/" .. permpassid), permpassid) then
@@ -3047,15 +3047,15 @@ end
 
 function FRespawn() -- cmdy
     local char = PlayerService.LocalPlayer.Character
-    if char:FindFirstChildOfClass("Humanoid") then char:FindFirstChildOfClass("Humanoid"):ChangeState(15) end
-		char:ClearAllChildren()
-		local newChar = Instance.new("Model")
-		newChar.Parent = workspace
-		PlayerService.LocalPlayer.Character = newChar
-		task.wait(0)
-		PlayerService.LocalPlayer.Character = char
-		newChar:Destroy()
+    if char:FindFirstChildOfClass("Humanoid") then char:FindFirstChildOfClass("Humanoid"):ChangeState(15) 
     end
+    char:ClearAllChildren()
+    local newChar = Instance.new("Model")
+    newChar.Parent = workspace
+    PlayerService.LocalPlayer.Character = newChar
+    task.wait(0)
+    PlayerService.LocalPlayer.Character = char
+    newChar:Destroy()
 end
 
 -- regen mover
