@@ -210,6 +210,14 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	if string.sub(msg:lower(), 1, #prefix + 5) == prefix.."cmdpi" then -- well, you need that visualiser, do you?
 		GExecute("https://raw.githubusercontent.com/quivings/KAH/main/CMD%20v3.lua")
 	end
+
+	if string.sub(msg:lower(), 1, #prefix + 4) == prefix.."cmdy" then
+		GExecute("https://raw.githubusercontent.com/quivings/KAH/main/CMD-Y%20(v1.56).lua")
+	end
+
+	if string.sub(msg:lower(), 1, #prefix + 5) == prefix.."badfa" then
+		GExecute("https://raw.githubusercontent.com/Fonalc/fa/main/main.lua")
+	end
 		
 	if string.sub(msg, 1, #prefix + 2)  == prefix..'wl' then
          local dasplayer = string.sub(msg:lower(), #prefix + 4)
