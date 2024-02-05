@@ -727,7 +727,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	local ubox = string.sub(msg:lower(), #prefix + 9)
 	if ubox ~= "" then
 		Chat("gear "..ubox.." 212641536")
-		Chat("pm"..ubox.." play your music on the boombox pls")
+		Chat("pm "..ubox.." play your music on the boombox pls")
 	else
 		Chat("gear me 212641536")
 	end
