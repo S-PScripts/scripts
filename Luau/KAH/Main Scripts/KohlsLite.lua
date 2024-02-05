@@ -2526,6 +2526,7 @@ v.Chatted:Connect(function(msg)
                         Chat('h \n\n\n [KohlsLite]: '..v.Name..' is using /c system or whispering commands. \n\n\n')
                    end
                 end
+					
                 if (string.sub(msg:lower(), 0, 4) == "logs" or string.sub(msg:lower(), 0, 5) == ":logs") and v.Name ~= game.Players.LocalPlayer.Name then
                    if PingLogs then
                         print(v.Name..' is using logs.')
@@ -2534,6 +2535,11 @@ v.Chatted:Connect(function(msg)
         		   if AntiLogs then
             			LogSpam()
         		   end
+                end
+
+		if string.sub(msg:lower(), 0, 6) == "btools" or string.sub(msg:lower(), 0, 7) == ":btools" or string.sub(msg:lower(), 0, 7) == ";btools" then
+                        print(v.Name..' thought btools existed.')
+                        Chat('h \n\n\n [KohlsLite]: '..v.Name..', btools do not exist anymore. \n\n\n')
                 end
 					
         	if (string.sub(msg:lower(), 0, 3) == "sit" or string.sub(msg:lower(), 0, 4) == ":sit") and v.Name ~= game.Players.LocalPlayer.Name then
@@ -2561,7 +2567,7 @@ v.Chatted:Connect(function(msg)
 					
                 if string.sub(msg:lower(), 0, 5) == ";poop" or string.sub(msg:lower(), 0, 5) == ":poop" or string.sub(msg:lower(), 0, 4) == "poop" then
 		if noobdetect then
-		   if v.Name ~= "IceStuds" then
+		   if v.Name ~= "IceStuds" then -- very epik exception
                    	print(v.Name..' is a noob.')
                    	Chat('h \n\n\n [KohlsLite]: '..v.Name..', go back to FREE ADMIN, POOP IS NOT A COMMAND!! \n\n\n')
 	  	   else Chat('h \n\n\n [IceStuds]: poop \n\n\n')
