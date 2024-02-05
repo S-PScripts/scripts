@@ -1715,7 +1715,7 @@ print("unsnplayer - stop spam naming a player, naming currently breaks your cam"
 
 print("---")
 print("announce - announce a message without your username in the h")
-print("announcewm - announce a message with [KohlsLite]: as the sender of the h")
+print("wmannounce - announce a message with [KohlsLite]: as the sender of the h")
 
 print("---")
 print("pinglogs - ping you when someone uses logs")
