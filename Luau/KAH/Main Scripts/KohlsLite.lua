@@ -150,6 +150,7 @@ local antiattach2 = false
 
 local antiflash = false
 local antidisco = false
+local antifogend = false
 local antichat = false
 local antiattach = false
 local antigs = false
@@ -664,6 +665,14 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
     if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantiflash' then
 	antiflash = false
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'antifogend' then
+	antifogend = true
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'unantifogend' then
+	antifogend = false
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'adv' then
@@ -1278,6 +1287,22 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	YOUantikill = false
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antichar' then
+	YOUantichar = true
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unantichar' then
+	YOUantichar = false
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antichara' then
+	ALLantichar = true
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantichara' then
+	ALLantichar = false
+    end
+		
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antikilla' then
 	ALLantikill = true
     end
@@ -1796,6 +1821,7 @@ task.spawn(function()
     end
 end)
 
+-- visual
 task.spawn(function()
     while true do
         task.wait()
@@ -1812,6 +1838,12 @@ task.spawn(function()
                           end
                   end
             end
+        end
+
+	if antifogend == true then
+	   if game.Lighting.FogEnd ~= 100000 then
+	      Chat("fogend 100000")
+	   end
         end
   end
 end)
@@ -1921,7 +1953,7 @@ task.spawn(function()
 	end
 			
 	if YOUantiname == true then
-	   local player = game.Players:FindFirstChild(game.Players.LocalPlayer.Name)
+	   local player = game.Players:FindFirstChild(game.Players.LocalPlayer)
           	if player and player.Character then
                   	local modelName = player.Character.Name
                   	local actualName = player.Name
@@ -1929,6 +1961,12 @@ task.spawn(function()
                         	Chat("reset me")
                  	 end
          	 end
+	end
+
+	if YOUantichar == true then
+	   if game.Players.LocalPlayer.UserId ~= game.Players.LocalPlayer.CharacterAppearanceId then
+	      Chat("unchar me")
+	   end
 	end
 			
 	if YOUantiparticles == true then
@@ -2090,8 +2128,14 @@ task.spawn(function()
                 end
 	end
 
+	if ALLantichar == true then
+	   if v.UserId ~= v.AppearanceId then
+	      Chat("unchar me")
+	   end
+	end
+
 	if ALLantiname == true then
-	   local player = game.Players:FindFirstChild(v.Name)
+	   local player = game.Players:FindFirstChild(v)
           	if player and player.Character then
                   	local modelName = player.Character.Name
                   	local actualName = player.Name
