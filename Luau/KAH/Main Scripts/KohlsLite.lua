@@ -2499,8 +2499,11 @@ v.Chatted:Connect(function(msg)
 					
                 if string.sub(msg:lower(), 0, 5) == ";poop" or string.sub(msg:lower(), 0, 5) == ":poop" or string.sub(msg:lower(), 0, 4) == "poop" then
 		if noobdetect then
-                   print(v.Name..' is a noob.')
-                   Chat('h \n\n\n [KohlsLite]: '..v.Name..', go back to FREE ADMIN, POOP IS NOT A COMMAND!! \n\n\n')
+		   if v.Name ~= "IceStuds" then
+                   	print(v.Name..' is a noob.')
+                   	Chat('h \n\n\n [KohlsLite]: '..v.Name..', go back to FREE ADMIN, POOP IS NOT A COMMAND!! \n\n\n')
+	  	   else Chat('h \n\n\n [IceStuds]: poop \n\n\n')
+		   end
                 end
 		end
 					
