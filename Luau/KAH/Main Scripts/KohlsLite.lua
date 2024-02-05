@@ -2025,160 +2025,160 @@ end)
 task.spawn(function()
 	while true do
 	task.wait()
-	for _, player in ipairs(game.Players:GetPlayers()) do
-	if player ~= game.Players.LocalPlayer then
+	for i, v in ipairs(game.Players:GetPlayers()) do
+	if v.Name ~= game.Players.LocalPlayer.Name then
 	if ALLanticlone == true then
-	    if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild(player.Name) then
-                Chat("unclone"..player.Name)
+	    if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild(v.Name) then
+                Chat("unclone "..v.Name)
             end
 	end
 				
 	if ALLantifire == true then
-	    if player.Character:FindFirstChild("Torso") then
-                if player.Character.Torso:FindFirstChild("Fire") then
-                    Chat("unfire"..player.Name)
+	    if v.Character:FindFirstChild("Torso") then
+                if v.Character.Torso:FindFirstChild("Fire") then
+                    Chat("unfire "..v.Name)
                 end
             end
 	end
 				
 	if ALLantifreeze == true then
-	     if player.Character:FindFirstChild("ice") then
-                Chat("thaw"..player.Name)
+	     if v.Character:FindFirstChild("ice") then
+                Chat("thaw "..v.Name)
             end
 	end
 				
 	if ALLantifly == true then
-	    if not player.Character:FindFirstChild("Seizure") and player.Character.Humanoid:GetState().Name == "PlatformStanding" then
-                Chat("unfly"..player.Name)
-                Chat("clip"..player.Name)
+	    if not v.Character:FindFirstChild("Seizure") and v.Character.Humanoid:GetState().Name == "PlatformStanding" then
+                Chat("unfly "..v.Name)
+                Chat("clip "..v.Name)
             end
 	end
 				
 	if ALLantiff == true then
-	 if player.Character:FindFirstChild("ForceField") then
-                Chat("unff"..player.Name)
+	 if v.Character:FindFirstChild("ForceField") then
+                Chat("unff "..v.Name)
             end
 	end
 				
 	if ALLantiglow == true then
-	   if player.Character:FindFirstChild("PointLight") then
-                  Chat("unglow"..player.Name)
+	   if v.Character:FindFirstChild("PointLight") then
+                  Chat("unglow "..v.Name)
             end
 	end
 				
 	if ALLantihealthc == true then
-	   if not player.Character.Humanoid.Health == 100 then
-		Chat("health"..player.Name.."100")
+	   if not v.Character.Humanoid.Health == 100 then
+		Chat("health "..v.Name.."100")
 	   end
         end
             
 	if ALLantijail == true then
-	    if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild(player.Name .. "'s jail") then
-                Chat("unjail"..player.Name)
+	    if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild(v.Name .. "'s jail") then
+                Chat("unjail "..v.Name)
             end
         end
 				
 	if ALLantijump == true then
-	    if not player.Character.Humanoid.JumpPower == 50 then
-		Chat("normaljump"..player.Name)
+	    if not v.Character.Humanoid.JumpPower == 50 then
+		Chat("normaljump "..v.Name)
             end
 	end
 				
 	if ALLantikill == true then
-	   if player.Character.Humanoid.Health == 0 then
-                    Chat("reset"..player.Name)
+	   if v.Character.Humanoid.Health == 0 then
+                    Chat("reset "..v.Name)
                 end
 	end
 
 	if ALLantiname == true then
-	   local player = game.Players:FindFirstChild(player.Name)
+	   local player = game.Players:FindFirstChild(v.Name)
           	if player and player.Character then
                   	local modelName = player.Character.Name
                   	local actualName = player.Name
                  	 if modelName ~= actualName then
-                        	Chat("reset"..player.Name)
+                        	Chat("reset "..player.Name)
                  	 end
          	 end
 	end
 				
 	if ALLantiparticles == true then
-	   if player.Character:FindFirstChild("ParticleEmitter") then
-                  Chat("unparticle"..player.Name)
+	   if v.Character:FindFirstChild("ParticleEmitter") then
+                  Chat("unparticle"..v.Name)
             end
 	end
 				
 	if ALLantipunish == true then
-	    if game.Lighting:FindFirstChild(player.Name) then
-                Chat("unpunish"..player.Name)
+	    if game.Lighting:FindFirstChild(v.Name) then
+                Chat("unpunish "..v.Name)
             end
 	end
 				
 	if ALLantirocket == true then
-	   if player.Character:FindFirstChild("Rocket") then
-                Chat("reload"..player.Name)
+	   if v.Character:FindFirstChild("Rocket") then
+                Chat("reload "..v.Name)
             end
 	end
 				
 	if ALLantisit == true then
-	   local player = player.Name
+	   local player = v.Name
             	 if player.Character then
                     local humanoid = player.Character:WaitForChild("Humanoid", 1)
                     if humanoid and humanoid.Sit then
-                        Chat("unsit"..player.Name)
+                        Chat("unsit "..player.Name)
                     end
              	end
 	end
 				
 	if ALLantiseizure == true then
-	        if player.Character:FindFirstChild("Seizure") then
-                Chat("unseizure"..player.Name)
+	        if v.Character:FindFirstChild("Seizure") then
+                Chat("unseizure "..v.Name)
             end
 	end
 				
 	if ALLantismoke == true then
-	     if player.Character:FindFirstChild("Torso") then
-                if player.Name.Character.Torso:FindFirstChild("Smoke") then
-                    Chat("unsmoke"..player.Name)
+	     if v.Character:FindFirstChild("Torso") then
+                if v.Name.Character.Torso:FindFirstChild("Smoke") then
+                    Chat("unsmoke "..v.Name)
                 end
             end
 	end
 				
 	if ALLantisparkles == true then
-	    if player.Character:FindFirstChild("Torso") then
-                if player.Character.Torso:FindFirstChild("Sparkles") then
-                    Chat("unsparkles"..player.Name)
+	    if v.Character:FindFirstChild("Torso") then
+                if v.Character.Torso:FindFirstChild("Sparkles") then
+                    Chat("unsparkles "..v.Name)
                 end
             end
 	end
 				
 	if ALLantispeed == true then
-	    if not player.Character.Humanoid.WalkSpeed == 16 then
-		Chat("speed"..player.Name.."16")
+	    if not v.Character.Humanoid.WalkSpeed == 16 then
+		Chat("speed "..v.Name.." 16")
 	    end
 	end
 				
 	if ALLantistun == true then
-	    local player = player.Name
+	    local player = v.Name
              if player.Character then
                     local humanoid = player.Character:WaitForChild("Humanoid", 1)
                     if humanoid and humanoid.PlatformStand then
-                        Chat("unstun"..player.Name)
+                        Chat("unstun "..player.Name)
                     end
              end
 	end
 				
 	if ALLantiswag == true then
-		if player.Character:FindFirstChild("EpicCape") then
-                	Chat("normal"..player.Name)
+		if v.Character:FindFirstChild("EpicCape") then
+                	Chat("normal "..v.Name)
 		end
 	end
 
 	if ALLantitrail == true then
-	    local player = player.Name
+	    local player = v.Name
              if player.Character then
                     local humanoid = player.Character:WaitForChild("Humanoid", 1)
                     if humanoid and humanoid.Trail then
-                        Chat("untrail"..player.Name)
+                        Chat("untrail "..player.Name)
                     end
              end
 	end
