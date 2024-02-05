@@ -1287,6 +1287,14 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	YOUantikill = false
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'antiex' then
+	YOUantiexplode = true
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'unantiex' then
+	YOUantiexplode = false
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antichar' then
 	YOUantichar = true
     end
@@ -1309,6 +1317,14 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
     if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantikilla' then
 	ALLantikill = false
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'antiexa' then
+	ALLantiexplode = true
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'unantiexa' then
+	ALLantiexplode = false
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'antimsg' then
@@ -2143,7 +2159,7 @@ task.spawn(function()
 
 	if ALLantiname == true then
 	   if v.Character:FindFirstChild("Nametag") then
-		Chat("reset me")
+		Chat("reset "..v.Name)
 	     end
 	end
 				
