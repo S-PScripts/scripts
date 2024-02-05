@@ -835,6 +835,12 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	House()
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'phelp' then
+	House()
+	task.wait(1)
+	Chat("tp all me")
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'spawn' then
 	GSpawn()
     end
@@ -903,19 +909,19 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		Gearban()
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'sspawn' then
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'sspawn' then -- save spawn
 		SSpawn()
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'pspawn' then
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'pspawn' then -- print saved spawn
 		Pspawn()
     end
 		
-    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'gsspawn' then
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'gsspawn' then -- go to saved spawn
 		Spawn()
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'frespawn' then
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'frespawn' then -- force respawn
 	FRespawn()
     end
 
