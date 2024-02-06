@@ -26,10 +26,10 @@ local slockenabled = false -- slock
 local permusers = {} -- users that use perm
 local personsusers = {} -- users that use persons
 
-local rkick_on_sight = {""} -- rocket kick player when they join
-local crash_on_sight = {""} -- crash server when player joins
-local mkick_on_sight = {""} -- kick player with pm spam when they join ONLY WORKS WITH ONE PLAYER
-local suser_on_sight = {""} -- slow a user when they join with car gear ONLY WORKS WITH ONE PLAYER
+local rkick_on_sight = {"rkick"} -- rocket kick player when they join
+local crash_on_sight = {"SlenderMan990921"} -- crash server when player joins
+local mkick_on_sight = {"mkick"} -- kick player with pm spam when they join ONLY WORKS WITH ONE PLAYER
+local suser_on_sight = {"suser"} -- slow a user when they join with car gear ONLY WORKS WITH ONE PLAYER
 
 local musiclist = {"9048375035", -- 1
 		   "6680495507", -- 2
@@ -175,8 +175,8 @@ end
 local permpassid = 66254 or 64354 -- don't edit
 local personpassid = 35748 or 37127 -- don't edit
 
-print("~~~Thank you for using KohlsLite! Created by S_P.~~~")
-Chat("h \n\n\n [KohlsLite]: Executed! v1.050 keyword \n\n\n")
+print("Thank you for using KohlsLite! Created by S_P.")
+Chat("h \n\n\n [KohlsLite]: Executed! v1.051 \n\n\n")
 
 -- delta broke this, it was working before an update :P
 --[[if string.match(game:HttpGet("https://inventory.roproxy.com/v1/users/" .. game.Players.LocalPlayer.UserId .. "/items/GamePass/" .. permpassid), permpassid) then
@@ -213,10 +213,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
 	if string.sub(msg:lower(), 1, #prefix + 4) == prefix.."cmdy" then
 		GExecute("https://raw.githubusercontent.com/quivings/KAH/main/CMD-Y%20(v1.56).lua")
-	end
-
-	if string.sub(msg:lower(), 1, #prefix + 5) == prefix.."badfa" then
-		GExecute("https://raw.githubusercontent.com/Fonalc/fa/main/main.lua")
 	end
 		
 	if string.sub(msg, 1, #prefix + 2)  == prefix..'wl' then
@@ -495,7 +491,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         end   
     end
 		
-    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'volm' then
+    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'volm' then -- rap e
    	    local newVolume = tonumber(string.sub(msg:lower(), #prefix + 6))
    	    if newVolume ~= nil and game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
       		    game:GetService("Workspace").Terrain["_Game"].Folder.Sound.Volume = newVolume
@@ -744,7 +740,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	local ubox = string.sub(msg:lower(), #prefix + 9)
 	if ubox ~= "" then
 		Chat("gear "..ubox.." 212641536")
-		Chat("pm "..ubox.." play your music on the boombox pls")
 	else
 		Chat("gear me 212641536")
 	end
@@ -762,7 +757,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
   if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'ecrash' then
 	    Chat("h \n\n\n [KohlsDefender]: This server was crashed because of an issue. \n\n\n")
 	    task.wait(1)
-            Chat("music 0000000000000000000006917155909")
+            Chat("music 0000000000000000000006529070845")
             Chat("fogcolor 0 0 0")
 	    Chat("time 0")
             Chat("fogend 0")
@@ -870,9 +865,13 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'prefix' then
 	prefix = string.sub(msg:lower(), #prefix + 8)
     end
+
+    if string.sub(msg:lower(), 1, 7) == 'cprefix' then
+	print("Your current prefix is "..prefix)
+    end
 		
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'paintmap' then
-	_G.ColourHere = string.sub(msg, #prefix + 10)
+	_G.ColourHere = string.sub(msg, #prefix + 10) -- global as we use a loadstring here
 	GExecute("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/Main%20Scripts/Paint Map.lua")
     end
 		
@@ -1790,7 +1789,7 @@ print("There are also many other antis (for you or for everyone)!")
 
 print("---")
 print("KohlsLite, since 2023. Created by S_P")
-print("Version is: v1.050 - 4th February 2024 Build")
+print("Version is: v1.051 - 6th February 2024 Build")
 end
 
 -- CHECK FOR PERM
@@ -2274,30 +2273,30 @@ function PLAYERCHECK(plr)
   end
 end
 
--- ANTI CRASH 2
+-- ANTI CRASH 2 (it can work better than anticrash one at times!)
 game:GetService("RunService").RenderStepped:Connect(function()
 	task.wait(0)
-        for _, Player in pairs(game.Players:GetChildren()) do
-            if Player.Backpack:FindFirstChild("VampireVanquisher") or Player.Character:FindFirstChild("VampireVanquisher") and anticrash2 then
-               if Player ~= game.Players.LocalPlayer then
-                Chat("ungear ".. Player.Name)
-                Chat("punish ".. Player.Name)
-                Chat("h \n\n\n [KohlsLite]: Sorry, ".. Player.Name.. ", you cannot use the Vampire Vanquisher due to anti crash. \n\n\n")
+        for i, v in pairs(game.Players:GetChildren()) do
+            if v.Backpack:FindFirstChild("VampireVanquisher") or v.Character:FindFirstChild("VampireVanquisher") and anticrash2 then
+               if v ~= game.Players.LocalPlayer then
+                Chat("ungear ".. v.Name)
+                Chat("punish ".. v.Name)
+                Chat("h \n\n\n [KohlsLite]: Sorry, ".. v.Name.. ", you cannot use the Vampire Vanquisher due to anti crash (2). \n\n\n")
                end
             end
-            if Player.Backpack:FindFirstChild("OrinthianSwordAndShield") or Player.Character:FindFirstChild("OrinthianSwordAndShield") and anticrash2 then
-               if Player ~= game.Players.LocalPlayer then
-                Chat("ungear ".. Player.Name)
-                Chat("punish ".. Player.Name)
-                Chat("h \n\n\n [KohlsLite]: Sorry, ".. Player.Name.. ", you cannot use the Orinthian Sword and Shield due to anti crash. \n\n\n")
+            if v.Backpack:FindFirstChild("OrinthianSwordAndShield") or v.Character:FindFirstChild("OrinthianSwordAndShield") and anticrash2 then
+               if v ~= game.Players.LocalPlayer then
+                Chat("ungear ".. v.Name)
+                Chat("punish ".. v.Name)
+                Chat("h \n\n\n [KohlsLite]: Sorry, ".. v.Name.. ", you cannot use the Orinthian Sword and Shield due to anti crash (2). \n\n\n")
                end
             end
-	    for _, gear in pairs(Player.Backpack:GetChildren()) do
+	    for i, gear in pairs(v.Backpack:GetChildren()) do
             	if gear:IsA("Tool") and antigear2 == true then
-               		if Player ~= game.Players.LocalPlayer then
-				Chat("ungear ".. Player.Name)
-				Chat("punish ".. Player.Name)
-                		Chat("h \n\n\n [KohlsLite]: Sorry, ".. Player.Name.. ", you cannot use gears due to anti gear. \n\n\n")
+               		if v ~= game.Players.LocalPlayer then
+				Chat("ungear ".. v.Name)
+				Chat("punish ".. v.Name)
+                		Chat("h \n\n\n [KohlsLite]: Sorry, ".. v.Name.. ", you cannot use gears due to anti gear (2). \n\n\n")
 			end
             	end
        	    end
@@ -2507,7 +2506,7 @@ function REJOIN()
 		game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId,game.JobId,game.Players.LocalPlayer) 
 end
 
--- SERVERHOP
+-- SERVERHOP delta broke this bruuigeidfi
 function SERVERHOP()
 	local Servers = game.HttpService:JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/112420803/servers/Public?sortOrder=Asc&limit=100"))
 	for i,v in pairs(Servers.data) do
@@ -3069,7 +3068,7 @@ function FRespawn() -- cmdy
     newChar:Destroy()
 end
 
--- regen mover
+-- regen mover doesn't work
 function RegenMover()
     print("Attempting to move REGEN pad...")
     local Game_Folder = game:GetService("Workspace").Terrain["_Game"]
