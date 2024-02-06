@@ -2920,7 +2920,7 @@ end)
 -- LOG SPAM
 function LogSpam()
       for i = 1,100 do
-          Chat("ff LOGS ARE BAD")
+          Chat("ff poop - icestuds")
       end
 end
 
