@@ -3037,11 +3037,11 @@ end
 
 -- temp NOK
 function TNOK() -- vitalux cmd
-	for _, Bricks in pairs(game:GetService("Workspace").Terrain._Game.Workspace.Obby:GetChildren()) do
+	for i, v in pairs(game:GetService("Workspace").Terrain._Game.Workspace.Obby:GetChildren()) do -- also removes obby walls collision for somereason
 		if nokstat == true then
-        		Bricks.CanTouch = false
+        		v.CanTouch = false
 		else
-			Bricks.CanTouch = true
+			v.CanTouch = true
 		end
 	end
 end
