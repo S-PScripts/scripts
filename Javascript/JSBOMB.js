@@ -1,3 +1,6 @@
+// DO NOT USE THIS FOR REMIX CHAINS WITH EFFORT.
+// I USE IT JUST FOR EXPERIMENTATION WITH 0 EFFORT. I DON'T USE IT FOR SEMI-EFFORT REMIX CHAINS.
+
 // scratch javascript remix bomb made by dzje, not me (TS2021)
 // execute the code in console
 
