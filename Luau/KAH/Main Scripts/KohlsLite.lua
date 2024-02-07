@@ -344,6 +344,16 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          end
        end
 
+       if string.sub(msg, 1, #prefix + 10) == prefix..'checkperm2' then
+          Chat("reset all")
+	  Regen()
+	  task.wait(1)
+	  checkperm2 = true
+	  Chat("ff admins")
+	  task.wait(1)
+	  checkperm2 = false
+       end
+		
        if string.sub(msg, 1, #prefix + 12) == prefix..'checkpersons' then
          local dasplayer = string.sub(msg:lower(), #prefix + 14)
          PLAYERCHECK(dasplayer)
@@ -2128,6 +2138,12 @@ task.spawn(function()
                 Chat("unff "..v.Name)
             end
 	end
+
+	 if checkperm2 == true then
+	 if v.Character:FindFirstChild("ForceField") then
+                print(v.Name.." has perm.")
+            end
+	 end
 				
 	if ALLantiglow == true then
 	   if v.Character:FindFirstChild("PointLight") then
