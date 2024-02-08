@@ -139,7 +139,7 @@ local spamwait = 0 -- spam command wait
 local perm = false
 local perm2 = true
 local loopgrab = false
-local loopgrab2 = true
+local loopgrab2 = false
 
 local anticrash = true
 local anticrash2 = false
