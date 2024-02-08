@@ -2307,7 +2307,7 @@ end
 -- ANTI CRASH 2 (it can work better than anticrash one at times!)
 game:GetService("RunService").RenderStepped:Connect(function()
 	task.wait(0)
-        for i, v in pairs(game.Players:GetChildren()) do
+        for i, v in ipairs(game.Players:GetPlayers()) do
             if v.Backpack:FindFirstChild("VampireVanquisher") or v.Character:FindFirstChild("VampireVanquisher") and anticrash2 then
                if v ~= game.Players.LocalPlayer then
                 Chat("ungear ".. v.Name)
