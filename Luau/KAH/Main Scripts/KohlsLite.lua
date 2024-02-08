@@ -139,6 +139,7 @@ local spamwait = 0 -- spam command wait
 local perm = false
 local perm2 = true
 local loopgrab = false
+local loopgrab2 = true
 
 local anticrash = true
 local anticrash2 = false
@@ -1009,16 +1010,25 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	loopgrab = true
     end
 
-     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'fastpads' then
-		FastPads()
-     end
-
     if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unloopgrab' then
 	loopgrab = false
     end
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'unlg' then
 	loopgrab = false
+    end
+
+     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'fastpads' then
+		FastPads()
+     end
+
+    if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'lg2' then
+	loopgrab2 = true
+    end
+
+
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'unlg2' then
+	loopgrab2 = false
     end
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'perm' then
@@ -2757,6 +2767,33 @@ task.spawn(function()
              end
         end)
     end
+end)
+
+-- loopgrab 2
+task.spawn(function()
+   while true do
+   task.wait(0)
+   if loopgrab then
+      local pads = game.Workspace.Terrain._Game.Admin.Pads:GetChildren()
+      for i, pad in ipairs(pads) do
+         local head = pad:FindFirstChild("Head")
+         local character = game.Players.LocalPlayer.Character
+         local headOfCharacter = character and character:FindFirstChild("Head")
+
+         if head and headOfCharacter then
+            firetouchinterest(head, headOfCharacter, 1)
+            firetouchinterest(head, headOfCharacter, 0)
+            firetouchinterest(head, headOfCharacter, 1)
+            wait()
+            firetouchinterest(head, headOfCharacter, 0)
+
+            if pad.Name ~= game.Players.LocalPlayer.Name.."'s admin" then
+               Regen()
+            end
+         end
+      end
+   end
+   end
 end)
 
 -- PERM 1
