@@ -1596,9 +1596,11 @@ print("unperm2 - stop loopgrabing a pad (perm2)")
 
 print("---")
 print("loopgrab/lg - loopgrab all the pads (touch interest)")
+print("lg2 - loopgrab all the pads (touch interest)")
 
 print("---")
 print("unloopgrab/unlg - stop loopgrabing all the pads")
+print("unlg2 - stop loopgrab all the pads")
 
 print("---")
 print("fastpads - quickly tp to all the pads")
@@ -1810,7 +1812,7 @@ print("There are also many other antis (for you or for everyone)!")
 
 print("---")
 print("KohlsLite, since 2023. Created by S_P")
-print("Version is: v1.051 - 8th February 2024 Build")
+print("Version is: v1.052 - 8th February 2024 Build")
 end
 
 -- CHECK FOR PERM
@@ -2773,7 +2775,7 @@ end)
 task.spawn(function()
    while true do
    task.wait(0)
-   if loopgrab then
+   if loopgrab2 then
       local pads = game.Workspace.Terrain._Game.Admin.Pads:GetChildren()
       for i, pad in ipairs(pads) do
          local head = pad:FindFirstChild("Head")
