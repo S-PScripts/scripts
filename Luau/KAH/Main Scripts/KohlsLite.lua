@@ -23,8 +23,8 @@ local newlen = 21 -- control what is considered as a new account
 local GWhitelisted = {"me_123eq","me_crashking","ScriptingProgrammer","G_ODt","BANNter_Original","witnessfox22"} -- gear whitelisted
 local slockenabled = false -- slock
 
-local permusers = {} -- users that use perm
-local personsusers = {} -- users that use persons
+local permusers = {} -- users that use perm will be placed here
+local personsusers = {} -- users that use persons will be placed here
 
 local rkick_on_sight = {"rkick"} -- rocket kick player when they join
 local crash_on_sight = {"SlenderMan990921"} -- crash server when player joins
@@ -1807,7 +1807,7 @@ end
 function checkforperm()
 	if string.match(game:HttpGet("https://inventory.roblox.com/v1/users/" .. cplr.userId .. "/items/GamePass/" .. permpassid), permpassid) then
 	   print(player.." has perm!")
-	   table.insert(permusers,player)
+	   table.insert(permusers, player)
 	else
 	   print(player.."does not have perm!")
 	end
@@ -1817,7 +1817,7 @@ end
 function checkforpersons()
 	if string.match(game:HttpGet("https://inventory.roblox.com/v1/users/" .. cplr.userId .. "/items/GamePass/" .. personpassid), personpassid) then
 	   print(player.." has persons!")
-	   table.insert(personsusers,player)
+	   table.insert(personsusers, player)
 	else
 	   print(player.."does not have persons!")
 	end
@@ -2141,7 +2141,11 @@ task.spawn(function()
 
 	 if checkperm2 == true then
 	 if v.Character:FindFirstChild("ForceField") then
-                print(v.Name.." has perm.")
+		if not table.find(permusers, v.Name) then
+                	print(v.Name.." has perm.")
+			table.insert(permusers, v.Name)
+			Chat("unff ".. v.Name)
+		end
             end
 	 end
 				
@@ -2285,7 +2289,7 @@ function PLAYERCHECK(plr)
       if string.sub(v.Name:lower(), 1, #plr) == plr then
           player = v.Name
 	  cplr = v
-          print("Found"..player)
+          print("Found "..player)
       end
   end
 end
@@ -3216,7 +3220,8 @@ function onPlayerAdded(player)
     if welcomemsg == true then -- removed because you can just ask
     	 Chat("h \n\n\n [KohlsLite]: Welcome to the server, " .. player.Name .. ". \n\n\n")
     end 
-	
+
+-- if autogpcheck then
     if player.Name == "ScriptingProgrammer" and player.Name ~= game.Players.LocalPlayer then
 	 Chat("h \n\n\n [KohlsLite]: !!! OMG DID A SKID JOIN \n\n\n")
 	 print("SkiddingProgrammer [OWNER] joined the server!!!")
