@@ -176,7 +176,7 @@ local permpassid = 66254 or 64354 -- don't edit
 local personpassid = 35748 or 37127 -- don't edit
 
 print("Thank you for using KohlsLite! Created by S_P.")
-print("Say .cmds to list all the commands.")
+print("Say .kcmds to list all the commands.")
 Chat("h \n\n\n [KohlsLite]: Executed! v1.051 \n\n\n")
 
 -- delta broke this, it was working before an update :P
@@ -1800,7 +1800,7 @@ print("There are also many other antis (for you or for everyone)!")
 
 print("---")
 print("KohlsLite, since 2023. Created by S_P")
-print("Version is: v1.051 - 6th February 2024 Build")
+print("Version is: v1.051 - 8th February 2024 Build")
 end
 
 -- CHECK FOR PERM
