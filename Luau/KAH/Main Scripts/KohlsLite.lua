@@ -123,8 +123,11 @@ local antimlog = false -- for music
 local padbanned = {"padbanned"} 
 local padreinforcements = false 
 
-local themes = {"sunshine"} -- one day...
-local themecode = {}
+themecode = {
+    [[time 4, outdoorambient 000 000 111]],
+    [[fogend 100, fogcolor 250 0 500]]
+}
+
 
 local housekeybind = "h" -- Keybinds?!
 local rekeybind = "r"
@@ -205,6 +208,20 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     	if string.sub(msg:lower(), 1, #prefix + 5) == prefix.."kcmds" then
           CMDPrint()
         end
+
+	if string.sub(msg:lower(), 1, #prefix + 5) == prefix.."theme" then
+        	local theme = tonumber(string.sub(msg, #prefix + 6))
+        	local themeCode = themecode[theme]
+        	if themeCode then
+           		local codes = {}
+            		for code in themeCode:gmatch("[^%s]+") do
+                		table.insert(codes, code)
+            		end
+            		for _, code in ipairs(codes) do
+                		Chat(code)
+            		end
+       	       end
+   	end
 
     	if string.sub(msg:lower(), 1, #prefix + 2) == prefix.."iy" then
 	   GExecute("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source")
