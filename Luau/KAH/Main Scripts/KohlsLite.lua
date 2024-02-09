@@ -182,7 +182,7 @@ local personpassid = 35748 or 37127 -- don't edit
 
 print("Thank you for using KohlsLite v1.053! Created by S_P.")
 print("Say .kcmds to list all the commands.")
-Chat("h \n\n\n [KohlsLite]: Executed! v1.053c \n\n\n")
+Chat("h \n\n\n [KohlsLite]: Executed! v1.053d \n\n\n")
 
 -- delta broke this, it was working before an update :P
 --[[if string.match(game:HttpGet("https://inventory.roproxy.com/v1/users/" .. game.Players.LocalPlayer.UserId .. "/items/GamePass/" .. permpassid), permpassid) then
@@ -210,17 +210,19 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         end
 
 	if string.sub(msg:lower(), 1, #prefix + 5) == prefix.."theme" then
-		local theme = tonumber(string.sub(msg, #prefix + 6)) -- Extract the theme specified in the chat message as a number
-        	local themeCode = themecode[theme]
-        	if themeCode then
-            		local codes = {}
-            		for code in themeCode:gmatch("[^%s]+") do
-                		table.insert(codes, code)
-           	        end
-            		for _, code in ipairs(codes) do
-                	Chat(code)
-            		end
-		end
+		local theme = string.sub(msg:lower(), #prefix + 7)
+        	for i, themeCode in ipairs(themecode) do
+            		if i == tonumber(theme) then
+                		local codes = {}
+                		for code in themeCode:gmatch("[^,]+") do
+                    			table.insert(codes, code:trim())
+                		end
+                		for _, code in ipairs(codes) do
+                    			Chat(code)
+                		end
+                		break
+           		 end
+       		 end
         end
   
     	if string.sub(msg:lower(), 1, #prefix + 2) == prefix.."iy" then
