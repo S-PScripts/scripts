@@ -124,15 +124,15 @@ local padbanned = {"padbanned"}
 local padreinforcements = false 
 
 themecode = {
-    [[time 4, outdoorambient 000 000 111]],
-    [[fogend 100, fogcolor 250 0 500]],
-    [[time 19, outdoorambient 250 100 250]],
-    [[time -, fogend 600, fogcolor 300 0 800]],
-    [[time -, fogend 25, fogcolor 255 255 51]],
-    [[time 0, fogcolor 0 0 0, fogend 25]],
-    [[fogend 75, fogcolor 0 155 255]],
-    [[time -, fogend 46, fogcolor 250 83 255]],
-    [[time -, fogend 1000, fogcolor 37 355 55]]
+    [[time 4,outdoorambient 000 000 111]],
+    [[fogend 100,fogcolor 250 0 500]],
+    [[time 19,outdoorambient 250 100 250]],
+    [[time -,fogend 600,fogcolor 300 0 800]],
+    [[time -,fogend 25,fogcolor 255 255 51]],
+    [[time 0,fogcolor 0 0 0,fogend 25]],
+    [[fogend 75,fogcolor 0 155 255]],
+    [[time -,fogend 46,fogcolor 250 83 255]],
+    [[time -,fogend 1000,fogcolor 37 355 55]]
 }
 
 
@@ -189,7 +189,7 @@ local personpassid = 35748 or 37127 -- don't edit
 
 print("Thank you for using KohlsLite v1.053! Created by S_P.")
 print("Say .kcmds to list all the commands.")
-Chat("h \n\n\n [KohlsLite]: Executed! v1.053e \n\n\n")
+Chat("h \n\n\n [KohlsLite]: Executed! v1.053final \n\n\n")
 
 -- delta broke this, it was working before an update :P
 --[[if string.match(game:HttpGet("https://inventory.roproxy.com/v1/users/" .. game.Players.LocalPlayer.UserId .. "/items/GamePass/" .. permpassid), permpassid) then
