@@ -129,6 +129,7 @@ local themecode = {}
 local housekeybind = "h" -- Keybinds?!
 local rekeybind = "r"
 
+local autogpcheck = true -- automatically check for gamepass (unfinished)
 local clickexplode = true
 
 local FAdmins = {} -- all admin but for individual users
