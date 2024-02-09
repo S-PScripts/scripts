@@ -123,10 +123,16 @@ local antimlog = false -- for music
 local padbanned = {"padbanned"} 
 local padreinforcements = false 
 
-themelist = {"1","2"}
 themecode = {
     [[time 4, outdoorambient 000 000 111]],
-    [[fogend 100, fogcolor 250 0 500]]
+    [[fogend 100, fogcolor 250 0 500]],
+    [[time 19, outdoorambient 250 100 250]],
+    [[time -, fogend 600, fogcolor 300 0 800]],
+    [[time -, fogend 25, fogcolor 255 255 51]],
+    [[time 0, fogcolor 0 0 0, fogend 25]],
+    [[fogend 75, fogcolor 0 155 255]],
+    [[time -, fogend 46, fogcolor 250 83 255]],
+    [[time -, fogend 1000, fogcolor 37 355 55]]
 }
 
 
