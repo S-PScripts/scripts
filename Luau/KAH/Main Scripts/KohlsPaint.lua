@@ -8,6 +8,9 @@ local function Chat(msg)
     game.Players:Chat(msg)
 end
 
+local prefix = "!"
+Chat("h KohlsPaint")
+
 game.Players.LocalPlayer.Chatted:Connect(function(msg)
     task.wait(0)
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix.."theme" then
