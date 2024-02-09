@@ -2811,10 +2811,12 @@ task.spawn(function()
 							            local cre = pad.Head
 						              	    local spr = game.Players.LocalPlayer.Character:FindFirstChild("Head")
 						              	    firetouchinterest(cre, spr, 1)
+								    task.wait()
                           					    firetouchinterest(cre, spr, 0)
+								   --[[ task.wait()
                           				            firetouchinterest(cre, spr, 1)
 							            task.wait()
-    							            firetouchinterest(cre, spr, 0)
+    							            firetouchinterest(cre, spr, 0) ]]
 							            if pad.Name ~= game.Players.LocalPlayer.Name.."'s admin" then
 									Regen()
 							            end
