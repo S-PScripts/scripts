@@ -2788,7 +2788,7 @@ end
 -- Backpack checker
 function CheckBackpack()
         print(cker.." has the following items:")
-	local checkme = game.Players:FindFirstChild(checker)
+	local checkme = game.Players:FindFirstChild(cker)
 	local Backpack = checkme:FindFirstChild("Backpack")
 	if Backpack then
       		for _, v in pairs(Backpack:GetChildren()) do
