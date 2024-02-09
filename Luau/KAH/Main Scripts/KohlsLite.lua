@@ -31,99 +31,96 @@ local crash_on_sight = {"SlenderMan990921"} -- crash server when player joins
 local mkick_on_sight = {"mkick"} -- kick player with pm spam when they join ONLY WORKS WITH ONE PLAYER
 local suser_on_sight = {"suser"} -- slow a user when they join with car gear ONLY WORKS WITH ONE PLAYER
 
-local musiclist = {
-"9048375035", -- 1
-"6680495507", -- 2
-"6529070845", -- 3
-"6917155909", -- 4
-"6913550990", -- 5
-"6847929757", -- 6
-"1839029458", -- 7
-"0035930009", -- 8
-"6772846771", -- 9
-"11808880515", -- 10
-"6681840651", -- 11
-"1841647093", -- 12
-"1837070127", -- 13
-"6806140478", -- 14
-"6703926669", -- 15
-"2042581436", -- 16
-"6872126938", -- 17
-"6695430066", -- 18
-"5216738441", -- 19
-"9038620433", -- 20
-"6819593773", -- 21
-"8147012902", -- 22
-"6893776529", -- 23
-"6788646778", -- 24
-"9124780123", -- 25
-"6897686359", -- 26
-"0142376088", -- 27
-"1846368080", -- 28
-"1840511219", -- 29
-"1839404854", -- 30
-"6674211522", -- 31
-"6984999899", -- 32
-"1838097718", -- 33
-"9038845849", -- 34
-"1843622301", -- 35
-"14145620056", -- 36
-"13530437708", -- 37 
-"14145627857", -- 38
-"14145624031", -- 39
-"13530438299", -- 40
-"6845637094", -- 41
-"6770303644" -- 42
-}
+-- Bad formatting because of github glitch ruining how the colour of the code looks :/
+local musiclist = {"9048375035", -- 1
+		   "6680495507", -- 2
+		   "6529070845", -- 3
+		   "6917155909", -- 4
+		   "6913550990", -- 5
+		   "6847929757", -- 6
+                   "1839029458", -- 7
+                   "0035930009", -- 8
+	           "6772846771", -- 9
+	           "11808880515", -- 10
+	           "6681840651", -- 11
+	           "1841647093", -- 12
+	           "1837070127", -- 13
+	           "6806140478", -- 14
+	           "6703926669", -- 15
+	           "2042581436", -- 16
+	           "6872126938", -- 17
+	           "6695430066", -- 18
+	           "5216738441", -- 19
+                   "9038620433", -- 20
+	           "6819593773", -- 21
+                   "8147012902", -- 22
+                   "6893776529", -- 23
+                   "6788646778", -- 24
+     		   "9124780123", -- 25
+                   "6897686359", -- 26
+	           "0142376088", -- 27
+                   "1846368080", -- 28
+                   "1840511219", -- 29
+                   "1839404854", -- 30
+                   "6674211522", -- 31
+		   "6984999899", -- 32
+		   "1838097718", -- 33
+		   "9038845849", -- 34
+		   "1843622301", -- 35
+		   "14145620056", -- 36
+		   "13530437708", -- 37 
+		   "14145627857", -- 38
+		   "14145624031", -- 39
+		   "13530438299", -- 40
+		   "6845637094", -- 41
+		   "6770303644"} -- 42
       
-
-local musicnames = {
-"All dropping 8 beats", -- 1
-"Robbery", -- 2
-"Loud music", -- 3
-"They trying to be cray", -- 4
-"TLT FNAF 2", -- 5
-"LONER", -- 6
-"fUn cAmPiNg mUsIc", -- 7
-"the loop", -- 8
-"FIRE IN THE HOLE", -- 9
-"women sings", -- 10
-"gun shots", -- 11
-"chill elevator", -- 12
-"fresh air", -- 13
-"the end", -- 14
-"memories", -- 15
-"AHHHH", -- 16 
-"walter white", -- 17
-"nuts", -- 18
-"obamium 3d", -- 19
-"blap blap", -- 20
-"the metro", -- 21
-"gigachad loop", -- 22
-"ahh wahh haahh", -- 23
-"interstellar", -- 24
-"boom boom", -- 25
-"fizz", -- 26
-"Raining Tacos", -- 27
-"PARTY", -- 28
-"Fanfare", -- 29
-"Rock On", -- 30
-"Loud Music goes wrong", -- 31
-"AAAAAAAAAAAAAAAAAAAAA", -- 32
-"Fanfare 2", -- 33
-"dubstep", -- 34
-"mumbai moon", -- 35
-"phonk 1", -- 36
-"phonk 2", -- 37 
-"phonk 3", -- 38
-"phonk 4", -- 39
-"phonk 5", -- 40
-"hayayaya", -- 41
-"seize"} -- 42
+local musicnames = {"All dropping 8 beats", -- 1
+		    "Meow meow", -- 2
+	            "Loud music", -- 3
+	            "They trying to be cray", -- 4
+	            "TLT FNAF 2", -- 5
+                    "LONER", -- 6
+	            "fUn cAmPiNg mUsIc", -- 7
+	            "the loop", -- 8
+	            "FIRE IN THE HOLE", -- 9
+	            "women sings", -- 10
+	            "gun shots", -- 11
+	            "chill elevator", -- 12
+	            "fresh air", -- 13
+	            "the end", -- 14
+		    "memories", -- 15
+		    "AHHHH", -- 16 
+		    "walter white", -- 17
+		    "nuts", -- 18
+	            "obamium 3d", -- 19
+                    "blap blap", -- 20
+	            "the metro", -- 21
+                    "gigachad loop", -- 22
+	            "ahh wahh haahh", -- 23
+		    "interstellar", -- 24
+	            "boom boom", -- 25
+	            "fizz", -- 26
+	            "Raining Tacos", -- 27
+                    "PARTY", -- 28
+                    "Fanfare", -- 29
+		    "Rock On", -- 30
+		    "Loud music fail", -- 31
+		    "AAAAAAAAAAAAAAAAAAAAA", -- 32
+		    "Fanfare 2", -- 33
+		    "dubstep", -- 34
+		    "mumbai moon", -- 35
+		    "phonk 1", -- 36
+		    "phonk 2", -- 37 
+		    "phonk 3", -- 38
+		    "phonk 4", -- 39
+		    "phonk 5", -- 40
+		    "hayayaya", -- 41
+		    "seize"} -- 42
 
 local antimlog = false -- for music
 
-local padbanned = {"placeholder"} 
+local padbanned = {"padbanned"} 
 local padreinforcements = false 
 
 local themes = {} -- one day...
