@@ -210,19 +210,17 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         end
 
 	if string.sub(msg:lower(), 1, #prefix + 5) == prefix.."theme" then
-        	local theme = tonumber(string.sub(msg, #prefix + 6))
-        	local themeCode = themecode[theme]
-        	if themeCode then
-           		local codes = {}
-            		for code in themeCode:gmatch("[^%s]+") do
-                		table.insert(codes, code)
-            		end
-            		for _, code in ipairs(codes) do
-                		Chat(code)
-            		end
-       	       end
-   	end
-
+        	local theme = string.sub(msg:lower(), #prefix + 7)
+                local themeCode = themecode[theme]
+                local codes = {}
+                for code in themeCode:gmatch("[^%s]+") do
+                    table.insert(codes, code)
+                end
+                for _, code in ipairs(codes) do
+                    Chat(code)
+                end
+        end
+  
     	if string.sub(msg:lower(), 1, #prefix + 2) == prefix.."iy" then
 	   GExecute("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source")
 	end
