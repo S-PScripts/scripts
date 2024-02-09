@@ -3359,7 +3359,7 @@ local UserInputService = game:GetService("UserInputService")
 UserInputService.WindowFocusReleased:Connect(function()
 	task.wait(0)
     	if autoafk == true then
-    		Chat("name me [KohlsLite]: AFK")
+    		Chat("name me ["..game.Players.LocalPlayer.Name.."]: AFK")
     		Chat("ff me")
     		Chat("god me")
    	 end
