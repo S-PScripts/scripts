@@ -11,7 +11,7 @@ end
 game.Players.LocalPlayer.Chatted:Connect(function(msg)
     task.wait(0)
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix.."theme" then
-        local theme = string.sub(msg, #prefix + 7)
+        local theme = string.sub(msg:lower(), #prefix + 7)
         for i, t in ipairs(themelist) do
             if t == theme then
                 local themeCode = themecode[i]
