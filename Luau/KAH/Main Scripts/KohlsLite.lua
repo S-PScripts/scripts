@@ -187,7 +187,7 @@ end
 local permpassid = 66254 or 64354 -- don't edit
 local personpassid = 35748 or 37127 -- don't edit
 
-print("Thank you for using KohlsLite v1.053! Created by S_P.")
+print("Thank you for using KohlsLite v1.054! Created by S_P.")
 print("Say .kcmds to list all the commands.")
 Chat("h \n\n\n [KohlsLite]: Executed! v1.054 \n\n\n")
 
@@ -1096,6 +1096,8 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	local checker = string.sub(msg:lower(), #prefix + 9)
         PLAYERCHECK(checker)
         if player ~= nil then 
+		checker = player
+		cker = player.Name
 		CheckBackpack()
         else
                 print('Cannot find player with the name: '..checker)
@@ -1858,7 +1860,7 @@ print("There are also many other antis (for you or for everyone)!")
 
 print("---")
 print("KohlsLite, since 2023. Created by S_P")
-print("Version is: v1.052 - 8th February 2024 Build")
+print("Version is: v1.054 - 10th February 2024 Build")
 end
 
 -- CHECK FOR PERM
@@ -1881,7 +1883,6 @@ function checkforpersons()
 	end
 end
 
--- this is similar to CMD's system :D
 -- SLOCK/BL/WL
 task.spawn(function()
     while true do
@@ -2202,7 +2203,7 @@ task.spawn(function()
 		if not table.find(permusers, v.Name) then
                 	print(v.Name.." has perm.")
 			table.insert(permusers, v.Name)
-			Chat("unff ".. v.Name)
+			Chat("unff "..v.Name)
 		end
             end
 	 end
@@ -2358,24 +2359,24 @@ game:GetService("RunService").RenderStepped:Connect(function()
         for i, v in ipairs(game.Players:GetPlayers()) do
             if v.Backpack:FindFirstChild("VampireVanquisher") or v.Character:FindFirstChild("VampireVanquisher") and anticrash2 then
                if v ~= game.Players.LocalPlayer then
-                Chat("ungear ".. v.Name)
-                Chat("punish ".. v.Name)
-                Chat("h \n\n\n [KohlsLite]: Sorry, ".. v.Name.. ", you cannot use the Vampire Vanquisher due to anti crash (2). \n\n\n")
+                Chat("ungear "..v.Name)
+                Chat("punish "..v.Name)
+                Chat("h \n\n\n [KohlsLite]: Sorry, "..v.Name.. ", you cannot use the Vampire Vanquisher due to anti crash (2). \n\n\n")
                end
             end
             if v.Backpack:FindFirstChild("OrinthianSwordAndShield") or v.Character:FindFirstChild("OrinthianSwordAndShield") and anticrash2 then
                if v ~= game.Players.LocalPlayer then
-                Chat("ungear ".. v.Name)
-                Chat("punish ".. v.Name)
-                Chat("h \n\n\n [KohlsLite]: Sorry, ".. v.Name.. ", you cannot use the Orinthian Sword and Shield due to anti crash (2). \n\n\n")
+                Chat("ungear "..v.Name)
+                Chat("punish "..v.Name)
+                Chat("h \n\n\n [KohlsLite]: Sorry, "..v.Name.. ", you cannot use the Orinthian Sword and Shield due to anti crash (2). \n\n\n")
                end
             end
 	    for i, gear in pairs(v.Backpack:GetChildren()) do
             	if gear:IsA("Tool") and antigear2 == true then
-               		if v ~= game.Players.LocalPlayer then
-				Chat("ungear ".. v.Name)
-				Chat("punish ".. v.Name)
-                		Chat("h \n\n\n [KohlsLite]: Sorry, ".. v.Name.. ", you cannot use gears due to anti gear (2). \n\n\n")
+               		if v.Name ~= game.Players.LocalPlayer.Name then
+				Chat("ungear "..v.Name)
+				Chat("punish "..v.Name)
+                		Chat("h \n\n\n [KohlsLite]: Sorry, "..v.Name.. ", you cannot use gears due to anti gear (2). \n\n\n")
 			end
             	end
        	    end
@@ -2747,7 +2748,7 @@ v.Chatted:Connect(function(msg)
                Chat('message '..v.Name..': '..message)
           
             elseif string.sub(command, 1, 3) == "pm " then
-               Chat("pm "..v.Name.." [KohlsLite]: I can't make you private message because due to limitations. Sorry!")
+               Chat("pm "..v.Name.." [KohlsLite]: I can't make you private message because of limitations. Sorry!")
           
             elseif string.sub(command, 1, 5) == "hint " then
                local message = string.sub(command, 6)
@@ -2786,6 +2787,7 @@ end
 
 -- Backpack checker
 function CheckBackpack()
+        print(cker.." has the following items:")
 	local checkme = game.Players:FindFirstChild(checker)
 	local Backpack = checkme:FindFirstChild("Backpack")
 	if Backpack then
@@ -3166,61 +3168,11 @@ function GetPing()
 end
 
 function FRespawn() -- cmdy
-    local char = PlayerService.LocalPlayer.Character
-	
-    if char:FindFirstChildOfClass("Humanoid") then 
-    char:FindFirstChildOfClass("Humanoid"):ChangeState(15) 
-    end
-	
-    char:ClearAllChildren()
-    local newChar = Instance.new("Model")
-    newChar.Parent = workspace
-    PlayerService.LocalPlayer.Character = newChar
-    task.wait(0)
-    PlayerService.LocalPlayer.Character = char
-    newChar:Destroy()
+    game.Players.LocalPlayer.Character:Destroy()
 end
 
--- regen mover doesn't work
 function RegenMover()
-    print("Attempting to move REGEN pad...")
-    local Game_Folder = game:GetService("Workspace").Terrain["_Game"]
-    local Workspace_Folder = Game_Folder.Workspace
-    local Admin_Folder = Game_Folder.Admin
-    if Admin_Folder.Regen.CFrame.Y < 500 then
-	repeat wait() 
-	until game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")
-	local cf = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
-	local moveregen = true
-	task.spawn(function()
-		while true do
-			task.wait(0)
-			game:GetService('RunService').Heartbeat:Wait()
-			game.Players.LocalPlayer.Character['Humanoid']:ChangeState(11)
-			cf.CFrame = Admin_Folder.Regen.CFrame * CFrame.new(-1*(Admin_Folder.Regen.Size.X/2)-(game.Players.LocalPlayer.Character['Torso'].Size.X/2), 0, 0)
-			if not moveregen then 
-				break 
-			end
-		end
-	end)
-    end
-				
-	task.spawn(function() 
-		while moveregen do 
-			task.wait(0.1)
-			Chat('unpunish me') 
-		end 
-	end)
-
-	task.wait(0.3)
-	moveregen = false
-	for i = 1,10 do
-		task.wait(0.1)
-		Chat("skydive me")
-		task.wait(0)
-		Chat("skydive me")
-	end
-	Chat("respawn me")
+--
 end
 
 -- STONE MAP
@@ -3509,7 +3461,7 @@ function Gearban()
 				          game:GetService("Workspace").Terrain._Game.Workspace[game.Players.LocalPlayer.Name].PortableJustice.MouseClick:FireServer(game:GetService("Workspace").Terrain._Game.Workspace[JailPlayer])
 				          task.wait(0.25)
 				          Chat("reset "..v.Name)
-                  Chat("pm "..v.Name.. "No gears for you now! Rejoin if you want them.")
+                  			 print(v.Name.. " is gear banned. Click if on mobile.")
 			      end
 		  end
 end
