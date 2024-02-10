@@ -977,8 +977,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          	local dasplayer = string.sub(msg:lower(), #prefix + 9)
          	PLAYERCHECK(dasplayer)
          	if player ~= nil then
-			gplr = player
-			gbname = player.Name
 			Gearban()
          	else
                		print('Cannot find player with the name: '..dasplayer)
@@ -1120,8 +1118,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	local checker = string.sub(msg:lower(), #prefix + 9)
         PLAYERCHECK(checker)
         if player ~= nil then 
-		checker = player
-		cker = player.Name
 		CheckBackpack()
         else
                 print('Cannot find player with the name: '..checker)
@@ -2701,7 +2697,7 @@ v.Chatted:Connect(function(msg)
 					
                 if string.sub(msg:lower(), 0, 5) == ";poop" or string.sub(msg:lower(), 0, 5) == ":poop" or string.sub(msg:lower(), 0, 4) == "poop" then
 		if noobdetect then
-		   if v.Name ~= "IceStuds" or "atprog" then -- very epik exception
+		   if v.Name ~= "IceStuds" and v.Name ~= "atprog" then -- very epik exception
                    	print(v.Name..' is a noob.')
                    	Chat('h \n\n\n [KohlsLite]: '..v.Name..', go back to FREE ADMIN, POOP IS NOT A COMMAND!! \n\n\n')
 	  	   else Chat('h \n\n\n [IceStuds]: poop \n\n\n')
@@ -2821,8 +2817,8 @@ end
 
 -- Backpack checker
 function CheckBackpack()
-        print(cker.." has the following items:")
-	local checkme = game.Players:FindFirstChild(checker)
+        print(player.." has the following items:")
+	local checkme = game.Players:FindFirstChild(cplr)
 	local Backpack = checkme:FindFirstChild("Backpack")
 	if Backpack then
       		for _, v in pairs(Backpack:GetChildren()) do
@@ -3273,7 +3269,7 @@ plasticTool = game.Players.LocalPlayer.Backpack:FindFirstChild("2019BloxyAward")
 task.wait(0)
 plasticTool.Parent = game.Players.LocalPlayer.Character
 task.wait(0)
-for _,part in pairs(Workspace:GetDescendants()) do
+for _, part in pairs(Workspace:GetDescendants()) do
       thread(function()
           if part:IsA("Part") then
              local MassCheck = part:Clone()
@@ -3518,13 +3514,13 @@ end
 function Gearban()
  		  Chat("gear me 00000000000000000082357101")
 		  task.wait(0.50)
-		  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = gplr.Character.HumanoidRootPart.CFrame
+		  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = cplr.Character.HumanoidRootPart.CFrame
 		  task.wait(0.25)
-		  local JailPlayer = gplr.Name
+		  local JailPlayer = player.Name
 		  game:GetService("Workspace").Terrain._Game.Workspace[game.Players.LocalPlayer.Name].PortableJustice.MouseClick:FireServer(game:GetService("Workspace").Terrain._Game.Workspace[JailPlayer])
 		  task.wait(0.25)
-		  Chat("reset "..gplr.Name)
-                  print(gplr.Name.. " is gear banned. Click if on mobile.")
+		  Chat("reset "..player.Name)
+                  print(player.Name.. " is gear banned. Click if on mobile.")
 end
 
 -- ballin
