@@ -1111,6 +1111,10 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'unperm2' then
 	perm2 = false
     end
+
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'allpads' then
+		AllPads()
+    end
 		
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'checkbp' then
 	local checker = string.sub(msg:lower(), #prefix + 9)
@@ -2962,6 +2966,23 @@ task.spawn(function()
 		end
 	end
 end)
+
+-- ALL PADS
+function AllPads()
+local pads = game:GetService("Workspace").Terrain["_Game"].Admin.Pads:GetChildren("Head")
+	for i, pad in pairs(pads) do
+		task.spawn(function()
+			pad.PrimaryPart = pad:FindFirstChild("Head")
+			local pos = pad.PrimaryPart.CFrame
+			wait(0)
+			pad.PrimaryPart.CanCollide = false
+			pad:SetPrimaryPartCFrame(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame)
+			wait(0)
+			pad:SetPrimaryPartCFrame(pos)
+			pad.PrimaryPart.CanCollide = true
+		end)
+	end
+end
 
 -- MUSIC RELATED
 task.spawn(function()
