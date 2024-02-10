@@ -76,7 +76,7 @@ local musiclist = {"9048375035", -- 1
 		   "6770303644"} -- 42
       
 local musicnames = {"All dropping 8 beats", -- 1
-		    "Meow meow", -- 2
+		    "Robbery", -- 2
 	            "Loud music", -- 3
 	            "They trying to be cray", -- 4
 	            "TLT FNAF 2", -- 5
@@ -189,7 +189,7 @@ local personpassid = 35748 or 37127 -- don't edit
 
 print("Thank you for using KohlsLite v1.054c! Created by S_P.")
 print("Say .kcmds to list all the commands.")
-Chat("h \n\n\n [KohlsLite]: Executed! v1.054d \n\n\n")
+Chat("h \n\n\n [KohlsLite]: Executed! v1.054e \n\n\n")
 
 -- delta broke this, it was working before an update :P
 --[[if string.match(game:HttpGet("https://inventory.roproxy.com/v1/users/" .. game.Players.LocalPlayer.UserId .. "/items/GamePass/" .. permpassid), permpassid) then
