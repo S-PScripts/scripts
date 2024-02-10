@@ -15,7 +15,7 @@ end
 _G.executed = true
 
 local prefix = "." -- ANY LENGTH :D
-local blacklist = {"someone","SlenderMan990921"} -- slocked users
+local blacklist = {"someone","SlenderMan990921","EhiplayYN"} -- slocked users
 local whitelist = {"me_123eq","me_crashking","ScriptingProgrammer","G_ODt","BANNter_Original","witnessfox22","IceStuds","atprog"} -- not affected by slock
 local newplrslocked = {} -- don't edit!!
 local newplrautoslock = true -- if new players under 21 days join they get blacklisted
