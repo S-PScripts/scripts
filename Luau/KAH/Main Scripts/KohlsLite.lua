@@ -2079,6 +2079,11 @@ task.spawn(function()
                     		v:Destroy()
                 	end
                 end
+		for i,v in pairs(game.Workspace.Terrain["_Game"].Folder:GetDescendants()) do
+			if v.Name == "Message" then
+				v:Destroy()
+			end
+		end
 	end
 			
 	if YOUantiname == true then
