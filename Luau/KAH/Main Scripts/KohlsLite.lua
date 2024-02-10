@@ -2836,7 +2836,7 @@ task.spawn(function()
         task.wait(0)
         coroutine.wrap(function()
 			      if loopgrab == true then
-				        local pads = game:GetService("Workspace").Terrain["_Game"].Admin.Pads:GetChildren("Head")
+				        local pads = workspace.Terrain._Game.Admin.Pads:GetChildren("Head")
 			      	    	for i, pad in pairs(pads) do
 					        coroutine.wrap(function()
 						          pcall(function()
