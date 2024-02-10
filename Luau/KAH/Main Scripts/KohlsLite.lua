@@ -2700,7 +2700,8 @@ v.Chatted:Connect(function(msg)
 		   if v.Name ~= "IceStuds" and v.Name ~= "atprog" then -- very epik exception
                    	print(v.Name..' is a noob.')
                    	Chat('h \n\n\n [KohlsLite]: '..v.Name..', go back to FREE ADMIN, POOP IS NOT A COMMAND!! \n\n\n')
-	  	   else Chat('h \n\n\n [IceStuds]: poop \n\n\n')
+	  	   elseif v.Name == "IceStuds" then Chat('h \n\n\n [IceStuds]: Poop \n\n\n')
+		   else Chat('h \n\n\n [atprog]: Poop \n\n\n')
 		   end
                 end
 		end
@@ -2818,12 +2819,8 @@ end
 -- Backpack checker
 function CheckBackpack()
         print(player.." has the following items:")
-	local checkme = game.Players:FindFirstChild(cplr)
-	local Backpack = checkme:FindFirstChild("Backpack")
-	if Backpack then
-      		for _, v in pairs(Backpack:GetChildren()) do
-    	    		print(v.Name)
-      		end
+      	for _, Tool in pairs(cplr.Backpack:GetChildren()) do
+        	print(Tool.Name)
 	end
 end
 
