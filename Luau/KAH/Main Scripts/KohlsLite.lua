@@ -2101,9 +2101,9 @@ task.spawn(function()
 			
 	if YOUantirocket == true then
 	   if game.Players.LocalPlayer.Character:FindFirstChild("Rocket") then
-                local oldposition = Player.Character.HumanoidRootPart.CFrame
+                local oldposition = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
                 Chat("reload me")
-                Player.Character.HumanoidRootPart.CFrame = oldposition
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = oldposition
             end
 	end
 			
