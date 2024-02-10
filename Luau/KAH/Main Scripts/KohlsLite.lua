@@ -1876,7 +1876,7 @@ print("anticrash2 - anti-crash with vg or osas")
 print("antigear - stop users from using gears")
 print("antigear2 - stop users from using gears")
 print("antipaint - stop users from using the paint bucket and Subspace Tripmine")
-print("antigb - stop users from using the portable justice and car gear") -- ik car gear isn't a gear ban gear but i'm lazy
+print("antigb - stop users from using the portable justice, car gear and shattered dimension sword") -- more of a misc. category lol
 print("antiattach2 - stop users from using the Ivory Periastron")
 
 print("---")
@@ -2422,7 +2422,7 @@ end)
 local crashTools = {"OrinthianSwordAndShield", "VampireVanquisher"}
 local attachTools = {"IvoryPeriastron"}
 local nogearTools = {"PortableJustice","UltimateDriveSpeedster"}
-local colourTools = {"PaintBucket","SubspaceTripmine"}
+local colourTools = {"PaintBucket","SubspaceTripmine","DaggerofShatteredDimensions"}
 
 function warnCrash(player, toolName)
        Chat("ungear " .. player.Name)
