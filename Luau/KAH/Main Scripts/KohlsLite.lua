@@ -596,6 +596,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	Goto()
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'bok' then
+	  bokme = (string.sub(msg:lower(), #prefix + 5))
+	  SuperCMD("dog"..bokme)
+    end
+	
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'goto2' then
   	 local dasplayer = string.sub(msg:lower(), #prefix + 7)
          PLAYERCHECK(dasplayer)
@@ -969,8 +974,15 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'gearban' then
-		name = string.sub(msg:lower(), #prefix + 9)
-		Gearban()
+         	local dasplayer = string.sub(msg:lower(), #prefix + 9)
+         	PLAYERCHECK(dasplayer)
+         	if player ~= nil then
+			gplr = player
+			gbname = player.Name
+			Gearban()
+         	else
+               		print('Cannot find player with the name: '..dasplayer)
+         	end
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'sspawn' then -- save spawn
@@ -3483,22 +3495,15 @@ end
 
 -- GEARBAN
 function Gearban()
-      Chat("gear me 00000000000000000082357101")
+ 		  Chat("gear me 00000000000000000082357101")
 		  task.wait(0.50)
-		  names = game.Players:GetChildren()
-		  for i,v in pairs(names) do
-			    strlower = string.lower(v.Name)
-			    sub = string.sub(strlower,1,#name)
-			      if name == sub then
-				          game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame
-				          task.wait(0.25)
-				          local JailPlayer = v.Name
-				          game:GetService("Workspace").Terrain._Game.Workspace[game.Players.LocalPlayer.Name].PortableJustice.MouseClick:FireServer(game:GetService("Workspace").Terrain._Game.Workspace[JailPlayer])
-				          task.wait(0.25)
-				          Chat("reset "..v.Name)
-                  			 print(v.Name.. " is gear banned. Click if on mobile.")
-			      end
-		  end
+		  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = gplr.Character.HumanoidRootPart.CFrame
+		  task.wait(0.25)
+		  local JailPlayer = gplr.Name
+		  game:GetService("Workspace").Terrain._Game.Workspace[game.Players.LocalPlayer.Name].PortableJustice.MouseClick:FireServer(game:GetService("Workspace").Terrain._Game.Workspace[JailPlayer])
+		  task.wait(0.25)
+		  Chat("reset "..gplr.Name)
+                  print(gplr.Name.. " is gear banned. Click if on mobile.")
 end
 
 -- ballin
