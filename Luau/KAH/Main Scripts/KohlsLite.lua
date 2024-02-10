@@ -747,7 +747,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'supercmd' then
 	supermessage = string.sub(msg:lower(), #prefix + 10)
-	SuperCMD()
+	SuperCMD(supermessage)
     end
 
    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'supert' then
@@ -1112,6 +1112,9 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         end
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'nowater' then
+		SuperCMD("gear me 88146497")
+    end
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'stonemap' then
 	StoneMap()
     end
@@ -2798,7 +2801,7 @@ end
 -- Backpack checker
 function CheckBackpack()
         print(cker.." has the following items:")
-	local checkme = game.Players:FindFirstChild(cker)
+	local checkme = game.Players:FindFirstChild(checker)
 	local Backpack = checkme:FindFirstChild("Backpack")
 	if Backpack then
       		for _, v in pairs(Backpack:GetChildren()) do
@@ -3354,7 +3357,7 @@ game.Players.PlayerAdded:Connect(onPlayerAdded)
 game.Players.PlayerRemoving:Connect(onPlayerLeaving)
 
 -- SUPER COMMAND
-function SuperCMD()
+function SuperCMD(supermessage)
         for i = 1,amon do
                  Chat(supermessage)
                  task.wait()
