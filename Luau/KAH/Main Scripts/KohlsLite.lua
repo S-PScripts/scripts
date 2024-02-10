@@ -3466,7 +3466,7 @@ function Gearban()
 		  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = cplr.Character.HumanoidRootPart.CFrame
 		  task.wait(0.25)
 		  local JailPlayer = player.Name
-		  game:GetService("Workspace").Terrain._Game.Workspace[game.Players.LocalPlayer.Name].PortableJustice.MouseClick:FireServer(game:GetService("Workspace").Terrain._Game.Workspace[JailPlayer])
+		  workspace[game.Players.LocalPlayer.Name].PortableJustice.MouseClick:FireServer(workspace[JailPlayer])
 		  task.wait(0.25)
 		  Chat("reset "..player.Name)
                   print(player.Name.. " is gear banned. Click if on mobile.")
