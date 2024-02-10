@@ -1115,6 +1115,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'nowater' then
 		SuperCMD("gear me 88146497")
     end
+
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'watermap' then
+		SuperCMD("gear me 236438668")
+    end
+		
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'stonemap' then
 	StoneMap()
     end
@@ -3209,12 +3214,12 @@ local stoneTool2 = "PL"
 Chat("ungear me")
 Chat('gear me 59190534')
 Chat('gear me 59190534')
-repeat task.wait() until #LocalPlayer.Backpack:GetChildren() >= 2
-stoneTool1 = LocalPlayer.Backpack:GetChildren()
-stoneTool2 = LocalPlayer.Backpack:GetChildren()
+repeat task.wait() until #game.Players.LocalPlayer.Backpack:GetChildren() >= 2
+stoneTool1 = game.Players.LocalPlayer.Backpack:GetChildren()
+stoneTool2 = game.Players.LocalPlayer.Backpack:GetChildren()
 task.wait()
-stoneTool1.Parent = LocalPlayer.Character
-stoneTool2.Parent = LocalPlayer.Character
+stoneTool1.Parent = game.Players.LocalPlayer.Character
+stoneTool2.Parent = game.Players.LocalPlayer.Character
 task.wait()
 thread(function()
       stoneTool1.ServerControl:InvokeServer("KeyPress", {["Key"] = "x", ["Down"] = true})
@@ -3230,10 +3235,10 @@ function IceMap() -- cmd pi
 Workspace = game:GetService("Workspace").Terrain["_Game"].Folder
 local plasticTool = "Placeholder"
 Chat('gear me 2758794374')
-repeat task.wait() until LocalPlayer.Backpack:FindFirstChild("2019BloxyAward")
-plasticTool = LocalPlayer.Backpack:FindFirstChild("2019BloxyAward")
+repeat task.wait() until game.Players.LocalPlayer.Backpack:FindFirstChild("2019BloxyAward")
+plasticTool = game.Players.LocalPlayer.Backpack:FindFirstChild("2019BloxyAward")
 task.wait(0)
-plasticTool.Parent = LocalPlayer.Character
+plasticTool.Parent = game.Players.LocalPlayer.Character
 task.wait(0)
 for _,part in pairs(Workspace:GetDescendants()) do
       thread(function()
@@ -3249,7 +3254,7 @@ for _,part in pairs(Workspace:GetDescendants()) do
                     firetouchinterest(plasticTool:WaitForChild("Handle"), part, 0)
                     firetouchinterest(plasticTool:WaitForChild("Handle"), part, 1)
               until
-                  (part.Material == Enum.Material.Ice and part.BrickColor == BrickColor.new("Bright yellow")) or plasticTool.Parent ~= LocalPlayer.Character
+                  (part.Material == Enum.Material.Ice and part.BrickColor == BrickColor.new("Bright yellow")) or plasticTool.Parent ~= game.Players.LocalPlayer.Character
            end
       end)
  end
@@ -3346,7 +3351,10 @@ function onPlayerLeaving(player)
 		srkick = false
     end
 
-
+    if table.find(suser_on_sight, player.Name) then
+		SlowP = false
+    end
+	
     if table.find(mkick_on_sight, player.Name) then
 		antichatplr = false
     end
