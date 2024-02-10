@@ -187,9 +187,9 @@ end
 local permpassid = 66254 or 64354 -- don't edit
 local personpassid = 35748 or 37127 -- don't edit
 
-print("Thank you for using KohlsLite v1.054! Created by S_P.")
+print("Thank you for using KohlsLite v1.054c! Created by S_P.")
 print("Say .kcmds to list all the commands.")
-Chat("h \n\n\n [KohlsLite]: Executed! v1.054b \n\n\n")
+Chat("h \n\n\n [KohlsLite]: Executed! v1.054c \n\n\n")
 
 -- delta broke this, it was working before an update :P
 --[[if string.match(game:HttpGet("https://inventory.roproxy.com/v1/users/" .. game.Players.LocalPlayer.UserId .. "/items/GamePass/" .. permpassid), permpassid) then
@@ -1041,6 +1041,14 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
      if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'fixvelo' then
 		VFix()
      end
+
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'fixcol' then
+		ColFix()
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'fixgrav' then
+		GravFix()
+    end
 		
     if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unadminall' then
        alladmin = false
@@ -1720,6 +1728,8 @@ print("unautoafk - stops naming you as afk when you're afk")
 print("---")
 print("nocam/breakcam - break the camera")
 print("fixvelo - fix your velocity")
+print("fixcol - fix collisions")
+print("fixgrav - fix gravity")
 
 print("---")
 print("goto - alt to tp me plr")
@@ -2988,6 +2998,18 @@ function VFix()
             v.Velocity = Vector3.new(0,0,0)
         end
     end
+end
+
+function ColFix()
+         for i, v in pairs(game.Workspace:GetDescendants()) do
+		if v:IsA("Part") then
+			v.CanCollide = true
+		end
+	end
+end
+
+function GravFix()
+      workspace.Gravity = 196.2
 end
 
 -- FREEZE CRASH
