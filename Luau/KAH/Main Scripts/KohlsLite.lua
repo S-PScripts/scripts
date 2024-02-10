@@ -16,11 +16,11 @@ _G.executed = true
 
 local prefix = "." -- ANY LENGTH :D
 local blacklist = {"sgoslee","Sussy_Ivan","SlenderMan990921"} -- slocked users
-local whitelist = {"me_123eq","me_crashking","ScriptingProgrammer","G_ODt","BANNter_Original","witnessfox22"} -- not affected by slock
+local whitelist = {"me_123eq","me_crashking","ScriptingProgrammer","G_ODt","BANNter_Original","witnessfox22","IceStuds","atprog"} -- not affected by slock
 local newplrslocked = {} -- don't edit!!
 local newplrautoslock = true -- if new players under 21 days join they get blacklisted
 local newlen = 21 -- control what is considered as a new account
-local GWhitelisted = {"me_123eq","me_crashking","ScriptingProgrammer","G_ODt","BANNter_Original","witnessfox22"} -- gear whitelisted
+local GWhitelisted = {"me_123eq","me_crashking","ScriptingProgrammer","G_ODt","BANNter_Original","witnessfox22","IceStuds","atprog"} -- gear whitelisted
 local slockenabled = false -- slock
 
 local permusers = {} -- users that use perm will be placed here
@@ -2387,15 +2387,15 @@ end
 game:GetService("RunService").RenderStepped:Connect(function()
 	task.wait(0)
         for i, v in ipairs(game.Players:GetPlayers()) do
-            if v.Backpack:FindFirstChild("VampireVanquisher") or v.Character:FindFirstChild("VampireVanquisher") and anticrash2 then
-               if v ~= game.Players.LocalPlayer then
+            if v.Backpack:FindFirstChild("VampireVanquisher") or v.Character:FindFirstChild("VampireVanquisher") then
+               if v ~= game.Players.LocalPlayer and anticrash2 == true then
                 Chat("ungear "..v.Name)
                 Chat("punish "..v.Name)
                 Chat("h \n\n\n [KohlsLite]: Sorry, "..v.Name.. ", you cannot use the Vampire Vanquisher due to anti crash (2). \n\n\n")
                end
             end
-            if v.Backpack:FindFirstChild("OrinthianSwordAndShield") or v.Character:FindFirstChild("OrinthianSwordAndShield") and anticrash2 then
-               if v ~= game.Players.LocalPlayer then
+            if v.Backpack:FindFirstChild("OrinthianSwordAndShield") or v.Character:FindFirstChild("OrinthianSwordAndShield") then
+               if v ~= game.Players.LocalPlayer and anticrash2 == true then
                 Chat("ungear "..v.Name)
                 Chat("punish "..v.Name)
                 Chat("h \n\n\n [KohlsLite]: Sorry, "..v.Name.. ", you cannot use the Orinthian Sword and Shield due to anti crash (2). \n\n\n")
