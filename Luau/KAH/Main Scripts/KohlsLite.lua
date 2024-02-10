@@ -147,6 +147,8 @@ local alladmin = false -- all admin
 local amon = 100 -- super command times
 local spamwait = 0 -- spam command wait
 
+local dontannounce = false -- for ecrash only, don't change!!!!
+
 local perm = false
 local perm2 = true
 local loopgrab = false
@@ -187,9 +189,9 @@ end
 local permpassid = 66254 or 64354 -- don't edit
 local personpassid = 35748 or 37127 -- don't edit
 
-print("Thank you for using KohlsLite v1.054f! Created by S_P.")
+print("Thank you for using KohlsLite v1.054g! Created by S_P.")
 print("Say .kcmds to list all the commands.")
-Chat("h \n\n\n [KohlsLite]: Executed! v1.054f \n\n\n")
+Chat("h \n\n\n [KohlsLite]: Executed! v1.054g \n\n\n")
 
 -- delta broke this, it was working before an update :P
 --[[if string.match(game:HttpGet("https://inventory.roproxy.com/v1/users/" .. game.Players.LocalPlayer.UserId .. "/items/GamePass/" .. permpassid), permpassid) then
@@ -453,7 +455,9 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'gmusic' then
         musicplay = tonumber(string.sub(msg:lower(), #prefix + 7)) 
         if musicplay ~= nil and musicplay >= 1 and musicplay <= #musiclist then
-            Chat("h \n\n\n [KohlsLite]: Playing music:" .. musicnames[musicplay] .. ". \n\n\n")
+	    if dontannounce == false then
+            	Chat("h \n\n\n [KohlsLite]: Playing music:" .. musicnames[musicplay] .. ". \n\n\n")
+	    end
 	    if antimlog then
             	Chat("music 00000000000000000000000000" .. musiclist[musicplay])
 	    else
@@ -809,7 +813,9 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
   end
 
   if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'ecrash' then
+	    Chat("fix")
 	    Chat(".gmusic42")
+	    dontannounce = true
 	    Chat("h \n\n\n [KohlsDefender]: This server was crashed because of an issue. \n\n\n")
 	    task.wait(0.5)
             Chat("fogcolor 0 0 0")
