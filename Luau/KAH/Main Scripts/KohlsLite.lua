@@ -3086,7 +3086,8 @@ end
 
 -- ROCKET KICK
 function RKick()
-      Chat("tp me"..rkicker)
+      Chat("tp me "..rkicker)
+      Chat("setgrav "..rkicker.. "3500")
       for i = 1,100 do
           Chat("rocket/"..rkicker.."/"..rkicker.."/"..rkicker)
 	  Chat("rocket/me/me/me")
