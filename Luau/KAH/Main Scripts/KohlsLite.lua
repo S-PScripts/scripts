@@ -73,7 +73,8 @@ local musiclist = {"9048375035", -- 1
 		   "14145624031", -- 39
 		   "13530438299", -- 40
 		   "6845637094", -- 41
-		   "6770303644"} -- 42
+		   "6770303644", -- 42
+		   "6783714255"} -- 43
       
 local musicnames = {"All dropping 8 beats", -- 1
 		    "Robbery", -- 2
@@ -116,7 +117,8 @@ local musicnames = {"All dropping 8 beats", -- 1
 		    "phonk 4", -- 39
 		    "phonk 5", -- 40
 		    "hayayaya", -- 41
-		    "seize"} -- 42
+		    "seize", -- 42
+		    "pg"} -- 43
 
 local antimlog = false -- for music
 
