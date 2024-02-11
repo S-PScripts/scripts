@@ -1,4 +1,4 @@
-local musiclist = 
+local codes = 
 
 {
 	
@@ -11,15 +11,15 @@ local musiclist =
 
 } -- 6
       
-local musicnames = 
+local gears = 
 
 {
 	
-"All dropping 8 beats", -- 1
-"Robbery", -- 2
-"Loud music", -- 3
-"They trying to be cray", -- 4
-"TLT FNAF 2", -- 5
-"LONER", -- 6
+"boombox", -- 1
+"vg", -- 2
+"osas", -- 3
+"sword", -- 4
+"tptool", -- 5
+"btools", -- 6
 
 }
