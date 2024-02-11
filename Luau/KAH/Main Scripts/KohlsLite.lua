@@ -305,7 +305,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          end
        end
 
-       if string.sub(msg, 1, #prefix + 9)  == prefix..'adminlist' then
+       if string.sub(msg, 1, #prefix + 9)  == prefix..'listadmins' then
          for i = 1, #FAdmins do
  		 print(FAdmins[i])
 	 end
@@ -3084,8 +3084,10 @@ end
 
 -- ROCKET KICK
 function RKick()
+      Chat("tp me"..rkicker)
       for i = 1,100 do
           Chat("rocket/"..rkicker.."/"..rkicker.."/"..rkicker)
+	  Chat("rocket/me/me/me")
       end
 end
 
