@@ -152,7 +152,7 @@ local spamwait = 0 -- spam command wait
 local dontannounce = false -- for ecrash only, don't change!!!!
 
 local perm = false
-local perm2 = true
+local perm2 = false
 local loopgrab = false
 local loopgrab2 = false
 
@@ -1093,10 +1093,17 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		FastPads()
      end
 
-    if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'lg2' then
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'loopgrab2' then
 	loopgrab2 = true
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unloopgrab2' then
+	loopgrab2 = false
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'lg2' then
+	loopgrab2 = true
+    end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'unlg2' then
 	loopgrab2 = false
