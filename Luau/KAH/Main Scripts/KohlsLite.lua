@@ -2946,6 +2946,7 @@ task.spawn(function()
 	while true do
 		task.wait(0)
 		for i,player in pairs(padbanned) do
+			task.wait(0)
 			for i,pad in pairs(game:GetService("Workspace").Terrain["_Game"].Admin.Pads:GetDescendants()) do
 				if pad.Name == player.."'s admin" then
 					Chat("respawn "..player)
