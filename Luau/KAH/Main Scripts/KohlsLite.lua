@@ -3309,7 +3309,43 @@ function FRespawn() -- cmdy
 end
 
 function RegenMover()
---
+	    local Game_Folder = game:GetService("Workspace").Terrain["_Game"]
+	    local Workspace_Folder = Game_Folder.Workspace
+	    local Admin_Folder = Game_Folder.Admin
+            if Admin_Folder.Regen.CFrame.Y < 500 then
+				repeat wait() until game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")
+				local cf = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
+				local rmoving = true
+		
+				task.spawn(function()
+				    while true do
+				        game:GetService('RunService').Heartbeat:Wait()
+					game.Players.LocalPlayer.Character['Humanoid']:ChangeState(11)
+					cf.CFrame = Admin_Folder.Regen.CFrame * CFrame.new(-1*(Admin_Folder.Regen.Size.X/2)-(game.Players.LocalPlayer.Character['Torso'].Size.X/2), 0, 0)
+					if not rmoving then 
+						break 
+					end
+				    end
+				end)
+		
+				task.spawn(function() 
+					while rmoving do 
+						wait(.1) 
+						Chat('unpunish me') 
+					end 
+				end)
+				wait(0.3)
+				rmoving = false
+				Chat("skydive me")
+				Chat("skydive me")
+				Chat("skydive me")
+				Chat("skydive me")
+				Chat("skydive me")
+				Chat("skydive me")
+				wait(0.2)
+				Chat("respawn me")
+				wait(0.2)
+            end
 end
 
 -- VG CRASH
