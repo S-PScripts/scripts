@@ -211,7 +211,7 @@ local personpassid = 35748 or 37127 -- don't edit
 
 print("Thank you for using KohlsLite v1.057! Created by S_P.")
 print("Say .kcmds to list all the commands.")
-Chat("h \n\n\n [KohlsUWU+]: Executed! v1.058q \n\n\n")
+Chat("h \n\n\n [KohlsUWU+]: Executed! v1.059 \n\n\n")
 
 -- delta broke this, it was working before an update :P
 --[[if string.match(game:HttpGet("https://inventory.roproxy.com/v1/users/" .. game.Players.LocalPlayer.UserId .. "/items/GamePass/" .. permpassid), permpassid) then
@@ -3355,18 +3355,19 @@ end
 
 function fixregen()
 	    regentp()
-            task.wait(1)
+            task.wait(10.5)
 	    Chat("fly me")
-	    task.wait(1)
+	    task.wait(0.5)
             Chat("skydive me")
 	    Chat("skydive me")
 	    Chat("skydive me")
 	    Chat("skydive me")
 	    Chat("skydive me")
 	    Chat("skydive me")
-            task.wait(1)
+            task.wait(0.5)
 	    Regen()
-	    task.wait(1)
+	    Chat("unfly me")
+	    task.wait(0.5)
 	    local Game_Folder = game:GetService("Workspace").Terrain["_Game"]
 	    local Workspace_Folder = Game_Folder.Workspace
 	    local Admin_Folder = Game_Folder.Admin
@@ -3393,7 +3394,7 @@ function fixregen()
 				end)
 				wait(0.3)
 				rmoving = false
-				regentp()
+	    			Chat("unskydive me")
 				wait(1)
 				Chat("respawn me")
 				wait(0.2)
@@ -3401,7 +3402,7 @@ end
 
 -- regen pos
 function regentp()
-	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new (-7.45691586, 8.62999058, 94.4823227, -0.99999845, -9.28177144e-08, -0.00174821995, -9.28509678e-08, 1, 1.8940268e-08, 0.00174821995, 1.91025631e-08, -0.99999845)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-7.45691586, 8.62999058, 94.4823227, -0.99999845, -9.28177144e-08, -0.00174821995, -9.28509678e-08, 1, 1.8940268e-08, 0.00174821995, 1.91025631e-08, -0.99999845)
 end
 	
 -- VG CRASH
