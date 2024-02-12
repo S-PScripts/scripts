@@ -5,3 +5,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/S-PScripts/scripts/ma
 -- KohlsLite
 loadstring(game:HttpGet("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/Main%20Scripts/KohlsLite.lua"))()
 --loadstring(game:HttpGet("https://rentry.co/kohlslite/raw"))()
+
+--
+loadstring(game:HttpGet("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/Main%20Scripts/PR_Script.txt"))()
