@@ -602,9 +602,32 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	Goto()
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 4) == prefix.."gear" then
+        local args = string.split(msg, " ")
+        if #args >= 3 then
+            local target = args[2]
+            local gearName = table.concat(args, " ", 3)
+            local gearIndex = 0
+            for i, name in ipairs(gears) do
+                if name == gearName then
+                    gearIndex = i
+                    break
+                end
+            end
+            if gearIndex ~= 0 then
+                local gearCode = codes[gearIndex]
+                Chat("gear " .. target .. " " .. gearCode)
+            else
+                Chat("That gear is not on the saved gearlist!")
+            end
+        else
+            Chat("Invalid command format. Please use gear <target> <gear name>")
+        end
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'bok' then
 	  bokme = (string.sub(msg:lower(), #prefix + 5))
-	  SuperCMD("dog"..bokme)
+	  SuperCMD("dog "..bokme)
     end
 	
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'goto2' then
