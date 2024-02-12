@@ -205,9 +205,9 @@ end
 local permpassid = 66254 or 64354 -- don't edit
 local personpassid = 35748 or 37127 -- don't edit
 
-print("Thank you for using KohlsLite v1.056c! Created by S_P.")
+print("Thank you for using KohlsLite v1.057! Created by S_P.")
 print("Say .kcmds to list all the commands.")
-Chat("h \n\n\n [KohlsLite]: Executed! v1.056c \n\n\n")
+Chat("h \n\n\n [KohlsLite]: Executed! v1.057 \n\n\n")
 
 -- delta broke this, it was working before an update :P
 --[[if string.match(game:HttpGet("https://inventory.roproxy.com/v1/users/" .. game.Players.LocalPlayer.UserId .. "/items/GamePass/" .. permpassid), permpassid) then
@@ -750,6 +750,18 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	clickexplode = false
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'control' then -- really funny ngl
+		local dogman = string.sub(msg:lower(), 1, #prefix + 9)
+		Chat("dog me "..dogman)
+		Chat("tp me "..dogman)
+		task.wait(1)
+		Chat("punish me "..dogman)
+		Chat("undog me "..dogman)
+		task.wait(0.25)
+		Chat("unpunish me "..dogman)
+		Chat("invis me")
+    end
+		
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antidisco' then
 	antidisco = true
     end
