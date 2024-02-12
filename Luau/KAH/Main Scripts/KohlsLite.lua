@@ -120,12 +120,26 @@ local musicnames = {"All dropping 8 beats", -- 1
 		    "seize", -- 42
 		    "pg"} -- 43
 
+local gearcodes = {
+    "212641536", -- 1
+    "94794847", -- 2
+    "92628079", -- 3
+    "82357101", -- 4
+}
+
+local gears = {
+    "boombox", -- 1
+    "vg",      -- 2
+    "osas",    -- 3
+    "gb",   -- 4
+}
+
 local antimlog = false -- for music
 
 local padbanned = {"padbanned"} 
 local padreinforcements = false 
 
-themecode = {
+local themecode = {
     [[time 4,outdoorambient 000 000 111]],
     [[fogend 100,fogcolor 250 0 500]],
     [[time 19,outdoorambient 250 100 250]],
@@ -191,9 +205,9 @@ end
 local permpassid = 66254 or 64354 -- don't edit
 local personpassid = 35748 or 37127 -- don't edit
 
-print("Thank you for using KohlsLite v1.055! Created by S_P.")
+print("Thank you for using KohlsLite v1.056! Created by S_P.")
 print("Say .kcmds to list all the commands.")
-Chat("h \n\n\n [KohlsLite]: Executed! v1.055 \n\n\n")
+Chat("h \n\n\n [KohlsLite]: Executed! v1.056 \n\n\n")
 
 -- delta broke this, it was working before an update :P
 --[[if string.match(game:HttpGet("https://inventory.roproxy.com/v1/users/" .. game.Players.LocalPlayer.UserId .. "/items/GamePass/" .. permpassid), permpassid) then
@@ -608,7 +622,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
             local target = args[2]
             local gearName = table.concat(args, " ", 3)
             local gearIndex = 0
-            for i, name in ipairs(gears) do
+            for i, name in ipairs(gearcodes) do
                 if name == gearName then
                     gearIndex = i
                     break
@@ -618,10 +632,8 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                 local gearCode = codes[gearIndex]
                 Chat("gear " .. target .. " " .. gearCode)
             else
-                Chat("That gear is not on the saved gearlist!")
             end
         else
-            Chat("Invalid command format. Please use gear <target> <gear name>")
         end
     end
 
@@ -1839,8 +1851,12 @@ print("sp - set your speed without the command")
 print("jp - set your jump power without the command")
 print("hlth - set your health without the command")
 print("ufly - the kah fly but without actually using the cmd!")
+
+print("---")
 print("furry - HAHIUSHJDIKH")
-	
+print("gear (plr) (name) - in case you have dementia")
+print("boombox - shortcut for gear plr boombox")
+
 print("---")
 print("rejoin - rejoin the server you're in")
 print("shop - switch to a different server")
@@ -1924,11 +1940,11 @@ print("mkick - crash players with emojis using pm. You can use this instead of h
 print("unmkick - stop trying to crash players with emojis")
 
 print("---")
-print("There are also many other antis (for you or for everyone)!")
+print("There are also many other antis (for you or for everyone [but you])!")
 
 print("---")
 print("KohlsLite, since 2023. Created by S_P")
-print("Version is: v1.055 - 11th February 2024 Build")
+print("Version is: v1.056 - 12th February 2024 Build")
 end
 
 -- CHECK FOR PERM
