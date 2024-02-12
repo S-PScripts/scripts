@@ -5,8 +5,8 @@
 
 --[[ 
 Things this script doesn't have...
-1. Fixing parts - top priority after smaller stuff
-2. Moving parts
+1. Fixing parts - fixregen B)
+2. Moving parts - moveregen B)
 3. Finding parts
 4. Visualisers and drawing - I have no persons, I'll try getting it someday but for now I'll work on other features.
 5. Rockmap, stomemap ]]--
@@ -657,13 +657,13 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          end
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'moveregen' then
-	print("BETA EDITION")
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'moveregen' then -- cummy yummy
+	print("Moving regen! Do fixregen to move it back.")
 	RegenMover()
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'fixregen' then
-	print("BETA EDITION")
+	print("Moving the regen back...")
 	fixregen()
     end
 				
@@ -3354,10 +3354,22 @@ function RegenMover()
 end
 
 function fixregen()
+	    regentp()
+            task.wait(1)
+	    Chat("fly me")
+	    task.wait(1)
+            Chat("skydive me")
+	    Chat("skydive me")
+	    Chat("skydive me")
+	    Chat("skydive me")
+	    Chat("skydive me")
+	    Chat("skydive me")
+            task.wait(1)
+	    Regen()
+	    task.wait(1)
 	    local Game_Folder = game:GetService("Workspace").Terrain["_Game"]
 	    local Workspace_Folder = Game_Folder.Workspace
 	    local Admin_Folder = Game_Folder.Admin
-         --   if Admin_Folder.Regen.CFrame.Y < 500 then
 				repeat wait() until game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")
 				local cf = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
 				local rmoving = true
@@ -3381,18 +3393,17 @@ function fixregen()
 				end)
 				wait(0.3)
 				rmoving = false
-				Chat("unskydive me")
-				Chat("unskydive me")
-				Chat("unskydive me")
-				Chat("unskydive me")
-				Chat("unskydive me")
-				Chat("unskydive me")
-				wait(0.2)
+				regentp()
+				wait(1)
 				Chat("respawn me")
 				wait(0.2)
-         --   end
 end
 
+-- regen pos
+function regentp()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new (-7.45691586, 8.62999058, 94.4823227, -0.99999845, -9.28177144e-08, -0.00174821995, -9.28509678e-08, 1, 1.8940268e-08, 0.00174821995, 1.91025631e-08, -0.99999845)
+end
+	
 -- VG CRASH
 function VGCrash()
       Chat("gear me 00000000000000094794847")
