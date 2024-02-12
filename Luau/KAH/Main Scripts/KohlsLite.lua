@@ -3,9 +3,13 @@
 -- compiler used: https://www.tutorialspoint.com/execute_lua_online.php
 -- not the best script in the world, i know, but decent enough
 
---[[ Things this script doesn't have...
-fixing parts, moving parts, finding parts, -- DON'T WORRY, THIS WILL COME OUT EVENTUALLY
-visualiser and parts because i have no persons wHaT a ShaME ]]
+--[[ 
+Things this script doesn't have...
+1. Fixing parts - top priority after smaller stuff
+2. Moving parts
+3. Finding parts
+4. Visualisers and drawing - I have no persons, I'll try getting it someday but for now I'll work on other features.
+5. Rockmap, stomemap ]]--
 
 if _G.executed then 
 	return 
@@ -85,18 +89,18 @@ local musicnames = {"All dropping 8 beats", -- 1
 	            "fUn cAmPiNg mUsIc", -- 7
 	            "the loop", -- 8
 	            "FIRE IN THE HOLE", -- 9
-	            "women sings", -- 10
+	            "women song", -- 10
 	            "gun shots", -- 11
 	            "chill elevator", -- 12
 	            "fresh air", -- 13
-	            "the end", -- 14
-		    "memories", -- 15
+	            "is it the end", -- 14
+		    "memories...", -- 15
 		    "AHHHH", -- 16 
 		    "walter white", -- 17
 		    "nuts", -- 18
 	            "obamium 3d", -- 19
                     "blap blap", -- 20
-	            "the metro", -- 21
+	            "feels like the metro", -- 21
                     "gigachad loop", -- 22
 	            "ahh wahh haahh", -- 23
 		    "interstellar", -- 24
@@ -105,7 +109,7 @@ local musicnames = {"All dropping 8 beats", -- 1
 	            "Raining Tacos", -- 27
                     "PARTY", -- 28
                     "Fanfare", -- 29
-		    "Rock On", -- 30
+		    "rockin", -- 30
 		    "Loud music fail", -- 31
 		    "AAAAAAAAAAAAAAAAAAAAA", -- 32
 		    "Fanfare 2", -- 33
