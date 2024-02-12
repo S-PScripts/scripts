@@ -3357,6 +3357,7 @@ function fixregen()
 	    local Game_Folder = game:GetService("Workspace").Terrain["_Game"]
 	    local Workspace_Folder = Game_Folder.Workspace
 	    local Admin_Folder = Game_Folder.Admin
+         --   if Admin_Folder.Regen.CFrame.Y < 500 then
 				repeat wait() until game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")
 				local cf = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
 				local rmoving = true
@@ -3379,10 +3380,18 @@ function fixregen()
 					end 
 				end)
 				wait(0.3)
-				House()
 				rmoving = false
+				Chat("unskydive me")
+				Chat("unskydive me")
+				Chat("unskydive me")
+				Chat("unskydive me")
+				Chat("unskydive me")
+				Chat("unskydive me")
+				wait(0.2)
+				Chat("respawn me")
+				wait(0.2)
+         --   end
 end
-
 
 -- VG CRASH
 function VGCrash()
