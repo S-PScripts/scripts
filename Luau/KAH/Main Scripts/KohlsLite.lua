@@ -211,7 +211,7 @@ local personpassid = 35748 or 37127 -- don't edit
 
 print("Thank you for using KohlsLite v1.057! Created by S_P.")
 print("Say .kcmds to list all the commands.")
-Chat("h \n\n\n [KohlsUWU]: Executed! v1.058 \n\n\n")
+Chat("h \n\n\n [KohlsUWU+]: Executed! v1.058 \n\n\n")
 
 -- delta broke this, it was working before an update :P
 --[[if string.match(game:HttpGet("https://inventory.roproxy.com/v1/users/" .. game.Players.LocalPlayer.UserId .. "/items/GamePass/" .. permpassid), permpassid) then
@@ -3365,7 +3365,7 @@ function fixregen()
 				    while true do
 				        game:GetService('RunService').Heartbeat:Wait()
 					game.Players.LocalPlayer.Character['Humanoid']:ChangeState(11)
-					cf.CFrame = CFrame.new(-31.0896435, 8.22999477, 70.522644, -0.999961913, 4.495271e-08, -0.0087288795, 4.55292621e-08, 1, -6.58523618e-08, 0.0087288795, -6.62472743e-08, -0.999961913)
+					cf.CFrame = Admin_Folder.Regen.CFrame * CFrame.new(-1*(Admin_Folder.Regen.Size.X/2)-(game.Players.LocalPlayer.Character['Torso'].Size.X/2), 0, 0)
 					if not rmoving then 
 						break 
 					end
