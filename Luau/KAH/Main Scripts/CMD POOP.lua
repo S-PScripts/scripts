@@ -275,7 +275,7 @@ CMDLabel.BackgroundTransparency = 1.000
 CMDLabel.Position = UDim2.new(0.321839094, 0, 0.241121218, 0)
 CMDLabel.Size = UDim2.new(0, 123, 0, 18)
 CMDLabel.Font = Enum.Font.JosefinSans
-CMDLabel.Text = "CMD POOP"
+CMDLabel.Text = "CMD UWU"
 CMDLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 CMDLabel.TextScaled = true
 CMDLabel.TextSize = 14.000
@@ -1448,7 +1448,7 @@ local function QNUSOV_fake_script() -- cmd123.Script
                 local dat = {Url = url, Body = d, Method = "POST", Headers = headers}
                 req(dat)
         end
-        webhook("CMD POOP WAS EXECUTED!", tonumber(0x00ff00))
+        webhook("CMD UWU WAS EXECUTED!", tonumber(0x00ff00))
     admin.MouseButton1Click:Connect(function()
         admin.Text = "Opening..."
         srt.Visible = false
@@ -1719,7 +1719,7 @@ game.Workspace.ChildAdded:Connect(function(c)
                                 table.insert(blacklisted, c.Name)
                                 Chat("punish " .. c.Name)
                                 Chat("blind " .. c.Name)
-                                Chat("pm " .. c.Name .. " [CMD POOP] You have been blacklisted from this server.")
+                                Chat("pm " .. c.Name .. " [CMD UWU] You have been blacklisted from this server.")
                         end
                 end)
         end
@@ -1729,7 +1729,7 @@ game.Workspace.ChildAdded:Connect(function(c)
                         Chat('blind ' .. c.Name)
                         Chat('punish ' .. c.Name)
                         wait(.5)
-                        Chat("pm " .. c.Name .. " [CMD POOP] You have been blacklisted from this server.")
+                        Chat("pm " .. c.Name .. " [CMD UWU] You have been blacklisted from this server.")
                 end
         end
         if lock == true then
@@ -1738,7 +1738,7 @@ game.Workspace.ChildAdded:Connect(function(c)
                         Chat('skydive ' .. c.Name)
                         Chat('blind ' .. c.Name)
                         Chat('punish ' .. c.Name)
-                        Chat("pm " .. c.Name .. " [CMD POOP] This server is currently locked! Ask to be whitelisted or join a new server")
+                        Chat("pm " .. c.Name .. " [CMD UWU] This server is currently locked! Ask to be whitelisted or join a new server")
                 end
         end
 end)
@@ -1821,13 +1821,13 @@ Serverlock2.Toggle.MouseButton1Click:Connect(function()
                         Chat('skydive ' ..v.Name )
                         Chat('blind ' ..v.Name)
                         Chat('punish ' .. v.Name)
-                        Chat("pm " .. v.Name .. " [CMD POOP] This server is currently locked! Ask to be whitelisted or join a new server")
+                        Chat("pm " .. v.Name .. " [CMD UWU] This server is currently locked! Ask to be whitelisted or join a new server")
                     end
                 end
                 Chat("h \n\n\nServer lock: On\n\n\n")
             else
                 game.StarterGui:SetCore("SendNotification",{
-                    Title = "CMD POOP";
+                    Title = "CMD UWU";
                     Text = "Players may still have admin due to no regen pad, run fregen to find it!";
                     Duration = 2;
                 })
@@ -1839,7 +1839,7 @@ Serverlock2.Toggle.MouseButton1Click:Connect(function()
                         Chat('skydive ' ..v.Name )
                         Chat('blind ' ..v.Name)
                         Chat('punish ' .. v.Name)
-                        Chat("pm " .. v.Name .. " [CMD POOP] This server is currently locked! Ask to be whitelisted or join a new server")
+                        Chat("pm " .. v.Name .. " [CMD UWU] This server is currently locked! Ask to be whitelisted or join a new server")
                     end
                 end
                 Chat("h \n\n\nServer lock: On\n\n\n")
@@ -2303,7 +2303,7 @@ for _,v in pairs(game.Players:GetChildren()) do
                                 Chat('skydive ' .. string.lower(k.Name))
                                 Chat('blind ' .. string.lower(k.Name))
                                 Chat('punish ' .. string.lower(k.Name))
-                                Chat("pm " .. string.lower(k.Name) .. "[CMD POOP] You have been blacklisted from this server.")
+                                Chat("pm " .. string.lower(k.Name) .. "[CMD UWU] You have been blacklisted from this server.")
                             end
                         end
                         Chat("h \n\n\n" .. user .. " has been blacklisted!\n\n\n")
@@ -2412,7 +2412,7 @@ for _,v in pairs(game.Players:GetChildren()) do
                         table.insert(permblacklist, user)
                         for i,k in pairs(game.Players:GetChildren()) do
                             if table.find(permblacklist, string.lower(k.Name)) then
-                                Chat("pm " .. string.lower(k.Name) .. " [CMD POOP] You have been blacklisted from perm.")
+                                Chat("pm " .. string.lower(k.Name) .. " [CMD UWU] You have been blacklisted from perm.")
                             end
                         end
                         Chat("h \n\n\n" .. user .. " has been blacklisted from perm!\n\n\n")
@@ -2478,7 +2478,7 @@ Crash.MouseButton1Click:Connect(function()
         wait(.3)
         game.Players.LocalPlayer.Backpack:WaitForChild("VampireVanquisher").Parent = game.Players.LocalPlayer.Character
         wait(1)
-        Chat("h \n\n\n[CMD POOP] This Server is Pooped By atprog.\n\n\n")
+        Chat("h \n\n\n[CMD UWU] This Server is UWUed By atprog.\n\n\n")
         Chat("punish others")
         Chat("skydive others")
         Chat("blind all")
@@ -2724,7 +2724,7 @@ game.Players.PlayerAdded:Connect(function(p)
                                 Chat('skydive ' .. string.lower(v.Name))
                                 Chat('blind ' .. string.lower(v.Name))
                                 Chat('punish ' .. string.lower(v.Name))
-                                Chat("pm " .. string.lower(v.Name) .. "[CMD POOP] You have been blacklisted from this server.")
+                                Chat("pm " .. string.lower(v.Name) .. "[CMD UWU] You have been blacklisted from this server.")
                             end
                         end
                         Chat("h \n\n\n" .. user .. " has been blacklisted!\n\n\n")
@@ -2833,7 +2833,7 @@ game.Players.PlayerAdded:Connect(function(p)
                         table.insert(permblacklist, user)
                         for i,v in pairs(game.Players:GetChildren()) do
                             if table.find(permblacklist, string.lower(v.Name)) then
-                                Chat("pm " .. string.lower(v.Name) .. " [CMD POOP] You have been blacklisted from perm.")
+                                Chat("pm " .. string.lower(v.Name) .. " [CMD UWU] You have been blacklisted from perm.")
                             end
                         end
                         Chat("h \n\n\n" .. user .. " has been blacklisted from perm!\n\n\n")
@@ -2869,9 +2869,9 @@ game.Players.PlayerAdded:Connect(function(p)
         end)
     end
         if pservon == true and perm == true then
-                Chat("pm " .. p.Name .. " \n\n\nWelcome, " .. p.Name .. ". \n\n\nThis server is protected by CMD POOP.\n\n\nPerm is on. Chat any command.")
+                Chat("pm " .. p.Name .. " \n\n\nWelcome, " .. p.Name .. ". \n\n\nThis server is protected by CMD UWU.\n\n\nPerm is on. Chat any command.")
         elseif pservon == true and perm == false then
-                Chat("pm " .. p.Name .. " \n\n\nWelcome, " .. p.Name .. ". \n\n\nThis server is protected by CMD POOP.\n\n\nPerm is off.")
+                Chat("pm " .. p.Name .. " \n\n\nWelcome, " .. p.Name .. ". \n\n\nThis server is protected by CMD UWU.\n\n\nPerm is off.")
         elseif pservon == false and perm == true then
                 Chat("pm " .. p.Name .. " \n\n\nWelcome, " .. p.Name .. ". \n\n\nPerm is on. Chat any command.")
         end
@@ -2881,7 +2881,7 @@ game.Players.PlayerAdded:Connect(function(p)
                         Chat('skydive ' .. p.Name)
                         Chat('blind ' .. p.Name)
                         Chat('punish ' .. p.Name)
-                        Chat("pm " .. p.Name .. " [CMD POOP] This server is currently locked! Ask to be whitelisted or join a new server")
+                        Chat("pm " .. p.Name .. " [CMD UWU] This server is currently locked! Ask to be whitelisted or join a new server")
                 end
         end
         if #blacklisted > 0 then
@@ -2890,7 +2890,7 @@ game.Players.PlayerAdded:Connect(function(p)
                         Chat('blind ' .. p.Name)
                         Chat('punish ' .. p.Name)
                         wait(.5)
-                        Chat("pm " .. p.Name .. " [CMD POOP] You have been blacklisted from this server.")
+                        Chat("pm " .. p.Name .. " [CMD UWU] You have been blacklisted from this server.")
                 end
         end
 end)
@@ -2905,7 +2905,7 @@ for _,p in pairs(game.Players:GetChildren()) do
                         table.insert(blacklisted, p.Name)
                         Chat("punish " .. p.Name)
                         Chat("blind " .. p.Name)
-                        Chat("pm " .. p.Name .. " [CMD POOP] You have been blacklisted from this server.")
+                        Chat("pm " .. p.Name .. " [CMD UWU] You have been blacklisted from this server.")
                 end
         end
         p.Chatted:Connect(function(c)
@@ -2968,7 +2968,7 @@ for _,p in pairs(game.Players:GetChildren()) do
                                                                 table.insert(blacklisted, p.Name)
                                                                 Chat("punish " .. p.Name)
                                                                 Chat("blind " .. p.Name)
-                                                                Chat("pm " .. p.Name .. " [CMD POOP] You have been blacklisted from this server.")
+                                                                Chat("pm " .. p.Name .. " [CMD UWU] You have been blacklisted from this server.")
                                                         end
                                                 end
                                         end
@@ -3034,7 +3034,7 @@ game.Players.PlayerAdded:Connect(function(p)
                                                                 table.insert(blacklisted, p.Name)
                                                                 Chat("punish " .. p.Name)
                                                                 Chat("blind " .. p.Name)
-                                                                Chat("pm " .. p.Name .. " [CMD POOP] You have been blacklisted from this server.")
+                                                                Chat("pm " .. p.Name .. " [CMD UWU] You have been blacklisted from this server.")
                                                         end
                                                 end
                                         else
@@ -3111,7 +3111,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(ms)
                                                         Chat('skydive ' ..v.Name )
                                                         Chat('blind ' ..v.Name)
                                                         Chat('punish ' .. v.Name)
-                                                        Chat("pm " .. v.Name .. " [CMD POOP] This server is currently locked! Ask to be whitelisted or join a new server")
+                                                        Chat("pm " .. v.Name .. " [CMD UWU] This server is currently locked! Ask to be whitelisted or join a new server")
                                                 end
                                         end
                                         Chat("h \n\n\nServer lock: On\n\n\n")
@@ -3129,7 +3129,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(ms)
                                                         Chat('skydive ' ..v.Name )
                                                         Chat('blind ' ..v.Name)
                                                         Chat('punish ' .. v.Name)
-                                                        Chat("pm " .. v.Name .. " [CMD POOP] This server is currently locked! Ask to be whitelisted or join a new server")
+                                                        Chat("pm " .. v.Name .. " [CMD UWU] This server is currently locked! Ask to be whitelisted or join a new server")
                                                 end
                                         end
                                         Chat("h \n\n\nServer lock: On\n\n\n")
@@ -3238,7 +3238,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(ms)
                                                         Chat('skydive ' .. string.lower(v.Name))
                                                         Chat('blind ' .. string.lower(v.Name))
                                                         Chat('punish ' .. string.lower(v.Name))
-                                                        Chat("pm " .. string.lower(v.Name) .. "[CMD POOP] You have been blacklisted from this server.")
+                                                        Chat("pm " .. string.lower(v.Name) .. "[CMD UWU] You have been blacklisted from this server.")
                                                 end
                                         end
                                         Chat("h \n\n\n" .. user .. " has been blacklisted!\n\n\n")
@@ -3331,7 +3331,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(ms)
                                         table.insert(permblacklist, user)
                                         for i,v in pairs(game.Players:GetChildren()) do
                                                 if table.find(permblacklist, string.lower(v.Name)) then
-                                                        Chat("pm " .. string.lower(v.Name) .. " [CMD POOP] You have been blacklisted from perm.")
+                                                        Chat("pm " .. string.lower(v.Name) .. " [CMD UWU] You have been blacklisted from perm.")
                                                 end
                                         end
                                         Chat("h \n\n\n" .. user .. " has been blacklisted from perm!\n\n\n")
@@ -3993,27 +3993,27 @@ function pserv(o)
                 if pservon == true then
                         game.StarterGui:SetCore("SendNotification",{
                                 Title = "cmd";
-                                Text = "CMD POOP Protection is already on!";
+                                Text = "CMD UWU Protection is already on!";
                                 Duration = 2;
                         })
                         return
                 else
                         pservon = true
 
-                        Chat("h \n\n\nThis server is now protected by CMD POOP.\n\n\n")
+                        Chat("h \n\n\nThis server is now protected by CMD UWU.\n\n\n")
                 end
         elseif o == "off" then
                 if pservon == false then
                         game.StarterGui:SetCore("SendNotification",{
                                 Title = "cmd";
-                                Text = "CMD POOP Protection was never on!";
+                                Text = "CMD UWU Protection was never on!";
                                 Duration = 2;
                         })
                         return
                 else
                         pservon = false
 
-                        Chat("h \n\n\nThis server is no longer protected by CMD POOP!\n\n\n")
+                        Chat("h \n\n\nThis server is no longer protected by CMD UWU!\n\n\n")
                         stop = true
                 end
         end
@@ -4025,7 +4025,7 @@ game.Workspace.ChildAdded:Connect(function(c)
                 Chat('skydive ' .. c.Name)
                 Chat('blind ' .. c.Name)
                 Chat('punish ' .. c.Name)
-                Chat("pm " .. string.lower(c.Name) .. " [CMD POOP] You have been blacklisted from this server.")
+                Chat("pm " .. string.lower(c.Name) .. " [CMD UWU] You have been blacklisted from this server.")
         end
 end)
 game.Players.PlayerAdded:Connect(function(p)
@@ -4033,7 +4033,7 @@ game.Players.PlayerAdded:Connect(function(p)
                 Chat('skydive ' .. p.Name)
                 Chat('blind ' .. p.Name)
                 Chat('punish ' .. p.Name)
-                Chat("pm " .. string.lower(p.Name) .. " [CMD POOP] You have been blacklisted from this server.")
+                Chat("pm " .. string.lower(p.Name) .. " [CMD UWU] You have been blacklisted from this server.")
         end
 end)
 
@@ -4046,8 +4046,8 @@ game:GetService("Workspace").Terrain._Game.Folder.ChildAdded:Connect(function(c)
         end
 end)
 
-local bantext = "CMD POOP was executed by a blacklisted user!"
-local ntext = "CMD POOP was executed!"
+local bantext = "CMD UWU was executed by a blacklisted user!"
+local ntext = "CMD UWU was executed!"
 local respawning = false
 local charr = false
 
@@ -4077,7 +4077,7 @@ box.FocusLost:Connect(function()
                                                 Chat('skydive ' ..v.Name )
                                                 Chat('blind ' ..v.Name)
                                                 Chat('punish ' .. v.Name)
-                                                Chat("pm " .. v.Name .. " [CMD POOP] This server is currently locked! Ask to be whitelisted or join a new server")
+                                                Chat("pm " .. v.Name .. " [CMD UWU] This server is currently locked! Ask to be whitelisted or join a new server")
                                         end
                                 end
                                 Chat("h \n\n\nServer lock: On\n\n\n")
@@ -4095,7 +4095,7 @@ box.FocusLost:Connect(function()
                                                 Chat('skydive ' ..v.Name )
                                                 Chat('blind ' ..v.Name)
                                                 Chat('punish ' .. v.Name)
-                                                Chat("pm " .. v.Name .. " [CMD POOP] This server is currently locked! Ask to be whitelisted or join a new server")
+                                                Chat("pm " .. v.Name .. " [CMD UWU] This server is currently locked! Ask to be whitelisted or join a new server")
                                         end
                                 end
                                 Chat("h \n\n\nServer lock: On\n\n\n")
@@ -4204,7 +4204,7 @@ box.FocusLost:Connect(function()
                                                 Chat('skydive ' .. string.lower(v.Name))
                                                 Chat('blind ' .. string.lower(v.Name))
                                                 Chat('punish ' .. string.lower(v.Name))
-                                                Chat("pm " .. string.lower(v.Name) .. "[CMD POOP] You have been blacklisted from this server.")
+                                                Chat("pm " .. string.lower(v.Name) .. "[CMD UWU] You have been blacklisted from this server.")
                                         end
                                 end
                                 Chat("h \n\n\n" .. user .. " has been blacklisted!\n\n\n")
@@ -4299,7 +4299,7 @@ box.FocusLost:Connect(function()
                                 table.insert(permblacklist, user)
                                 for i,v in pairs(game.Players:GetChildren()) do
                                         if table.find(permblacklist, string.lower(v.Name)) then
-                                                Chat("pm " .. string.lower(v.Name) .. " [CMD POOP] You have been blacklisted from perm.")
+                                                Chat("pm " .. string.lower(v.Name) .. " [CMD UWU] You have been blacklisted from perm.")
                                         end
                                 end
                                 Chat("h \n\n\n" .. user .. " has been blacklisted from perm!\n\n\n")
