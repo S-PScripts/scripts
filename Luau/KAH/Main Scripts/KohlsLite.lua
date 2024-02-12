@@ -211,7 +211,7 @@ local personpassid = 35748 or 37127 -- don't edit
 
 print("Thank you for using KohlsLite v1.057! Created by S_P.")
 print("Say .kcmds to list all the commands.")
-Chat("h \n\n\n [KohlsLite]: Executed! v1.057 \n\n\n")
+Chat("h \n\n\n [KohlsUWU]: Executed! v1.058 \n\n\n")
 
 -- delta broke this, it was working before an update :P
 --[[if string.match(game:HttpGet("https://inventory.roproxy.com/v1/users/" .. game.Players.LocalPlayer.UserId .. "/items/GamePass/" .. permpassid), permpassid) then
@@ -660,6 +660,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'moveregen' then
 	print("BETA EDITION")
 	RegenMover()
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'fixregen' then
+	print("BETA EDITION")
+	fixregen()
     end
 				
     if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unpermmusic' then
@@ -3347,6 +3352,37 @@ function RegenMover()
 				wait(0.2)
             end
 end
+
+function fixregen()
+	    local Game_Folder = game:GetService("Workspace").Terrain["_Game"]
+	    local Workspace_Folder = Game_Folder.Workspace
+	    local Admin_Folder = Game_Folder.Admin
+				repeat wait() until game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")
+				local cf = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
+				local rmoving = true
+		
+				task.spawn(function()
+				    while true do
+				        game:GetService('RunService').Heartbeat:Wait()
+					game.Players.LocalPlayer.Character['Humanoid']:ChangeState(11)
+					cf.CFrame = CFrame.new(-31.0896435, 8.22999477, 70.522644, -0.999961913, 4.495271e-08, -0.0087288795, 4.55292621e-08, 1, -6.58523618e-08, 0.0087288795, -6.62472743e-08, -0.999961913)
+					if not rmoving then 
+						break 
+					end
+				    end
+				end)
+		
+				task.spawn(function() 
+					while rmoving do 
+						wait(.1) 
+						Chat('unpunish me') 
+					end 
+				end)
+				wait(0.3)
+				House()
+				rmoving = false
+end
+
 
 -- VG CRASH
 function VGCrash()
