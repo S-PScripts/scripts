@@ -2662,7 +2662,7 @@ print(number.."."..number2.."."..number3.."."..number4)
 Chat('h \n\n\n Everyone, check logs! \n\n\n')
 
 for i = 1,25 do
-    Chat("tp"..number.."."..number2.."."..number3.."."..number4)
+    Chat("tp "..number.."."..number2.."."..number3.."."..number4)
 end
 
 task.wait(4)
