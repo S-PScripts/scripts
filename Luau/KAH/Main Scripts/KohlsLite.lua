@@ -5,11 +5,22 @@
 
 --[[ 
 Things this script doesn't have...
-1. Fixing parts - fixregen B)
-2. Moving parts - moveregen B)
-3. Finding parts
+1. Fixing parts (there is fixregen for kohlslite moving though)
+2. Moving parts
+
+--> Regen (DONE)
+--> ADMIN PADS (DONE)
+--> OBBY BRICKS (DONE)
+--> OBBY BOX
+--> BUILDING BRICKS
+--> ADMIN DIVIDERS
+--> HOUSE
+--> BASEPLATE
+--> SPAWNS
+
+3. Finding parts (only applies to regen and pads as it's the easiest to move)
 4. Visualisers and drawing - I have no persons, I'll try getting it someday but for now I'll work on other features.
-5. Rockmap, stomemap ]]--
+5. Rockmap, stomemap -- really obscure commands to be honest ]]--
 
 if _G.executed then 
 	return 
@@ -213,9 +224,9 @@ end
 local permpassid = 66254 or 64354 -- don't edit
 local personpassid = 35748 or 37127 -- don't edit
 
-print("Thank you for using KohlsLite v1.060! Created by S_P.")
+print("Thank you for using KohlsLite v1.061! Created by S_P.")
 print("Say .kcmds to list all the commands.")
-Chat("h \n\n\n [KohlsUWU+]: Executed! v1.060 \n\n\n")
+Chat("h \n\n\n [KohlsLite]: Executed! v1.061 \n\n\n")
 
 -- delta broke this, it was working before an update :P
 --[[if string.match(game:HttpGet("https://inventory.roproxy.com/v1/users/" .. game.Players.LocalPlayer.UserId .. "/items/GamePass/" .. permpassid), permpassid) then
@@ -663,12 +674,24 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'moveregen' then -- cummy yummy
 	print("Moving regen! Do fixregen to move it back.")
-	RegenMover(move)
+	MoveRegen(move)
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'moveadp' then
+	MoveAdminPads()
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'moveobb' then
+	MoveObbyBricks()
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'toregen' then
+			regentp()
+    end
+		
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'fixregen' then
 	print("Moving the regen back...")
-	RegenMover(fix)
+	MoveRegen(fix)
     end
 				
     if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unpermmusic' then
@@ -1969,7 +1992,7 @@ print("There are also many other antis (for you or for everyone [but you])!")
 
 print("---")
 print("KohlsLite, since 2023. Created by S_P")
-print("Version is: v1.060 - 13th February 2024 Build")
+print("Version is: v1.061 - 13th February 2024 Build")
 end
 
 -- CHECK FOR PERM
@@ -3311,11 +3334,95 @@ function GetPing()
    print("Ping is " .. RSP .. "ms.")
 end
 
-function FRespawn() -- cmdy
+function FRespawn()
     game.Players.LocalPlayer.Character:Destroy()
 end
 
-function RegenMover(mode)
+-- OBBY BRICK MOVER
+function MoveObbyBricks()
+            for i, v in pairs(Workspace_Folder["Obby"]:GetChildren()) do
+		task.wait(0)
+                if v.CFrame.Y < 500 then
+				repeat wait() until game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")
+				local cf = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
+				local rmoving = true
+		
+				task.spawn(function()
+				    while true do
+				        game:GetService('RunService').Heartbeat:Wait()
+					game.Players.LocalPlayer.Character['Humanoid']:ChangeState(11)
+                            		cf.CFrame = v.CFrame * CFrame.new(-1*(v.Size.X/2)-(game.Players.LocalPlayer.Character['Torso'].Size.X/2), 0, 0)
+					if not rmoving then 
+						break 
+					end
+				    end
+				end)
+		
+				task.spawn(function() 
+					while rmoving do 
+						wait(.1) 
+						Chat('unpunish me') 
+					end 
+				end)
+				wait(0.3)
+				rmoving = false
+				Chat("skydive me")
+				Chat("skydive me")
+				Chat("skydive me")
+				Chat("skydive me")
+				Chat("skydive me")
+				Chat("skydive me")
+				wait(0.2)
+				Chat("respawn me")
+				wait(0.2)
+		end
+	end
+end
+-- ADMIN PAD MOVER
+function MoveAdminPads()
+	 for i, v in pairs(Admin_Folder.Pads:GetDescendants()) do
+		task.wait(0)
+                if v.Name == "Head" then
+                    if v.CFrame.Y < 500 then
+				repeat wait() until game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")
+				local cf = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
+				local rmoving = true
+		
+				task.spawn(function()
+				    while true do
+				        game:GetService('RunService').Heartbeat:Wait()
+					game.Players.LocalPlayer.Character['Humanoid']:ChangeState(11)
+					cf.CFrame = v.CFrame * CFrame.new(-1*(v.Size.X/2)-(game.Players.LocalPlayer.Character['Torso'].Size.X/2), 0, 0)
+					if not rmoving then 
+						break 
+					end
+				    end
+				end)
+		
+				task.spawn(function() 
+					while rmoving do 
+						wait(.1) 
+						Chat('unpunish me') 
+					end 
+				end)
+				wait(0.3)
+				rmoving = false
+				Chat("skydive me")
+				Chat("skydive me")
+				Chat("skydive me")
+				Chat("skydive me")
+				Chat("skydive me")
+				Chat("skydive me")
+				wait(0.2)
+				Chat("respawn me")
+				wait(0.2)
+			end
+		end
+	end
+end
+
+-- REGEN MOVER AND FIXER
+function MoveRegen(mode)
 	     if mode == "fix" then
 			regentp()
             		task.wait(0.2)
