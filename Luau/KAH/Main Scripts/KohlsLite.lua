@@ -143,6 +143,10 @@ local antimlog = false -- for music
 local padbanned = {"padbanned"} 
 local padreinforcements = false 
 
+local Game_Folder = game:GetService("Workspace").Terrain["_Game"]
+local Workspace_Folder = Game_Folder.Workspace
+local Admin_Folder = Game_Folder.Admin
+
 local themecode = {
     [[time 4,outdoorambient 000 000 111]],
     [[fogend 100,fogcolor 250 0 500]],
@@ -2920,10 +2924,8 @@ task.spawn(function()
 						              	    firetouchinterest(cre, spr, 1)
 								    task.wait()
                           					    firetouchinterest(cre, spr, 0)
-								   --[[ task.wait()
                           				            firetouchinterest(cre, spr, 1)
-							            task.wait()
-    							            firetouchinterest(cre, spr, 0) ]]
+    							            firetouchinterest(cre, spr, 0)
 							            if pad.Name ~= game.Players.LocalPlayer.Name.."'s admin" then
 									Regen()
 							            end
@@ -3330,9 +3332,6 @@ function RegenMover(mode)
 	    		Chat("unfly me")
 	    		task.wait(0.2)
 	     end
-	    local Game_Folder = game:GetService("Workspace").Terrain["_Game"]
-	    local Workspace_Folder = Game_Folder.Workspace
-	    local Admin_Folder = Game_Folder.Admin
             if (Admin_Folder.Regen.CFrame.Y < 500 and mode == "move") or mode == "fix" then
 				repeat wait() until game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")
 				local cf = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
