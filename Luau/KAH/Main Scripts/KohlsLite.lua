@@ -209,9 +209,9 @@ end
 local permpassid = 66254 or 64354 -- don't edit
 local personpassid = 35748 or 37127 -- don't edit
 
-print("Thank you for using KohlsLite v1.057! Created by S_P.")
+print("Thank you for using KohlsLite v1.060! Created by S_P.")
 print("Say .kcmds to list all the commands.")
-Chat("h \n\n\n [KohlsUWU+]: Executed! v1.059w \n\n\n")
+Chat("h \n\n\n [KohlsUWU+]: Executed! v1.060 \n\n\n")
 
 -- delta broke this, it was working before an update :P
 --[[if string.match(game:HttpGet("https://inventory.roproxy.com/v1/users/" .. game.Players.LocalPlayer.UserId .. "/items/GamePass/" .. permpassid), permpassid) then
@@ -1965,7 +1965,7 @@ print("There are also many other antis (for you or for everyone [but you])!")
 
 print("---")
 print("KohlsLite, since 2023. Created by S_P")
-print("Version is: v1.056 - 12th February 2024 Build")
+print("Version is: v1.060 - 13th February 2024 Build")
 end
 
 -- CHECK FOR PERM
@@ -3314,7 +3314,7 @@ function FRespawn() -- cmdy
 end
 
 function RegenMover(mode)
-	     if mode == "fix"
+	     if mode == "fix" then
 			regentp()
             		task.wait(0.2)
 	    		Chat("fly me")
@@ -3357,7 +3357,7 @@ function RegenMover(mode)
 				end)
 				wait(0.3)
 				rmoving = false
-				if mode == "move"
+				if mode == "move" then
 					Chat("skydive me")
 					Chat("skydive me")
 					Chat("skydive me")
