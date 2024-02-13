@@ -659,12 +659,12 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'moveregen' then -- cummy yummy
 	print("Moving regen! Do fixregen to move it back.")
-	RegenMover()
+	RegenMover(move)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'fixregen' then
 	print("Moving the regen back...")
-	fixregen()
+	RegenMover(fix)
     end
 				
     if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unpermmusic' then
@@ -3313,11 +3313,27 @@ function FRespawn() -- cmdy
     game.Players.LocalPlayer.Character:Destroy()
 end
 
-function RegenMover()
+function RegenMover(mode)
+	     if mode == "fix"
+			regentp()
+            		task.wait(0.2)
+	    		Chat("fly me")
+	    		task.wait(0.2)
+            		Chat("skydive me")
+	  	        Chat("skydive me")
+	 	        Chat("skydive me")
+	    		Chat("skydive me")
+	    		Chat("skydive me")
+	    		Chat("skydive me")
+            		task.wait(0.2)
+	    		Regen()
+	    		Chat("unfly me")
+	    		task.wait(0.2)
+	     end
 	    local Game_Folder = game:GetService("Workspace").Terrain["_Game"]
 	    local Workspace_Folder = Game_Folder.Workspace
 	    local Admin_Folder = Game_Folder.Admin
-            if Admin_Folder.Regen.CFrame.Y < 500 then
+            if (Admin_Folder.Regen.CFrame.Y < 500 and mode == "move") or mode == "fix" then
 				repeat wait() until game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")
 				local cf = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
 				local rmoving = true
@@ -3341,63 +3357,20 @@ function RegenMover()
 				end)
 				wait(0.3)
 				rmoving = false
-				Chat("skydive me")
-				Chat("skydive me")
-				Chat("skydive me")
-				Chat("skydive me")
-				Chat("skydive me")
-				Chat("skydive me")
+				if mode == "move"
+					Chat("skydive me")
+					Chat("skydive me")
+					Chat("skydive me")
+					Chat("skydive me")
+					Chat("skydive me")
+					Chat("skydive me")
+				else	
+					Chat("unskydive me")
+				end
 				wait(0.2)
 				Chat("respawn me")
 				wait(0.2)
             end
-end
-
-function fixregen()
-	    regentp()
-            task.wait(0.5)
-	    Chat("fly me")
-	    task.wait(0.5)
-            Chat("skydive me")
-	    Chat("skydive me")
-	    Chat("skydive me")
-	    Chat("skydive me")
-	    Chat("skydive me")
-	    Chat("skydive me")
-            task.wait(0.5)
-	    Regen()
-	    Chat("unfly me")
-	    task.wait(0.5)
-	    local Game_Folder = game:GetService("Workspace").Terrain["_Game"]
-	    local Workspace_Folder = Game_Folder.Workspace
-	    local Admin_Folder = Game_Folder.Admin
-				repeat wait() until game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")
-				local cf = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
-				local rmoving = true
-		
-				task.spawn(function()
-				    while true do
-				        game:GetService('RunService').Heartbeat:Wait()
-					game.Players.LocalPlayer.Character['Humanoid']:ChangeState(11)
-					cf.CFrame = Admin_Folder.Regen.CFrame * CFrame.new(-1*(Admin_Folder.Regen.Size.X/2)-(game.Players.LocalPlayer.Character['Torso'].Size.X/2), 0, 0)
-					if not rmoving then 
-						break 
-					end
-				    end
-				end)
-		
-				task.spawn(function() 
-					while rmoving do 
-						wait(.1) 
-						Chat('unpunish me') 
-					end 
-				end)
-				wait(0.3)
-				rmoving = false
-	    			Chat("unskydive me")
-				wait(1)
-				Chat("respawn me")
-				wait(0.2)
 end
 
 -- regen pos
