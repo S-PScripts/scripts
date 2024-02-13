@@ -1736,12 +1736,12 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antichat' then
 	antichat = true
-	antimsg = true -- stop you from crashing :D
+	YOUantimsg = true -- stop you from crashing :D
     end
 
     if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unantichat' then
 	antichat = false
-	antimsg = false
+	YOUantimsg = false
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'mkick' then
@@ -2181,7 +2181,7 @@ task.spawn(function()
                     		v:Destroy()
                 	end
                 end
-		for i,v in pairs(game.Workspace.Terrain["_Game"].Folder:GetDescendants()) do
+		for i, v in pairs(game.Workspace.Terrain["_Game"].Folder:GetDescendants()) do
 			if v.Name == "Message" then
 				v:Destroy()
 			end
