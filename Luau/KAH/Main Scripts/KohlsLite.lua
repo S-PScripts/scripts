@@ -900,7 +900,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
   if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'ecrash' then
 	    Chat("fix")
 	    Chat(".gmusic42")
-	    dontannounce = true
+	    dontannounce = true -- lemme know if you want this to be a full feature
 	    Chat("h \n\n\n [KohlsDefender]: This server was crashed because of an issue. \n\n\n")
 	    task.wait(0.5)
             Chat("fogcolor 0 0 0")
@@ -2857,7 +2857,7 @@ v.Chatted:Connect(function(msg)
                		command = ""
             	end
             
-                if string.sub(command, 1, 1) == prefix then
+                if string.sub(command, 1, 1) == prefix then -- so THEY don't use YOU!
                        command = ""
                 end
 
