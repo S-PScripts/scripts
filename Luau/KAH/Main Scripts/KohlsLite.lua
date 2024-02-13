@@ -374,6 +374,15 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	 end
         end
 
+	if string.sub(msg, 1, #prefix + 6)  == prefix..'fogvis' then -- guys is this FONALC
+		fogdance = true
+	end
+
+	if string.sub(msg, 1, #prefix + 8)  == prefix..'unfogvis' then -- guys is this FONALC
+		fogdance = false
+		Chat("fix")
+	end
+
        if string.sub(msg, 1, #prefix + 2) == prefix..'bl' then
          local dasplayer = string.sub(msg:lower(), #prefix + 4)
          PLAYERCHECK(dasplayer)
@@ -3201,6 +3210,21 @@ task.spawn(function()
    end
 end)
 
+-- FOG DANCING
+task.spawn(function()
+   while true do
+	task.wait(0)
+	if fogdance then
+		 if game:GetService("Workspace").Terrain["_Game"].Folder.Sound.PlaybackLoudness > 100 then
+		 else
+                 if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
+                        Chat("fogend "..game:GetService("Workspace").Terrain["_Game"].Folder.Sound.PlaybackLoudness)
+                 else
+                 end       
+		 end
+	end
+   end
+end)
 
 -- LOG SPAM
 function LogSpam()
@@ -3721,7 +3745,7 @@ function Gearban()
                   print(player.Name.. " is gear banned. Click if on mobile.")
 end
 
--- ballin
+-- run at end to prevent bugs
 for i, v in pairs(game.Players:GetPlayers()) do
 	task.wait(0)
 	PLRSTART(v)
