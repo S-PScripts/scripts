@@ -456,7 +456,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
  		 print(personsusers[i])
 	 end
         end
-    
+
+       if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'adminjoy' then
+		game.Players.LocalPlayer:Kick("you: 'i use adminjoy trash!' Anyways, ask ME to add the colourful seizure crap, don't use THAT!")
+       end
+		
        if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'slock' then
         Chat("h \n\n\n [KohlsLite]: Server is locked! \n\n\n")
         slockenabled = true
