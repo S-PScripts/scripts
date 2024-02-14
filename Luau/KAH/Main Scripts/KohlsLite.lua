@@ -720,11 +720,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'findregen' then
-	findregen = true
+	regenfind = true
     end
 
     if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'nofindregen' then
-	findregen = false
+	regenfind = false
     end
 			
     if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unpermmusic' then
@@ -743,15 +743,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'remusic' then
-       if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
-	  local myid  = game:GetService("Workspace").Terrain["_Game"].Folder.Sound.SoundId 
-	  local myidfix = myid:match("(%d+)$")
-	  if antimlog then
-            	Chat("music 00000000000000000000000000" .. myidfix)
-	  else
-		Chat("music " .. myidfix)
-	  end
-       end
+       	Chat(".startm")
      end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'vgcrash' then
@@ -3233,7 +3225,7 @@ end)
 -- FOG DANCING
 task.spawn(function()
    while true do
-	task.wait(0)
+	task.wait(0.1) -- rate limit
          if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
 			if fogdance == true then
 				if game:GetService("Workspace").Terrain["_Game"].Folder.Sound.PlaybackLoudness > 100 then
