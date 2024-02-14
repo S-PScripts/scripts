@@ -1,3 +1,5 @@
+broken
+
 -- KOHLSLITE BY TS2021/S_P FOR KOHLS ADMIN HOUSE
 -- CREDITS TO MANY (tech + stuff from https://github.com/S-PScripts/kah-fork)
 -- compiler used: https://www.tutorialspoint.com/execute_lua_online.php
@@ -3365,34 +3367,38 @@ function FRespawn()
     game.Players.LocalPlayer.Character:Destroy()
 end
 
+-- SORRY ABOUT THE AWFUL CODE HERE I WILL FIX IT SOON
+
+function movepart()
+	local cf = game.Players.LocalPlayer.Character.HumanoidRootPart
+	local rmoving = true
+		task.spawn(function()
+			while true do
+				game:GetService('RunService').Heartbeat:Wait()
+				game.Players.LocalPlayer.Character['Humanoid']:ChangeState(11)
+				cf.CFrame = target.CFrame * CFrame.new(-1*(target.Size.X/2)-(game.Players.LocalPlayer.Character['Torso'].Size.X/2), 0, 0)
+				if not looping then 
+					break 
+				end
+			end
+		end)
+		task.spawn(function() 
+			while rmoving do 
+				wait(.1) 
+				Chat('unpunish me') 
+			end 
+		end)
+		wait(0.25)
+		rmoving = false
+
+end
+
 -- OBBY BRICK MOVER
 function MoveObbyBricks()
             for i, v in pairs(Workspace_Folder["Obby"]:GetChildren()) do
 		task.wait(0)
-                if v.CFrame.Y < 500 then
-				repeat wait() until game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")
-				local cf = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
-				local rmoving = true
-		
-				task.spawn(function()
-				    while true do
-				        game:GetService('RunService').Heartbeat:Wait()
-					game.Players.LocalPlayer.Character['Humanoid']:ChangeState(11)
-                            		cf.CFrame = v.CFrame * CFrame.new(-1*(v.Size.X/2)-(game.Players.LocalPlayer.Character['Torso'].Size.X/2), 0, 0)
-					if not rmoving then 
-						break 
-					end
-				    end
-				end)
-		
-				task.spawn(function() 
-					while rmoving do 
-						wait(.1) 
-						Chat('unpunish me') 
-					end 
-				end)
-				wait(1)
-				rmoving = false
+				target = v
+          			movepart()
 				Chat("skydive me")
 				Chat("skydive me")
 				Chat("skydive me")
@@ -3402,38 +3408,15 @@ function MoveObbyBricks()
 				wait(0.2)
 				Chat("respawn me")
 				wait(0.2)
-		end
 	end
 end
+
 -- ADMIN PAD MOVER
 function MoveAdminPads()
 	 for i, v in pairs(Admin_Folder.Pads:GetDescendants()) do
 		task.wait(0)
-                if v.Name == "Head" then
-                    if v.CFrame.Y < 500 then
-				repeat wait() until game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")
-				local cf = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
-				local rmoving = true
-		
-				task.spawn(function()
-				    while true do
-				        game:GetService('RunService').Heartbeat:Wait()
-					game.Players.LocalPlayer.Character['Humanoid']:ChangeState(11)
-					cf.CFrame = v.CFrame * CFrame.new(-1*(v.Size.X/2)-(game.Players.LocalPlayer.Character['Torso'].Size.X/2), 0, 0)
-					if not rmoving then 
-						break 
-					end
-				    end
-				end)
-		
-				task.spawn(function() 
-					while rmoving do 
-						wait(.1) 
-						Chat('unpunish me') 
-					end 
-				end)
-				wait(1)
-				rmoving = false
+        			target = v
+          			movepart()
 				Chat("skydive me")
 				Chat("skydive me")
 				Chat("skydive me")
@@ -3443,8 +3426,6 @@ function MoveAdminPads()
 				wait(0.2)
 				Chat("respawn me")
 				wait(0.2)
-			end
-		end
 	end
 end
 
@@ -3466,30 +3447,7 @@ function MoveRegen(mode)
 	    		Chat("unfly me")
 	    		task.wait(0.2)
 	     end
-            if (Admin_Folder.Regen.CFrame.Y < 500 and mode == "move") or mode == "fix" then
-				repeat wait() until game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")
-				local cf = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
-				local rmoving = true
-		
-				task.spawn(function()
-				    while true do
-				        game:GetService('RunService').Heartbeat:Wait()
-					game.Players.LocalPlayer.Character['Humanoid']:ChangeState(11)
-					cf.CFrame = Admin_Folder.Regen.CFrame * CFrame.new(-1*(Admin_Folder.Regen.Size.X/2)-(game.Players.LocalPlayer.Character['Torso'].Size.X/2), 0, 0)
-					if not rmoving then 
-						break 
-					end
-				    end
-				end)
-		
-				task.spawn(function() 
-					while rmoving do 
-						wait(.1) 
-						Chat('unpunish me') 
-					end 
-				end)
-				wait(0.3)
-				rmoving = false
+movepart()				
 				if mode == "move" then
 					Chat("skydive me")
 					Chat("skydive me")
@@ -3503,7 +3461,6 @@ function MoveRegen(mode)
 				wait(0.2)
 				Chat("respawn me")
 				wait(0.2)
-            end
 end
 
 -- regen pos
