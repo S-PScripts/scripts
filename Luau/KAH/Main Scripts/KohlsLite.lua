@@ -3487,13 +3487,14 @@ end
 -- ADMIN PAD MOVER
 function MoveAdminPads()
 	 for i, v in pairs(Admin_Folder.Pads:GetDescendants()) do
-		task.wait(1)
-        	target = v
-          	movepart()
-		task.wait(1)
-		skydivef()
-		wait(0.2)
-	     	Chat("respawn me")
+		if v.Name == "Head" then
+			task.wait(1)
+        		target = v
+          		movepart()
+			skydivef()
+			wait(0.2)
+	     		Chat("respawn me")
+		end
 	end
 end
 
