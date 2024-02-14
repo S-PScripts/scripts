@@ -820,7 +820,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'control' then -- really funny ngl
-		local dogman = string.sub(msg:lower(), 1, #prefix + 9)
+		local dogman = string.sub(msg:lower(), #prefix + 9)
 		Chat("dog me "..dogman)
 		Chat("tp me "..dogman)
 		task.wait(1)
