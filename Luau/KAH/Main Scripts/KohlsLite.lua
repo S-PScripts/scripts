@@ -1,11 +1,14 @@
-broken
+--[[
+_  _____  _   _ _     ____  _     ___ _____ _____ 
+| |/ / _ \| | | | |   / ___|| |   |_ _|_   _| ____|
+| ' / | | | |_| | |   \___ \| |    | |  | | |  _|  
+| . \ |_| |  _  | |___ ___) | |___ | |  | | | |___ 
+|_|\_\___/|_| |_|_____|____/|_____|___| |_| |_____|
 
--- KOHLSLITE BY TS2021/S_P FOR KOHLS ADMIN HOUSE
+-- CREATED BY TS2021/SCRIPTINGPROGRAMMER
 -- CREDITS TO MANY (tech + stuff from https://github.com/S-PScripts/kah-fork)
--- compiler used: https://www.tutorialspoint.com/execute_lua_online.php
--- not the best script in the world, i know, but decent enough
+-- COMPILER USED: https://www.tutorialspoint.com/execute_lua_online.php
 
---[[ 
 Things this script doesn't have...
 1. Fixing parts
 2. Moving parts
@@ -22,7 +25,7 @@ Things this script doesn't have...
 
 3. Finding parts (only applies to regen and pads as it's the easiest to move)
 4. Visualisers and drawing - I have no persons, I'll try getting it someday but for now I'll work on other features.
-5. Rockmap, stomemap -- really obscure commands to be honest ]]--
+5. Rockmap, stomemap -- really obscure commands to be honest ]]
 
 if _G.executed then 
 	return 
@@ -3367,8 +3370,6 @@ function FRespawn()
     game.Players.LocalPlayer.Character:Destroy()
 end
 
--- SORRY ABOUT THE AWFUL CODE HERE I WILL FIX IT SOON
-
 function movepart()
 	local cf = game.Players.LocalPlayer.Character.HumanoidRootPart
 	local rmoving = true
@@ -3377,7 +3378,7 @@ function movepart()
 				game:GetService('RunService').Heartbeat:Wait()
 				game.Players.LocalPlayer.Character['Humanoid']:ChangeState(11)
 				cf.CFrame = target.CFrame * CFrame.new(-1*(target.Size.X/2)-(game.Players.LocalPlayer.Character['Torso'].Size.X/2), 0, 0)
-				if not looping then 
+				if not rmoving then 
 					break 
 				end
 			end
@@ -3393,39 +3394,33 @@ function movepart()
 
 end
 
+-- SKYDIVE FOR MOVING
+function skydivef()
+	Chat("skydive me			fuck")
+	Chat("skydive me			fuck")
+	Chat("skydive me			fuck")
+	Chat("skydive me			fuck")
+	Chat("skydive me			fuck")
+	Chat("skydive me			fuck")
+end
+
 -- OBBY BRICK MOVER
 function MoveObbyBricks()
-            for i, v in pairs(Workspace_Folder["Obby"]:GetChildren()) do
+         for i, v in pairs(Workspace_Folder["Obby"]:GetChildren()) do
 		task.wait(0)
-				target = v
-          			movepart()
-				Chat("skydive me")
-				Chat("skydive me")
-				Chat("skydive me")
-				Chat("skydive me")
-				Chat("skydive me")
-				Chat("skydive me")
-				wait(0.2)
-				Chat("respawn me")
-				wait(0.2)
-	end
+		target = v
+          	movepart()
+		skydivef()
+	  end
 end
 
 -- ADMIN PAD MOVER
 function MoveAdminPads()
 	 for i, v in pairs(Admin_Folder.Pads:GetDescendants()) do
 		task.wait(0)
-        			target = v
-          			movepart()
-				Chat("skydive me")
-				Chat("skydive me")
-				Chat("skydive me")
-				Chat("skydive me")
-				Chat("skydive me")
-				Chat("skydive me")
-				wait(0.2)
-				Chat("respawn me")
-				wait(0.2)
+        	target = v
+          	movepart()
+		skydivef()
 	end
 end
 
@@ -3436,31 +3431,21 @@ function MoveRegen(mode)
             		task.wait(0.2)
 	    		Chat("fly me")
 	    		task.wait(0.2)
-            		Chat("skydive me")
-	  	        Chat("skydive me")
-	 	        Chat("skydive me")
-	    		Chat("skydive me")
-	    		Chat("skydive me")
-	    		Chat("skydive me")
+            		skydivef()
             		task.wait(0.2)
 	    		Regen()
 	    		Chat("unfly me")
 	    		task.wait(0.2)
 	     end
-movepart()				
-				if mode == "move" then
-					Chat("skydive me")
-					Chat("skydive me")
-					Chat("skydive me")
-					Chat("skydive me")
-					Chat("skydive me")
-					Chat("skydive me")
-				else	
-					Chat("unskydive me")
-				end
-				wait(0.2)
-				Chat("respawn me")
-				wait(0.2)
+	     movepart()				
+	     if mode == "move" then
+			skydivef()
+
+	     else	
+			Chat("unskydive me")
+	     end
+	     wait(0.2)
+	     Chat("respawn me")
 end
 
 -- regen pos
