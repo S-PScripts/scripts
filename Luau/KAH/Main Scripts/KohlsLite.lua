@@ -708,7 +708,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'movebp' then
-	MoveBaseplate()
+	MoveBasePlate()
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'toregen' then
