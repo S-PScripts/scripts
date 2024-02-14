@@ -1008,7 +1008,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	QAttach()
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'qattach2' then
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'sattach' then
 	QAttach2()
     end
 
@@ -1891,8 +1891,8 @@ print("biglogs - make the logs bigger!")
 print("chatz - chat a string of - causing the previous messages to vanish")
 
 print("---")
-print("qattach - quickly attach to something")
-print("qattach2 - quickly attach to something")
+print("qattach - quickly attach to something with sit")
+print("sattach - quickly attach to something with stun")
 
 print("---")
 print("house - teleport to the house")
@@ -3424,50 +3424,60 @@ end
 -- OBBY BRICKS MOVER
 function MoveObbyBricks()
          for i, v in pairs(Workspace_Folder["Obby"]:GetChildren()) do
-		task.wait(0)
+		task.wait(1)
 		target = v
           	movepart()
 		skydivef()
-	  end
+		wait(0.2)
+	     	Chat("respawn me")
+	 end
 end
 
 -- OBBY BOX MOVER
 function MoveObbyBox()
           for i, v in pairs(Workspace_Folder["Obby Box"]:GetChildren()) do
-		task.wait(0)
+		task.wait(1)
 		target = v
           	movepart()
 		skydivef()
+		wait(0.2)
+	     	Chat("respawn me")
 	  end
 end
 
 -- BUILDING BRICKS MOVER
 function MoveBuildingBricks()
           for i, v in pairs(Workspace_Folder["Building Bricks"]:GetChildren()) do
-		task.wait(0)
+		task.wait(1)
 		target = v
           	movepart()
 		skydivef()
+		wait(0.2)
+	     	Chat("respawn me")
 	  end
 end
 
 -- ADMIN DIVIDERS MOVER
 function MoveAdminDividers()
  	 for i, v in pairs(Workspace_Folder["Admin Dividers"]:GetChildren()) do		
-		task.wait(0)
+		task.wait(1)
 		target = v
           	movepart()
 		skydivef()
+		wait(0.2)
+	     	Chat("respawn me")
 	  end
 end
 
 -- ADMIN PAD MOVER
 function MoveAdminPads()
 	 for i, v in pairs(Admin_Folder.Pads:GetDescendants()) do
-		task.wait(0)
+		task.wait(1)
         	target = v
           	movepart()
 		skydivef()
+		wait(0.2)
+	     	Chat("respawn me")
 	end
 end
 
@@ -3476,6 +3486,8 @@ function MoveBasePlate()
 		target = Workspace_Folder.Baseplate
           	movepart()
 		skydivef()
+		wait(0.2)
+	     	Chat("respawn me")
 end
 
 -- REGEN MOVER AND FIXER
@@ -3523,7 +3535,7 @@ function VGCrash()
       end
 end
 
-function PCrash()
+function PCrash() -- RUN TWICE
       Chat("gear me 0000000092628079")
       local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
       game.Players.LocalPlayer.Backpack:WaitForChild("OrinthianSwordAndShield")
@@ -3541,7 +3553,7 @@ end
 function onPlayerAdded(player)
     task.wait(0)
      PLRSTART(player)
-    if welcomemsg == true then -- removed because you can just ask
+    if welcomemsg == true then -- removed exact details so the script is better
     	 Chat("h \n\n\n [KohlsLite]: Welcome to the server, " .. player.Name .. ". \n\n\n")
     end 
 
