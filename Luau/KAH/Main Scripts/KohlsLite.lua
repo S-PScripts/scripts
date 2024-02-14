@@ -3235,7 +3235,7 @@ task.spawn(function()
    while true do
 	task.wait(0)
          if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
-			if fogvis == true then
+			if fogdance == true then
 				if game:GetService("Workspace").Terrain["_Game"].Folder.Sound.PlaybackLoudness > 100 then
 				else
                        		Chat("fogend "..game:GetService("Workspace").Terrain["_Game"].Folder.Sound.PlaybackLoudness)
