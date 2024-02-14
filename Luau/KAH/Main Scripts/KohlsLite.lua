@@ -693,6 +693,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'moveobb' then
+	Chat(".tnok")
 	MoveObbyBricks()
     end
 
@@ -3489,6 +3490,7 @@ function MoveAdminPads()
 		task.wait(1)
         	target = v
           	movepart()
+		task.wait(1)
 		skydivef()
 		wait(0.2)
 	     	Chat("respawn me")
