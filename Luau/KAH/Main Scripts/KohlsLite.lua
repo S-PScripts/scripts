@@ -3,29 +3,19 @@ _  _____  _   _ _     ____  _     ___ _____ _____
 | |/ / _ \| | | | |   / ___|| |   |_ _|_   _| ____|
 | ' / | | | |_| | |   \___ \| |    | |  | | |  _|  
 | . \ |_| |  _  | |___ ___) | |___ | |  | | | |___ 
-|_|\_\___/|_| |_|_____|____/|_____|___| |_| |_____|
+|_|\_\___/|_| |_|_____|____/|_____|___| |_| |_____| v1.065
 
 -- CREATED BY TS2021/SCRIPTINGPROGRAMMER
 -- CREDITS TO MANY (tech + stuff from https://github.com/S-PScripts/kah-fork)
 -- COMPILER USED: https://www.tutorialspoint.com/execute_lua_online.php
 
 Things this script doesn't have...
-1. Fixing parts
-2. Moving parts
-
---> REGEN PAD (DONE)
---> ADMIN PADS (DONE)
---> OBBY BRICKS (DONE)
---> OBBY BOX (DONE)
---> BUILDING BRICKS (DONE)
---> ADMIN DIVIDERS (DONE)
+ex1. moving parts (these ones only!)
 --> HOUSE
---> BASEPLATE (DONE)
 --> SPAWNS
 
-3. Finding parts (only applies to regen and pads as it's the easiest to move)
-4. Visualisers and drawing - I have no persons, I'll try getting it someday but for now I'll work on other features.
-5. Rockmap, stomemap -- really obscure commands to be honest ]]
+1. Visualisers and drawing - I have no persons, I'll try getting it someday but for now I'll work on other features.
+2. Rockmap, stomemap -- really obscure commands to be honest ]]
 
 if _G.executed then 
 	return 
@@ -229,9 +219,9 @@ end
 local permpassid = 66254 or 64354 -- don't edit
 local personpassid = 35748 or 37127 -- don't edit
 
-print("Thank you for using KohlsLite v1.061! Created by S_P.")
+print("Thank you for using KohlsLite v1.065! Created by S_P.")
 print("Say .kcmds to list all the commands.")
-Chat("h \n\n\n [KohlsLite]: Executed! v1.061 \n\n\n")
+Chat("h \n\n\n [KohlsLite]: Executed! v1.065 \n\n\n")
 
 -- delta broke this, it was working before an update :P
 --[[if string.match(game:HttpGet("https://inventory.roproxy.com/v1/users/" .. game.Players.LocalPlayer.UserId .. "/items/GamePass/" .. permpassid), permpassid) then
@@ -723,10 +713,17 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'fixregen' then
-	print("Moving the regen back...")
 	MoveRegen("fix")
     end
-				
+
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'findregen' then
+	findregen = true
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'nofindregen' then
+	findregen = false
+    end
+			
     if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unpermmusic' then
         mymusiconly = false
         musicoff = true
@@ -2025,7 +2022,7 @@ print("There are also many other antis (for you or for everyone [but you])!")
 
 print("---")
 print("KohlsLite, since 2023. Created by S_P")
-print("Version is: v1.061 - 13th February 2024 Build")
+print("Version is: v1.065 - 14th February 2024 Build")
 end
 
 -- CHECK FOR PERM
@@ -3270,6 +3267,23 @@ task.spawn(function()
 		if SlowP == true then
               		Chat("gear ".. caruser .." 253519495")
               		task.wait(0)
+        	end
+	end
+end)
+
+-- FINDREGEN
+task.spawn(function()
+	while true do
+		task.wait(0)
+		if regenfind == true then
+              		local root = game.Players.LocalPlayer.Character.HumanoidRootPart
+			root.Anchored = true
+			repeat
+				wait(.15)
+				root.CFrame = CFrame.new(-7.165, root.Position.Y + 2500 , 94.743)
+			until workspace.Terrain._Game.Admin:FindFirstChild("Regen") or regenfind == false
+			root.Anchored = false
+			root.CFrame = workspace.Terrain._Game.Admin:FindFirstChild("Regen").CFrame + Vector3.new(0, 3, 0)
         	end
 	end
 end)
