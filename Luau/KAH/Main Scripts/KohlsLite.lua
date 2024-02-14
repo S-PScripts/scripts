@@ -13,14 +13,14 @@ Things this script doesn't have...
 1. Fixing parts
 2. Moving parts
 
---> Regen (DONE)
+--> REGEN PAD (DONE)
 --> ADMIN PADS (DONE)
 --> OBBY BRICKS (DONE)
---> OBBY BOX
---> BUILDING BRICKS
---> ADMIN DIVIDERS
+--> OBBY BOX (DONE)
+--> BUILDING BRICKS (DONE)
+--> ADMIN DIVIDERS (DONE)
 --> HOUSE
---> BASEPLATE
+--> BASEPLATE (DONE)
 --> SPAWNS
 
 3. Finding parts (only applies to regen and pads as it's the easiest to move)
@@ -690,8 +690,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          end
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'moveregen' then -- cummy yummy
-	print("Moving regen! Do fixregen to move it back.")
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'moveregen' then
 	MoveRegen("move")
     end
 
@@ -699,8 +698,24 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	MoveAdminPads()
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'moveaddiv' then
+	MoveAdminDividers()
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'moveobb' then
 	MoveObbyBricks()
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'moveobox' then
+	MoveObbyBox()
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'movebb' then
+	MoveBuildingBricks()
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'movebp' then
+	MoveBaseplate()
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'toregen' then
@@ -3370,7 +3385,9 @@ function FRespawn()
     game.Players.LocalPlayer.Character:Destroy()
 end
 
+-- PART MOVER
 function movepart()
+	repeat wait() until game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")
 	local cf = game.Players.LocalPlayer.Character.HumanoidRootPart
 	local rmoving = true
 		task.spawn(function()
@@ -3404,9 +3421,39 @@ function skydivef()
 	Chat("skydive me			fuck")
 end
 
--- OBBY BRICK MOVER
+-- OBBY BRICKS MOVER
 function MoveObbyBricks()
          for i, v in pairs(Workspace_Folder["Obby"]:GetChildren()) do
+		task.wait(0)
+		target = v
+          	movepart()
+		skydivef()
+	  end
+end
+
+-- OBBY BOX MOVER
+function MoveObbyBox()
+          for i, v in pairs(Workspace_Folder["Obby Box"]:GetChildren()) do
+		task.wait(0)
+		target = v
+          	movepart()
+		skydivef()
+	  end
+end
+
+-- BUILDING BRICKS MOVER
+function MoveBuildingBricks()
+          for i, v in pairs(Workspace_Folder["Building Bricks"]:GetChildren()) do
+		task.wait(0)
+		target = v
+          	movepart()
+		skydivef()
+	  end
+end
+
+-- ADMIN DIVIDERS MOVER
+function MoveAdminDividers()
+ 	 for i, v in pairs(Workspace_Folder["Admin Dividers"]:GetChildren()) do		
 		task.wait(0)
 		target = v
           	movepart()
@@ -3424,6 +3471,13 @@ function MoveAdminPads()
 	end
 end
 
+-- BASEPLATE MOVER
+function MoveBasePlate()
+		target = Workspace_Folder.Baseplate
+          	movepart()
+		skydivef()
+end
+
 -- REGEN MOVER AND FIXER
 function MoveRegen(mode)
 	     if mode == "fix" then
@@ -3437,6 +3491,7 @@ function MoveRegen(mode)
 	    		Chat("unfly me")
 	    		task.wait(0.2)
 	     end
+	     target = Admin_Folder.Regen
 	     movepart()				
 	     if mode == "move" then
 			skydivef()
