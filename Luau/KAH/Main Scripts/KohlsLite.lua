@@ -14,6 +14,8 @@ ex1. moving parts (these ones only!)
 --> HOUSE
 --> SPAWNS
 
+DONT USE ALLADMIN IT'S BROKEN
+
 1. Visualisers and drawing - I have no persons, I'll try getting it someday but for now I'll work on other features.
 2. Rockmap, stomemap -- really obscure commands to be honest ]]
 
@@ -2877,7 +2879,7 @@ v.Chatted:Connect(function(msg)
 
                     
 -- ADMIN
-            if alladmin == true or table.find(FAdmins, v.Name) and not table.find(blacklist, v.Name) and not table.find(newplrslocked, v.Name) then
+            if (alladmin == true or table.find(FAdmins, v.Name)) and not table.find(blacklist, v.Name) and not table.find(newplrslocked, v.Name) then
             	local command = string.gsub(msg:lower(), "me", v.Name)
             	if string.sub(command, 1, 1) == ":" then
               	 	command = ""
