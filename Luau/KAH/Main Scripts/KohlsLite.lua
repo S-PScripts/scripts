@@ -6,7 +6,11 @@ _  _____  _   _ _     ____  _     ___ _____ _____
 |_|\_\___/|_| |_|_____|____/|_____|___| |_| |_____| v1.065
 
 -- CREATED BY TS2021/SCRIPTINGPROGRAMMER
--- CREDITS TO MANY (tech + stuff from https://github.com/S-PScripts/kah-fork)
+-- CREDITS TO MANY...
+   -> Shortcut v1, v2, v3 (tech)
+   -> PR Script (atprog) for kick as i have no clue how to make it work without persons! 
+   -> iiDk's admin (iiDk) as PR Script is based off it
+
 -- COMPILER USED: https://www.tutorialspoint.com/execute_lua_online.php
 
 Things this script doesn't have...
