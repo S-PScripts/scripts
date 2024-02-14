@@ -1,3 +1,6 @@
+-- i broke the regen mover, sorry! ill fix it later
+-- also i will adjust rhe timings as its too fast righr now
+
 -- KOHLSLITE BY TS2021/S_P FOR KOHLS ADMIN HOUSE
 -- CREDITS TO MANY (tech + stuff from https://github.com/S-PScripts/kah-fork)
 -- compiler used: https://www.tutorialspoint.com/execute_lua_online.php
