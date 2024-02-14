@@ -1,6 +1,3 @@
--- i broke the regen mover, sorry! ill fix it later
--- also i will adjust rhe timings as its too fast righr now
-
 -- KOHLSLITE BY TS2021/S_P FOR KOHLS ADMIN HOUSE
 -- CREDITS TO MANY (tech + stuff from https://github.com/S-PScripts/kah-fork)
 -- compiler used: https://www.tutorialspoint.com/execute_lua_online.php
@@ -8,7 +5,7 @@
 
 --[[ 
 Things this script doesn't have...
-1. Fixing parts (there is fixregen for kohlslite moving though)
+1. Fixing parts
 2. Moving parts
 
 --> Regen (DONE)
@@ -690,7 +687,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'moveregen' then -- cummy yummy
 	print("Moving regen! Do fixregen to move it back.")
-	MoveRegen(move)
+	MoveRegen("move")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'moveadp' then
@@ -707,7 +704,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'fixregen' then
 	print("Moving the regen back...")
-	MoveRegen(fix)
+	MoveRegen("fix")
     end
 				
     if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unpermmusic' then
@@ -3395,7 +3392,7 @@ function MoveObbyBricks()
 						Chat('unpunish me') 
 					end 
 				end)
-				wait(0.3)
+				wait(1)
 				rmoving = false
 				Chat("skydive me")
 				Chat("skydive me")
@@ -3436,7 +3433,7 @@ function MoveAdminPads()
 						Chat('unpunish me') 
 					end 
 				end)
-				wait(0.3)
+				wait(1)
 				rmoving = false
 				Chat("skydive me")
 				Chat("skydive me")
