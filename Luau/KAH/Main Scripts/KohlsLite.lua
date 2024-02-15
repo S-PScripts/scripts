@@ -605,18 +605,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 			      print("Current Music ID: "..game:GetService("Workspace").Terrain["_Game"].Folder.Sound.SoundId)
 	      end
     end
-
-    if string.sub(msg:lower(), 0, 7) == prefix.."pbspeed" then
-		local newPlaybackSpeed = tonumber(string.sub(msg:lower(), #prefix + 9))
-		local Sound = game:GetService("Workspace").Terrain["_Game"].Folder.Sound
-		Sound.PlaybackSpeed = newPlaybackSpeed
-    end
-
-    if string.sub(msg:lower(), 0, 8) == prefix.."cpbspeed" then
-		if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
-				print("Current Playback speed: "..game:GetService("Workspace").Terrain["_Game"].Folder.Sound.PlaybackSpeed)
-		end
-    end
 		
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'cvol' then
 	      if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
@@ -1972,10 +1960,8 @@ print("unantimusic - lets people use music again")
 print("---")
 print("remusic - restart the current music")
 print("volm - set the volume of the music")
-print("cvol - print thecurrent volume of music")
+print("cvol - print the current volume of music")
 print("musicid - print the current music id")
-print("pbspeed - set the playback speed")
-print("cpbspeed - print the current playback speed")
 
 print("---")
 print("pausem - pause the music")
