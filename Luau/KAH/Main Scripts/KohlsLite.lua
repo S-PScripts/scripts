@@ -227,7 +227,7 @@ local personpassid = 35748 or 37127 -- don't edit
 
 print("Thank you for using KohlsLite v1.065! Created by S_P.")
 print("Say .kcmds to list all the commands.")
-Chat("h \n\n\n [KohlsLite]: Executed! v1.065 \n\n\n")
+Chat("h \n\n\n [KohlsLite]: Executed! v1.066 \n\n\n")
 
 -- delta broke this, it was working before an update :P
 --[[if string.match(game:HttpGet("https://inventory.roproxy.com/v1/users/" .. game.Players.LocalPlayer.UserId .. "/items/GamePass/" .. permpassid), permpassid) then
@@ -607,14 +607,14 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 0, 7) == prefix.."pbspeed" then
-		local newPlaybackSpeed = tonumber(string.sub(msg:lower(), 9))
+		local newPlaybackSpeed = tonumber(string.sub(msg:lower(), #prefix + 9))
 		local Sound = game:GetService("Workspace").Terrain["_Game"].Folder.Sound
 		Sound.PlaybackSpeed = newPlaybackSpeed
     end
 
     if string.sub(msg:lower(), 0, 8) == prefix.."cpbspeed" then
 		if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
-				print("Current PlayBack speed: "..game:GetService("Workspace").Terrain["_Game"].Folder.Sound.PlaybackSpeed)
+				print("Current Playback speed: "..game:GetService("Workspace").Terrain["_Game"].Folder.Sound.PlaybackSpeed)
 		end
     end
 		
@@ -3229,13 +3229,10 @@ end)
 -- FOG DANCING
 task.spawn(function()
    while true do
-	task.wait(0.1) -- rate limit
-         if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
-			if fogdance == true then
-				if game:GetService("Workspace").Terrain["_Game"].Folder.Sound.PlaybackLoudness > 100 then
-				else
+	task.wait(0) -- rate limit
+	if fogdance == true then
+		        if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
                        		Chat("fogend "..game:GetService("Workspace").Terrain["_Game"].Folder.Sound.PlaybackLoudness)
-                 		end 
 			end
 	end
    end
