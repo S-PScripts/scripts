@@ -227,7 +227,7 @@ local personpassid = 35748 or 37127 -- don't edit
 
 print("Thank you for using KohlsLite v1.065! Created by S_P.")
 print("Say .kcmds to list all the commands.")
-Chat("h \n\n\n [KohlsLite]: Executed! v1.067 \n\n\n")
+Chat("h \n\n\n [KohlsLite]: Executed! v1.067b \n\n\n")
 
 -- delta broke this, it was working before an update :P
 --[[if string.match(game:HttpGet("https://inventory.roproxy.com/v1/users/" .. game.Players.LocalPlayer.UserId .. "/items/GamePass/" .. permpassid), permpassid) then
@@ -3485,6 +3485,15 @@ end
 
 -- BASEPLATE MOVER
 function MoveBasePlate(mode)
+		 if mode == "fix" then
+            		task.wait(0.2)
+	    		Chat("fly me")
+	    		task.wait(0.2)
+            		skydivef()
+            		task.wait(0.2)
+	    		Chat("unfly me")
+	    		task.wait(0.2)
+	        end
 		target = Workspace_Folder.Baseplate
           	movepart()
 		if mode == "move" then
