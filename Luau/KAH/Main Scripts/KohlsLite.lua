@@ -227,7 +227,7 @@ local personpassid = 35748 or 37127 -- don't edit
 
 print("Thank you for using KohlsLite v1.065! Created by S_P.")
 print("Say .kcmds to list all the commands.")
-Chat("h \n\n\n [KohlsLite]: Executed! v1.066 \n\n\n")
+Chat("h \n\n\n [KohlsLite]: Executed! v1.067 \n\n\n")
 
 -- delta broke this, it was working before an update :P
 --[[if string.match(game:HttpGet("https://inventory.roproxy.com/v1/users/" .. game.Players.LocalPlayer.UserId .. "/items/GamePass/" .. permpassid), permpassid) then
@@ -700,7 +700,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'movebp' then
-	MoveBasePlate()
+	MoveBasePlate("move")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'fixbp' then
+	MoveBasePlate("fix")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'toregen' then
@@ -3480,10 +3484,14 @@ function MoveAdminPads()
 end
 
 -- BASEPLATE MOVER
-function MoveBasePlate()
+function MoveBasePlate(mode)
 		target = Workspace_Folder.Baseplate
           	movepart()
-		skydivef()
+		if mode == "move" then
+			skydivef()
+		else
+			Chat("unskydive me")
+		end
 		wait(0.2)
 	     	Chat("respawn me")
 end
