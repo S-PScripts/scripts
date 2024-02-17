@@ -256,7 +256,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
 	if string.sub(msg:lower(), 1, #prefix + 5) == prefix.."theme" then
 		Chat("fix")
- 		local theme = tonumber(string.sub(msg:lower(), #prefix + 7))
+ 		local theme = tonumber(string.sub(msg:lower(), #prefix + 6))
         	local themeCode = themecode[theme]
         	if themeCode then
             		local codes = {}
