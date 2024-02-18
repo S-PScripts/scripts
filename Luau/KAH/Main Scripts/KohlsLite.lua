@@ -602,13 +602,26 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'musicid' then
 	      if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
-			      print("Current Music ID: "..game:GetService("Workspace").Terrain["_Game"].Folder.Sound.SoundId)
+			      print("Current music ID: "..game:GetService("Workspace").Terrain["_Game"].Folder.Sound.SoundId)
 	      end
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'cvol' then
 	      if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
-			      print("Current Volume: "..game:GetService("Workspace").Terrain["_Game"].Folder.Sound.Volume)
+			      print("Current volume: "..game:GetService("Workspace").Terrain["_Game"].Folder.Sound.Volume)
+	      end	
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'timeframe' then
+	      local tplace = tonumber(string.sub(msg:lower(), #prefix + 11))
+	      if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
+			game:GetService("Workspace").Terrain["_Game"].Folder.Sound.TimePosition = tplace 
+	      end	
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'timefis' then
+	      if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
+			print("Current time position: "..game:GetService("Workspace").Terrain["_Game"].Folder.Sound.TimePosition)
 	      end	
     end
 		
@@ -1984,6 +1997,8 @@ print("remusic - restart the current music")
 print("volm - set the volume of the music")
 print("cvol - print the current volume of music")
 print("musicid - print the current music id")
+print("timeframe - set the time position")
+print("timefis - print the current time position")
 
 print("---")
 print("pausem - pause the music")
@@ -2532,14 +2547,14 @@ game:GetService("RunService").RenderStepped:Connect(function()
 	task.wait(0)
         for i, v in ipairs(game.Players:GetPlayers()) do
             if v.Backpack:FindFirstChild("VampireVanquisher") or v.Character:FindFirstChild("VampireVanquisher") then
-               if v ~= game.Players.LocalPlayer and anticrash2 == true then
+               if v ~= game.Players.LocalPlayer and anticrash2 == true and not table.find(GWhitelisted, v.Name) then
                 Chat("ungear "..v.Name)
                 Chat("punish "..v.Name)
                 Chat("h \n\n\n [KohlsLite]: Sorry, "..v.Name.. ", you cannot use the Vampire Vanquisher due to anti crash (2). \n\n\n")
                end
             end
             if v.Backpack:FindFirstChild("OrinthianSwordAndShield") or v.Character:FindFirstChild("OrinthianSwordAndShield") then
-               if v ~= game.Players.LocalPlayer and anticrash2 == true then
+               if v ~= game.Players.LocalPlayer and anticrash2 == true and not table.find(GWhitelisted, v.Name) then
                 Chat("ungear "..v.Name)
                 Chat("punish "..v.Name)
                 Chat("h \n\n\n [KohlsLite]: Sorry, "..v.Name.. ", you cannot use the Orinthian Sword and Shield due to anti crash (2). \n\n\n")
@@ -2547,7 +2562,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
             end
 	    for i, gear in pairs(v.Backpack:GetChildren()) do
             	if gear:IsA("Tool") and antigear2 == true then
-               		if v.Name ~= game.Players.LocalPlayer.Name then
+               		if v.Name ~= game.Players.LocalPlayer.Name and not table.find(GWhitelisted, v.Name) then
 				Chat("ungear "..v.Name)
 				Chat("punish "..v.Name)
                 		Chat("h \n\n\n [KohlsLite]: Sorry, "..v.Name.. ", you cannot use gears due to anti gear (2). \n\n\n")
@@ -2560,8 +2575,8 @@ end)
 -- ANTIS FOR CRASHING ATTACHING GEARBANNING AND HAVING A GEAR
 local crashTools = {"OrinthianSwordAndShield", "VampireVanquisher"}
 local attachTools = {"IvoryPeriastron"}
-local nogearTools = {"PortableJustice","UltimateDriveSpeedster"}
-local colourTools = {"PaintBucket","SubspaceTripmine","DaggerofShatteredDimensions"}
+local nogearTools = {"PortableJustice", "UltimateDriveSpeedster", "DriveBloxUltimateCar"}
+local colourTools = {"PaintBucket", "SubspaceTripmine", "DaggerofShatteredDimensions"}
 
 function warnCrash(player, toolName)
        Chat("ungear " .. player.Name)
