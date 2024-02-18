@@ -2576,7 +2576,7 @@ end)
 local crashTools = {"OrinthianSwordAndShield", "VampireVanquisher"}
 local attachTools = {"IvoryPeriastron"}
 local nogearTools = {"PortableJustice", "UltimateDriveSpeedster", "DriveBloxUltimateCar"}
-local colourTools = {"PaintBucket", "SubspaceTripmine", "DaggerofShatteredDimensions"}
+local colourTools = {"PaintBucket", "SubspaceTripmine", "DaggerofShatteredDimensions", "SledgeHammer"}
 
 function warnCrash(player, toolName)
        Chat("ungear " .. player.Name)
