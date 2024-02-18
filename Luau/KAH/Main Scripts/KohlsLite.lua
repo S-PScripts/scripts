@@ -8,7 +8,7 @@ _  _____  _   _ _     ____  _     ___ _____ _____
 -- CREATED BY TS2021/SCRIPTINGPROGRAMMER
 -- CREDITS TO MANY...
    -> Shortcut v1, v2, v3 (tech)
-   -> PR Script (atprog) for kick as i have no clue how to make it work without persons! 
+   -> PR Script (atprog) for some stuff B)
    -> iiDk's admin (iiDk) as PR Script is based off it
 
 -- COMPILER USED: https://www.tutorialspoint.com/execute_lua_online.php
@@ -686,6 +686,10 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	MoveAdminDividers()
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'movehouse' then
+	MoveHouse()
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'moveobb' then
 	Chat(".tnok")
 	MoveObbyBricks()
@@ -1154,6 +1158,14 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'nocam' then
 		NoCam()
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'wbcam' then
+		TogCam()    
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'wfcam' then
+		TogCam()    
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'breakcam' then
@@ -1869,7 +1881,9 @@ print("autoafk - names you as afk when you're afk")
 print("unautoafk - stops naming you as afk when you're afk")
 
 print("---")
-print("nocam/breakcam - break the camera")
+print("nocam/breakcam - break the camera with the AR")
+print("fixcam - fix the camera (client side)")
+print("wbcam/wfcam - break/fix the camera with the blizzard wand")
 print("fixvelo - fix your velocity")
 print("fixcol - fix collisions")
 print("fixgrav - fix gravity")
@@ -3261,7 +3275,7 @@ task.spawn(function()
 	end
 end)
 
--- FINDREGEN
+-- FIND REGEN
 task.spawn(function()
 	while true do
 		task.wait(0)
@@ -3331,7 +3345,18 @@ function NoCam()
       print("Right Click! If you're on mobile, it may not work tapping normally :P")
 end
 
--- FIX CAM
+-- BREAK AND FIX CAM 2
+function TogCam()
+    Chat("tp others me")
+    Chat("gear me 68354832")
+    repeat wait() until game.Players.LocalPlayer.Backpack:FindFirstChild("BlizzardWand")
+    local wand = game.Players.LocalPlayer.Backpack:FindFirstChild("BlizzardWand")
+    wand.Parent = game.Players.LocalPlayer.Character
+    wait(0.2)
+    wand:Activate()
+end
+
+-- FIX CAM (client)
 function FixCam()
 		task.spawn(function()
 			local PlayerService = game:GetService("Players")
@@ -3519,6 +3544,18 @@ function MoveAdminDividers()
 	  end
 end
 
+-- HOUSE MOVER
+function MoveHouse()
+	for i, v in pairs(Workspace_Folder["Basic House"]:GetChildren()) do
+		task.wait(1)
+		target = v
+          	movepart()
+		skydivef()
+		wait(0.2)
+	     	Chat("respawn me")
+        end
+end
+
 -- ADMIN PAD MOVER
 function MoveAdminPads()
 	 for i, v in pairs(Admin_Folder.Pads:GetDescendants()) do
@@ -3575,6 +3612,7 @@ function MoveRegen(mode)
 
 	     else	
 			Chat("unskydive me")
+			Chat("undog me me")
 	     end
 	     wait(0.2)
 	     Chat("respawn me")
