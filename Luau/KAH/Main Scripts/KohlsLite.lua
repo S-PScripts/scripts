@@ -229,7 +229,7 @@ local personpassid = 35748 or 37127 -- don't edit
 
 print("Thank you for using KohlsLite v1.065! Created by S_P.")
 print("Say .kcmds to list all the commands.")
-Chat("h \n\n\n [KohlsLite]: Executed! v1.069 \n\n\n")
+Chat("h \n\n\n [KohlsLite]: Executed! v1.070 \n\n\n")
 
 -- delta broke this, it was working before an update :P
 --[[if string.match(game:HttpGet("https://inventory.roproxy.com/v1/users/" .. game.Players.LocalPlayer.UserId .. "/items/GamePass/" .. permpassid), permpassid) then
@@ -629,6 +629,14 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	      if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
 			print("Current time position: "..game:GetService("Workspace").Terrain["_Game"].Folder.Sound.TimePosition)
 	      end	
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'audiolol' then
+       audiotroll = true
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unaudiolol' then
+       audiotroll = false
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antimusic' then
@@ -3157,6 +3165,7 @@ end
 task.spawn(function()
  while true do
     task.wait(0)
+			
     if antimusic == true then
 		  if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
 				if game:GetService("Workspace").Terrain["_Game"].Folder.Sound.SoundId == "http://www.roblox.com/asset/?id="..mymusiconlyid then
@@ -3164,24 +3173,31 @@ task.spawn(function()
 				end
       		  end
     end
+
+    if audiotroll == true then
+			if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
+				game:GetService("Workspace").Terrain["_Game"].Folder.Sound.TimePosition = math.random(1, 100) 
+			end
+    end
+		
     if mymusiconly == true and musicoff == false then
 		  if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
 				if game:GetService("Workspace").Terrain["_Game"].Folder.Sound.SoundId == "http://www.roblox.com/asset/?id="..mymusiconlyid then
     		  		else
-				   if antimlog then
-            				Chat("music 00000000000000000000000000" .. mymusiconlyid)
-	    			   else
-    			  		Chat("music "..mymusiconlyid)
-	    			    end
+					if antimlog then
+            					Chat("music 00000000000000000000000000" .. mymusiconlyid)
+	    				else
+    			  			Chat("music "..mymusiconlyid)
+	    			    	end
 				end
       		  end
-      if not game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
+      		  if not game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
 				     if antimlog then
-            				Chat("music 00000000000000000000000000" .. mymusiconlyid)
-	    			   else
+            					Chat("music 00000000000000000000000000" .. mymusiconlyid)
+	    			     else
     			  		Chat("music "..mymusiconlyid)
-	    			    end
-      end
+	    			     end
+      		 end
     end
   end
 end)
