@@ -3623,6 +3623,7 @@ end
 
 -- BASEPLATE MOVER
 function MoveBasePlate(mode)
+		task.wait(1)
 	        if mode == "fix" or mode == "fix2" then
             		task.wait(0.2)
 	    		Chat("fly me")
@@ -3647,6 +3648,7 @@ end
 
 -- REGEN MOVER AND FIXER
 function MoveRegen(mode)
+	     task.wait(1)
 	     if mode == "fix" or mode == "fix2" then
 			if mode == "fix2" then
 				regentp()
