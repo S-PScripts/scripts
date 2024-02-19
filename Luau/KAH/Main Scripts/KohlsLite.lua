@@ -3606,6 +3606,7 @@ function MoveAdminPads(mode)
 	    			Chat("unfly me")
 	    			task.wait(0.2)
 			end
+			task.wait(1)
         		target = v
           		movepart()
 			if mode == "move" then
