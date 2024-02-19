@@ -34,6 +34,7 @@ local prefix = "." -- ANY LENGTH :D
 local blacklist = {"SlenderMan990921","EhiplayYN","e5usp","Asphetto","91txt","LeanConsumer69","xtyzmia","Fixydrqma","Robloxian577226532"} -- slocked users
 local whitelist = {"me_123eq","me_crashking","ScriptingProgrammer","G_ODt","BANNter_Original","witnessfox22","IceStuds","atprog","dawninja21","Dawninja21alt"} -- not affected by slock
 local newplrslocked = {} -- don't edit!!
+local bypslock = {} -- ONLY USE FOR m_ and me_ USERNAMES
 local newplrautoslock = true -- if new players under 21 days join they get blacklisted
 local newlen = 21 -- control what is considered as a new account
 local GWhitelisted = {"me_123eq","me_crashking","ScriptingProgrammer","G_ODt","BANNter_Original","witnessfox22","IceStuds","atprog"} -- gear whitelisted
@@ -408,6 +409,30 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          if player ~= nil then
                 Chat("h \n\n\n [KohlsLite]: "..player.." has been unblacklisted! \n\n\n")
                 table.remove(blacklist, table.find(blacklist, player))
+                Chat('unblind '..player)
+                Chat('unpunish '..player)
+         else
+                print('Cannot find player with the name: '..dasplayer)
+         end
+       end
+
+       if string.sub(msg, 1, #prefix + 7) == prefix..'byslock' then
+         local dasplayer = string.sub(msg:lower(), #prefix + 9)
+         PLAYERCHECK(dasplayer)
+         if player ~= nil then
+                Chat("h \n\n\n [KohlsLite]: "..player.." has been BY-blacklisted. \n\n\n")
+                table.insert(bypslock, player)
+         else
+                print('Cannot find player with the name: '..dasplayer)
+         end
+       end
+
+        if string.sub(msg, 1, #prefix + 9) == prefix..'unbyslock' then
+         local dasplayer = string.sub(msg:lower(), #prefix + 11)
+         PLAYERCHECK(dasplayer)
+         if player ~= nil then
+                Chat("h \n\n\n [KohlsLite]: "..player.." has been BY-unblacklisted! \n\n\n")
+                table.remove(bypslock, table.find(bypslock, player))
                 Chat('unblind '..player)
                 Chat('unpunish '..player)
          else
@@ -2208,25 +2233,30 @@ task.spawn(function()
         if v.Name ~= game.Players.LocalPlayer.Name and not table.find(whitelist, v.Name) then
             for i, player in ipairs(players) do
                 if string.find(player.Name:lower(), v.Name:lower()) then
-                    if slockenabled == true then
+                    if slockenabled == true and not table.find(bypslock, v.Name) then
                         if not game.Lighting:FindFirstChild(v.Name) then
                                 Chat('punish '..v.Name)
                                 Chat('blind '..v.Name)
-                                Chat('pm [KohlsLite]: '..v.Name..' sorry, this server is locked!')
+                                Chat('pm '..v.Name..' [KohlsLite]: sorry, this server is locked!')
                         end
                     elseif table.find(blacklist, v.Name) then
                         if not game.Lighting:FindFirstChild(v.Name) then
                                 Chat('punish '..v.Name)
                                 Chat('blind '..v.Name)
-                                Chat('pm [KohlsLite]: '..v.Name..' sorry, you are blacklisted!')
+                                Chat('pm '..v.Name..' [KohlsLite]: sorry, you are blacklisted!')
                         end
                     elseif table.find(newplrslocked, v.Name) then
 			if not game.Lighting:FindFirstChild(v.Name) then
                                 Chat('punish '..v.Name)
                                 Chat('blind '..v.Name)
-                                Chat('pm [KohlsLite]: '..v.Name..' sorry, you are blacklisted for having an account under the account age limit!')
+                                Chat('pm '..v.Name..' [KohlsLite]: sorry, you are blacklisted for having an account under the account age limit!')
                         end
-		    else
+		    elseif table.find(bypslock, v.Name) then
+			if not game.Lighting:FindFirstChild(v.Name) then
+                                Chat('punish '..v.Name)
+                                Chat('blind '..v.Name)
+                                Chat('pm '..v.Name..' [KohlsLite]: You are blacklisted for trying to use me_ or m_!')
+                        end					
                     end
                     break
                 end
