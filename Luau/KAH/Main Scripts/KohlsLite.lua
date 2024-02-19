@@ -686,7 +686,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antiabuse' then
-	Chat("pm me all antis are turned on!")
+	Chat("pm me antis are turned on!")
 			antidisco = true
 			antiflash = true
 			antifogend = true
@@ -720,7 +720,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantiabuse' then
-	Chat("pm me all antis are turned on!")
+	Chat("pm me antis are turned on!")
 			antidisco = false
 			antiflash = false
 			antifogend = false
@@ -949,11 +949,51 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'antifogend' then
 	antifogend = true
     end
-
+		
     if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'unantifogend' then
 	antifogend = false
     end
+
+    if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'antifogstart' then
+	antifogstart = true
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 14) == prefix..'unantifogstart' then
+	antifogstart = false
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antitime' then
+	antitime = true
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unantitime' then
+	antitime = false
+    end
 		
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'antiamb' then
+	antiambient = true
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'unantiamb' then
+	antiambient = false
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'antibright' then
+	antibrightness = true
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'unantibright' then
+	antibrightness = false
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'antioutamb' then
+	antioutamb = true
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'unantioutamb' then
+	antioutamb = false
+    end
+			
     if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'adv' then
        ADVERTISEMENT()
     end
@@ -2206,6 +2246,38 @@ task.spawn(function()
 	      Chat("fogend 100000")
 	   end
         end
+
+	if antifogstart == true then
+	   if game.Lighting.FogStart ~= 0 then
+		Chat("fogstart 0")	   
+	   end
+        end
+
+	if antitime == true then
+		if game.Lighting.ClockTime ~= 14 then
+			Chat("time 14")
+		end
+	end
+
+	if antiambient == true then
+		if game.Lighting.Ambient ~= Color3.new(0,0,0) then
+			Chat("ambient 0 0 0")
+		end
+	end
+
+	if antibrightness == true then
+		if game.Lighting.Brightness ~= 1 then
+			Chat("brightness 1")		
+		end	
+	end
+
+	if antioutamb == true then
+		if game.Lighting.OutdoorAmbient ~= Color3.fromRGB(128,128,128) then
+			Chat("outdoorambient 128 128 128")		
+		end	
+	end
+
+			
   end
 end)
 
