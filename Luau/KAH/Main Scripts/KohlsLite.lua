@@ -758,7 +758,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantiabuse' then
-	Chat("pm me antis are turned on!")
+	Chat("pm me antis are turned off!")
 			antidisco = false
 			antiflash = false
 			antifogend = false
