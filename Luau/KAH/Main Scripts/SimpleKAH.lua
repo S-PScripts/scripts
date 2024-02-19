@@ -210,7 +210,7 @@ local bgears = {"VampireVanquisher"}
                 game.Players:Chat("tp " .. brought .. " me")
             end
             -- ---Gears
-            if msg:sub(1,6) == "bhbomb" then
+            if msg:sub(1,7) == "bhbomb " then
                 local bhbomber = msg:sub(8)
                 game.Players:Chat("gear " .. bhbomber .. " 28277486")
             elseif msg:lower() == "bhbomb" then
