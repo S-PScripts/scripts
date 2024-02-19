@@ -690,6 +690,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 			antidisco = true
 			antiflash = true
 			antifogend = true
+			antifogstart = true
+			antitime = true
+			antiambient = true
+			antibrightness = true
+			antioutamb = true
 			YOUantiblind = true
 			YOUantigs = true
 			YOUanticlone, ALLanticlone = true, true
@@ -724,6 +729,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 			antidisco = false
 			antiflash = false
 			antifogend = false
+			antifogstart = false
+			antitime = false
+			antiambient = false
+			antibrightness = false
+			antioutamb = false
 			YOUantiblind = false
 			YOUantigs = false
 			YOUanticlone, ALLanticlone = false, false
