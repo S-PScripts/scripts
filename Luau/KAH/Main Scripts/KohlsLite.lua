@@ -2501,7 +2501,7 @@ task.spawn(function()
 	end
 
 	if ALLantichar == true then
-	   if v.UserId ~= v.AppearanceId then
+	   if v.UserId ~= v.CharacterAppearanceId then
 	      Chat("unchar "..v.Name)
 	   end
 	end
