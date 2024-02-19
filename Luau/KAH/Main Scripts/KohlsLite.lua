@@ -280,6 +280,10 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	if string.sub(msg:lower(), 1, #prefix + 4) == prefix.."cmdy" then
 		GExecute("https://raw.githubusercontent.com/quivings/KAH/main/CMD-Y%20(v1.56).lua")
 	end
+
+	if string.sub(msg:lower(), 1, #prefix + 6) == prefix.."tricky" then -- CREDITS TO TECH
+		GExecute("https://raw.githubusercontent.com/Tech-187/Music-lyrics-on-time/main/Tricky%20lyrics.lua")
+	end
 		
 	if string.sub(msg, 1, #prefix + 2)  == prefix..'wl' then
          local dasplayer = string.sub(msg:lower(), #prefix + 4)
