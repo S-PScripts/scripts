@@ -804,6 +804,14 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	MoveObbyBox()
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'lrobb' then
+	 LocalObby("remove")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'laobb' then
+	 LocalObby("add")
+    end
+		
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'movebb' then
 	MoveBuildingBricks()
     end
@@ -3659,6 +3667,16 @@ function skydivef()
 	Chat("skydive me			fuck")
 end
 
+-- Removing and adding the obby locally
+function LocalObby(mode)
+	if mode == "add" then
+		 game.Chat:FindFirstChild("Obby").Parent = workspace.Terrain["_Game"]["Workspace"]
+    		 game.Chat:FindFirstChild("Obby Box").Parent = workspace.Terrain["_Game"]["Workspace"]
+	else 
+		    workspace.Terrain["_Game"]["Workspace"].Obby.Parent = game.Chat
+    		    workspace.Terrain["_Game"]["Workspace"]["Obby Box"].Parent = game.Chat
+	end
+end
 -- OBBY BRICKS MOVER
 function MoveObbyBricks()
          for i, v in pairs(Workspace_Folder["Obby"]:GetChildren()) do
