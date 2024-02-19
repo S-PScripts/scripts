@@ -229,7 +229,7 @@ local personpassid = 35748 or 37127 -- don't edit
 
 print("Thank you for using KohlsLite v1.065! Created by S_P.")
 print("Say .kcmds to list all the commands.")
-Chat("h \n\n\n [KohlsLite]: Executed! v1.070 \n\n\n")
+Chat("h \n\n\n [KohlsLite]: Executed! v1.071 \n\n\n")
 
 -- delta broke this, it was working before an update :P
 --[[if string.match(game:HttpGet("https://inventory.roproxy.com/v1/users/" .. game.Players.LocalPlayer.UserId .. "/items/GamePass/" .. permpassid), permpassid) then
