@@ -28,7 +28,7 @@ local gjdelock = false
 local atpkick = true
 local tripmineesp = true
 -- -Tables-
-local whitelist = {"asechka19872"}
+local whitelist = {"asechka19872","ScriptingProgrammer"}
 local abusers = {}
 local blacklist = {}
 local bgears = {"VampireVanquisher"}
@@ -39,7 +39,7 @@ local bgears = {"VampireVanquisher"}
     end
 --- ---Custom Commands---
     player.Chatted:Connect(function(msg)
-        if msg:lower() == "antiattach" and player == game.Players.Localplayer then
+        if msg:lower() == "antiattach" and player == game.Players.LocalPlayer then
             antiattach = true
         elseif msg:lower() == "unantiattach" and player == game.Players.LocalPlayer then
             antiattach = false
@@ -85,7 +85,7 @@ local bgears = {"VampireVanquisher"}
             end
             if msg:lower() == "simple vg" then
                 game.Players:Chat("spam gear all 94794847")
-                game.Players:Chat("spam size me 0.3")
+                game.Players:Chat("spam unsize all")
             end
             if msg:lower() == "anticrash" then
                 anticrash = true
@@ -101,7 +101,7 @@ local bgears = {"VampireVanquisher"}
                 end
             if msg:lower() == "simple vg" then
                 game.Players:Chat("spam gear me 94794847")
-                game.Players:Chat("spam size me 0.3")
+                game.Players:Chat("spam unsize me")
             end
             elseif msg:lower() == "unanticrash" then
                 anticrash = false
@@ -136,9 +136,9 @@ local bgears = {"VampireVanquisher"}
                     wait(0.1)
                     if game.Players:FindFirstChild("SlenderMan990921") then
                         game.Players:Chat("h Found slender, Wait until leaves.")
-                        game.Players:Chat(";s punish all")
-                        game.Players:Chat(";s fix")
-                        game.Players:Chat(";s clr")
+                        game.Players:Chat(";sup punish all")
+                        game.Players:Chat(";sup fix")
+                        game.Players:Chat(";sup clr")
                     end
                 end
             elseif msg:lower() == "unantiabusers"  then
@@ -148,7 +148,7 @@ local bgears = {"VampireVanquisher"}
                 autoff = true
                 while autoff do
                     wait(2)
-                    if not game.Workspace.asechka19872:FindFirstChild("ForceField") then
+	                if not game.Players.LocalPlayer.Character:FindFirstChild("ForceField") then
                         game.Players:Chat("ff me")
                     end
                 end
@@ -195,22 +195,22 @@ local bgears = {"VampireVanquisher"}
                 game.Players:Chat("brightness 0.5")
                 game.Players:Chat("ambient 125 0 255")
             end
-            if msg:sub(1,6) == ";nono " then
+            if msg:sub(1,5) == ";nono" then
                 local nub = msg:sub(7)
                 game.Players:Chat("tp " .. "me ".. nub)
                 game.Players:Chat("stun " .. nub)
-                game.Players:Chat("iyc bang 1 999")
+                game.Players:Chat(";bang ".. nub .." 999")
             end
-            if msg:sub(1,3) == "to " then
+            if msg:sub(1,2) == "to" then
                 local toplr = msg:sub(4)
                 game.Players:Chat("tp me " .. toplr)
             end
-            if msg:sub(1,6) == "bring " then
+            if msg:sub(1,5) == "bring" then
                 local brought = msg:sub(7)
                 game.Players:Chat("tp " .. brought .. " me")
             end
             -- ---Gears
-            if msg:sub(1,7) == "bhbomb " then
+            if msg:sub(1,6) == "bhbomb" then
                 local bhbomber = msg:sub(8)
                 game.Players:Chat("gear " .. bhbomber .. " 28277486")
             elseif msg:lower() == "bhbomb" then
