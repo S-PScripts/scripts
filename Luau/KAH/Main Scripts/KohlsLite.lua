@@ -284,7 +284,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	end
 
 	if string.sub(msg:lower(), 1, #prefix + 6) == prefix.."tricky" then -- CREDITS TO TECH
-		GExecute("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/Main%20Scripts/Tricky%20Lyrics%20non%20persons.lua")
+		GExecute("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/Other%20Scripts/Tricky%20Lyrics%20non%20persons.lua")
 	end
 		
 	if string.sub(msg, 1, #prefix + 2)  == prefix..'wl' then
@@ -1215,7 +1215,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'paintmap' then
 	_G.ColourHere = string.sub(msg, #prefix + 10) -- global as we use a loadstring here
-	GExecute("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/Main%20Scripts/Paint Map.lua")
+	GExecute("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/Other%20Scripts/Paint%20Map.lua")
     end
 		
    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'autoafk' then
@@ -1431,21 +1431,9 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'watermap' then
 		SuperCMD("gear me 236438668")
     end
-		
-    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'stonemap' then
-	StoneMap()
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'rockmap' then
-	StoneMap()
-    end
-		
-    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'icemap' then
- 	IceMap()
-    end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'fixpaint' then
-	GExecute("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/Main%20Scripts/Fix Paint.lua")
+	GExecute("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/Other%20Scripts/Fix%20Paint.lua")
      end
 
    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'anticrash' then
