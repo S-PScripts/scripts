@@ -6,7 +6,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/S-PScripts/scripts/ma
 loadstring(game:HttpGet("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/Main%20Scripts/KohlsLite.lua"))()
 --loadstring(game:HttpGet("https://rentry.co/kohlslite/raw"))()
 
---
+-- other shit
 loadstring(game:HttpGet("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/Main%20Scripts/PR_Script.txt"))()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/Main%20Scripts/CMD%20POOP.lua"))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/S-PScripts/techls-fork/main/Shortcut%20v1.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/Main%20Scripts/SimpleKAH.lua"))()
