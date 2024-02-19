@@ -35,7 +35,7 @@ local bgears = {"VampireVanquisher"}
 -- ---Functions---
 -- ---If Statements---
     if game.ReplicatedStorage:FindFirstChild("WeaponsSystem") then
-        game.Players:Chat("h/\n\n\n\n\ Found broken camera!!(This feature is still experimental)")
+        game.Players:Chat("h/\n\n\n\n Found broken camera!!(This feature is still experimental)")
     end
 --- ---Custom Commands---
     player.Chatted:Connect(function(msg)
@@ -114,18 +114,18 @@ local bgears = {"VampireVanquisher"}
                 end
                 if msg:sub(8) == "2" or msg:sub(8) == "taco" then
                     game.Players:Chat("music 142376088")
-                    game.Players:Chat("h/\n\n\n\n\ ITS RAINING TACOS!!")
+                    game.Players:Chat("h/\n\n\n\n ITS RAINING TACOS!!")
                 end
                 if msg:sub(8) == "fnaf" or msg:sub(8) == "3" then
                     game.Players:Chat("music 6913550990")
-                    game.Players:Chat("h/\n\n\n\n\n\n\n\n\ I always come back!!!")
+                    game.Players:Chat("h/\n\n\n\n\n\n\n\n I always come back!!!")
                 end
             end
            if msg:lower() == "restard avoid" then
                atpkick = true
                while atpkick do
                    wait(0.1)
-                   if game.Players:FindFirstChild{"atprog") or game.Players:FindFirstChild("G_Odt") then
+                   if game.Players:FindFirstChild("atprog") or game.Players:FindFirstChild("G_Odt") then
                        game:Shutdown()
                     end
                 end
@@ -435,7 +435,7 @@ end)
 game.Players:Chat(";rtx")
 for i = 1,5 do
     wait(1)
-    game.Players:Chat("h \n\n\n\n\n\n\n\n\ FakeLite Loaded!")
+    game.Players:Chat("h \n\n\n\n\n\n\n\n FakeLite Loaded!")
 end
 game.Players:Chat("auff")
 game.Players:Chat("antiabusers")
