@@ -205,7 +205,7 @@ local antidisco = false
 local antifogend = false
 local antichat = false
 local antiattach = false
-local antigs = false
+local YOUantigs = false
 
 local PingLogs = false -- it's caps lol
 local PingCsystem = true
@@ -683,6 +683,74 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
             end
         else
         end
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antiabuse' then
+	Chat("pm me all antis are turned on!")
+			antidisco = true
+			antiflash = true
+			antifogend = true
+			YOUantiblind = true
+			YOUantigs = true
+			YOUanticlone, ALLanticlone = true, true
+			YOUantifire, ALLantifire = true, true
+			YOUantifreeze, ALLantifreeze = true, true
+			YOUantifly, ALLantifly = true, true
+			YOUantiff, ALLantiff = true, true
+			YOUantiglow, ALLantiglow = true, true
+			YOUantihealthc, ALLantihealthc = true, true
+			YOUantijail, ALLantijail = true, true
+			YOUantijump, ALLantijump = true, true
+			YOUantikill, ALLantikill = true, true
+			YOUantimsg = true
+			YOUantiname, ALLantiname = true, true
+			YOUantiexplode, ALLantiexplode = true, true
+			YOUantichar, ALLantichar = true, true
+			YOUantiparticles, ALLantiparticles = true, true
+			YOUantipunish, ALLantipunish = true, true
+			YOUantirocket, ALLantirocket = true, true
+			YOUantisit, ALLantisit = true, true
+			YOUantiseizure, ALLantiseizure = true, true
+			YOUantismoke, ALLantismoke = true, true
+			YOUantisparkles, ALLantisparkles = true, true
+			YOUantispeed, ALLantispeed = true, true
+			YOUantistun, ALLantistun = true, true
+			YOUantiswag, ALLantiswag = true, true
+			
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantiabuse' then
+	Chat("pm me all antis are turned on!")
+			antidisco = false
+			antiflash = false
+			antifogend = false
+			YOUantiblind = false
+			YOUantigs = false
+			YOUanticlone, ALLanticlone = false, false
+			YOUantifire, ALLantifire = false, false
+			YOUantifreeze, ALLantifreeze = false, false
+			YOUantifly, ALLantifly = false, false
+			YOUantiff, ALLantiff = false, false
+			YOUantiglow, ALLantiglow = false, false
+			YOUantihealthc, ALLantihealthc = false, false
+			YOUantijail, ALLantijail = false, false
+			YOUantijump, ALLantijump = false, false
+			YOUantikill, ALLantikill = false, false
+			YOUantimsg = false
+			YOUantiname, ALLantiname = false, false
+			YOUantiexplode, ALLantiexplode = false, false
+			YOUantichar, ALLantichar = false, false
+			YOUantiparticles, ALLantiparticles = false, false
+			YOUantipunish, ALLantipunish = false, false
+			YOUantirocket, ALLantirocket = false, false
+			YOUantisit, ALLantisit = false, false
+			YOUantiseizure, ALLantiseizure = false, false
+			YOUantismoke, ALLantismoke = false, false
+			YOUantisparkles, ALLantisparkles = false, false
+			YOUantispeed, ALLantispeed = false, false
+			YOUantistun, ALLantistun = false, false
+			YOUantiswag, ALLantiswag = false, false
+			
     end
 
     if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'bok' then
@@ -1326,12 +1394,12 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	anticrash = true
     end
  
-    if string.sub(msg:lower(), 1, #prefix + 13) == prefix..'antigrayscale' then -- what is this??
-	antigs = true
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'antigs' then -- what is this??
+	YOUantigs = true
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 15) == prefix..'unantigrayscale' then 
-	antigs = false
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'unantigs' then 
+	YOUantigs = false
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unanticrash' then
@@ -1794,22 +1862,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	ALLantiswag = false
     end
 		
-    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antitrail' then
-	YOUantitrail = true
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantitrail' then
-	YOUantitrail = false
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'antitraila' then
-	ALLantitrail = true
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'unantitraila' then
-	ALLantitrail = false
-    end
-
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antichat' then
 	antichat = true
 	YOUantimsg = true -- stop you from crashing :D
@@ -2184,7 +2236,7 @@ task.spawn(function()
             end
 	end
 			
-	if antigs == true then
+	if YOUantigs == true then
 		if game.Workspace.CurrentCamera:FindFirstChild("GrayScale") then
 			game.Workspace.CurrentCamera:FindFirstChild("GrayScale"):Destroy()	
 		end
@@ -2359,17 +2411,6 @@ task.spawn(function()
                 	Chat("normal me")
 		end
 	end
-
-	if YOUantitrail == true then
-	    local player = game.Players.LocalPlayer
-             if player.Character then
-                    local humanoid = player.Character:WaitForChild("Humanoid", 1)
-                    if humanoid and humanoid.Trail then
-                        humanoid.Trail = false
-                        Chat("untrail me")
-                    end
-             end
-	end
 			
 	end
 end)
@@ -2543,15 +2584,6 @@ task.spawn(function()
 		end
 	end
 
-	if ALLantitrail == true then
-	    local player = v.Name
-             if player.Character then
-                    local humanoid = player.Character:WaitForChild("Humanoid", 1)
-                    if humanoid and humanoid.Trail then
-                        Chat("untrail "..player.Name)
-                    end
-             end
-	end
 	end		
 	end
 	end
