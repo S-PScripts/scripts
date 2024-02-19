@@ -282,7 +282,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	end
 
 	if string.sub(msg:lower(), 1, #prefix + 6) == prefix.."tricky" then -- CREDITS TO TECH
-		GExecute("https://raw.githubusercontent.com/Tech-187/Music-lyrics-on-time/main/Tricky%20lyrics.lua")
+		GExecute("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/Main%20Scripts/Tricky%20Lyrics%20non%20persons.lua")
 	end
 		
 	if string.sub(msg, 1, #prefix + 2)  == prefix..'wl' then
