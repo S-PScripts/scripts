@@ -3376,6 +3376,7 @@ end
 function RKick()
       Chat("tp me "..rkicker)
       Chat("setgrav "..rkicker.. "3500")
+      Chat("jail/".. rkicker)
       for i = 1,100 do
           Chat("rocket/"..rkicker.."/"..rkicker.."/"..rkicker)
 	  Chat("rocket/me/me/me")
