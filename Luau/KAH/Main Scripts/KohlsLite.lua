@@ -728,12 +728,20 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	MoveBasePlate("fix")
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'ufixbp' then -- you have to adjust yourself to the bp
+	MoveBasePlate("fix2")
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'toregen' then
 			regentp()
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'fixregen' then
 	MoveRegen("fix")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'ufixregen' then -- you have to adjust yourself to the regen
+	MoveRegen("fix2")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'findregen' then
@@ -3593,12 +3601,14 @@ end
 
 -- BASEPLATE MOVER
 function MoveBasePlate(mode)
-		 if mode == "fix" then
+	        if mode == "fix" or mode == "fix2" then
             		task.wait(0.2)
 	    		Chat("fly me")
 	    		task.wait(0.2)
-            		skydivef()
-            		task.wait(0.2)
+			if mode == "fix" then
+            			skydivef()
+			end            		
+			task.wait(0.2)
 	    		Chat("unfly me")
 	    		task.wait(0.2)
 	        end
@@ -3615,12 +3625,16 @@ end
 
 -- REGEN MOVER AND FIXER
 function MoveRegen(mode)
-	     if mode == "fix" then
-			regentp()
+	     if mode == "fix" or mode == "fix2" then
+			if mode == "fix2" then
+				regentp()
+			end
             		task.wait(0.2)
 	    		Chat("fly me")
 	    		task.wait(0.2)
-            		skydivef()
+			if mode == "fix" then
+            			skydivef()
+			end
             		task.wait(0.2)
 	    		Regen()
 	    		Chat("unfly me")
