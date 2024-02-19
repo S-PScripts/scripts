@@ -696,7 +696,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'moveadp' then
-	MoveAdminPads()
+	MoveAdminPads("move")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'moveaddiv' then
@@ -738,6 +738,10 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'fixregen' then
 	MoveRegen("fix")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'fixadp' then
+	MoveAdminPads("fix")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'ufixregen' then -- you have to adjust yourself to the regen
@@ -3586,13 +3590,28 @@ function MoveHouse()
 end
 
 -- ADMIN PAD MOVER
-function MoveAdminPads()
+function MoveAdminPads(mode)
 	 for i, v in pairs(Admin_Folder.Pads:GetDescendants()) do
 		if v.Name == "Head" then
-			task.wait(1)
+			if mode == "fix" then
+            			task.wait(0.2)
+	    			Chat("fly me")
+	    			task.wait(0.2)
+				if mode == "fix" then
+            				skydivef()
+				end            		
+				task.wait(0.2)
+	    			Chat("unfly me")
+	    			task.wait(0.2)
+			end
         		target = v
           		movepart()
-			skydivef()
+			if mode == "move" then
+				skydivef()
+			else
+				Chat("unskydive me")
+				Chat("undog me me")
+			end			
 			wait(0.2)
 	     		Chat("respawn me")
 		end
