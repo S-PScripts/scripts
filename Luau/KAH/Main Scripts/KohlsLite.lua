@@ -2407,9 +2407,8 @@ task.spawn(function()
 			end
 		end
 	end
-			
 	if YOUantiname == true then
-	     if game.Players.LocalPlayer.Character:FindFirstChild("NameTag") then
+	     if game.Players.LocalPlayer and game.Players.LocalPlayer.Character:FindFirstChildOfClass("Model") then
 		Chat("reset me")
 	     end
 	end
@@ -2597,7 +2596,7 @@ task.spawn(function()
 	end
 
 	if ALLantiname == true then
-	   if v.Character:FindFirstChild("NameTag") then
+	   if v and v.Character:FindFirstChildOfClass("Model") then
 		Chat("reset "..v.Name)
 	     end
 	end
