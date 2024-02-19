@@ -2373,7 +2373,7 @@ task.spawn(function()
 			
 	if YOUantihealthc == true then
 	   if not game.Players.LocalPlayer.Character.Humanoid.Health == 100 then
-		game.Players.LocalPlayer.Character.Humanoid.Health = 100            
+		Chat("heal me 100")         
 	   end
         end
             
