@@ -1427,7 +1427,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		SuperCMD("gear me 88146497")
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'watermap' then
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'watermap' then
 		SuperCMD("gear me 236438668")
     end
 
