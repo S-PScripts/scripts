@@ -3792,7 +3792,7 @@ end
 function MoveRegen(mode)
 	     task.wait(1)
 	     if mode == "fix" or mode == "fix2" then
-			if mode == "fix2" then
+			if mode == "fix" then
 				regentp()
 			end
             		task.wait(0.2)
