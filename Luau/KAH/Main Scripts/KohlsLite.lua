@@ -47,6 +47,8 @@ local crash_on_sight = {"SlenderMan990921"} -- crash server when player joins
 local mkick_on_sight = {"mkick"} -- kick player with pm spam when they join ONLY WORKS WITH ONE PLAYER
 local suser_on_sight = {"suser"} -- slow a user when they join with car gear ONLY WORKS WITH ONE PLAYER
 
+local periastronlist = {108158379, 80661504, 233520257, 73829193, 69499437, 139577901, 2544549379, 120307951, 99119240, 93136802, 80597060, 159229806, 77443461}
+
 -- Bad formatting because of github glitch ruining how the colour of the code looks :/
 local musiclist = {"9048375035", -- 1
 		   "6680495507", -- 2
@@ -505,6 +507,13 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
       if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'plrnewlen' then
         	newlen = tonumber(string.sub(msg:lower(), #prefix + 11))
       end
+
+		
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'sswords' then
+       for i = 1, #periastronlist do
+		Chat("gear me ".. i)
+       end
+    end
 		
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'gmusic' then
         musicplay = tonumber(string.sub(msg:lower(), #prefix + 7)) 
