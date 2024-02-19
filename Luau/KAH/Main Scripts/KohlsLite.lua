@@ -47,7 +47,7 @@ local crash_on_sight = {"SlenderMan990921"} -- crash server when player joins
 local mkick_on_sight = {"mkick"} -- kick player with pm spam when they join ONLY WORKS WITH ONE PLAYER
 local suser_on_sight = {"suser"} -- slow a user when they join with car gear ONLY WORKS WITH ONE PLAYER
 
-local periastronlist = {108158379, 80661504, 233520257, 73829193, 69499437, 139577901, 2544549379, 120307951, 99119240, 93136802, 80597060, 159229806, 77443461}
+local periastronlist = {"108158379", "80661504", "233520257", "73829193", "69499437", "139577901", "2544549379", "120307951", "99119240", "93136802", "80597060", "159229806", "77443461"}
 
 -- Bad formatting because of github glitch ruining how the colour of the code looks :/
 local musiclist = {"9048375035", -- 1
@@ -230,7 +230,7 @@ local personpassid = 35748 or 37127 -- don't edit
 
 print("Thank you for using KohlsLite v1.065! Created by S_P.")
 print("Say .kcmds to list all the commands.")
-Chat("h \n\n\n [KohlsLite]: Executed! v1.072b \n\n\n")
+Chat("h \n\n\n [KohlsLite]: Executed! v1.072c \n\n\n")
 
 -- delta broke this, it was working before an update :P
 --[[if string.match(game:HttpGet("https://inventory.roproxy.com/v1/users/" .. game.Players.LocalPlayer.UserId .. "/items/GamePass/" .. permpassid), permpassid) then
@@ -511,7 +511,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'sswords' then
        for i = 1, #periastronlist do
-		Chat("gear me ".. i)
+		Chat("gear me ".. periastronlist[i])
        end
     end
 		
