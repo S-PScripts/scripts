@@ -226,15 +226,14 @@ local function Speak(msg)
     game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(msg, "All")
 end
 
-local permpassid = 66254 or 64354 -- don't edit
-local personpassid = 35748 or 37127 -- don't edit
+-- local permpassid = 66254 or 64354 -> NBC, BC
+-- local personpassid = 35748 or 37127 --> NBC, BC
 
 print("Thank you for using KohlsLite v1.065! Created by S_P.")
 print("Say .kcmds to list all the commands.")
 Chat("h \n\n\n [KohlsLite]: Executed! v1.073b \n\n\n")
 
--- delta broke this, it was working before an update :P
---[[if string.match(game:HttpGet("https://inventory.roproxy.com/v1/users/" .. game.Players.LocalPlayer.UserId .. "/items/GamePass/" .. permpassid), permpassid) then
+if MarketplaceService:UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 66254) or MarketplaceService:UserOwnsGamePassAsync(Player.UserId, 64354) then
         perm = false 
 	hasperm = true -- used
 	print("A perm pad was not given - you have the Perm Admin gamepass!")
@@ -244,13 +243,13 @@ else
 	print("A perm pad was given - you don't have the Perm Admin gamepass!")
 end
 
-if string.match(game:HttpGet("https://inventory.roproxy.com/v1/users/" .. game.Players.LocalPlayer.UserId .. "/items/GamePass/" .. personpassid), personpassid) then
+if MarketplaceService:UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 35748) or MarketplaceService:UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 37127) then
 	haspersons = true -- used!
 	print("You have Person299's Admin!")
 else
 	haspersons = false -- used!
 	print("You do not have Person299's Admin!")
-end]]
+end
 
 game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	task.wait(0)
@@ -450,7 +449,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          end
        end
 
-       if string.sub(msg, 1, #prefix + 10) == prefix..'fcheckperm' then
+       if string.sub(msg, 1, #prefix + 10) == prefix..'fcheckperm' then -- yummy bypass mmmm
           Chat("reset all")
 	  Regen()
 	  task.wait(1)
@@ -2202,9 +2201,9 @@ end
 
 -- CHECK FOR PERM
 function checkforperm()
-	if string.match(game:HttpGet("https://inventory.roblox.com/v1/users/" .. cplr.userId .. "/items/GamePass/" .. permpassid), permpassid) then
-	   print(player.." has perm!")
-	   table.insert(permusers, player)
+	if MarketplaceService:UserOwnsGamePassAsync(gcplr.UserId, 66254) or MarketplaceService:UserOwnsGamePassAsync(gcplr.UserId, 64354) then
+	   print(gcplr.." has perm!")
+	   table.insert(permusers, gcplrn)
 	else
 	   print(player.."does not have perm!")
 	end
@@ -2212,9 +2211,9 @@ end
 
 -- CHECK FOR PERSONS
 function checkforpersons()
-	if string.match(game:HttpGet("https://inventory.roblox.com/v1/users/" .. cplr.userId .. "/items/GamePass/" .. personpassid), personpassid) then
-	   print(player.." has persons!")
-	   table.insert(personsusers, player)
+	if MarketplaceService:UserOwnsGamePassAsync(gcplr.UserId, 35748) or MarketplaceService:UserOwnsGamePassAsync(gcplr.UserId, 37127) then
+	   print(gcplr.." has persons!")
+	   table.insert(personsusers, gcplrn)
 	else
 	   print(player.."does not have persons!")
 	end
@@ -3855,7 +3854,8 @@ function onPlayerAdded(player)
     end 
 
     if autogpcheck == true then
-	  cplr = player
+	  gcplr = player
+	  gcplrn = player.Name
 	  checkforpersons()
           checkforperm()
     end
