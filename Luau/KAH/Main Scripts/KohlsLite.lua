@@ -2039,7 +2039,7 @@ print("prefix - set the prefix")
 print("ping - say your ping")
 print("execute - execute a lua script from chat")
 print("iy - execute iy")
-print("ad - advertise this script (pls do this you are nice if you do this :D)")
+print("adv - advertise this script (pls do this you are nice if you do this :D)")
 print("frespawn - force respawn if punished")
 
 print("---")
