@@ -857,6 +857,10 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	MoveBasePlate("fix")
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'ufixbp' then
+	MoveBasePlate("ufix")
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'toregen' then
 			regentp()
     end
@@ -3781,12 +3785,15 @@ function MoveBasePlate(mode)
           	movepart()
 		if mode == "move" then
 			skydivef()
+		elseif mode == "fix" then
+			Chat("unskydive me")
+			Chat("unskydive me")
 		else
-			Chat("unskydive me")
-			Chat("unskydive me")
 		end
 		wait(0.2)
-	     	Chat("respawn me")
+		if mode ~= "ufix" then
+	     		Chat("respawn me")
+		end
 end
 
 -- REGEN MOVER AND FIXER
