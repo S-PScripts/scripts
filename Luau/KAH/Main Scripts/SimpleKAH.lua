@@ -85,7 +85,7 @@ local bgears = {"VampireVanquisher"}
             end
             if msg:lower() == "simple vg" then
                 game.Players:Chat("spam gear all 94794847")
-                game.Players:Chat("spam size me 0.3")
+                game.Players:Chat("spam unsize all")
             end
             if msg:lower() == "anticrash" then
                 anticrash = true
@@ -101,7 +101,7 @@ local bgears = {"VampireVanquisher"}
                 end
             if msg:lower() == "simple vg" then
                 game.Players:Chat("spam gear me 94794847")
-                game.Players:Chat("spam size me 0.3")
+                game.Players:Chat("spam unsize me")
             end
             elseif msg:lower() == "unanticrash" then
                 anticrash = false
