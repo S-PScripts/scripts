@@ -3316,9 +3316,7 @@ task.spawn(function()
 			
     if antimusic == true then
 		  if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
-				if game:GetService("Workspace").Terrain["_Game"].Folder.Sound.SoundId == "http://www.roblox.com/asset/?id="..mymusiconlyid then
 				 	Chat("music antimusic is on!")
-				end
       		  end
     end
 
