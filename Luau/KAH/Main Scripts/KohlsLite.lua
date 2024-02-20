@@ -857,10 +857,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	MoveBasePlate("fix")
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'ufixbp' then -- you have to adjust yourself to the bp
-	MoveBasePlate("fix2")
-    end
-
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'toregen' then
 			regentp()
     end
@@ -871,10 +867,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'fixadp' then
 	MoveAdminPads("fix")
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'ufixregen' then -- you have to adjust yourself to the regen
-	MoveRegen("fix2")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'findregen' then
@@ -3702,10 +3694,11 @@ function LocalObby(mode)
     		    workspace.Terrain["_Game"]["Workspace"]["Obby Box"].Parent = game.Chat
 	end
 end
+
 -- OBBY BRICKS MOVER
 function MoveObbyBricks()
          for i, v in pairs(Workspace_Folder["Obby"]:GetChildren()) do
-		task.wait(1)
+		task.wait(0.5)
 		target = v
           	movepart()
 		skydivef()
@@ -3717,7 +3710,7 @@ end
 -- OBBY BOX MOVER
 function MoveObbyBox()
           for i, v in pairs(Workspace_Folder["Obby Box"]:GetChildren()) do
-		task.wait(1)
+		task.wait(0.5)
 		target = v
           	movepart()
 		skydivef()
@@ -3729,7 +3722,7 @@ end
 -- BUILDING BRICKS MOVER
 function MoveBuildingBricks()
           for i, v in pairs(Workspace_Folder["Building Bricks"]:GetChildren()) do
-		task.wait(1)
+		task.wait(0.5)
 		target = v
           	movepart()
 		skydivef()
@@ -3741,7 +3734,7 @@ end
 -- ADMIN DIVIDERS MOVER
 function MoveAdminDividers()
  	 for i, v in pairs(Workspace_Folder["Admin Dividers"]:GetChildren()) do		
-		task.wait(1)
+		task.wait(0.5)
 		target = v
           	movepart()
 		skydivef()
@@ -3753,7 +3746,7 @@ end
 -- HOUSE MOVER
 function MoveHouse()
 	for i, v in pairs(Workspace_Folder["Basic House"]:GetChildren()) do
-		task.wait(1)
+		task.wait(0.5)
 		target = v
           	movepart()
 		skydivef()
@@ -3766,18 +3759,7 @@ end
 function MoveAdminPads(mode)
 	 for i, v in pairs(Admin_Folder.Pads:GetDescendants()) do
 		if v.Name == "Head" then
-			if mode == "fix" then
-            			task.wait(0.2)
-	    			Chat("fly me")
-	    			task.wait(0.2)
-				if mode == "fix" then
-            				skydivef()
-				end            		
-				task.wait(0.2)
-	    			Chat("unfly me")
-	    			task.wait(0.2)
-			end
-			task.wait(1)
+			task.wait(0.5)
         		target = v
           		movepart()
 			if mode == "move" then
@@ -3794,18 +3776,7 @@ end
 
 -- BASEPLATE MOVER
 function MoveBasePlate(mode)
-		task.wait(1)
-	        if mode == "fix" or mode == "fix2" then
-            		task.wait(0.2)
-	    		Chat("fly me")
-	    		task.wait(0.2)
-			if mode == "fix" then
-            			skydivef()
-			end            		
-			task.wait(0.2)
-	    		Chat("unfly me")
-	    		task.wait(0.2)
-	        end
+		task.wait(0.5)
 		target = Workspace_Folder.Baseplate
           	movepart()
 		if mode == "move" then
@@ -3820,22 +3791,7 @@ end
 
 -- REGEN MOVER AND FIXER
 function MoveRegen(mode)
-	     task.wait(1)
-	     if mode == "fix" or mode == "fix2" then
-			if mode == "fix" then
-				regentp()
-			end
-            		task.wait(0.2)
-	    		Chat("fly me")
-	    		task.wait(0.2)
-			if mode == "fix" then
-            			skydivef()
-			end
-            		task.wait(0.2)
-	    		Regen()
-	    		Chat("unfly me")
-	    		task.wait(0.2)
-	     end
+	     task.wait(0.5)
 	     target = Admin_Folder.Regen
 	     movepart()				
 	     if mode == "move" then
