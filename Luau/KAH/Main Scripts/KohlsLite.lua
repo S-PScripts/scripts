@@ -3812,6 +3812,7 @@ function MoveBasePlate(mode)
 			skydivef()
 		else
 			Chat("unskydive me")
+			Chat("unskydive me")
 		end
 		wait(0.2)
 	     	Chat("respawn me")
