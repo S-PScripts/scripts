@@ -233,7 +233,7 @@ print("Thank you for using KohlsLite v1.065! Created by S_P.")
 print("Say .kcmds to list all the commands.")
 Chat("h \n\n\n [KohlsLite]: Executed! v1.073b \n\n\n")
 
-if MarketplaceService:UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 66254) or MarketplaceService:UserOwnsGamePassAsync(Player.UserId, 64354) then
+--[[ if MarketplaceService:UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 66254) or MarketplaceService:UserOwnsGamePassAsync(Player.UserId, 64354) then
         perm = false 
 	hasperm = true -- used
 	print("A perm pad was not given - you have the Perm Admin gamepass!")
@@ -249,7 +249,7 @@ if MarketplaceService:UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 357
 else
 	haspersons = false -- used!
 	print("You do not have Person299's Admin!")
-end
+end]]
 
 game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	task.wait(0)
