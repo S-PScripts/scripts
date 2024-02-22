@@ -31,7 +31,7 @@ end
 _G.executed = true
 
 local prefix = "." -- ANY LENGTH :D
-local blacklist = {"SlenderMan990921","EhiplayYN","e5usp","Asphetto","91txt","LeanConsumer69","xtyzmia","Fixydrqma","Robloxian577226532"} -- slocked users
+local blacklist = {"SlenderMan990921","EhiplayYN","e5usp","Asphetto","91txt","LeanConsumer69","xtyzmia","Fixydrqma","Robloxian577226532","jjthejoker7"} -- slocked users
 local whitelist = {"me_123eq","me_crashking","ScriptingProgrammer","G_ODt","BANNter_Original","witnessfox22","IceStuds","atprog","dawninja21","Dawninja21alt"} -- not affected by slock
 local newplrslocked = {} -- don't edit!!
 local bypslock = {} -- ONLY USE FOR m_ and me_ USERNAMES
