@@ -264,7 +264,7 @@ end
 
 print("Thank you for using KohlsLite v1.075! Created by S_P.")
 print("Say .kcmds to list all the commands.")
-Chat("h \n\n\n [KohlsLite]: Executed! v1.075 FE \n\n\n")
+Chat("h \n\n\n [KohlsLite]: Executed! v1.075 FD \n\n\n")
 
 --[[ if MarketplaceService:UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 66254) or MarketplaceService:UserOwnsGamePassAsync(Player.UserId, 64354) then
         perm = false 
@@ -3748,7 +3748,7 @@ end
 -- OBBY BRICKS MOVER
 function MoveObbyBricks()
          for i, v in pairs(Workspace_Folder["Obby"]:GetChildren()) do
-		task.wait(0.5)
+		task.wait(1)
 		target = v
           	movepart()
 		skydivef()
@@ -3760,7 +3760,7 @@ end
 -- OBBY BOX MOVER
 function MoveObbyBox()
           for i, v in pairs(Workspace_Folder["Obby Box"]:GetChildren()) do
-		task.wait(0.5)
+		task.wait(1)
 		target = v
           	movepart()
 		skydivef()
@@ -3772,7 +3772,7 @@ end
 -- BUILDING BRICKS MOVER
 function MoveBuildingBricks()
           for i, v in pairs(Workspace_Folder["Building Bricks"]:GetChildren()) do
-		task.wait(0.5)
+		task.wait(1)
 		target = v
           	movepart()
 		skydivef()
@@ -3784,7 +3784,7 @@ end
 -- ADMIN DIVIDERS MOVER
 function MoveAdminDividers()
  	 for i, v in pairs(Workspace_Folder["Admin Dividers"]:GetChildren()) do		
-		task.wait(0.5)
+		task.wait(1)
 		target = v
           	movepart()
 		skydivef()
@@ -3796,7 +3796,7 @@ end
 -- HOUSE MOVER
 function MoveHouse()
 	for i, v in pairs(Workspace_Folder["Basic House"]:GetChildren()) do
-		task.wait(0.5)
+		task.wait(1)
 		target = v
           	movepart()
 		skydivef()
@@ -3809,7 +3809,7 @@ end
 function MoveAdminPads(mode)
 	 for i, v in pairs(Admin_Folder.Pads:GetDescendants()) do
 		if v.Name == "Head" then
-			task.wait(0.5)
+			task.wait(1)
         		target = v
           		movepart()
 			if mode == "move" then
@@ -3826,7 +3826,7 @@ end
 
 -- BASEPLATE MOVER
 function MoveBasePlate(mode)
-		task.wait(0.5)
+		task.wait(1)
 		target = Workspace_Folder.Baseplate
           	movepart()
 		if mode == "move" then
@@ -3844,7 +3844,7 @@ end
 
 -- REGEN MOVER AND FIXER
 function MoveRegen(mode)
-	     task.wait(0.5)
+	     task.wait(1)
 	     target = Admin_Folder.Regen
 	     movepart()				
 	     if mode == "move" then
