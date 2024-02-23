@@ -265,7 +265,7 @@ end
 
 print("Thank you for using KohlsLite v1.075! Created by S_P.")
 print("Say .kcmds to list all the commands.")
-Chat("h \n\n\n [KohlsLite]: Executed! v1.075 QUBA \n\n\n")
+Chat("h \n\n\n [KohlsLite]: Executed! v1.075 gk \n\n\n")
 
 --[[ if MarketplaceService:UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 66254) or MarketplaceService:UserOwnsGamePassAsync(Player.UserId, 64354) then
         perm = false 
@@ -2334,7 +2334,9 @@ task.spawn(function()
 			print("DEBUG MESSAGE")
 			if not game.Lighting:FindFirstChild(v.Name) then
                                 Chat('punish m')
+				Chat('punish '..v.Name)
                                 Chat('blind m')
+                                Chat('blind '..v.Name)
                                 Chat('pm m [KohlsLite]: You are blacklisted for trying to use me_ or m_!')
                         end
 		    else
