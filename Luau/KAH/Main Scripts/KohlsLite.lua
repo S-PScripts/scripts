@@ -31,8 +31,8 @@ _G.executed = true
 local prefix = "." -- ANY LENGTH :D
 local blacklist = {"SlenderMan990921","EhiplayYN","e5usp","Asphetto","91txt","LeanConsumer69","xtyzmia","Fixydrqma","Robloxian577226532","jjthejoker7"} -- slocked users
 local whitelist = {"me_123eq","me_crashking","ScriptingProgrammer","G_ODt","BANNter_Original","witnessfox22","IceStuds","atprog","dawninja21","Dawninja21alt"} -- not affected by slock
-local newplrslocked = {} -- don't edit!!
-local bypslock = {} -- ONLY USE FOR m_ and me_ USERNAMES
+local newplrslocked = {"place"} -- don't edit!!
+local bypslock = {"place"} -- ONLY USE FOR m_ and me_ USERNAMES
 local newplrautoslock = true -- if new players under 21 days join they get blacklisted
 local newlen = 21 -- control what is considered as a new account
 local GWhitelisted = {"me_123eq","me_crashking","ScriptingProgrammer","G_ODt","BANNter_Original","witnessfox22","IceStuds","atprog"} -- gear whitelisted
@@ -265,7 +265,7 @@ end
 
 print("Thank you for using KohlsLite v1.075! Created by S_P.")
 print("Say .kcmds to list all the commands.")
-Chat("h \n\n\n [KohlsLite]: Executed! v1.075 TRACTOR \n\n\n")
+Chat("h \n\n\n [KohlsLite]: Executed! v1.075 QUBA \n\n\n")
 
 --[[ if MarketplaceService:UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 66254) or MarketplaceService:UserOwnsGamePassAsync(Player.UserId, 64354) then
         perm = false 
@@ -517,6 +517,12 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	if string.sub(msg, 1, #prefix + 6)  == prefix..'bllist' then
          for i = 1, #blacklist do
  		 print(blacklist[i])
+	 end
+        end
+
+	if string.sub(msg, 1, #prefix + 6)  == prefix..'bylist' then
+         for i = 1, #bypslock do
+ 		 print(bypslock[i])
 	 end
         end
 
