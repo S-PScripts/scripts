@@ -3,25 +3,23 @@ _  _____  _   _ _     ____  _     ___ _____ _____
 | |/ / _ \| | | | |   / ___|| |   |_ _|_   _| ____|
 | ' / | | | |_| | |   \___ \| |    | |  | | |  _|  
 | . \ |_| |  _  | |___ ___) | |___ | |  | | | |___ 
-|_|\_\___/|_| |_|_____|____/|_____|___| |_| |_____| v1.065
+|_|\_\___/|_| |_|_____|____/|_____|___| |_| |_____| v1.075
 
 -- CREATED BY TS2021/SCRIPTINGPROGRAMMER
 -- CREDITS TO MANY...
    -> Shortcut v1, v2, v3 (tech)
    -> PR Script (atprog) for some stuff B)
    -> iiDk's admin (iiDk) as PR Script is based off it
+   -> SimpleKAH for gears and char ids
 
 -- COMPILER USED: https://www.tutorialspoint.com/execute_lua_online.php
 
-Things this script doesn't have...
-ex1. moving parts (these ones only!)
---> HOUSE
---> SPAWNS
-
-DONT USE ALLADMIN IT'S BROKEN
-
+stuff this script DOESN'T HAVE
 1. Visualisers and drawing - I have no persons, I'll try getting it someday but for now I'll work on other features.
-2. Rockmap, stomemap -- really obscure commands to be honest ]]
+2. Rockmap, stomemap -- really obscure commands to be honest 
+
+stuff in the works
+1. i forgor ]]
 
 if _G.executed then 
 	return 
@@ -58,7 +56,7 @@ local musiclist = {"9048375035", -- 1
 		   "6913550990", -- 5
 		   "6847929757", -- 6
                    "1839029458", -- 7
-                   "0035930009", -- 8
+                   "35930009", -- 8
 	           "6772846771", -- 9
 	           "11808880515", -- 10
 	           "6681840651", -- 11
@@ -77,7 +75,7 @@ local musiclist = {"9048375035", -- 1
                    "6788646778", -- 24
      		   "9124780123", -- 25
                    "6897686359", -- 26
-	           "0142376088", -- 27
+	           "142376088", -- 27
                    "1846368080", -- 28
                    "1840511219", -- 29
                    "1839404854", -- 30
@@ -171,7 +169,27 @@ local gears = {
     "timegears" -- 12
 }
 
+local charcodes = {
+    "4844006008",  -- 1
+    "1267527674", -- 2
+    "13645", 	  -- 3
+    "548456077",  -- 4
+    "45024180",   -- 5
+    "1593471275"  -- 6
+}
+
+local chars = {
+    "furry",      -- 1
+    "sierr",      -- 2
+    "telac",      -- 3
+    "epicszs",    -- 4
+    "temi",       -- 5
+    "seek"        -- 6
+}
+
 local antimlog = false -- for music
+local antiglog = false -- for gears
+local anticlog = false -- for chars
 
 local padbanned = {"padbanned"} 
 local padreinforcements = false 
@@ -245,9 +263,9 @@ end
 -- local permpassid = 66254 or 64354 -> NBC, BC
 -- local personpassid = 35748 or 37127 --> NBC, BC
 
-print("Thank you for using KohlsLite v1.065! Created by S_P.")
+print("Thank you for using KohlsLite v1.075! Created by S_P.")
 print("Say .kcmds to list all the commands.")
-Chat("h \n\n\n [KohlsLite]: Executed! v1.073b \n\n\n")
+Chat("h \n\n\n [KohlsLite]: Executed! v1.075 EXP \n\n\n")
 
 --[[ if MarketplaceService:UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 66254) or MarketplaceService:UserOwnsGamePassAsync(Player.UserId, 64354) then
         perm = false 
@@ -725,6 +743,27 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         else
         end
     end
+
+--[[   if string.sub(msg:lower(), 1, #prefix + 4) == prefix.."char" then
+        local args = string.split(msg, " ")
+        if #args >= 3 then
+            local target = args[2]
+            local gearName = table.concat(args, " ", 3)
+            local gearIndex = 0
+            for i, name in ipairs(gears) do
+                if name == gearName then
+                    gearIndex = i
+                    break
+                end
+            end
+            if gearIndex ~= 0 then
+                local gearCode = gearcodes[gearIndex]
+                Chat("char " .. target .. " " .. gearCode)
+            else
+            end
+        else
+        end
+    end ]]
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antiabuse' then
 	Chat("pm me antis are turned on!")
@@ -2244,7 +2283,7 @@ print("There are also many other antis (for you or for everyone [but you])!")
 
 print("---")
 print("KohlsLite, since 2023. Created by S_P")
-print("Version is: v1.065 - 14th February 2024 Build")
+print("Version is: v1.075 - 14th February 2024 Build")
 end
 
 -- CHECK FOR PERM
