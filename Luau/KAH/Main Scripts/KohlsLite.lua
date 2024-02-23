@@ -1180,11 +1180,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		end
   end
 
-  if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'sswords' then
-		local per = string.sub(msg:lower(), #prefix + 8)
+  if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'sswords' then
+		local per = string.sub(msg:lower(), #prefix + 9)
 		if per ~= "" then
 			for i = 1, #periastronlist do
-					Chat("gear "..plr.." ".. periastronlist[i])
+					Chat("gear "..per.." ".. periastronlist[i])
        			end
 		else
 			for i = 1, #periastronlist do
