@@ -744,26 +744,26 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         end
     end
 
---[[   if string.sub(msg:lower(), 1, #prefix + 4) == prefix.."char" then
+    if string.sub(msg:lower(), 1, #prefix + 4) == prefix.."char" then
         local args = string.split(msg, " ")
         if #args >= 3 then
             local target = args[2]
-            local gearName = table.concat(args, " ", 3)
-            local gearIndex = 0
-            for i, name in ipairs(gears) do
-                if name == gearName then
-                    gearIndex = i
+            local charName = table.concat(args, " ", 3)
+            local charIndex = 0
+            for i, name in ipairs(chars) do
+                if name == charName then
+                    charIndex = i
                     break
                 end
             end
-            if gearIndex ~= 0 then
-                local gearCode = gearcodes[gearIndex]
-                Chat("char " .. target .. " " .. gearCode)
+            if charIndex ~= 0 then
+                local charCode = charcodes[charIndex]
+                Chat("char " .. target .. " " .. charCode)
             else
             end
         else
         end
-    end ]]
+    end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antiabuse' then
 	Chat("pm me antis are turned on!")
@@ -1191,15 +1191,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 					Chat("gear me ".. periastronlist[i])
        			end
 		end
-  end
-
-  if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'furry' then
-	local furry = string.sub(msg:lower(), #prefix + 7)
-	if furry ~= "" then
-		Chat("char "..furry.." 0000000000000000004844006008")
-	else
-		Chat("char me 0000000000000000004844006008")
-	end
   end
 
   if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'ecrash' then
