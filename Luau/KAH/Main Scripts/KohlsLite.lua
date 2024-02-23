@@ -146,13 +146,29 @@ local gearcodes = {
     "94794847", -- 2
     "92628079", -- 3
     "82357101", -- 4
+    "28277486", -- 5
+    "16924676", -- 6
+    "34870758", -- 7
+    "79736563", -- 8
+    "18474459", -- 9
+    "93136746", -- 10
+    "11999247", -- 11
+    "77443461"  -- 12
 }
 
 local gears = {
-    "boombox", -- 1
-    "vg",      -- 2
-    "osas",    -- 3
-    "gb",   -- 4
+    "boombox",  -- 1
+    "vg",       -- 2
+    "osas",     -- 3
+    "gb",       -- 4
+    "bhbomb",   -- 5
+    "tictac",   -- 6
+    "pgun",     -- 7
+    "camfixer", -- 8
+    "painter",  -- 9
+    "telemon",  -- 10
+    "trapmine", -- 11
+    "timegears" -- 12
 }
 
 local antimlog = false -- for music
@@ -1090,33 +1106,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	spamon = true
     end
 
-  if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'boombox' then -- shortcut cmd lol
-	local ubox = string.sub(msg:lower(), #prefix + 9)
-	if ubox ~= "" then
-		Chat("gear "..ubox.." 212641536")
-	else
-		Chat("gear me 212641536")
-	end
-  end
-
-  if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'bhbomb' then
-		local bh = string.sub(msg:lower(), #prefix + 8)
-		if bh ~= "" then
-			Chat("gear "..bh.." 28277486")
-		else
-			Chat("gear me 28277486")
-		end
-  end
-
-  if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'tictac' then
-		local tt = string.sub(msg:lower(), #prefix + 8)
-		if tt ~= "" then
-			Chat("gear "..tt.." 16924676")
-		else
-			Chat("gear me 16924676")
-		end
-  end
-
   if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'admslayer' then
 		local adm = string.sub(msg:lower(), #prefix + 11)
 		if adm ~= "" then
@@ -1140,14 +1129,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		end
   end
 
-  if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'pgun' then
-		local pg = string.sub(msg:lower(), #prefix + 6)
-		if pg ~= "" then
-			Chat("gear "..pg.." 34870758")
-		else
-			Chat("gear me 34870758")
-		end
-  end
 
   if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'icebreaker' then
 		local iceb = string.sub(msg:lower(), #prefix + 12)
@@ -1160,48 +1141,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		end
   end
 
-  if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'trapmine' then
-		local trp = string.sub(msg:lower(), #prefix + 10)
-		if trp ~= "" then
-				Chat("gear "..trp.. " 11999247")
-				Chat("gear "..trp.. " 11999247")
-				Chat("gear "..trp.. " 11999247")
-
-		else
-				Chat("gear me 11999247")
-				Chat("gear me 11999247")
-				Chat("gear me 11999247")
-		end
-  end
-
-  if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'camfixer' then
-		local cam = string.sub(msg:lower(), #prefix + 10)
-		if cam ~= "" then
-				Chat("gear "..cam.. " 79736563")
-		else
-				Chat("gear me 79736563")
-		end
-  end
-
-  if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'camfixer' then
-		local cam = string.sub(msg:lower(), #prefix + 10)
-		if cam ~= "" then
-				Chat("gear "..cam.. " 79736563")
-		else
-				Chat("gear me 79736563")
-		end
-  end
-
-  if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'painter' then
-		local paint = string.sub(msg:lower(), #prefix + 9)
-		if paint ~= "" then
-				Chat("gear "..paint.. " 18474459")
-		else
-				Chat("gear me 18474459")
-		end
-  end
-
-  if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'perias' then
+  if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'sswords' then
 		local per = string.sub(msg:lower(), #prefix + 8)
 		if per ~= "" then
 			for i = 1, #periastronlist do
@@ -1211,26 +1151,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 			for i = 1, #periastronlist do
 					Chat("gear me ".. periastronlist[i])
        			end
-		end
-  end
-
-  if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'timegears' then
-		local tmeg = string.sub(msg:lower(), #prefix + 11)
-		if tmeg ~= "" then
-				Chat("gear "..tmeg.. " 77443461")
-				Chat("gear "..tmeg.. " 77443461")
-		else
-				Chat("gear me 77443461")
-				Chat("gear me 77443461")
-		end
-  end
-
-  if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'telamon' then
-		local telm = string.sub(msg:lower(), #prefix + 9)
-		if telm ~= "" then
-				Chat("gear "..telm.. " 93136746")
-		else
-				Chat("gear me 93136746")
 		end
   end
 
