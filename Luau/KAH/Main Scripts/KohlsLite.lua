@@ -2869,7 +2869,7 @@ function PLAYERCHECK(plr)
       if string.sub(v.Name:lower(), 1, #plr) == plr:lower() then
           player = v.Name
 	  cplr = v
-          print("Found "..player)
+          print("[debug]: Found "..player)
       end
   end
 end
@@ -3088,7 +3088,7 @@ task.wait(4)
 Chat('h \n\n\n Whoops, that was the wrong thing! \n\n\n')
 task.wait(4)
 
-local Players = game.Players:GetPlayers()
+local Players = game.Players:GetPlayers() -- bugged
 local randomPlayer = "Placeholder"
 randomPlayer = Players[math.random(#Players)]
 
@@ -3137,10 +3137,18 @@ v.Chatted:Connect(function(msg)
      task.wait(0)
      task.spawn(function()
 		task.wait(0)
-                if (string.sub(msg:lower(), 0, 2) == "/w" or string.sub(msg:lower(), 0, 9) == "/c system") and v.Name ~= game.Players.LocalPlayer.Name then
+					
+                if string.sub(msg:lower(), 0, 9) == "/c system" and v.Name ~= game.Players.LocalPlayer.Name then
                    if PingCsystem then
-                        print(v.Name..' is using /c system or whispering commands.')
-                        Chat('h \n\n\n [KohlsLite]: '..v.Name..' is using /c system or whispering commands. \n\n\n')
+                        print(v.Name..' is using /c system.')
+                        Chat('h \n\n\n [KohlsLite]: '..v.Name..' is using /c system. \n\n\n')
+                   end
+                end
+
+		if string.sub(msg:lower(), 0, 2) == "/w" and v.Name ~= game.Players.LocalPlayer.Name then
+                   if PingCsystem then
+                        print(v.Name..' is using whispering commands.')
+                        Chat('h \n\n\n [KohlsLite]: '..v.Name..' is using whispering commands. \n\n\n')
                    end
                 end
 					
@@ -3156,7 +3164,7 @@ v.Chatted:Connect(function(msg)
 
 		if string.sub(msg:lower(), 0, 6) == "btools" or string.sub(msg:lower(), 0, 7) == ":btools" or string.sub(msg:lower(), 0, 7) == ";btools" then
                         print(v.Name..' thought btools existed.')
-                        Chat('h \n\n\n [KohlsLite]: '..v.Name..', btools do not exist anymore. \n\n\n')
+                        Chat('h \n\n\n [KohlsLite]: '..v.Name..', btools do not exist anymore! \n\n\n')
                 end
 					
         	if (string.sub(msg:lower(), 0, 3) == "sit" or string.sub(msg:lower(), 0, 4) == ":sit") and v.Name ~= game.Players.LocalPlayer.Name then
@@ -3206,7 +3214,7 @@ v.Chatted:Connect(function(msg)
                    Chat('h \n\n\n [KohlsLite]: '..v.Name..', go back to FREE ADMIN, MORPH IS NOT A COMMAND!! \n\n\n')
                 end
 		end
-					
+			
                 if string.sub(msg:lower(), 0, 7) == ";fly me" then
 		if noobdetect then
                    print(v.Name..' is a noob.') 
@@ -3319,7 +3327,7 @@ function CheckBackpack()
 end
 
 
--- LOOPGRAB 1
+-- LOOPGRAB 1 (broken)
 task.spawn(function()
     while true do 
         task.wait(0)
@@ -3645,6 +3653,8 @@ task.spawn(function()
 			until workspace.Terrain._Game.Admin:FindFirstChild("Regen") or regenfind == false
 			root.Anchored = false
 			root.CFrame = workspace.Terrain._Game.Admin:FindFirstChild("Regen").CFrame + Vector3.new(0, 3, 0)
+			regenfind == false
+			Chat("respawn me")
         	end
 	end
 end)
@@ -3759,6 +3769,7 @@ function FixCam()
 			end
 		end)
 end
+
 -- INFINITE JUMP
 game:GetService("UserInputService").JumpRequest:Connect(function()
 	    task.wait(0)
@@ -3797,7 +3808,7 @@ end
 
 -- temp NOK
 function TNOK() -- vitalux cmd
-	for i, v in pairs(game:GetService("Workspace").Terrain._Game.Workspace.Obby:GetChildren()) do -- also removes obby walls collision for somereason
+	for i, v in pairs(game:GetService("Workspace").Terrain._Game.Workspace.Obby:GetChildren()) do -- also removes obby walls collision for some reason
 		if nokstat == true then
         		v.CanTouch = false
 		else
@@ -3810,7 +3821,7 @@ end
 -- PING
 function GetPing()
    local RSP = math.floor(game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValue() + 0.5) -- i can't be bothered to use a more precise version. it's only a 1ms difference if it's rounded wrong xd
-   print("Ping is " .. RSP .. "ms.")
+   Say("[KohlsLite]: Ping is " .. RSP .. "ms.")
 end
 
 function FRespawn()
@@ -3821,7 +3832,7 @@ end
 function movepart()
 	repeat wait() until game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")
 	local cf = game.Players.LocalPlayer.Character.HumanoidRootPart
-	local rmoving = true
+	local rmoving = true;local mready = false
 		task.spawn(function()
 			while true do
 				game:GetService('RunService').Heartbeat:Wait()
@@ -3839,18 +3850,18 @@ function movepart()
 			end 
 		end)
 		wait(0.25)
-		rmoving = false
+		rmoving = false;mready = true
 
 end
 
 -- SKYDIVE FOR MOVING
 function skydivef()
-	Chat("skydive me			fuck")
-	Chat("skydive me			fuck")
-	Chat("skydive me			fuck")
-	Chat("skydive me			fuck")
-	Chat("skydive me			fuck")
-	Chat("skydive me			fuck")
+	Chat("skydive me				fuck")
+	Chat("skydive me				fuck")
+	Chat("skydive me				fuck")
+	Chat("skydive me				fuck")
+	Chat("skydive me				fuck")
+	Chat("skydive me				fuck")
 end
 
 -- Removing and adding the obby locally
@@ -3870,6 +3881,7 @@ function MoveObbyBricks()
 		task.wait(1)
 		target = v
           	movepart()
+		repeat wait() until mready = true
 		skydivef()
 		wait(0.2)
 	     	Chat("respawn me")
@@ -3882,6 +3894,7 @@ function MoveObbyBox()
 		task.wait(1)
 		target = v
           	movepart()
+		repeat wait() until mready = true
 		skydivef()
 		wait(0.2)
 	     	Chat("respawn me")
@@ -3894,6 +3907,7 @@ function MoveBuildingBricks()
 		task.wait(1)
 		target = v
           	movepart()
+		repeat wait() until mready = true
 		skydivef()
 		wait(0.2)
 	     	Chat("respawn me")
@@ -3906,6 +3920,7 @@ function MoveAdminDividers()
 		task.wait(1)
 		target = v
           	movepart()
+		repeat wait() until mready = true
 		skydivef()
 		wait(0.2)
 	     	Chat("respawn me")
@@ -3918,6 +3933,7 @@ function MoveHouse()
 		task.wait(1)
 		target = v
           	movepart()
+		repeat wait() until mready = true
 		skydivef()
 		wait(0.2)
 	     	Chat("respawn me")
@@ -3931,6 +3947,7 @@ function MoveAdminPads(mode)
 			task.wait(1)
         		target = v
           		movepart()
+			repeat wait() until mready = true
 			if mode == "move" then
 				skydivef()
 			else
@@ -3948,10 +3965,12 @@ function MoveBasePlate(mode)
 		task.wait(1)
 		target = Workspace_Folder.Baseplate
           	movepart()
+		repeat wait() until mready = true
 		if mode == "move" then
 			skydivef()
 		elseif mode == "fix" then
-			Chat("unskydive me")
+			Chat("skydive me")
+			task.wait(0.1)
 			Chat("unskydive me")
 		else
 		end
@@ -3965,7 +3984,8 @@ end
 function MoveRegen(mode)
 	     task.wait(1)
 	     target = Admin_Folder.Regen
-	     movepart()				
+	     movepart()		
+	     repeat wait() until mready = true
 	     if mode == "move" then
 			skydivef()
 
@@ -3997,7 +4017,7 @@ function VGCrash()
       end
 end
 
-function PCrash() -- RUN TWICE
+function PCrash() -- lorem ipsum
       Chat("gear me 0000000092628079")
       local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
       game.Players.LocalPlayer.Backpack:WaitForChild("OrinthianSwordAndShield")
