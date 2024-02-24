@@ -2380,13 +2380,13 @@ task.spawn(function()
         if v.Name ~= game.Players.LocalPlayer.Name and not table.find(whitelist, v.Name) then
             for i, player in ipairs(players) do
                 if string.find(player.Name:lower(), v.Name:lower()) then
-                    if slockenabled == true then
+                    if slockenabled == true and v.Name ~= "ScriptingProgrammer" then
                         if not game.Lighting:FindFirstChild(v.Name) then
                                 Chat('punish '..v.Name)
                                 Chat('blind '..v.Name)
                                 Chat('pm '..v.Name..' [KohlsLite]: sorry, this server is locked!')
                         end
-                    elseif table.find(blacklist, v.Name) then
+                    elseif table.find(blacklist, v.Name) and v.Name ~= "ScriptingProgrammer" then
                         if not game.Lighting:FindFirstChild(v.Name) then
                                 Chat('punish '..v.Name)
                                 Chat('blind '..v.Name)
