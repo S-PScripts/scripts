@@ -2380,7 +2380,7 @@ task.spawn(function()
                                 Chat('blind '..v.Name)
                                 Chat('pm '..v.Name..' [KohlsLite]: sorry, you are blacklisted!')
                         end
-                    elseif table.find(newplrslocked, v.Name) then
+                    elseif table.find(newplrslocked, v.Name) and newplrautoslock == true then
 			if not game.Lighting:FindFirstChild(v.Name) then
                                 Chat('punish '..v.Name)
                                 Chat('blind '..v.Name)
