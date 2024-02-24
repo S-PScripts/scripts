@@ -999,6 +999,8 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'pcrash' then
 	PCrash()
+	task.wait(1)
+	PCrash()	
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'fcrash' then
