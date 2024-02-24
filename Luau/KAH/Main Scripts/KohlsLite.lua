@@ -1833,19 +1833,19 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	YOUantikill = false
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'antiex' then
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'antiexm' then
 	YOUantiexplode = true
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'unantiex' then
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'unantiexm' then
 	YOUantiexplode = false
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antichar' then
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'anticharm' then
 	YOUantichar = true
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unantichar' then
+    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unanticharm' then
 	YOUantichar = false
     end
 
@@ -1881,11 +1881,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	YOUantimsg = false
     end
 		
-    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antiname' then
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antinamem' then
 	YOUantiname = true
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unantiname' then
+    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantinamem' then
 	YOUantiname = false
     end
 
@@ -1897,11 +1897,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	ALLantiname = false
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 13) == prefix..'antiparticles' then
+    if string.sub(msg:lower(), 1, #prefix + 14) == prefix..'antiparticlesm' then
 	YOUantiparticles = true
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 15) == prefix..'unantiparticles' then
+    if string.sub(msg:lower(), 1, #prefix + 16) == prefix..'unantiparticlesm' then
 	YOUantiparticles = false
     end
 
@@ -1913,11 +1913,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	ALLantiparticles = false
     end
 		
-    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'antipunish' then
+    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'antipunishm' then
 	YOUantipunish = true
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'unantipunish' then
+    if string.sub(msg:lower(), 1, #prefix + 13) == prefix..'unantipunishm' then
 	YOUantipunish = false
     end
 
@@ -1929,11 +1929,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	ALLantipunish = false
     end
 		
-    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'antirocket' then
+    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'antirocketm' then
 	YOUantirocket = true
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'unantirocket' then
+    if string.sub(msg:lower(), 1, #prefix + 13) == prefix..'unantirocketm' then
 	YOUantirocket = false
     end
 
@@ -1945,11 +1945,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	ALLantirocket = false
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'antisit' then
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antisitm' then
 	YOUantisit = true
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'unantisit' then
+    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unantisitm' then
 	YOUantisit = false
     end
 
@@ -1961,11 +1961,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	ALLantisit = false
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'antiseizure' then
+    if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'antiseizurem' then
 	YOUantiseizure = true
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 13) == prefix..'unantiseizure' then
+    if string.sub(msg:lower(), 1, #prefix + 14) == prefix..'unantiseizurem' then
 	YOUantiseizure = false
     end
 
@@ -1977,11 +1977,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	ALLantiseizure = true
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antismoke' then
+    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'antismokem' then
 	YOUantismoke = true
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantismoke' then
+    if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'unantismokem' then
 	YOUantismoke = false
     end
 
@@ -1993,11 +1993,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	ALLantismoke = false
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'antisparkles' then
+    if string.sub(msg:lower(), 1, #prefix + 13) == prefix..'antisparklesm' then
 	YOUantisparkles = true
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 14) == prefix..'unantisparkles' then
+    if string.sub(msg:lower(), 1, #prefix + 15) == prefix..'unantisparklesm' then
 	YOUantisparkles = false
     end
 
@@ -2009,11 +2009,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	ALLantisparkles = false
     end
 		
-    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antispeed' then
+    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'antispeedm' then
 	YOUantispeed = true
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantispeed' then
+    if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'unantispeedm' then
 	YOUantispeed = false
     end
 
@@ -2025,11 +2025,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	ALLantispeed = false
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antistun' then
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antistunm' then
 	YOUantistun = true
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unantistun' then
+    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantistunm' then
 	YOUantistun = false
     end
 
@@ -2041,11 +2041,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	ALLantistun = false
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antiswag' then
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antiswagm' then
 	YOUantiswag = true
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unantiswag' then
+    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantiswagm' then
 	YOUantiswag = false
     end
 
