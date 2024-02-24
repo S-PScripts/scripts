@@ -658,12 +658,52 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                         gjdelock = true
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'undeiv' then 
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'undeiv' then  -- ported from simplekah
 			Chat("fix")
 			Chat("reload all")
                         gjdelock = false
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'tropics' then  -- ported from simplekah
+		    local gjpfgend = 0
+                    local gjbpfgcl = 0
+                    local gjgpfgcl = 0
+                    local gjrpfgcl = 200
+                    local time = 10
+                    Chat("h \n\n\n [KohlsLite]: Red glow... \n\n\n")
+                    Chat("fogcolor 200 0 0")
+                    Chat("outdoorambient 0 0 0")
+                    Chat("time " .. time)
+                    for i = 1,10 do
+                            task.wait(0.2)
+                            gjpfgend = gjpfgend + 100
+                            Chat("fogend " .. gjpfgend)
+                     end
+                     Chat("h \n\n\n [KohlsLite]: Blue glow... \n\n\n")
+                     for i = 1,10 do
+                            task.wait(0.3)
+                            time = time - 0.4
+                            Chat("time " .. time)
+                            gjpfgend = gjpfgend - 50
+                            Chat("fogend " .. gjpfgend)
+                            gjbpfgcl = gjbpfgcl + 20
+                            Chat("fogcolor " .. "200 " .. "0 " .. gjbpfgcl)
+                     end
+                     Chat("h \n\n\n [KohlsLite]: Hollow Purple! >:) \n\n\n")
+           	     Chat("speed others inf")
+                     for i = 1,10 do
+                            task.wait(0.2)
+                            gjrpfgcl = gjrpfgcl + 5.5
+                            gjbpfgcl = gjbpfgcl + 5.5
+                            gjgpfgcl = gjgpfgcl + 25.5
+                            gjpfgend = gjpfgend + 150
+                            time = time + 0.1
+                            game.Players:Chat("fogcolor " .. gjrpfgcl .. " " .. gjgpfgcl .. " " .. gjbpfgcl)
+                            game.Players:Chat("fogend " .. gjpfgend)
+                            game.Players:Chat("time " .. time)
+                      end
+    end
+	
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'volm' then -- rap e
    	    local newVolume = tonumber(string.sub(msg:lower(), #prefix + 6))
    	    if newVolume ~= nil and game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
@@ -2399,12 +2439,12 @@ task.spawn(function()
   end
 end)
 
--- Infinity void
+-- Infinity void [CODED LIKE SHIT AS THIS ISN'T SOMETHING I WANTED LOL]
 task.spawn(function()
 	while true do
 		task.wait(0)
         	while gjdelock do
-                            task.wait(0.1)
+                            task.wait(1)
                             Chat("speed others 0")
                             Chat("unfly others")
                             Chat("pm others You entered my domain so please wait until the user decides to close it...")
