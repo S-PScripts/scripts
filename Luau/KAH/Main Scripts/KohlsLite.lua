@@ -206,7 +206,9 @@ local themecode = {
     [[time 0,fogcolor 0 0 0,fogend 25]],
     [[fogend 75,fogcolor 0 155 255]],
     [[time -,fogend 46,fogcolor 250 83 255]],
-    [[time -,fogend 1000,fogcolor 37 355 55]]
+    [[time -,fogend 1000,fogcolor 37 355 55]],
+    [[fogcolor 100 0 255,fogend 1000,time 6,outdoorambient 0 0 0,brightness 0.5,ambient 125 0 255]],
+    [[fix,time 7,fogend 2000,outdoorambient 0.3 0.3 0.3]]
 }
 
 local housekeybind = "h" -- Keybinds?!
