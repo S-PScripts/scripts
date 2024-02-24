@@ -6,12 +6,7 @@ _  _____  _   _ _     ____  _     ___ _____ _____
 |_|\_\___/|_| |_|_____|____/|_____|___| |_| |_____| v1.075
 
 -- CREATED BY TS2021/SCRIPTINGPROGRAMMER
--- CREDITS TO MANY...
-   -> Shortcut v1, v2, v3 (tech)
-   -> PR Script (atprog) for some stuff B)
-   -> iiDk's admin (iiDk) as PR Script is based off it
-   -> SimpleKAH for gears and char ids
-
+-- CREDITS TO MANY... (check credits by doing .kcmds by executing and scrolling to the bottom)
 -- COMPILER USED: https://www.tutorialspoint.com/execute_lua_online.php
 
 stuff this script DOESN'T HAVE
@@ -2320,9 +2315,16 @@ print("unmkick - stop trying to crash players with emojis")
 print("---")
 print("There are also many other antis (for you or for everyone [but you])!")
 
-print("---")
-print("KohlsLite, since 2023. Created by S_P")
+print("---INFORMATION---")
+print("KohlsLite, since 2023. Created by ScriptingProgrammer/ts2021")
 print("Version is: v1.075 - 14th February 2024 Build")
+
+print("--- CREDITS ---")
+print("Tech and other admins of SC with Shortcut v1, v2 and v3")
+print("Atprog with his PR Script")
+print("iiDk's with iiDk's admin as PR Script is based off it")
+print("SimpleKAH for gears and char ids")
+
 end
 
 -- CHECK FOR PERM
