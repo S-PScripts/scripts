@@ -1689,19 +1689,19 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	noobdetect = false
     end
 		
-    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antiblind' then
+    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'antiblindm' then
 	YOUantiblind = true
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantiblind' then
+    if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'unantiblindm' then
 	YOUantiblind = false
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'anticlone' then
+    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'anticlonem' then
 	YOUanticlone = true
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unanticlone' then
+    if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'unanticlonem' then
 	YOUanticlone = false
     end
 
@@ -1713,11 +1713,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	ALLanticlone = false
     end
 		
-    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antifire' then
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antifirem' then
 	YOUantifire = true
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unantifire' then
+    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantifirem' then
 	YOUantifire = false
     end
 
@@ -1729,11 +1729,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	ALLantifire = false
     end	
 
-    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'antifreeze' then
+    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'antifreezem' then
 	YOUantifreeze = true
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'unantifreeze' then
+    if string.sub(msg:lower(), 1, #prefix + 13) == prefix..'unantifreezem' then
 	YOUantifreeze = false
     end
 
@@ -1745,11 +1745,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	ALLantifreeze = false
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'antiff' then
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'antiffm' then
 	YOUantiff = true
     end
 		
-    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'unantiff' then
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'unantiffm' then
 	YOUantiff = false
     end
 
@@ -1761,11 +1761,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	ALLantiff = false
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antiglow' then
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antiglowm' then
 	YOUantiglow = true
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unantiglow' then
+    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantiglowm' then
 	YOUantiglow = false
     end
 
@@ -1777,11 +1777,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	ALLantiglow = false
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'antihealthc' then
+    if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'antihealthcm' then
 	YOUantihealthc = true
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 13) == prefix..'unantihealthc' then
+    if string.sub(msg:lower(), 1, #prefix + 14) == prefix..'unantihealthcm' then
 	YOUantihealthc = false
     end
 
@@ -1793,11 +1793,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	ALLantihealthc = false
     end
 		
-    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antijail' then
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antijailm' then
 	YOUantijail = true
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unantijail' then
+    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantijailm' then
 	YOUantijail = false
     end
 				
@@ -1809,11 +1809,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	ALLantijail = false
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antijump' then
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antijumpm' then
 	YOUantijump = true
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unantijump' then
+    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantijumpm' then
 	YOUantijump = false
     end
 		
@@ -1825,11 +1825,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	ALLantijump = false
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antikill' then
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antikillm' then
 	YOUantikill = true
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unantikill' then
+    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantikillm' then
 	YOUantikill = false
     end
 
