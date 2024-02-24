@@ -242,6 +242,8 @@ local antichat = false
 local antiattach = false
 local YOUantigs = false
 
+local gjdelock = false
+
 local PingLogs = false -- it's caps lol
 local PingCsystem = true
 local AntiLogs = false
@@ -632,7 +634,32 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         	    end
         end   
     end
-		
+
+    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'deiv' then -- simplekah cmd
+		        Chat("h \n\n\n [KohlsLite]: Domain Expansion: Infinity Void \n\n\n")
+                        local gjdeivfgend = 2000
+                        local gjdeivrfgcl = 255
+                        local gjdeivgfgcl = 255
+                        local gjdeivbfgcl = 255
+                        time = 7
+                        for i = 1,100 do
+                            wait(0.1)
+                            gjdeivfgend = gjdeivfgend - 19
+                            gjdeivrfgcl = gjdeivrfgcl - 2.55
+                            gjdeivgfgcl = gjdeivgfgcl - 2.55
+                            gjdeivbfgcl = gjdeivbfgcl - 2.55
+                            time = time - 0.01
+                            Chat("fogend " .. gjdeivfgend)
+                            Chat("fogcolor " .. gjdeivrfgcl .. " " .. gjdeivgfgcl .. " " .. gjdeivbfgcl)
+                            game.Players:Chat("time " .. time)
+                        end
+                        gjdelock = true
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'undeiv' then 
+                        gjdelock = false
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'volm' then -- rap e
    	    local newVolume = tonumber(string.sub(msg:lower(), #prefix + 6))
    	    if newVolume ~= nil and game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
@@ -2367,6 +2394,23 @@ task.spawn(function()
 			
   end
 end)
+
+-- Infinity void
+task.spawn(function()
+	while true do
+		task.wait(0)
+        	while gjdelock do
+                            task.wait(0.1)
+                            Chat("speed others 0")
+                            Chat("unfly others")
+                            Chat("pm others You entered my domain so please wait until the user decides to close it...")
+                            Chat("time 6")
+                            Chat("fogend 500")
+                            Chat("fogcolor 0 0 0")
+                            Chat("speed me 30")
+                end
+	end
+end
 
 -- anti chat/msg-crash
 task.spawn(function()
