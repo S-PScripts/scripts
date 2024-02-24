@@ -1601,11 +1601,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	anticrash = false
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'anticrash2' then
+    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'2anticrash' then
 	anticrash2 = true
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'unanticrash2' then
+    if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'2unanticrash' then
 	anticrash2 = false
     end
 
@@ -2299,7 +2299,7 @@ print("[PERSONS REQUIRED] unsrkick - stop trying to rocket kick a player")
 
 print("---")
 print("anticrash - anti-crash with vg or osas")
-print("anticrash2 - anti-crash with vg or osas")
+print("2anticrash - anti-crash with vg or osas")
 print("antigear - stop users from using gears")
 print("antigear2 - stop users from using gears")
 print("antipaint - stop users from using the paint bucket and Subspace Tripmine")
