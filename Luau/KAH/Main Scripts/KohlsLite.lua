@@ -659,6 +659,8 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'undeiv' then 
+			Chat("fix")
+			Chat("reload all")
                         gjdelock = false
     end
 
