@@ -35,7 +35,7 @@ local slockenabled = false -- slock
 local permusers = {} -- users that use perm will be placed here
 local personsusers = {} -- users that use persons will be placed here
 
-local rkick_on_sight = {"rkick"} -- rocket kick player when they join
+local rkick_on_sight = {"rkick"} -- rocket kick player when they join ONLY WORKS WITH ONE PLAYER
 local crash_on_sight = {"SlenderMan990921"} -- crash server when player joins
 local mkick_on_sight = {"mkick"} -- kick player with pm spam when they join ONLY WORKS WITH ONE PLAYER
 local suser_on_sight = {"suser"} -- slow a user when they join with car gear ONLY WORKS WITH ONE PLAYER
@@ -266,7 +266,7 @@ end
 print("Thank you for using KohlsLite v1.075! Created by S_P.")
 print("Say .kcmds to list some of the commands. DM ts2021 for the full list.")
 print("ANTI NOTES: do .antijailm for yourself, .antijaila for everyone etc...")
-print("pm me Yes, this script is buggy but it's not exactly finished. There's many stuff i'm still adding.")
+print("Yes, this script is buggy but it's not exactly finished. There's many stuff i'm still adding.")
 Chat("h \n\n\n [KohlsLite]: Executed! v1.075 \n\n\n")
 
 --[[ if MarketplaceService:UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 66254) or MarketplaceService:UserOwnsGamePassAsync(Player.UserId, 64354) then
@@ -609,6 +609,18 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     if string.sub(msg, 1, #prefix + 9)  == prefix..'musiclist' then
          for i = 1, #musiclist do
  		 print("gmusic"..i.." - "..musiclist[i].." - "..musicnames[i])
+	 end
+    end
+
+    if string.sub(msg, 1, #prefix + 8)  == prefix..'gearlist' then
+         for i = 1, #gearcodes do
+ 		 print(gears[i].." - "..gearcodes[i])
+	 end
+    end
+
+    if string.sub(msg, 1, #prefix + 8)  == prefix..'charlist' then
+         for i = 1, #charcodes do
+ 		 print(chars[i].." - "..charcodes[i])
 	 end
     end
 		
@@ -2238,8 +2250,8 @@ print("hlth - set your health without the command")
 print("ufly - the kah fly but without actually using the cmd!")
 
 print("---")
-print("furry - HAHIUSHJDIKH")
-print("gear (plr) (name) - in case you have dementia")
+print("gear (plr) (name) - just a shortcut if you don't know gear ids")
+print("char (plr) (name) - just a shortcut if you don't know char ids")
 print("boombox - shortcut for gear plr boombox")
 
 print("---")
