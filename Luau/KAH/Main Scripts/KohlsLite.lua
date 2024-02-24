@@ -635,7 +635,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         end   
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'deiv' then -- simplekah cmd
+    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'deiv' then -- ported from simplekah
 		        Chat("h \n\n\n [KohlsLite]: Domain Expansion: Infinity Void \n\n\n")
                         local gjdeivfgend = 2000
                         local gjdeivrfgcl = 255
@@ -643,7 +643,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                         local gjdeivbfgcl = 255
                         time = 7
                         for i = 1,100 do
-                            wait(0.1)
+                            task.wait(0.1)
                             gjdeivfgend = gjdeivfgend - 19
                             gjdeivrfgcl = gjdeivrfgcl - 2.55
                             gjdeivgfgcl = gjdeivgfgcl - 2.55
@@ -651,7 +651,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                             time = time - 0.01
                             Chat("fogend " .. gjdeivfgend)
                             Chat("fogcolor " .. gjdeivrfgcl .. " " .. gjdeivgfgcl .. " " .. gjdeivbfgcl)
-                            game.Players:Chat("time " .. time)
+                            Chat("time " .. time)
                         end
                         gjdelock = true
     end
@@ -2410,7 +2410,7 @@ task.spawn(function()
                             Chat("speed me 30")
                 end
 	end
-end
+end)
 
 -- anti chat/msg-crash
 task.spawn(function()
