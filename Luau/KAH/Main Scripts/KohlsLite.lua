@@ -181,6 +181,8 @@ local chars = {
     "seek"        -- 6
 }
 
+local autoblvgc = true -- retards kept gearing everyone so here's a quick fix
+
 local antimlog = false -- for music
 local antiglog = false -- for gears
 local anticlog = false -- for chars
@@ -530,6 +532,14 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
        if string.sub(msg:lower(), 1, #prefix + 13) == prefix..'unnewplrslock' then
 	  newplrautoslock = false
+       end
+
+       if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'autoblvgc' then
+		autoblvgc = true
+       end
+
+       if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unautoblvgc' then
+	  	autoblvgc = false
        end
 
 	if string.sub(msg, 1, #prefix + 7)  == prefix..'npslist' then
@@ -2900,6 +2910,9 @@ function warnGear(player, toolName)
        Chat("punish " .. player.Name)
        Chat("h \n\n\n [KohlsLite]: Sorry, " .. player.Name .. ", you cannot use that gear because of anti gear. \n\n\n")
        Chat("clr")
+       if autoblvgc == true then
+	         table.insert(blacklist, player.Name)
+	end
 end
 
 function warnAGBan(player, toolName)
