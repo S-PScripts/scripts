@@ -205,15 +205,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		end
   	end
 
-	if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'camfixer' then
-		local cam = string.sub(msg:lower(), #prefix + 10)
-		if cam ~= "" then
-				Chat("gear "..cam.. " 79736563")
-		else
-				Chat("gear me 79736563")
-		end
-  	end
-
 	if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'painter' then
 		local paint = string.sub(msg:lower(), #prefix + 9)
 		if paint ~= "" then
