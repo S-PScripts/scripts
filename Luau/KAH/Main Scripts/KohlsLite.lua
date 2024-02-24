@@ -2382,21 +2382,42 @@ task.spawn(function()
                 if string.find(player.Name:lower(), v.Name:lower()) then
                     if slockenabled == true and v.Name ~= "ScriptingProgrammer" then
                         if not game.Lighting:FindFirstChild(v.Name) then
-                                Chat('punish '..v.Name)
-                                Chat('blind '..v.Name)
-                                Chat('pm '..v.Name..' [KohlsLite]: sorry, this server is locked!')
+				local isB,spe = bypassattemptcheck(v.Name)
+				if isB then
+                                	Chat('punish '.. spe)
+                                	Chat('blind '.. spe)
+                                	Chat('pm '..spe..' [KohlsLite]: sorry, but your bypassed username will not prevent you from getting locked in this server!')
+				else
+					 Chat('punish '..v.Name)
+                               		 Chat('blind '..v.Name)	
+					 Chat('pm '..v.Name..' [KohlsLite]: sorry, this server is locked!')
+				end
                         end
                     elseif table.find(blacklist, v.Name) and v.Name ~= "ScriptingProgrammer" then
                         if not game.Lighting:FindFirstChild(v.Name) then
-                                Chat('punish '..v.Name)
-                                Chat('blind '..v.Name)
-                                Chat('pm '..v.Name..' [KohlsLite]: sorry, you are blacklisted!')
+                                local isB,spe = bypassattemptcheck(v.Name)
+				if isB then
+                                	Chat('punish '.. spe)
+                                	Chat('blind '.. spe)
+                                	Chat('pm '..spe..' [KohlsLite]: sorry, but your bypassed username will not prevent you from getting blacklisted in this server!')
+				else
+					 Chat('punish '..v.Name)
+                               		 Chat('blind '..v.Name)	
+					 Chat('pm '..v.Name..' [KohlsLite]: sorry, you are blacklisted from this server!')
+				end
                         end
                     elseif table.find(newplrslocked, v.Name) and newplrautoslock == true then
 			if not game.Lighting:FindFirstChild(v.Name) then
-                                Chat('punish '..v.Name)
-                                Chat('blind '..v.Name)
-                                Chat('pm '..v.Name..' [KohlsLite]: sorry, you are blacklisted for having an account under the account age limit!')
+			        local isB,spe = bypassattemptcheck(v.Name)
+				if isB then
+                                	Chat('punish '.. spe)
+                                	Chat('blind '.. spe)
+                                	Chat('pm '..spe..' [KohlsLite]: sorry, you are blacklisted for having an account under the account age limit!')
+				else
+                                	Chat('punish '..v.Name)
+                                	Chat('blind '..v.Name)
+                                	Chat('pm '..v.Name..' [KohlsLite]: sorry, you are blacklisted for having an account under the account age limit!')
+				end
                         end
 		    else
                     end
@@ -2872,6 +2893,24 @@ function PLAYERCHECK(plr)
           print("[debug]: Found "..player)
       end
   end
+end
+
+function bypassattemptcheck(plr)
+		if string.sub(string.lower(plr), 1,3) == "me_" then
+			return true, "m"
+		elseif string.sub(string.lower(plr), 1,4) == "all_" then
+			return true, "al"
+		elseif string.sub(string.lower(plr), 1,7) == "others_" then
+			return true, "other"	
+		elseif string.sub(string.lower(plr), 1,8) == "friends_" then
+			return true, "frien"
+		elseif string.sub(string.lower(plr), 1,7) == "admins_" then
+			return true, "admi"
+		elseif string.sub(string.lower(plr), 1,10) == "nonadmins_" then
+			return true, "nonadmi"
+		elseif string.sub(string.lower(plr), 1,7) == "random_" then
+			return true, "rando"
+		end
 end
 
 -- ANTI CRASH 2 (it can work better than anticrash one at times!)
