@@ -2883,7 +2883,7 @@ end)
 -- ANTIS FOR CRASHING ATTACHING GEARBANNING AND HAVING A GEAR
 local crashTools = {"OrinthianSwordAndShield", "VampireVanquisher"}
 local attachTools = {"IvoryPeriastron"}
-local nogearTools = {"PortableJustice", "UltimateDriveSpeedster", "DriveBloxUltimateCar"}
+local nogearTools = {"PortableJustice", "DriveBloxUltimateCar"}
 local colourTools = {"PaintBucket", "SubspaceTripmine", "DaggerofShatteredDimensions", "SledgeHammer"}
 
 function warnCrash(player, toolName)
@@ -2917,7 +2917,7 @@ end
 function warnPaint(player, toolName)
        Chat("ungear " .. player.Name)
        Chat("punish " .. player.Name)
-       Chat("h \n\n\n [KohlsLite]: Sorry, " .. player.Name .. ", you cannot use " .. toolName .. " because of anti paint. \n\n\n")
+       Chat("h \n\n\n [KohlsLite]: Sorry, " .. player.Name .. ", you cannot use " .. toolName .. " because of anti paint/blacklisted tools. \n\n\n")
        Chat("clr")
 end
 
