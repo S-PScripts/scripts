@@ -44,36 +44,6 @@ local function GetPad(msg)
             end
 end
 
--- // find regen if admin not found \\ --
-local function FindPad()
-   local regen = game:GetService("Workspace").Terrain["_Game"].Admin:FindFirstChild("Regen")
-   local gpad = game:GetService("Workspace").Terrain["_Game"].Admin.Pads:FindFirstChild("Touch to get admin")
-   task.spawn(function()
-      if not regen and not gpad then
-          local root = game.Players.LocalPlayer.Character.HumanoidRootPart
-          root.Anchored = true
-          repeat
-          task.wait(.15)
-          root.CFrame = CFrame.new(-7.165, root.Position.Y + 2500 , 94.743)
-          until workspace.Terrain._Game.Admin:FindFirstChild("Regen")
-          root.Anchored = false
-          root.CFrame = workspace.Terrain._Game.Admin:FindFirstChild("Regen").CFrame + Vector3.new(0, 3, 0)
-          task.wait(.49)
-      end
-    end)
-    task.wait(1.5)
-    if persons then
-          RCrash()
-          PCrash()
-    else     
-          KillServer() 
-    end
-    if not regen then -- if regen not found
-      task.wait(10)
-    end
-    NAK()
-end
-
 -- // CRASHES \\ --
 
 -- // perm/no perm but admin crash \\ --
@@ -122,6 +92,16 @@ local function PCrash()
           Chat("clone all all all                                                                                 discord")
    end
    serverhop()
+end
+
+-- // serverhop \\ --
+local function serverhop()
+    local Servers = game.HttpService:JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/112420803/servers/Public?sortOrder=Asc&limit=100"))
+    for i,v in pairs(Servers.data) do
+  	    if v.playing ~= v.maxPlayers then
+      	    game:GetService('TeleportService'):TeleportToPlaceInstance(game.PlaceId, v.id)
+        end
+    end
 end
 
 -- // no admin crash \\ --
@@ -177,6 +157,36 @@ local function NAK()
         end)
 end
 
+-- // find regen if admin not found \\ --
+local function FindPad()
+   local regen = game:GetService("Workspace").Terrain["_Game"].Admin:FindFirstChild("Regen")
+   local gpad = game:GetService("Workspace").Terrain["_Game"].Admin.Pads:FindFirstChild("Touch to get admin")
+   task.spawn(function()
+      if not regen and not gpad then
+          local root = game.Players.LocalPlayer.Character.HumanoidRootPart
+          root.Anchored = true
+          repeat
+          task.wait(.15)
+          root.CFrame = CFrame.new(-7.165, root.Position.Y + 2500 , 94.743)
+          until workspace.Terrain._Game.Admin:FindFirstChild("Regen")
+          root.Anchored = false
+          root.CFrame = workspace.Terrain._Game.Admin:FindFirstChild("Regen").CFrame + Vector3.new(0, 3, 0)
+          task.wait(.49)
+      end
+    end)
+    task.wait(1.5)
+    if persons then
+          RCrash()
+          PCrash()
+    else     
+          KillServer() 
+    end
+    if not regen then -- if regen not found
+      task.wait(10)
+    end
+    NAK()
+end
+
 -- // TYPES \\ --
 
 -- // perm but no persons \\ --
@@ -216,14 +226,4 @@ elseif persons and not perm then
 -- // if something doesn't work \\ --
 else
 print("ERROR! You shouldn't have got this error...")
-end
-
--- // serverhop \\ --
-local function serverhop()
-    local Servers = game.HttpService:JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/112420803/servers/Public?sortOrder=Asc&limit=100"))
-    for i,v in pairs(Servers.data) do
-  	    if v.playing ~= v.maxPlayers then
-      	    game:GetService('TeleportService'):TeleportToPlaceInstance(game.PlaceId, v.id)
-        end
-    end
 end
