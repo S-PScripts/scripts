@@ -169,7 +169,8 @@ local charcodes = {
     "13645", 	  -- 3
     "548456077",  -- 4
     "45024180",   -- 5
-    "1593471275"  -- 6
+    "1593471275",  -- 6
+    "1389780396" -- 7
 }
 
 local chars = {
@@ -178,7 +179,8 @@ local chars = {
     "telac",      -- 3
     "epicszs",    -- 4
     "temi",       -- 5
-    "seek"        -- 6
+    "seek",      -- 6
+    "atprog"
 }
 
 local autoblvgc = true -- retards kept gearing everyone so here's a quick fix
@@ -265,13 +267,13 @@ end
 -- local permpassid = 66254 or 64354 -> NBC, BC
 -- local personpassid = 35748 or 37127 --> NBC, BC
 
-print("Thank you for using KohlsLite v1.080! Created by S_P.")
+print("Thank you for using KohlsLite v1.081! Created by S_P.")
 print("Say .kcmds to list some of the commands. DM ts2021 for the full list.")
 print("ANTI NOTES: do .antijailm for yourself, .antijaila for everyone etc...")
 print("Yes, this script is buggy but it's not exactly finished. There's many stuff i'm still adding.")
 Chat("h \n\n\n [KohlsLite]: Executed! v1.080 \n\n\n")
 
---[[ if MarketplaceService:UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 66254) or MarketplaceService:UserOwnsGamePassAsync(Player.UserId, 64354) then
+if MarketplaceService:UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 66254) or MarketplaceService:UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 64354) then
         perm = false 
 	hasperm = true -- used
 	print("A perm pad was not given - you have the Perm Admin gamepass!")
@@ -287,7 +289,7 @@ if MarketplaceService:UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 357
 else
 	haspersons = false -- used!
 	print("You do not have Person299's Admin!")
-end]]
+end
 
 game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	task.wait(0)
