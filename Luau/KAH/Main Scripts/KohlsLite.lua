@@ -3892,7 +3892,7 @@ end
 function movepart()
 	repeat wait() until game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")
 	local cf = game.Players.LocalPlayer.Character.HumanoidRootPart
-	local rmoving = true;local mready = false
+	local rmoving = true;mready = false
 		task.spawn(function()
 			while true do
 				game:GetService('RunService').Heartbeat:Wait()
@@ -3941,7 +3941,7 @@ function MoveObbyBricks()
 		task.wait(1)
 		target = v
           	movepart()
-		repeat wait() until mready = true
+		repeat wait() until mready == true
 		skydivef()
 		wait(0.2)
 	     	Chat("respawn me")
@@ -3954,7 +3954,7 @@ function MoveObbyBox()
 		task.wait(1)
 		target = v
           	movepart()
-		repeat wait() until mready = true
+		repeat wait() until mready == true
 		skydivef()
 		wait(0.2)
 	     	Chat("respawn me")
@@ -3967,7 +3967,7 @@ function MoveBuildingBricks()
 		task.wait(1)
 		target = v
           	movepart()
-		repeat wait() until mready = true
+		repeat wait() until mready == true
 		skydivef()
 		wait(0.2)
 	     	Chat("respawn me")
@@ -3980,7 +3980,7 @@ function MoveAdminDividers()
 		task.wait(1)
 		target = v
           	movepart()
-		repeat wait() until mready = true
+		repeat wait() until mready == true
 		skydivef()
 		wait(0.2)
 	     	Chat("respawn me")
@@ -3993,7 +3993,7 @@ function MoveHouse()
 		task.wait(1)
 		target = v
           	movepart()
-		repeat wait() until mready = true
+		repeat wait() until mready == true
 		skydivef()
 		wait(0.2)
 	     	Chat("respawn me")
@@ -4007,7 +4007,7 @@ function MoveAdminPads(mode)
 			task.wait(1)
         		target = v
           		movepart()
-			repeat wait() until mready = true
+			repeat wait() until mready == true
 			if mode == "move" then
 				skydivef()
 			else
@@ -4025,7 +4025,7 @@ function MoveBasePlate(mode)
 		task.wait(1)
 		target = Workspace_Folder.Baseplate
           	movepart()
-		repeat wait() until mready = true
+		repeat wait() until mready == true
 		if mode == "move" then
 			skydivef()
 		elseif mode == "fix" then
@@ -4045,7 +4045,7 @@ function MoveRegen(mode)
 	     task.wait(1)
 	     target = Admin_Folder.Regen
 	     movepart()		
-	     repeat wait() until mready = true
+	     repeat wait() until mready == true
 	     if mode == "move" then
 			skydivef()
 
