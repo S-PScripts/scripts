@@ -4357,36 +4357,31 @@ end
 
 -- GEARBAN (experimental fixed)
 function Gearban()
- 	 function GetCage()
-    		if game.Players.LocalPlayer.Backpack:FindFirstChild("PortableJustice") then
-       			 local tool = game.Players.LocalPlayer.Backpack:FindFirstChild("PortableJustice")
-        		 tool.Parent = game.Players.LocalPlayer.Character
-        		 return tool
-    	        elseif game.Players.LocalPlayer.Character:FindFirstChild("PortableJustice") then
-        		 return game.Players.LocalPlayer.Character:FindFirstChild("PortableJustice")
-   	        else
-        		 Chat("gear me 82357101")
-        		 Chat("unff all")
-        		 Chat("freeze " ..player)
-        		 repeat task.wait() until game.Players.LocalPlayer.Backpack:FindFirstChild("PortableJustice")
-        		 local tool = game.Players.LocalPlayer.Backpack:FindFirstChild("PortableJustice")
-       		         tool.Parent = game.Players.LocalPlayer.Character
-        		 return tool
-    		end
+
+	Chat("gear me 82357101")
+        Chat("unff all")
+        Chat("speed " ..player.. " 0")
+        local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
+      	game.Players.LocalPlayer.Backpack:WaitForChild("PortableJustice")
+        for _, v in ipairs(Backpack:GetChildren()) do
+             v.Parent = game.Players.LocalPlayer.Character
+             v:Activate()
+        end
+
+	function GetCage()
+			local tool = game.Players.LocalPlayer.Backpack:FindFirstChild("PortableJustice")
+        		tool.Parent = game.Players.LocalPlayer.Character
+        		return tool
 	end
-	function CagePlayer()
-   		 local pos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-    		 if cplr and cplr.Character and cplr.Character.Head and not cplr.Character:FindFirstChild("Part") then
-        	 	local cappy = cplr.Character
-        	 	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = cplr.Character.Head.CFrame
-        	 	GetCage().MouseClick:FireServer(cappy)
-        	 	repeat game:GetService("RunService").RenderStepped:Wait() until cplr.Character:FindFirstChild("Part")
+	
+   	local pos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = cplr.Character.HumanoidRootPart.CFrame
+        local cappy = cplr.Character
+        GetCage().MouseClick:FireServer(cappy)
+        repeat game:GetService("RunService").RenderStepped:Wait() until cplr.Character:FindFirstChild("Part")
         	 	GetCage():Destroy()
-		 	game.Players.LocalPlayer.PlayerGui:FindFirstChild("HelpGui"):Destroy()
         	 	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
         	 	Chat("ungear me")
-       		end
-	end
 end
 
 -- run at end to prevent bugs
