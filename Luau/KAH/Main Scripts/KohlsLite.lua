@@ -3,18 +3,18 @@ _  _____  _   _ _     ____  _     ___ _____ _____
 | |/ / _ \| | | | |   / ___|| |   |_ _|_   _| ____|
 | ' / | | | |_| | |   \___ \| |    | |  | | |  _|  
 | . \ |_| |  _  | |___ ___) | |___ | |  | | | |___ 
-|_|\_\___/|_| |_|_____|____/|_____|___| |_| |_____| v1.075
+|_|\_\___/|_| |_|_____|____/|_____|___| |_| |_____| v1.080
 
 -- CREATED BY TS2021/SCRIPTINGPROGRAMMER
 -- CREDITS TO MANY... (check credits by doing .kcmds by executing and scrolling to the bottom)
--- COMPILER USED: https://www.tutorialspoint.com/execute_lua_online.php
+-- COMPILER USED: https://www.tutorialspoint.com/execute_lua_online.php and https://onecompiler.com/lua/
 
 stuff this script DOESN'T HAVE
 1. Visualisers and drawing - I have no persons, I'll try getting it someday but for now I'll work on other features.
 2. Rockmap, stomemap -- really obscure commands to be honest 
 
 stuff in the works
-1. i forgor ]]
+1. Remaking the attaching so you don't need CMD-Y anymore >:) ]]
 
 if _G.executed then 
 	return 
@@ -195,17 +195,17 @@ local Workspace_Folder = Game_Folder.Workspace
 local Admin_Folder = Game_Folder.Admin
 
 local themecode = {
-    [[time 4,outdoorambient 000 000 111]],
-    [[fogend 100,fogcolor 250 0 500]],
-    [[time 19,outdoorambient 250 100 250]],
-    [[time -,fogend 600,fogcolor 300 0 800]],
-    [[time -,fogend 25,fogcolor 255 255 51]],
-    [[time 0,fogcolor 0 0 0,fogend 25]],
-    [[fogend 75,fogcolor 0 155 255]],
-    [[time -,fogend 46,fogcolor 250 83 255]],
-    [[time -,fogend 1000,fogcolor 37 355 55]],
-    [[fogcolor 100 0 255,fogend 1000,time 6,outdoorambient 0 0 0,brightness 0.5,ambient 125 0 255]],
-    [[fix,time 7,fogend 2000,outdoorambient 0.3 0.3 0.3]]
+    [[time 4,outdoorambient 000 000 111]], -- 1
+    [[fogend 100,fogcolor 250 0 500]], -- 2
+    [[time 19,outdoorambient 250 100 250]], -- 3
+    [[time -,fogend 600,fogcolor 300 0 800]], -- 4
+    [[time -,fogend 25,fogcolor 255 255 51]], -- 5
+    [[time 0,fogcolor 0 0 0,fogend 25]], -- 6
+    [[fogend 75,fogcolor 0 155 255]], -- 7
+    [[time -,fogend 46,fogcolor 250 83 255]], -- 8
+    [[time -,fogend 1000,fogcolor 37 355 55]], -- 9
+    [[fogcolor 100 0 255,fogend 1000,time 6,outdoorambient 0 0 0,brightness 0.5,ambient 125 0 255]], -- 10
+    [[fix,time 7,fogend 2000,outdoorambient 0.3 0.3 0.3]] -- 11
 }
 
 local housekeybind = "h" -- Keybinds?!
@@ -251,6 +251,8 @@ local antimusic = false
 local noobdetect = true
 local welcomemsg = true
 
+local noblt = false
+
 -- CHAT MODULE
 local function Chat(msg)
       game.Players:Chat(msg)
@@ -263,11 +265,11 @@ end
 -- local permpassid = 66254 or 64354 -> NBC, BC
 -- local personpassid = 35748 or 37127 --> NBC, BC
 
-print("Thank you for using KohlsLite v1.075! Created by S_P.")
+print("Thank you for using KohlsLite v1.080! Created by S_P.")
 print("Say .kcmds to list some of the commands. DM ts2021 for the full list.")
 print("ANTI NOTES: do .antijailm for yourself, .antijaila for everyone etc...")
 print("Yes, this script is buggy but it's not exactly finished. There's many stuff i'm still adding.")
-Chat("h \n\n\n [KohlsLite]: Executed! v1.075 \n\n\n")
+Chat("h \n\n\n [KohlsLite]: Executed! v1.080 \n\n\n")
 
 --[[ if MarketplaceService:UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 66254) or MarketplaceService:UserOwnsGamePassAsync(Player.UserId, 64354) then
         perm = false 
@@ -840,7 +842,8 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antiabuse' then
-	Chat("pm me antis are turned on!")
+	print("Most antis are ON!")
+			antiattach = true
 			antidisco = true
 			antiflash = true
 			antifogend = true
@@ -880,7 +883,8 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantiabuse' then
-	Chat("pm me antis are turned off!")
+	print("Most antis are OFF!")
+			antiattach = false
 			antidisco = false
 			antiflash = false
 			antifogend = false
@@ -1703,6 +1707,14 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'unantiattach' then
 	antiattach = false
     end
+
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'noblt' then
+	noblt = true
+    end
+		
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'unnoblt' then
+	noblt = false
+    end
 		
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'pinglogs' then
 	PingLogs = true
@@ -2127,7 +2139,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 end)
 
 function CMDPrint()
-print("-COMMAND LIST FOR KOHLSLITE-")
+print("---Command list for KohlsLite v1.080---")
 
 print("---")
 print("perm - loopgrab a random pad (touch interest)")
@@ -2350,8 +2362,9 @@ print("2anticrash - anti-crash with vg or osas")
 print("antigear - stop users from using gears")
 print("antigear2 - stop users from using gears")
 print("antipaint - stop users from using the paint bucket and Subspace Tripmine")
-print("antigb - stop users from using the portable justice, car gear and shattered dimension sword") -- more of a misc. category lol
-print("antiattach2 - stop users from using the Ivory Periastron")
+print("antigb - stop users from using the portable justice and car gear") 
+print("noblt - stop users using other misc blacklisted tools")
+print("antiattach2 - stop users from using the Ivory Periastron [exploiter]")
 
 print("---")
 print("antichat - stop people chatting by spamming m command full of emojis")
@@ -2359,12 +2372,14 @@ print("unantichat - allow people to chat again")
 print("mkick - crash players with emojis using pm. You can use this instead of h as pm can be more effective.")
 print("unmkick - stop trying to crash players with emojis")
 
-print("---")
+print("---ANTI INFORMATION--")
 print("There are also many other antis (for you or for everyone [but you])!")
+print("To yourself, do (antiname)m. To others, do (antiname)a.")
+print("If it's to the game itself, just do (antiname).")
 
 print("---INFORMATION---")
 print("KohlsLite, since 2023. Created by ScriptingProgrammer/ts2021")
-print("Version is: v1.075 - 14th February 2024 Build")
+print("Version is: v1.080 - 25th February 2024 Build")
 
 print("--- CREDITS ---")
 print("Tech and other admins of SC with Shortcut v1, v2 and v3")
@@ -2419,7 +2434,7 @@ task.spawn(function()
                     elseif table.find(blacklist, v.Name) and v.Name ~= "ScriptingProgrammer" then
                         if not game.Lighting:FindFirstChild(v.Name) then
                                 local isB,spe = bypassattemptcheck(v.Name)
-				if isB then
+				if isB then -- i added because of some guy called m_artin who did shit
                                 	Chat('punish '.. spe)
                                 	Chat('blind '.. spe)
                                 	Chat('pm '..spe..' [KohlsLite]: sorry, but your bypassed username will not prevent you from getting blacklisted in this server!')
@@ -2978,7 +2993,8 @@ end)
 local crashTools = {"OrinthianSwordAndShield", "VampireVanquisher"}
 local attachTools = {"IvoryPeriastron"}
 local nogearTools = {"PortableJustice", "DriveBloxUltimateCar"}
-local colourTools = {"PaintBucket", "SubspaceTripmine", "DaggerofShatteredDimensions", "SledgeHammer"}
+local colourTools = {"PaintBucket", "SubspaceTripmine"}
+local miscTools = {"DaggerofShatteredDimensions", "SledgeHammer"}
 
 function warnCrash(player, toolName)
        Chat("ungear " .. player.Name)
@@ -2991,7 +3007,7 @@ function warnGear(player, toolName)
        Chat("ungear " .. player.Name)
        Chat("punish " .. player.Name)
        Chat("h \n\n\n [KohlsLite]: Sorry, " .. player.Name .. ", you cannot use that gear because of anti gear. \n\n\n")
-       Chat("clr")
+       Chat("clr") -- drop crash prevention
        if autoblvgc == true then
 	         table.insert(blacklist, player.Name)
 	end
@@ -3014,7 +3030,14 @@ end
 function warnPaint(player, toolName)
        Chat("ungear " .. player.Name)
        Chat("punish " .. player.Name)
-       Chat("h \n\n\n [KohlsLite]: Sorry, " .. player.Name .. ", you cannot use " .. toolName .. " because of anti paint/blacklisted tools. \n\n\n")
+       Chat("h \n\n\n [KohlsLite]: Sorry, " .. player.Name .. ", you cannot use " .. toolName .. " because of anti paint. \n\n\n")
+       Chat("clr")
+end
+
+function warnMisc(player, toolName)
+       Chat("ungear " .. player.Name)
+       Chat("punish " .. player.Name)
+       Chat("h \n\n\n [KohlsLite]: Sorry, " .. player.Name .. ", you cannot use " .. toolName .. " because it's a blacklisted tool. \n\n\n")
        Chat("clr")
 end
 
@@ -3092,6 +3115,21 @@ function checkPlayerPBackpack(player)
     end
 end
 
+function checkPlayerMiBackpack(player)
+    local backpack = player:FindFirstChild("Backpack")
+    if backpack then
+        for _, toolName in ipairs(colourTools) do
+            local tool = backpack:FindFirstChild(toolName)
+            if tool and noblt then
+		if player.Name ~= game.Players.LocalPlayer.Name and not table.find(GWhitelisted, player.Name) then
+                   warnMisc(player, toolName)
+                   break
+                end
+            end
+        end
+    end
+end
+
 game.Players.PlayerAdded:Connect(function(player)
     task.wait(0)
     player.CharacterAdded:Connect(function(character)
@@ -3100,12 +3138,14 @@ game.Players.PlayerAdded:Connect(function(player)
             checkPlayerAGBackpack(player)  
 	    checkPlayerATTBackpack(player)
 	    checkPlayerPBackpack(player)
-	end)
+	    checkPlayerMiBackpack(player)
+    end)
             checkPlayerBackpack(player)
 	    checkPlayerGBackpack(player)
             checkPlayerAGBackpack(player)
 	    checkPlayerATTBackpack(player)
 	    checkPlayerATTBackpack(player)
+	    checkPlayerMiBackpack(player)
 end)
 
 game:GetService("RunService").Heartbeat:Connect(function()
@@ -3117,6 +3157,7 @@ game:GetService("RunService").Heartbeat:Connect(function()
             checkPlayerAGBackpack(player)
 	    checkPlayerATTBackpack(player)
 	    checkPlayerATTBackpack(player)
+	    checkPlayerMiBackpack(player)
         end
     end
 end)
@@ -3129,6 +3170,7 @@ for _, player in ipairs(game.Players:GetPlayers()) do
             checkPlayerAGBackpack(player)
 	    checkPlayerATTBackpack(player)
 	    checkPlayerATTBackpack(player)
+	    checkPlayerMiBackpack(player)
     end
 end
 
@@ -4311,16 +4353,38 @@ function FastPads() -- if no touchinterest or idk
                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-31.0896435, 8.22999477, 70.522644, -0.999961913, 4.495271e-08, -0.0087288795, 4.55292621e-08, 1, -6.58523618e-08, 0.0087288795, -6.62472743e-08, -0.999961913)
 end
 
--- GEARBAN
+-- GEARBAN (experimental fixed)
 function Gearban()
- 		  Chat("gear me 00000000000000000082357101")
-		  task.wait(0.50)
-		  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = cplr.Character.HumanoidRootPart.CFrame
-		  task.wait(0.25)
-		  local JailPlayer = player.Name
-		  task.wait(0.25)
-		  Chat("reset "..player.Name)
-                  print(player.Name.. " is gear banned. Click if on mobile.")
+ 	 function GetCage()
+    		if game.Players.LocalPlayer.Backpack:FindFirstChild("PortableJustice") then
+       			 local tool = game.Players.LocalPlayer.Backpack:FindFirstChild("PortableJustice")
+        		 tool.Parent = game.Players.LocalPlayer.Character
+        		 return tool
+    	        elseif game.Players.LocalPlayer.Character:FindFirstChild("PortableJustice") then
+        		 return game.Players.LocalPlayer.Character:FindFirstChild("PortableJustice")
+   	        else
+        		 Chat("gear me 82357101")
+        		 Chat("unff all")
+        		 Chat("freeze " ..player)
+        		 repeat task.wait() until game.Players.LocalPlayer.Backpack:FindFirstChild("PortableJustice")
+        		 local tool = game.Players.LocalPlayer.Backpack:FindFirstChild("PortableJustice")
+       		         tool.Parent = game.Players.LocalPlayer.Character
+        		 return tool
+    		end
+	end
+	function CagePlayer()
+   		 local pos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+    		 if cplr and cplr.Character and cplr.Character.Head and not cplr.Character:FindFirstChild("Part") then
+        	 	local cappy = cplr.Character
+        	 	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = cplr.Character.Head.CFrame
+        	 	GetCage().MouseClick:FireServer(cappy)
+        	 	repeat game:GetService("RunService").RenderStepped:Wait() until cplr.Character:FindFirstChild("Part")
+        	 	GetCage():Destroy()
+		 	game.Players.LocalPlayer.PlayerGui:FindFirstChild("HelpGui"):Destroy()
+        	 	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
+        	 	Chat("ungear me")
+       		end
+	end
 end
 
 -- run at end to prevent bugs
