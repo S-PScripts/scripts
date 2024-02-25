@@ -3692,7 +3692,7 @@ task.spawn(function()
 			until workspace.Terrain._Game.Admin:FindFirstChild("Regen") or regenfind == false
 			root.Anchored = false
 			root.CFrame = workspace.Terrain._Game.Admin:FindFirstChild("Regen").CFrame + Vector3.new(0, 3, 0)
-			regenfind == false
+			regenfind = false
 			Chat("respawn me")
         	end
 	end
