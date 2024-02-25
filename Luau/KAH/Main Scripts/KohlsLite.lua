@@ -675,6 +675,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                             Chat("time " .. time)
                         end
                         gjdelock = true
+			Chat("pm others You entered my domain so please wait until I decide to close it...")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'undeiv' then  -- ported from simplekah
@@ -684,16 +685,16 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'tropics' then  -- ported from simplekah
-		    local gjpfgend = 0
-                    local gjbpfgcl = 0
-                    local gjgpfgcl = 0
-                    local gjrpfgcl = 200
-                    local time = 10
-                    Chat("h \n\n\n [KohlsLite]: Red glow... \n\n\n")
-                    Chat("fogcolor 200 0 0")
-                    Chat("outdoorambient 0 0 0")
-                    Chat("time " .. time)
-                    for i = 1,10 do
+		     local gjpfgend = 0
+                     local gjbpfgcl = 0
+                     local gjgpfgcl = 0
+                     local gjrpfgcl = 200
+                     local time = 10
+                     Chat("h \n\n\n [KohlsLite]: Red glow... \n\n\n")
+                     Chat("fogcolor 200 0 0")
+                     Chat("outdoorambient 0 0 0")
+                     Chat("time " .. time)
+                     for i = 1,10 do
                             task.wait(0.2)
                             gjpfgend = gjpfgend + 100
                             Chat("fogend " .. gjpfgend)
@@ -708,7 +709,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                             gjbpfgcl = gjbpfgcl + 20
                             Chat("fogcolor " .. "200 " .. "0 " .. gjbpfgcl)
                      end
-                     Chat("h \n\n\n [KohlsLite]: Hollow Purple! >:) \n\n\n")
+                     Chat("h \n\n\n [KohlsLite]: Hollow Purple! \n\n\n")
            	     Chat("speed others inf")
                      for i = 1,10 do
                             task.wait(0.2)
@@ -717,12 +718,20 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                             gjgpfgcl = gjgpfgcl + 25.5
                             gjpfgend = gjpfgend + 150
                             time = time + 0.1
-                            game.Players:Chat("fogcolor " .. gjrpfgcl .. " " .. gjgpfgcl .. " " .. gjbpfgcl)
-                            game.Players:Chat("fogend " .. gjpfgend)
-                            game.Players:Chat("time " .. time)
-                      end
+                            Chat("fogcolor " .. gjrpfgcl .. " " .. gjgpfgcl .. " " .. gjbpfgcl)
+                            Chat("fogend " .. gjpfgend)
+                            Chat("time " .. time)
+                    end
+		    Chat("fix")
     end
-	
+
+    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'sclr' then
+		Chat("fix")
+		Chat("clr")
+		Chat("removeclones")
+		Chat("removejails")
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'volm' then -- rap e
    	    local newVolume = tonumber(string.sub(msg:lower(), #prefix + 6))
    	    if newVolume ~= nil and game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
@@ -2458,6 +2467,12 @@ task.spawn(function()
 	   end
         end
 
+	if gjdelock == true then
+	   if game.Lighting.FogEnd ~= 500 then
+	      Chat("fogend 500")
+	   end
+        end
+
 	if antifogstart == true then
 	   if game.Lighting.FogStart ~= 0 then
 		Chat("fogstart 0")	   
@@ -2467,6 +2482,12 @@ task.spawn(function()
 	if antitime == true then
 		if game.Lighting.ClockTime ~= 14 then
 			Chat("time 14")
+		end
+	end
+
+	if gjdelock == true then
+		if game.Lighting.ClockTime ~= 6 then
+			Chat("time 6")
 		end
 	end
 
@@ -2490,23 +2511,6 @@ task.spawn(function()
 
 			
   end
-end)
-
--- Infinity void [CODED LIKE SHIT AS THIS ISN'T SOMETHING I WANTED LOL]
-task.spawn(function()
-	while true do
-		task.wait(0)
-        	while gjdelock do
-                            task.wait(1)
-                            Chat("speed others 0")
-                            Chat("unfly others")
-                            Chat("pm others You entered my domain so please wait until the user decides to close it...")
-                            Chat("time 6")
-                            Chat("fogend 500")
-                            Chat("fogcolor 0 0 0")
-                            Chat("speed me 30")
-                end
-	end
 end)
 
 -- anti chat/msg-crash
@@ -2740,7 +2744,7 @@ task.spawn(function()
             end
 	end
 				
-	if ALLantifly == true then
+	if ALLantifly == true or gjdelock == true then
 	    if not v.Character:FindFirstChild("Seizure") and v.Character.Humanoid:GetState().Name == "PlatformStanding" then
                 Chat("unfly "..v.Name)
                 Chat("clip "..v.Name)
@@ -2864,6 +2868,12 @@ task.spawn(function()
 	if ALLantispeed == true then
 	    if not v.Character.Humanoid.WalkSpeed == 16 then
 		Chat("speed "..v.Name.." 16")
+	    end
+	end
+
+	if gjdelock == true then
+	    if not v.Character.Humanoid.WalkSpeed == 0 then
+		Chat("speed "..v.Name.." 0")
 	    end
 	end
 				
