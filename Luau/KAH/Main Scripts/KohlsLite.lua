@@ -4137,7 +4137,7 @@ end
 function VGCrash()
       Chat("gear me 00000000000000094794847")
       repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("VampireVanquisher")
-      local vg = game.Players.LocalPlayer.Backpack:FindFirstChild("BlizzardWand")
+      local vg = game.Players.LocalPlayer.Backpack:FindFirstChild("VampireVanquisher")
       vg.Parent = game.Players.LocalPlayer.Character
       task.wait(0.2)
       vg:Activate()
