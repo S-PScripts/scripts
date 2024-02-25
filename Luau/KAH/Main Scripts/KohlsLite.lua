@@ -4363,18 +4363,15 @@ function Gearban()
         Chat("unff all")
         Chat("speed " ..player.. " 0")
 
-	function GetCage()
-			local tool = game.Players.LocalPlayer.Backpack:FindFirstChild("PortableJustice")
-        		tool.Parent = game.Players.LocalPlayer.Character
-        		return tool
-	end
-	
+				
    	local pos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = cplr.Character.HumanoidRootPart.CFrame
         local cappy = cplr.Character
-        GetCage().MouseClick:FireServer(cappy)
+	local tool = game.Players.LocalPlayer.Backpack:FindFirstChild("PortableJustice")
+        tool.Parent = game.Players.LocalPlayer.Character
+        tool.MouseClick:FireServer(cappy)
 	task.wait(1)        	 	
-	GetCage():Destroy()
+	tool:Destroy()
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
         Chat("ungear me")
 end
