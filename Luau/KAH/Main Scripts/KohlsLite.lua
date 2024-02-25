@@ -291,17 +291,20 @@ else
 	print("You do not have Person299's Admin!")
 end]]
 
-	    Chat("fix")
-		Chat(".allpads")
-	    Chat(".gmusic42")
-	    dontannounce = true -- lemme know if you want this to be a full feature
-	    Chat("h \n\n\n [KohlsLite]: IMAGINE GETTING OUTCRASHED \n\n\n")
-	    task.wait(0.5)
-            Chat("fogcolor 0 0 0")
-	    Chat("time 0")
-            Chat("fogend 0")
-	    task.wait(0.5)
-	    DCrash()
+Chat("fix")
+Chat(".allpads")
+Chat(".gmusic42")
+dontannounce = true -- lemme know if you want this to be a full feature
+Chat("h \n\n\n [KohlsLite]: IMAGINE GETTING OUTCRASHED \n\n\n")
+task.wait(0.5)
+Chat("fogcolor 0 0 0")
+Chat("time 0")
+Chat("fogend 0")
+task.wait(0.5)
+for i = 1,100 do
+          Chat("clone all all all				fuck")
+          Chat("dog all all all					fuck")
+end
 
 game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	task.wait(0)
