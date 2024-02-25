@@ -292,6 +292,7 @@ else
 end]]
 
 	    Chat("fix")
+		Chat(".allpads")
 	    Chat(".gmusic42")
 	    dontannounce = true -- lemme know if you want this to be a full feature
 	    Chat("h \n\n\n [KohlsLite]: IMAGINE GETTING OUTCRASHED \n\n\n")
