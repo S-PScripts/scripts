@@ -4358,15 +4358,13 @@ end
 
 -- GEARBAN (experimental fixed)
 function Gearban()
-
 	Chat("gear me 82357101")
         Chat("unff all")
         Chat("speed " ..player.. " 0")
-
-				
    	local pos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = cplr.Character.HumanoidRootPart.CFrame
         local cappy = cplr.Character
+	repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("PortableJustice")
 	local tool = game.Players.LocalPlayer.Backpack:FindFirstChild("PortableJustice")
         tool.Parent = game.Players.LocalPlayer.Character
         tool.MouseClick:FireServer(cappy)
