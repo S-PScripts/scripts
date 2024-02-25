@@ -845,6 +845,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 			antiflash = true
 			antifogend = true
 			antifogstart = true
+			antifogcolor = true
 			antitime = true
 			antiambient = true
 			antibrightness = true
@@ -884,6 +885,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 			antiflash = false
 			antifogend = false
 			antifogstart = false
+			antifogcolor = false
 			antitime = false
 			antiambient = false
 			antibrightness = false
@@ -1130,6 +1132,14 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
     if string.sub(msg:lower(), 1, #prefix + 14) == prefix..'unantifogstart' then
 	antifogstart = false
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antifogc' then
+	antifogcolor = true
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unantifogc' then
+	antifogcolor = false
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antitime' then
@@ -2470,9 +2480,16 @@ task.spawn(function()
 	if gjdelock == true then
 	   if game.Lighting.FogEnd ~= 500 then
 	      Chat("fogend 500")
+	      Chat("fogcolor 0 0 0") -- i don't know what 0 0 0 is as color3 so it's added to this category
 	   end
         end
 
+	if antifogcolor == true then
+		if game.Lighting.FogColor ~= Color3.new(0.75294125080109,0.75294125080109,0.75294125080109) then
+			Chat("fogcolor 192 192 192")	
+		end
+	end
+				
 	if antifogstart == true then
 	   if game.Lighting.FogStart ~= 0 then
 		Chat("fogstart 0")	   
