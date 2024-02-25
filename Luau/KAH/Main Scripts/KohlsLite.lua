@@ -1453,6 +1453,10 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	FRespawn()
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'mrespawn' then -- force respawn
+	MRespawn()
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'rejoin' then
 	print("Rejoinning... please wait!")
 	REJOIN()
@@ -3865,6 +3869,23 @@ end
 
 function FRespawn()
     game.Players.LocalPlayer.Character:Destroy()
+end
+
+local Player = game.Players.LocalPlayer
+local PlayerService = game:GetService("Players")
+
+function MRespawn()
+			local char = PlayerService.LocalPlayer.Character
+			if char:FindFirstChildOfClass("Humanoid") then 
+				char:FindFirstChildOfClass("Humanoid"):ChangeState(15) 
+			end
+			char:ClearAllChildren()
+			local newChar = Instance.new("Model")
+			newChar.Parent = workspace
+			PlayerService.LocalPlayer.Character = newChar
+			wait()
+			PlayerService.LocalPlayer.Character = char
+			newChar:Destroy()
 end
 
 -- PART MOVER
