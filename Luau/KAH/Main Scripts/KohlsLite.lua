@@ -3726,7 +3726,7 @@ end)
 -- LOG SPAM
 function LogSpam()
       for i = 1,100 do
-          Chat("ff poop - icestuds")
+          Chat("ff PR SCRIPT ON TOP - atprog, 2024")
       end
 end
 
