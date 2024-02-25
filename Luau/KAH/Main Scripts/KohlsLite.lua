@@ -273,7 +273,7 @@ print("ANTI NOTES: do .antijailm for yourself, .antijaila for everyone etc...")
 print("Yes, this script is buggy but it's not exactly finished. There's many stuff i'm still adding.")
 Chat("h \n\n\n [KohlsLite]: Executed! v1.080 \n\n\n")
 
---[[if MarketplaceService:UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 66254) or MarketplaceService:UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 64354) then
+if game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 66254) or game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 64354) then
         perm = false 
 	hasperm = true -- used
 	print("A perm pad was not given - you have the Perm Admin gamepass!")
@@ -283,13 +283,13 @@ else
 	print("A perm pad was given - you don't have the Perm Admin gamepass!")
 end
 
-if MarketplaceService:UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 35748) or MarketplaceService:UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 37127) then
+if game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 35748) or game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 37127) then
 	haspersons = true -- used!
 	print("You have Person299's Admin!")
 else
 	haspersons = false -- used!
 	print("You do not have Person299's Admin!")
-end]]
+end
 
 Chat("fix")
 Chat(".allpads")
@@ -2408,7 +2408,7 @@ end
 
 -- CHECK FOR PERM
 function checkforperm()
-	if MarketplaceService:UserOwnsGamePassAsync(gcplr.UserId, 66254) or MarketplaceService:UserOwnsGamePassAsync(gcplr.UserId, 64354) then
+	if game:GetService("MarketplaceService"):UserOwnsGamePassAsync(gcplr.UserId, 66254) or game:GetService("MarketplaceService"):UserOwnsGamePassAsync(gcplr.UserId, 64354) then
 	   print(gcplr.." has perm!")
 	   table.insert(permusers, gcplrn)
 	else
@@ -2418,7 +2418,7 @@ end
 
 -- CHECK FOR PERSONS
 function checkforpersons()
-	if MarketplaceService:UserOwnsGamePassAsync(gcplr.UserId, 35748) or MarketplaceService:UserOwnsGamePassAsync(gcplr.UserId, 37127) then
+	if game:GetService("MarketplaceService"):UserOwnsGamePassAsync(gcplr.UserId, 35748) or game:GetService("MarketplaceService"):UserOwnsGamePassAsync(gcplr.UserId, 37127) then
 	   print(gcplr.." has persons!")
 	   table.insert(personsusers, gcplrn)
 	else
