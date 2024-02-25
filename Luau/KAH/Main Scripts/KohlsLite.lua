@@ -281,7 +281,7 @@ else
         perm = true
 	hasperm = false -- used
 	print("A perm pad was given - you don't have the Perm Admin gamepass!")
-end]]
+end
 
 if MarketplaceService:UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 35748) or MarketplaceService:UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 37127) then
 	haspersons = true -- used!
@@ -289,7 +289,7 @@ if MarketplaceService:UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 357
 else
 	haspersons = false -- used!
 	print("You do not have Person299's Admin!")
-end
+end]]
 
 game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	task.wait(0)
