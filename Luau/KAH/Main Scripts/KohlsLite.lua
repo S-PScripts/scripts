@@ -273,7 +273,7 @@ print("ANTI NOTES: do .antijailm for yourself, .antijaila for everyone etc...")
 print("Yes, this script is buggy but it's not exactly finished. There's many stuff i'm still adding.")
 Chat("h \n\n\n [KohlsLite]: Executed! v1.080 \n\n\n")
 
-if MarketplaceService:UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 66254) or MarketplaceService:UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 64354) then
+--[[if MarketplaceService:UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 66254) or MarketplaceService:UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 64354) then
         perm = false 
 	hasperm = true -- used
 	print("A perm pad was not given - you have the Perm Admin gamepass!")
@@ -281,7 +281,7 @@ else
         perm = true
 	hasperm = false -- used
 	print("A perm pad was given - you don't have the Perm Admin gamepass!")
-end
+end]]
 
 if MarketplaceService:UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 35748) or MarketplaceService:UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 37127) then
 	haspersons = true -- used!
