@@ -575,3 +575,14 @@ local function attach(part)
 			respawning = false
 		end
 	end
+
+	local function allclear()
+		if workspace:FindFirstChild(Player.Name) and game:GetService("MarketplaceService"):UserOwnsGamePassAsync(Player.UserId, 66254) and workspace:FindFirstChild(Player.Name) and workspace:FindFirstChild(Player.Name):FindFirstChild("Humanoid") and workspace:FindFirstChild(Player.Name):FindFirstChild("Humanoid").Health > 0 then
+			return true
+		elseif workspace:FindFirstChild(Player.Name) and Admin.Pads:FindFirstChild(Player.Name .. "'s admin") and workspace:FindFirstChild(Player.Name) and workspace:FindFirstChild(Player.Name):FindFirstChild("Humanoid") and workspace:FindFirstChild(Player.Name):FindFirstChild("Humanoid").Health > 0 then
+			return true
+		else
+			movestatus = false
+			return false
+		end
+	end
