@@ -4136,12 +4136,11 @@ end
 -- VG CRASH
 function VGCrash()
       Chat("gear me 00000000000000094794847")
-      local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
-      game.Players.LocalPlayer.Backpack:WaitForChild("VampireVanquisher")
-      for _, v in ipairs(Backpack:GetChildren()) do
-             v.Parent = game.Players.LocalPlayer.Character
-             v:Activate()
-      end
+      repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("VampireVanquisher")
+      local vg = game.Players.LocalPlayer.Backpack:FindFirstChild("BlizzardWand")
+      vg.Parent = game.Players.LocalPlayer.Character
+      task.wait(0.2)
+      vg:Activate()
       wait(.15)
       for i = 1,100 do
           Chat("unsize me me me")
@@ -4150,13 +4149,15 @@ end
 
 function PCrash() -- lorem ipsum
       Chat("gear me 0000000092628079")
-      local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
-      game.Players.LocalPlayer.Backpack:WaitForChild("OrinthianSwordAndShield")
-      for _, v in ipairs(Backpack:GetChildren()) do
-             v.Parent = game.Players.LocalPlayer.Character
-             v:Activate()
+      repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("OrinthianSwordAndShield")
+      local ort = game.Players.LocalPlayer.Backpack:FindFirstChild("OrinthianSwordAndShield")
+      ort.Parent = game.Players.LocalPlayer.Character
+      task.wait(0.2)
+      ort:Activate()
+      task.wait(.15)
+      for i = 1,100 do
+          Chat("unsize me me me")
       end
-      wait(.15)
       for i = 1,100 do
           Chat("unsize me me me")
       end
@@ -4361,12 +4362,6 @@ function Gearban()
 	Chat("gear me 82357101")
         Chat("unff all")
         Chat("speed " ..player.. " 0")
-        local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
-      	game.Players.LocalPlayer.Backpack:WaitForChild("PortableJustice")
-        for _, v in ipairs(Backpack:GetChildren()) do
-             v.Parent = game.Players.LocalPlayer.Character
-             v:Activate()
-        end
 
 	function GetCage()
 			local tool = game.Players.LocalPlayer.Backpack:FindFirstChild("PortableJustice")
@@ -4378,10 +4373,10 @@ function Gearban()
 	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = cplr.Character.HumanoidRootPart.CFrame
         local cappy = cplr.Character
         GetCage().MouseClick:FireServer(cappy)
-        repeat game:GetService("RunService").RenderStepped:Wait() until cplr.Character:FindFirstChild("Part")
-        	 	GetCage():Destroy()
-        	 	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
-        	 	Chat("ungear me")
+	task.wait(1)        	 	
+	GetCage():Destroy()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
+        Chat("ungear me")
 end
 
 -- run at end to prevent bugs
