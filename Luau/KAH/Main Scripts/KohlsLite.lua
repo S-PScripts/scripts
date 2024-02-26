@@ -1446,7 +1446,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 			if allclear() == false then break end
 			moveobject(v, 2)
 			repeat fwait() until movestatus == false
-			act("respawn me")
+			Chat("respawn me")
 		end
 		GravFix()
 		Chat("respawn me")
@@ -1462,7 +1462,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 			if allclear() == false then break end
 			moveobject(v, 1)
 			repeat fwait() until movestatus == false
-			act("respawn me")
+			Chat("respawn me")
 		end
 		GravFix()
 		Chat("respawn me")
