@@ -1296,41 +1296,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'movehouse' then
 	MoveHouse()
     end
-
-    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'moveobb' then
-	Chat(".tnok")
-	MoveObbyBricks()
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'moveobox' then
-	MoveObbyBox()
-    end
 		
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'movebb' then
 	MoveBuildingBricks()
     end
-
-
-    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'ofixbp' then
-	MoveBasePlate("fix")
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'ufixbp' then
-	MoveBasePlate("ufix")
-    end
-		
-    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'omovebp' then
-	MoveBasePlate("move")
-    end
-		
-    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'ofixregen' then
-	MoveRegen("fix")
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'omoveregen' then
-	MoveRegen("move")
-    end
-		
+			
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'fixadp' then
 	MoveAdminPads("fix")
     end
@@ -1379,6 +1349,52 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		DisCol()
 		moveobject(Admin.Regen, 1)
 		repeat fwait() until movestatus == false
+		GravFix()
+		Chat("respawn me")
+		ColFix()
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'fixobby' then
+		Chat(".tnok")
+		if movestatus == true then 
+			return 
+		end
+		DisCol()
+		for _,v in pairs(Map["Obby Box"]:GetChildren()) do
+			if allclear() == false then break end
+			moveobject(v, 2)
+			repeat fwait() until movestatus == false
+			Chat("respawn me")
+		end
+		for _,v in pairs(Map.Obby:GetChildren()) do
+			if allclear() == false then break end
+			moveobject(v, 2)
+			repeat fwait() until movestatus == false
+			Chat("respawn me")
+		end
+		GravFix()
+		Chat("respawn me")
+		ColFix()
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'moveobby' then
+		Chat(".tnok")
+		if movestatus == true then 
+			return 
+		end
+		DisCol()
+		for _,v in pairs(Map["Obby Box"]:GetChildren()) do
+			if allclear() == false then break end
+			moveobject(v, 1)
+			repeat fwait() until movestatus == false
+			Chat("respawn me")
+		end
+		for _,v in pairs(Map.Obby:GetChildren()) do
+			if allclear() == false then break end
+			moveobject(v, 1)
+			repeat fwait() until movestatus == false
+			Chat("respawn me")
+		end
 		GravFix()
 		Chat("respawn me")
 		ColFix()
@@ -4397,12 +4413,12 @@ end
 
 -- SKYDIVE FOR MOVING
 function skydivef()
-	Chat("skydive me				fuck")
-	Chat("skydive me				fuck")
-	Chat("skydive me				fuck")
-	Chat("skydive me				fuck")
-	Chat("skydive me				fuck")
-	Chat("skydive me				fuck")
+	Chat("skydive me					fuck")
+	Chat("skydive me					fuck")
+	Chat("skydive me					fuck")
+	Chat("skydive me					fuck")
+	Chat("skydive me					fuck")
+	Chat("skydive me					fuck")
 end
 
 -- Removing and adding the obby locally
@@ -4414,32 +4430,6 @@ function LocalObby(mode)
 		    workspace.Terrain["_Game"]["Workspace"].Obby.Parent = game.Chat
     		    workspace.Terrain["_Game"]["Workspace"]["Obby Box"].Parent = game.Chat
 	end
-end
-
--- OBBY BRICKS MOVER
-function MoveObbyBricks()
-         for i, v in pairs(Workspace_Folder["Obby"]:GetChildren()) do
-		task.wait(1)
-		target = v
-          	movepart()
-		repeat wait() until mready == true
-		skydivef()
-		wait(0.2)
-	     	Chat("respawn me")
-	 end
-end
-
--- OBBY BOX MOVER
-function MoveObbyBox()
-          for i, v in pairs(Workspace_Folder["Obby Box"]:GetChildren()) do
-		task.wait(1)
-		target = v
-          	movepart()
-		repeat wait() until mready == true
-		skydivef()
-		wait(0.2)
-	     	Chat("respawn me")
-	  end
 end
 
 -- BUILDING BRICKS MOVER
@@ -4499,43 +4489,6 @@ function MoveAdminPads(mode)
 	     		Chat("respawn me")
 		end
 	end
-end
-
--- BASEPLATE MOVER
-function MoveBasePlate(mode)
-		task.wait(1)
-		target = Workspace_Folder.Baseplate
-          	movepart()
-		repeat wait() until mready == true
-		if mode == "move" then
-			skydivef()
-		elseif mode == "fix" then
-			Chat("skydive me")
-			task.wait(0.1)
-			Chat("unskydive me")
-		else
-		end
-		wait(0.2)
-		if mode ~= "ufix" then
-	     		Chat("respawn me")
-		end
-end
-
--- REGEN MOVER AND FIXER
-function MoveRegen(mode)
-	     task.wait(1)
-	     target = Admin_Folder.Regen
-	     movepart()		
-	     repeat wait() until mready == true
-	     if mode == "move" then
-			skydivef()
-
-	     else	
-			Chat("unskydive me")
-			Chat("undog me me")
-	     end
-	     wait(0.2)
-	     Chat("respawn me")
 end
 
 -- regen pos
