@@ -1284,9 +1284,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
 -- OLD --
-    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'moveregen' then
-	MoveRegen("move")
-    end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'moveadp' then
 	MoveAdminPads("move")
@@ -1326,10 +1323,14 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	MoveBasePlate("move")
     end
 		
-    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'fixregen' then
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'ofixregen' then
 	MoveRegen("fix")
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'omoveregen' then
+	MoveRegen("move")
+    end
+		
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'fixadp' then
 	MoveAdminPads("fix")
     end
@@ -1353,6 +1354,30 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		end
 		DisCol()
 		moveobject(Map.Baseplate, 1)
+		repeat fwait() until movestatus == false
+		GravFix()
+		Chat("respawn me")
+		ColFix()
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'fixregen' then
+		if movestatus == true then 
+			return 
+		end
+		DisCol()
+		moveobject(Admin.Regen, 2)
+		repeat fwait() until movestatus == false
+		GravFix()
+		Chat("respawn me")
+		ColFix()
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'moveregen' then
+		if movestatus == true then 
+			return 
+		end
+		DisCol()
+		moveobject(Admin.Regen, 1)
 		repeat fwait() until movestatus == false
 		GravFix()
 		Chat("respawn me")
