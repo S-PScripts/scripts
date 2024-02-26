@@ -42,6 +42,8 @@ local suser_on_sight = {"suser"} -- slow a user when they join with car gear ONL
 
 local periastronlist = {"108158379", "80661504", "233520257", "73829193", "69499437", "139577901", "2544549379", "120307951", "99119240", "93136802", "80597060", "159229806", "77443461"}
 
+local movestatus = false
+
 -- Bad formatting because of github glitch ruining how the colour of the code looks :/
 local musiclist = {"9048375035", -- 1
 		   "6680495507", -- 2
