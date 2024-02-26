@@ -18,7 +18,7 @@ stuff in the works
 
 if _G.executed then 
 	return 
-	print("Did you execute this script twice?") 
+	print("You've already executed KohlsLite!") 
 end
 
 _G.executed = true
@@ -4960,6 +4960,7 @@ function attach(part)
 		end
 		PlayerService.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0, 0, 0)
 		local tasmove = true
+	
 		task.spawn(function()
 			if Player.Character.Torso:FindFirstChild("Weld") then
 				Player.Character.Torso:FindFirstChild("Weld"):Destroy()
@@ -4982,6 +4983,7 @@ function attach(part)
 				end
 			end
 		end)
+	
 		task.spawn(function() 
 			while tasmove do 
 				fwait()
@@ -5009,17 +5011,17 @@ function attach(part)
 		until 
 		Player.Character.Torso:FindFirstChild("Weld")
 		tasmove = false
-	end
+end
 
 
 task.spawn(function()
 	while true do
-		wait()
+		task.wait()
 		if allclear() == false and movestatus == true then
 			MRespawn()
 			ColFix()
 			GravFix()
-			Chat("MovePart stopped due to no character or no admin, respawning and fixing game..")
+			print("Moving the part has stopped due to no character or no admin, respawning and fixing game..")
 		end
 	end
 end)
