@@ -4933,7 +4933,7 @@ function attach(part)
 			while true do
 				fwait()
 				if allclear() == true then
-					print("debug msg 1")
+					--print("debug msg 1")
 					PlayerService.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0, 0, 0)
 					Player.Character.HumanoidRootPart.CFrame = part.CFrame * CFrame.new(-1*(part.Size.X/2)-(Player.Character.HumanoidRootPart.Size.X/2),0,0) 
 				elseif allclear() == false then
@@ -4993,13 +4993,13 @@ end)
 -- // check if ready \\ --
 function allclear()
 		if workspace:FindFirstChild(game.Players.LocalPlayer.Name) and hasperm == true and workspace:FindFirstChild(game.Players.LocalPlayer.Name) and workspace:FindFirstChild(game.Players.LocalPlayer.Name):FindFirstChild("Humanoid") and workspace:FindFirstChild(game.Players.LocalPlayer.Name):FindFirstChild("Humanoid").Health > 0 then
-			print("TRUE")
+			--print("TRUE")
 			return true
 		elseif workspace:FindFirstChild(game.Players.LocalPlayer.Name) and workspace.Terrain._Game.Admin.Pads:FindFirstChild(game.Players.LocalPlayer.Name.."'s admin") and workspace:FindFirstChild(game.Players.LocalPlayer.Name) and workspace:FindFirstChild(game.Players.LocalPlayer.Name):FindFirstChild("Humanoid") and workspace:FindFirstChild(game.Players.LocalPlayer.Name):FindFirstChild("Humanoid").Health > 0 then
-			print("TRUE")
+			--print("TRUE")
 			return true
 		else
-			print("FALSE")
+			--print("FALSE")
 			movestatus = false
 			return false
 		end
