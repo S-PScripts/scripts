@@ -46,6 +46,7 @@ local movestatus = false
 local Kohls = workspace.Terrain:WaitForChild("_Game")
 local Map = Kohls:WaitForChild("Workspace")
 local Admin = Kohls:WaitForChild("Admin")
+local Pads = Admin:WaitForChild("Pads"):GetChildren()
 
 -- Bad formatting because of github glitch ruining how the colour of the code looks :/
 local musiclist = {"9048375035", -- 1
@@ -1343,7 +1344,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		Chat("respawn me")
 		ColFix()
     end
-
+		
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'moveregen' then
 		if movestatus == true then 
 			return 
@@ -1351,6 +1352,52 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		DisCol()
 		moveobject(Admin.Regen, 1)
 		repeat fwait() until movestatus == false
+		GravFix()
+		Chat("respawn me")
+		ColFix()
+    end
+		
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'fixpads' then	
+		if movestatus == true then 
+			return 
+		end	
+		for i,v in pairs(Pads) do
+			if allclear() == false then break end
+			if v:FindFirstChildOfClass("Part") then
+				v:FindFirstChildOfClass("Part").Name = "Pad" .. tostring(i)
+			end
+		end
+		DisCol()
+		for i,v in pairs(Pads) do
+			if allclear() == false then break end
+			if v:FindFirstChildOfClass("Part") then
+				v:FindFirstChildOfClass("Part").CanCollide = true
+				moveobject(v:FindFirstChildOfClass("Part"), 2)
+				repeat fwait() until movestatus == false
+				Chat("respawn me")
+				v:FindFirstChildOfClass("Part").CanCollide = false
+			end
+		end
+		GravFix()
+		Chat("respawn me")
+		ColFix()
+    end
+
+   if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'movepads' then	
+		if movestatus == true then 
+			return 
+		end	
+		DisCol()
+		for i,v in pairs(Pads) do
+			if allclear() == false then break end
+			if v:FindFirstChildOfClass("Part") then
+				v:FindFirstChildOfClass("Part").CanCollide = true
+				moveobject(v:FindFirstChildOfClass("Part"), 1)
+				repeat fwait() until movestatus == false
+				Chat("respawn me")
+				v:FindFirstChildOfClass("Part").CanCollide = false
+			end
+		end
 		GravFix()
 		Chat("respawn me")
 		ColFix()
@@ -4077,6 +4124,7 @@ end
 
 function ColFix()
          for i, v in pairs(game.Workspace:GetDescendants()) do
+		if allclear() == false then break end
 		if v:IsA("Part") then
 			v.CanCollide = true
 		end
@@ -4085,6 +4133,7 @@ end
 
 function DisCol()
          for i, v in pairs(game.Workspace:GetDescendants()) do
+		if allclear() == false then break end
 		if v:IsA("Part") then
 			v.CanCollide = false
 		end
