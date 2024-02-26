@@ -1288,10 +1288,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
 -- OLD --
 
-    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'moveadp' then
-	MoveAdminPads("move")
-    end
-
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'moveaddiv' then
 	MoveAdminDividers()
     end
@@ -1302,10 +1298,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'movebb' then
 	MoveBuildingBricks()
-    end
-			
-    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'fixadp' then
-	MoveAdminPads("fix")
     end
 
 -- NEW --
@@ -4522,26 +4514,6 @@ function MoveHouse()
         end
 end
 
--- ADMIN PAD MOVER
-function MoveAdminPads(mode)
-	 for i, v in pairs(Admin_Folder.Pads:GetDescendants()) do
-		if v.Name == "Head" then
-			task.wait(1)
-        		target = v
-          		movepart()
-			repeat wait() until mready == true
-			if mode == "move" then
-				skydivef()
-			else
-				Chat("unskydive me")
-				Chat("undog me me")
-			end			
-			wait(0.2)
-	     		Chat("respawn me")
-		end
-	end
-end
-
 -- regen pos
 function regentp()
 	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-7.45691586, 8.62999058, 94.4823227, -0.99999845, -9.28177144e-08, -0.00174821995, -9.28509678e-08, 1, 1.8940268e-08, 0.00174821995, 1.91025631e-08, -0.99999845)
@@ -4788,9 +4760,7 @@ function Gearban()
         Chat("ungear me")
 end
 
-
 --// ATTACH SHIT \\ --
-
 
 -- // variables \\ --
 local Player = game.Players.LocalPlayer
