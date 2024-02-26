@@ -29,7 +29,7 @@ local whitelist = {"me_123eq","me_crashking","ScriptingProgrammer","G_ODt","BANN
 local newplrslocked = {"place"} -- don't edit!!
 local newplrautoslock = true -- if new players under 21 days join they get blacklisted
 local newlen = 21 -- control what is considered as a new account
-local GWhitelisted = {"me_123eq","me_crashking","ScriptingProgrammer","G_ODt","BANNter_Original","witnessfox22","IceStuds","atprog"} -- gear whitelisted
+local GWhitelisted = {"me_123eq","me_crashking","ScriptingProgrammer","G_ODt","BANNter_Original","witnessfox22","IceStuds","atprog","dawninja21","Dawninja21alt"} -- gear whitelisted
 local slockenabled = false -- slock
 
 local permusers = {} -- users that use perm will be placed here
