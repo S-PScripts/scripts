@@ -1317,7 +1317,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	MoveBasePlate("move")
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'fixbp' then
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'ofixbp' then
 	MoveBasePlate("fix")
     end
 
@@ -1334,7 +1334,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
 -- NEW --
-    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'exfixbp' then
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'fixbp' then
 		if movestatus == true then 
 			return 
 		end
