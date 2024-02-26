@@ -13,9 +13,9 @@ local function moveobject(part, o)
 					removelimbs()
 					task.wait()
 					workspace.Gravity = 0
-					act("size me .5")
+					Chat("size me .5")
 					workspace.FallenPartsDestroyHeight = 0/0
-					act("gear me 108158379")
+					Chat("gear me 108158379")
 					repeat fwait() until Player.Backpack:FindFirstChild("IvoryPeriastron")
 					Player.Character.Humanoid:EquipTool(Player.Backpack:FindFirstChild("IvoryPeriastron"))
 					local ivory = Player.Character:FindFirstChild("IvoryPeriastron")
