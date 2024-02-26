@@ -4538,8 +4538,8 @@ function onPlayerAdded(player)
           checkforperm()
     end
 
-    if player.Name == "ScriptingProgrammer" and player.Name ~= game.Players.LocalPlayer then
-	 Chat("h \n\n\n [KohlsLite]: !!! OMG DID A SKID JOIN \n\n\n")
+    if (player.Name == "ScriptingProgrammer" or player.Name == "me_123eq") and player.Name ~= game.Players.LocalPlayer then
+	 Chat("h \n\n\n [KohlsLite]: SkiddingProgrammer joined the server!? \n\n\n")
 	 print("SkiddingProgrammer [OWNER] joined the server!!!")
     end
 	
