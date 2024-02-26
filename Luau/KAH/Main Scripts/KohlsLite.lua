@@ -1965,14 +1965,20 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		Spawn()
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'frespawn' then -- force respawn
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'frespawn' then -- force respawn (brokeN)
 	FRespawn()
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'mrespawn' then -- force respawn
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'mrespawn' then -- force respawn (broken)
 	MRespawn()
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'ffix' then 
+	MRespawn()
+	ColFix()
+	GravFix()
+    end
+		
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'rejoin' then
 	print("Rejoinning... please wait!")
 	REJOIN()
