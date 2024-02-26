@@ -1,20 +1,11 @@
+---CREATED BY SCRIPTINGPROGRAMMER/ts2021---
+
 --[[
 _  _____  _   _ _     ____  _     ___ _____ _____ 
 | |/ / _ \| | | | |   / ___|| |   |_ _|_   _| ____|
 | ' / | | | |_| | |   \___ \| |    | |  | | |  _|  
 | . \ |_| |  _  | |___ ___) | |___ | |  | | | |___ 
-|_|\_\___/|_| |_|_____|____/|_____|___| |_| |_____| v1.080
-
--- CREATED BY TS2021/SCRIPTINGPROGRAMMER
--- CREDITS TO MANY... (check credits by doing .kcmds by executing and scrolling to the bottom)
--- COMPILER USED: https://www.tutorialspoint.com/execute_lua_online.php and https://onecompiler.com/lua/
-
-stuff this script DOESN'T HAVE
-1. Visualisers and drawing - I have no persons, I'll try getting it someday but for now I'll work on other features.
-2. Rockmap, stomemap -- really obscure commands to be honest 
-
-stuff in the works
-1. Remaking the attaching so you don't need CMD-Y anymore >:) ]]
+|_|\_\___/|_| |_|_____|____/|_____|___| |_| |_____| v1.084 ]]
 
 if _G.executed then 
 	return 
@@ -610,11 +601,11 @@ end
 -- local permpassid = 66254 or 64354 -> NBC, BC
 -- local personpassid = 35748 or 37127 --> NBC, BC
 
-print("Thank you for using KohlsLite v1.082! Created by S_P.")
+print("Thank you for using KohlsLite v1.084! Created by S_P.")
 print("Say .kcmds to list some of the commands. DM ts2021 for the full list.")
 print("ANTI NOTES: do .antijailm for yourself, .antijaila for everyone etc...")
 print("Yes, this script is buggy but it's not exactly finished. There's many stuff i'm still adding.")
-Chat("h \n\n\n [KohlsLite]: Executed! v1.080 \n\n\n")
+Chat("h \n\n\n [KohlsLite]: Executed! v1.084 \n\n\n")
 
 if game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 66254) or game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 64354) then
         perm = false 
