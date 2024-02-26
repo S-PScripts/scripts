@@ -1288,10 +1288,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
 -- OLD --
 
-    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'moveaddiv' then
-	MoveAdminDividers()
-    end
-
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'movehouse' then
 	MoveHouse()
     end
@@ -1435,6 +1431,38 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 			moveobject(v, 1)
 			repeat fwait() until movestatus == false
 			Chat("respawn me")
+		end
+		GravFix()
+		Chat("respawn me")
+		ColFix()
+    end
+
+  if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'fixadv' then
+		if movestatus == true then 
+			return 
+		end
+		DisCol()
+		for _,v in pairs(Map["Admin Dividers"]:GetChildren()) do
+			if allclear() == false then break end
+			moveobject(v, 2)
+			repeat fwait() until movestatus == false
+			act("respawn me")
+		end
+		GravFix()
+		Chat("respawn me")
+		ColFix()
+    end
+
+  if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'moveadv' then
+		if movestatus == true then 
+			return 
+		end
+		DisCol()
+		for _,v in pairs(Map["Admin Dividers"]:GetChildren()) do
+			if allclear() == false then break end
+			moveobject(v, 1)
+			repeat fwait() until movestatus == false
+			act("respawn me")
 		end
 		GravFix()
 		Chat("respawn me")
@@ -4116,7 +4144,7 @@ end
 
 function ColFix()
          for i, v in pairs(game.Workspace:GetDescendants()) do
-		if allclear() == false then break end
+		-- if allclear() == false then break end
 		if v:IsA("Part") then
 			v.CanCollide = true
 		end
@@ -4478,19 +4506,6 @@ end
 -- BUILDING BRICKS MOVER
 function MoveBuildingBricks()
           for i, v in pairs(Workspace_Folder["Building Bricks"]:GetChildren()) do
-		task.wait(1)
-		target = v
-          	movepart()
-		repeat wait() until mready == true
-		skydivef()
-		wait(0.2)
-	     	Chat("respawn me")
-	  end
-end
-
--- ADMIN DIVIDERS MOVER
-function MoveAdminDividers()
- 	 for i, v in pairs(Workspace_Folder["Admin Dividers"]:GetChildren()) do		
 		task.wait(1)
 		target = v
           	movepart()
