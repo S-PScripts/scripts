@@ -1266,7 +1266,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	  Chat("explode "..bokme)
     end
 	
-    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'goto2' then
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'cgoto' then
   	 local dasplayer = string.sub(msg:lower(), #prefix + 7)
          PLAYERCHECK(dasplayer)
          if player ~= nil then
@@ -1335,7 +1335,12 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		Chat("respawn me")
 		ColFix()
     end
-		
+
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'saveregen' then
+		print("keep your regen co-ords safe!")
+		setclipboard(Admin.Regen.Position.X,Admin.Regen.Position.Y,Admin.Regen.Position.Z)
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'fixpads' then	
 		if movestatus == true then 
 			return 
@@ -1756,6 +1761,21 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		end
   end
 
+  if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'cbtools' then
+		local cbt = string.sub(msg:lower(), #prefix + 9)
+		if cbt ~= "" then
+				Chat("gear " .. cbt .. " 16200204")
+				Chat("gear " .. cbt .. " 16200402")
+				Chat("gear " .. cbt .. " 16969792")
+				Chat("gear " .. cbt .. " 73089190")
+		else
+				Chat("gear me 16200204")					
+				Chat("gear me 16200402")
+				Chat("gear me 16969792")					
+				Chat("gear me 73089190")
+		end
+  end
+
   if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'ecrash' then
 	    Chat("fix")
 	    Chat(".gmusic42")
@@ -2097,6 +2117,10 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         end
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'noadsky' then
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,1000,0)
+    end
+		
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'nowater' then
 		SuperCMD("gear me 88146497")
     end
@@ -3414,6 +3438,7 @@ function PLAYERCHECK(plr)
   end
 end
 
+-- Only uses for blacklisting, there is NO way I am coding it for everything
 function bypassattemptcheck(plr)
 		if string.sub(string.lower(plr), 1,3) == "me_" then
 			return true, "m"
@@ -4328,7 +4353,6 @@ end
 -- FIX CAM (client)
 function FixCam()
 		task.spawn(function()
-			local PlayerService = game:GetService("Players")
 			local lp = PlayerService.LocalPlayer
 			local ui = game:GetService("UserInputService")
 			local l__ContextActionService__7 = game:GetService("ContextActionService")
@@ -4522,7 +4546,7 @@ end
 
 -- regen pos
 function regentp()
-	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-7.45691586, 8.62999058, 94.4823227, -0.99999845, -9.28177144e-08, -0.00174821995, -9.28509678e-08, 1, 1.8940268e-08, 0.00174821995, 1.91025631e-08, -0.99999845)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Admin.Regen.CFrame
 end
 	
 -- VG CRASH
@@ -4767,10 +4791,6 @@ function Gearban()
 end
 
 --// ATTACH SHIT \\ --
-
--- // variables \\ --
-local Player = game.Players.LocalPlayer
-local PlayerService = game:GetService("Players")
 
 -- // move object \\ --
 function moveobject(part, o)
