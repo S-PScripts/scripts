@@ -4821,7 +4821,7 @@ function moveobject(part, o)
 					if not Player.Character:FindFirstChild("IvoryPeriastron") then
 						ColFix()
 						GravFix()
-						MRespawn()
+						Chat("respawn me")
 						movestatus = false
 						return
 					end
@@ -4832,7 +4832,7 @@ function moveobject(part, o)
 					if not Player.Character:FindFirstChild("IvoryPeriastron") then
 						ColFix()
 						GravFix()
-						MRespawn()
+						Chat("respawn me")
 						movestatus = false
 						return
 					end
@@ -4840,7 +4840,7 @@ function moveobject(part, o)
 					task.wait(.25)
 					movestatus = false
 				else
-						MRespawn()
+						Chat("respawn me")
 						ColFix()
 						GravFix()
 						print("Something went wrong removing the parts.")
@@ -4879,7 +4879,7 @@ function moveobject(part, o)
 					if not Player.Character:FindFirstChild("IvoryPeriastron") then
 						ColFix()
 						GravFix()
-						MRespawn()
+						Chat("respawn me")
 						movestatus = false
 						return
 					end
@@ -4890,7 +4890,7 @@ function moveobject(part, o)
 					if not Player.Character:FindFirstChild("IvoryPeriastron") then
 						ColFix()
 						GravFix()
-						MRespawn()
+						Chat("respawn me")
 						movestatus = false
 						return
 					end
@@ -4899,7 +4899,7 @@ function moveobject(part, o)
 					movestatus = false
 				else
 					movcord = false
-					MRespawn()
+					Chat("respawn me")
 					ColFix()
 					GravFix()
 					print("Something went wrong removing the parts.")
@@ -4925,7 +4925,7 @@ function moveobject(part, o)
 					if not Player.Character:FindFirstChild("IvoryPeriastron") then
 						ColFix()
 						GravFix()
-						MRespawn()
+						Chat("respawn me")
 						movestatus = false
 						return
 					end
@@ -4936,7 +4936,7 @@ function moveobject(part, o)
 					if not Player.Character:FindFirstChild("IvoryPeriastron") then
 						ColFix()
 						GravFix()
-						MRespawn()
+						Chat("respawn me")
 						movestatus = false
 						return
 					end
@@ -4944,7 +4944,7 @@ function moveobject(part, o)
 					task.wait(.25)
 					movestatus = false
 				else
-					MRespawn()
+					Chat("respawn me")
 					ColFix()
 					GravFix()
 					print("Something went wrong removing the parts.")
@@ -4987,7 +4987,7 @@ function attach(part)
 					PlayerService.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0, 0, 0)
 					Player.Character.HumanoidRootPart.CFrame = part.CFrame * CFrame.new(-1*(part.Size.X/2)-(Player.Character.HumanoidRootPart.Size.X/2),0,0) 
 				elseif allclear() == false then
-					MRespawn()
+					Chat("respawn me")
 					ColFix()
 					GravFix()
 					print("Something went wrong moving the parts. Fixing game and respawning..")
@@ -5004,7 +5004,7 @@ function attach(part)
 				fwait()
 				Chat("unpunish me")
 				if allclear() == false then 
-					MRespawn()
+					Chat("respawn me")
 					ColFix()
 					GravFix()
 					print("Something went wrong moving the parts. Fixing game and respawning..")
@@ -5033,7 +5033,7 @@ task.spawn(function()
 	while true do
 		task.wait()
 		if allclear() == false and movestatus == true then
-			MRespawn()
+			Chat("respawn me")
 			ColFix()
 			GravFix()
 			print("Moving the part has stopped due to no character or no admin, respawning and fixing game..")
