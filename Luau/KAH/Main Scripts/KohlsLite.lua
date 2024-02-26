@@ -2212,7 +2212,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'unnoblt' then
 	noblt = false
     end
-		
+
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'novoid' then
+		workspace.FallenPartsDestroyHeight = 0/0
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'pinglogs' then
 	PingLogs = true
     end
