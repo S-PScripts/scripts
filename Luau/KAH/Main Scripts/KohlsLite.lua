@@ -44,6 +44,9 @@ local periastronlist = {"108158379", "80661504", "233520257", "73829193", "69499
 
 local movestatus = false
 
+local Kohls = workspace.Terrain:WaitForChild("_Game")
+local Map = Kohls:WaitForChild("Workspace")
+
 -- Bad formatting because of github glitch ruining how the colour of the code looks :/
 local musiclist = {"9048375035", -- 1
 		   "6680495507", -- 2
@@ -1336,7 +1339,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 			return 
 		end
 		DisCol()
-		moveobject(Workspace_Folder.Baseplate, 2)
+		moveobject(Map.Baseplate, 2)
 		repeat fwait() until movestatus == false
 		GravFix()
 		Chat("respawn me")
