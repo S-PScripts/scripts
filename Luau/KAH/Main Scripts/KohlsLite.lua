@@ -4933,6 +4933,7 @@ function attach(part)
 			while true do
 				fwait()
 				if allclear() == true then
+					print("debug msg 1")
 					PlayerService.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0, 0, 0)
 					Player.Character.HumanoidRootPart.CFrame = part.CFrame * CFrame.new(-1*(part.Size.X/2)-(Player.Character.HumanoidRootPart.Size.X/2),0,0) 
 				elseif allclear() == false then
@@ -4950,7 +4951,7 @@ function attach(part)
 		task.spawn(function() 
 			while tasmove do 
 				fwait()
-				act("unpunish me")
+				Chat("unpunish me")
 				if allclear() == false then 
 					MRespawn()
 					ColFix()
@@ -4975,6 +4976,19 @@ function attach(part)
 		Player.Character.Torso:FindFirstChild("Weld")
 		tasmove = false
 	end
+
+
+task.spawn(function()
+	while true do
+		wait()
+		if allclear() == false and movestatus == true then
+			MRespawn()
+			ColFix()
+			GravFix()
+			Chat("MovePart stopped due to no character or no admin, respawning and fixing game..")
+		end
+	end
+end)
 
 -- // check if ready \\ --
 function allclear()
