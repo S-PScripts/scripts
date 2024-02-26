@@ -604,7 +604,7 @@ end
 -- local permpassid = 66254 or 64354 -> NBC, BC
 -- local personpassid = 35748 or 37127 --> NBC, BC
 
-print("Thank you for using KohlsLite v1.081! Created by S_P.")
+print("Thank you for using KohlsLite v1.082! Created by S_P.")
 print("Say .kcmds to list some of the commands. DM ts2021 for the full list.")
 print("ANTI NOTES: do .antijailm for yourself, .antijaila for everyone etc...")
 print("Yes, this script is buggy but it's not exactly finished. There's many stuff i'm still adding.")
@@ -4745,7 +4745,7 @@ local Player = game.Players.LocalPlayer
 local PlayerService = game:GetService("Players")
 
 -- // move object \\ --
-local function moveobject(part, o)
+function moveobject(part, o)
 		if movestatus == false then
 			movestatus = true
 			if o == 1 then
@@ -4902,7 +4902,7 @@ local function moveobject(part, o)
 	end
 
 -- // remove limbs \\ --
-local function removelimbs()
+function removelimbs()
 	for i,v in pairs(PlayerService.LocalPlayer.Character.Torso:GetChildren()) do
 		if v.Name == "Left Shoulder" then
 				v:Destroy()
@@ -4917,7 +4917,7 @@ local function removelimbs()
 end
 
 -- // attach 2 part \\ --
-local function attach(part)
+function attach(part)
 		if Player.Character.Torso:FindFirstChild("Weld") then
 			Player.Character.Torso:FindFirstChild("Weld"):Destroy()
 		end
@@ -4974,7 +4974,7 @@ local function attach(part)
 	end
 
 -- // check if ready \\ --
-local function allclear()
+function allclear()
 		if workspace:FindFirstChild(game.Players.LocalPlayer.Name) and hasperm == true and workspace:FindFirstChild(game.Players.LocalPlayer.Name) and workspace:FindFirstChild(game.Players.LocalPlayer.Name):FindFirstChild("Humanoid") and workspace:FindFirstChild(game.Players.LocalPlayer.Name):FindFirstChild("Humanoid").Health > 0 then
 			return true
 		elseif workspace:FindFirstChild(game.Players.LocalPlayer.Name) and workspace.Terrain._Game.Admin.Pads:FindFirstChild(game.Players.LocalPlayer.Name.."'s admin") and workspace:FindFirstChild(game.Players.LocalPlayer.Name) and workspace:FindFirstChild(game.Players.LocalPlayer.Name):FindFirstChild("Humanoid") and workspace:FindFirstChild(game.Players.LocalPlayer.Name):FindFirstChild("Humanoid").Health > 0 then
@@ -4986,7 +4986,7 @@ local function allclear()
 end
 
 -- // special wait \\ --
-local function fwait()
+function fwait()
 		game:GetService("RunService").Heartbeat:Wait()
 end
 
