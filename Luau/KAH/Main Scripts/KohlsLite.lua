@@ -1313,9 +1313,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	MoveBuildingBricks()
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'movebp' then
-	MoveBasePlate("move")
-    end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'ofixbp' then
 	MoveBasePlate("fix")
@@ -1323,6 +1320,10 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'ufixbp' then
 	MoveBasePlate("ufix")
+    end
+		
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'omovebp' then
+	MoveBasePlate("move")
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'fixregen' then
@@ -1340,6 +1341,18 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		end
 		DisCol()
 		moveobject(Map.Baseplate, 2)
+		repeat fwait() until movestatus == false
+		GravFix()
+		Chat("respawn me")
+		ColFix()
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'movebp' then
+		if movestatus == true then 
+			return 
+		end
+		DisCol()
+		moveobject(Map.Baseplate, 1)
 		repeat fwait() until movestatus == false
 		GravFix()
 		Chat("respawn me")
