@@ -1276,17 +1276,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          end
     end
 
--- OLD --
-
-    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'movehouse' then
-	MoveHouse()
-    end
-		
-    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'movebb' then
-	MoveBuildingBricks()
-    end
-
--- NEW --
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'fixbp' then
 		if movestatus == true then 
 			return 
@@ -1463,7 +1452,70 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		Chat("respawn me")
 		ColFix()
     end
-		
+
+  if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'fixhouse' then
+		if movestatus == true then 
+			return 
+		end
+		DisCol()
+		for _,v in pairs(Map["Basic House"]:GetChildren()) do
+			if allclear() == false then break end
+			moveobject(v, 2)
+			repeat fwait() until movestatus == false
+			Chat("respawn me")
+		end
+		GravFix()
+		Chat("respawn me")
+		ColFix()
+    end
+
+  if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'movehouse' then
+		if movestatus == true then 
+			return 
+		end
+		DisCol()
+		for _,v in pairs(Map["Basic House"]:GetChildren()) do
+			if allclear() == false then break end
+			moveobject(v, 1)
+			repeat fwait() until movestatus == false
+			Chat("respawn me")
+		end
+		GravFix()
+		Chat("respawn me")
+		ColFix()
+    end
+
+  if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'fixbb' then
+		if movestatus == true then 
+			return 
+		end
+		DisCol()
+		for _,v in pairs(Map["Building Bricks"]:GetChildren()) do
+			if allclear() == false then break end
+			moveobject(v, 2)
+			repeat fwait() until movestatus == false
+			Chat("respawn me")
+		end
+		GravFix()
+		Chat("respawn me")
+		ColFix()
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'movebb' then
+		if movestatus == true then 
+			return 
+		end
+		DisCol()
+		for _,v in pairs(Map["Building Bricks"]:GetChildren()) do
+			if allclear() == false then break end
+			moveobject(v, 1)
+			repeat fwait() until movestatus == false
+			Chat("respawn me")
+		end
+		GravFix()
+		Chat("respawn me")
+		ColFix()
+    end	
 -- MOVING ON... --
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'toregen' then
 			regentp()
@@ -4443,7 +4495,7 @@ end
 
 -- temp NOK
 function TNOK() -- vitalux cmd
-	for i, v in pairs(game:GetService("Workspace").Terrain._Game.Workspace.Obby:GetChildren()) do -- also removes obby walls collision for some reason
+	for i, v in pairs(game:GetService("Workspace").Terrain._Game.Workspace.Obby:GetChildren()) do -- also removes obby walls collision 
 		if nokstat == true then
         		v.CanTouch = false
 		else
@@ -4480,42 +4532,6 @@ function MRespawn()
 			newChar:Destroy()
 end
 
--- PART MOVER
-function movepart()
-	repeat wait() until game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")
-	local cf = game.Players.LocalPlayer.Character.HumanoidRootPart
-	local rmoving = true;mready = false
-		task.spawn(function()
-			while true do
-				game:GetService('RunService').Heartbeat:Wait()
-				game.Players.LocalPlayer.Character['Humanoid']:ChangeState(11)
-				cf.CFrame = target.CFrame * CFrame.new(-1*(target.Size.X/2)-(game.Players.LocalPlayer.Character['Torso'].Size.X/2), 0, 0)
-				if not rmoving then 
-					break 
-				end
-			end
-		end)
-		task.spawn(function() 
-			while rmoving do 
-				wait(.1) 
-				Chat('unpunish me') 
-			end 
-		end)
-		wait(0.25)
-		rmoving = false;mready = true
-
-end
-
--- SKYDIVE FOR MOVING
-function skydivef()
-	Chat("skydive me					fuck")
-	Chat("skydive me					fuck")
-	Chat("skydive me					fuck")
-	Chat("skydive me					fuck")
-	Chat("skydive me					fuck")
-	Chat("skydive me					fuck")
-end
-
 -- Removing and adding the obby locally
 function LocalObby(mode)
 	if mode == "add" then
@@ -4527,33 +4543,7 @@ function LocalObby(mode)
 	end
 end
 
--- BUILDING BRICKS MOVER
-function MoveBuildingBricks()
-          for i, v in pairs(Workspace_Folder["Building Bricks"]:GetChildren()) do
-		task.wait(1)
-		target = v
-          	movepart()
-		repeat wait() until mready == true
-		skydivef()
-		wait(0.2)
-	     	Chat("respawn me")
-	  end
-end
-
--- HOUSE MOVER
-function MoveHouse()
-	for i, v in pairs(Workspace_Folder["Basic House"]:GetChildren()) do
-		task.wait(1)
-		target = v
-          	movepart()
-		repeat wait() until mready == true
-		skydivef()
-		wait(0.2)
-	     	Chat("respawn me")
-        end
-end
-
--- regen pos
+-- GOTO REGEN
 function regentp()
 	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Admin.Regen.CFrame
 end
