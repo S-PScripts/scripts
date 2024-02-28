@@ -629,21 +629,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     	if string.sub(msg:lower(), 1, #prefix + 5) == prefix.."kcmds" then
           CMDPrint()
         end
-
-	if string.sub(msg:lower(), 1, #prefix + 5) == prefix.."theme" then
-		Chat("fix")
- 		local theme = tonumber(string.sub(msg:lower(), #prefix + 6))
-        	local themeCode = themecode[theme]
-        	if themeCode then
-            		local codes = {}
-            		for code in themeCode:gmatch("[^,]+") do
-                		table.insert(codes, code)
-           	        end
-            		for _, code in ipairs(codes) do
-                		Chat(code)
-            		end
-        	end
-        end
   
     	if string.sub(msg:lower(), 1, #prefix + 2) == prefix.."iy" then
 	   GExecute("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source")
@@ -653,12 +638,16 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		GExecute("https://raw.githubusercontent.com/quivings/KAH/main/CMD%20v3.lua")
 	end
 
-	if string.sub(msg:lower(), 1, #prefix + 4) == prefix.."cmdy" then
+	if string.sub(msg:lower(), 1, #prefix + 4) == prefix.."cmdy" then -- you don't need this for attaching anymore ;)
 		GExecute("https://raw.githubusercontent.com/quivings/KAH/main/CMD-Y%20(v1.56).lua")
 	end
 
 	if string.sub(msg:lower(), 1, #prefix + 6) == prefix.."tricky" then -- CREDITS TO TECH
-		GExecute("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/Other%20Scripts/Tricky%20Lyrics%20non%20persons.lua")
+		if haspersons == true then
+			GExecute("https://raw.githubusercontent.com/Tech-187/Music-lyrics-on-time/main/Tricky%20lyrics.lua")
+		else
+			GExecute("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/Other%20Scripts/Tricky%20Lyrics%20non%20persons.lua")
+		end
 	end
 		
 	if string.sub(msg, 1, #prefix + 2)  == prefix..'wl' then
@@ -1134,6 +1123,21 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	Goto()
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix.."theme" then
+		Chat("fix")
+ 		local theme = tonumber(string.sub(msg:lower(), #prefix + 6))
+        	local themeCode = themecode[theme]
+        	if themeCode then
+            		local codes = {}
+            		for code in themeCode:gmatch("[^,]+") do
+                		table.insert(codes, code)
+           	        end
+            		for _, code in ipairs(codes) do
+                		Chat(code)
+            		end
+        	end
+        end
+
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix.."gear" then
         local args = string.split(msg, " ")
         if #args >= 3 then
@@ -1261,7 +1265,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'bok' then
 	  bokme = (string.sub(msg:lower(), #prefix + 5))
 	  SuperCMD("dog "..bokme)
-	  task.wait(2)
+	  task.wait(1)
 	  Chat("explode "..bokme)
     end
 	
