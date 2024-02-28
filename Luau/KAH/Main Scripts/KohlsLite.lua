@@ -1,4 +1,4 @@
----CREATED BY SCRIPTINGPROGRAMMER/ts2021---
+--- CREATED BY SCRIPTINGPROGRAMMER/TS2021/S-PSCRIPTS ---
 
 --[[
 _  _____  _   _ _     ____  _     ___ _____ _____ 
@@ -603,7 +603,6 @@ end
 
 print("Thank you for using KohlsLite v1.084! Created by S_P.")
 print("Say .kcmds to list some of the commands. DM ts2021 for the full list.")
-print("ANTI NOTES: do .antijailm for yourself, .antijaila for everyone etc...")
 print("Yes, this script is buggy but it's not exactly finished. There's many stuff i'm still adding.")
 Chat("h \n\n\n [KohlsLite]: Executed! v1.084 \n\n\n")
 
