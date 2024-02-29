@@ -2025,6 +2025,16 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          	end
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'rail' then
+         	local dasplayer = string.sub(msg:lower(), #prefix + 6)
+         	PLAYERCHECK(dasplayer)
+         	if player ~= nil then
+			Rail()
+         	else
+               		print('Cannot find player with the name: '..dasplayer)
+         	end
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'sspawn' then -- save spawn
 		SSpawn()
     end
@@ -4819,6 +4829,19 @@ function Gearban()
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
         Chat("ungear me")
 end
+--[[
+function Rail()
+        Chat("ff " ..player)
+        Chat("god " ..player)
+        Chat("spin " ..player)
+	SuperCMD("gear me 79446473")
+	local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
+        for _, x in ipairs(Backpack:GetChildren()) do
+                x.Parent = game.Players.LocalPlayer.Character
+		x:WaitForChild("Click"):FireServer(workspace[v.Name].Torso.Position)
+        end
+
+end]]
 
 --// ATTACH SHIT \\ --
 
