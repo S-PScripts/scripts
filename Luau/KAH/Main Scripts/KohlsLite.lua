@@ -17,7 +17,7 @@ _G.executed = true
 local prefix = "." -- ANY LENGTH :D
 local blacklist = {"SlenderMan990921","EhiplayYN","e5usp","Asphetto","91txt","LeanConsumer69","xtyzmia","Fixydrqma","Robloxian577226532","jjthejoker7","Alyce_24","cihanahmet1670","Fu14r"} -- slocked users
 local whitelist = {"me_123eq","me_crashking","ScriptingProgrammer","G_ODt","BANNter_Original","witnessfox22","IceStuds","atprog","dawninja21","Dawninja21alt"} -- not affected by slock
-local newplrslocked = {"place"} -- don't edit!!
+local newplrslocked = {} -- don't edit!!
 local newplrautoslock = true -- if new players under 21 days join they get blacklisted
 local newlen = 21 -- control what is considered as a new account
 local GWhitelisted = {"me_123eq","me_crashking","ScriptingProgrammer","G_ODt","BANNter_Original","witnessfox22","IceStuds","atprog","dawninja21","Dawninja21alt"} -- gear whitelisted
@@ -26,10 +26,10 @@ local slockenabled = false -- slock
 local permusers = {} -- users that use perm will be placed here
 local personsusers = {} -- users that use persons will be placed here
 
-local rkick_on_sight = {"rkick"} -- rocket kick player when they join ONLY WORKS WITH ONE PLAYER
+local rkick_on_sight = {} -- rocket kick player when they join ONLY WORKS WITH ONE PLAYER
 local crash_on_sight = {"SlenderMan990921"} -- crash server when player joins
-local mkick_on_sight = {"mkick"} -- kick player with pm spam when they join ONLY WORKS WITH ONE PLAYER
-local suser_on_sight = {"suser"} -- slow a user when they join with car gear ONLY WORKS WITH ONE PLAYER
+local mkick_on_sight = {} -- kick player with pm spam when they join ONLY WORKS WITH ONE PLAYER
+local suser_on_sight = {} -- slow a user when they join with car gear ONLY WORKS WITH ONE PLAYER
 
 local periastronlist = {"108158379", "80661504", "233520257", "73829193", "69499437", "139577901", "2544549379", "120307951", "99119240", "93136802", "80597060", "159229806", "77443461"}
 
@@ -1846,6 +1846,18 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		
     if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'unslowplayer' then
 	SlowP = false
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'rockmap' then
+	print("WIP")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'stonemap' then
+	print("WIP")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'icemap' then
+	print("WIP")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'snplayer' then
