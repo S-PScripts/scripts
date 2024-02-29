@@ -1938,9 +1938,14 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'phelp' then
+	phelper = string.sub(msg:lower(), #prefix + 7)
 	House()
-	task.wait(1)
-	Chat("tp all me")
+	task.wait(0.5)
+	if phelper ~= nil then	
+		Chat("tp "..phelper.." me")
+	else
+		Chat("tp all me")
+	end
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'spawn' then
