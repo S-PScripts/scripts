@@ -1723,11 +1723,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
        LogSpam()
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'slowplayer' then
-	caruser = string.sub(msg:lower(), #prefix + 12)
-	SlowP = true
-    end
-
    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'supercmd' then
 	supermessage = string.sub(msg:lower(), #prefix + 10)
 	SuperCMD(supermessage)
@@ -1843,7 +1838,12 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	    task.wait(0.5)
 	    DCrash()	
     end
-			
+
+    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'slowplayer' then
+	caruser = string.sub(msg:lower(), #prefix + 12)
+	SlowP = true
+    end
+		
     if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'unslowplayer' then
 	SlowP = false
     end
