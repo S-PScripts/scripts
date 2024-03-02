@@ -2372,6 +2372,22 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'unanticlonea' then
 	ALLanticlone = false
     end
+
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antidogm' then
+	YOUantidog = true
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unantidogm' then
+	YOUantidog = false
+    end
+	
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antidoga' then
+	ALLantidog = true
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unantidoga' then
+	ALLantidog = false
+    end
 		
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antifirem' then
 	YOUantifire = true
@@ -3184,6 +3200,12 @@ task.spawn(function()
                 Chat("unclone me")
             end
 	end
+
+	if YOUantidog == true then
+	     if game.Players.LocalPlayer.Character:FindFirstChild("Seat") then
+		Chat("unclone me")
+            end
+	end
 			
 	if YOUantifire == true then
 	    if game.Players.LocalPlayer.Character:FindFirstChild("Torso") then
@@ -3360,6 +3382,13 @@ task.spawn(function()
 	if ALLanticlone == true then
 	    if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild(v.Name) then
                 Chat("unclone "..v.Name)
+            end
+	end
+
+
+	if YOUantidog == true then
+	     if v.Character:FindFirstChild("Seat") then
+		Chat("unclone me")
             end
 	end
 				
