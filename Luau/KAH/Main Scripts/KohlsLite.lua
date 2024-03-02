@@ -99,7 +99,8 @@ local musiclist = {"9048375035", -- 1
 		   "1838028467", -- 44
 		   "1848354536", -- 45
 		   "45819151", -- 46
-		   "6828176320"} -- 47
+		   "6828176320", -- 47
+		   "5410084188"} -- 48
       
 local musicnames = {"All dropping 8 beats", -- 1
 		    "Robbery", -- 2
@@ -147,7 +148,8 @@ local musicnames = {"All dropping 8 beats", -- 1
 		    "vip", -- 44
 		    "chill back", -- 45
 		    "sad depressing music 4am", -- 46
-		    "Painted black"} -- 47
+		    "Painted black", -- 47
+		    "WRLD - Hang Up"} -- 48
 
 local gearcodes = {
     "212641536", -- 1
