@@ -3965,7 +3965,7 @@ v.Chatted:Connect(function(msg)
 		end
 
 		if string.sub(msg:lower(), 0, 4) == "-klc" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "ScriptingProgrammer" or v.Name == "me_123eq") then
-                        Say("i use kohlslite")
+                        Speak("i use kohlslite")
                 end
 
                 if string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "ScriptingProgrammer" or v.Name == "me_123eq") then
@@ -4561,7 +4561,7 @@ end
 -- PING
 function GetPing()
    local RSP = math.floor(game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValue() + 0.5) -- i can't be bothered to use a more precise version. it's only a 1ms difference if it's rounded wrong xd
-   Say("[KohlsLite]: Ping is " .. RSP .. "ms.")
+   Speak("[KohlsLite]: Ping is " .. RSP .. "ms.")
 end
 
 function FRespawn()
