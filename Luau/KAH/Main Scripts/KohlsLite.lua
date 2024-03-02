@@ -1953,7 +1953,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	phelper = string.sub(msg:lower(), #prefix + 7)
 	House()
 	task.wait(0.5)
-	if phelper ~= nil then	
+	if phelper ~= "" then	
 		Chat("tp "..phelper.." me")
 	else
 		Chat("tp all me")
