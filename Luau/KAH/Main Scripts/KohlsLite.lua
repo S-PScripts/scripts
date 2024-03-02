@@ -105,48 +105,48 @@ local musiclist = {"9048375035", -- 1
       
 local musicnames = {"All dropping 8 beats", -- 1
 		    "Robbery", -- 2
-	            "Loud music", -- 3
+	            "Brace Yourself", -- 3
 	            "They trying to be cray", -- 4
 	            "TLT FNAF 2", -- 5
                     "LONER", -- 6
-	            "fUn cAmPiNg mUsIc", -- 7
-	            "the loop", -- 8
-	            "FIRE IN THE HOLE", -- 9
+	            "Exotico Speedo", -- 7
+	            "Monster Mash", -- 8
+	            "THOT!", -- 9
 	            "women song", -- 10
-	            "gun shots", -- 11
-	            "chill elevator", -- 12
-	            "fresh air", -- 13
-	            "is it the end", -- 14
-		    "memories...", -- 15
-		    "AHHHH", -- 16 
+	            "What?!", -- 11
+	            "Life in an Elevator", -- 12
+	            "Prima Bossa", -- 13
+	            "Night Lights", -- 14
+		    "Freaks", -- 15
+		    "annoying citizen", -- 16 
 		    "Young vacations", -- 17
 		    "nuts", -- 18
-	            "obamium 3d", -- 19
-                    "blap blap", -- 20
-	            "feels like the metro", -- 21
+	            "big obama the real g", -- 19
+                    "Out Of My Head", -- 20
+	            "ISVVC - Project Junt", -- 21
                     "gigachad loop", -- 22
-	            "ahh wahh haahh", -- 23
-		    "interstellar", -- 24
-	            "boom boom", -- 25
+	            "Plasdu & 1006x3 - Kroxxxxroadxx", -- 23
+		    "Hella Sketches", -- 24
+	            "Miss the rage Loop (Sparo Loop)", -- 25
 	            "fizz", -- 26
 	            "Raining Tacos", -- 27
-                    "PARTY", -- 28
-                    "Fanfare", -- 29
-		    "rockin", -- 30
+                    "Stadium Rave (A)", -- 28
+                    "Funky Fanfare", -- 29
+		    "Rock In", -- 30
 		    "Loud music fail", -- 31
 		    "AAAAAAAAAAAAAAAAAAAAA", -- 32
-		    "Fanfare 2", -- 33
+		    "Royal Dedication", -- 33
 		    "dubstep", -- 34
-		    "mumbai moon", -- 35
-		    "phonk 1", -- 36
-		    "phonk 2", -- 37 
-		    "phonk 3", -- 38
-		    "phonk 4", -- 39
-		    "phonk 5", -- 40
-		    "hayayaya", -- 41
-		    "seize", -- 42
-		    "pg", -- 43
-		    "vip", -- 44
+		    "Mumbai Moon", -- 35
+		    "The Final Phonk", -- 36
+		    "Phonk Vol 2 - The Final Phonk", -- 37 
+		    "Catch My Drift", -- 38
+		    "Phonk Vol. 1", -- 39
+		    "stop posting about baller", -- 40
+		    "Legends Juice", -- 41
+		    "Minecraft Chest", -- 42
+		    "Brooklyn blood bop", -- 43
+		    "VIP Me", -- 44
 		    "chill back", -- 45
 		    "sad depressing music 4am", -- 46
 		    "Painted black", -- 47
