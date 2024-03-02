@@ -14,6 +14,18 @@ end
 
 _G.executed = true
 
+local function Chat(msg)
+      game.Players:Chat(msg)
+end
+
+local function Speak(msg)
+    game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(msg, "All")
+end
+
+function startupScripts()
+	Chat(prefix.."tnok")
+end
+
 local prefix = "." -- ANY LENGTH :D
 local blacklist = {"SlenderMan990921","EhiplayYN","e5usp","Asphetto","91txt","LeanConsumer69","xtyzmia","Fixydrqma","Robloxian577226532","jjthejoker7","Alyce_24","cihanahmet1670","Fu14r"} -- slocked users
 local whitelist = {"me_123eq","me_crashking","ScriptingProgrammer","G_ODt","BANNter_Original","witnessfox22","IceStuds","atprog","dawninja21","Dawninja21alt"} -- not affected by slock
@@ -588,15 +600,6 @@ local noobdetect = true
 local welcomemsg = true
 
 local noblt = false
-
--- CHAT MODULE
-local function Chat(msg)
-      game.Players:Chat(msg)
-end
-
-local function Speak(msg)
-    game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(msg, "All")
-end
 
 -- local permpassid = 66254 or 64354 -> NBC, BC
 -- local personpassid = 35748 or 37127 --> NBC, BC
@@ -5115,3 +5118,6 @@ for i, v in pairs(game.Players:GetPlayers()) do
 	task.wait(0)
 	PLRSTART(v)
 end
+
+startupScripts()
+-- end of funni code
