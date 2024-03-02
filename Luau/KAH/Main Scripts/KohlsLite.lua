@@ -2056,9 +2056,9 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'ffix' then 
-	MRespawn()
-	ColFix()
 	GravFix()
+	Chat("respawn me")
+	ColFix()
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'rejoin' then
