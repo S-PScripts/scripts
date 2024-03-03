@@ -1207,6 +1207,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 			YOUantiblind = true
 			YOUantigs = true
 			YOUanticlone, ALLanticlone = true, true
+			YOUantidog, ALLantidog = true, true
 			YOUantifire, ALLantifire = true, true
 			YOUantifreeze, ALLantifreeze = true, true
 			YOUantifly, ALLantifly = true, true
@@ -3208,9 +3209,11 @@ task.spawn(function()
 	end
 
 	if YOUantidog == true then
-	     if game.Players.LocalPlayer.Character:FindFirstChild("Seat") then
-		Chat("unclone me")
-            end
+		for i,v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+			if v:IsA("Seat") then
+				Chat("undog me")
+			end
+            	end
 	end
 			
 	if YOUantifire == true then
@@ -3385,16 +3388,16 @@ task.spawn(function()
 	task.wait()
 	for i, v in ipairs(game.Players:GetPlayers()) do
 	if v.Name ~= game.Players.LocalPlayer.Name then
+					
 	if ALLanticlone == true then
 	    if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild(v.Name) then
                 Chat("unclone "..v.Name)
             end
 	end
 
-
-	if YOUantidog == true then
+	if ALLantidog == true then
 	     if v.Character:FindFirstChild("Seat") then
-		Chat("unclone me")
+		Chat("undog "..v.Name)
             end
 	end
 				
