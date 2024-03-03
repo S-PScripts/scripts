@@ -650,6 +650,10 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		GExecute("https://raw.githubusercontent.com/quivings/KAH/main/CMD%20v3.lua")
 	end
 
+	if string.sub(msg:lower(), 1, #prefix + 2) == prefix.."pr" then -- PR Script ~atprog
+		GExecute("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/People's%20Scripts/PR_Script.txt")
+		end	
+	
 	if string.sub(msg:lower(), 1, #prefix + 4) == prefix.."cmdy" then -- you don't need this for attaching anymore ;)
 		GExecute("https://raw.githubusercontent.com/quivings/KAH/main/CMD-Y%20(v1.56).lua")
 	end
