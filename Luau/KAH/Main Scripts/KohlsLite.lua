@@ -29,11 +29,11 @@ local function startupScripts()
 end
 
 local blacklist = {"SlenderMan990921","EhiplayYN","e5usp","Asphetto","91txt","LeanConsumer69","xtyzmia","Fixydrqma","Robloxian577226532","jjthejoker7","Alyce_24","cihanahmet1670","Fu14r"} -- slocked users
-local whitelist = {"me_123eq","me_crashking","ScriptingProgrammer","G_ODt","BANNter_Original","witnessfox22","IceStuds","atprog","dawninja21","Dawninja21alt","Di33le2"} -- not affected by slock
+local whitelist = {"me_123eq","me_crashking","ScriptingProgrammer","G_ODt","BANNter_Original","witnessfox22","IceStuds","atprog","dawninja21","Dawninja21alt","Di33le2","darkmadeboy"} -- not affected by slock
 local newplrslocked = {} -- don't edit!!
 local newplrautoslock = true -- if new players under 21 days join they get blacklisted
 local newlen = 21 -- control what is considered as a new account
-local GWhitelisted = {"me_123eq","me_crashking","ScriptingProgrammer","G_ODt","BANNter_Original","witnessfox22","IceStuds","atprog","dawninja21","Dawninja21alt","Di33le2"} -- gear whitelisted
+local GWhitelisted = {"me_123eq","me_crashking","ScriptingProgrammer","G_ODt","BANNter_Original","witnessfox22","IceStuds","atprog","dawninja21","Dawninja21alt","Di33le2","darkmadeboy"} -- gear whitelisted
 local slockenabled = false -- slock
 
 local permusers = {} -- users that use perm will be placed here
