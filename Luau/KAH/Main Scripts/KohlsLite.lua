@@ -3396,8 +3396,8 @@ task.spawn(function()
 	end
 
 	if ALLantidog == true then
-	     	for i,v in pairs(v.Character:GetDescendants()) do
-			if v:IsA("Seat") then
+	     	for i,x in pairs(v.Character:GetDescendants()) do
+			if x:IsA("Seat") then
 				Chat("undog "..v.Name)
 			end
             	end
