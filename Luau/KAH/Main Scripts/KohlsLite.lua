@@ -2048,6 +2048,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          	local dasplayer = string.sub(msg:lower(), #prefix + 6)
          	PLAYERCHECK(dasplayer)
          	if player ~= nil then
+			railer = player
 			Rail()
          	else
                		print('Cannot find player with the name: '..dasplayer)
@@ -4887,19 +4888,23 @@ function Gearban()
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
         Chat("ungear me")
 end
---[[
+
 function Rail()
-        Chat("ff " ..player)
-        Chat("god " ..player)
-        Chat("spin " ..player)
+        Chat("ff " ..railer)
+        Chat("god " ..railer)
+        Chat("spin " ..railer)
 	SuperCMD("gear me 79446473")
 	local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
         for _, x in ipairs(Backpack:GetChildren()) do
                 x.Parent = game.Players.LocalPlayer.Character
-		x:WaitForChild("Click"):FireServer(workspace[v.Name].Torso.Position)
+		x:WaitForChild("Click"):FireServer(workspace[railer].Torso.Position)
         end
-
-end]]
+	task.wait(2)
+	Chat("ungod " .. railer)
+	Chat("unspin " .. railer)
+	Chat("unff " .. railer)
+	Chat("ungear me")
+end
 
 --// ATTACH SHIT \\ --
 
