@@ -797,6 +797,8 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          local dasplayer = string.sub(msg:lower(), #prefix + 11)
          PLAYERCHECK(dasplayer)
          if player ~= nil then
+		gcplr = cplr
+	  	gcplrn = player
 		checkforperm()
          else
                 print('Cannot find player with the name: '..dasplayer)
@@ -817,6 +819,8 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          local dasplayer = string.sub(msg:lower(), #prefix + 14)
          PLAYERCHECK(dasplayer)
          if player ~= nil then
+		gcplr = cplr
+	  	gcplrn = player
 		checkforpersons()
          else
                 print('Cannot find player with the name: '..dasplayer)
@@ -827,6 +831,8 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          local dasplayer = string.sub(msg:lower(), #prefix + 10)
          PLAYERCHECK(dasplayer)
          if player ~= nil then
+		gcplr = cplr
+	  	gcplrn = player
 		checkforperm()
 		checkforpersons()
          else
