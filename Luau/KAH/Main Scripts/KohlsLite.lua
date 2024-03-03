@@ -642,18 +642,18 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
           CMDPrint()
         end
   
-    	if string.sub(msg:lower(), 1, #prefix + 2) == prefix.."iy" then
-	   GExecute("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source")
+    	if string.sub(msg:lower(), 1, #prefix + 2) == prefix.."iy" then -- the classic
+	   	GExecute("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source")
 	end
 
 	if string.sub(msg:lower(), 1, #prefix + 5) == prefix.."cmdpi" then -- well, you need that visualiser, do you?
 		GExecute("https://raw.githubusercontent.com/quivings/KAH/main/CMD%20v3.lua")
 	end
 
-	if string.sub(msg:lower(), 1, #prefix + 2) == prefix.."pr" then -- PR Script ~atprog
+	if string.sub(msg:lower(), 1, #prefix + 2) == prefix.."pr" then -- PR Script ~ atprog
 		GExecute("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/People's%20Scripts/PR_Script.txt")
-		end	
-	
+	end
+
 	if string.sub(msg:lower(), 1, #prefix + 4) == prefix.."cmdy" then -- you don't need this for attaching anymore ;)
 		GExecute("https://raw.githubusercontent.com/quivings/KAH/main/CMD-Y%20(v1.56).lua")
 	end
@@ -3031,22 +3031,28 @@ end
 
 -- CHECK FOR PERM
 function checkforperm()
-	if game:GetService("MarketplaceService"):UserOwnsGamePassAsync(gcplr.UserId, 66254) or game:GetService("MarketplaceService"):UserOwnsGamePassAsync(gcplr.UserId, 64354) then
-	   print(gcplr.." has perm!")
-	   table.insert(permusers, gcplrn)
-	else
-	   print(player.."does not have perm!")
-	end
+	if string.match(game:HttpGet("https://inventory.roblox.com/v1/users/" .. gcplr.UserId .. "/items/GamePass/" .. 66254), 66254) then
+            print(gcplrn.." has perm in NBC!")
+	    table.insert(permusers, gcplrn)
+        elseif string.match(game:HttpGet("https://inventory.roblox.com/v1/users/" .. gcplr.UserId .. "/items/GamePass/" .. 64354), 64354) then
+            print(gcplrn.." has perm in BC!")
+	    table.insert(permusers, gcplrn)
+        else 
+        	print(gcplrn..' does not have perm!')
+        end
 end
 
 -- CHECK FOR PERSONS
 function checkforpersons()
-	if game:GetService("MarketplaceService"):UserOwnsGamePassAsync(gcplr.UserId, 35748) or game:GetService("MarketplaceService"):UserOwnsGamePassAsync(gcplr.UserId, 37127) then
-	   print(gcplr.." has persons!")
-	   table.insert(personsusers, gcplrn)
-	else
-	   print(player.."does not have persons!")
-	end
+	if string.match(game:HttpGet("https://inventory.roblox.com/v1/users/" .. gcplr.UserId .. "/items/GamePass/" .. 35748), 35748) then
+            print(gcplrn.." has persons in NBC!")
+	    table.insert(personsusers, gcplrn)
+        elseif string.match(game:HttpGet("https://inventory.roblox.com/v1/users/" .. gcplr.UserId .. "/items/GamePass/" .. 37127), 37127) then
+            print(gcplrn.." has persons in BC!")
+	    table.insert(personsusers, gcplrn)
+        else 
+        	print(gcplrn..' does not have persons!')
+        end
 end
 
 -- SLOCK/BL/WL (REALLY UNTOUCHED SO IT WAS BROKEN FOR A WHILE LMAO)
@@ -4941,7 +4947,7 @@ function Surround()
 		local z = math.sin(angle) * radius
 		return x, z
 	end
-	SuperCMD("gear me 79446473")
+	SuperCMD("gear me 88885539")
 	for i,c in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
 		if c.Name == "Tactical Airstrike" then
 			local angle = i * (fullCircle / 50)
