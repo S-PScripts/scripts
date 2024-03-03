@@ -5,7 +5,7 @@ _  _____  _   _ _     ____  _     ___ _____ _____
 | |/ / _ \| | | | |   / ___|| |   |_ _|_   _| ____|
 | ' / | | | |_| | |   \___ \| |    | |  | | |  _|  
 | . \ |_| |  _  | |___ ___) | |___ | |  | | | |___ 
-|_|\_\___/|_| |_|_____|____/|_____|___| |_| |_____| v1.084 ]]
+|_|\_\___/|_| |_|_____|____/|_____|___| |_| |_____| v1.089 ]]
 
 if _G.executed then 
 	return 
@@ -616,7 +616,7 @@ local noblt = false
 print("Thank you for using KohlsLite v1.084! Created by S_P.")
 print("Say .kcmds to list some of the commands. DM ts2021 for the full list.")
 print("Yes, this script is buggy but it's not exactly finished. There's many stuff i'm still adding.")
-Chat("h \n\n\n [KohlsLite]: Executed! v1.084 \n\n\n")
+Chat("h \n\n\n [KohlsLite]: Executed! v1.089 \n\n\n")
 
 if game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 66254) or game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 64354) then
         perm = false 
@@ -2050,6 +2050,17 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          	if player ~= nil then
 			railer = player
 			Rail()
+         	else
+               		print('Cannot find player with the name: '..dasplayer)
+         	end
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'surround' then
+         	local dasplayer = string.sub(msg:lower(), #prefix + 10)
+         	PLAYERCHECK(dasplayer)
+         	if player ~= nil then
+			surrer = player
+			Surround()
          	else
                		print('Cannot find player with the name: '..dasplayer)
          	end
@@ -4915,6 +4926,27 @@ function Rail()
 	Chat("ungod " .. railer)
 	Chat("unspin " .. railer)
 	Chat("unff " .. railer)
+	Chat("ungear me")
+end
+
+function Surround()
+       local fullCircle = 2 * math.pi
+       local radius = 10 
+       local function getXAndZPositions(angle)
+		local x = math.cos(angle) * radius
+		local z = math.sin(angle) * radius
+		return x, z
+	end
+	SuperCMD("gear me 79446473")
+	for i,c in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+		if c.Name == "Tactical Airstrike" then
+			local angle = i * (fullCircle / 50)
+			local x, z = getXAndZPositions(angle)
+			c.Parent = game.Players.LocalPlayer.Character
+			c:WaitForChild("OnMouseClick"):FireServer((workspace[surrer].HumanoidRootPart.CFrame * CFrame.new(x, 0, z)).p)
+		end
+	end
+	task.wait(1)
 	Chat("ungear me")
 end
 
