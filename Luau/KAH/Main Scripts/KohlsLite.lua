@@ -30,6 +30,7 @@ end
 
 local blacklist = {"SlenderMan990921","EhiplayYN","e5usp","Asphetto","91txt","LeanConsumer69","xtyzmia","Fixydrqma","Robloxian577226532","jjthejoker7","Alyce_24","cihanahmet1670","Fu14r"} -- slocked users
 local whitelist = {"me_123eq","me_crashking","ScriptingProgrammer","G_ODt","BANNter_Original","witnessfox22","IceStuds","atprog","dawninja21","Dawninja21alt","Di33le2","darkmadeboy"} -- not affected by slock
+local nokick = {"me_123eq","me_crashking","ScriptingProgrammer","G_ODt","BANNter_Original","witnessfox22","IceStuds","atprog","dawninja21","Dawninja21alt","Di33le2","darkmadeboy"} -- can't kick these people!
 local newplrslocked = {} -- don't edit!!
 local newplrautoslock = true -- if new players under 21 days join they get blacklisted
 local newlen = 21 -- control what is considered as a new account
@@ -1624,15 +1625,15 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	   print([["Sorry, you don't have Person's to perform this command!
 		Commands required: rocket"]])
 	else
-	   local dasplayer = string.sub(msg:lower(), #prefix + 7)
-           PLAYERCHECK(dasplayer)
-           if player ~= nil then
+	   	local dasplayer = string.sub(msg:lower(), #prefix + 7)
+           	PLAYERCHECK(dasplayer)
+           	if player ~= nil and not table.find(nokick, player) then
 			rkicker = cplr
 			RKick()
-	   else
-                print('Cannot find player with the name: '..dasplayer)
-           end
-	   end
+	   	else
+                	print('Cannot find player with the name: '..dasplayer)
+           	end
+	 end
     end
 
    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'srkick' then
@@ -1640,8 +1641,14 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	   print([["Sorry, you don't have Person's to perform this command!
 		Commands required: rocket"]])
 	else
-		rkicker = (string.sub(msg:lower(), #prefix + 8))
-		srkick = true
+		local dasplayer = string.sub(msg:lower(), #prefix + 7)
+           	PLAYERCHECK(dasplayer)
+           	if player ~= nil and not table.find(nokick, player) then
+			rkicker = cplr
+			srkick = true
+	   	else
+                	print('Cannot find player with the name: '..dasplayer)
+           	end
 	end
     end
 
