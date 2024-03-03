@@ -2059,15 +2059,15 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		SSpawn()
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'pspawn' then -- print saved spawn
-		Pspawn()
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'pspawn' then -- print current spawn
+		PSpawn()
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'gsspawn' then -- go to saved spawn
 		Spawn()
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'frespawn' then -- force respawn (brokeN)
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'frespawn' then -- force respawn (broken)
 	FRespawn()
     end
 
@@ -4476,12 +4476,12 @@ end
 -- SET SPAWN
 function SSpawn()
         savspawn = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-	print("Your saved spawn is:"..savspawn)
+	print("Your saved spawn is: "..savspawn)
 end
 
 -- CURRENT POS
 function PSpawn()
-	print("Your current position is:"..game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame)
+	print("Your current position is: "..game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame)
 end
 
 -- HOUSE
