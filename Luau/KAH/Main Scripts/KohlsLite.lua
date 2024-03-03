@@ -4662,6 +4662,7 @@ end
 -- FIX CAM (client)
 function FixCam()
 		task.spawn(function()
+			local PlayerService = game:GetService("Players")
 			local lp = PlayerService.LocalPlayer
 			local ui = game:GetService("UserInputService")
 			local l__ContextActionService__7 = game:GetService("ContextActionService")
@@ -4701,7 +4702,6 @@ function FixCam()
 				game.Workspace.CurrentCamera.CameraType = Enum.CameraType.Custom
 				game.Workspace.CurrentCamera.CameraSubject = lp.Character.Humanoid
 				lp.Character.Humanoid.AutoRotate = true
-			end
 		end)
 end
 
