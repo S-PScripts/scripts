@@ -59,6 +59,8 @@ local Map = Kohls:WaitForChild("Workspace")
 local Admin = Kohls:WaitForChild("Admin")
 local Pads = Admin:WaitForChild("Pads"):GetChildren()
 
+local YOUantimsg = true
+
 -- Bad formatting because of github glitch ruining how the colour of the code looks :/
 local musiclist = {"9048375035", -- 1
 		   "6680495507", -- 2
@@ -2881,7 +2883,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	YOUantimsg = false
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'mkick' then
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'mkick' then -- haha i found it
 	acplr = string.sub(msg:lower(), #prefix + 7)
 	antichatplr = true
     end
