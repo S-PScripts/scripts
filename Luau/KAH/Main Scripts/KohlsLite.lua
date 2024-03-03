@@ -1604,9 +1604,15 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	   print([["Sorry, you don't have Person's to perform this command!
 		Commands required: rocket"]])
 	else
-		rkicker = (string.sub(msg:lower(), #prefix + 7))
-		RKick()
-	end
+	   local dasplayer = string.sub(msg:lower(), #prefix + 7)
+           PLAYERCHECK(dasplayer)
+           if player ~= nil then
+			rkicker = cplr
+			RKick()
+	   else
+                print('Cannot find player with the name: '..dasplayer)
+           end
+	   end
     end
 
    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'srkick' then
@@ -4356,7 +4362,7 @@ end
 
 -- ROCKET KICK
 function RKick()
-      Chat("tp me "..rkicker)
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = rkicker.Character.HumanoidRootPart.CFrame
       Chat("setgrav "..rkicker.. "3500")
       Chat("jail/".. rkicker)
       for i = 1,100 do
@@ -4859,7 +4865,7 @@ function FastPads() -- if no touchinterest or idk
                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-31.0896435, 8.22999477, 70.522644, -0.999961913, 4.495271e-08, -0.0087288795, 4.55292621e-08, 1, -6.58523618e-08, 0.0087288795, -6.62472743e-08, -0.999961913)
 end
 
--- GEARBAN (experimental fixed)
+-- GEARBAN
 function Gearban()
 	Chat("gear me 82357101")
         Chat("unff all")
