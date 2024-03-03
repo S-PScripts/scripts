@@ -2070,12 +2070,23 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          	PLAYERCHECK(dasplayer)
          	if player ~= nil then
 			surrer = player
-			Surround()
+			Surround(1)
          	else
                		print('Cannot find player with the name: '..dasplayer)
          	end
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'nuke' then
+         	local dasplayer = string.sub(msg:lower(), #prefix + 6)
+         	PLAYERCHECK(dasplayer)
+         	if player ~= nil then
+			surrer = player
+			Surround(2)
+         	else
+               		print('Cannot find player with the name: '..dasplayer)
+         	end
+    end
+		
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'sspawn' then -- save spawn
 		SSpawn()
     end
@@ -4945,7 +4956,7 @@ function Rail()
 	Chat("ungear me")
 end
 
-function Surround()
+function Surround(mode)
        local fullCircle = 2 * math.pi
        local radius = 10 
        local function getXAndZPositions(angle)
@@ -4962,7 +4973,11 @@ function Surround()
 			c:WaitForChild("OnMouseClick"):FireServer((workspace[surrer].HumanoidRootPart.CFrame * CFrame.new(x, 0, z)).p)
 		end
 	end
-	task.wait(1)
+	if mode == 1 then
+		task.wait(1)
+	else 
+		task.wait(10)
+	end
 	Chat("ungear me")
 end
 
