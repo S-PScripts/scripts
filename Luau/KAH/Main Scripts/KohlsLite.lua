@@ -1285,7 +1285,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
   	 local dasplayer = string.sub(msg:lower(), #prefix + 7)
          PLAYERCHECK(dasplayer)
          if player ~= nil then
-		gotou = player
+		gotou = cplr
 		Goto2()
          else
                 print('Cannot find player with the name: '..dasplayer)
@@ -4290,7 +4290,7 @@ end
 
 -- for cframe goto
 function Goto2()
-	  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = gotou.Character.HumanoidRootPart.CFrame
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = cplr.Character.HumanoidRootPart.CFrame
 end
 
 -- BRING
