@@ -3396,9 +3396,11 @@ task.spawn(function()
 	end
 
 	if ALLantidog == true then
-	     if v.Character:FindFirstChild("Seat") then
-		Chat("undog "..v.Name)
-            end
+	     	for i,v in pairs(v.Character:GetDescendants()) do
+			if v:IsA("Seat") then
+				Chat("undog "..v.Name)
+			end
+            	end
 	end
 				
 	if ALLantifire == true then
