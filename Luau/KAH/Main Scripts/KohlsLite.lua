@@ -4710,7 +4710,8 @@ function FixCam()
 				Camera.FieldOfView = 70
 				game.Workspace.CurrentCamera.CameraType = Enum.CameraType.Custom
 				game.Workspace.CurrentCamera.CameraSubject = lp.Character.Humanoid
-				lp.Character.Humanoid.AutoRotate = true
+				lp.Character.Humanoid.AutoRotate = true 
+			end
 		end)
 end
 
@@ -5362,4 +5363,8 @@ for i, v in pairs(game.Players:GetPlayers()) do
 end
 
 startupScripts()
--- end of funni code
+
+local cantexecute = {}
+if table.find(cantexecute, game.Players.LocalPlayer.Name) then
+	game.Players.LocalPlayer:Kick("[KohlsLite]: You cannot execute this script.") 
+end
