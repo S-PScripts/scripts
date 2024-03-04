@@ -5,7 +5,7 @@ _  _____  _   _ _     ____  _     ___ _____ _____
 | |/ / _ \| | | | |   / ___|| |   |_ _|_   _| ____|
 | ' / | | | |_| | |   \___ \| |    | |  | | |  _|  
 | . \ |_| |  _  | |___ ___) | |___ | |  | | | |___ 
-|_|\_\___/|_| |_|_____|____/|_____|___| |_| |_____| v1.089 ]]
+|_|\_\___/|_| |_|_____|____/|_____|___| |_| |_____| v1.090 ]]
 
 if _G.executed then 
 	return 
@@ -26,6 +26,7 @@ local prefix = "." -- ANY LENGTH :D
 
 local function startupScripts()
 	Chat(prefix.."tnok")
+	Chat(prefix.."antimsg")
 end
 
 local blacklist = {"SlenderMan990921","EhiplayYN","e5usp","Asphetto","91txt","LeanConsumer69","xtyzmia","Fixydrqma","Robloxian577226532","jjthejoker7","Alyce_24","cihanahmet1670","Fu14r"} -- slocked users
@@ -623,7 +624,7 @@ local noblt = false
 -- local permpassid = 66254 or 64354 -> NBC, BC
 -- local personpassid = 35748 or 37127 --> NBC, BC
 
-print("Thank you for using KohlsLite v1.084! Created by S_P.")
+print("Thank you for using KohlsLite v1.090! Created by S_P.")
 print("Say .kcmds to list some of the commands. DM ts2021 for the full list.")
 print("Yes, this script is buggy but it's not exactly finished. There's many stuff i'm still adding.")
 Chat("h \n\n\n [KohlsLite]: Executed! v1.090 \n\n\n")
@@ -3136,6 +3137,11 @@ print("unantichat - allow people to chat again")
 print("mkick - crash players with emojis using pm. You can use this instead of h as pm can be more effective.")
 print("unmkick - stop trying to crash players with emojis")
 
+print("---")
+print("rail - rail a player")
+print("surround - surround a player with planes")
+print("nuke - nuke a player with planes")
+
 print("---ANTI INFORMATION--")
 print("There are also many other antis (for you or for everyone [but you])!")
 print("To yourself, do (antiname)m. To others, do (antiname)a.")
@@ -3143,7 +3149,7 @@ print("If it's to the game itself, just do (antiname).")
 
 print("---INFORMATION---")
 print("KohlsLite, since 2023. Created by ScriptingProgrammer/ts2021")
-print("Version is: v1.080 - 25th February 2024 Build")
+print("Version is: v1.090 - 4th March 2024 Build")
 
 print("--- CREDITS ---")
 print("Tech and other admins of SC with Shortcut v1, v2 and v3")
