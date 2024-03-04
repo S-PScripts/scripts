@@ -629,6 +629,9 @@ local noblt = false
 print("Thank you for using KohlsLite v1.090! Created by S_P.")
 print("Say .kcmds to list some of the commands. DM me at ts2021 on discord for the full list.")
 print("Yes, this script has some stuff missing and some stuff broken but it's not really finished. There's many stuff I'm still adding.")
+print("With the \n\n\n that hides your username, it does NOT work on newer Roblox guis (my old main and my second alt have it. Instead, it will show as the name at the top.")
+print("I cannot change the \n\n\n or the text won't be on the bar (ugly). Sorry!")
+
 Chat("h \n\n\n [KohlsLite]: Executed! v1.090 \n\n\n")
 
 if game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 66254) or game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 64354) then
