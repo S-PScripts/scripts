@@ -38,6 +38,8 @@ local newlen = 21 -- control what is considered as a new account
 local GWhitelisted = {"me_123eq","me_crashking","ScriptingProgrammer","G_ODt","BANNter_Original","witnessfox22","IceStuds","atprog","dawninja21","Dawninja21alt","Di33le2","darkmadeboy"} -- gear whitelisted
 local slockenabled = false -- slock
 
+local loopkill = {} -- because why not
+
 local permusers = {} -- users that use perm will be placed here
 local personsusers = {} -- users that use persons will be placed here
 
@@ -779,6 +781,28 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		fogdance = false
 		Chat("fix")
 	end
+
+       if string.sub(msg, 1, #prefix + 8) == prefix..'loopkill' then
+         local dasplayer = string.sub(msg:lower(), #prefix + 10)
+         PLAYERCHECK(dasplayer)
+         if player ~= nil then
+                Chat("h \n\n\n [KohlsLite]: "..player.." is being loopkilled. \n\n\n")
+                table.insert(loopkill, player)
+         else
+                print('Cannot find player with the name: '..dasplayer)
+         end
+       end
+
+       if string.sub(msg, 1, #prefix + 10) == prefix..'unloopkill' then
+         local dasplayer = string.sub(msg:lower(), #prefix + 10)
+         PLAYERCHECK(dasplayer)
+         if player ~= nil then
+                Chat("h \n\n\n [KohlsLite]: "..player.." is no longer being loopkilled! \n\n\n")
+                table.remove(loopkill, table.find(loopkill, player))
+         else
+                print('Cannot find player with the name: '..dasplayer)
+         end
+       end
 
        if string.sub(msg, 1, #prefix + 2) == prefix..'bl' then
          local dasplayer = string.sub(msg:lower(), #prefix + 4)
@@ -3633,6 +3657,10 @@ task.spawn(function()
                     Chat("reset "..v.Name)
                 end
 	end
+
+	if v.Character.Humanoid.Health ~= 0 and (loopkill, v.Name) then
+                    Chat("kill "..v.Name)
+        end
 
 	if ALLantichar == true then
 	   if v.UserId ~= v.CharacterAppearanceId then
