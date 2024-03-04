@@ -625,8 +625,8 @@ local noblt = false
 -- local personpassid = 35748 or 37127 --> NBC, BC
 
 print("Thank you for using KohlsLite v1.090! Created by S_P.")
-print("Say .kcmds to list some of the commands. DM ts2021 for the full list.")
-print("Yes, this script is buggy but it's not exactly finished. There's many stuff i'm still adding.")
+print("Say .kcmds to list some of the commands. DM me at ts2021 on discord for the full list.")
+print("Yes, this script has some stuff missing and some stuff broken but it's not really finished. There's many stuff I'm still adding.")
 Chat("h \n\n\n [KohlsLite]: Executed! v1.090 \n\n\n")
 
 if game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 66254) or game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 64354) then
@@ -915,7 +915,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         musicplay = tonumber(string.sub(msg:lower(), #prefix + 7)) 
         if musicplay ~= nil and musicplay >= 1 and musicplay <= #musiclist then
 	    if dontannounce == false then
-            	Chat("h \n\n\n [KohlsLite]: Playing music:" .. musicnames[musicplay] .. ". \n\n\n")
+            	Chat("h \n\n\n [KohlsLite]: Playing music: " .. musicnames[musicplay] .. ". \n\n\n")
 	    end
 	    if antimlog then
             	Chat("music 00000000000000000000000000" .. musiclist[musicplay])
@@ -929,7 +929,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'rgmusic' then
         musicplay = math.random(1, #musiclist)
-        Chat("h \n\n\n [KohlsLite]: Playing music:" .. musicnames[musicplay] .. ". \n\n\n")
+        Chat("h \n\n\n [KohlsLite]: Playing music: " .. musicnames[musicplay] .. ". \n\n\n")
          if antimlog then
             	Chat("music 00000000000000000000000000" .. musiclist[musicplay])
 	 else
@@ -943,7 +943,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
        else            
           musicplay = musicplay + 1
        end
-       Chat("h \n\n\n [KohlsLite]: Playing music:" .. musicnames[musicplay] .. ". \n\n\n")
+       Chat("h \n\n\n [KohlsLite]: Playing music: " .. musicnames[musicplay] .. ". \n\n\n")
        if antimlog then
             	Chat("music 00000000000000000000000000" .. musiclist[musicplay])
 	else
@@ -957,7 +957,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
        else            
           musicplay = musicplay - 1
        end
-       Chat("h \n\n\n [KohlsLite]: Playing music:" .. musicnames[musicplay] .. ". \n\n\n")
+       Chat("h \n\n\n [KohlsLite]: Playing music: " .. musicnames[musicplay] .. ". \n\n\n")
         if antimlog then
             	Chat("music 00000000000000000000000000" .. musiclist[musicplay])
 	else
@@ -1308,7 +1308,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          PLAYERCHECK(dasplayer)
          if player ~= nil then
 		gotou = cplr
-		Goto2()
+		Goto2(gotou)
          else
                 print('Cannot find player with the name: '..dasplayer)
          end
@@ -4464,8 +4464,8 @@ function Goto()
 end
 
 -- for cframe goto
-function Goto2()
-	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = cplr.Character.HumanoidRootPart.CFrame
+function Goto2(person)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = person.Character.HumanoidRootPart.CFrame
 end
 
 -- BRING
@@ -4564,7 +4564,8 @@ end)
 
 -- LOG SPAM
 function LogSpam()
-      for i = 1,100 do
+      for i = 1,50 do
+	  Chat("ff KOHLSLITE ON BOTTOM - ts2021, 2024")
           Chat("ff PR SCRIPT ON TOP - atprog, 2024")
       end
 end
