@@ -2021,6 +2021,30 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	print("WIP")
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'byp' then -- if it doesn't work then i don't care (as of 4/3/24)
+	local args = string.split(msg, " ")
+	local cmd = args[1]
+    	local bypsed = table.concat(args, " ", 2)
+	local file = bypsed
+	local a = {}
+
+	for letter in file:gmatch(".") do
+  		if letter ~= "\r" and letter ~= "\n" then
+    			table.insert(a, letter)
+  		end
+	end
+
+	for b, c in ipairs(a) do
+    		local d = "variable_" .. tostring(b)
+   		_G[d] = c
+	end
+			
+	for b, c in ipairs(a) do
+    		local e = string.rep("  ", 2 * (b - 1))
+    		game.Players:Chat("h KohlsLite ez \n\n\n\n\n\n\n\n\n\n\n\n" .. e .. _G["variable_" .. tostring(b)])
+	end
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'snplayer' then
 	nameuser = string.sub(msg:lower(), #prefix + 10)
 	SName = true
