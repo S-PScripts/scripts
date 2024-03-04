@@ -794,7 +794,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
        end
 
        if string.sub(msg, 1, #prefix + 10) == prefix..'unloopkill' then
-         local dasplayer = string.sub(msg:lower(), #prefix + 10)
+         local dasplayer = string.sub(msg:lower(), #prefix + 12)
          PLAYERCHECK(dasplayer)
          if player ~= nil then
                 Chat("h \n\n\n [KohlsLite]: "..player.." is no longer being loopkilled! \n\n\n")
