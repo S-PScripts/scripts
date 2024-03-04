@@ -2317,6 +2317,10 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'fixgrav' then
 		GravFix()
     end
+
+     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'breakvelo' then
+		NoVelo()
+     end
 		
     if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unadminall' then
        alladmin = false
@@ -3658,7 +3662,7 @@ task.spawn(function()
                 end
 	end
 
-	if v.Character.Humanoid.Health ~= 0 and (loopkill, v.Name) then
+	if v.Character.Humanoid.Health ~= 0 and table.find(loopkill, v.Name) then
                     Chat("kill "..v.Name)
         end
 
@@ -4688,9 +4692,16 @@ end
 
 -- Cam Break
 function NoCam()
-      Chat("gear me 0004842207161")
+      Chat("gear me 4842207161")
       print("Right Click! If you're on mobile, it may not work tapping normally :P")
 end
+
+function NoVelo()
+      Chat("gear me 287426148")
+      Chat("gear me 119917513")
+      Chat("gear me 74385399")
+end
+
 
 -- BREAK AND FIX CAM 2
 function TogCam()
