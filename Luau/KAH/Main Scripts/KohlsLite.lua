@@ -1986,11 +1986,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'rockmap' then
-	print("WIP")
+	StoneMap()
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'stonemap' then
-	print("WIP")
+	StoneMap()
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'icemap' then
@@ -5069,6 +5069,23 @@ function Rail()
 	Chat("unspin " .. railer)
 	Chat("unff " .. railer)
 	Chat("ungear me")
+end
+
+function StoneMap()
+ 	local stoneTool1, stoneTool2
+        Chat('gear me 59190534')
+	Chat('gear me 59190534')
+        repeat task.wait() until #game.Players.LocalPlayer.Backpack:GetChildren() >= 2
+        stoneTool1, stoneTool2 = game.Players.LocalPlayer.Backpack:GetChildren()[1], game.Players.LocalPlayer.Backpack:GetChildren()[2]
+        task.wait()
+        stoneTool1.Parent, stoneTool2.Parent = game.Players.LocalPlayer.Character, game.Players.LocalPlayer.Character
+        task.wait()
+        thread(function()
+            stoneTool1.ServerControl:InvokeServer("KeyPress", {["Key"] = "x", ["Down"] = true})
+        end)
+        thread(function()
+            stoneTool2.ServerControl:InvokeServer("KeyPress", {["Key"] = "x", ["Down"] = true})
+        end)
 end
 
 function Surround(mode)
