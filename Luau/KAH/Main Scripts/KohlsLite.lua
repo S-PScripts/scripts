@@ -4693,7 +4693,7 @@ end
 
 -- SPAWN SAVED
 function Spawn()
-      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(savspawn)
+      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = savspawn
 end
 
 -- SET SPAWN
