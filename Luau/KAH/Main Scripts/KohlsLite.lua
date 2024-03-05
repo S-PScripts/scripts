@@ -4615,7 +4615,8 @@ task.spawn(function()
 	task.wait(0) -- rate limit
 	if fogdance == true then
 		        if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
-                       			Chat("fogend "..game:GetService("Workspace").Terrain["_Game"].Folder.Sound.PlaybackLoudness)
+					pbl = game:GetService("Workspace").Terrain["_Game"].Folder.Sound.PlaybackLoudness / 10
+                       			Chat("fogend "..pbl)
 			end
 	end
    end
