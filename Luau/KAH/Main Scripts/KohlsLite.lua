@@ -4959,6 +4959,11 @@ function onPlayerAdded(player)
 	Chat("h \n\n\n [KohlsLite]: Server automatically crashed due to blacklisted user ("..player.Name..") joining. \n\n\n")
 	DCrash()  
     end
+
+    if autogb == true then 
+		player = v.Name
+		Gearban()
+    end
     task.wait()
 end
 
