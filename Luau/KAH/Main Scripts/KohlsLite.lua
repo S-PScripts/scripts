@@ -4061,7 +4061,7 @@ task.wait(4)
 
 local coems = {}
 for i, v in pairs(game.Players:GetPlayers()) do
-	table.insert(v.Name, coems)
+	table.insert(coems, v.Name)
 end
 
 local randomPlayer = "Placeholder"
