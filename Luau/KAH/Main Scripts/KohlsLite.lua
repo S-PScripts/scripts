@@ -2021,7 +2021,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'icemap' then
-	print("WIP")
+	IceMap()
     end
 
     if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'byp' then -- if it doesn't work then i don't care (as of 4/3/24)
@@ -5138,6 +5138,7 @@ function Rail()
 end
 
 function StoneMap()
+	Chat("ungear me")
  	local stoneTool1, stoneTool2
         Chat('gear me 59190534')
 	Chat('gear me 59190534')
@@ -5152,6 +5153,34 @@ function StoneMap()
         thread(function()
             stoneTool2.ServerControl:InvokeServer("KeyPress", {["Key"] = "x", ["Down"] = true})
         end)
+end
+
+function IceMap()
+ 	local plasticTool
+        Chat('gear me 2758794374')
+        repeat task.wait() until game.Players.LocalPlayer.Backpack:FindFirstChild("2019BloxyAward")
+        plasticTool = ggame.Players.LocalPlayer.Backpack:FindFirstChild("2019BloxyAward")
+        task.wait()
+        plasticTool.Parent = game.Players.LocalPlayer.Character
+        task.wait()
+        for _,part in pairs(game.Workspace:GetDescendants()) do
+            thread(function()
+                if part:IsA("Part") then
+                    local MassCheck = part:Clone()
+                    MassCheck.Material = Enum.Material.Ice
+                    if MassCheck:GetMass() <= 5 then
+                        return
+                    end
+                    repeat 
+                        plasticTool:Activate()
+                        sleep()
+                        firetouchinterest(plasticTool:WaitForChild("Handle"), part, 0)
+                        firetouchinterest(plasticTool:WaitForChild("Handle"), part, 1)
+                    until
+                        (part.Material == Enum.Material.Ice and part.BrickColor == BrickColor.new("Bright yellow")) or plasticTool.Parent ~= LocalPlayer.Character
+                end
+            end)
+        end
 end
 
 function Surround(mode)
