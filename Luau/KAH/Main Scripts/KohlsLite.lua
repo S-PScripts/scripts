@@ -3529,11 +3529,13 @@ task.spawn(function()
 	end
 			
 	if YOUantirocket == true then
-	   if game.Players.LocalPlayer.Character:FindFirstChild("Rocket") then
-                local oldposition = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-                Chat("reload me")
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = oldposition
-            end
+		for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+			if v.Name == "Rocket" then 
+			        local oldposition = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+                		Chat("reload me")
+               			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = oldposition
+			end
+                end
 	end
 			
 	if YOUantisit == true then
