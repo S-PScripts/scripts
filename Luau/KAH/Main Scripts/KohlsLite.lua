@@ -2003,7 +2003,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	    Chat("fix")
 	    Chat(".gmusic42")
 	    dontannounce = true -- lemme know if you want this to be a full feature
-	    Chat("h \n\n\n [KohlsDefender]: This server was crashed because of an issue. \n\n\n")
+	    Chat("h \n\n\n [KohlsLite]: This server was crashed because of an issue. \n\n\n")
 	    task.wait(0.5)
             Chat("fogcolor 0 0 0")
 	    Chat("time 0")
