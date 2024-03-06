@@ -39,6 +39,7 @@ local GWhitelisted = {"me_123eq","me_crashking","ScriptingProgrammer","G_ODt","B
 local slockenabled = false -- slock
 
 local loopkill = {} -- because why not
+local autogb = false
 
 local permusers = {} -- users that use perm will be placed here
 local personsusers = {} -- users that use persons will be placed here
@@ -2207,10 +2208,17 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'getping' then
-	
 		GetPing()
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'autogb' then
+         	autogb = true
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'unautogb' then
+         	autogb = false
+    end
+			
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'gearban' then
          	local dasplayer = string.sub(msg:lower(), #prefix + 9)
          	PLAYERCHECK(dasplayer)
