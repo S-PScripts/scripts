@@ -29,7 +29,7 @@ local function startupScripts()
 	Chat(prefix.."antimsg")
 end
 
-local blacklist = {"SlenderMan990921","EhiplayYN","e5usp","Asphetto","91txt","LeanConsumer69","xtyzmia","Fixydrqma","Robloxian577226532","jjthejoker7","Alyce_24","cihanahmet1670","Fu14r"} -- slocked users
+local blacklist = {"SlenderMan990921","EhiplayYN","e5usp","Asphetto","91txt","LeanConsumer69","xtyzmia","Fixydrqma","Robloxian577226532","jjthejoker7","Alyce_24","cihanahmet1670","Fu14r","RUBYMEEEEMEEE"} -- slocked users
 local whitelist = {"me_123eq","me_crashking","ScriptingProgrammer","G_ODt","BANNter_Original","witnessfox22","IceStuds","atprog","dawninja21","Dawninja21alt","Di33le2","darkmadeboy"} -- not affected by slock
 local nokick = {"me_123eq","me_crashking","ScriptingProgrammer","G_ODt","BANNter_Original","witnessfox22","IceStuds","atprog","Di33le2","darkmadeboy"} -- can't kick these people!
 local newplrslocked = {} -- don't edit!!
