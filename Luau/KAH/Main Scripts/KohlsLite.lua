@@ -1283,6 +1283,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 			YOUantismoke, ALLantismoke = true, true
 			YOUantisparkles, ALLantisparkles = true, true
 			YOUantispeed, ALLantispeed = true, true
+			YOUantispin, ALLantispin = true, true
 			YOUantistun, ALLantistun = true, true
 			YOUantiswag, ALLantiswag = true, true
 			
@@ -2929,6 +2930,22 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	ALLantispeed = false
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antispinm' then
+	YOUantispin = true
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantispinm' then
+	YOUantispin = false
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antispina' then
+	ALLantispin = true
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantispina' then
+	ALLantispin = false
+    end
+		
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antistunm' then
 	YOUantistun = true
     end
@@ -3544,6 +3561,7 @@ task.spawn(function()
 			end
 		end
 	end
+			
 	if YOUantiname == true then
 	     if game.Players.LocalPlayer and game.Players.LocalPlayer.Character:FindFirstChildOfClass("Model") then
 		Chat("reset me")
@@ -3621,6 +3639,14 @@ task.spawn(function()
 	    if not game.Players.LocalPlayer.Character.Humanoid.WalkSpeed == 16 then
                 game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
             end
+	end
+
+	if YOUantispin == true then
+		if game.Players.LocalPlayer.Character:FindFirstChild("Torso") then
+                	if game.Players.LocalPlayer.Character.Torso:FindFirstChild("SPINNER") then
+                    		Chat("unspin me")
+                	end
+                end
 	end
 			
 	if YOUantistun == true then
@@ -3809,6 +3835,14 @@ task.spawn(function()
 	    end
 	end
 
+	if ALLantispin == true then
+		if v.Character:FindFirstChild("Torso") then
+                	if v.Torso:FindFirstChild("SPINNER") then
+                    		Chat("unspin "..v.Name)
+                	end
+                end
+	end
+					
 	if gjdelock == true then
 	    if not v.Character.Humanoid.WalkSpeed == 0 then
 		Chat("speed "..v.Name.." 0")
