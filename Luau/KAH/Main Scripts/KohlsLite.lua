@@ -2053,7 +2053,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 			
 	for b, c in ipairs(a) do
     		local e = string.rep("  ", 2 * (b - 1))
-    		game.Players:Chat("h KohlsLite ez \n\n\n\n\n\n\n\n\n\n\n\n" .. e .. _G["variable_" .. tostring(b)])
+    		Chat("h KohlsLite ez \n\n\n\n\n\n\n\n\n\n\n\n" .. e .. _G["variable_" .. tostring(b)])
 	end
     end
 
@@ -2235,6 +2235,18 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          	if player ~= nil then
 			railer = player
 			Rail()
+         	else
+               		print('Cannot find player with the name: '..dasplayer)
+         	end
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'lemonman' then
+         	local dasplayer = string.sub(msg:lower(), #prefix + 10)
+         	PLAYERCHECK(dasplayer)
+         	if player ~= nil then
+			lemonman = player
+			lman = cplr
+			LemonMan()
          	else
                		print('Cannot find player with the name: '..dasplayer)
          	end
@@ -5142,6 +5154,25 @@ function Gearban()
 	tool:Destroy()
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
         Chat("ungear me")
+end
+
+function Lemon()
+	Chat("gear me 82357101")
+        Chat("unff all")
+        Chat("speed " ..lemonman.. " 0")
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = lman.Character.HumanoidRootPart.CFrame
+	repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("YellowSnowball")
+	local tool = game.Players.LocalPlayer.Backpack:FindFirstChild("YellowSnowball")
+        tool.Parent = game.Players.LocalPlayer.Character
+ 	Chat("music 132323614")
+    	task.wait(0.6)
+    	Speak("I'M THE MAN WHO'S GONNA BURN YOUR HOUSE DOWN!")
+    	task.wait(2.9)
+    	Speak("WITH THE LEMONS!")
+    	task.wait(0.6)
+    	Chat("explode me")
+    	task.wait(0.7)
+	Chat("music nan")
 end
 
 function Rail()
