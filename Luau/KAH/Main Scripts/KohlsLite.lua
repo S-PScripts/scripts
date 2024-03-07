@@ -2246,7 +2246,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          	if player ~= nil then
 			lemonman = player
 			lman = cplr
-			LemonMan()
+			Lemon()
          	else
                		print('Cannot find player with the name: '..dasplayer)
          	end
@@ -5170,7 +5170,7 @@ function Gearban()
 end
 
 function Lemon()
-	Chat("gear me 82357101")
+	Chat("gear me 19703476")
         Chat("unff all")
         Chat("speed " ..lemonman.. " 0")
 	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = lman.Character.HumanoidRootPart.CFrame
