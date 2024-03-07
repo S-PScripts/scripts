@@ -635,11 +635,8 @@ local noblt = false
 -- local permpassid = 66254 or 64354 -> NBC, BC
 -- local personpassid = 35748 or 37127 --> NBC, BC
 
-print("Thank you for using KohlsLite v1.090! Created by S_P.")
+print("Thank you for using KohlsLite v1.090! This script was created by S_P.")
 print("Say .kcmds to list some of the commands. DM me at ts2021 on discord for the full list.")
-print("Yes, this script has some stuff missing and some stuff broken but it's not really finished. There's many stuff I'm still adding.")
-print("With the \n\n\n that hides your username, it does NOT work on newer Roblox guis (my old main and my second alt have it. Instead, it will show as the name at the top.")
-print("I cannot change the \n\n\n or the text won't be on the bar (ugly). Sorry!")
 
 Chat("h \n\n\n [KohlsLite]: Executed! v1.090 \n\n\n")
 
@@ -2988,7 +2985,8 @@ end)
 
 function CMDPrint()
 print("---Command list for KohlsLite v1.080---")
-
+print("Warning! This is NOT a full list so contact me for any other commands!")
+	
 print("---")
 print("perm - loopgrab a random pad (touch interest)")
 print("perm2 - loopgrab a random pad (collisions)")
@@ -3245,13 +3243,20 @@ print("If it's to the game itself, just do (antiname).")
 
 print("---INFORMATION---")
 print("KohlsLite, since 2023. Created by ScriptingProgrammer/ts2021")
-print("Version is: v1.090 - 4th March 2024 Build")
+print("Version is: v1.092 - 7th March 2024 Build")
 
 print("--- CREDITS ---")
 print("Tech and other admins of SC with Shortcut v1, v2 and v3")
 print("Atprog with his PR Script")
 print("iiDk's with iiDk's admin as PR Script is based off it")
 print("SimpleKAH for gears and char ids")
+
+print("--- ADDITIONAL INFO ---")
+print("1a. This script has some stuff missing and some stuff broken but it's not really finished. There's many stuff I'm still adding.")
+print("1b. If you want a good script and have some money/robux, get Shortcut v3-var at https://sckah.xyz")
+print("2a. With the \n\n\n that hides your username, it does NOT work on newer Roblox guis (my old main and my second alt have it.")
+print("2b. Instead, it will show as the name at the top.")
+print("2c. I cannot change the \n\n\n or the text won't be on the bar which is ugly. Sorry!")
 
 end
 
