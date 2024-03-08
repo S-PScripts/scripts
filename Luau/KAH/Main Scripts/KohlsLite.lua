@@ -22,6 +22,14 @@ local function Speak(msg)
     game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(msg, "All")
 end
 
+local function Remind(msg)
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "KohlsLite",
+		Text = msg,
+		Duration = 1
+	})
+end;
+
 local prefix = "." -- ANY LENGTH :D
 
 local function startupScripts()
@@ -647,12 +655,12 @@ if game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.Loca
 else
         perm = true
 	hasperm = false -- used
-	print("A perm pad was given - you don't have the Perm Admin gamepass!")
+	Remind("A perm pad was given - you don't have the Perm Admin gamepass!")
 end
 
 if game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 35748) or game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 37127) then
 	haspersons = true -- used!
-	print("You have Person299's Admin!")
+	print("You have Person299's Admin! You have access to more features!")
 else
 	haspersons = false -- used!
 	print("You do not have Person299's Admin!")
@@ -697,7 +705,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                 Chat('unblind '..player)
                 Chat('unpunish '..player)
          else
-                print('Cannot find player with the name: '..dasplayer)
+                Remind('Cannot find player with the name: '..dasplayer)
          end
        end
 
@@ -708,7 +716,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                 Chat("h \n\n\n [KohlsLite]: "..player.." has been unwhitelisted. \n\n\n")
                 table.remove(whitelist, table.find(whitelist, player))
          else
-                print('Cannot find player with the name: '..dasplayer)
+                Remind('Cannot find player with the name: '..dasplayer)
          end
        end
 		
@@ -733,7 +741,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                 Chat("h \n\n\n [KohlsLite]: "..player.." has been given admin! \n\n\n")
                 table.insert(FAdmins, player)
          else
-                print('Cannot find player with the name: '..dasplayer)
+                Remind('Cannot find player with the name: '..dasplayer)
          end
        end
 	
@@ -744,7 +752,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                 Chat("h \n\n\n [KohlsLite]: "..player.." has been removed from admin. \n\n\n")
                 table.remove(FAdmins, table.find(FAdmins, player))
          else
-                print('Cannot find player with the name: '..dasplayer)
+                Remind('Cannot find player with the name: '..dasplayer)
          end
        end
 
@@ -761,7 +769,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                 Chat("h \n\n\n [KohlsLite]: "..player.." has been whitelisted from anti-gears! \n\n\n")
                 table.insert(GWhitelisted, player)
          else
-                print('Cannot find player with the name: '..dasplayer)
+                Remind('Cannot find player with the name: '..dasplayer)
          end
        end
 
@@ -772,7 +780,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                 Chat("h \n\n\n [KohlsLite]: "..player.." has been unwhitelisted from anti-gears. \n\n\n")
                 table.remove(GWhitelisted, table.find(GWhitelisted, player))
          else
-                print('Cannot find player with the name: '..dasplayer)
+                Remind('Cannot find player with the name: '..dasplayer)
          end
        end
 
@@ -798,7 +806,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                 Chat("h \n\n\n [KohlsLite]: "..player.." is being loopkilled. \n\n\n")
                 table.insert(loopkill, player)
          else
-                print('Cannot find player with the name: '..dasplayer)
+                Remind('Cannot find player with the name: '..dasplayer)
          end
        end
 
@@ -809,7 +817,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                 Chat("h \n\n\n [KohlsLite]: "..player.." is no longer being loopkilled! \n\n\n")
                 table.remove(loopkill, table.find(loopkill, player))
          else
-                print('Cannot find player with the name: '..dasplayer)
+                Remind('Cannot find player with the name: '..dasplayer)
          end
        end
 
@@ -820,7 +828,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                 Chat("h \n\n\n [KohlsLite]: "..player.." has been blacklisted. \n\n\n")
                 table.insert(blacklist, player)
          else
-                print('Cannot find player with the name: '..dasplayer)
+                Remind('Cannot find player with the name: '..dasplayer)
          end
        end
 
@@ -833,7 +841,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                 Chat('unblind '..player)
                 Chat('unpunish '..player)
          else
-                print('Cannot find player with the name: '..dasplayer)
+                Remind('Cannot find player with the name: '..dasplayer)
          end
        end
 
@@ -845,7 +853,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	  	gcplrn = player
 		checkforperm()
          else
-                print('Cannot find player with the name: '..dasplayer)
+                Remind('Cannot find player with the name: '..dasplayer)
          end
        end
 
@@ -867,7 +875,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	  	gcplrn = player
 		checkforpersons()
          else
-                print('Cannot find player with the name: '..dasplayer)
+                Remind('Cannot find player with the name: '..dasplayer)
          end
         end
 
@@ -880,7 +888,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		checkforperm()
 		checkforpersons()
          else
-                print('Cannot find player with the name: '..dasplayer)
+                Remind('Cannot find player with the name: '..dasplayer)
          end
        end
 		
@@ -956,7 +964,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		Chat("music " .. musiclist[musicplay])
 	    end
         else
-            print("Invalid music number!")
+            Remind("Invalid music number!")
         end
     end
 
@@ -1134,12 +1142,13 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'musicid' then
 	      if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
 			      print("Current music ID: "..game:GetService("Workspace").Terrain["_Game"].Folder.Sound.SoundId)
+			      Remind("Current music ID: "..game:GetService("Workspace").Terrain["_Game"].Folder.Sound.SoundId)
 	      end
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'cvol' then
 	      if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
-			      print("Current volume: "..game:GetService("Workspace").Terrain["_Game"].Folder.Sound.Volume)
+			      Remind("Current volume: "..game:GetService("Workspace").Terrain["_Game"].Folder.Sound.Volume)
 	      end	
     end
 
@@ -1152,7 +1161,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'timefis' then
 	      if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
-			print("Current time position: "..game:GetService("Workspace").Terrain["_Game"].Folder.Sound.TimePosition)
+			Remind("Current time position: "..game:GetService("Workspace").Terrain["_Game"].Folder.Sound.TimePosition)
 	      end	
     end
 
@@ -1253,7 +1262,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antiabuse' then
-	print("Most antis are ON!")
+	Remind("Most antis are ON!")
 			antiattach = true
 			antidisco = true
 			antiflash = true
@@ -1297,7 +1306,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantiabuse' then
-	print("Most antis are OFF!")
+	Remind("Most antis are OFF!")
 			antiattach = false
 			antidisco = false
 			antiflash = false
@@ -1352,7 +1361,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		gotou = cplr
 		Goto2(gotou)
          else
-                print('Cannot find player with the name: '..dasplayer)
+                Remind('Cannot find player with the name: '..dasplayer)
          end
     end
 
@@ -1405,7 +1414,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'saveregen' then
-		print("keep your regen co-ords safe!")
+		Remind("keep your regen co-ords safe!")
 		setclipboard(Admin.Regen.Position.X,Admin.Regen.Position.Y,Admin.Regen.Position.Z)
     end
 
@@ -1656,7 +1665,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'scrash' then -- not a silent crash!
 	if haspersons == false then
-	   print([["Sorry, you don't have Person's to perform this command!
+	   Remind([["Sorry, you don't have Person's to perform this command!
 		Commands required: shield"]])
 	else
 	SCrash()
@@ -1665,7 +1674,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'rkick' then
 	if haspersons == false then
-	   print([["Sorry, you don't have Person's to perform this command!
+	   Remind([["Sorry, you don't have Person's to perform this command!
 		Commands required: rocket"]])
 	else
 	   	local dasplayer = string.sub(msg:lower(), #prefix + 7)
@@ -1674,14 +1683,14 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 			rkicker = cplr
 			RKick()
 	   	else
-                	print('Cannot find player with the name: '..dasplayer)
+                	Remind('Cannot find player with the name: '..dasplayer)
            	end
 	 end
     end
 
    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'srkick' then
 	if haspersons == false then
-	   print([["Sorry, you don't have Person's to perform this command!
+	   Remind([["Sorry, you don't have Person's to perform this command!
 		Commands required: rocket"]])
 	else
 		local dasplayer = string.sub(msg:lower(), #prefix + 7)
@@ -1690,7 +1699,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 			rkicker = cplr
 			srkick = true
 	   	else
-                	print('Cannot find player with the name: '..dasplayer)
+                	Remind('Cannot find player with the name: '..dasplayer)
            	end
 	end
     end
@@ -2103,7 +2112,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                 Chat("h \n\n\n [KohlsLite]: "..player.." has been padbanned. \n\n\n")
                 table.insert(padbanned, player)
          else
-                print('Cannot find player with the name: '..dasplayer)
+                Remind('Cannot find player with the name: '..dasplayer)
          end
     end
 		
@@ -2114,7 +2123,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                 Chat("h \n\n\n [KohlsLite]: "..player.." has been unpadbanned! \n\n\n")
                 table.remove(padbanned, table.find(padbanned, player))
          else
-                print('Cannot find player with the name: '..dasplayer)
+                Remind('Cannot find player with the name: '..dasplayer)
          end
     end
 
@@ -2182,7 +2191,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, 7) == 'cprefix' then
-	print("Your current prefix is "..prefix)
+	Remind("Your current prefix is "..prefix)
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'paintmap' then
@@ -2239,7 +2248,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          	if player ~= nil then
 			Gearban()
          	else
-               		print('Cannot find player with the name: '..dasplayer)
+               		Remind('Cannot find player with the name: '..dasplayer)
          	end
     end
 
@@ -2250,7 +2259,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 			railer = player
 			Rail()
          	else
-               		print('Cannot find player with the name: '..dasplayer)
+               		Remind('Cannot find player with the name: '..dasplayer)
          	end
     end
 
@@ -2262,7 +2271,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 			lman = cplr
 			Lemon()
          	else
-               		print('Cannot find player with the name: '..dasplayer)
+               		Remind('Cannot find player with the name: '..dasplayer)
          	end
     end
 
@@ -2273,7 +2282,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 			surrer = player
 			Surround(1)
          	else
-               		print('Cannot find player with the name: '..dasplayer)
+               		Remind('Cannot find player with the name: '..dasplayer)
          	end
     end
 
@@ -2284,7 +2293,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 			surrer = player
 			Surround(2)
          	else
-               		print('Cannot find player with the name: '..dasplayer)
+               		Remind('Cannot find player with the name: '..dasplayer)
          	end
     end
 
@@ -2295,7 +2304,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 			myageis = cplr.AccountAge
                 	Chat("h \n\n\n [KohlsLite]: "..player.."'s account age is "..myageis.." days! \n\n\n")
          	else
-               		print('Cannot find player with the name: '..dasplayer)
+               		Remind('Cannot find player with the name: '..dasplayer)
          	end
     end
 		
@@ -2330,19 +2339,19 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'rejoin' then
-	print("Rejoinning... please wait!")
+	Remind("Rejoinning... please wait!")
 	REJOIN()
     end
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'shop' then
-	print("Serverhopping... please wait!")
-	print("[WARN]: THIS MAY REJOIN YOU TO THE SAME SERVER.")
+	Remind("Serverhopping... please wait!")
+	Remind("[WARN]: THIS MAY REJOIN YOU TO THE SAME SERVER.")
 	SERVERHOP()
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'serverhop' then
-	print("Serverhopping... please wait!")
-	print("[WARN]: THIS MAY REJOIN YOU TO THE SAME SERVER.")
+	Remind("Serverhopping... please wait!")
+	Remind("[WARN]: THIS MAY REJOIN YOU TO THE SAME SERVER.")
 	SERVERHOP()
     end
 		
@@ -2481,7 +2490,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         if player ~= nil then 
 		CheckBackpack()
         else
-                print('Cannot find player with the name: '..checker)
+                Remind('Cannot find player with the name: '..checker)
         end
     end
 
@@ -3350,26 +3359,26 @@ end
 -- CHECK FOR PERM
 function checkforperm()
 	if string.match(game:HttpGet("https://inventory.roblox.com/v1/users/" .. gcplr.UserId .. "/items/GamePass/" .. 66254), 66254) then
-            print(gcplrn.." has perm in NBC!")
+            Remind(gcplrn.." has perm in NBC!")
 	    table.insert(permusers, gcplrn)
         elseif string.match(game:HttpGet("https://inventory.roblox.com/v1/users/" .. gcplr.UserId .. "/items/GamePass/" .. 64354), 64354) then
-            print(gcplrn.." has perm in BC!")
+            Remind(gcplrn.." has perm in BC!")
 	    table.insert(permusers, gcplrn)
         else 
-        	print(gcplrn..' does not have perm!')
+        	Remind(gcplrn..' does not have perm!')
         end
 end
 
 -- CHECK FOR PERSONS
 function checkforpersons()
 	if string.match(game:HttpGet("https://inventory.roblox.com/v1/users/" .. gcplr.UserId .. "/items/GamePass/" .. 35748), 35748) then
-            print(gcplrn.." has persons in NBC!")
+            Remind(gcplrn.." has persons in NBC!")
 	    table.insert(personsusers, gcplrn)
         elseif string.match(game:HttpGet("https://inventory.roblox.com/v1/users/" .. gcplr.UserId .. "/items/GamePass/" .. 37127), 37127) then
-            print(gcplrn.." has persons in BC!")
+            Remind(gcplrn.." has persons in BC!")
 	    table.insert(personsusers, gcplrn)
         else 
-        	print(gcplrn..' does not have persons!')
+        	Remind(gcplrn..' does not have persons!')
         end
 end
 
@@ -3976,7 +3985,7 @@ function PLAYERCHECK(plr)
       if string.sub(v.Name:lower(), 1, #plr) == plr:lower() then
           player = v.Name
 	  cplr = v
-          print("[debug]: Found "..player)
+          Remind("[debug]: Found "..player)
       end
   end
 end
@@ -4906,7 +4915,7 @@ end
 -- Cam Break
 function NoCam()
       Chat("gear me 4842207161")
-      print("Right Click! If you're on mobile, it may not work tapping normally :P")
+      Remind("Right Click! If you're on mobile, it may not work tapping normally :P")
 end
 
 function NoVelo()
@@ -4995,7 +5004,7 @@ function NOK()
   game:GetService("Workspace").Terrain["_Game"].Workspace.Obby.Jump7.TouchInterest:destroy()
   game:GetService("Workspace").Terrain["_Game"].Workspace.Obby.Jump8.TouchInterest:destroy()
   game:GetService("Workspace").Terrain["_Game"].Workspace.Obby.Jump9.TouchInterest:destroy()
-  print("Rejoin the server to revert!")
+  Remind("Rejoin the server to revert!")
 end
 
 -- NOK 2
@@ -5008,7 +5017,7 @@ function NOK2()
                 end)
         end)()
   end
-  print("Rejoin the server to revert!")
+  Remind("Rejoin the server to revert!")
 end
 
 -- temp NOK
@@ -5505,7 +5514,7 @@ function moveobject(part, o)
 						Chat("respawn me")
 						ColFix()
 						GravFix()
-						print("Something went wrong removing the parts.")
+						Remind("Something went wrong removing the parts.")
 				end
 			elseif o == 2 then
 				local movcord = false
@@ -5564,7 +5573,7 @@ function moveobject(part, o)
 					Chat("respawn me")
 					ColFix()
 					GravFix()
-					print("Something went wrong removing the parts.")
+					Remind("Something went wrong removing the parts.")
 				end
 			end
 		end
@@ -5607,7 +5616,7 @@ function attach(part)
 					Chat("respawn me")
 					ColFix()
 					GravFix()
-					print("Something went wrong moving the parts. Fixing game and respawning..")
+					Remind("Something went wrong moving the parts. Fixing game and respawning..")
 					tasmove = false
 				end
 				if tasmove == false then 
@@ -5624,7 +5633,7 @@ function attach(part)
 					Chat("respawn me")
 					ColFix()
 					GravFix()
-					print("Something went wrong moving the parts. Fixing game and respawning..")
+					Remind("Something went wrong moving the parts. Fixing game and respawning..")
 					tasmove = false
 				end 
 				if tasmove == false then 
@@ -5653,7 +5662,7 @@ task.spawn(function()
 			Chat("respawn me")
 			ColFix()
 			GravFix()
-			print("Moving the part has stopped due to no character or no admin, respawning and fixing game..")
+			Remind("Moving the part has stopped due to no character or no admin, respawning and fixing game..")
 		end
 	end
 end)
@@ -5690,3 +5699,5 @@ local cantexecute = {}
 if table.find(cantexecute, game.Players.LocalPlayer.Name) then
 	game.Players.LocalPlayer:Kick("[KohlsLite]: You cannot execute this script.") 
 end
+
+-- created with love from s_p
