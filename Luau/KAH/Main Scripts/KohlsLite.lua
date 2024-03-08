@@ -4419,27 +4419,28 @@ end
 task.spawn(function()
     while true do 
         task.wait(0)
-        coroutine.wrap(function()
-			      if loopgrab == true then
-				        local pads = workspace.Terrain._Game.Admin.Pads:GetChildren("Head")
-			      	    	for i, pad in pairs(pads) do
-					        coroutine.wrap(function()
-						          pcall(function()
-							            local cre = pad.Head
-						              	    local spr = game.Players.LocalPlayer.Character:FindFirstChild("Head")
-						              	    firetouchinterest(cre, spr, 1)
-                          					    firetouchinterest(cre, spr, 0)
-                          				            firetouchinterest(cre, spr, 1)
-								    task.wait()
-    							            firetouchinterest(cre, spr, 0)
-							            if pad.Name ~= game.Players.LocalPlayer.Name.."'s admin" then
-									Regen()
-							            end
-						           end)()
-					        end)()
-				        end
-             end
-        end)
+    	coroutine.wrap(function() -- PadAbuse
+			if loopgrab == true then
+				local pads = game:GetService("Workspace").Terrain["_Game"].Admin.Pads:GetChildren("Head")
+				for i, pad in pairs(pads) do
+					coroutine.wrap(function()
+						pcall(function()
+							local cre = pad.Head
+							local spr = game.Players.LocalPlayer.Character:FindFirstChild("Head")
+							firetouchinterest(cre, spr, 1)
+                            				firetouchinterest(cre, spr, 0)
+                            				firetouchinterest(cre, spr, 1)
+							task.wait()
+							firetouchinterest(cre, spr, 0)
+							
+							if pad.Name ~= game.Players.LocalPlayer.Name.."'s admin" then
+								Regen()
+							end
+						end)
+					end)()
+				end
+			end
+        end)()
     end
 end)
 
