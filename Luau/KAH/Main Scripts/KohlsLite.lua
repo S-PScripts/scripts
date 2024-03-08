@@ -5425,51 +5425,6 @@ function moveobject(part, o)
 					GravFix()
 					print("Something went wrong removing the parts.")
 				end
-			elseif o == 3 then
-				if allclear() == true then
-					removelimbs()
-					task.wait()
-					Chat("size me .5")
-					workspace.Gravity = 0
-					workspace.FallenPartsDestroyHeight = 0/0
-					Chat("gear me 108158379")
-					repeat fwait() until Player.Backpack:FindFirstChild("IvoryPeriastron")
-					Player.Character.Humanoid:EquipTool(Player.Backpack:FindFirstChild("IvoryPeriastron"))
-					local ivory = Player.Character:FindFirstChild("IvoryPeriastron")
-					local randcoord = CFrame.new(0, math.random(-14950, -15000), 0)
-					Player.Character.HumanoidRootPart.CFrame = randcoord
-					if Player.Character.Torso:FindFirstChild("Weld") then
-						Player.Character.Torso:FindFirstChild("Weld"):Destroy()
-					end
-					PlayerService.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0, 0, 0)
-					task.wait(.25)
-					if not Player.Character:FindFirstChild("IvoryPeriastron") then
-						ColFix()
-						GravFix()
-						Chat("respawn me")
-						movestatus = false
-						return
-					end
-					ivory:WaitForChild("Remote"):FireServer(Enum.KeyCode.E)
-					task.wait(.05)
-					attach(part)
-					task.wait(.05)
-					if not Player.Character:FindFirstChild("IvoryPeriastron") then
-						ColFix()
-						GravFix()
-						Chat("respawn me")
-						movestatus = false
-						return
-					end
-					ivory:WaitForChild("Remote"):FireServer(Enum.KeyCode.E)
-					task.wait(.25)
-					movestatus = false
-				else
-					Chat("respawn me")
-					ColFix()
-					GravFix()
-					print("Something went wrong removing the parts.")
-				end
 			end
 		end
 	end
