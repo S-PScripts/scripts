@@ -9,7 +9,7 @@ _  _____  _   _ _     ____  _     ___ _____ _____
 
 if _G.executed then 
 	return 
-	print("You've already executed KohlsLite!") 
+	Remind("You've already executed KohlsLite!") 
 end
 
 _G.executed = true
