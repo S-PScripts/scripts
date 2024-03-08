@@ -1783,6 +1783,14 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	antiambient = false
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antitrip' then
+	antitripmine = true
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unantitrip' then
+	antitripmine = false
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'antibright' then
 	antibrightness = true
     end
@@ -3029,7 +3037,22 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	antichatplr = false
 	Chat("reset "..acplr)
     end
+
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'autoff' then
+	autoff = true
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'unautoff' then
+	autoff = false
+    end
 		
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'autogod' then
+	autogod = true
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'unautogod' then
+	autogod = false
+    end	
 end)
 
 function CMDPrint()
@@ -3449,6 +3472,13 @@ task.spawn(function()
 		end
 	end
 
+	if antitripmine == true then
+	   if workspace:FindFirstChild("SubspaceTripmine") then
+	      workspace:FindFirstChild("SubspaceTripmine"):Destroy()
+              Chat("clr")
+	   end
+        end
+
 	if antiambient == true then
 		if game.Lighting.Ambient ~= Color3.new(0,0,0) then
 			Chat("ambient 0 0 0")
@@ -3466,8 +3496,7 @@ task.spawn(function()
 			Chat("outdoorambient 128 128 128")		
 		end	
 	end
-
-			
+		
   end
 end)
 
@@ -3549,6 +3578,20 @@ task.spawn(function()
 	 if game.Players.LocalPlayer.Character:FindFirstChild("ForceField") then
                 Chat("unff me")
             end
+	end
+
+	if autoff == true then
+	 if not game.Players.LocalPlayer.Character:FindFirstChild("ForceField") then
+                Chat("ff me")
+            end
+	end
+
+	if autogod == true then
+	    if not tostring(game.Players.LocalPlayer.Character.Humanoid.MaxHealth) ~= "inf"then
+    		Chat("god me")
+                game.Players.LocalPlayer.Character.Humanoid.MaxHealth = math.huge
+                game.Players.LocalPlayer.Character.Humanoid.Health = 9e9            
+	    end
 	end
 			
 	if YOUantiglow == true then
@@ -3953,6 +3996,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
                 Chat("h \n\n\n [KohlsLite]: Sorry, "..v.Name.. ", you cannot use the Vampire Vanquisher due to anti crash (2). \n\n\n")
                end
             end
+			
             if v.Backpack:FindFirstChild("OrinthianSwordAndShield") or v.Character:FindFirstChild("OrinthianSwordAndShield") then
                if v ~= game.Players.LocalPlayer and anticrash2 == true and not table.find(GWhitelisted, v.Name) then
                 Chat("ungear "..v.Name)
@@ -3960,6 +4004,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
                 Chat("h \n\n\n [KohlsLite]: Sorry, "..v.Name.. ", you cannot use the Orinthian Sword and Shield due to anti crash (2). \n\n\n")
                end
             end
+			
 	    for i, gear in pairs(v.Backpack:GetChildren()) do
             	if gear:IsA("Tool") and antigear2 == true then
                		if v.Name ~= game.Players.LocalPlayer.Name and not table.find(GWhitelisted, v.Name) then
