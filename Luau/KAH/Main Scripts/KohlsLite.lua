@@ -2308,6 +2308,10 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	MRespawn()
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'dummy' then
+         	CreateDummy()
+    end
+		
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'ffix' then 
 	GravFix()
 	Chat("respawn me")
@@ -4915,6 +4919,7 @@ end
 -- FIX CAM (client)
 function FixCam()
 		task.spawn(function()
+			local Player = game.Players.LocalPlayer
 			local PlayerService = game:GetService("Players")
 			local lp = PlayerService.LocalPlayer
 			local ui = game:GetService("UserInputService")
@@ -5021,6 +5026,8 @@ local Player = game.Players.LocalPlayer
 local PlayerService = game:GetService("Players")
 
 function MRespawn()
+			local Player = game.Players.LocalPlayer
+			local PlayerService = game:GetService("Players")
 			local char = PlayerService.LocalPlayer.Character
 			if char:FindFirstChildOfClass("Humanoid") then 
 				char:FindFirstChildOfClass("Humanoid"):ChangeState(15) 
@@ -5032,6 +5039,24 @@ function MRespawn()
 			wait()
 			PlayerService.LocalPlayer.Character = char
 			newChar:Destroy()
+end
+
+function Dummy()
+			local pos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+			Chat("char me 5647726938")
+			task.wait(0.3)
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
+			Chat("face me 8560971")
+			Chat("unpants me")
+			repeat task.wait() until not game.Players.LocalPlayer.Character:FindFirstChildOfClass("Pants")
+			task.wait(0.1)
+			Chat("name me NPC")
+			repeat wait() until game.Players.LocalPlayer.Character:FindFirstChild("NPC")
+			Chat("clone me")
+			task.wait()
+			Chat("unchar me")
+			task.wait(0.25)
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
 end
 
 -- Removing and adding the obby locally
