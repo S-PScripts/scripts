@@ -1681,6 +1681,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
            	PLAYERCHECK(dasplayer)
            	if player ~= nil and not table.find(nokick, player) then
 			rkicker = cplr
+			rkicks = player
 			RKick()
 	   	else
                 	Remind('Cannot find player with the name: '..dasplayer)
@@ -1697,6 +1698,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
            	PLAYERCHECK(dasplayer)
            	if player ~= nil and not table.find(nokick, player) then
 			rkicker = cplr
+			rkicks = player
 			srkick = true
 	   	else
                 	Remind('Cannot find player with the name: '..dasplayer)
@@ -4792,10 +4794,16 @@ end
 -- ROCKET KICK
 function RKick()
       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = rkicker.Character.HumanoidRootPart.CFrame
-      Chat("setgrav "..rkicker.. "3500")
-      Chat("jail/".. rkicker)
+      for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+			if v.Name == "Rocket" then v.CanCollide = false end
+      end
+      for i,v in pairs(rkicker.Character:GetChildren()) do
+			if v.Name == "Rocket" then v.CanCollide = false end
+      end
+      Chat("setgrav "..rkicks.. "3500")
+      Chat("jail/".. rkicks)
       for i = 1,100 do
-          Chat("rocket/"..rkicker.."/"..rkicker.."/"..rkicker)
+          Chat("rocket/"..rkicks.."/"..rkicks.."/"..rkicks)
 	  Chat("rocket/me/me/me")
       end
 end
@@ -5176,7 +5184,8 @@ function onPlayerAdded(player)
     if table.find(rkick_on_sight, player.Name) then
 		Chat("h \n\n\n [KohlsLite]: Auto rocket kicking "..player.Name.." as they are blacklisted. \n\n\n")
 		srkick = true
-		rkicker = player.Name
+		rkicks = player.Name
+		rkicker = player
 		RKick()   
     end
 
