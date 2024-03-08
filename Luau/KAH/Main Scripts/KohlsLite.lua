@@ -2343,6 +2343,14 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	 game.Players.LocalPlayer.Character.Humanoid.Health = tonumber(string.sub(msg:lower(), #prefix + 6))
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'noclip' then
+	 WalkThru("on")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'clip' then
+	 WalkThru("off")
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'ufly' then
 	 GExecute("https://raw.githubusercontent.com/S-PScripts/techls-fork/main/KAH%20Fly.lua")
     end
@@ -4989,6 +4997,22 @@ function LocalObby(mode)
 	else 
 		    workspace.Terrain["_Game"]["Workspace"].Obby.Parent = game.Chat
     		    workspace.Terrain["_Game"]["Workspace"]["Obby Box"].Parent = game.Chat
+	end
+end
+
+function WalkThru(mode)
+	if mode == "on" then
+			for _, child in pairs(chr:GetDescendants()) do
+				if child:IsA("BasePart") and child.CanCollide == true then
+					child.CanCollide = false
+				end
+			end
+	else 
+		    for _, child in pairs(chr:GetDescendants()) do
+				if child:IsA("BasePart") and child.CanCollide == false then
+					child.CanCollide = true
+				end
+		    end
 	end
 end
 
