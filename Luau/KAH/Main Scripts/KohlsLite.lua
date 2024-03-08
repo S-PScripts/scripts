@@ -1291,6 +1291,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 			YOUantispeed, ALLantispeed = true, true
 			YOUantispin, ALLantispin = true, true
 			YOUantistun, ALLantistun = true, true
+			YOUantisetgrav, ALLantisetgrav = true, true
 			YOUantiswag, ALLantiswag = true, true
 			
     end
@@ -1332,6 +1333,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 			YOUantisparkles, ALLantisparkles = false, false
 			YOUantispeed, ALLantispeed = false, false
 			YOUantistun, ALLantistun = false, false
+			YOUantisetgrav, ALLantisetgrav = false, false
 			YOUantiswag, ALLantiswag = false, false
 			
     end
@@ -2968,6 +2970,22 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	ALLantistun = false
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antistgm' then
+	YOUantisetgrav = true
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unantistgm' then
+	YOUantisetgrav = false
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antistga' then
+	ALLantisetgrav = true
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unantistga' then
+	ALLantisetgrav = false
+    end
+		
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antiswagm' then
 	YOUantiswag = true
     end
@@ -2986,7 +3004,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antichat' then
 	antichat = true
-	YOUantimsg = true -- stop you from crashing :D
+	YOUantimsg = true -- stop you from crashing :)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unantichat' then
@@ -3001,7 +3019,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'unmkick' then
 	antichatplr = false
-	Chat("clear")
+	Chat("reset "..acplr)
     end
 		
 end)
@@ -3448,7 +3466,7 @@ end)
 -- anti chat/msg-crash
 task.spawn(function()
 	while true do
-	task.wait(0.5)
+	task.wait(0.1)
 		if antichat == true then
 			if haspersons == true then
 				Chat("m/ [KohlsLite]: 😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀")
@@ -3665,6 +3683,14 @@ task.spawn(function()
                     end
              end
 	end
+
+	if YOUantisetgrav == true then
+		if game.Players.LocalPlayer.Character:FindFirstChild("Torso") then
+                	if game.Players.LocalPlayer.Character.Torso:FindFirstChildOfClass("BodyForce") then
+					game.Players.LocalPlayer.Character.Torso:FindFirstChildOfClass("BodyForce"):Destroy()
+			end
+                end
+	end
 			
 	if YOUantiswag == true then
 		if game.Players.LocalPlayer.Character:FindFirstChild("EpicCape") then
@@ -3804,13 +3830,10 @@ task.spawn(function()
 	end
 				
 	if ALLantisit == true then
-	   local player = v
-            	 if player.Character then
                     local humanoid = player.Character:WaitForChild("Humanoid", 1)
                     if humanoid and humanoid.Sit then
-                        Chat("unsit "..player.Name)
+                        Chat("unsit "..v.Name)
                     end
-             	end
 	end
 				
 	if ALLantiseizure == true then
@@ -3856,15 +3879,20 @@ task.spawn(function()
 	end
 				
 	if ALLantistun == true then
-	    local player = v
-             if player.Character then
-                    local humanoid = player.Character:WaitForChild("Humanoid", 1)
+                    local humanoid = v.Character:WaitForChild("Humanoid", 1)
                     if humanoid and humanoid.PlatformStand then
-                        Chat("unstun "..player.Name)
+                        Chat("unstun "..v.Name)
                     end
-             end
 	end
-				
+
+	if ALLantisetgrav == true then
+		if v.Character:FindFirstChild("Torso") then
+                	if v.Character.Torso:FindFirstChildOfClass("BodyForce") then
+					Chat("respawn "..v.Name)
+			end
+                end
+	end
+					
 	if ALLantiswag == true then
 		if v.Character:FindFirstChild("EpicCape") then
                 	Chat("normal "..v.Name)
