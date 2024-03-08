@@ -1246,6 +1246,12 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         end
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix.."gchar" then
+	    local specialid = string.sub(msg:lower(), #prefix + 7)
+	    local circus = game.Players:GetUserIdFromNameAsync(specialid)
+    	    Chat("char me " .. circus)
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antiabuse' then
 	print("Most antis are ON!")
 			antiattach = true
