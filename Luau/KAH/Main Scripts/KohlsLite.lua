@@ -2386,6 +2386,13 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'ufly' then
 	 GExecute("https://raw.githubusercontent.com/S-PScripts/techls-fork/main/KAH%20Fly.lua")
     end
+
+    if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'isc' then
+	local Ping1 = game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString()
+        task.wait(1)
+        local Ping2 = game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString()   
+	if Ping1 == Ping2 then Remind("The server's crashed!") end
+    end
 		
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'nocam' then
 		NoCam()
@@ -5030,7 +5037,6 @@ function TNOK() -- vitalux cmd
 		end
 	end
 end
-
 
 -- PING
 function GetPing()
