@@ -3798,7 +3798,7 @@ task.spawn(function()
 	end
 				
 	if ALLantisit == true then
-	   local player = v.Name
+	   local player = v
             	 if player.Character then
                     local humanoid = player.Character:WaitForChild("Humanoid", 1)
                     if humanoid and humanoid.Sit then
@@ -3850,7 +3850,7 @@ task.spawn(function()
 	end
 				
 	if ALLantistun == true then
-	    local player = v.Name
+	    local player = v
              if player.Character then
                     local humanoid = player.Character:WaitForChild("Humanoid", 1)
                     if humanoid and humanoid.PlatformStand then
@@ -4142,7 +4142,7 @@ Chat('h \n\n\n Whoops, that was the wrong thing! \n\n\n')
 task.wait(4)
 
 local coems = {}
-for i, v in pairs(game.Players:GetPlayers()) do
+for i, v in ipairs(game.Players:GetPlayers()) do
 	table.insert(coems, v.Name)
 end
 
@@ -5043,7 +5043,8 @@ function onPlayerAdded(player)
     end
 
     if autogb == true then 
-		player = v.Name
+		cplr = player
+		player = player.Name
 		Gearban()
     end
     task.wait()
