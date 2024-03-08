@@ -2287,6 +2287,17 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                		print('Cannot find player with the name: '..dasplayer)
          	end
     end
+
+    if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'age' then
+         	local dasplayer = string.sub(msg:lower(), #prefix + 5)
+         	PLAYERCHECK(dasplayer)
+         	if player ~= nil then
+			myageis = cplr.AccountAge
+                	Chat("h \n\n\n [KohlsLite]: "..player.."'s account age is "..myageis.." days! \n\n\n")
+         	else
+               		print('Cannot find player with the name: '..dasplayer)
+         	end
+    end
 		
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'sspawn' then -- save spawn
 		SSpawn()
