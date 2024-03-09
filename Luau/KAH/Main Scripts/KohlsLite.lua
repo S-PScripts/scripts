@@ -3790,21 +3790,22 @@ task.spawn(function()
 	while true do
 	task.wait()
 	for i, v in ipairs(game.Players:GetPlayers()) do
+		print("Debug 1")
 	if v.Name ~= game.Players.LocalPlayer.Name then
-					
+					print("Debug 2")
 	if ALLanticlone == true then
 	    if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild(v.Name) then
                 Chat("unclone "..v.Name)
             end
 	end
 
-	if ALLantidog == true then
+	--[[if ALLantidog == true then
 	     	for i,x in pairs(v.Character:GetDescendants()) do
 			if x:IsA("Seat") then
 				Chat("undog "..v.Name)
 			end
             	end
-	end
+	end]]
 				
 	if ALLantifire == true then
 	    if v.Character:FindFirstChild("Torso") then
@@ -3820,12 +3821,12 @@ task.spawn(function()
             end
 	end
 				
-	if ALLantifly == true or gjdelock == true then
+	--[[if ALLantifly == true or gjdelock == true then
 	    if not v.Character:FindFirstChild("Seizure") and v.Character.Humanoid:GetState().Name == "PlatformStanding" then
                 Chat("unfly "..v.Name)
                 Chat("clip "..v.Name)
             end
-	end
+	end]]
 				
 	if ALLantiff == true then
 	 if v.Character:FindFirstChild("ForceField") then
@@ -3879,9 +3880,9 @@ task.spawn(function()
                 end
 	end
 
-	if v.Character.Humanoid.Health ~= 0 and table.find(loopkill, v.Name) then
+--[[	if v.Character.Humanoid.Health ~= 0 and table.find(loopkill, v.Name) then
                     Chat("kill "..v.Name)
-        end
+        end]]
 
 	if ALLantichar == true then
 	   if v.UserId ~= v.CharacterAppearanceId then
