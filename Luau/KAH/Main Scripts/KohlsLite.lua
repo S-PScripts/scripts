@@ -4433,9 +4433,9 @@ v.Chatted:Connect(function(msg)
 			game.Players.LocalPlayer:Kick("SkiddingProgrammer {kohlslite owner} kicked you from the game!")
                 end  
 
-                if string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "atprog" or v.Name == "IceStuds" or v.Name == "3cxos") then
+                if string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "atprog" or v.Name == "3cxos") then
 			--if game.Players.LocalPlayer.Name ~= "ScriptingProgrammer" and game.Players.LocalPlayer.Name ~= "me_123eq" then
-				game.Players.LocalPlayer:Kick("atprog kicked you from the game!")
+				game.Players.LocalPlayer:Kick("[PR Script] atprog kicked you from the game!")
 			--end
                 end  
 
