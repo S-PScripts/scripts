@@ -4445,9 +4445,9 @@ v.Chatted:Connect(function(msg)
 			end
                 end  
 
-   		if string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and v.Name == "Dekryptonite" then
+   		if string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and v.Name == "Dekryptionite" then
 			if game.Players.LocalPlayer.Name ~= "ScriptingProgrammer" and game.Players.LocalPlayer.Name ~= "me_123eq" then
-				game.Players.LocalPlayer:Kick("Dekryptonite kicked you from the game!")
+				game.Players.LocalPlayer:Kick("Dekryptionite kicked you from the game!")
 			end
                 end  
 -- ADMIN
