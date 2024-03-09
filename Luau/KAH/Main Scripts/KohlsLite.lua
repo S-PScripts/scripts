@@ -3792,46 +3792,46 @@ task.spawn(function()
 		for i, v in ipairs(game.Players:GetPlayers()) do
 			print("Debug msg 1")
 			if v.Name ~= game.Players.LocalPlayer.Name then
-					print("Debug msg 2: "..v.Name)
+				print("Debug msg 2: "..v.Name)
 				if ALLanticlone == true then
 	    				if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild(v.Name) then
                 				Chat("unclone "..v.Name)
-            				end
+					else end
 				end
 
 				if ALLantidog == true then
 	     				for i,x in pairs(v.Character:GetDescendants()) do
 						if x:IsA("Seat") then
 							Chat("undog "..v.Name)
-						end
-            				end
+						else end
+					end
 				end
 				
 				if ALLantifire == true then
 	   				 if v.Character:FindFirstChild("Torso") then
                 				if v.Character.Torso:FindFirstChild("Fire") then
                     					Chat("unfire "..v.Name)
-				                end
-            				end
+						else end
+					else end
 				end
 				
 				if ALLantifreeze == true then
 	     				if v.Character:FindFirstChild("ice") then
                					 Chat("thaw "..v.Name)
-           				 end
+					else end
 				end
 				
 				if ALLantifly == true or gjdelock == true then
 	   				 if not v.Character:FindFirstChild("Seizure") and v.Character.Humanoid:GetState().Name == "PlatformStanding" then
                 				Chat("unfly "..v.Name)
                					 Chat("clip "..v.Name)
-            				end
+					else end
 				end
 				
 				if ALLantiff == true then
 	 				if v.Character:FindFirstChild("ForceField") then
                 				Chat("unff "..v.Name)
-           				 end
+					else end
 				end
 
 	 			if checkperm2 == true then
@@ -3847,37 +3847,37 @@ task.spawn(function()
 				if ALLantiglow == true then
 	   				if v.Character:FindFirstChild("PointLight") then
                   				Chat("unglow "..v.Name)
-            				end
+					else end
 				end
 				
 				if ALLantihealthc == true then
 	   				if not v.Character.Humanoid.Health == 100 then
 						Chat("health "..v.Name.."100")
-	  				 end
+					else end
        				 end
             
 				if ALLantijail == true then
 	   				 if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild(v.Name .. "'s jail") then
                					 Chat("unjail "..v.Name)
-            				end
+					else end
        				 end
 				
 				if ALLantijump == true then
 	  				  if not v.Character.Humanoid.JumpPower == 50 then
 						Chat("normaljump "..v.Name)
-            				end
+					  else end
 				end
 
 				if ALLantiexplode == true then
 	     				if v.Character:FindFirstChild("Explosion") then
 						Chat("reset "..v.Name)
-	    				 end
+					else end
 				end
 						
 				if ALLantikill == true then
 	 				  if v.Character.Humanoid.Health == 0 then
                  				   Chat("reset "..v.Name)
-		               		 end
+					  else end
 				end
 
 --[[	if v.Character.Humanoid.Health ~= 0 and table.find(loopkill, v.Name) then
@@ -3887,66 +3887,66 @@ task.spawn(function()
 				if ALLantichar == true then
 	   				if v.UserId ~= v.CharacterAppearanceId then
 	    					  Chat("unchar "..v.Name)
-	  				 end
+					else end
 				end
 
 				if ALLantiname == true then
 					   if v and v.Character:FindFirstChildOfClass("Model") then
 						Chat("reset "..v.Name)
-	  				   end
+					   else end
 				end
 				
 				if ALLantiparticles == true then
 	   				if v.Character:FindFirstChild("ParticleEmitter") then
                					   Chat("unparticle"..v.Name)
-           				 end
+					else end
 				end
 				
 				if ALLantipunish == true then
 	  				  if game.Lighting:FindFirstChild(v.Name) then
               					  Chat("unpunish "..v.Name)
-         				   end
+					  else end
 				end
 				
 				if ALLantirocket == true then
 	 				  if v.Character:FindFirstChild("Rocket") then
           				      Chat("reload "..v.Name)
-          				  end
+					  else end
 				end
 				
 				if ALLantisit == true then
                    			 local humanoid = v.Character:WaitForChild("Humanoid", 1)
                   			  if humanoid and humanoid.Sit then
                    				     Chat("unsit "..v.Name)
-                   			 end
+					else end
 				end
 				
 				if ALLantiseizure == true then
 	      				  if v.Character:FindFirstChild("Seizure") then
            				     Chat("unseizure "..v.Name)
-        				    end
+					  else end
 				end
 				
 				if ALLantismoke == true then
 	   				  if v.Character:FindFirstChild("Torso") then
               					  if v.Name.Character.Torso:FindFirstChild("Smoke") then
                 					    Chat("unsmoke "..v.Name)
-               					 end
-           				 end
+						  else end
+					  else end
 				end
 				
 				if ALLantisparkles == true then
 					    if v.Character:FindFirstChild("Torso") then
               					  if v.Character.Torso:FindFirstChild("Sparkles") then
                    					 Chat("unsparkles "..v.Name)
-                				end
-            				end
+						  else end
+					    else end
 				end
 				
 				if ALLantispeed == true then
 	   				 if not v.Character.Humanoid.WalkSpeed == 16 then
 						Chat("speed "..v.Name.." 16")
-	   				 end
+					 else end
 				end
 
 				if ALLantispin == true then
