@@ -4268,7 +4268,8 @@ for i, v in ipairs(game.Players:GetPlayers()) do
 end
 
 local randomPlayer = "Placeholder"
-randomPlayer = math.random(1, #coems)
+choosenum = math.random(1, #coems)
+randomPlayer = coems[choosenum]
 
 Chat('h \n\n\n Hopefully '..randomPlayer..' forgives me... \n\n\n')
 if randomPlayer == game.Players.LocalPlayer then
