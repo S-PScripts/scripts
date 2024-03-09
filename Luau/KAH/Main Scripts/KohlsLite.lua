@@ -4052,7 +4052,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
 end)
 
 -- ANTIS FOR CRASHING ATTACHING GEARBANNING AND HAVING A GEAR
-local crashTools = {"OrinthianSwordAndShield", "VampireVanquisher"}
+local crashTools = {"OrinthianSwordAndShield", "VampireVanquisher", "Emerald Knight of the Seventh Sanctum Sword and Shield"}
 local attachTools = {"IvoryPeriastron"}
 local nogearTools = {"PortableJustice", "DriveBloxUltimateCar"}
 local colourTools = {"PaintBucket", "SubspaceTripmine"}
