@@ -4267,9 +4267,9 @@ for i, v in ipairs(game.Players:GetPlayers()) do
 end
 
 local randomPlayer = "Placeholder"
-randomPlayer = Players[math.random(#coems)]
+randomPlayer = math.random(1, #coems)
 
-Chat('h \n\n\n Hopefully'..randomPlayer..'forgives me... \n\n\n')
+Chat('h \n\n\n Hopefully '..randomPlayer..' forgives me... \n\n\n')
 if randomPlayer == game.Players.LocalPlayer then
    task.wait(4)
    Chat("h \n\n\n Wait a second... that's me!!!!!!! \n\n\n")
