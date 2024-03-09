@@ -5449,7 +5449,7 @@ function IceMap()
                     end
                     repeat 
                         plasticTool:Activate()
-                        sleep()
+                        task.wait()
                         firetouchinterest(plasticTool:WaitForChild("Handle"), part, 0)
                         firetouchinterest(plasticTool:WaitForChild("Handle"), part, 1)
                     until
