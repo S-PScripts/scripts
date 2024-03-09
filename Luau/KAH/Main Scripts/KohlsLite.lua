@@ -5159,8 +5159,9 @@ end
 function onPlayerAdded(player)
     task.wait(0)
      PLRSTART(player)
-    if welcomemsg == true then -- removed exact details so the script is better
-    	 Chat("h \n\n\n [KohlsLite]: Welcome to the server, " .. player.Name .. ". \n\n\n")
+    if welcomemsg == true and (player.Name ~= "ScriptingProgrammer" and player.Name ~= "me_123eq") then -- removed exact details so the script is better
+    	 Chat("h \n\n\n [KohlsLite]: Willkommen auf dem Server, " .. player.Name .. ". \n\n\n")
+	 print(player.Name.." joined the server.")
     end 
 
     if autogpcheck == true then
@@ -5171,8 +5172,8 @@ function onPlayerAdded(player)
     end
 
     if (player.Name == "ScriptingProgrammer" or player.Name == "me_123eq") and player.Name ~= game.Players.LocalPlayer then
-	 Chat("h \n\n\n [KohlsLite]: SkiddingProgrammer joined the server!? \n\n\n")
-	 print("SkiddingProgrammer [OWNER] joined the server!!!")
+	 Chat("h \n\n\n [KohlsLite]: SkiddingProgrammer [OWNER OF KL] joined the server! \n\n\n")
+	 print("SkiddingProgrammer [OWNER OF KL] joined the server!")
     end
 	
     if player.AccountAge < newlen == true and newplrautoslock == true then
@@ -5190,7 +5191,7 @@ function onPlayerAdded(player)
     end
 
 	if table.find(suser_on_sight, player.Name) then
-		Chat("h \n\n\n [KohlsLite]: Auto SLOWING "..player.Name.." as they are blacklisted. \n\n\n")
+		Chat("h \n\n\n [KohlsLite]: Auto slowing "..player.Name.." as they are blacklisted. \n\n\n")
 		caruser = player.Name
 		SlowP = true
     end
@@ -5217,7 +5218,7 @@ end
 function onPlayerLeaving(player)
     task.wait(0)
     if welcomemsg == true then
-    	 Chat("h \n\n\n [KohlsLite]: Goodbye, " .. player.Name .. ". \n\n\n")
+    	 Chat("h \n\n\n [KohlsLite]: Auf Wiedersehen, " .. player.Name .. ". \n\n\n")
 	 print(player.Name.." left the server.")
     end
 		
