@@ -4744,6 +4744,7 @@ function VFix()
             v.Velocity = Vector3.new(0,0,0)
         end
     end
+    game.Workspace.Terrain._Game.Workspace.Baseplate.AssemblyLinearVelocity = Vector3.new(0, 0, 0)
 end
 
 function ColFix()
