@@ -4305,7 +4305,7 @@ end
 
 -- SERVERHOP delta broke this bruuigeidfi
 function SERVERHOP()
-	local Servers = game.HttpService:JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/112420803/servers/Public?sortOrder=Asc&limit=100"))
+	local Servers = game.HttpService:JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/"..game.PlaceId.."/servers/Public?sortOrder=Asc&limit=100"))
 	for i,v in pairs(Servers.data) do
   	    if v.playing ~= v.maxPlayers then
       	       game:GetService('TeleportService'):TeleportToPlaceInstance(game.PlaceId, v.id)
