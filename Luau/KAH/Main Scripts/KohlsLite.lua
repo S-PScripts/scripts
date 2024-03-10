@@ -2422,6 +2422,10 @@ Commands required: rocket]])
 	 game.Players.LocalPlayer.Character.Humanoid.Health = tonumber(string.sub(msg:lower(), #prefix + 6))
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'fov' then
+	workspace.Camera.FieldOfView = tonumber(string.sub(msg:lower(), #prefix + 5))
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'noclip' then
 	 WalkThru("on")
     end
