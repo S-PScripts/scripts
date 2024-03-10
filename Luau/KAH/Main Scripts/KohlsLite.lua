@@ -124,7 +124,8 @@ local musiclist = {"9048375035", -- 1
 		   "45819151", -- 46
 		   "6828176320", -- 47
 		   "5410084188", -- 48
-		   "6911766512"} -- 49
+		   "6911766512", -- 49
+		   "7612400047"} -- 50
       
 local musicnames = {"All dropping 8 beats", -- 1
 		    "Robbery", -- 2
@@ -174,7 +175,8 @@ local musicnames = {"All dropping 8 beats", -- 1
 		    "sad depressing music 4am", -- 46
 		    "Painted black", -- 47
 		    "WRLD - Hang Up", -- 48
-		    "Cyber Chainsaw"} -- 49
+		    "Cyber Chainsaw", -- 49
+		    "Unknown"} -- 50
 
 local gearcodes = {
     "212641536", -- 1
@@ -1643,7 +1645,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'remusic' then
-       	Chat(".startm")
+       	Chat(prefix.."startm")
      end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'vgcrash' then
@@ -2027,7 +2029,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
   if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'ecrash' then
 	    Chat("fix")
-	    Chat(".gmusic42")
+	    Chat(prefix.."gmusic50")
 	    dontannounce = true -- lemme know if you want this to be a full feature
 	    Chat("h \n\n\n [KohlsLite]: This server was crashed because of an issue. \n\n\n")
 	    task.wait(0.5)
