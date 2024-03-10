@@ -2336,6 +2336,14 @@ Commands required: rocket]])
                		Remind('Cannot find player with the name: '..dasplayer)
          	end
     end
+
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'rpaintui' then
+		for i,v in ipairs(game.Players.LocalPlayer.PlayerGui:GetChildren()) do
+				if v.Name == "SelectionBox" or v.Name == "LineHandleAdornment" or v.Name == "PaletteGui" then
+							v:Destroy()
+				end
+		end
+    end
 		
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'sspawn' then -- save spawn
 		SSpawn()
