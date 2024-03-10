@@ -1676,8 +1676,8 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'scrash' then -- not a silent crash!
 	if haspersons == false then
-	   Remind([["Sorry, you don't have Person's to perform this command!
-		Commands required: shield"]])
+Remind([[Sorry, you don't have Person's to perform this command!
+Commands required: shield]])
 	else
 	SCrash()
 	end
@@ -1685,8 +1685,8 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'rkick' then
 	if haspersons == false then
-	   Remind([["Sorry, you don't have Person's to perform this command!
-		Commands required: rocket"]])
+Remind([[Sorry, you don't have Person's to perform this command!
+Commands required: rocket]])
 	else
 	   	local dasplayer = string.sub(msg:lower(), #prefix + 7)
            	PLAYERCHECK(dasplayer)
@@ -1702,8 +1702,8 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'srkick' then
 	if haspersons == false then
-	   Remind([["Sorry, you don't have Person's to perform this command!
-		Commands required: rocket"]])
+Remind([[Sorry, you don't have Person's to perform this command!
+Commands required: rocket]])
 	else
 		local dasplayer = string.sub(msg:lower(), #prefix + 7)
            	PLAYERCHECK(dasplayer)
@@ -3891,9 +3891,11 @@ task.spawn(function()
 					  else end
 				end
 
---[[	if v.Character.Humanoid.Health ~= 0 and table.find(loopkill, v.Name) then
-                    Chat("kill "..v.Name)
-        end]]
+--[[				if table.find(loopkill, v.Name) then
+					if v.Character.Humanoid.Health ~= 0 then
+                    				Chat("kill "..v.Name)
+					end
+        			end]]
 
 				if ALLantichar == true then
 	   				if v.UserId ~= v.CharacterAppearanceId then
