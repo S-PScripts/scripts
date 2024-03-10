@@ -5182,7 +5182,7 @@ function onPlayerAdded(player)
     task.wait(0)
      PLRSTART(player)
     if welcomemsg == true and (player.Name ~= "ScriptingProgrammer" and player.Name ~= "me_123eq") then -- removed exact details so the script is better
-    	 Chat("h \n\n\n [KohlsLite]: Willkommen auf dem Server, " .. player.Name .. ". \n\n\n")
+    	 Chat("h \n\n\n [KohlsLite]: Welcome to the server, " .. player.Name .. ". \n\n\n")
 	 print(player.Name.." joined the server.")
     end 
 
@@ -5240,7 +5240,7 @@ end
 function onPlayerLeaving(player)
     task.wait(0)
     if welcomemsg == true then
-    	 Chat("h \n\n\n [KohlsLite]: Auf Wiedersehen, " .. player.Name .. ". \n\n\n")
+    	 Chat("h \n\n\n [KohlsLite]: Goodbye, " .. player.Name .. ". \n\n\n")
 	 print(player.Name.." left the server.")
     end
 		
