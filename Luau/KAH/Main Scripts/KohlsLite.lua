@@ -1476,7 +1476,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'fixobby' then
-		Chat(".tnok")
+		Chat(prefix.."tnok")
 		if movestatus == true then 
 			return 
 		end
@@ -1499,7 +1499,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'moveobby' then
-		Chat(".tnok")
+		Chat(prefix.."tnok")
 		if movestatus == true then 
 			return 
 		end
@@ -2234,13 +2234,11 @@ Commands required: rocket]])
     end
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'tnok' then
-		nokstat = true
-		TNOK()
+		TNOK("true")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'untnok' then
-		nokstat = false
-		TNOK()
+		TNOK("false")
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'getping' then
@@ -5058,9 +5056,9 @@ function NOK2()
 end
 
 -- temp NOK
-function TNOK() -- vitalux cmd
+function TNOK(mode) -- vitalux cmd
 	for i, v in pairs(game:GetService("Workspace").Terrain._Game.Workspace.Obby:GetChildren()) do -- also removes obby walls collision 
-		if nokstat == true then
+		if mode == "true" then
         		v.CanTouch = false
 		else
 			v.CanTouch = true
