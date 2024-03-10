@@ -801,15 +801,24 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	 end
         end
 
-	if string.sub(msg, 1, #prefix + 6)  == prefix..'fogvis' then -- guys is this FONALC
+	if string.sub(msg, 1, #prefix + 6)  == prefix..'fogvis' then -- fonalc funny var
 		fogdance = true
 	end
 
-	if string.sub(msg, 1, #prefix + 8)  == prefix..'unfogvis' then -- guys is this FONALC
+	if string.sub(msg, 1, #prefix + 8)  == prefix..'unfogvis' then -- fonalc funny var
 		fogdance = false
 		Chat("fix")
 	end
+		
+	if string.sub(msg, 1, #prefix + 4)  == prefix..'ccol' then
+		ccolours = true
+	end
 
+	if string.sub(msg, 1, #prefix + 6)  == prefix..'unccol' then -- guys is this FONALC
+		ccolours = false
+		Chat("fix")
+	end
+		
        if string.sub(msg, 1, #prefix + 8) == prefix..'loopkill' then
          local dasplayer = string.sub(msg:lower(), #prefix + 10)
          PLAYERCHECK(dasplayer)
@@ -886,6 +895,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	  Chat("ff admins")
 	  task.wait(1)
 	  checkperm2 = false
+	  Chat("unff admins")
        end
 		
        if string.sub(msg, 1, #prefix + 12) == prefix..'checkpersons' then
@@ -3919,11 +3929,11 @@ task.spawn(function()
 					  else end
 				end
 
---[[				if table.find(loopkill, v.Name) then
+				if table.find(loopkill, v.Name) then
 					if v.Character.Humanoid.Health ~= 0 then
                     				Chat("kill "..v.Name)
 					end
-        			end]]
+        			end
 
 				if ALLantichar == true then
 	   				if v.UserId ~= v.CharacterAppearanceId then
@@ -4877,6 +4887,10 @@ task.spawn(function()
 					pbl = game:GetService("Workspace").Terrain["_Game"].Folder.Sound.PlaybackLoudness / 10
                        			Chat("fogend "..pbl)
 			end
+	end
+
+	if ccolours == true then
+		        Chat("fogcolor " ..tostring(math.random(0, 255)) .." " .. tostring(math.random(0, 255)) .. " " .. tostring(math.random(0, 255)))
 	end
    end
 end)
