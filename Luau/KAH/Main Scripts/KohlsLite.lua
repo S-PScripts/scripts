@@ -1496,7 +1496,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		ColFix()
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'fixfl' then	
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'fixfl' then	
 		if movestatus == true then 
 			return 
 		end	
@@ -1520,6 +1520,32 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		Chat("respawn me")
 		ColFix()
     end
+
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'movefl' then	
+		if movestatus == true then 
+			return 
+		end	
+		DisCol()
+		if Map["Basic House"]:FindFirstChild("SmoothBlockModel38") then
+			moveobject(Map["Basic House"]:FindFirstChild("SmoothBlockModel38"), 1)
+			repeat fwait() until movestatus == false
+			Chat("respawn me")
+		end
+		if Map["Basic House"]:FindFirstChild("SmoothBlockModel40") then
+			moveobject(Map["Basic House"]:FindFirstChild("SmoothBlockModel40"), 1)
+			repeat fwait() until movestatus == false
+			Chat("respawn me")
+		end
+		if Map["Basic House"]:FindFirstChild("SmoothBlockModel112") then
+			moveobject(Map["Basic House"]:FindFirstChild("SmoothBlockModel112"), 1)
+			repeat fwait() until movestatus == false
+			Chat("respawn me")
+		end
+		GravFix()
+		Chat("respawn me")
+		ColFix()
+    end
+		
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'fixobby' then
 		Chat(prefix.."tnok")
 		if movestatus == true then 
