@@ -832,6 +832,16 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          end
        end
 
+       if string.sub(msg, 1, #prefix + 6) == prefix..'report' then
+         local dasplayer = string.sub(msg:lower(), #prefix + 8)
+         PLAYERCHECK(dasplayer)
+         if player ~= nil then
+			game.Players:ReportAbuse(game:GetService("Players"),player,"Cheating/Exploiting", "Spamming random stuff " .. math.random(1, 3276700))         
+	 else
+                Remind('Cannot find player with the name: '..dasplayer)
+         end
+       end
+
        if string.sub(msg, 1, #prefix + 2) == prefix..'bl' then
          local dasplayer = string.sub(msg:lower(), #prefix + 4)
          PLAYERCHECK(dasplayer)
