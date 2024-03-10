@@ -5126,13 +5126,13 @@ end
 
 function WalkThru(mode)
 	if mode == "on" then
-			for _, child in pairs(chr:GetDescendants()) do
+			for _, child in pairs(game.Workspace:GetDescendants()) do
 				if child:IsA("BasePart") and child.CanCollide == true then
 					child.CanCollide = false
 				end
 			end
 	else 
-		    for _, child in pairs(chr:GetDescendants()) do
+		    for _, child in pairs(game.Workspace:GetDescendants()) do
 				if child:IsA("BasePart") and child.CanCollide == false then
 					child.CanCollide = true
 				end
