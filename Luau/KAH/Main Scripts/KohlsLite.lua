@@ -2638,6 +2638,10 @@ Commands required: rocket]])
 		workspace.FallenPartsDestroyHeight = 0/0
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'fixvoid' then
+		workspace.FallenPartsDestroyHeight = -10001
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'pinglogs' then
 	PingLogs = true
     end
