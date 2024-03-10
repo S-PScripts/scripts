@@ -1,4 +1,4 @@
---- CREATED BY SCRIPTINGPROGRAMMER/TS2021/S-PSCRIPTS ---
+--- CREATED BY "TECH" ---
 
 --[[
  _____ _____ ____ _   _ _ ____    ____  _   _ ____ ______   __
@@ -658,8 +658,8 @@ local noblt = false
 -- local permpassid = 66254 or 64354 -> NBC, BC
 -- local personpassid = 35748 or 37127 --> NBC, BC
 
-print("Thank you for using Tech's Sussy Script v1.090! This script was created by S_P.")
-print("Say .kcmds to list some of the commands. DM me at ts2021 on discord for the full list.")
+print("Thank you for using Tech's Sussy Script v1.090! This script was created by TECH.")
+print("Say .kcmds to list some of the commands. DM me at TECH on discord for the full list.")
 
 Chat("h \n\n\n [Tech's Sussy Script]: Executed! v1.090 \n\n\n")
 
@@ -3362,7 +3362,7 @@ print("To yourself, do (antiname)m. To others, do (antiname)a.")
 print("If it's to the game itself, just do (antiname).")
 
 print("---INFORMATION---")
-print("Tech's Sussy Script, since 2023. Created by ScriptingProgrammer/ts2021")
+print("Tech's Sussy Script, since 2023. Created by TECH")
 print("Version is: v1.092 - 7th March 2024 Build")
 
 print("--- CREDITS ---")
@@ -3415,7 +3415,7 @@ task.spawn(function()
         if v.Name ~= game.Players.LocalPlayer.Name and not table.find(whitelist, v.Name) then
             for i, player in ipairs(players) do
                 if string.find(player.Name:lower(), v.Name:lower()) then
-                    if slockenabled == true and v.Name ~= "ScriptingProgrammer" then
+                    if slockenabled == true and v.Name ~= "TECH" then
                         if not game.Lighting:FindFirstChild(v.Name) then
 				local isB,spe = bypassattemptcheck(v.Name)
 				if isB then
@@ -3428,7 +3428,7 @@ task.spawn(function()
 					 Chat("pm '..v.Name..' [Tech's Sussy Script]: sorry, this server is locked!")
 				end
                         end
-                    elseif table.find(blacklist, v.Name) and v.Name ~= "ScriptingProgrammer" then
+                    elseif table.find(blacklist, v.Name) and v.Name ~= "TECH" then
                         if not game.Lighting:FindFirstChild(v.Name) then
                                 local isB,spe = bypassattemptcheck(v.Name)
 				if isB then -- i added because of some guy called m_artin who did shit
@@ -4442,28 +4442,28 @@ v.Chatted:Connect(function(msg)
             	end
 		end
 
-		if string.sub(msg:lower(), 0, 4) == "-klc" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "ScriptingProgrammer" or v.Name == "me_123eq" or v.Name == "BIGpe7niss7") then
+		if string.sub(msg:lower(), 0, 4) == "-klc" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "TECH" or v.Name == "me_123eq" or v.Name == "BIGpe7niss7") then
                         Speak("i use Tech's Sussy Script")
                 end
 
-                if string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "ScriptingProgrammer" or v.Name == "me_123eq" or v.Name == "BIGpe7niss7") then
+                if string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "TECH" or v.Name == "me_123eq" or v.Name == "BIGpe7niss7") then
 			game.Players.LocalPlayer:Kick("SkiddingProgrammer {Tech's Sussy Script owner} kicked you from the game!")
                 end  
 
                 if string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "atprog" or v.Name == "3cxos") then
-			--if game.Players.LocalPlayer.Name ~= "ScriptingProgrammer" and game.Players.LocalPlayer.Name ~= "me_123eq" then
+			--if game.Players.LocalPlayer.Name ~= "TECH" and game.Players.LocalPlayer.Name ~= "me_123eq" then
 				game.Players.LocalPlayer:Kick("[PR Script] atprog kicked you from the game!")
 			--end
                 end  
 
 	        if string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and v.Name == "Di33le2" then
-			if game.Players.LocalPlayer.Name ~= "ScriptingProgrammer" and game.Players.LocalPlayer.Name ~= "me_123eq" then
+			if game.Players.LocalPlayer.Name ~= "TECH" and game.Players.LocalPlayer.Name ~= "me_123eq" then
 				game.Players.LocalPlayer:Kick("Di33le2 kicked you from the game!")
 			end
                 end  
 
    		if string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and v.Name == "Dekryptionite" then
-			if game.Players.LocalPlayer.Name ~= "ScriptingProgrammer" and game.Players.LocalPlayer.Name ~= "me_123eq" then
+			if game.Players.LocalPlayer.Name ~= "TECH" and game.Players.LocalPlayer.Name ~= "me_123eq" then
 				game.Players.LocalPlayer:Kick("Dekryptionite kicked you from the game!")
 			end
                 end  
@@ -5185,7 +5185,7 @@ end
 function onPlayerAdded(player)
     task.wait(0)
      PLRSTART(player)
-    if welcomemsg == true and (player.Name ~= "ScriptingProgrammer" and player.Name ~= "me_123eq") then -- removed exact details so the script is better
+    if welcomemsg == true and (player.Name ~= "TECH" and player.Name ~= "me_123eq") then -- removed exact details so the script is better
     	 Chat("h \n\n\n [Tech's Sussy Script]: Welcome to the server, " .. player.Name .. ". \n\n\n")
 	 print(player.Name.." joined the server.")
     end 
@@ -5197,7 +5197,7 @@ function onPlayerAdded(player)
           checkforperm()
     end
 
-    if (player.Name == "ScriptingProgrammer" or player.Name == "me_123eq") and player.Name ~= game.Players.LocalPlayer then
+    if (player.Name == "TECH" or player.Name == "me_123eq") and player.Name ~= game.Players.LocalPlayer then
 	 Chat("h \n\n\n [Tech's Sussy Script]: SkiddingProgrammer [OWNER OF KL] joined the server! \n\n\n")
 	 print("SkiddingProgrammer [OWNER OF KL] joined the server!")
     end
@@ -5742,4 +5742,4 @@ if table.find(cantexecute, game.Players.LocalPlayer.Name) then
 	game.Players.LocalPlayer:Kick("[Tech's Sussy Script]: You cannot execute this script.") 
 end
 
--- created with love from s_p
+-- created with love from TECH
