@@ -811,6 +811,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	end
 		
 	if string.sub(msg, 1, #prefix + 4)  == prefix..'ccol' then
+		Chat("fogend 0")
 		ccolours = true
 	end
 
