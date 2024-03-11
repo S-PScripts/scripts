@@ -5550,6 +5550,7 @@ end
 
 function StoneMap()
 	Chat("ungear me")
+	task.wait(0.5)
  	local stoneTool1, stoneTool2
         Chat('gear me 59190534')
 	Chat('gear me 59190534')
@@ -5568,6 +5569,7 @@ end
 
 function IceMap()
 	Chat("ungear me")
+	task.wait(0.5)
  	local plasticTool
         Chat('gear me 2758794374')
         repeat task.wait() until game.Players.LocalPlayer.Backpack:FindFirstChild("2019BloxyAward")
@@ -5576,7 +5578,9 @@ function IceMap()
         plasticTool.Parent = game.Players.LocalPlayer.Character
         task.wait()
         for _,part in pairs(game.Workspace:GetDescendants()) do
+	    task.wait()
             task.spawn(function()
+		task.wait()
                 if part:IsA("Part") then
                     local MassCheck = part:Clone()
                     MassCheck.Material = Enum.Material.Ice
@@ -5590,7 +5594,6 @@ function IceMap()
                         firetouchinterest(plasticTool:WaitForChild("Handle"), part, 1)
                     until
                         (part.Material == Enum.Material.Ice and part.BrickColor == BrickColor.new("Bright yellow")) or plasticTool.Parent ~= game.Players.LocalPlayer.Character
-		    print("Complete")
                 end
             end)
         end
