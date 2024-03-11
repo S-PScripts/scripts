@@ -4540,7 +4540,7 @@ v.Chatted:Connect(function(msg)
 			game.Players.LocalPlayer:Kick("SkiddingProgrammer {kohlslite owner} kicked you from the game!")
                 end  
 
-                if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'warn' then
+                if string.sub(msg:lower(), 0, 5) == "-warn" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "atprog" or v.Name == "3cxos" or v.Name == "Dekryptionite") then
                     Remind("[PR Script] You Have Been Warned! ~atprog")
                 end
             
