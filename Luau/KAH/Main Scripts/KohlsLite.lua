@@ -5590,9 +5590,11 @@ function IceMap()
                         firetouchinterest(plasticTool:WaitForChild("Handle"), part, 1)
                     until
                         (part.Material == Enum.Material.Ice and part.BrickColor == BrickColor.new("Bright yellow")) or plasticTool.Parent ~= game.Players.LocalPlayer.Character
+		    print("Complete")
                 end
             end)
         end
+	Chat("ungear me") -- without this you CRASH
 end
 
 function Surround(mode)
