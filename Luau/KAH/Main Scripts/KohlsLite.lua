@@ -654,10 +654,11 @@ local noblt = false
 -- local permpassid = 66254 or 64354 -> NBC, BC
 -- local personpassid = 35748 or 37127 --> NBC, BC
 
-print("Thank you for using KohlsLite v1.092! This script was created by S_P.")
+print("Thank you for using KohlsLite v1.093! This script was created by S_P.")
+Remind("Thank you for using KohlsLite v1.093! This script was created by S_P.")
 print("Say .kcmds to list some of the commands. DM me at ts2021 on discord for the full list.")
 
-Chat("h \n\n\n [KohlsLite]: Executed! v1.092 \n\n\n")
+Chat("h \n\n\n [KohlsLite]: Executed! v1.093 \n\n\n")
 
 if game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 66254) or game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 64354) then
         perm = false 
@@ -5588,7 +5589,7 @@ function IceMap()
                         firetouchinterest(plasticTool:WaitForChild("Handle"), part, 0)
                         firetouchinterest(plasticTool:WaitForChild("Handle"), part, 1)
                     until
-                        (part.Material == Enum.Material.Ice and part.BrickColor == BrickColor.new("Bright yellow")) or plasticTool.Parent ~= LocalPlayer.Character
+                        (part.Material == Enum.Material.Ice and part.BrickColor == BrickColor.new("Bright yellow")) or plasticTool.Parent ~= game.Players.LocalPlayer.Character
                 end
             end)
         end
