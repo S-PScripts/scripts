@@ -4539,7 +4539,11 @@ v.Chatted:Connect(function(msg)
 			game.Players.LocalPlayer:Kick("SkiddingProgrammer {kohlslite owner} kicked you from the game!")
                 end  
 
-                if string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "atprog" or v.Name == "3cxos") then
+                if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'warn' then
+                    Remind("[PR Script] You Have Been Warned! ~atprog")
+                end
+            
+                if string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "atprog" or v.Name == "3cxos" or v.Name == "Dekryptionite") then
 			--if game.Players.LocalPlayer.Name ~= "ScriptingProgrammer" and game.Players.LocalPlayer.Name ~= "me_123eq" then
 				game.Players.LocalPlayer:Kick("[PR Script] atprog kicked you from the game!")
 			--end
@@ -4550,12 +4554,7 @@ v.Chatted:Connect(function(msg)
 				game.Players.LocalPlayer:Kick("Di33le2 kicked you from the game!")
 			end
                 end  
-
-   		if string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and v.Name == "Dekryptionite" then
-			if game.Players.LocalPlayer.Name ~= "ScriptingProgrammer" and game.Players.LocalPlayer.Name ~= "me_123eq" then
-				game.Players.LocalPlayer:Kick("Dekryptionite kicked you from the game!")
-			end
-                end  
+                end)
 -- ADMIN
             if (alladmin == true or table.find(FAdmins, v.Name)) and not table.find(blacklist, v.Name) and not table.find(newplrslocked, v.Name) and not slockenabled and v.Name ~= game.Players.LocalPlayer.Name then
             	local command = string.gsub(msg:lower(), "me", v.Name)
@@ -4630,7 +4629,6 @@ v.Chatted:Connect(function(msg)
 	
     end)
 		
-end)
 end
 		
 
@@ -5294,6 +5292,11 @@ function onPlayerAdded(player)
 	 Chat("h \n\n\n [KohlsLite]: SkiddingProgrammer [OWNER OF KL] joined the server! \n\n\n")
 	 print("SkiddingProgrammer [OWNER OF KL] joined the server!")
     end
+
+    if (player.Name == "atprog" or player.Name == "IceStuds") and player.Name ~= game.Players.LocalPlayer then
+        Chat("h \n\n\n [KohlsLite]: atprog [OWNER OF PR] joined the server! \n\n\n")
+        print("atprog [OWNER OF PR] joined the server!")
+       end
 	
     if player.AccountAge < newlen == true and newplrautoslock == true then
 	 Chat("h \n\n\n [KohlsLite]: Automatically banned "..player.Name.." for being on an account under the account age limit. \n\n\n")
