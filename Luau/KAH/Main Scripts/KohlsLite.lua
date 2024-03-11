@@ -2427,8 +2427,8 @@ Commands required: rocket]])
 	MRespawn()
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'dummy' then
-         	CreateDummy()
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'dummy' then
+         	Dummy()
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'ffix' then 
