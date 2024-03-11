@@ -3725,7 +3725,7 @@ task.spawn(function()
 	end
 
 	if autogod == true then
-	    if not tostring(game.Players.LocalPlayer.Character.Humanoid.MaxHealth) ~= "inf"then
+	    if tostring(game.Players.LocalPlayer.Character.Humanoid.MaxHealth) ~= "inf" then
     		Chat("god me")
                 game.Players.LocalPlayer.Character.Humanoid.MaxHealth = math.huge
                 game.Players.LocalPlayer.Character.Humanoid.Health = 9e9            
