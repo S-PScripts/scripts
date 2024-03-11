@@ -585,6 +585,8 @@ local antimlog = false -- for music
 local antiglog = false -- for gears
 local anticlog = false -- for chars
 
+local alreadyranice = false
+
 local padbanned = {"padbanned"} 
 local padreinforcements = false 
 
@@ -2150,7 +2152,13 @@ Commands required: rocket]])
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'icemap' then
-	IceMap()
+	if alreadyranice == true then
+		Remind("You already ran this command! To prevent crashes you cannot run it again, sorry!")
+	else 
+		Remind("If this crashes you then that sucks!")
+		alreadyranice = true
+		IceMap()
+	end
     end
 
     if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'byp' then -- if it doesn't work then i don't care (as of 4/3/24)
@@ -5597,7 +5605,7 @@ function IceMap()
                 end
             end)
         end
-	task.wait(2.5)
+	task.wait()
 	Chat("ungear me") -- without this you CRASH
 end
 
