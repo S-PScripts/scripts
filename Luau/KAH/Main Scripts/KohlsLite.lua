@@ -1447,8 +1447,10 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'saveregen' then
 		Remind("keep your regen co-ords safe!")
+		adx, ady, adz = Admin.Regen.Position.X, Admin.Regen.Position.Y, Admin.Regen.Position.Z
+		q = adx .. ady .. adz
 		print(Admin.Regen.Position.X, Admin.Regen.Position.Y, Admin.Regen.Position.Z)
-		setclipboard(Admin.Regen.Position.X, Admin.Regen.Position.Y, Admin.Regen.Position.Z)
+		setclipboard(q)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'fixpads' then	
