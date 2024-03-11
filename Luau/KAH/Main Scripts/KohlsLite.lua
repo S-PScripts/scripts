@@ -2396,6 +2396,7 @@ Commands required: rocket]])
          	PLAYERCHECK(dasplayer)
          	if player ~= nil then
 			myageis = cplr.AccountAge
+			print(myageis)
                 	Chat("h \n\n\n [KohlsLite]: "..player.."'s account age is "..myageis.." days! \n\n\n")
          	else
                		Remind('Cannot find player with the name: '..dasplayer)
