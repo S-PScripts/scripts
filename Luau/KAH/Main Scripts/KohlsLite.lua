@@ -3456,7 +3456,7 @@ print("Version is: v1.092 - 7th March 2024 Build")
 
 print("--- CREDITS ---")
 print("Tech and other admins of SC with Shortcut v1, v2 and v3")
-print("Atprog with his PR Script")
+print("atprog with his PR Script")
 print("iiDk's with iiDk's admin as PR Script is based off it")
 print("SimpleKAH for gears and char ids")
 
