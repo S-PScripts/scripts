@@ -4379,7 +4379,7 @@ choosenum = math.random(1, #coems)
 randomPlayer = coems[choosenum]
 
 Chat('h \n\n\n Hopefully '..randomPlayer..' forgives me... \n\n\n')
-if randomPlayer == game.Players.LocalPlayer then
+if randomPlayer == game.Players.LocalPlayer.Name then
    task.wait(4)
    Chat("h \n\n\n Wait a second... that's me!!!!!!! \n\n\n")
 end
