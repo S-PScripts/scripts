@@ -3880,6 +3880,7 @@ task.spawn(function()
 		if game.Players.LocalPlayer.Character:FindFirstChild("Torso") then
                 	if game.Players.LocalPlayer.Character.Torso:FindFirstChildOfClass("BodyForce") then
 					game.Players.LocalPlayer.Character.Torso:FindFirstChildOfClass("BodyForce"):Destroy()
+					Chat("respawn me")
 			end
                 end
 	end
