@@ -5,7 +5,7 @@ _  _____  _   _ _     ____  _     ___ _____ _____
 | |/ / _ \| | | | |   / ___|| |   |_ _|_   _| ____|
 | ' / | | | |_| | |   \___ \| |    | |  | | |  _|  
 | . \ |_| |  _  | |___ ___) | |___ | |  | | | |___ 
-|_|\_\___/|_| |_|_____|____/|_____|___| |_| |_____| v1.091 ]]
+|_|\_\___/|_| |_|_____|____/|_____|___| |_| |_____| v1.092 ]]
 
 if _G.executed then 
 	return 
@@ -654,10 +654,10 @@ local noblt = false
 -- local permpassid = 66254 or 64354 -> NBC, BC
 -- local personpassid = 35748 or 37127 --> NBC, BC
 
-print("Thank you for using KohlsLite v1.090! This script was created by S_P.")
+print("Thank you for using KohlsLite v1.092! This script was created by S_P.")
 print("Say .kcmds to list some of the commands. DM me at ts2021 on discord for the full list.")
 
-Chat("h \n\n\n [KohlsLite]: Executed! v1.090 \n\n\n")
+Chat("h \n\n\n [KohlsLite]: Executed! v1.092 \n\n\n")
 
 if game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 66254) or game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 64354) then
         perm = false 
@@ -5557,10 +5557,10 @@ function StoneMap()
         task.wait()
         stoneTool1.Parent, stoneTool2.Parent = game.Players.LocalPlayer.Character, game.Players.LocalPlayer.Character
         task.wait()
-        thread(function()
+        task.spawn(function()
             stoneTool1.ServerControl:InvokeServer("KeyPress", {["Key"] = "x", ["Down"] = true})
         end)
-        thread(function()
+        task.spawn(function()
             stoneTool2.ServerControl:InvokeServer("KeyPress", {["Key"] = "x", ["Down"] = true})
         end)
 end
@@ -5575,7 +5575,7 @@ function IceMap()
         plasticTool.Parent = game.Players.LocalPlayer.Character
         task.wait()
         for _,part in pairs(game.Workspace:GetDescendants()) do
-            thread(function()
+            task.spawn(function()
                 if part:IsA("Part") then
                     local MassCheck = part:Clone()
                     MassCheck.Material = Enum.Material.Ice
