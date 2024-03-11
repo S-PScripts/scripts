@@ -845,6 +845,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          local dasplayer = string.sub(msg:lower(), #prefix + 8)
          PLAYERCHECK(dasplayer)
          if player ~= nil then
+			Remind('Reported '..player)
 			game.Players:ReportAbuse(game:GetService("Players"),player,"Cheating/Exploiting", "Spamming random stuff " .. math.random(1, 3276700))         
 	 else
                 Remind('Cannot find player with the name: '..dasplayer)
