@@ -5551,10 +5551,11 @@ function StoneMap()
 end
 
 function IceMap()
+	Chat("ungear me")
  	local plasticTool
         Chat('gear me 2758794374')
         repeat task.wait() until game.Players.LocalPlayer.Backpack:FindFirstChild("2019BloxyAward")
-        plasticTool = ggame.Players.LocalPlayer.Backpack:FindFirstChild("2019BloxyAward")
+        plasticTool = game.Players.LocalPlayer.Backpack:FindFirstChild("2019BloxyAward")
         task.wait()
         plasticTool.Parent = game.Players.LocalPlayer.Character
         task.wait()
