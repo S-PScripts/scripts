@@ -4964,8 +4964,8 @@ end)
 -- LOG SPAM
 function LogSpam()
       for i = 1,50 do
-	  Chat("ff KOHLSLITE ON BOTTOM - ts2021, 2024")
-          Chat("ff PR SCRIPT ON TOP - atprog, 2024")
+	  Chat("reset KOHLSLITE ON BOTTOM - ts2021, 2024")
+          Chat("reset PR SCRIPT ON TOP - atprog, 2024")
       end
 end
 
