@@ -5594,6 +5594,7 @@ function IceMap()
                 end
             end)
         end
+	task.wait(2.5)
 	Chat("ungear me") -- without this you CRASH
 end
 
