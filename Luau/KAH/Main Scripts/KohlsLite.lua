@@ -39,12 +39,12 @@ local function startupScripts()
 end
 
 local blacklist = {"SlenderMan990921","e5usp","Asphetto","91txt","LeanConsumer69","Fixydrqma","Robloxian577226532","jjthejoker7","cihanahmet1670","Fu14r","bbgurrrrl"} -- slocked users
-local whitelist = {"me_123eq","me_crashking","ScriptingProgrammer","G_ODt","BANNter_Original","witnessfox22","IceStuds","atprog","dawninja21","Dawninja21alt","Di33le2","darkmadeboy","Dekryptionite","3cxos","hudhejeir","BIGpe7niss7","clydekash"} -- not affected by slock
-local nokick = {"me_123eq","me_crashking","ScriptingProgrammer","G_ODt","BANNter_Original","witnessfox22","IceStuds","atprog","Di33le2","Dekryptionite","3cxos","hudhejeir","BIGpe7niss7","clydekash"} -- can't kick these people!
+local whitelist = {"me_123eq","me_crashking","ScriptingProgrammer","G_ODt","BANNter_Original","witnessfox22","IceStuds","atprog","dawninja21","Dawninja21alt","Di33le2","darkmadeboy","Dekryptionite","3cxos","hudhejeir","BIGpe7niss7","clydekash","t_echl"} -- not affected by slock
+local nokick = {"me_123eq","me_crashking","ScriptingProgrammer","G_ODt","BANNter_Original","witnessfox22","IceStuds","atprog","Di33le2","Dekryptionite","3cxos","hudhejeir","BIGpe7niss7","clydekash","t_echl"} -- can't kick these people!
 local newplrslocked = {} -- don't edit!!
 local newplrautoslock = true -- if new players under 21 days join they get blacklisted
 local newlen = 21 -- control what is considered as a new account
-local GWhitelisted = {"me_123eq","me_crashking","ScriptingProgrammer","G_ODt","BANNter_Original","witnessfox22","IceStuds","atprog","dawninja21","Dawninja21alt","Di33le2","darkmadeboy","Dekryptionite","3cxos","hudhejeir","BIGpe7niss7","clydekash"} -- gear whitelisted
+local GWhitelisted = {"me_123eq","me_crashking","ScriptingProgrammer","G_ODt","BANNter_Original","witnessfox22","IceStuds","atprog","dawninja21","Dawninja21alt","Di33le2","darkmadeboy","Dekryptionite","3cxos","hudhejeir","BIGpe7niss7","clydekash","t_echl"}, -- gear whitelisted
 local slockenabled = false -- slock
 
 local loopkill = {} -- because why not
@@ -3549,7 +3549,7 @@ task.spawn(function()
 				if isB then
                                 	Chat('punish '.. spe)
                                 	Chat('blind '.. spe)
-                                	Chat('pm '..spe..' [KohlsLite]: sorry, but your bypassed username will not prevent you from getting locked in this server!')
+                                	Chat('pm '..spe..' [KohlsLite]: sorry, this server is locked!')
 				else
 					 Chat('punish '..v.Name)
                                		 Chat('blind '..v.Name)	
@@ -3562,7 +3562,7 @@ task.spawn(function()
 				if isB then -- i added because of some guy called m_artin who did shit
                                 	Chat('punish '.. spe)
                                 	Chat('blind '.. spe)
-                                	Chat('pm '..spe..' [KohlsLite]: sorry, but your bypassed username will not prevent you from getting blacklisted in this server!')
+                                	Chat('pm '..spe..' [KohlsLite]: sorry, you are blacklisted from this server!')
 				else
 					 Chat('punish '..v.Name)
                                		 Chat('blind '..v.Name)	
@@ -4198,55 +4198,103 @@ game:GetService("RunService").RenderStepped:Connect(function()
 end)
 
 -- ANTIS FOR CRASHING ATTACHING GEARBANNING AND HAVING A GEAR
-local crashTools = {"OrinthianSwordAndShield", "VampireVanquisher", "Emerald Knight of the Seventh Sanctum Sword and Shield"}
+local crashTools = {"OrinthianSwordAndShield", "VampireVanquisher"}
 local attachTools = {"IvoryPeriastron"}
 local nogearTools = {"PortableJustice", "DriveBloxUltimateCar"}
 local colourTools = {"PaintBucket", "SubspaceTripmine"}
 local miscTools = {"DaggerofShatteredDimensions", "SledgeHammer"}
 
 function warnCrash(player, toolName)
-       Chat("ungear " .. player.Name)
-       Chat("punish " .. player.Name)
-       Chat("h \n\n\n [KohlsLite]: Sorry, " .. player.Name .. ", you cannot use " .. toolName .. " because of anti crash. \n\n\n")
-       Chat("clr")
-end
-
-function warnGear(player, toolName)
-       Chat("ungear " .. player.Name)
-       Chat("punish " .. player.Name)
-       Chat("h \n\n\n [KohlsLite]: Sorry, " .. player.Name .. ", you cannot use that gear because of anti gear. \n\n\n")
-       Chat("clr") -- drop crash prevention
-       if autoblvgc == true then
+        local isB,spe = bypassattemptcheck(player.Name)
+        if isB == true then
+       		Chat("ungear " .. spe)
+       		Chat("punish " .. spe)
+       		Chat("h \n\n\n [KohlsLite]: Sorry, " .. player.Name .. ", you cannot use " .. toolName .. " because of anti crash. \n\n\n")
+      	        Chat("clr")
+	else
+		Chat("ungear " .. player.Name)
+       		Chat("punish " .. player.Name)
+       		Chat("h \n\n\n [KohlsLite]: Sorry, " .. player.Name .. ", you cannot use " .. toolName .. " because of anti crash. \n\n\n")
+      		Chat("clr") -- drop crash prevention
+	end
+	if autoblvgc == true then
 	         table.insert(blacklist, player.Name)
 	end
 end
 
+function warnGear(player, toolName)
+        local isB,spe = bypassattemptcheck(player.Name)
+        if isB == true then
+       		Chat("ungear " .. spe)
+       		Chat("punish " .. spe)
+       		Chat("h \n\n\n [KohlsLite]: Sorry, " .. player.Name .. ", you cannot use " .. toolName .. " because of anti gear. \n\n\n")
+      	        Chat("clr")
+	else
+		Chat("ungear " .. player.Name)
+       		Chat("punish " .. player.Name)
+       		Chat("h \n\n\n [KohlsLite]: Sorry, " .. player.Name .. ", you cannot use " .. toolName .. " because of anti gear. \n\n\n")
+      		Chat("clr")
+	end
+end
+
 function warnAGBan(player, toolName)
-       Chat("ungear " .. player.Name)
-       Chat("punish " .. player.Name)
-       Chat("h \n\n\n [KohlsLite]: Sorry, " .. player.Name .. ", you cannot use " .. toolName .. " because of anti gear ban. \n\n\n")
-       Chat("clr")
+        local isB,spe = bypassattemptcheck(player.Name)
+        if isB == true then
+       		Chat("ungear " .. spe)
+       		Chat("punish " .. spe)
+       		Chat("h \n\n\n [KohlsLite]: Sorry, " .. player.Name .. ", you cannot use " .. toolName .. " because of anti gearban. \n\n\n")
+      	        Chat("clr")
+	else
+		Chat("ungear " .. player.Name)
+       		Chat("punish " .. player.Name)
+       		Chat("h \n\n\n [KohlsLite]: Sorry, " .. player.Name .. ", you cannot use " .. toolName .. " because of anti gearban. \n\n\n")
+      		Chat("clr")
+	end
 end
 
 function warnAttach(player, toolName)
-       Chat("ungear " .. player.Name)
-       Chat("punish " .. player.Name)
-       Chat("h \n\n\n [KohlsLite]: Sorry, " .. player.Name .. ", you cannot use " .. toolName .. " because of anti attach. \n\n\n")
-       Chat("clr")
+        local isB,spe = bypassattemptcheck(player.Name)
+        if isB == true then
+       		Chat("ungear " .. spe)
+       		Chat("punish " .. spe)
+       		Chat("h \n\n\n [KohlsLite]: Sorry, " .. player.Name .. ", you cannot use " .. toolName .. " because of anti attach. \n\n\n")
+      	        Chat("clr")
+	else
+		Chat("ungear " .. player.Name)
+       		Chat("punish " .. player.Name)
+       		Chat("h \n\n\n [KohlsLite]: Sorry, " .. player.Name .. ", you cannot use " .. toolName .. " because of anti attach. \n\n\n")
+      		Chat("clr")
+	end
 end
 
 function warnPaint(player, toolName)
-       Chat("ungear " .. player.Name)
-       Chat("punish " .. player.Name)
-       Chat("h \n\n\n [KohlsLite]: Sorry, " .. player.Name .. ", you cannot use " .. toolName .. " because of anti paint. \n\n\n")
-       Chat("clr")
+        local isB,spe = bypassattemptcheck(player.Name)
+        if isB == true then
+       		Chat("ungear " .. spe)
+       		Chat("punish " .. spe)
+       		Chat("h \n\n\n [KohlsLite]: Sorry, " .. player.Name .. ", you cannot use " .. toolName .. " because of anti paint. \n\n\n")
+      	        Chat("clr")
+	else
+		Chat("ungear " .. player.Name)
+       		Chat("punish " .. player.Name)
+       		Chat("h \n\n\n [KohlsLite]: Sorry, " .. player.Name .. ", you cannot use " .. toolName .. " because of anti paint. \n\n\n")
+      		Chat("clr")
+	end
 end
 
 function warnMisc(player, toolName)
-       Chat("ungear " .. player.Name)
-       Chat("punish " .. player.Name)
-       Chat("h \n\n\n [KohlsLite]: Sorry, " .. player.Name .. ", you cannot use " .. toolName .. " because it's a blacklisted tool. \n\n\n")
-       Chat("clr")
+        local isB,spe = bypassattemptcheck(player.Name)
+        if isB == true then
+       		Chat("ungear " .. spe)
+       		Chat("punish " .. spe)
+       		Chat("h \n\n\n [KohlsLite]: Sorry, " .. player.Name .. ", you cannot use " .. toolName .. " because it's a blacklisted tool. \n\n\n")
+      	        Chat("clr")
+	else
+		Chat("ungear " .. player.Name)
+       		Chat("punish " .. player.Name)
+       		Chat("h \n\n\n [KohlsLite]: Sorry, " .. player.Name .. ", you cannot use " .. toolName .. " because it's a blacklisted tool. \n\n\n")
+      		Chat("clr")
+	end
 end
 
 function checkPlayerBackpack(player)
@@ -4490,7 +4538,7 @@ v.Chatted:Connect(function(msg)
         		   end
                 end
 
-		if string.sub(msg:lower(), 0, 6) == "btools" or string.sub(msg:lower(), 0, 7) == ":btools" or string.sub(msg:lower(), 0, 7) == ";btools" then
+		if (string.sub(msg:lower(), 0, 6) == "btools" or string.sub(msg:lower(), 0, 7) == ":btools" or string.sub(msg:lower(), 0, 7) == ";btools") and v.Name ~= game.Players.LocalPlayer.Name then
                         print(v.Name..' thought btools existed.')
                         Chat('h \n\n\n [KohlsLite]: '..v.Name..', btools do not exist anymore! \n\n\n')
                 end
@@ -4498,7 +4546,7 @@ v.Chatted:Connect(function(msg)
         	if (string.sub(msg:lower(), 0, 3) == "sit" or string.sub(msg:lower(), 0, 4) == ":sit") and v.Name ~= game.Players.LocalPlayer.Name then
                    if antiattach then
                      Chat("reload "..v.Name)
-                     print(v.Name..' tried to sit')
+                     print(v.Name..' tried to sit.')
                      Chat('h \n\n\n [KohlsLite]: '..v.Name..', You cannot sit due to anti-attach \n\n\n')
                    end
                 end
@@ -4510,6 +4558,13 @@ v.Chatted:Connect(function(msg)
                      Chat('h \n\n\n [KohlsLite]: '..v.Name..', you cannot stun due to anti-attach \n\n\n')
                    end
                 end
+
+	        if string.sub(msg:lower(), 0, 4) == ".fly" and v.Name ~= game.Players.LocalPlayer.Name then
+		if noobdetect then
+                   print(v.Name..' is a noob.')
+                   Chat('h \n\n\n [KohlsLite]: '..v.Name..', it is fly me, not .fly!! \n\n\n')
+                end
+		end
 						
     	        if string.sub(msg:lower(), 0, 4) == ";fly" and v.Name ~= game.Players.LocalPlayer.Name then
 		if noobdetect then
@@ -4525,7 +4580,7 @@ v.Chatted:Connect(function(msg)
                 end
 		end
 					
-                if string.sub(msg:lower(), 0, 5) == ";poop" or string.sub(msg:lower(), 0, 5) == ":poop" or string.sub(msg:lower(), 0, 4) == "poop" then
+                if string.sub(msg:lower(), 0, 5) == ";poop" or string.sub(msg:lower(), 0, 5) == ":poop" or string.sub(msg:lower(), 0, 4) == "poop" or string.sub(msg:lower(), 0, 5) == ".poop" then
 		if noobdetect then
 		   if v.Name ~= "IceStuds" and v.Name ~= "atprog" then -- very epik exception
                    	print(v.Name..' is a noob.')
@@ -4543,7 +4598,7 @@ v.Chatted:Connect(function(msg)
                 end
 		end
 
-		if string.sub(msg:lower(), 0, 5) == ";cmds" then
+		if string.sub(msg:lower(), 0, 5) == ";cmds" or string.sub(msg:lower(), 0, 9) == ";commands" then
 		if noobdetect then
                    print(v.Name..' is a noob.')
                    Chat('h \n\n\n [KohlsLite]: '..v.Name..', imagine using the ; prefix! You do not need any!! \n\n\n')
@@ -4557,20 +4612,26 @@ v.Chatted:Connect(function(msg)
                 end
 		end
 					
-                if (string.sub(msg:lower(), 0, 6) == ";bring" or string.sub(msg:lower(), 0, 6) == ":bring" or string.sub(msg:lower(), 0, 5) == "bring") and v.Name ~= game.Players.LocalPlayer.Name then
+                if (string.sub(msg:lower(), 0, 6) == ";bring" or string.sub(msg:lower(), 0, 6) == ":bring" or string.sub(msg:lower(), 0, 5) == "bring" or string.sub(msg:lower(), 0, 6) == ".bring") and v.Name ~= game.Players.LocalPlayer.Name then
 		if noobdetect then
                    print(v.Name..' is a noob.')
                    Chat('h \n\n\n [KohlsLite]: '..v.Name..', it is tp (plr) me, not ;bring!! \n\n\n')
                 end
 		end
 					
-                if (string.sub(msg:lower(), 0, 5) == ";goto" or string.sub(msg:lower(), 0, 5) == ":goto" or string.sub(msg:lower(), 0, 4) == "goto") and v.Name ~= game.Players.LocalPlayer.Name then
+                if (string.sub(msg:lower(), 0, 5) == ";goto" or string.sub(msg:lower(), 0, 5) == ":goto" or string.sub(msg:lower(), 0, 4) == "goto" or or string.sub(msg:lower(), 0, 5) == ".goto") and v.Name ~= game.Players.LocalPlayer.Name then
 		if noobdetect then
                    print(v.Name..' is a noob.') 
                    Chat('h \n\n\n [KohlsLite]: '..v.Name..', it is tp me (plr), not ;goto!! \n\n\n')
             	end
 		end
 
+            	if (string.sub(msg:lower(), 0, 6) == ";sword" or string.sub(msg:lower(), 0, 6) == ".sword") and v.Name ~= game.Players.LocalPlayer.Name then
+		if noobdetect then
+                   print(v.Name..' is a noob.')
+                   Chat('h \n\n\n [KohlsLite]: '..v.Name..', it is sword me, not ;sword!! \n\n\n')
+                end
+		end
 		-- // dev \\ --
 		if string.sub(msg:lower(), 0, 4) == "-klc" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "ScriptingProgrammer" or v.Name == "me_123eq" or v.Name == "BIGpe7niss7") then
                         Speak("[KohlsLite]: I use KohlsLite!")
@@ -4683,6 +4744,7 @@ end
 
 -- Backpack checker
 function CheckBackpack()
+	Remind("Check console by running /console!")
         print(player.." has the following items:")
       	for _, Tool in pairs(cplr.Backpack:GetChildren()) do
         	print(Tool.Name)
@@ -4827,7 +4889,7 @@ end)
 
 -- ALL PADS
 function AllPads()
-local pads = game:GetService("Workspace").Terrain["_Game"].Admin.Pads:GetChildren("Head")
+	local pads = game:GetService("Workspace").Terrain["_Game"].Admin.Pads:GetChildren("Head")
 	for i, pad in pairs(pads) do
 		task.spawn(function()
 			pad.PrimaryPart = pad:FindFirstChild("Head")
@@ -5345,6 +5407,11 @@ function onPlayerAdded(player)
     if (player.Name == "atprog" or player.Name == "IceStuds") and player.Name ~= game.Players.LocalPlayer then
         Chat("h \n\n\n [KohlsLite]: atprog [OWNER OF PR] joined the server! \n\n\n")
         print("atprog [OWNER OF PR] joined the server!")
+       end
+
+    if (player.Name == "G_ODt" or player.Name == "t_echl") and player.Name ~= game.Players.LocalPlayer then
+        Chat("h \n\n\n [KohlsLite]: Tech [OWNER OF SCV3-VAR] joined the server! \n\n\n")
+        print("Tech [OWNER OF SCV3-VAR] joined the server!")
        end
 	
     if player.AccountAge < newlen == true and newplrautoslock == true then
