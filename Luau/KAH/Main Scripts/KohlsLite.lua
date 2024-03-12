@@ -683,7 +683,8 @@ end
 game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	task.wait(0)
     	if string.sub(msg:lower(), 1, #prefix + 5) == prefix.."kcmds" then
-          CMDPrint()
+           CMDPrint()
+	   Remind("Check your console by running /console!")
         end
   
     	if string.sub(msg:lower(), 1, #prefix + 2) == prefix.."iy" then -- the classic
@@ -703,6 +704,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	end
 
 	if string.sub(msg:lower(), 1, #prefix + 6) == prefix.."tricky" then -- CREDITS TO TECH
+		Remind("This won't work if it's already been executed. Sorry!")
 		if haspersons == true then
 			GExecute("https://raw.githubusercontent.com/Tech-187/Music-lyrics-on-time/main/Tricky%20lyrics.lua")
 		else
@@ -715,6 +717,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          PLAYERCHECK(dasplayer)
          if player ~= nil then
                 Chat("h \n\n\n [KohlsLite]: "..player.." has been whitelisted! \n\n\n")
+		Remind("Whitelisted "..player)
                 table.insert(whitelist, player)
                 Chat('unblind '..player)
                 Chat('unpunish '..player)
@@ -728,6 +731,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          PLAYERCHECK(dasplayer)
          if player ~= nil then
                 Chat("h \n\n\n [KohlsLite]: "..player.." has been unwhitelisted. \n\n\n")
+		Remind("Unwhitelisted "..player)
                 table.remove(whitelist, table.find(whitelist, player))
          else
                 Remind('Cannot find player with the name: '..dasplayer)
@@ -735,9 +739,10 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
        end
 		
 	if string.sub(msg, 1, #prefix + 6)  == prefix..'wllist' then
-         for i = 1, #whitelist do
+	   Remind("Check your console by running /console!")
+           for i = 1, #whitelist do
  		 print(whitelist[i])
-	 end
+	   end
         end
 
 	if string.sub(msg, 1, #prefix + 8)  == prefix..'antimlog' then
@@ -753,6 +758,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          PLAYERCHECK(dasplayer)
          if player ~= nil then
                 Chat("h \n\n\n [KohlsLite]: "..player.." has been given admin! \n\n\n")
+		Remind("Admined "..player)
                 table.insert(FAdmins, player)
          else
                 Remind('Cannot find player with the name: '..dasplayer)
@@ -764,6 +770,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          PLAYERCHECK(dasplayer)
          if player ~= nil then
                 Chat("h \n\n\n [KohlsLite]: "..player.." has been removed from admin. \n\n\n")
+		Remind("Unadmined "..player)
                 table.remove(FAdmins, table.find(FAdmins, player))
          else
                 Remind('Cannot find player with the name: '..dasplayer)
@@ -771,9 +778,10 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
        end
 
        if string.sub(msg, 1, #prefix + 9)  == prefix..'listadmins' then
-         for i = 1, #FAdmins do
+	  Remind("Check your console by running /console!")
+          for i = 1, #FAdmins do
  		 print(FAdmins[i])
-	 end
+	  end
         end
 
 	if string.sub(msg, 1, #prefix + 6)  == prefix..'gearwl' then
@@ -781,6 +789,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          PLAYERCHECK(dasplayer)
          if player ~= nil then
                 Chat("h \n\n\n [KohlsLite]: "..player.." has been whitelisted from anti-gears! \n\n\n")
+		Remind("Gear whitelisted "..player)
                 table.insert(GWhitelisted, player)
          else
                 Remind('Cannot find player with the name: '..dasplayer)
@@ -792,6 +801,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          PLAYERCHECK(dasplayer)
          if player ~= nil then
                 Chat("h \n\n\n [KohlsLite]: "..player.." has been unwhitelisted from anti-gears. \n\n\n")
+		Remind("Ungear whitelisted "..player)
                 table.remove(GWhitelisted, table.find(GWhitelisted, player))
          else
                 Remind('Cannot find player with the name: '..dasplayer)
@@ -799,9 +809,10 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
        end
 
 	if string.sub(msg, 1, #prefix + 10)  == prefix..'gearwllist' then
-         for i = 1, #GWhitelisted do
+	   Remind("Check your console by running /console!")
+           for i = 1, #GWhitelisted do
  		 print(GWhitelisted[i])
-	 end
+	   end
         end
 
 	if string.sub(msg, 1, #prefix + 6)  == prefix..'fogvis' then -- fonalc funny var
@@ -828,6 +839,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          PLAYERCHECK(dasplayer)
          if player ~= nil then
                 Chat("h \n\n\n [KohlsLite]: "..player.." is being loopkilled. \n\n\n")
+		Remind("Loopkilling "..player)
                 table.insert(loopkill, player)
          else
                 Remind('Cannot find player with the name: '..dasplayer)
@@ -839,6 +851,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          PLAYERCHECK(dasplayer)
          if player ~= nil then
                 Chat("h \n\n\n [KohlsLite]: "..player.." is no longer being loopkilled! \n\n\n")
+		Remind("Unloopkilling "..player)
                 table.remove(loopkill, table.find(loopkill, player))
          else
                 Remind('Cannot find player with the name: '..dasplayer)
@@ -850,7 +863,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          PLAYERCHECK(dasplayer)
          if player ~= nil then
 			Remind('Reported '..player)
-			game.Players:ReportAbuse(game:GetService("Players"),player,"Cheating/Exploiting", "Spamming random stuff " .. math.random(1, 3276700))         
+			game.Players:ReportAbuse(game:GetService("Players"),player,"Swearing", "Spamming random stuff " .. math.random(1, 3276700))         
 	 else
                 Remind('Cannot find player with the name: '..dasplayer)
          end
@@ -861,6 +874,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          PLAYERCHECK(dasplayer)
          if player ~= nil then
                 Chat("h \n\n\n [KohlsLite]: "..player.." has been blacklisted. \n\n\n")
+		Remind("Blacklisted "..player)
                 table.insert(blacklist, player)
          else
                 Remind('Cannot find player with the name: '..dasplayer)
@@ -873,6 +887,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          if player ~= nil then
                 Chat("h \n\n\n [KohlsLite]: "..player.." has been unblacklisted! \n\n\n")
                 table.remove(blacklist, table.find(blacklist, player))
+		Remind("Unblacklisted "..player)
                 Chat('unblind '..player)
                 Chat('unpunish '..player)
          else
@@ -898,7 +913,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	  task.wait(1)
 	  checkperm2 = true
 	  Chat("ff admins")
-	  task.wait(1)
+	  task.wait(2)
 	  checkperm2 = false
 	  Chat("unff admins")
        end
@@ -929,21 +944,24 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
        end
 		
 	if string.sub(msg, 1, #prefix + 6)  == prefix..'bllist' then
-         for i = 1, #blacklist do
+	   Remind("Check your console by running /console!")
+           for i = 1, #blacklist do
  		 print(blacklist[i])
-	 end
+	   end
         end
 
 	if string.sub(msg, 1, #prefix + 9)  == prefix..'permusers' then
-         for i = 1, #permusers do
+	   Remind("Check your console by running /console!")
+           for i = 1, #permusers do
  		 print(permusers[i])
-	 end
+	   end
         end
 
 	if string.sub(msg, 1, #prefix + 12)  == prefix..'personsusers' then
-         for i = 1, #personsusers do
+	   Remind("Check your console by running /console!")
+           for i = 1, #personsusers do
  		 print(personsusers[i])
-	 end
+	   end
         end
 
        if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'adminjoy' then
@@ -971,21 +989,25 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
        end
 
        if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'autoblvgc' then
+		Remind("Auto blacklisting users using the VG!")
 		autoblvgc = true
        end
 
        if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unautoblvgc' then
+		Remind("No longer auto blacklisting users using the VG!")
 	  	autoblvgc = false
        end
 
 	if string.sub(msg, 1, #prefix + 7)  == prefix..'npslist' then
-         for i = 1, #newplrslocked do
+	   Remind("Check your console by running /console!")
+           for i = 1, #newplrslocked do
  		 print(newplrslocked[i])
-	 end
+	   end
         end
 
       if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'plrnewlen' then
         	newlen = tonumber(string.sub(msg:lower(), #prefix + 11))
+		Remind("Set age restrictions to "..newlen.." days!")
       end
 		
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'gmusic' then
@@ -1043,18 +1065,21 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg, 1, #prefix + 9)  == prefix..'musiclist' then
+	 Remind("Check your console by running /console!")
          for i = 1, #musiclist do
  		 print("gmusic"..i.." - "..musiclist[i].." - "..musicnames[i])
 	 end
     end
 
     if string.sub(msg, 1, #prefix + 8)  == prefix..'gearlist' then
+	 Remind("Check your console by running /console!")
          for i = 1, #gearcodes do
  		 print(gears[i].." - "..gearcodes[i])
 	 end
     end
 
     if string.sub(msg, 1, #prefix + 8)  == prefix..'charlist' then
+	 Remind("Check your console by running /console!")
          for i = 1, #charcodes do
  		 print(chars[i].." - "..charcodes[i])
 	 end
@@ -1694,7 +1719,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		Chat("respawn me")
 		ColFix()
     end	
--- MOVING ON... --
+
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'toregen' then
 	regentp()
     end
