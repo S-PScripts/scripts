@@ -4643,7 +4643,7 @@ v.Chatted:Connect(function(msg)
                         Speak("[KohlsLite]: I use KohlsLite!")
                 end
 
-                if string.sub(msg:lower(), 0, 5) == "-klc" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "atprog" or v.Name == "3cxos" or v.Name == "Dekryptionite" or v.Name == "Di33le2") then
+                if string.sub(msg:lower(), 0, 5) == "-klc" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "atprog" or v.Name == "3cxos" or v.Name == "Dekryptionite" or v.Name == "G_ODt") then
 			if game.Players.LocalPlayer.Name ~= "ScriptingProgrammer" and game.Players.LocalPlayer.Name ~= "me_123eq" then
 	                 	Speak("[PR Script]: I use PR Script!")
 			end
