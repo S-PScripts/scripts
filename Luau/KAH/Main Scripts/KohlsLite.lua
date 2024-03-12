@@ -39,12 +39,12 @@ local function startupScripts()
 end
 
 local blacklist = {"SlenderMan990921","e5usp","Asphetto","91txt","LeanConsumer69","Fixydrqma","Robloxian577226532","jjthejoker7","cihanahmet1670","Fu14r","bbgurrrrl"} -- slocked users
-local whitelist = {"me_123eq","me_crashking","ScriptingProgrammer","G_ODt","BANNter_Original","witnessfox22","IceStuds","atprog","dawninja21","Dawninja21alt","Di33le2","darkmadeboy","Dekryptionite","3cxos","hudhejeir","BIGpe7niss7","clydekash","t_echl"} -- not affected by slock
-local nokick = {"me_123eq","me_crashking","ScriptingProgrammer","G_ODt","BANNter_Original","witnessfox22","IceStuds","atprog","Di33le2","Dekryptionite","3cxos","hudhejeir","BIGpe7niss7","clydekash","t_echl"} -- can't kick these people!
+local whitelist = {"me_123eq","me_crashking","ScriptingProgrammer","t_echr","BANNter_Original","witnessfox22","IceStuds","atprog","dawninja21","Dawninja21alt","Di33le2","darkmadeboy","Dekryptionite","3cxos","hudhejeir","BIGpe7niss7","clydekash","t_echl"} -- not affected by slock
+local nokick = {"me_123eq","me_crashking","ScriptingProgrammer","t_echr","BANNter_Original","witnessfox22","IceStuds","atprog","Di33le2","Dekryptionite","3cxos","hudhejeir","BIGpe7niss7","clydekash","t_echl"} -- can't kick these people!
 local newplrslocked = {} -- don't edit!!
 local newplrautoslock = true -- if new players under 21 days join they get blacklisted
 local newlen = 21 -- control what is considered as a new account
-local GWhitelisted = {"me_123eq","me_crashking","ScriptingProgrammer","G_ODt","BANNter_Original","witnessfox22","IceStuds","atprog","dawninja21","Dawninja21alt","Di33le2","darkmadeboy","Dekryptionite","3cxos","hudhejeir","BIGpe7niss7","clydekash","t_echl"} --  GIT HUB REMOVE THE COMMA!!!!!!!! gear whitelisted
+local GWhitelisted = {"me_123eq","me_crashking","ScriptingProgrammer","t_echr","BANNter_Original","witnessfox22","IceStuds","atprog","dawninja21","Dawninja21alt","Di33le2","darkmadeboy","Dekryptionite","3cxos","hudhejeir","BIGpe7niss7","clydekash","t_echl"} --  GIT HUB REMOVE THE COMMA!!!!!!!! gear whitelisted
 local slockenabled = false -- slock
 
 local loopkill = {} -- because why not
@@ -4637,7 +4637,7 @@ v.Chatted:Connect(function(msg)
                         Speak("[KohlsLite]: I use KohlsLite!")
                 end
 
-                if string.sub(msg:lower(), 0, 5) == "-klc" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "atprog" or v.Name == "3cxos" or v.Name == "Dekryptionite" or v.Name == "G_ODt") then
+                if string.sub(msg:lower(), 0, 5) == "-klc" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "atprog" or v.Name == "3cxos" or v.Name == "Dekryptionite" or v.Name == "Di33le2") then
 			if game.Players.LocalPlayer.Name ~= "ScriptingProgrammer" and game.Players.LocalPlayer.Name ~= "me_123eq" then
 	                 	Speak("[PR Script]: I use PR Script!")
 			end
@@ -5415,7 +5415,7 @@ function onPlayerAdded(player)
         print("atprog [OWNER OF PR] joined the server!")
        end
 
-    if (player.Name == "G_ODt" or player.Name == "t_echl") and player.Name ~= game.Players.LocalPlayer then
+    if (player.Name == "t_echr" or player.Name == "t_echl") and player.Name ~= game.Players.LocalPlayer then
         Chat("h \n\n\n [KohlsLite]: Tech [OWNER OF SCV3-VAR] joined the server! \n\n\n")
         print("Tech [OWNER OF SCV3-VAR] joined the server!")
        end
