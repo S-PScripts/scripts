@@ -2575,6 +2575,28 @@ Commands required: rocket]])
 		Remind("This server's not crashed!")
 	end
     end
+
+   if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'checkc' then
+	local dasplayer = string.sub(msg:lower(), #prefix + 8)
+        PLAYERCHECK(dasplayer)
+        if player ~= nil then
+			clientcheck = player
+			Chat("unpunish " .. clientcheck)
+			Chat("unfly " .. clientcheck)
+			Chat("thaw " .. clientcheck)
+			Chat("clip " .. clientcheck)
+			Chat("unsit " .. clientcheck)
+ 		        local Animator = workspace:FindFirstChild(clientcheck):WaitForChild("Humanoid"):WaitForChild("Animator")
+            		if #Animator:GetPlayingAnimationTracks() == 0 then
+               		 	Remind(clientcheck .. "'s client is frozen.")
+            		else
+                		Remind(clientcheck .. "'s client is running fine.")
+            		end
+
+         else
+               		Remind('Cannot find player with the name: '..dasplayer)
+         end
+    end
 		
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'nocam' then
 		NoCam()
