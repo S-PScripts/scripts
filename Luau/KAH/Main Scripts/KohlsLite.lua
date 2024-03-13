@@ -2224,7 +2224,7 @@ Commands required: rocket]])
 	end
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'byp' then -- if it doesn't work then i don't care (as of 4/3/24)
+    if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'byp' then -- it works but i still don't care if it sometimes doesn't bypass!
 	local args = string.split(msg, " ")
 	local cmd = args[1]
     	local bypsed = table.concat(args, " ", 2)
