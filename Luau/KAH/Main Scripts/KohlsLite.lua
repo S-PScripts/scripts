@@ -1869,7 +1869,7 @@ Commands required: rocket]])
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'control' then -- really funny ngl
 		local dogman = string.sub(msg:lower(), #prefix + 9)
-		Chat("speed "..dogman.." 16")
+		Chat("speed "..dogman.." 0")
 		Chat("dog me "..dogman)
 		Chat("tp me "..dogman)
 		task.wait(1)
@@ -1878,6 +1878,23 @@ Commands required: rocket]])
 		task.wait(0.25)
 		Chat("unpunish me "..dogman)
 		Chat("invis me")
+		Remind("You should be attached to the player!")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'cube' then -- why
+		local imacube = string.sub(msg:lower(), #prefix + 6)
+		Chat("unpackage "..imacube)
+		for i = 1,15 do
+                	task.wait()
+                	Chat("size " .. imacube .. " .3")
+            	end
+		Chat("paint " .. imacube .. " white")
+		Chat("bighead " .. imacube)
+		Chat("unsize " .. imacube)
+		Chat("removelimbs " .. imacube)
+		Chat("size " .. imacube .. " 2.5")
+		Chat("shiny" .. imacube)
+		Remind("The player should now be a cube!")
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antidisco' then
@@ -5990,5 +6007,3 @@ local cantexecute = {}
 if table.find(cantexecute, game.Players.LocalPlayer.Name) then
 	game.Players.LocalPlayer:Kick("[KohlsLite]: You cannot execute this script.") 
 end
-
--- created with love from s_p
