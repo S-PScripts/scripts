@@ -5099,7 +5099,7 @@ function SCrash()
       for i = 1,100 do
           Chat("shield/all/all/all")
 	  Chat("rocket/all/all/all")
-          Chat("clone/all/all/all")
+          Chat("clone all all all")
       end
 end
 
