@@ -2146,12 +2146,6 @@ Commands required: rocket]])
 		end
   end
 
-  if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'rbin' then
-		Chat("fly me")
-		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(100000, 10000, 100000))
-		Remind("You're now at the delete tool co-ords!")
-  end
-
   if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'ecrash' then
 	    Chat("fix")
 	    Chat(prefix.."gmusic50")
