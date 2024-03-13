@@ -1850,6 +1850,7 @@ Commands required: rocket]])
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'control' then -- really funny ngl
 		local dogman = string.sub(msg:lower(), #prefix + 9)
+		Chat("speed "..dogman.." 16")
 		Chat("dog me "..dogman)
 		Chat("tp me "..dogman)
 		task.wait(1)
