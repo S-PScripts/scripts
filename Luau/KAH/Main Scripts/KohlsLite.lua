@@ -5373,9 +5373,7 @@ local Player = game.Players.LocalPlayer
 local PlayerService = game:GetService("Players")
 
 function MRespawn()
-			local Player = game.Players.LocalPlayer
-			local PlayerService = game:GetService("Players")
-			local char = PlayerService.LocalPlayer.Character
+			local char = game.Players.LocalPlayer.Character
 			if char:FindFirstChildOfClass("Humanoid") then 
 				char:FindFirstChildOfClass("Humanoid"):ChangeState(15) 
 			end
