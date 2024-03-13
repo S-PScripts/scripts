@@ -4235,6 +4235,7 @@ end
 game:GetService("RunService").RenderStepped:Connect(function()
 	task.wait(0)
         for i, v in ipairs(game.Players:GetPlayers()) do
+	    if v.Backpack and v.Character then
             if v.Backpack:FindFirstChild("VampireVanquisher") or v.Character:FindFirstChild("VampireVanquisher") then
                if v ~= game.Players.LocalPlayer and anticrash2 == true and not table.find(GWhitelisted, v.Name) then
                 Chat("ungear "..v.Name)
@@ -4260,6 +4261,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
 			end
             	end
        	    end
+	    end
      end 
 end)
 
@@ -4440,7 +4442,7 @@ end
 function checkPlayerMiBackpack(player)
     local backpack = player:FindFirstChild("Backpack")
     if backpack then
-        for _, toolName in ipairs(colourTools) do
+        for _, toolName in ipairs(miscTools) do
             local tool = backpack:FindFirstChild(toolName)
             if tool and noblt then
 		if player.Name ~= game.Players.LocalPlayer.Name and not table.find(GWhitelisted, player.Name) then
