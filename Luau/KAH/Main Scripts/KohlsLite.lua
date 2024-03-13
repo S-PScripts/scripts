@@ -1,4 +1,5 @@
 --- CREATED BY SCRIPTINGPROGRAMMER/TS2021/S-PSCRIPTS ---
+--- A script for Kohls Admin House (KAH)
 
 --[[
 _  _____  _   _ _     ____  _     ___ _____ _____ 
