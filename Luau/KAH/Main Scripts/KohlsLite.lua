@@ -2343,7 +2343,7 @@ Commands required: rocket]])
 	autoafk = false
    end
 		
-    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'adminall' then
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'alladmin' then
        alladmin = true
        Chat("h \n\n\n [KohlsLite]: Everyone has been given admin! Chat any command. \n\n\n")
     end
@@ -2538,7 +2538,11 @@ Commands required: rocket]])
 	local Ping1 = game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString()
         task.wait(1)
         local Ping2 = game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString()   
-	if Ping1 == Ping2 then Remind("The server's crashed!") end
+	if Ping1 == Ping2 then 
+		Remind("The server's crashed!") 
+	else 
+		Remind("This server's not crashed!")
+	end
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'nocam' then
@@ -2577,7 +2581,7 @@ Commands required: rocket]])
 		NoVelo()
      end
 		
-    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unadminall' then
+    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unalladmin' then
        alladmin = false
 	Chat("h \n\n\n [KohlsLite]: Free admin is off. \n\n\n")
     end
@@ -3298,8 +3302,8 @@ print("newplrslock - automatically blacklist a new user (acc age under 21 days)"
 print("unnewplrslock - stop automatic blacklist for new users (acc age under 21 days)")
 
 print("---")
-print("adminall - give everyone's free admin")
-print("unadminall - remove everyone's free admin")
+print("alladmin - give everyone's free admin")
+print("unalladmin - remove everyone's free admin")
 
 print("---")
 print("ipboom - who's ip address is that?")
