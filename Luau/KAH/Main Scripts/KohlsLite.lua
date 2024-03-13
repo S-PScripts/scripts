@@ -4667,6 +4667,20 @@ v.Chatted:Connect(function(msg)
                    Chat('h \n\n\n [KohlsLite]: '..v.Name..', imagine using the ; prefix! You do not need any!! \n\n\n')
                 end
 		end
+
+		if string.sub(msg:lower(), 0, 5) == "/cmds" or string.sub(msg:lower(), 0, 9) == "/commands" then
+		if noobdetect then
+                   print(v.Name..' is a noob.')
+                   Chat('h \n\n\n [KohlsLite]: '..v.Name..', imagine using the / prefix! You do not need any!! \n\n\n')
+                end
+		end
+
+		if string.sub(msg:lower(), 0, 5) == ".cmds" or string.sub(msg:lower(), 0, 9) == ".commands" then
+		if noobdetect then
+                   print(v.Name..' is a noob.')
+                   Chat('h \n\n\n [KohlsLite]: '..v.Name..', imagine using the . prefix! You do not need any!! \n\n\n')
+                end
+		end
 			
                 if string.sub(msg:lower(), 0, 7) == ";fly me" then
 		if noobdetect then
