@@ -5,7 +5,7 @@ _  _____  _   _ _     ____  _     ___ _____ _____
 | |/ / _ \| | | | |   / ___|| |   |_ _|_   _| ____|
 | ' / | | | |_| | |   \___ \| |    | |  | | |  _|  
 | . \ |_| |  _  | |___ ___) | |___ | |  | | | |___ 
-|_|\_\___/|_| |_|_____|____/|_____|___| |_| |_____| v1.092 ]]
+|_|\_\___/|_| |_|_____|____/|_____|___| |_| |_____| v1.095 ]]
 
 if _G.executed then 
 	return 
@@ -656,11 +656,12 @@ local noblt = false
 -- local permpassid = 66254 or 64354 -> NBC, BC
 -- local personpassid = 35748 or 37127 --> NBC, BC
 
-print("Thank you for using KohlsLite v1.093! This script was created by S_P.")
-Remind("Thank you for using KohlsLite v1.093! This script was created by S_P.")
+print("Thank you for using KohlsLite v1.095! This script was created by S_P.")
+Remind("Thank you for using KohlsLite v1.095! This script was created by S_P.")
 print("Say .kcmds to list some of the commands. DM me at ts2021 on discord for the full list.")
+Remind("Say .kcmds to list some of the commands. DM me at ts2021 on discord for the full list.")
 
-Chat("h \n\n\n [KohlsLite]: Executed! v1.093 \n\n\n")
+Chat("h \n\n\n [KohlsLite]: Executed! v1.095 \n\n\n")
 
 if game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 66254) or game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 64354) then
         perm = false 
@@ -3295,7 +3296,7 @@ Commands required: rocket]])
 end)
 
 function CMDPrint()
-print("---Command list for KohlsLite v1.080---")
+print("---Command list for KohlsLite v1.095---")
 print("Warning! This is NOT a full list so contact me for any other commands!")
 	
 print("---")
@@ -3554,7 +3555,8 @@ print("If it's to the game itself, just do (antiname).")
 
 print("---INFORMATION---")
 print("KohlsLite, since 2023. Created by ScriptingProgrammer/ts2021")
-print("Version is: v1.092 - 7th March 2024 Build")
+print("Version is: v1.095 - 13th March 2024 Build")
+print("Better than scv1 and scv2 - approved by Tech")
 
 print("--- CREDITS ---")
 print("Tech and other admins of SC with Shortcut v1, v2 and v3")
