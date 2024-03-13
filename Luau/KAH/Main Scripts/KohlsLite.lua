@@ -1010,6 +1010,25 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		Remind("Set age restrictions to "..newlen.." days!")
       end
 		
+      if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'mboombox' then
+	    Chat("ungear me")
+	    task.wait(0.5)
+	    Chat("gear me 212641536")
+	    task.wait(0.5)
+	    local myplay = string.sub(msg:lower(), 10 + #prefix)
+            local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
+            for i, v in ipairs(Backpack:GetChildren()) do
+                        	function rng() 
+					return math.random(-128, 128)
+				end
+                        	v.GripPos = Vector3.new(rng(), 1, rng())
+				task.wait(0.25)
+                       	        v.Parent = game.Players.LocalPlayer.Character
+                        	wait(0.25)
+                        	v.Remote:FireServer("PlaySong", tonumber(myplay))
+            end
+    end
+		
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'gmusic' then
         musicplay = tonumber(string.sub(msg:lower(), #prefix + 7)) 
         if musicplay ~= nil and musicplay >= 1 and musicplay <= #musiclist then
