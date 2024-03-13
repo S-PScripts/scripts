@@ -2947,19 +2947,19 @@ Commands required: rocket]])
 	ALLantiglow = false
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'antihealthcm' then
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'antihcm' then
 	YOUantihealthc = true
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 14) == prefix..'unantihealthcm' then
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'unantihcm' then
 	YOUantihealthc = false
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'antihealthca' then
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'antihca' then
 	ALLantihealthc = true
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 14) == prefix..'unantihealthca' then
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'unantihca' then
 	ALLantihealthc = false
     end
 		
@@ -3844,7 +3844,7 @@ task.spawn(function()
 			
 	if YOUantihealthc == true then
 	   if not game.Players.LocalPlayer.Character.Humanoid.Health == 100 then
-		Chat("heal me 100")         
+		Chat("health me 100")         
 	   end
         end
             
@@ -4062,7 +4062,7 @@ task.spawn(function()
 				
 				if ALLantihealthc == true then
 	   				if not v.Character.Humanoid.Health == 100 then
-						Chat("health "..v.Name.."100")
+						Chat("health "..v.Name.." 100")
 					else end
        				 end
             
