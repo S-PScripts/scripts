@@ -1,12 +1,7 @@
 --- CREATED BY SCRIPTINGPROGRAMMER/TS2021/S-PSCRIPTS ---
---- A script for Kohls Admin House (KAH)
+--- A script for Kohls Admin House (KAH) ---
 
---[[
-_  _____  _   _ _     ____  _     ___ _____ _____ 
-| |/ / _ \| | | | |   / ___|| |   |_ _|_   _| ____|
-| ' / | | | |_| | |   \___ \| |    | |  | | |  _|  
-| . \ |_| |  _  | |___ ___) | |___ | |  | | | |___ 
-|_|\_\___/|_| |_|_____|____/|_____|___| |_| |_____| v1.095 ]]
+--[[ KohlsLite v1.095 ]] --- [Github ruined the watermark's formatting so it's gone now! Shame!]
 
 if _G.executed then 
 	return 
