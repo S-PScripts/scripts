@@ -1,3 +1,5 @@
+-- Github made a crappy update and it broke a bunch of colours in this script (looks ugly when not in editor mode!)
+
 -- CREATED BY SCRIPTINGPROGRAMMER/TS2021/S-PSCRIPTS
 -- A script for Kohls Admin House (KAH)
 
