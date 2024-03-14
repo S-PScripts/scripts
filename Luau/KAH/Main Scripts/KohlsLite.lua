@@ -132,7 +132,12 @@ local musiclist = {"9048375035", -- 1
 		   "16190783444", -- 51
 		   "16190782786", -- 52
 		   "6844230235", -- 53
-		   "15689451063"} -- 54
+		   "15689451063", -- 54
+		   "15689455422", -- 55
+		   "6937042327", -- 56
+		   "1841668624", -- 57
+		   "1848350335", -- 58
+		   "6805032026"} -- 59
 
 local musicnames = {"All dropping 8 beats", -- 1
 		    "Robbery", -- 2
@@ -187,7 +192,12 @@ local musicnames = {"All dropping 8 beats", -- 1
 		    "CHIPI CHIPI CHAPA CHAPA", -- 51
 		    "Lil Kuudere X sukoyomi", -- 52
 		    "WHAT THE HELL", -- 53
-		    "Interworld - Metamorphosis"} -- 54
+		    "Interworld - Metamorphosis", -- 54
+		    "kirkiimad - i love (slow+reverb version)", -- 55
+		    "Stunning", -- 56
+		    "Have a Lazy Day a", -- 57
+		    "Desert Sands", -- 58
+		    "KILL BILL (Fast)"} -- 59
 
 local gearcodes = {
     "212641536", -- 1
