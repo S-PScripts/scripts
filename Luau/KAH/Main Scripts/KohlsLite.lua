@@ -2642,6 +2642,13 @@ Commands required: rocket]])
 		VFix()
      end
 
+     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'cfixvelo' then
+		Remind("You need to be positioned by a wall!")
+		Chat(prefix.."qattach")   
+		task.wait(2.2)
+		Chat("unskydive me")     
+     end
+
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'fixcol' then
 		ColFix()
     end
@@ -3420,6 +3427,7 @@ print("nocam/breakcam - break the camera with the AR")
 print("fixcam - fix the camera (client side)")
 print("wbcam/wfcam - break/fix the camera with the blizzard wand")
 print("fixvelo - fix your velocity")
+print("cfixvelo - fix baseplate velocity serverside [position yourself against a wall]")
 print("fixcol - fix collisions")
 print("fixgrav - fix gravity")
 
