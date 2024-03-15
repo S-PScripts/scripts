@@ -835,6 +835,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
 	if string.sub(msg, 1, #prefix + 8)  == prefix..'unfogvis' then -- fonalc funny var
 		fogdance = false
+		task.wait(0.5)
 		Chat("fix")
 	end
 		
@@ -845,6 +846,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
 	if string.sub(msg, 1, #prefix + 6)  == prefix..'unccol' then -- guys is this FONALC
 		ccolours = false
+		task.wait(0.5)
 		Chat("fix")
 	end
 		
