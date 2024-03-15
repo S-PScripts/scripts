@@ -1847,6 +1847,10 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	VGCrash()
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'emcrash' then
+	EmCrash()
+    end
+		
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'pcrash' then
 	PCrash()
 	task.wait(1)
@@ -4342,7 +4346,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
 end)
 
 -- ANTIS FOR CRASHING ATTACHING GEARBANNING AND HAVING A GEAR
-local crashTools = {"OrinthianSwordAndShield", "VampireVanquisher"}
+local crashTools = {"OrinthianSwordAndShield", "VampireVanquisher","Emerald Knights of the Seventh Sanctum Sword and Shield"}
 local attachTools = {"IvoryPeriastron"}
 local nogearTools = {"PortableJustice", "DriveBloxUltimateCar"}
 local colourTools = {"PaintBucket", "SubspaceTripmine"}
@@ -5550,6 +5554,19 @@ function VGCrash()
       vg.Parent = game.Players.LocalPlayer.Character
       task.wait(0.2)
       vg:Activate()
+      wait(.15)
+      for i = 1,100 do
+          Chat("unsize me me me")
+      end
+end
+
+function EmCrash()
+      Chat("gear me 000000000000000178076749")
+      repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("Emerald Knights of the Seventh Sanctum Sword and Shield")
+      local green = game.Players.LocalPlayer.Backpack:FindFirstChild("Emerald Knights of the Seventh Sanctum Sword and Shield")
+      green.Parent = game.Players.LocalPlayer.Character
+      task.wait(0.2)
+      green:Activate()
       wait(.15)
       for i = 1,100 do
           Chat("unsize me me me")
