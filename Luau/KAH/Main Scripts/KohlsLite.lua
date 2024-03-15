@@ -3938,9 +3938,7 @@ task.spawn(function()
 	if YOUantirocket == true then
 		for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
 			if v.Name == "Rocket" then 
-			        local oldposition = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-                		Chat("reload me")
-               			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = oldposition
+			     v:Destroy()
 			end
                 end
 	end
