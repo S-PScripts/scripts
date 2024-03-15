@@ -878,9 +878,13 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          local dasplayer = string.sub(msg:lower(), #prefix + 10)
          PLAYERCHECK(dasplayer)
          if player ~= nil then
-                Chat("h \n\n\n [KohlsLite]: "..player.." is being loopkilled. \n\n\n")
-		Remind("Loopkilling "..player)
-                table.insert(loopkill, player)
+		if not table.find(loopkill, player) then
+                	Chat("h \n\n\n [KohlsLite]: "..player.." is being loopkilled. \n\n\n")
+			Remind("Loopkilling "..player)
+                	table.insert(loopkill, player)
+		else
+			Remind(player.." is already being loopkilled!")
+		end
          else
                 Remind('Cannot find player with the name: '..dasplayer)
          end
@@ -890,9 +894,13 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          local dasplayer = string.sub(msg:lower(), #prefix + 12)
          PLAYERCHECK(dasplayer)
          if player ~= nil then
-                Chat("h \n\n\n [KohlsLite]: "..player.." is no longer being loopkilled! \n\n\n")
-		Remind("Unloopkilling "..player)
-                table.remove(loopkill, table.find(loopkill, player))
+		if table.find(loopkill, player) then
+               		Chat("h \n\n\n [KohlsLite]: "..player.." is no longer being loopkilled! \n\n\n")
+			Remind("Unloopkilling "..player)
+                	table.remove(loopkill, table.find(loopkill, player))
+		else
+			Remind(player.." was never loopkilled!")
+		end
          else
                 Remind('Cannot find player with the name: '..dasplayer)
          end
@@ -902,7 +910,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          local dasplayer = string.sub(msg:lower(), #prefix + 8)
          PLAYERCHECK(dasplayer)
          if player ~= nil then
-			Remind('Reported '..player)
+			Remind("Reported "..player.."! Note that reporting doesn't work on some executors")
 			game.Players:ReportAbuse(game:GetService("Players"),player,"Swearing", "Spamming random stuff " .. math.random(1, 3276700))         
 	 else
                 Remind('Cannot find player with the name: '..dasplayer)
@@ -1873,6 +1881,7 @@ Commands required: rocket]])
 			rkicker = cplr
 			rkicks = player
 			RKick()
+			Remind("Temp rocket kicking "..rkicks)
 	   	else
                 	Remind('Cannot find player with the name: '..dasplayer)
            	end
@@ -1890,6 +1899,7 @@ Commands required: rocket]])
 			rkicker = cplr
 			rkicks = player
 			srkick = true
+			Remind("Rocket kicking "..rkicks)
 	   	else
                 	Remind('Cannot find player with the name: '..dasplayer)
            	end
@@ -1898,6 +1908,7 @@ Commands required: rocket]])
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'unsrkick' then
 		srkick = false
+		Remind("Stopped rocket kicking "..rkicks)
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'welmsg' then
@@ -3882,8 +3893,9 @@ task.spawn(function()
 	end
 
 	if autoff == true then
-	 if not game.Players.LocalPlayer.Character:FindFirstChild("ForceField") then
-                Chat("ff me")
+	    if not game.Players.LocalPlayer.Character:FindFirstChild("ForceField") then
+		Chat("ff me")
+		task.wait(0.1)
             end
 	end
 
@@ -5169,10 +5181,14 @@ end
 function RKick()
       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = rkicker.Character.HumanoidRootPart.CFrame
       for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
-			if v.Name == "Rocket" then v.CanCollide = false end
+			if v.Name == "Rocket" then
+				v.CanCollide = false 
+			end
       end
       for i,v in pairs(rkicker.Character:GetChildren()) do
-			if v.Name == "Rocket" then v.CanCollide = false end
+			if v.Name == "Rocket" then 
+				v.CanCollide = false 
+			end
       end
       Chat("setgrav "..rkicks.. "3500")
       Chat("jail/".. rkicks)
@@ -5332,6 +5348,7 @@ function NoVelo()
       Chat("gear me 287426148")
       Chat("gear me 119917513")
       Chat("gear me 74385399")
+      Remind("These gears will help break the velocity!")
 end
 
 
@@ -6123,5 +6140,9 @@ startupScripts()
 
 local cantexecute = {"deeffxxx"}
 if table.find(cantexecute, game.Players.LocalPlayer.Name) then
-	game.Players.LocalPlayer:Kick("[KohlsLite]: NO, ScriptingProgrammer is NOT tech! I AM JOKING SO DO NOT LEAVE WHEN I JOIN!") 
+	if game.Players.LocalPlayer.Name == "deeffxxx" then
+		game.Players.LocalPlayer:Kick("[KohlsLite]: NO, ScriptingProgrammer is NOT tech! I AM JOKING SO DO NOT LEAVE WHEN I JOIN!") 
+	else
+		game.Players.LocalPlayer:Kick("[KohlsLite]: Oh dear, you're blacklisted from my script! How did you do that? DM me on ts2021 to appeal.") 
+	end
 end
