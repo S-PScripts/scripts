@@ -3601,10 +3601,10 @@ end
 
 -- CHECK FOR PERSONS
 function checkforpersons()
-	if string.match(game:HttpGet("https://inventory.roblox.com/v1/users/" .. gcplr.UserId .. "/items/GamePass/" .. 35748), 35748) then
+	if string.match(game:HttpGet("https://inventory.roproxy.com/v1/users/" .. gcplr.UserId .. "/items/GamePass/" .. 35748), 35748) then
             Remind(gcplrn.." has persons in NBC!")
 	    table.insert(personsusers, gcplrn)
-        elseif string.match(game:HttpGet("https://inventory.roblox.com/v1/users/" .. gcplr.UserId .. "/items/GamePass/" .. 37127), 37127) then
+        elseif string.match(game:HttpGet("https://inventory.roproxy.com/v1/users/" .. gcplr.UserId .. "/items/GamePass/" .. 37127), 37127) then
             Remind(gcplrn.." has persons in BC!")
 	    table.insert(personsusers, gcplrn)
         else 
