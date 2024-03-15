@@ -6077,7 +6077,7 @@ end
 
 startupScripts()
 
-local cantexecute = {}
+local cantexecute = {"deeffxxx"}
 if table.find(cantexecute, game.Players.LocalPlayer.Name) then
-	game.Players.LocalPlayer:Kick("[KohlsLite]: You cannot execute this script.") 
+	game.Players.LocalPlayer:Kick("[KohlsLite]: NO, ScriptingProgrammer is NOT tech! I AM JOKING SO DO NOT LEAVE WHEN I JOIN!") 
 end
