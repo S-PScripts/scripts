@@ -2470,7 +2470,13 @@ Commands required: rocket]])
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'unautogb' then
          	autogb = false
     end
-			
+
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'qpunish' then -- idea from zercon
+         		local trolled = string.sub(msg:lower(), #prefix + 9)
+			Chat("punish " .. trolled)
+			Regen()
+    end			
+		
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'gearban' then
          	local dasplayer = string.sub(msg:lower(), #prefix + 9)
          	PLAYERCHECK(dasplayer)
@@ -3633,7 +3639,8 @@ print("--- CREDITS ---")
 print("Tech and other admins of SC with Shortcut v1, v2 and v3")
 print("atprog with his PR Script")
 print("iiDk's with iiDk's admin as PR Script is based off it")
-print("SimpleKAH for gears and char ids")
+print("Gojo [SimpleKAH] for gears and char ids")
+print("Dizzy [ROUTE] for music ids hahaha I'm a muskid")
 
 print("--- ADDITIONAL INFO ---")
 print("1a. This script has some stuff missing and some stuff broken but it's not really finished. There's many stuff I'm still adding.")
