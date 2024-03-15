@@ -730,11 +730,15 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          local dasplayer = string.sub(msg:lower(), #prefix + 4)
          PLAYERCHECK(dasplayer)
          if player ~= nil then
-                Chat("h \n\n\n [KohlsLite]: "..player.." has been whitelisted! \n\n\n")
-		Remind("Whitelisted "..player)
-                table.insert(whitelist, player)
-                Chat('unblind '..player)
-                Chat('unpunish '..player)
+		if not table.find(whitelist, player) then
+                	Chat("h \n\n\n [KohlsLite]: "..player.." has been whitelisted! \n\n\n")
+			Remind("Whitelisted "..player)
+                	table.insert(whitelist, player)
+                	Chat('unblind '..player)
+                	Chat('unpunish '..player)
+		else
+			Remind(player.." is already whitelisted!")
+		end
          else
                 Remind('Cannot find player with the name: '..dasplayer)
          end
@@ -744,9 +748,13 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          local dasplayer = string.sub(msg:lower(), #prefix + 6)
          PLAYERCHECK(dasplayer)
          if player ~= nil then
-                Chat("h \n\n\n [KohlsLite]: "..player.." has been unwhitelisted. \n\n\n")
-		Remind("Unwhitelisted "..player)
-                table.remove(whitelist, table.find(whitelist, player))
+		if table.find(whitelist, player) then
+                	Chat("h \n\n\n [KohlsLite]: "..player.." has been unwhitelisted. \n\n\n")
+			Remind("Unwhitelisted "..player)
+                	table.remove(whitelist, table.find(whitelist, player))
+		else
+			Remind(player.." was never whitelisted!")	
+		end
          else
                 Remind('Cannot find player with the name: '..dasplayer)
          end
@@ -771,9 +779,13 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          local dasplayer = string.sub(msg:lower(), #prefix + 7)
          PLAYERCHECK(dasplayer)
          if player ~= nil then
-                Chat("h \n\n\n [KohlsLite]: "..player.." has been given admin! \n\n\n")
-		Remind("Admined "..player)
-                table.insert(FAdmins, player)
+		if not table.find(FAdmins, player) then
+                	Chat("h \n\n\n [KohlsLite]: "..player.." has been given admin! \n\n\n")
+			Remind("Admined "..player)
+                	table.insert(FAdmins, player)
+		else
+			Remind(player.." is already an admin!")
+		end
          else
                 Remind('Cannot find player with the name: '..dasplayer)
          end
@@ -783,9 +795,13 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          local dasplayer = string.sub(msg:lower(), #prefix + 9)
          PLAYERCHECK(dasplayer)
          if player ~= nil then
-                Chat("h \n\n\n [KohlsLite]: "..player.." has been removed from admin. \n\n\n")
-		Remind("Unadmined "..player)
-                table.remove(FAdmins, table.find(FAdmins, player))
+		if table.find(FAdmins, player) then
+                	Chat("h \n\n\n [KohlsLite]: "..player.." has been removed from admin. \n\n\n")
+			Remind("Unadmined "..player)
+                	table.remove(FAdmins, table.find(FAdmins, player))
+		else
+			Remind(player.." was never an admin!")
+		end
          else
                 Remind('Cannot find player with the name: '..dasplayer)
          end
@@ -802,9 +818,13 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          local dasplayer = string.sub(msg:lower(), #prefix + 8)
          PLAYERCHECK(dasplayer)
          if player ~= nil then
-                Chat("h \n\n\n [KohlsLite]: "..player.." has been whitelisted from anti-gears! \n\n\n")
-		Remind("Gear whitelisted "..player)
-                table.insert(GWhitelisted, player)
+		if not table.find(GWhitelisted, player) then
+                	Chat("h \n\n\n [KohlsLite]: "..player.." has been whitelisted from anti-gears! \n\n\n")
+			Remind("Gear whitelisted "..player)
+               		table.insert(GWhitelisted, player)
+		else
+			Remind(player.." is already gear whitelisted!")	
+		end
          else
                 Remind('Cannot find player with the name: '..dasplayer)
          end
@@ -814,9 +834,13 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          local dasplayer = string.sub(msg:lower(), #prefix + 10)
          PLAYERCHECK(dasplayer)
          if player ~= nil then
-                Chat("h \n\n\n [KohlsLite]: "..player.." has been unwhitelisted from anti-gears. \n\n\n")
-		Remind("Ungear whitelisted "..player)
-                table.remove(GWhitelisted, table.find(GWhitelisted, player))
+		if table.find(GWhitelisted, player) then
+                	Chat("h \n\n\n [KohlsLite]: "..player.." has been unwhitelisted from anti-gears. \n\n\n")
+			Remind("Un gear whitelisted "..player)
+                	table.remove(GWhitelisted, table.find(GWhitelisted, player))
+		else
+			Remind(player.." was never gear whitelisted!")
+		end
          else
                 Remind('Cannot find player with the name: '..dasplayer)
          end
@@ -889,9 +913,13 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          local dasplayer = string.sub(msg:lower(), #prefix + 4)
          PLAYERCHECK(dasplayer)
          if player ~= nil then
-                Chat("h \n\n\n [KohlsLite]: "..player.." has been blacklisted. \n\n\n")
-		Remind("Blacklisted "..player)
-                table.insert(blacklist, player)
+		if not table.find(blacklist, player) then
+                	Chat("h \n\n\n [KohlsLite]: "..player.." has been blacklisted. \n\n\n")
+			Remind("Blacklisted "..player)
+                	table.insert(blacklist, player)
+		else
+			Remind(player.." is already blacklisted!")	
+		end
          else
                 Remind('Cannot find player with the name: '..dasplayer)
          end
@@ -901,11 +929,16 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          local dasplayer = string.sub(msg:lower(), #prefix + 6)
          PLAYERCHECK(dasplayer)
          if player ~= nil then
-                Chat("h \n\n\n [KohlsLite]: "..player.." has been unblacklisted! \n\n\n")
-                table.remove(blacklist, table.find(blacklist, player))
-		Remind("Unblacklisted "..player)
-                Chat('unblind '..player)
-                Chat('unpunish '..player)
+		if table.find(blacklist, player) then
+                	Chat("h \n\n\n [KohlsLite]: "..player.." has been unblacklisted! \n\n\n")
+                	table.remove(blacklist, table.find(blacklist, player))
+			Remind("Unblacklisted "..player)
+               	        Chat('unblind '..player)
+                	Chat('unpunish '..player)
+		else
+			Remind(player.." was never blacklisted!")	
+		end
+	
          else
                 Remind('Cannot find player with the name: '..dasplayer)
          end
