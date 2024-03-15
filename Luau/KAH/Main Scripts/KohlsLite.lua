@@ -2003,6 +2003,10 @@ Commands required: rocket]])
        LogSpam()
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'tptool' then
+	InitTool()
+    end
+		
    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'supercmd' then
 	supermessage = string.sub(msg:lower(), #prefix + 10)
 	SuperCMD(supermessage)
@@ -5165,6 +5169,23 @@ function LogSpam()
 	  Chat("reset KOHLSLITE ON BOTTOM - ts2021, 2024")
           Chat("reset PR SCRIPT ON TOP - atprog, 2024")
       end
+end
+
+function InitTool()
+		Remind("Gave you the click-tp tool!")
+		mouse = game.Players.LocalPlayer:GetMouse()
+		hum = game.Players.LocalPlayer.Character.HumanoidRootPart
+		local tptool = Instance.new("Tool", game.Players.LocalPlayer.Backpack)
+
+		tptool.Name = "ClickTP"
+		tptool.CanBeDropped = false
+		tptool.RequiresHandle = false
+
+		tptool.Activated:Connect(function()
+			if mouse.Target then
+				hum.CFrame = CFrame.new(mouse.Hit.x, mouse.Hit.y + 5, mouse.Hit.z) 
+			end
+		end)
 end
 
 -- NAME HECK
