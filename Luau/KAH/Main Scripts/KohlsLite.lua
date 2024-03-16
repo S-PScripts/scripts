@@ -1899,7 +1899,7 @@ Commands required: rocket]])
 Remind([[Sorry, you don't have Person's to perform this command!
 Commands required: rocket]])
 	else
-		local dasplayer = string.sub(msg:lower(), #prefix + 7)
+		local dasplayer = string.sub(msg:lower(), #prefix + 8)
            	PLAYERCHECK(dasplayer)
            	if player ~= nil and not table.find(nokick, player) then
 			rkicker = cplr
