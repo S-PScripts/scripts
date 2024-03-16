@@ -2484,7 +2484,12 @@ Commands required: rocket]])
     end			
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'ungearban' then
-         	game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, true)
+		local plrg = string.sub(msg:lower(), #prefix + 11)
+		if plrg == "" then
+         		game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, true)
+		else 
+			Remind("Cannot gearban other users (yet)!")
+		end
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'gearban' then
