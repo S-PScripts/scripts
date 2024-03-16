@@ -1393,9 +1393,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix.."gchar" then
-	    local specialid = string.sub(msg:lower(), #prefix + 7)
-	    local circus = game.Players:GetUserIdFromNameAsync(specialid)
-    	    Chat("char me " .. circus)
+        local args = string.split(msg, " ")
+        local target = args[2]
+        local specialid = table.concat(args, " ", 3)
+        local circus = game.Players:GetUserIdFromNameAsync(specialid)
+        Chat("char " .. target .. " " .. circus)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antiabuse' then
