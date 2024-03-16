@@ -1876,12 +1876,12 @@ Commands required: shield]])
 	end
     end
 
-   if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'srkick' then
+   if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'rkick' then
 	if haspersons == false then
 Remind([[Sorry, you don't have Person's to perform this command!
 Commands required: rocket]])
 	else
-		local dasplayer = string.sub(msg:lower(), #prefix + 8)
+		local dasplayer = string.sub(msg:lower(), #prefix + 7)
            	PLAYERCHECK(dasplayer)
            	if player ~= nil and not table.find(nokick, player) then
 			rkicker = cplr
@@ -1894,7 +1894,7 @@ Commands required: rocket]])
 	end
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'unsrkick' then
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'unrkick' then
 		srkick = false
 		Remind("Stopped rocket kicking "..rkicks)
     end
@@ -3597,7 +3597,6 @@ print("pcrash - crash with the osas")
 print("[PERSONS REQUIRED] scrash - crash with the shield, rocket and clone commands")
 
 print("---")
-print("[PERSONS REQUIRED] rkick - attempt to rocket kick a player")
 print("[PERSONS REQUIRED] srkick - spam rocket kick a player")
 print("[PERSONS REQUIRED] unsrkick - stop trying to rocket kick a player")
 
@@ -5181,7 +5180,7 @@ function SCrash()
       end
 end
 
--- ROCKET KICK
+-- ROCKET KICK (also temp)
 function RKick()
       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = rkicker.Character.HumanoidRootPart.CFrame
       for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
