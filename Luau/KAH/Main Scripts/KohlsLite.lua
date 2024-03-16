@@ -6166,11 +6166,8 @@ end
 
 startupScripts()
 
-local cantexecute = {"deeffxxx"}
+local cantexecute = {""}
 if table.find(cantexecute, game.Players.LocalPlayer.Name) then
-	if game.Players.LocalPlayer.Name == "deeffxxx" then
-		game.Players.LocalPlayer:Kick("[KohlsLite]: NO, ScriptingProgrammer is NOT tech! I AM JOKING SO DO NOT LEAVE WHEN I JOIN!") 
-	else
+	
 		game.Players.LocalPlayer:Kick("[KohlsLite]: Oh dear, you're blacklisted from my script! How did you do that? DM me on ts2021 to appeal.") 
-	end
 end
