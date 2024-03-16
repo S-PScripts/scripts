@@ -1876,24 +1876,6 @@ Commands required: shield]])
 	end
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'rkick' then
-	if haspersons == false then
-Remind([[Sorry, you don't have Person's to perform this command!
-Commands required: rocket]])
-	else
-	   	local dasplayer = string.sub(msg:lower(), #prefix + 7)
-           	PLAYERCHECK(dasplayer)
-           	if player ~= nil and not table.find(nokick, player) then
-			rkicker = cplr
-			rkicks = player
-			RKick()
-			Remind("Temp rocket kicking "..rkicks)
-	   	else
-                	Remind('Cannot find player with the name: '..dasplayer)
-           	end
-	 end
-    end
-
    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'srkick' then
 	if haspersons == false then
 Remind([[Sorry, you don't have Person's to perform this command!
