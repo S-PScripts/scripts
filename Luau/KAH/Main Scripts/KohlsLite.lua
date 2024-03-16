@@ -5352,7 +5352,7 @@ end
 
 -- SPAWN
 function GSpawn()
-       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-37.5425644, 1.80732727, -25.333395, -0.999980152, 0, 0.00630147522, 0, 1, 0, -0.00630147522, 0, -0.999980152)
+       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-41.3, 10.7, -25.5)
 end
 
 -- Cam Break
