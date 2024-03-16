@@ -1178,18 +1178,18 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'stopm' then
-	      for i, v in pairs(game:GetDescendants()) do
-        	    if v:IsA("Sound") then
+	for i, v in pairs(game:GetService("Workspace").Terrain["_Game"].Folder:GetDescendants()) do
+        	if v:IsA("Sound") then
                     v:Stop()
-        	    end
+        	end
         end   
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'startm' then
-	      for i, v in pairs(game:GetDescendants()) do
-        	    if v:IsA("Sound") then
+	for i, v in pairs(game:GetService("Workspace").Terrain["_Game"].Folder:GetDescendants()) do
+        	if v:IsA("Sound") then
                     v:Play()
-        	    end
+        	end
         end   
     end
 
@@ -2480,6 +2480,10 @@ Commands required: rocket]])
 			Chat("punish " .. trolled)
 			Regen()
     end			
+
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'ungearban' then
+         	game.StarterGui:SetCoreGuiEnabled("Inventory", true)
+    end
 		
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'gearban' then
          	local dasplayer = string.sub(msg:lower(), #prefix + 9)
