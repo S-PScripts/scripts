@@ -2484,7 +2484,7 @@ Commands required: rocket]])
     end			
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'ungearban' then
-         	game.StarterGui:SetCoreGuiEnabled("Inventory", true)
+         	game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, true)
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'gearban' then
