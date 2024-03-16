@@ -9,6 +9,10 @@ local function Remind(msg)
 	})
 end;
 
+local function Chat(msg)
+        game.Players:Chat(msg)
+end
+
 local prefix = "-"
 
 -- INPUTS --
