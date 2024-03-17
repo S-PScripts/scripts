@@ -6404,7 +6404,7 @@ function Ungearban(plr)
         task.wait()
         ungear.Parent = game.Players.LocalPlayer.Character
         task.wait()
-        game.Players.LocalPlayer.Character.DaggerOfShatteredDimensions.Remote:FireServer(Enum.KeyCode.Q)
+        Remind("Press Q")
 end
 
 function StoneMap()
