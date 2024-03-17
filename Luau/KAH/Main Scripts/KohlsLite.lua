@@ -6798,7 +6798,6 @@ local Toggle = Tab:CreateToggle({
     end
 })
 
-
 local Toggle = Tab:CreateToggle({
    Name = "Anti Punish",
    CurrentValue = false,
@@ -6808,6 +6807,32 @@ local Toggle = Tab:CreateToggle({
            YOUantipunish = true
 	else 
 	   YOUantipunish = false
+        end
+    end
+})
+
+local Toggle = Tab:CreateToggle({
+   Name = "Anti Rocket",
+   CurrentValue = false,
+   Flag = "Toggle1", 
+   Callback = function(Value)
+        if Value then
+           YOUantirocket = true
+	else 
+	   YOUantirocket = false
+        end
+    end
+})
+
+local Toggle = Tab:CreateToggle({
+   Name = "Anti Message",
+   CurrentValue = false,
+   Flag = "Toggle1", 
+   Callback = function(Value)
+        if Value then
+           YOUantimsg = true
+	else 
+	   YOUantimsg = false
         end
     end
 })
