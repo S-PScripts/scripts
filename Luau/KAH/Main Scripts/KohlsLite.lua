@@ -6840,7 +6840,7 @@ local Tab = Window:CreateTab("Teleports", 4483362458) -- Title, Image
 local Button = Tab:CreateButton({
    Name = "Regen",
    Callback = function()
-      toregen()
+      regentp()
    end,
 })
 
