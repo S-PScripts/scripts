@@ -6762,15 +6762,15 @@ local Window = Rayfield:CreateWindow({
       Invite = "",
       RememberJoins = true
    },
-   KeySystem = false,
+   KeySystem = true,
    KeySettings = {
       Title = "KohlsLite",
-      Subtitle = "Key System",
-      Note = "You shouldn't see this screen!",
+      Subtitle = "Continue",
+      Note = "Input PC if you aren't on mobile. Else close this gui.",
       FileName = "KeyKohlsLite",
       SaveKey = false,
       GrabKeyFromSite = false,
-      Key = {"KohlsLite"}
+      Key = {"PC"}
    }
 })
 
