@@ -212,7 +212,9 @@ local gearcodes = {
     [[93136746]], -- 10
     [[11999247]], -- 11
     [[77443461]],  -- 12
-    [[268586231,1103011681]] -- 13
+    [[268586231,1103011681]], -- 13
+    [[583030187,68539623]], -- 14
+    [[87361662,66896601]] -- 15
 }
 
 local gears = {
@@ -228,7 +230,9 @@ local gears = {
     "telemon",  -- 10
     "trapmine", -- 11
     "timegears", -- 12
-    "admslayer" -- 13
+    "admslayer", -- 13
+    "kp", -- 14
+    "icebreaker" -- 15
 }
 
 local charcodes = {
@@ -2181,41 +2185,6 @@ Commands required: rocket]])
 	spamon = true
     end
 
-  if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'admslayer' then
-		local adm = string.sub(msg:lower(), #prefix + 11)
-		if adm ~= "" then
-			Chat("gear "..adm.." 268586231")
-			Chat("gear "..adm.." 1103011681")
-		else
-			Chat("gear me 268586231")
-			Chat("gear me 1103011681")
-		end
-  end
-
-  if string.sub(msg:lower(), 1, #prefix + 2) == prefix..'kp' then
-		local kp = string.sub(msg:lower(), #prefix + 4)
-		if kp ~= "" then
-			Chat("gear "..kp.." 583030187")
-			Chat("gear "..kp.." 68539623")
-
-		else
-			Chat("gear me 583030187")
-			Chat("gear me 68539623")
-		end
-  end
-
-
-  if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'icebreaker' then
-		local iceb = string.sub(msg:lower(), #prefix + 12)
-		if iceb ~= "" then
-			Chat("gear "..iceb.." 87361662")
-			Chat("gear "..iceb.." 66896601")
-		else
-			Chat("gear me 87361662")
-			Chat("gear me 66896601")
-		end
-  end
-
   if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'sswords' then
 		local per = string.sub(msg:lower(), #prefix + 9)
 		if per ~= "" then
@@ -3993,9 +3962,6 @@ print("---")
 print("ipboom - who's ip address is that?")
 
 print("---")
-print("admslayer")
-print("kp")
-print("icebreaker")
 print("sswords")
 print("melees")
 print("guns")
