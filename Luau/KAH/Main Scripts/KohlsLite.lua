@@ -200,18 +200,19 @@ local musicnames = {"All dropping 8 beats", -- 1
 		    "KILL BILL (Fast)"} -- 59
 
 local gearcodes = {
-    "212641536", -- 1
-    "94794847", -- 2
-    "92628079", -- 3
-    "82357101", -- 4
-    "28277486", -- 5
-    "16924676", -- 6
-    "34870758", -- 7
-    "79736563", -- 8
-    "18474459", -- 9
-    "93136746", -- 10
-    "11999247", -- 11
-    "77443461"  -- 12
+    [[212641536]], -- 1
+    [[94794847]], -- 2
+    [[92628079]], -- 3
+    [[82357101]], -- 4
+    [[28277486]], -- 5
+    [[16924676]], -- 6
+    [[34870758]], -- 7
+    [[79736563]], -- 8
+    [[18474459]], -- 9
+    [[93136746]], -- 10
+    [[11999247]], -- 11
+    [[77443461]],  -- 12
+    [[268586231,1103011681]] -- 13
 }
 
 local gears = {
@@ -1363,8 +1364,10 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                 end
             end
             if gearIndex ~= 0 then
-                local gearCode = gearcodes[gearIndex]
-                Chat("gear " .. target .. " " .. gearCode)
+                local gearCodes = gearcodes[gearIndex]
+        	for code in string.gmatch(gearCodes, "[^,]+") do
+            		Chat("gear " .. target .. " " .. code)
+        	end
             else
             end
         else
