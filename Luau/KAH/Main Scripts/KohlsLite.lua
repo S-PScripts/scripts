@@ -6876,3 +6876,78 @@ createKohlsUi(
 		    "antimsg and antirocket are currently on"
 	 	}
 )
+
+-- // GUI SHIT \\ --
+
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+   Name = "KohlsLite",
+   LoadingTitle = "KohlsLite",
+   LoadingSubtitle = "By ScriptingProgrammer",
+   ConfigurationSaving = {
+      Enabled = true,
+      FolderName = nil,
+      FileName = "KohlsLite"
+   },
+   Discord = {
+      Enabled = false,
+      Invite = "",
+      RememberJoins = true
+   },
+   KeySystem = false,
+   KeySettings = {
+      Title = "KohlsLite",
+      Subtitle = "Key System",
+      Note = "You shouldn't see this screen!",
+      FileName = "KeyKohlsLite",
+      SaveKey = false,
+      GrabKeyFromSite = false,
+      Key = {"KohlsLite"}
+   }
+})
+
+local Tab = Window:CreateTab("Antis", 4483362458)
+
+local Toggle = Tab:CreateToggle({
+   Name = "No Obby Kill (NOK)",
+   CurrentValue = false,
+   Flag = "Toggle1",
+   Callback = function(Value)
+   if Value then
+        Chat(prefix.."tnok")
+    else
+        Chat(prefix.."untnok")
+    end
+end
+})
+
+local Toggle = Tab:CreateToggle({
+   Name = "AntiAbuse",
+   CurrentValue = false,
+   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+        if Value then
+    end
+end
+})
+
+--[[local AdvancedWL = {  -- UsrID, UserName -- I have done it like this to somewhat stop people from bypassing by changing their name
+    [3696380671] = "ScriptingProgrammer"
+}
+
+local function checkwl(player)
+    local userId = player.UserId
+    local playerName = player.Name
+    if AdvancedWL[userId] == playerName then
+        return true
+    else
+        return false
+    end
+end
+
+if not checkwl(game.Players.LocalPlayer) then
+    game.Players.LocalPlayer:Kick("You cannot execute this script.")
+else
+    print("User Whitelisted.")
+end]]
