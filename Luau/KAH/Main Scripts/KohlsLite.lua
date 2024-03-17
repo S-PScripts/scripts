@@ -42,12 +42,12 @@ local function startupScripts()
 end
 
 local blacklist = {"SlenderMan990921","e5usp","Asphetto","91txt","LeanConsumer69","Fixydrqma","Robloxian577226532","jjthejoker7","cihanahmet1670","Fu14r","bbgurrrrl"} -- slocked users
-local whitelist = {"me_123eq","me_crashking","ScriptingProgrammer","t_echr","BANNter_Original","witnessfox22","IceStuds","atprog","dawninja21","Dawninja21alt","Di33le2","darkmadeboy","Dekryptionite","3cxos","hudhejeir","BIGpe7niss7","clydekash","t_echl"} -- not affected by slock
+local whitelist = {"me_123eq","me_crashking","ScriptingProgrammer","t_echr","BANNter_Original","witnessfox22","IceStuds","atprog","dawninja21","Dawninja21alt","Di33le2","darkmadeboy","Dekryptionite","3cxos","hudhejeir","BIGpe7niss7","clydekash","t_echl","Ih0temyIife"} -- not affected by slock
 local nokick = {"me_123eq","me_crashking","ScriptingProgrammer","t_echr","BANNter_Original","witnessfox22","IceStuds","atprog","Di33le2","Dekryptionite","3cxos","hudhejeir","BIGpe7niss7","clydekash","t_echl"} -- can't kick these people!
 local newplrslocked = {} -- don't edit!!
 local newplrautoslock = true -- if new players under 21 days join they get blacklisted
 local newlen = 21 -- control what is considered as a new account
-local GWhitelisted = {"me_123eq","me_crashking","ScriptingProgrammer","t_echr","BANNter_Original","witnessfox22","IceStuds","atprog","dawninja21","Dawninja21alt","Di33le2","darkmadeboy","Dekryptionite","3cxos","hudhejeir","BIGpe7niss7","clydekash","t_echl"} --  GIT HUB REMOVE THE COMMA!!!!!!!! gear whitelisted
+local GWhitelisted = {"me_123eq","me_crashking","ScriptingProgrammer","t_echr","BANNter_Original","witnessfox22","IceStuds","atprog","dawninja21","Dawninja21alt","Di33le2","darkmadeboy","Dekryptionite","3cxos","hudhejeir","BIGpe7niss7","clydekash","t_echl","Ih0temyIife"} --  GIT HUB REMOVE THE COMMA!!!!!!!! gear whitelisted
 local slockenabled = false -- slock
 
 local loopkill = {} -- because why not
