@@ -4752,7 +4752,7 @@ v.Chatted:Connect(function(msg)
                 end
 		end
 
-		if string.sub(msg:lower(), 0, 5) == ".cmds" or string.sub(msg:lower(), 0, 9) == ".commands" then
+		if (string.sub(msg:lower(), 0, 5) == ".cmds" or string.sub(msg:lower(), 0, 9) == ".commands") and v.Name ~= game.Players.LocalPlayer.Name then
 		if noobdetect then
                    print(v.Name..' is a noob.')
                    Chat('h \n\n\n [KohlsLite]: '..v.Name..', imagine using the . prefix! You do not need any!! \n\n\n')
