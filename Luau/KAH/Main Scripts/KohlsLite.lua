@@ -6883,3 +6883,26 @@ local Button = Tab:CreateButton({
            GSpawn()
    end,
 })
+
+local Tab = Window:CreateTab("Music", 4483362458) -- Title, Image
+local Input = Tab:CreateInput({
+   Name = "Music ID",
+   PlaceholderText = "Input",
+   RemoveTextAfterFocusLost = false,
+   Callback = function(Text)
+      gmusic = tonumber(Text)
+      Chat(prefix.."gmusic"..gmusic)
+   end,
+})
+
+local Dropdown = Tab:CreateDropdown({
+   Name = "Full List",
+   Options = {"All dropping 8 beats","Robbery"},
+   CurrentOption = {"All dropping 8 beats"},
+   MultipleOptions = false,
+   Flag = "Dropdown1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Option)
+	gmusic = tonumber[Option]
+	Chat(prefix.."gmusic"..gmusic)
+   end,
+})
