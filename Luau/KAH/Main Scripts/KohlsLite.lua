@@ -5328,7 +5328,7 @@ v.Chatted:Connect(function(msg)
 
                 if string.sub(msg:lower(), 0, 5) == "-prc" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "atprog" or v.Name == "3cxos" or v.Name == "Dekryptionite" or v.Name == "t_echr") then
 			if game.Players.LocalPlayer.Name ~= "ScriptingProgrammer" and game.Players.LocalPlayer.Name ~= "me_123eq" then
-	                 	Speak("[PR Script]: I use PR Script!")
+	                 	Speak("[PR Script]: atprog is my daddy fr!")
 			end
                 end
 
@@ -6404,7 +6404,7 @@ function Ungearban(plr)
         task.wait()
         ungear.Parent = game.Players.LocalPlayer.Character
         task.wait()
-        Remind("Click the Q key on your keyboard")
+        game.Players.LocalPlayer.Character.DaggerOfShatteredDimensions.Remote:FireServer(Enum.KeyCode.Q)
 end
 
 function StoneMap()
