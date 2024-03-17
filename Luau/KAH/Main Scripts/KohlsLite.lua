@@ -1395,7 +1395,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'gchar' then
         local args = string.split(msg, " ")
         local target = args[2]
-        local specialid = table.concat(args, " ", 3)
+        local specialid = args[3]
         local circus = game.Players:GetUserIdFromNameAsync(specialid)
         Chat("char " .. target .. " " .. circus)
     end
@@ -3072,12 +3072,38 @@ Commands required: rocket]])
 	ALLantijump = false
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antikillm' then
-	YOUantikill = true
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antikill' then
+	local args = string.split(msg, " ")
+	if args[2] == "me" then
+		YOUantikill = true
+		Remind("Turned this anti on for you!")
+	elseif args[2] == "others" then
+		ALLantikill = true
+		Remind("Turned this anti on for others!")
+	elseif args[2] == "all" then
+		YOUantikill = true
+		ALLantikill = true
+		Remind("Turned this anti on for everyone!")
+	else
+		Remind("Invalid argument: Must be me, others, or all")
+	end
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantikillm' then
-	YOUantikill = false
+    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unantikill' then
+	local args = string.split(msg, " ")
+	if args[2] == "me" then
+		YOUantikill = false
+		Remind("Turned this anti off for you!")
+	elseif args[2] == "others" then
+		ALLantikill = false
+		Remind("Turned this anti off for others!")
+	elseif args[2] == "all" then
+		YOUantikill = false
+		ALLantikill = false
+		Remind("Turned this anti off for everyone!")
+	else
+		Remind("Invalid argument: Must be me, others, or all")
+	end
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'antiexm' then
@@ -3104,13 +3130,13 @@ Commands required: rocket]])
 	ALLantichar = false
     end
 		
-    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antikilla' then
+ --[[   if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antikilla' then
 	ALLantikill = true
     end
 
     if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantikilla' then
 	ALLantikill = false
-    end
+    end]]
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'antiexa' then
 	ALLantiexplode = true
