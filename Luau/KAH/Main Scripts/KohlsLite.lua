@@ -3030,28 +3030,208 @@ Commands required: rocket]])
 	end   
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'antifreezem' then
-	YOUantifreeze = true
+    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'antifreeze' then
+	local args = string.split(msg, " ")
+	if args[2] == "me" then
+		YOUantifreeze = true
+		Remind("Turned this anti on for you!")
+	elseif args[2] == "others" then
+		ALLantifreeze = true
+		Remind("Turned this anti on for others!")
+	elseif args[2] == "all" then
+		YOUantifreeze = true
+		ALLantifreeze = true
+		Remind("Turned this anti on for everyone!")
+	else
+		Remind("Invalid argument: Must be me, others, or all")
+	end
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'antiffm' then
-	YOUantiff = true
+   if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'unantifreeze' then
+	local args = string.split(msg, " ")
+	if args[2] == "me" then
+		YOUantifreeze = false
+		Remind("Turned this anti off for you!")
+	elseif args[2] == "others" then
+		ALLantifreeze = false
+		Remind("Turned this anti off for others!")
+	elseif args[2] == "all" then
+		YOUantifreeze = false
+		ALLantifreeze = false
+		Remind("Turned this anti off for everyone!")
+	else
+		Remind("Invalid argument: Must be me, others, or all")
+	end   
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antiglowm' then
-	YOUantiglow = true
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'antiff' then
+	local args = string.split(msg, " ")
+	if args[2] == "me" then
+		YOUantiff = true
+		Remind("Turned this anti on for you!")
+	elseif args[2] == "others" then
+		ALLantiff = true
+		Remind("Turned this anti on for others!")
+	elseif args[2] == "all" then
+		YOUantiff = true
+		ALLantiff = true
+		Remind("Turned this anti on for everyone!")
+	else
+		Remind("Invalid argument: Must be me, others, or all")
+	end    
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'antihcm' then
-	YOUantihealthc = true
+  if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'unantiff' then
+	local args = string.split(msg, " ")
+	if args[2] == "me" then
+		YOUantiff = false
+		Remind("Turned this anti off for you!")
+	elseif args[2] == "others" then
+		ALLantiff = false
+		Remind("Turned this anti off for others!")
+	elseif args[2] == "all" then
+		YOUantiff = false
+		ALLantiff = false
+		Remind("Turned this anti off for everyone!")
+	else
+		Remind("Invalid argument: Must be me, others, or all")
+	end    
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antiglow' then
+	local args = string.split(msg, " ")
+	if args[2] == "me" then
+		YOUantiglow = true
+		Remind("Turned this anti on for you!")
+	elseif args[2] == "others" then
+		ALLantiglow = true
+		Remind("Turned this anti on for others!")
+	elseif args[2] == "all" then
+		YOUantiglow = true
+		ALLantiglow = true
+		Remind("Turned this anti on for everyone!")
+	else
+		Remind("Invalid argument: Must be me, others, or all")
+	end    
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unantiglow' then
+	local args = string.split(msg, " ")
+	if args[2] == "me" then
+		YOUantiglow = false
+		Remind("Turned this anti off for you!")
+	elseif args[2] == "others" then
+		ALLantiglow = false
+		Remind("Turned this anti off for others!")
+	elseif args[2] == "all" then
+		YOUantiglow = false
+		ALLantiglow = false
+		Remind("Turned this anti off for everyone!")
+	else
+		Remind("Invalid argument: Must be me, others, or all")
+	end    
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'antihc' then
+	local args = string.split(msg, " ")
+	if args[2] == "me" then
+		YOUantihealthc = true
+		Remind("Turned this anti on for you!")
+	elseif args[2] == "others" then
+		ALLantihealthc = true
+		Remind("Turned this anti on for others!")
+	elseif args[2] == "all" then
+		YOUantihealthc = true
+		ALLantihealthc = true
+		Remind("Turned this anti on for everyone!")
+	else
+		Remind("Invalid argument: Must be me, others, or all")
+	end    
+    end
+		
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'unantihc' then
+	local args = string.split(msg, " ")
+	if args[2] == "me" then
+		YOUantihealthc = false
+		Remind("Turned this anti off for you!")
+	elseif args[2] == "others" then
+		ALLantihealthc = false
+		Remind("Turned this anti off for others!")
+	elseif args[2] == "all" then
+		YOUantihealthc = false
+		ALLantihealthc = false
+		Remind("Turned this anti off for everyone!")
+	else
+		Remind("Invalid argument: Must be me, others, or all")
+	end    
     end
 	
-    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antijailm' then
-	YOUantijail = true
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antijail' then
+	local args = string.split(msg, " ")
+	if args[2] == "me" then
+		YOUantijail = true
+		Remind("Turned this anti on for you!")
+	elseif args[2] == "others" then
+		ALLantijail = true
+		Remind("Turned this anti on for others!")
+	elseif args[2] == "all" then
+		YOUantijail = true
+		ALLantijail = true
+		Remind("Turned this anti on for everyone!")
+	else
+		Remind("Invalid argument: Must be me, others, or all")
+	end    
+    end
+		
+    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unantijail' then
+	local args = string.split(msg, " ")
+	if args[2] == "me" then
+		YOUantijail = false
+		Remind("Turned this anti off for you!")
+	elseif args[2] == "others" then
+		ALLantijail = false
+		Remind("Turned this anti off for others!")
+	elseif args[2] == "all" then
+		YOUantijail = false
+		ALLantijail = false
+		Remind("Turned this anti off for everyone!")
+	else
+		Remind("Invalid argument: Must be me, others, or all")
+	end    
+    end
+		
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antijump' then
+	local args = string.split(msg, " ")
+	if args[2] == "me" then
+		YOUantijump = true
+		Remind("Turned this anti on for you!")
+	elseif args[2] == "others" then
+		ALLantijump = true
+		Remind("Turned this anti on for others!")
+	elseif args[2] == "all" then
+		YOUantijump = true
+		ALLantijump = true
+		Remind("Turned this anti on for everyone!")
+	else
+		Remind("Invalid argument: Must be me, others, or all")
+	end    
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antijumpm' then
-	YOUantijump = true
+    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unantijump' then
+	local args = string.split(msg, " ")
+	if args[2] == "me" then
+		YOUantijump = false
+		Remind("Turned this anti off for you!")
+	elseif args[2] == "others" then
+		ALLantijump = false
+		Remind("Turned this anti off for others!")
+	elseif args[2] == "all" then
+		YOUantijump = false
+		ALLantijump = false
+		Remind("Turned this anti off for everyone!")
+	else
+		Remind("Invalid argument: Must be me, others, or all")
+	end    
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antikill' then
@@ -3088,14 +3268,74 @@ Commands required: rocket]])
 	end
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'antiexm' then
-	YOUantiexplode = true
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'antiex' then
+	local args = string.split(msg, " ")
+	if args[2] == "me" then
+		YOUantiexplode = true
+		Remind("Turned this anti on for you!")
+	elseif args[2] == "others" then
+		ALLantiexplode = true
+		Remind("Turned this anti on for others!")
+	elseif args[2] == "all" then
+		YOUantiexplode = true
+		ALLantiexplode = true
+		Remind("Turned this anti on for everyone!")
+	else
+		Remind("Invalid argument: Must be me, others, or all")
+	end
     end
-
-    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'anticharm' then
-	YOUantichar = true
+		
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'unantiex' then
+	local args = string.split(msg, " ")
+	if args[2] == "me" then
+		YOUantiexplode = false
+		Remind("Turned this anti off for you!")
+	elseif args[2] == "others" then
+		ALLantiexplode = false
+		Remind("Turned this anti off for others!")
+	elseif args[2] == "all" then
+		YOUantiexplode = false
+		ALLantiexplode = false
+		Remind("Turned this anti off for everyone!")
+	else
+		Remind("Invalid argument: Must be me, others, or all")
+	end
     end
-
+		
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antichar' then
+	local args = string.split(msg, " ")
+	if args[2] == "me" then
+		YOUantichar = true
+		Remind("Turned this anti on for you!")
+	elseif args[2] == "others" then
+		ALLantichar = true
+		Remind("Turned this anti on for others!")
+	elseif args[2] == "all" then
+		YOUantichar = true
+		ALLantichar = true
+		Remind("Turned this anti on for everyone!")
+	else
+		Remind("Invalid argument: Must be me, others, or all")
+	end    
+    end
+		
+    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unantichar' then
+	local args = string.split(msg, " ")
+	if args[2] == "me" then
+		YOUantichar = false
+		Remind("Turned this anti off for you!")
+	elseif args[2] == "others" then
+		ALLantichar = false
+		Remind("Turned this anti off for others!")
+	elseif args[2] == "all" then
+		YOUantichar = false
+		ALLantichar = false
+		Remind("Turned this anti off for everyone!")
+	else
+		Remind("Invalid argument: Must be me, others, or all")
+	end    
+    end
+		
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'antimsg' then
 	YOUantimsg = true
     end
@@ -3104,56 +3344,293 @@ Commands required: rocket]])
 	YOUantimsg = false
     end
 		
-    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antinamem' then
-	YOUantiname = true
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 14) == prefix..'antiparticlesm' then
-	YOUantiparticles = true
-    end
-		
-    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'antipunishm' then
-	YOUantipunish = true
-    end
-		
-    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'antirocketm' then
-	YOUantirocket = true
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antisitm' then
-	YOUantisit = true
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'antiseizurem' then
-	YOUantiseizure = true
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'antismokem' then
-	YOUantismoke = true
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 13) == prefix..'antisparklesm' then
-	YOUantisparkles = true
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antiname' then
+	local args = string.split(msg, " ")
+	if args[2] == "me" then
+		YOUantiname = true
+		Remind("Turned this anti on for you!")
+	elseif args[2] == "others" then
+		ALLantiname = true
+		Remind("Turned this anti on for others!")
+	elseif args[2] == "all" then
+		YOUantiname = true
+		ALLantiname = true
+		Remind("Turned this anti on for everyone!")
+	else
+		Remind("Invalid argument: Must be me, others, or all")
+	end     
     end
 		
-    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'antispeedm' then
-	YOUantispeed = true
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antispinm' then
-	YOUantispin = true
+    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unantiname' then
+	local args = string.split(msg, " ")
+	if args[2] == "me" then
+		YOUantiname = false
+		Remind("Turned this anti off for you!")
+	elseif args[2] == "others" then
+		ALLantiname = false
+		Remind("Turned this anti off for others!")
+	elseif args[2] == "all" then
+		YOUantiname = false
+		ALLantiname = false
+		Remind("Turned this anti off for everyone!")
+	else
+		Remind("Invalid argument: Must be me, others, or all")
+	end     
     end
 		
-    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antistunm' then
-	YOUantistun = true
+    if string.sub(msg:lower(), 1, #prefix + 13) == prefix..'antiparticles' then
+	local args = string.split(msg, " ")
+	if args[2] == "me" then
+		YOUantiparticles = true
+		Remind("Turned this anti on for you!")
+	elseif args[2] == "others" then
+		ALLantiparticles = true
+		Remind("Turned this anti on for others!")
+	elseif args[2] == "all" then
+		YOUantiparticles = true
+		ALLantiparticles = true
+		Remind("Turned this anti on for everyone!")
+	else
+		Remind("Invalid argument: Must be me, others, or all")
+	end     
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antistgm' then
-	YOUantisetgrav = true
+    if string.sub(msg:lower(), 1, #prefix + 15) == prefix..'unantiparticles' then
+	local args = string.split(msg, " ")
+	if args[2] == "me" then
+		YOUantiparticles = false
+		Remind("Turned this anti off for you!")
+	elseif args[2] == "others" then
+		ALLantiparticles = false
+		Remind("Turned this anti off for others!")
+	elseif args[2] == "all" then
+		YOUantiparticles = false
+		ALLantiparticles = false
+		Remind("Turned this anti off for everyone!")
+	else
+		Remind("Invalid argument: Must be me, others, or all")
+	end     
     end
 		
-    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antiswagm' then
-	YOUantiswag = true
+    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'antipunish' then
+        local args = string.split(msg, " ")
+	if args[2] == "me" then
+		YOUantipunish = true
+		Remind("Turned this anti on for you!")
+	elseif args[2] == "others" then
+		ALLantipunish = true
+		Remind("Turned this anti on for others!")
+	elseif args[2] == "all" then
+		YOUantipunish = true
+		ALLantipunish = true
+		Remind("Turned this anti on for everyone!")
+	else
+		Remind("Invalid argument: Must be me, others, or all")
+	end         
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'unantipunish' then
+        local args = string.split(msg, " ")
+	if args[2] == "me" then
+		YOUantipunish = false
+		Remind("Turned this anti off for you!")
+	elseif args[2] == "others" then
+		ALLantipunish = false
+		Remind("Turned this anti off for others!")
+	elseif args[2] == "all" then
+		YOUantipunish = false
+		ALLantipunish = false
+		Remind("Turned this anti off for everyone!")
+	else
+		Remind("Invalid argument: Must be me, others, or all")
+	end         
+    end
+		
+    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'antirocket' then
+ 	local args = string.split(msg, " ")
+	if args[2] == "me" then
+		YOUantirocket = true
+		Remind("Turned this anti on for you!")
+	elseif args[2] == "others" then
+		ALLantirocket = true
+		Remind("Turned this anti on for others!")
+	elseif args[2] == "all" then
+		YOUantirocket = true
+		ALLantirocket = true
+		Remind("Turned this anti on for everyone!")
+	else
+		Remind("Invalid argument: Must be me, others, or all")
+	end             
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'unantirocket' then
+ 	local args = string.split(msg, " ")
+	if args[2] == "me" then
+		YOUantirocket = false
+		Remind("Turned this anti off for you!")
+	elseif args[2] == "others" then
+		ALLantirocket = false
+		Remind("Turned this anti off for others!")
+	elseif args[2] == "all" then
+		YOUantirocket = false
+		ALLantirocket = false
+		Remind("Turned this anti off for everyone!")
+	else
+		Remind("Invalid argument: Must be me, others, or all")
+	end             
+    end
+		
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'antisit' then
+ 	local args = string.split(msg, " ")
+	if args[2] == "me" then
+		YOUantisit = true
+		Remind("Turned this anti on for you!")
+	elseif args[2] == "others" then
+		ALLantisit = true
+		Remind("Turned this anti on for others!")
+	elseif args[2] == "all" then
+		YOUantisit = true
+		ALLantisit = true
+		Remind("Turned this anti on for everyone!")
+	else
+		Remind("Invalid argument: Must be me, others, or all")
+	end             
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'antiseizure' then
+	local args = string.split(msg, " ")
+	if args[2] == "me" then
+		YOUantisit = true
+		Remind("Turned this anti on for you!")
+	elseif args[2] == "others" then
+		ALLantisit = true
+		Remind("Turned this anti on for others!")
+	elseif args[2] == "all" then
+		YOUantisit = true
+		ALLantisit = true
+		Remind("Turned this anti on for everyone!")
+	else
+		Remind("Invalid argument: Must be me, others, or all")
+	end       
+     end
+
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antismoke' then
+	local args = string.split(msg, " ")
+	if args[2] == "me" then
+		YOUantismoke = true
+		Remind("Turned this anti on for you!")
+	elseif args[2] == "others" then
+		ALLantismoke = true
+		Remind("Turned this anti on for others!")
+	elseif args[2] == "all" then
+		YOUantismoke = true
+		ALLantismoke = true
+		Remind("Turned this anti on for everyone!")
+	else
+		Remind("Invalid argument: Must be me, others, or all")
+	end       
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'antisparkles' then
+	local args = string.split(msg, " ")
+	if args[2] == "me" then
+		YOUantisparkles = true
+		Remind("Turned this anti on for you!")
+	elseif args[2] == "others" then
+		ALLantisparkles = true
+		Remind("Turned this anti on for others!")
+	elseif args[2] == "all" then
+		YOUantisparkles = true
+		ALLantisparkles = true
+		Remind("Turned this anti on for everyone!")
+	else
+		Remind("Invalid argument: Must be me, others, or all")
+	end        
+    end
+		
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antispeed' then
+	local args = string.split(msg, " ")
+	if args[2] == "me" then
+		YOUantispeed = true
+		Remind("Turned this anti on for you!")
+	elseif args[2] == "others" then
+		ALLantispeed = true
+		Remind("Turned this anti on for others!")
+	elseif args[2] == "all" then
+		YOUantispeed = true
+		ALLantispeed = true
+		Remind("Turned this anti on for everyone!")
+	else
+		Remind("Invalid argument: Must be me, others, or all")
+	end       
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antispin' then
+	local args = string.split(msg, " ")
+	if args[2] == "me" then
+		YOUantispin = true
+		Remind("Turned this anti on for you!")
+	elseif args[2] == "others" then
+		ALLantispin = true
+		Remind("Turned this anti on for others!")
+	elseif args[2] == "all" then
+		YOUantispin = true
+		ALLantispin = true
+		Remind("Turned this anti on for everyone!")
+	else
+		Remind("Invalid argument: Must be me, others, or all")
+	end       
+    end
+		
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antistun' then
+	local args = string.split(msg, " ")
+	if args[2] == "me" then
+		YOUantistun = true
+		Remind("Turned this anti on for you!")
+	elseif args[2] == "others" then
+		ALLantistun = true
+		Remind("Turned this anti on for others!")
+	elseif args[2] == "all" then
+		YOUantistun = true
+		ALLantistun = true
+		Remind("Turned this anti on for everyone!")
+	else
+		Remind("Invalid argument: Must be me, others, or all")
+	end       
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'antistg' then
+	local args = string.split(msg, " ")
+	if args[2] == "me" then
+		YOUantisetgrav = true
+		Remind("Turned this anti on for you!")
+	elseif args[2] == "others" then
+		ALLantisetgrav = true
+		Remind("Turned this anti on for others!")
+	elseif args[2] == "all" then
+		YOUantisetgrav = true
+		ALLantisetgrav = true
+		Remind("Turned this anti on for everyone!")
+	else
+		Remind("Invalid argument: Must be me, others, or all")
+	end       
+    end
+		
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antiswag' then
+	local args = string.split(msg, " ")
+	if args[2] == "me" then
+		YOUantiswag = true
+		Remind("Turned this anti on for you!")
+	elseif args[2] == "others" then
+		ALLantiswag = true
+		Remind("Turned this anti on for others!")
+	elseif args[2] == "all" then
+		YOUantiswag = true
+		ALLantiswag = true
+		Remind("Turned this anti on for everyone!")
+	else
+		Remind("Invalid argument: Must be me, others, or all")
+	end       
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antichat' then
