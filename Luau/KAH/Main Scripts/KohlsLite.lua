@@ -6073,6 +6073,7 @@ function onPlayerAdded(player)
     if welcomemsg == true and (player.Name ~= "ScriptingProgrammer" and player.Name ~= "me_123eq") then -- removed exact details so the script is better
     	 Chat("h \n\n\n [KohlsLite]: Welcome to the server, " .. player.Name .. ". \n\n\n")
 	 print(player.Name.." joined the server.")
+	 Remind(player.Name.." joined the server.")
     end 
 
     if autogpcheck == true then
@@ -6143,6 +6144,7 @@ function onPlayerLeaving(player)
     if welcomemsg == true then
     	 Chat("h \n\n\n [KohlsLite]: Goodbye, " .. player.Name .. ". \n\n\n")
 	 print(player.Name.." left the server.")
+	 Remind(player.Name.." left the server.")
     end
 		
     if table.find(rkick_on_sight, player.Name) then
