@@ -631,7 +631,7 @@ local housekeybind = "h" -- Keybinds?!
 local rekeybind = "r"
 
 local autogpcheck = true -- automatically check for player's gamepasses
-local clickexplode = true
+local clickexplode = false -- yeah
 
 local FAdmins = {} -- all admin but for individual users
 local alladmin = false -- all admin
