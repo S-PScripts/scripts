@@ -8,7 +8,15 @@ _  _____  _   _ _     ____  _     ___ _____ _____
 | |/ / _ \| | | | |   / ___|| |   |_ _|_   _| ____|
 | ' / | | | |_| | |   \___ \| |    | |  | | |  _|  
 | . \ |_| |  _  | |___ ___) | |___ | |  | | | |___ 
-|_|\_\___/|_| |_|_____|____/|_____|___| |_| |_____| v1.095 ]]
+|_|\_\___/|_| |_|_____|____/|_____|___| |_| |_____| v1.1 ]]
+
+local function Remind(msg)
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "KohlsLite",
+		Text = msg,
+		Duration = 1
+	})
+end;
 
 if _G.executed then 
 	return 
@@ -24,14 +32,6 @@ end
 local function Speak(msg)
     game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(msg, "All")
 end
-
-local function Remind(msg)
-	game.StarterGui:SetCore("SendNotification", {
-		Title = "KohlsLite",
-		Text = msg,
-		Duration = 1
-	})
-end;
 
 local prefix = "." -- ANY LENGTH :D
 
@@ -669,12 +669,12 @@ local noblt = false
 -- local permpassid = 66254 or 64354 -> NBC, BC
 -- local personpassid = 35748 or 37127 --> NBC, BC
 
-print("Thank you for using KohlsLite v1.095! This script was created by S_P.")
-Remind("Thank you for using KohlsLite v1.095! This script was created by S_P.")
+print("Thank you for using KohlsLite v1.1! This script was created by S_P.")
+Remind("Thank you for using KohlsLite v1.1! This script was created by S_P.")
 print("Say .kcmds to list some of the commands. DM me at ts2021 on discord for the full list.")
 Remind("Say .kcmds to list some of the commands. DM me at ts2021 on discord for the full list.")
 
-Chat("h \n\n\n [KohlsLite]: Executed! v1.095 \n\n\n")
+Chat("h \n\n\n [KohlsLite]: Executed! v1.1 \n\n\n")
 
 if game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 66254) or game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 64354) then
         perm = false 
@@ -868,7 +868,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		ccolours = true
 	end
 
-	if string.sub(msg, 1, #prefix + 6)  == prefix..'unccol' then -- guys is this FONALC
+	if string.sub(msg, 1, #prefix + 6)  == prefix..'unccol' then
 		ccolours = false
 		task.wait(0.5)
 		Chat("fix")
@@ -3914,7 +3914,7 @@ Commands required: rocket]])
 end)
 
 function CMDPrint()
-print("---Command list for KohlsLite v1.095---")
+print("---Command list for KohlsLite v1.01---")
 print("Warning! This is NOT a full list so contact me for any other commands!")
 	
 print("---")
@@ -4174,7 +4174,7 @@ print("If it's to the game itself, just do (antiname).")
 
 print("---INFORMATION---")
 print("KohlsLite, since 2023. Created by ScriptingProgrammer/ts2021")
-print("Version is: v1.095 - 13th March 2024 Build")
+print("Version is: v1.01 - 13th March 2024 Build")
 print("Better than scv1 and scv2 - approved by Tech")
 
 print("--- CREDITS ---")
@@ -6274,23 +6274,23 @@ UserInputService.WindowFocused:Connect(function()
 end)
 
 -- CLICK
-mymouse = game.Players.LocalPlayer:GetMouse()
-mymouse.Button1Down:Connect(function()
-	pcall(function()
-		local clickplr = mymouse.Target.Parent.Parent
-		for i,v in pairs(game.Players:GetPlayers()) do
-			pcall(function()
-				if mymouse.Target.Parent:FindFirstChild("Humanoid") then
-					clickplr = mymouse.Target.Parent
-				end
-			end)
-		end
-		if clickplr ~= nil then
-			if clickexplode then
-				chat("explode "..clickplr.Name)
-			end
-		end
-	end)
+local mouse = game.Players.LocalPlayer:GetMouse()
+mouse.Button1Down:Connect(function()
+        pcall(function()
+                local plr = mouse.Target.Parent.Parent
+                for i, v in pairs(game.Players:GetPlayers()) do
+                    pcall(function()
+                            if mouse.Target.Parent:FindFirstChild("Humanoid") then
+                                plr = mouse.Target.Parent
+                            end
+                        end)
+                end
+                if plr ~= nil then
+                    if clickexplode then
+                    	Chat("explode "..plr.Name)
+		    end
+                end
+        end)
 end)
 
 -- REGEN
@@ -6369,7 +6369,7 @@ end
 
 function Lemon()
 	Chat("gear me 19703476")
-        Chat("unff all")
+        Chat("unff "..lemonman)
         Chat("speed " ..lemonman.. " 0")
 	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = lman.Character.HumanoidRootPart.CFrame
 	repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("YellowSnowball")
@@ -6429,6 +6429,7 @@ function StoneMap()
         task.wait()
         stoneTool1.Parent, stoneTool2.Parent = game.Players.LocalPlayer.Character, game.Players.LocalPlayer.Character
         task.wait()
+	Remind("Wait around 10 seconds for the effect to be permanent")
         task.spawn(function()
             stoneTool1.ServerControl:InvokeServer("KeyPress", {["Key"] = "x", ["Down"] = true})
         end)
@@ -6447,6 +6448,7 @@ function IceMap()
         task.wait()
         plasticTool.Parent = game.Players.LocalPlayer.Character
         task.wait()
+	Remind("This will get most of the parts but not all of them!")
         for _,part in pairs(game.Workspace:GetDescendants()) do
 	    task.wait()
             task.spawn(function()
