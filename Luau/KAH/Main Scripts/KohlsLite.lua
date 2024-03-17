@@ -1702,6 +1702,74 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		ColFix()
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'fixkb' then
+		Chat(prefix.."tnok")
+		if movestatus == true then 
+			return 
+		end
+		DisCol()
+		for _,v in pairs(Map.Obby:GetChildren()) do
+			if allclear() == false then break end
+			moveobject(v, 2)
+			repeat fwait() until movestatus == false
+			Chat("respawn me")
+		end
+		GravFix()
+		Chat("respawn me")
+		ColFix()
+    end
+
+   if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'movekb' then
+		Chat(prefix.."tnok")
+		if movestatus == true then 
+			return 
+		end
+		DisCol()
+		for _,v in pairs(Map.Obby:GetChildren()) do
+			if allclear() == false then break end
+			moveobject(v, 1)
+			repeat fwait() until movestatus == false
+			Chat("respawn me")
+		end
+		GravFix()
+		Chat("respawn me")
+		ColFix()
+    end
+
+   if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'fixobox' then
+		Chat(prefix.."tnok")
+		if movestatus == true then 
+			return 
+		end
+		DisCol()
+		for _,v in pairs(Map["Obby Box"]:GetChildren()) do
+			if allclear() == false then break end
+			moveobject(v, 2)
+			repeat fwait() until movestatus == false
+			Chat("respawn me")
+		end
+		GravFix()
+		Chat("respawn me")
+		ColFix()
+    end
+		
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'moveobox' then
+		Chat(prefix.."tnok")
+		if movestatus == true then 
+			return 
+		end
+		DisCol()
+		for _,v in pairs(Map["Obby Box"]:GetChildren()) do
+			if allclear() == false then break end
+			moveobject(v, 1)
+			repeat fwait() until movestatus == false
+			Chat("respawn me")
+		end
+		GravFix()
+		Chat("respawn me")
+		ColFix()
+    end
+
   if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'fixadv' then
 		if movestatus == true then 
 			return 
