@@ -6403,13 +6403,13 @@ function Ungearban(plrg)
         task.wait()
         ungear.Parent = game.Players.LocalPlayer.Character
         task.wait()
-        Player.Character.Humanoid:EquipTool(Player.Backpack:FindFirstChild("DaggerOfShatteredDimensions"))
+        game.Players.LocalPlayer.Character.Humanoid:EquipTool(Player.Backpack:FindFirstChild("DaggerOfShatteredDimensions"))
         task.wait(0.5)
         game.Players.LocalPlayer.Character.DaggerOfShatteredDimensions.Remote:FireServer(Enum.KeyCode.Q)
         task.wait(0.5)
         game.Players:Chat("ungear me")
 end
-		end)
+		-- end)
 
 function StoneMap()
 	Chat("ungear me")
