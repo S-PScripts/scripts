@@ -5567,7 +5567,8 @@ function EmCrash()
       green:Activate()
       wait(.15)
       for i = 1,100 do
-          Chat("unsize me me me")
+          Chat("dog me me me")
+          Chat("clone me me me")
       end
 end
 
