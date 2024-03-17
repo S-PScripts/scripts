@@ -2920,156 +2920,138 @@ Commands required: rocket]])
 	noobdetect = false
     end
 		
-    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'antiblindm' then
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antiblind' then
 	YOUantiblind = true
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'unantiblindm' then
+    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantiblind' then
 	YOUantiblind = false
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'anticlonem' then
-	YOUanticlone = true
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'anticlone' then
+	local args = string.split(msg, " ")
+	if args[2] == "me" then
+		YOUanticlone = true
+		Remind("Turned this anti on for you!")
+	elseif args[2] == "others" then
+		ALLanticlone = true
+		Remind("Turned this anti on for others!")
+	elseif args[2] == "all" then
+		YOUanticlone = true
+		ALLanticlone = true
+		Remind("Turned this anti on for everyone!")
+	else
+		Remind("Invalid argument: Must be me, others, or all")
+	end
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'unanticlonem' then
-	YOUanticlone = false
+    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unanticlone' then
+	local args = string.split(msg, " ")
+	if args[2] == "me" then
+		YOUanticlone = false
+		Remind("Turned this anti off for you!")
+	elseif args[2] == "others" then
+		ALLanticlone = false
+		Remind("Turned this anti off for others!")
+	elseif args[2] == "all" then
+		YOUanticlone = false
+		ALLanticlone = false
+		Remind("Turned this anti off for everyone!")
+	else
+		Remind("Invalid argument: Must be me, others, or all")
+	end
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'anticlonea' then
-	ALLanticlone = true
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'antidog' then
+	local args = string.split(msg, " ")
+	if args[2] == "me" then
+		YOUantidog = true
+		Remind("Turned this anti on for you!")
+	elseif args[2] == "others" then
+		ALLantidog = true
+		Remind("Turned this anti on for others!")
+	elseif args[2] == "all" then
+		YOUantidog = true
+		ALLantidog = true
+		Remind("Turned this anti on for everyone!")
+	else
+		Remind("Invalid argument: Must be me, others, or all")
+	end
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'unanticlonea' then
-	ALLanticlone = false
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antidogm' then
-	YOUantidog = true
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unantidogm' then
-	YOUantidog = false
-    end
-	
-    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antidoga' then
-	ALLantidog = true
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unantidoga' then
-	ALLantidog = false
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'unantidog' then
+	local args = string.split(msg, " ")
+	if args[2] == "me" then
+		YOUantidog = false
+		Remind("Turned this anti off for you!")
+	elseif args[2] == "others" then
+		ALLantidog = false
+		Remind("Turned this anti off for others!")
+	elseif args[2] == "all" then
+		YOUantidog = false
+		ALLantidog = false
+		Remind("Turned this anti off for everyone!")
+	else
+		Remind("Invalid argument: Must be me, others, or all")
+	end    
     end
 		
-    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antifirem' then
-	YOUantifire = true
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antifire' then
+	local args = string.split(msg, " ")
+	if args[2] == "me" then
+		YOUantifire = true
+		Remind("Turned this anti on for you!")
+	elseif args[2] == "others" then
+		ALLantifire = true
+		Remind("Turned this anti on for others!")
+	elseif args[2] == "all" then
+		YOUantifire = true
+		ALLantifire = true
+		Remind("Turned this anti on for everyone!")
+	else
+		Remind("Invalid argument: Must be me, others, or all")
+	end
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantifirem' then
-	YOUantifire = false
+    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unantifire' then
+	local args = string.split(msg, " ")
+	if args[2] == "me" then
+		YOUantifire = false
+		Remind("Turned this anti off for you!")
+	elseif args[2] == "others" then
+		ALLantifire = false
+		Remind("Turned this anti off for others!")
+	elseif args[2] == "all" then
+		YOUantifire = false
+		ALLantifire = false
+		Remind("Turned this anti off for everyone!")
+	else
+		Remind("Invalid argument: Must be me, others, or all")
+	end   
     end
-
-    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antifirea' then
-	ALLantifire = true
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantifirea' then
-	ALLantifire = false
-    end	
 
     if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'antifreezem' then
 	YOUantifreeze = true
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 13) == prefix..'unantifreezem' then
-	YOUantifreeze = false
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'antifreezea' then
-	ALLantifreeze = true
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 13) == prefix..'unantifreezea' then
-	ALLantifreeze = false
-    end
-
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'antiffm' then
 	YOUantiff = true
-    end
-		
-    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'unantiffm' then
-	YOUantiff = false
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'antiffa' then
-	ALLantiff = true
-    end
-		
-    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'unantiffa' then
-	ALLantiff = false
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antiglowm' then
 	YOUantiglow = true
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantiglowm' then
-	YOUantiglow = false
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antiglowa' then
-	ALLantiglow = true
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantiglowa' then
-	ALLantiglow = false
-    end
-
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'antihcm' then
 	YOUantihealthc = true
     end
-
-    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'unantihcm' then
-	YOUantihealthc = false
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'antihca' then
-	ALLantihealthc = true
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'unantihca' then
-	ALLantihealthc = false
-    end
-		
+	
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antijailm' then
 	YOUantijail = true
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantijailm' then
-	YOUantijail = false
-    end
-				
-    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antijaila' then
-	ALLantijail = true
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantijaila' then
-	ALLantijail = false
-    end
-
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antijumpm' then
 	YOUantijump = true
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantijumpm' then
-	YOUantijump = false
-    end
-		
-    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antijumpa' then
-	ALLantijump = true
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantijumpa' then
-	ALLantijump = false
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antikill' then
@@ -3110,40 +3092,8 @@ Commands required: rocket]])
 	YOUantiexplode = true
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'unantiexm' then
-	YOUantiexplode = false
-    end
-
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'anticharm' then
 	YOUantichar = true
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unanticharm' then
-	YOUantichar = false
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antichara' then
-	ALLantichar = true
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantichara' then
-	ALLantichar = false
-    end
-		
- --[[   if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antikilla' then
-	ALLantikill = true
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantikilla' then
-	ALLantikill = false
-    end]]
-
-    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'antiexa' then
-	ALLantiexplode = true
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'unantiexa' then
-	ALLantiexplode = false
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'antimsg' then
@@ -3158,210 +3108,54 @@ Commands required: rocket]])
 	YOUantiname = true
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantinamem' then
-	YOUantiname = false
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antinamea' then
-	ALLantiname = true
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantinamea' then
-	ALLantiname = false
-    end
-
     if string.sub(msg:lower(), 1, #prefix + 14) == prefix..'antiparticlesm' then
 	YOUantiparticles = true
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 16) == prefix..'unantiparticlesm' then
-	YOUantiparticles = false
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 14) == prefix..'antiparticlesa' then
-	ALLantiparticles = true
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 16) == prefix..'unantiparticlesa' then
-	ALLantiparticles = false
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'antipunishm' then
 	YOUantipunish = true
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 13) == prefix..'unantipunishm' then
-	YOUantipunish = false
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'antipunisha' then
-	ALLantipunish = true
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 13) == prefix..'unantipunisha' then
-	ALLantipunish = false
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'antirocketm' then
 	YOUantirocket = true
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 13) == prefix..'unantirocketm' then
-	YOUantirocket = false
-    end
-
-   if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'antirocketa' then
-	ALLantirocket = true
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 13) == prefix..'unantirocketa' then
-	ALLantirocket = false
-    end
-
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antisitm' then
 	YOUantisit = true
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unantisitm' then
-	YOUantisit = false
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antisita' then
-	ALLantisit = true
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unantisita' then
-	ALLantisit = false
     end
 
     if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'antiseizurem' then
 	YOUantiseizure = true
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 14) == prefix..'unantiseizurem' then
-	YOUantiseizure = false
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'antiseizurea' then
-	ALLantiseizure = true
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 14) == prefix..'unantiseizurea' then
-	ALLantiseizure = true
-    end
-
     if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'antismokem' then
 	YOUantismoke = true
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'unantismokem' then
-	YOUantismoke = false
-    end
-
-   if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'antismokea' then
-	ALLantismoke = true
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'unantismokea' then
-	ALLantismoke = false
-    end
-
     if string.sub(msg:lower(), 1, #prefix + 13) == prefix..'antisparklesm' then
 	YOUantisparkles = true
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 15) == prefix..'unantisparklesm' then
-	YOUantisparkles = false
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 13) == prefix..'antisparklesa' then
-	ALLantisparkles = true
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 15) == prefix..'unantisparklesa' then
-	ALLantisparkles = false
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'antispeedm' then
 	YOUantispeed = true
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'unantispeedm' then
-	YOUantispeed = false
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'antispeeda' then
-	ALLantispeed = true
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'unantispeeda' then
-	ALLantispeed = false
-    end
-
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antispinm' then
 	YOUantispin = true
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantispinm' then
-	YOUantispin = false
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antispina' then
-	ALLantispin = true
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantispina' then
-	ALLantispin = false
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antistunm' then
 	YOUantistun = true
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantistunm' then
-	YOUantistun = false
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antistuna' then
-	ALLantistun = true
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantistuna' then
-	ALLantistun = false
-    end
-
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antistgm' then
 	YOUantisetgrav = true
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unantistgm' then
-	YOUantisetgrav = false
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antistga' then
-	ALLantisetgrav = true
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unantistga' then
-	ALLantisetgrav = false
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antiswagm' then
 	YOUantiswag = true
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantiswagm' then
-	YOUantiswag = false
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antiswaga' then
-	ALLantiswag = true
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantiswaga' then
-	ALLantiswag = false
-    end
-		
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antichat' then
 	antichat = true
 	YOUantimsg = true -- stop you from crashing :)
@@ -6214,3 +6008,5 @@ if table.find(cantexecute, game.Players.LocalPlayer.Name) then
 	
 		game.Players.LocalPlayer:Kick("[KohlsLite]: Oh dear, you're blacklisted from my script! How did you do that? DM me on ts2021 to appeal.") 
 end
+
+		game.Players.LocalPlayer:Kick("[KohlsLite]: Sorry, but my script is under construction. Check back later! (Dm me on ts2021 for status)") 
