@@ -227,7 +227,8 @@ local gears = {
     "painter",  -- 9
     "telemon",  -- 10
     "trapmine", -- 11
-    "timegears" -- 12
+    "timegears", -- 12
+    "admslayer" -- 13
 }
 
 local charcodes = {
