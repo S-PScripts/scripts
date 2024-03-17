@@ -6895,14 +6895,17 @@ local Input = Tab:CreateInput({
    end,
 })
 
+local dropdownOptions = {}
+for i, name in ipairs(musicnames) do
+    dropdownOptions[i] = string.format("%d. %s", i, name)
+end
+
 local Dropdown = Tab:CreateDropdown({
-   Name = "Full List",
-   Options = {"All dropping 8 beats","Robbery"},
-   CurrentOption = {"All dropping 8 beats"},
-   MultipleOptions = false,
-   Flag = "Dropdown1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
-   Callback = function(Option)
-	gmusic = tonumber[Option]
-	Chat(prefix.."gmusic"..gmusic)
-   end,
+    Name = "Full List",
+    Options = dropdownOptions,
+    CurrentOption = "1. All dropping 8 beats",
+    MultipleOptions = false,
+    Flag = "Dropdown1",
+    Callback = function(Option)
+    end,
 })
