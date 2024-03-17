@@ -4998,7 +4998,7 @@ game.Players.PlayerAdded:Connect(function(player)
 	    checkPlayerGBackpack(player)
             checkPlayerAGBackpack(player)
 	    checkPlayerATTBackpack(player)
-	    checkPlayerATTBackpack(player)
+	    checkPlayerPBackpack(player)
 	    checkPlayerMiBackpack(player)
 end)
 
@@ -5010,7 +5010,7 @@ game:GetService("RunService").Heartbeat:Connect(function()
 	    checkPlayerGBackpack(player)
             checkPlayerAGBackpack(player)
 	    checkPlayerATTBackpack(player)
-	    checkPlayerATTBackpack(player)
+	    checkPlayerPBackpack(player)
 	    checkPlayerMiBackpack(player)
         end
     end
@@ -5023,7 +5023,7 @@ for _, player in ipairs(game.Players:GetPlayers()) do
 	    checkPlayerGBackpack(player)
             checkPlayerAGBackpack(player)
 	    checkPlayerATTBackpack(player)
-	    checkPlayerATTBackpack(player)
+	    checkPlayerPBackpack(player)
 	    checkPlayerMiBackpack(player)
     end
 end
