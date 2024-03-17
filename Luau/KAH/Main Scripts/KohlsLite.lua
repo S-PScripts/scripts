@@ -2057,6 +2057,14 @@ Commands required: rocket]])
 	antifogend = false
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'antiilight' then
+	antiilight = true
+    end
+		
+    if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'unantiilight' then
+	antiilight = false
+    end
+		
     if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'antifogstart' then
 	antifogstart = true
     end
@@ -4302,6 +4310,17 @@ task.spawn(function()
 	   end
         end
 
+	if antiilight == true then
+ 		if game.Workspace:FindFirstChild("StarShard") then
+ 			 game.Workspace.StarShard:Destroy()
+		end
+		if game.Workspace:FindFirstChild("Part") then
+ 			 if game.Workspace.Part:FindFirstChild("Twinkle") then
+   				game.Workspace.Part:Destroy()
+  			 end
+ 		end
+        end
+			
 	if gjdelock == true then
 	   if game.Lighting.FogEnd ~= 500 then
 	      Chat("fogend 500")
