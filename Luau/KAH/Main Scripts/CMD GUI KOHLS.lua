@@ -122,8 +122,13 @@ end
 
 createKohlsUi(
                 {
-                    "Welcome to KohlsLite!",
-                    "This script was created by TS2021",
-		    "Chat .kcmds then chat /console for a list of commands"
+                    "Thanks for using KohlsLite!",
+                    "This script was created by TS2021.",
+		    " ",
+		    "To see the command list:",
+		    "1. Chat .kcmds",
+		    "2. Chat /console",
+		    " ",
+		    "Have fun using my script!"
 	 	}
 )
