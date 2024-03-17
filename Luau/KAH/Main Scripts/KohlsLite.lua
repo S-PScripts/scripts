@@ -1876,21 +1876,25 @@ Commands required: shield]])
 	end
     end
 
-   if string.sub(sabotage2, 1, 7) == ".mkick2 " then
-   local name = string.sub(sabotage2, 8)
-   PLAYERCHECK(name)
-   if player ~= nil and not table.find(nokick, player) then
-   game.Players:Chat("h \n\n\n\n PR SCRIPT ON TOP")
-   game.Players:Chat("freeze "..name)
-   game.Players:Chat("dog "..name)
-   game.Players:Chat("rainbowify "..name)
-   game.Players:Chat(".spamt name "..name.. " [Kohlslite]\nImagine Getting\nCRASHED!!!")
-   game.Players:Chat(".spamt pm " .. name .. " 😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀 😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀")
-   Remind("[Kohlslite] Type .unspamt to stop kicking!")
-   else
-   Remind("Couldnt Kick The Player!")
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'nmkick' then
+   		local name = string.sub(msg:lower(), #prefix + 8)
+   		PLAYERCHECK(name)
+   		if player ~= nil and not table.find(nokick, player) then
+   			Chat("h \n\n\n\n PR SCRIPT ON TOP")
+   			Chat("freeze "..name)
+   			Chat("dog "..name)
+   			Chat("rainbowify "..name)
+   			Chat(".spamt name "..name.. " [Kohlslite]\nImagine Getting\nCRASHED!!!")
+   			Chat(".spamt pm " .. name .. " 😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀 😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀")
+  			Remind("[Kohlslite] Type .unspamt to stop kicking!")
+   		else
+   			Remind("Player doesn't exist!")
+  		end
    end
-   end
+
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'unnmkick' then
+		Chat(".unspamt")
+    end
 
    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'rkick' then
 	if haspersons == false then
