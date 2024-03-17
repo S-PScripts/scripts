@@ -696,28 +696,28 @@ end
 
 game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	task.wait(0)
-    	if string.sub(msg:lower(), 1, #prefix + 5) == prefix.."kcmds" then
+    	if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'kcmds' then
            CMDPrint()
 	   Remind("Check your console by running /console!")
         end
   
-    	if string.sub(msg:lower(), 1, #prefix + 2) == prefix.."iy" then -- the classic
+    	if string.sub(msg:lower(), 1, #prefix + 2) == prefix..'iy' then -- the classic
 	   	GExecute("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source")
 	end
 
-	if string.sub(msg:lower(), 1, #prefix + 5) == prefix.."cmdpi" then -- well, you need that visualiser, do you?
+	if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'cmdpi' then -- well, you need that visualiser, do you?
 		GExecute("https://raw.githubusercontent.com/quivings/KAH/main/CMD%20v3.lua")
 	end
 
-	if string.sub(msg:lower(), 1, #prefix + 2) == prefix.."pr" then -- PR Script ~ atprog
+	if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'prsc' then -- PR Script ~ atprog
 		GExecute("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/People's%20Scripts/PR_Script.txt")
 	end
 
-	if string.sub(msg:lower(), 1, #prefix + 4) == prefix.."cmdy" then -- you don't need this for attaching anymore ;)
+	if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'cmdy' then -- you don't need this for attaching anymore ;)
 		GExecute("https://raw.githubusercontent.com/quivings/KAH/main/CMD-Y%20(v1.56).lua")
 	end
 
-	if string.sub(msg:lower(), 1, #prefix + 6) == prefix.."tricky" then -- CREDITS TO TECH
+	if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'tricky' then -- CREDITS TO TECH
 		Remind("This won't work if it's already been executed. Sorry!")
 		if haspersons == true then
 			GExecute("https://raw.githubusercontent.com/Tech-187/Music-lyrics-on-time/main/Tricky%20lyrics.lua")
@@ -1335,7 +1335,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	Goto()
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 5) == prefix.."theme" then
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'theme' then
 		Chat("fix")
  		local theme = tonumber(string.sub(msg:lower(), #prefix + 6))
         	local themeCode = themecode[theme]
@@ -1350,7 +1350,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         	end
         end
 
-    if string.sub(msg:lower(), 1, #prefix + 4) == prefix.."gear" then
+    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'gear' then
         local args = string.split(msg, " ")
         if #args >= 3 then
             local target = args[2]
@@ -1371,7 +1371,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         end
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 4) == prefix.."char" then
+    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'char' then
         local args = string.split(msg, " ")
         if #args >= 3 then
             local target = args[2]
@@ -1392,7 +1392,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         end
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 5) == prefix.."gchar" then
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'gchar' then
         local args = string.split(msg, " ")
         local target = args[2]
         local specialid = table.concat(args, " ", 3)
