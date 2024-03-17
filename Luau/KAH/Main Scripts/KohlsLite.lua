@@ -1876,6 +1876,22 @@ Commands required: shield]])
 	end
     end
 
+   if string.sub(sabotage2, 1, 7) == ".mkick2 " then
+   local name = string.sub(sabotage2, 8)
+   PLAYERCHECK(name)
+   if player ~= nil and not table.find(nokick, player) then
+   game.Players:Chat("h \n\n\n\n PR SCRIPT ON TOP")
+   game.Players:Chat("freeze "..name)
+   game.Players:Chat("dog "..name)
+   game.Players:Chat("rainbowify "..name)
+   game.Players:Chat(".spamt name "..name.. " [Kohlslite]\nImagine Getting\nCRASHED!!!")
+   game.Players:Chat(".spamt pm " .. name .. " 😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀 😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀")
+   Remind("[Kohlslite] Type .unspamt to stop kicking!")
+   else
+   Remind("Couldnt Kick The Player!")
+   end
+   end
+
    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'rkick' then
 	if haspersons == false then
 Remind([[Sorry, you don't have Person's to perform this command!
