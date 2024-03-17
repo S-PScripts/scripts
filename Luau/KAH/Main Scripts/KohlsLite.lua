@@ -2518,6 +2518,11 @@ Commands required: rocket]])
          	end
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'clone' then
+         	local getnumber = string.sub(msg:lower(), #prefix + 7)
+         	Clone(getnumber)
+    end
+		
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'nuke' then
          	local dasplayer = string.sub(msg:lower(), #prefix + 6)
          	PLAYERCHECK(dasplayer)
@@ -5929,6 +5934,23 @@ function Surround(mode)
 		task.wait(10)
 	end
 	Chat("ungear me")
+end
+
+function Clone(getnum)
+	 local pos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+	 for i = 1, tonumber(getnum) do
+                    Chat('gear me 72644644')
+         end
+	 local oldchild = #workspace:GetChildren()
+         repeat task.wait() until #game.Players.LocalPlayer.Backpack:GetChildren() >= tonumber(getnum) 
+	 local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
+         for _, v in ipairs(Backpack:GetChildren()) do
+           		 v.Parent = game.Players.LocalPlayer.Character
+            		 v:Activate()
+         end
+         repeat task.wait() until (#workspace:GetChildren() - oldchild) >= tonumber(getnum) 
+	 Chat("ungear me")
+	 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
 end
 
 --// ATTACH SHIT \\ --
