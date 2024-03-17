@@ -6392,20 +6392,24 @@ function Rail()
 	Chat("ungear me")
 end
 
-function Ungearban(plr)
-	Chat("ungear me")
-	Chat("tp "..plr.." me")
-	Chat("speed "..plr.." 0")
+function Ungearban(plrg)
+    game.Players:Chat("ungear me")
+	game.Players:Chat("tp "..plrg.." me")
+	game.Players:Chat("speed "..plrg.." 0")
 	task.wait(0.5)
- 	local ungear
-        Chat('gear me 71037101')
+        game.Players:Chat('gear me 71037101')
         repeat task.wait() until game.Players.LocalPlayer.Backpack:FindFirstChild("DaggerOfShatteredDimensions")
         ungear = game.Players.LocalPlayer.Backpack:FindFirstChild("DaggerOfShatteredDimensions")
         task.wait()
         ungear.Parent = game.Players.LocalPlayer.Character
         task.wait()
-        Remind("Press Q")
+        Player.Character.Humanoid:EquipTool(Player.Backpack:FindFirstChild("DaggerOfShatteredDimensions"))
+        task.wait(0.5)
+        game.Players.LocalPlayer.Character.DaggerOfShatteredDimensions.Remote:FireServer(Enum.KeyCode.Q)
+        task.wait(0.5)
+        game.Players:Chat("ungear me")
 end
+		end)
 
 function StoneMap()
 	Chat("ungear me")
