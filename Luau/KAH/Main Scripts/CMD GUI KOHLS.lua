@@ -123,15 +123,7 @@ end
 createKohlsUi(
                 {
                     "Welcome to KohlsLite!",
-                    "Created by TS2021",
-                    "1. cmds",
-                    "2. mboombox",
-                    "3. rej",
-                    "4. spam <args>",
-                    "5. boombox <args>",
-                    "6. tspam <args>",
-                    "7. annoy <args>",
-                    "8. stop",
-                    "9. super <args> \n 10. findresetpad \n 11. /cmds \n 12. shutdown \n 13. fixpaint \n Press F9 to see more"
-                }
-            )
+                    "This script was created by TS2021",
+		    "Chat .kcmds then chat /console for a list of commands"
+	 	}
+)
