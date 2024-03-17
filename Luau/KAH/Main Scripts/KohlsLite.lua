@@ -4814,7 +4814,7 @@ function warnCrash(player, toolName)
        		Chat("h \n\n\n [KohlsLite]: Sorry, " .. player.Name .. ", you cannot use " .. toolName .. " because of anti crash. \n\n\n")
       		Chat("clr") -- drop crash prevention
 	end
-	if autoblvgc == true then
+	if autoblvgc == true and not table.find(blacklist, player.Name) then
 	         table.insert(blacklist, player.Name)
 	end
 end
@@ -6079,7 +6079,9 @@ function onPlayerAdded(player)
     if player.AccountAge < newlen == true and newplrautoslock == true then
 	 Chat("h \n\n\n [KohlsLite]: Automatically banned "..player.Name.." for being on an account under the account age limit. \n\n\n")
 	 print(player.Name.." joined the server. They were auto-banned for being under the account age limit.")
-         table.insert(newplrslocked, player.Name)
+	 if not table.find(newplrslocked, player.Name) then
+         	table.insert(newplrslocked, player.Name)
+	 end
     end
 
     if table.find(rkick_on_sight, player.Name) then
