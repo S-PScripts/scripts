@@ -2470,7 +2470,7 @@ Commands required: rocket]])
 		if plrg == "" then
          		game:GetService("StarterGui"):SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, true)
 		else 
-			Remind("Cannot gearban other users (yet)!")
+			Ungearban(plrg)
 		end
     end
 		
@@ -6311,6 +6311,21 @@ function Rail()
 	Chat("unspin " .. railer)
 	Chat("unff " .. railer)
 	Chat("ungear me")
+end
+
+function Ungearban(plr)
+	Chat("ungear me")
+	Chat("tp "..plr.." me")
+	Chat("speed "..plr.." 0")
+	task.wait(0.5)
+ 	local ungear
+        Chat('gear me 71037101')
+        repeat task.wait() until game.Players.LocalPlayer.Backpack:FindFirstChild("DaggerOfShatteredDimensions")
+        ungear = game.Players.LocalPlayer.Backpack:FindFirstChild("DaggerOfShatteredDimensions")
+        task.wait()
+        ungear.Parent = game.Players.LocalPlayer.Character
+        task.wait()
+        Remind("Click the Q key on your keyboard")
 end
 
 function StoneMap()
