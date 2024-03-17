@@ -38,7 +38,7 @@ local prefix = "." -- ANY LENGTH :D
 local function startupScripts()
 	Chat(prefix.."tnok")
 	Chat(prefix.."antimsg")
-	Chat(prefix.."antirocketm")
+	Chat(prefix.."antirocket me")
 end
 
 local blacklist = {"SlenderMan990921","e5usp","Asphetto","91txt","LeanConsumer69","Fixydrqma","Robloxian577226532","jjthejoker7","cihanahmet1670","Fu14r","bbgurrrrl"} -- slocked users
