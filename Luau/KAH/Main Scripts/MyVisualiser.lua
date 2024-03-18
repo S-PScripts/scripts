@@ -35,9 +35,9 @@ local vismode = 1
 local visradius = 20
 local visamt = 20
 local visorbiter = LocalPlayer.Character.HumanoidRootPart.CFrame
-local viscolor1 = 0
-local viscolor2 = 0
-local viscolor3 = 0
+viscolor1 = 0
+viscolor2 = 0
+viscolor3 = 0
 
 local function personColor(PB, part, color)
     if not PB then
@@ -94,21 +94,25 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		
     	   if string.sub(msg:lower(), 1, #vprefix + 6) == vprefix.."visrad" then
            	visradius = tonumber(string.sub(msg:lower(), #vprefix + 8))
+		task.wait(0.25)
+		Chat('clr')
 		Remind("Radius changed")
       	   end
 
     	   if string.sub(msg:lower(), 1, #vprefix + 7) == vprefix.."vismode" then
            	vismode = tonumber(string.sub(msg:lower(), #vprefix + 9))
-            task.wait(0.5)
+                task.wait(0.25)
 		Chat('clr')
 		Remind("Mode changed")
       	   end
 
     	   if string.sub(msg:lower(), 1, #vprefix + 9) == vprefix.."viscolors" then
-		local args = string.split(msg, " ")
+		 local args = string.split(msg, " ")
            	 viscolor1 = args[2]
 		 viscolor2 = args[3]
 		 viscolor3 = args[4]
+		 task.wait(0.25)
+		 Chat('clr')
 		Remind("Colours changed")
       	   end
 end)
