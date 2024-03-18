@@ -2075,6 +2075,29 @@ Commands required: rocket]])
 		Chat("shiny" .. imacube)
 		Remind("The player should now be a cube!")
     end
+
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'space' then -- kohls true anti kill
+		local person = string.sub(msg:lower(), #prefix + 7)
+		Chat("h \n\n\n Guys, we've finally done it! \n\n\n")
+		task.wait(4)
+		Chat("h \n\n\n We're sending someone to space! \n\n\n")
+		task.wait(4)
+		Chat("h \n\n\n Are we ready? Hopefully our volunteer is too! Here we go! \n\n\n")
+		Chat("time 0")
+		Chat("rocket/" ..person)
+		Chat("spin " ..person)
+		task.wait(4)
+		Chat("h \n\n\n LIFT OFF! \n\n\n")
+		Chat("jump " ..person)
+		task.wait(2)
+		Chat("explode " ..person)
+		task.wait(2)
+		Chat("reload "..person)
+		Chat("blind all")
+		Chat("h \n\n\n No one saw that, right? \n\n\n")
+		task.wait(4)
+		Chat("unblind all")
+    end
 		
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antidisco' then
 	antidisco = true
