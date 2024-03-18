@@ -5631,7 +5631,7 @@ task.spawn(function()
 			
     if antimusic == true then
 		  if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
-				 	Chat("music antimusic is on!")
+				 	Chat(prefix.."stopm")
       		  end
     end
 
