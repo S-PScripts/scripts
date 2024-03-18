@@ -17,8 +17,8 @@ end
 local vprefix = "-"
 
 -- INPUTS --
-print("--- MyVisualiser.lua executed! Created by S_P ---")
-Chat("h \n\n\n [MyVisualiser.lua]: Executed! TEST 01 \n\n\n")
+print("--- MyVisualiser.lua executed! Created by quivings ---")
+Chat("h \n\n\n [MyVisualiser.lua]: Executed! \n\n\n")
 
 -- VARIABLES --
 
@@ -71,16 +71,35 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	   	Remind("Check your console by running /console!")
       	   end
 		
-    	   if string.sub(msg:lower(), 1, #vprefix + 7) == vprefix.."vistest" then
+    	   if string.sub(msg:lower(), 1, #vprefix + 3) == vprefix.."vis" then
            	visc()
+		Remind("Setting...")
       	   end
 
+	   if string.sub(msg:lower(), 1, #vprefix + 3) == vprefix.."unvis" then
+           	vis.Parent = nil
+                kahcon:Disconnect()
+
+                vis:Destroy()
+                Chat('clr')
+                if Connections["netKeepvis"] then
+                    Connections["netKeepvis"]:Disconnect()
+                    Connections["netKeepvis"] = nil
+                end
+
+                conn:Disconnect()
+                conn2:Disconnect()
+		Remind("Closed!")
+      	   end
+		
     	   if string.sub(msg:lower(), 1, #vprefix + 6) == vprefix.."visrad" then
            	visradius = tonumber(string.sub(msg:lower(), #prefix + 8))
+		Remind("Radius changed")
       	   end
 
     	   if string.sub(msg:lower(), 1, #vprefix + 7) == vprefix.."vismode" then
            	vismode = tonumber(string.sub(msg:lower(), #prefix + 9))
+		Remind("Mode changed")
       	   end
 
     	   if string.sub(msg:lower(), 1, #vprefix + 9) == vprefix.."viscolors" then
@@ -88,6 +107,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
            	local viscolor1 = args[2]
 		local viscolor2 = args[3]
 		local viscolor3 = args[4]
+		Remind("Colours changed")
       	   end
 end)
 
