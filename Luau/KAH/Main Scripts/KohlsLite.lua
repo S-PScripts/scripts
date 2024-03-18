@@ -6740,7 +6740,6 @@ startupScripts()
 
 local cantexecute = {""}
 if table.find(cantexecute, game.Players.LocalPlayer.Name) then
-	
 		game.Players.LocalPlayer:Kick("[KohlsLite]: Oh dear, you're blacklisted from my script! How did you do that? DM me on ts2021 to appeal.") 
 end
 
@@ -6765,12 +6764,12 @@ local Window = Rayfield:CreateWindow({
    KeySystem = true,
    KeySettings = {
       Title = "KohlsLite",
-      Subtitle = "Continue",
-      Note = "Input PC if you aren't on mobile. Else close this gui.",
+      Subtitle = "Start",
+      Note = "You should only see this if you are on a PC. Insert PC into the key box. If you are on mobile, please close this GUI.",
       FileName = "KeyKohlsLite",
       SaveKey = false,
       GrabKeyFromSite = false,
-      Key = {"PC"}
+      Key = {"PC","PC"}
    }
 })
 
@@ -6906,8 +6905,8 @@ end
 
 local Dropdown = Tab:CreateDropdown({
     Name = "Full List",
-    Options = dropdownOptions,
-    CurrentOption = "1. All dropping 8 beats",
+    Options = dropdownOptions, -- due to limitations of rayfield you can't click the button and play that song number :(
+    CurrentOption = "All dropping 8 beats",
     MultipleOptions = false,
     Flag = "Dropdown1",
     Callback = function(Option)
