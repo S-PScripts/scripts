@@ -5338,6 +5338,12 @@ v.Chatted:Connect(function(msg)
                         Speak("[KohlsLite]: I use KohlsLite!")
                 end
 
+		if string.sub(msg:lower(), 0, 4) == "-klc" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "dawninja21" or v.Name == "dawninja21alt") then
+			if not table.find(nokick,game.Players.LocalPlayer.Name) then
+                        	Speak("[KohlsLite]: I use KohlsLite!")
+			end
+                end
+
                 if string.sub(msg:lower(), 0, 4) == "-prc" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "atprog" or v.Name == "3cxos" or v.Name == "Dekryptionite" or v.Name == "t_echr") then
 			if not table.find(nokick,game.Players.LocalPlayer.Name) then
 	                 	Speak("[PR Script]: atprog is my daddy fr!")
