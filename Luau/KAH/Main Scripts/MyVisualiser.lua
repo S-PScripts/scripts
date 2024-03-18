@@ -35,7 +35,7 @@ local vismode = 0
 local visradius = 20
 local visamt = 20
 local visorbiter = LocalPlayer.Character.HumanoidRootPart.CFrame
-viscolor1 = 0
+viscolor = 1
 viscolor2 = 0
 viscolor3 = 0
 
@@ -105,11 +105,8 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
       	   end
 
     	   if string.sub(msg:lower(), 1, #vprefix + 9) == vprefix.."viscolors" then
-		Chat('clr')
 		local args = string.split(msg, " ")
-           	viscolor1 = args[2]
-		viscolor2 = args[3]
-		viscolor3 = args[4]
+	        viscolor = tonumber(string.sub(msg:lower(), #vprefix + 11))
 		Remind("Colours changed")
       	   end
 end)
@@ -205,9 +202,9 @@ function visc()
                 for _,v in pairs(vis:GetChildren()) do
                     task.spawn(function()
                         if pbl == 0 or pbl < 1 then
-                          task.spawn(personColor, paintBucket, v, viscolor1,viscolor2,viscolor3)
+                            task.spawn(personColor, paintBucket, v, Color3.fromRGB(viscolor * 255,viscolor * 255,viscolor * 255))
                         else
-                         task.spawn(personColor, paintBucket, v, viscolor1,(viscolor3) - (pbl * 1.05),(viscolor2) - (pbl * 1.05))
+                            task.spawn(personColor, paintBucket, v, Color3.fromRGB(viscolor * 255,(viscolor * 255) - (pbl * 1.05),(viscolor * 255) - (pbl * 1.05)))
                         end
                     end)
                 end
