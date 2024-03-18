@@ -93,13 +93,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
       	   end
 		
     	   if string.sub(msg:lower(), 1, #vprefix + 6) == vprefix.."visrad" then
-		Chat('clr')
            	visradius = tonumber(string.sub(msg:lower(), #vprefix + 8))
 		Remind("Radius changed")
       	   end
 
     	   if string.sub(msg:lower(), 1, #vprefix + 7) == vprefix.."vismode" then
-		Chat('clr')
            	vismode = tonumber(string.sub(msg:lower(), #vprefix + 9))
 		Remind("Mode changed")
       	   end
