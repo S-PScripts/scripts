@@ -132,3 +132,179 @@ createKohlsUi(
 		    "Have fun using my script!"
 	 	}
 )
+
+
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+   Name = "KohlsLite",
+   LoadingTitle = "KohlsLite",
+   LoadingSubtitle = "By ScriptingProgrammer",
+   ConfigurationSaving = {
+      Enabled = true,
+      FolderName = nil,
+      FileName = "KohlsLite"
+   },
+   Discord = {
+      Enabled = false,
+      Invite = "",
+      RememberJoins = true
+   },
+   KeySystem = true,
+   KeySettings = {
+      Title = "KohlsLite",
+      Subtitle = "Start",
+      Note = "You should only see this if you are on a PC. Insert PC into the key box. If you are on mobile, please close this GUI.",
+      FileName = "KeyKohlsLite",
+      SaveKey = false,
+      GrabKeyFromSite = false,
+      Key = {"PC","pc"}
+   }
+})
+
+local Tab = Window:CreateTab("Antis", 4483362458) -- Title, Image
+
+local Toggle = Tab:CreateToggle({
+   Name = "No Obby Kill (NOK)",
+   CurrentValue = false,
+   Flag = "Toggle1",
+   Callback = function(Value)
+   if Value then
+        TNOK("true")
+    else
+        TNOK("false")
+    end
+end
+})
+
+local Toggle = Tab:CreateToggle({
+   Name = "Anti Kill",
+   CurrentValue = false,
+   Flag = "Toggle1", 
+   Callback = function(Value)
+        if Value then
+           YOUantikill = true
+	else 
+	   YOUantikill = false
+        end
+    end
+})
+
+local Toggle = Tab:CreateToggle({
+   Name = "Anti Punish",
+   CurrentValue = false,
+   Flag = "Toggle1", 
+   Callback = function(Value)
+        if Value then
+           YOUantipunish = true
+	else 
+	   YOUantipunish = false
+        end
+    end
+})
+
+local Toggle = Tab:CreateToggle({
+   Name = "Anti Rocket",
+   CurrentValue = false,
+   Flag = "Toggle1", 
+   Callback = function(Value)
+        if Value then
+           YOUantirocket = true
+	else 
+	   YOUantirocket = false
+        end
+    end
+})
+
+local Toggle = Tab:CreateToggle({
+   Name = "Anti Message",
+   CurrentValue = false,
+   Flag = "Toggle1", 
+   Callback = function(Value)
+        if Value then
+           YOUantimsg = true
+	else 
+	   YOUantimsg = false
+        end
+    end
+})
+
+local Tab = Window:CreateTab("Crash", 4483362458) -- Title, Image
+
+local Button = Tab:CreateButton({
+   Name = "Dog Crash",
+   Callback = function()
+      DCrash()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Freeze Crash",
+   Callback = function()
+      FCrash()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "VG Crash",
+   Callback = function()
+      VGCrash()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Shield Crash",
+   Callback = function()
+      SCrash()
+   end,
+})
+
+local Tab = Window:CreateTab("Teleports", 4483362458) -- Title, Image
+
+local Button = Tab:CreateButton({
+   Name = "Regen",
+   Callback = function()
+      regentp()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "House",
+   Callback = function()
+           House()
+   end,
+})
+
+
+local Button = Tab:CreateButton({
+   Name = "Spawn",
+   Callback = function()
+           GSpawn()
+   end,
+})
+
+local Tab = Window:CreateTab("Music", 4483362458) -- Title, Image
+local Input = Tab:CreateInput({
+   Name = "Music ID",
+   PlaceholderText = "Input",
+   RemoveTextAfterFocusLost = false,
+   Callback = function(Text)
+      gmusic = tonumber(Text)
+      Chat(prefix.."gmusic"..gmusic)
+   end,
+})
+
+local dropdownOptions = {}
+for i, name in ipairs(musicnames) do
+    dropdownOptions[i] = string.format("%d. %s", i, name)
+end
+
+local Dropdown = Tab:CreateDropdown({
+    Name = "Full List",
+    Options = dropdownOptions, -- due to limitations of rayfield you can't click the button and play that song number :(
+    CurrentOption = "All dropping 8 beats",
+    MultipleOptions = false,
+    Flag = "Dropdown1",
+    Callback = function(Option)
+    end,
+})
