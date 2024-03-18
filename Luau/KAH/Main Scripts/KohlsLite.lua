@@ -2,13 +2,15 @@
 
 -- CREATED BY SCRIPTINGPROGRAMMER/TS2021/S-PSCRIPTS
 -- A script for Kohls Admin House (KAH)
+-- Support this script today by donating robux to me (h)
+-- Do not "skid" off this code by changing the name. Make your own script instead.
 
 --[[
 _  _____  _   _ _     ____  _     ___ _____ _____ 
 | |/ / _ \| | | | |   / ___|| |   |_ _|_   _| ____|
 | ' / | | | |_| | |   \___ \| |    | |  | | |  _|  
 | . \ |_| |  _  | |___ ___) | |___ | |  | | | |___ 
-|_|\_\___/|_| |_|_____|____/|_____|___| |_| |_____| v1.1 ]]
+|_|\_\___/|_| |_|_____|____/|_____|___| |_| |_____| v1.12 ]]
 
 local function Remind(msg)
 	game.StarterGui:SetCore("SendNotification", {
@@ -18,12 +20,12 @@ local function Remind(msg)
 	})
 end;
 
-if _G.executed then 
+if _G.kohlsexecuted then 
 	return 
 	Remind("You've already executed KohlsLite!") 
 end
 
-_G.executed = true
+_G.kohlsexecuted = true
 
 local function Chat(msg)
       game.Players:Chat(msg)
@@ -33,34 +35,49 @@ local function Speak(msg)
     game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(msg, "All")
 end
 
-local prefix = "." -- ANY LENGTH :D
+local prefix = "." -- This can be of any length
 
+-- Start up scripts
 local function startupScripts()
 	Chat(prefix.."tnok")
 	Chat(prefix.."antimsg")
 	Chat(prefix.."antirocket me")
 end
 
-local blacklist = {"SlenderMan990921","e5usp","Asphetto","91txt","LeanConsumer69","Fixydrqma","Robloxian577226532","jjthejoker7","cihanahmet1670","Fu14r","bbgurrrrl"} -- slocked users
-local whitelist = {"me_123eq","me_crashking","ScriptingProgrammer","t_echr","BANNter_Original","witnessfox22","IceStuds","atprog","dawninja21","Dawninja21alt","Di33le2","darkmadeboy","Dekryptionite","3cxos","hudhejeir","BIGpe7niss7","clydekash","t_echl","Ih0temyIife"} -- not affected by slock
-local nokick = {"me_123eq","me_crashking","ScriptingProgrammer","t_echr","BANNter_Original","witnessfox22","IceStuds","atprog","Di33le2","Dekryptionite","3cxos","hudhejeir","BIGpe7niss7","clydekash","t_echl"} -- can't kick these people!
+-- Serverlocked users
+local blacklist = {"SlenderMan990921","e5usp","Asphetto","91txt","LeanConsumer69","Fixydrqma","Robloxian577226532","jjthejoker7","cihanahmet1670","Fu14r","bbgurrrrl"}
+
+-- Users not affected by serverlock
+local whitelist = {"me_123eq","me_crashking","ScriptingProgrammer","t_echr","BANNter_Original","witnessfox22","IceStuds","atprog","dawninja21","Dawninja21alt","Di33le2","darkmadeboy","Dekryptionite","3cxos","hudhejeir","BIGpe7niss7","clydekash","t_echl","Ih0temyIife"}
+
+-- Players you cannot kick
+local nokick = {"me_123eq","me_crashking","ScriptingProgrammer","t_echr","BANNter_Original","witnessfox22","IceStuds","atprog","Di33le2","Dekryptionite","3cxos","hudhejeir","BIGpe7niss7","clydekash","t_echl"}
+
+-- New users get blacklisted (prevent crashers)
 local newplrslocked = {} -- don't edit!!
 local newplrautoslock = true -- if new players under 21 days join they get blacklisted
 local newlen = 21 -- control what is considered as a new account
-local GWhitelisted = {"me_123eq","me_crashking","ScriptingProgrammer","t_echr","BANNter_Original","witnessfox22","IceStuds","atprog","dawninja21","Dawninja21alt","Di33le2","darkmadeboy","Dekryptionite","3cxos","hudhejeir","BIGpe7niss7","clydekash","t_echl","Ih0temyIife"} --  GIT HUB REMOVE THE COMMA!!!!!!!! gear whitelisted
-local slockenabled = false -- slock
 
-local loopkill = {} -- because why not
-local autogb = false
+-- Users that can use blacklisted gears (or gears when antigear is on)
+local GWhitelisted = {"me_123eq","me_crashking","ScriptingProgrammer","t_echr","BANNter_Original","witnessfox22","IceStuds","atprog","dawninja21","Dawninja21alt","Di33le2","darkmadeboy","Dekryptionite","3cxos","hudhejeir","BIGpe7niss7","clydekash","t_echl","Ih0temyIife"}
 
+-- Serverlock
+local slockenabled = false
+
+-- Loopkilling
+local loopkill = {}
+
+-- Gamepass saving
 local permusers = {} -- users that use perm will be placed here
 local personsusers = {} -- users that use persons will be placed here
 
+-- Auto stuff relating to users
 local rkick_on_sight = {} -- rocket kick player when they join ONLY WORKS WITH ONE PLAYER
 local crash_on_sight = {"SlenderMan990921"} -- crash server when player joins
 local mkick_on_sight = {} -- kick player with pm spam when they join ONLY WORKS WITH ONE PLAYER
 local suser_on_sight = {} -- slow a user when they join with car gear ONLY WORKS WITH ONE PLAYER
 
+-- Gear packs
 local periastronlist = {"108158379", "80661504", "233520257", "73829193", "69499437", "139577901", "2544549379", "120307951", "99119240", "93136802", "80597060", "159229806", "77443461"}
 local meleecodes = {"121946387", "12187348", "170897263", "427947884", "306971294", "306971294", "11999235", "28275809", "10758456", "243790334", "14719505", "13207169", "11956382", "10469910", "124472052", "20721924"}
 local guncodes = {"243007180", "116693764", "212296936", "168143042", "467138029", "42845609", "130113146", "26017478", "26014536", "9360722592", "18268645"}
@@ -70,15 +87,16 @@ local destructivecodes = {"125013830", "225921650", "60357972", "108158379"}
 local swordcodes = {"25740034", "638089422", "170903610", "319655422", "125013769", "108158379", "2470750640", "2041982658", "361950297", "2103274863", "181356054", "163491866", "108158439"}
 local rideablecodes = {"304719869", "2568114215", "158069143", "185422295", "346687565", "553939167", "820013867", "387285940", "163348575", "206799274", "928805891", "124127383", "125013849", "2445089071", "253519495"}
 
+-- Variables for moving
 local movestatus = false
 local Kohls = workspace.Terrain:WaitForChild("_Game")
 local Map = Kohls:WaitForChild("Workspace")
 local Admin = Kohls:WaitForChild("Admin")
 local Pads = Admin:WaitForChild("Pads"):GetChildren()
 
-local YOUantimsg = true
-
 -- Bad formatting because of github glitch ruining how the colour of the code looks :/
+
+-- Saved musics
 local musiclist = {"9048375035", -- 1
 		   "6680495507", -- 2
 		   "6529070845", -- 3
@@ -141,6 +159,7 @@ local musiclist = {"9048375035", -- 1
 		   "1837853076", -- 60
 		   "5410085763"} -- 61
 
+-- Saved musics
 local musicnames = {"All dropping 8 beats", -- 1
 		    "Robbery", -- 2
 	            "Brace Yourself", -- 3
@@ -203,6 +222,7 @@ local musicnames = {"All dropping 8 beats", -- 1
 		    "SEE YOU IN HELL!", -- 60
 		    "TOKYO MACHINE - PLAY!"} -- 61
 
+-- Saved gears
 local gearcodes = {
     [[212641536]], -- 1
     [[94794847]], -- 2
@@ -221,6 +241,7 @@ local gearcodes = {
     [[87361662,66896601]] -- 15
 }
 
+-- Saved gears
 local gears = {
     "boombox",  -- 1
     "vg",       -- 2
@@ -239,6 +260,7 @@ local gears = {
     "icebreaker" -- 15
 }
 
+-- Saved chars
 local charcodes = {
     "4844006008", -- 1
     "1267527674", -- 2
@@ -253,6 +275,7 @@ local charcodes = {
     "619659263"   -- 11
 }
 
+-- Saved chars
 local chars = {
     "furry",      -- 1
     "sierr",      -- 2
@@ -267,6 +290,7 @@ local chars = {
     "mel"         -- 11
 }
 
+-- Parts
 local ogcframes = {
 		["SmoothBlockModel178"] = {-13.0650005, 45.4300003, 57.2430038, 1, 0, 0, 0, 1, 0, 0, 0, 1},
 		["SmoothBlockModel176"] = {-15.0650005, 37.6300011, 51.2430038, 0, 0, -1, 0, 1, 0, 1, 0, 0},
@@ -602,21 +626,27 @@ local ogcframes = {
 		["Part51"] = {-92.0770035, 0.900000036, 7.47600031, 1, 0, 0, 0, -1, 0, 0, 0, -1}
 }
 
+-- Auto blacklisting for stuff
 local autoblvgc = true -- retards kept gearing everyone so here's a quick fix
 
+-- Anti logs
 local antimlog = false -- for music
 local antiglog = false -- for gears
 local anticlog = false -- for chars
 
+-- Debug
 local alreadyranice = false
 
+-- Admin stuff relating to users
 local padbanned = {"padbanned"} 
 local padreinforcements = false 
 
+-- Variables for moving [old]
 local Game_Folder = game:GetService("Workspace").Terrain["_Game"]
 local Workspace_Folder = Game_Folder.Workspace
 local Admin_Folder = Game_Folder.Admin
 
+-- Themes
 local themecode = {
     [[time 4,outdoorambient 000 000 111]], -- 1
     [[fogend 100,fogcolor 250 0 500]], -- 2
@@ -631,24 +661,35 @@ local themecode = {
     [[fix,time 7,fogend 2000,outdoorambient 0.3 0.3 0.3]] -- 11
 }
 
+-- Keybinds
 local housekeybind = "h" -- Keybinds?!
 local rekeybind = "r"
 
+-- Auto things when people join
 local autogpcheck = true -- automatically check for player's gamepasses
+local autogb = false
+
+-- Clicking
 local clickexplode = false -- yeah
 
+-- Admin things relating to users
 local FAdmins = {} -- all admin but for individual users
 local alladmin = false -- all admin
+
+-- Super commands and spamming
 local amon = 100 -- super command times
 local spamwait = 0 -- spam command wait
 
-local musicsay = true -- for ecrash only, don't change!!!!
+-- Music telling
+local musicsay = true
 
+-- Admin related
 local perm = false
 local perm2 = false
 local loopgrab = false
 local loopgrab2 = false
 
+-- Antis
 local anticrash = true
 local anticrash2 = false
 local antigear = false
@@ -662,29 +703,29 @@ local antidisco = false
 local antifogend = false
 local antichat = false
 local antiattach = false
+local noblt = false
 local YOUantigs = false
 
+-- Gojo server lock
 local gjdelock = false
 
+-- Pings relating to others users
 local PingLogs = false -- it's caps lol
 local PingCsystem = true
 local AntiLogs = false
 
-local antimusic = false
 local noobdetect = true
 local welcomemsg = true
-
-local noblt = false
 
 -- local permpassid = 66254 or 64354 -> NBC, BC
 -- local personpassid = 35748 or 37127 --> NBC, BC
 
-print("Thank you for using KohlsLite v1.1! This script was created by S_P.")
-Remind("Thank you for using KohlsLite v1.1! This script was created by S_P.")
+print("Thank you for using KohlsLite v1.12! This script was created by S_P.")
+Remind("Thank you for using KohlsLite v1.12! This script was created by S_P.")
 print("Say .kcmds to list some of the commands. DM me at ts2021 for the source to find other commands.")
 Remind("Say .kcmds to list some of the commands. DM me at ts2021 for the source to find other commands.")
 
-Chat("h \n\n\n [KohlsLite]: Executed! v1.1 \n\n\n")
+Chat("h \n\n\n [KohlsLite]: Executed! v1.12 \n\n\n")
 
 if game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 66254) or game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 64354) then
         perm = false 
@@ -3959,7 +4000,7 @@ Commands required: rocket]])
 end)
 
 function CMDPrint()
-print("---Command list for KohlsLite v1.01---")
+print("---Command list for KohlsLite v1.12---")
 print("Warning! This is NOT a full list so contact me for any other commands!")
 	
 print("---")
@@ -4216,7 +4257,7 @@ print("If it's to the game itself, just do (antiname).")
 
 print("---INFORMATION---")
 print("KohlsLite, since 2023. Created by ScriptingProgrammer/ts2021")
-print("Version is: v1.01 - 13th March 2024 Build")
+print("Version is: v1.12 - 13th March 2024 Build")
 print("Better than scv1 and scv2 - approved by Tech")
 
 print("--- CREDITS ---")
