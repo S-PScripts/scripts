@@ -137,7 +137,8 @@ local musiclist = {"9048375035", -- 1
 		   "6937042327", -- 56
 		   "1841668624", -- 57
 		   "1848350335", -- 58
-		   "6805032026"} -- 59
+		   "6805032026", -- 59
+		   "1837853076"} -- 60
 
 local musicnames = {"All dropping 8 beats", -- 1
 		    "Robbery", -- 2
@@ -197,7 +198,8 @@ local musicnames = {"All dropping 8 beats", -- 1
 		    "Stunning", -- 56
 		    "Have a Lazy Day a", -- 57
 		    "Desert Sands", -- 58
-		    "KILL BILL (Fast)"} -- 59
+		    "KILL BILL (Fast)", -- 59
+		    "SEE YOU IN HELL!"} -- 60
 
 local gearcodes = {
     [[212641536]], -- 1
