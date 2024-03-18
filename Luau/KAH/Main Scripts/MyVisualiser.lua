@@ -71,7 +71,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	   	Remind("Check your console by running /console!")
       	   end
 		
-    	   if string.sub(msg:lower(), 1, #vprefix + 3) == vprefix.."vis" then
+    	   if string.sub(msg:lower(), 1, #vprefix + 6) == vprefix.."visual" then
            	visc()
 		Remind("Setting...")
       	   end
@@ -205,9 +205,9 @@ function visc()
                 for _,v in pairs(vis:GetChildren()) do
                     task.spawn(function()
                         if pbl == 0 or pbl < 1 then
-                          task.spawn(personColor, paintBucket, v, Color3.fromRGB(viscolor1,viscolor2,viscolor3))
+                          task.spawn(personColor, paintBucket, v, viscolor1,viscolor2,viscolor3)
                         else
-                         task.spawn(personColor, paintBucket, v, Color3.fromRGB(viscolor1,(viscolor3) - (pbl * 1.05),(viscolor2) - (pbl * 1.05)))
+                         task.spawn(personColor, paintBucket, v, viscolor1,(viscolor3) - (pbl * 1.05),(viscolor2) - (pbl * 1.05))
                         end
                     end)
                 end
