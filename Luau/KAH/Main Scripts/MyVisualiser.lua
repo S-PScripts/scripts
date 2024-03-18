@@ -99,14 +99,16 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
     	   if string.sub(msg:lower(), 1, #vprefix + 7) == vprefix.."vismode" then
            	vismode = tonumber(string.sub(msg:lower(), #vprefix + 9))
+            task.wait(0.5)
+		Chat('clr')
 		Remind("Mode changed")
       	   end
 
     	   if string.sub(msg:lower(), 1, #vprefix + 9) == vprefix.."viscolors" then
 		local args = string.split(msg, " ")
-           	local viscolor1 = args[2]
-		local viscolor2 = args[3]
-		local viscolor3 = args[4]
+           	 viscolor1 = args[2]
+		 viscolor2 = args[3]
+		 viscolor3 = args[4]
 		Remind("Colours changed")
       	   end
 end)
