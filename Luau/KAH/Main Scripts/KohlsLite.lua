@@ -2652,6 +2652,7 @@ Commands required: rocket]])
 	GravFix()
 	Chat("respawn me")
 	ColFix()
+	movestatus = false
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'rejoin' then
