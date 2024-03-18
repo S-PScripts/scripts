@@ -2170,11 +2170,11 @@ Commands required: rocket]])
    end
 		
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'spamw' then
-	spamwait = string.sub(msg:lower(), #prefix + 7)
+	spamwait = tonumber(string.sub(msg:lower(), #prefix + 7))
     end
 
    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'spamwait' then
-	spamwait = string.sub(msg:lower(), #prefix + 10)
+	spamwait = tonumber(string.sub(msg:lower(), #prefix + 10))
     end
 		
    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'spamoff' then
