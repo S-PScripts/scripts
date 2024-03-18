@@ -642,7 +642,7 @@ local alladmin = false -- all admin
 local amon = 100 -- super command times
 local spamwait = 0 -- spam command wait
 
-local dontannounce = false -- for ecrash only, don't change!!!!
+local musicsay = true -- for ecrash only, don't change!!!!
 
 local perm = false
 local perm2 = false
@@ -681,8 +681,8 @@ local noblt = false
 
 print("Thank you for using KohlsLite v1.1! This script was created by S_P.")
 Remind("Thank you for using KohlsLite v1.1! This script was created by S_P.")
-print("Say .kcmds to list some of the commands. DM me at ts2021 on discord for the full list.")
-Remind("Say .kcmds to list some of the commands. DM me at ts2021 on discord for the full list.")
+print("Say .kcmds to list some of the commands. DM me at ts2021 for the source to find other commands.")
+Remind("Say .kcmds to list some of the commands. DM me at ts2021 for the source to find other commands.")
 
 Chat("h \n\n\n [KohlsLite]: Executed! v1.1 \n\n\n")
 
@@ -693,7 +693,7 @@ if game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.Loca
 else
         perm = true
 	hasperm = false -- used
-	Remind("A perm pad was given - you don't have the Perm Admin gamepass!")
+	print("A perm pad was given - you don't have the Perm Admin gamepass!")
 end
 
 if game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 35748) or game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 37127) then
@@ -725,6 +725,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
 	if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'cmdy' then -- you don't need this for attaching anymore ;)
 		GExecute("https://raw.githubusercontent.com/quivings/KAH/main/CMD-Y%20(v1.56).lua")
+	end
+
+	if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'myvis' then -- PR Script ~ atprog
+		Remind("WARNING: THIS SCRIPT IS A BIT BROKEN! Prefix is -")
+		GExecute("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/Main%20Scripts/MyVisualiser.lua")
 	end
 
 	if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'tricky' then -- CREDITS TO TECH
@@ -1099,7 +1104,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'gmusic' then
         musicplay = tonumber(string.sub(msg:lower(), #prefix + 7)) 
         if musicplay ~= nil and musicplay >= 1 and musicplay <= #musiclist then
-	    if dontannounce == false then
+	    if musicsay == true then
             	Chat("h \n\n\n [KohlsLite]: Playing music: " .. musicnames[musicplay] .. ". \n\n\n")
 	    end
 	    if antimlog then
@@ -1113,8 +1118,10 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'rgmusic' then
-        musicplay = math.random(1, #musiclist)
-        Chat("h \n\n\n [KohlsLite]: Playing music: " .. musicnames[musicplay] .. ". \n\n\n")
+         musicplay = math.random(1, #musiclist)
+         if musicsay == true then
+            	Chat("h \n\n\n [KohlsLite]: Playing music: " .. musicnames[musicplay] .. ". \n\n\n")
+	 end
          if antimlog then
             	Chat("music 00000000000000000000000000" .. musiclist[musicplay])
 	 else
@@ -1127,13 +1134,15 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
           musicplay = 1
        else            
           musicplay = musicplay + 1
-       end
-       Chat("h \n\n\n [KohlsLite]: Playing music: " .. musicnames[musicplay] .. ". \n\n\n")
+       end	
+       if musicsay == true then
+            Chat("h \n\n\n [KohlsLite]: Playing music: " .. musicnames[musicplay] .. ". \n\n\n")
+       end  
        if antimlog then
             	Chat("music 00000000000000000000000000" .. musiclist[musicplay])
-	else
+       else
 		Chat("music " .. musiclist[musicplay])
-	end
+       end
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'pmusic' then
@@ -1142,12 +1151,14 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
        else            
           musicplay = musicplay - 1
        end
-       Chat("h \n\n\n [KohlsLite]: Playing music: " .. musicnames[musicplay] .. ". \n\n\n")
-        if antimlog then
+       if musicsay == true then
+            	Chat("h \n\n\n [KohlsLite]: Playing music: " .. musicnames[musicplay] .. ". \n\n\n")
+       end
+       if antimlog then
             	Chat("music 00000000000000000000000000" .. musiclist[musicplay])
-	else
+       else
 		Chat("music " .. musiclist[musicplay])
-	end
+       end
     end
 
     if string.sub(msg, 1, #prefix + 9)  == prefix..'musiclist' then
@@ -1299,14 +1310,14 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	      end	
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'timeframe' then
-	      local tplace = tonumber(string.sub(msg:lower(), #prefix + 11))
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'timepos' then
+	      local tplace = tonumber(string.sub(msg:lower(), #prefix + 9))
 	      if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
 			game:GetService("Workspace").Terrain["_Game"].Folder.Sound.TimePosition = tplace 
 	      end	
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'timefis' then
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'timeis' then
 	      if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
 			Remind("Current time position: "..game:GetService("Workspace").Terrain["_Game"].Folder.Sound.TimePosition)
 	      end	
@@ -2311,7 +2322,7 @@ Commands required: rocket]])
   if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'ecrash' then
 	    Chat("fix")
 	    Chat(prefix.."gmusic50")
-	    dontannounce = true -- lemme know if you want this to be a full feature
+	    musicsay = false -- lemme know if you want this to be a full feature
 	    Chat("h \n\n\n [KohlsLite]: This server was crashed because of an issue. \n\n\n")
 	    task.wait(0.5)
             Chat("fogcolor 0 0 0")
@@ -3874,7 +3885,12 @@ Commands required: rocket]])
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'mkick' then -- haha i found it
 	acplr = string.sub(msg:lower(), #prefix + 7)
-	antichatplr = true
+   	PLAYERCHECK(acplr)
+   		if player ~= nil and not table.find(nokick, player) then
+   			antichatplr = true
+   		else
+   			Remind("Player doesn't exist!")
+  		end
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'unmkick' then
@@ -4102,8 +4118,8 @@ print("remusic - restart the current music")
 print("volm - set the volume of the music")
 print("cvol - print the current volume of music")
 print("musicid - print the current music id")
-print("timeframe - set the time position")
-print("timefis - print the current time position")
+print("timepos - set the time position")
+print("timeis - print the current time position")
 
 print("---")
 print("pausem - pause the music")
@@ -6759,180 +6775,3 @@ local cantexecute = {""}
 if table.find(cantexecute, game.Players.LocalPlayer.Name) then
 		game.Players.LocalPlayer:Kick("[KohlsLite]: Oh dear, you're blacklisted from my script! How did you do that? DM me on ts2021 to appeal.") 
 end
-
--- // GUI SHIT \\ --
-
-local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
-
-local Window = Rayfield:CreateWindow({
-   Name = "KohlsLite",
-   LoadingTitle = "KohlsLite",
-   LoadingSubtitle = "By ScriptingProgrammer",
-   ConfigurationSaving = {
-      Enabled = true,
-      FolderName = nil,
-      FileName = "KohlsLite"
-   },
-   Discord = {
-      Enabled = false,
-      Invite = "",
-      RememberJoins = true
-   },
-   KeySystem = true,
-   KeySettings = {
-      Title = "KohlsLite",
-      Subtitle = "Start",
-      Note = "You should only see this if you are on a PC. Insert PC into the key box. If you are on mobile, please close this GUI.",
-      FileName = "KeyKohlsLite",
-      SaveKey = false,
-      GrabKeyFromSite = false,
-      Key = {"PC","pc"}
-   }
-})
-
-local Tab = Window:CreateTab("Antis", 4483362458) -- Title, Image
-
-local Toggle = Tab:CreateToggle({
-   Name = "No Obby Kill (NOK)",
-   CurrentValue = false,
-   Flag = "Toggle1",
-   Callback = function(Value)
-   if Value then
-        TNOK("true")
-    else
-        TNOK("false")
-    end
-end
-})
-
-local Toggle = Tab:CreateToggle({
-   Name = "Anti Kill",
-   CurrentValue = false,
-   Flag = "Toggle1", 
-   Callback = function(Value)
-        if Value then
-           YOUantikill = true
-	else 
-	   YOUantikill = false
-        end
-    end
-})
-
-local Toggle = Tab:CreateToggle({
-   Name = "Anti Punish",
-   CurrentValue = false,
-   Flag = "Toggle1", 
-   Callback = function(Value)
-        if Value then
-           YOUantipunish = true
-	else 
-	   YOUantipunish = false
-        end
-    end
-})
-
-local Toggle = Tab:CreateToggle({
-   Name = "Anti Rocket",
-   CurrentValue = false,
-   Flag = "Toggle1", 
-   Callback = function(Value)
-        if Value then
-           YOUantirocket = true
-	else 
-	   YOUantirocket = false
-        end
-    end
-})
-
-local Toggle = Tab:CreateToggle({
-   Name = "Anti Message",
-   CurrentValue = false,
-   Flag = "Toggle1", 
-   Callback = function(Value)
-        if Value then
-           YOUantimsg = true
-	else 
-	   YOUantimsg = false
-        end
-    end
-})
-
-local Tab = Window:CreateTab("Crash", 4483362458) -- Title, Image
-
-local Button = Tab:CreateButton({
-   Name = "Dog Crash",
-   Callback = function()
-      DCrash()
-   end,
-})
-
-local Button = Tab:CreateButton({
-   Name = "Freeze Crash",
-   Callback = function()
-      FCrash()
-   end,
-})
-
-local Button = Tab:CreateButton({
-   Name = "VG Crash",
-   Callback = function()
-      VGCrash()
-   end,
-})
-
-local Button = Tab:CreateButton({
-   Name = "Shield Crash",
-   Callback = function()
-      SCrash()
-   end,
-})
-
-local Tab = Window:CreateTab("Teleports", 4483362458) -- Title, Image
-
-local Button = Tab:CreateButton({
-   Name = "Regen",
-   Callback = function()
-      regentp()
-   end,
-})
-
-local Button = Tab:CreateButton({
-   Name = "House",
-   Callback = function()
-           House()
-   end,
-})
-
-
-local Button = Tab:CreateButton({
-   Name = "Spawn",
-   Callback = function()
-           GSpawn()
-   end,
-})
-
-local Tab = Window:CreateTab("Music", 4483362458) -- Title, Image
-local Input = Tab:CreateInput({
-   Name = "Music ID",
-   PlaceholderText = "Input",
-   RemoveTextAfterFocusLost = false,
-   Callback = function(Text)
-      gmusic = tonumber(Text)
-      Chat(prefix.."gmusic"..gmusic)
-   end,
-})
-
-local dropdownOptions = {}
-for i, name in ipairs(musicnames) do
-    dropdownOptions[i] = string.format("%d. %s", i, name)
-end
-
-local Dropdown = Tab:CreateDropdown({
-    Name = "Full List",
-    Options = dropdownOptions, -- due to limitations of rayfield you can't click the button and play that song number :(
-    CurrentOption = "All dropping 8 beats",
-    MultipleOptions = false,
-    Flag = "Dropdown1",
-    Callback = function(Option)
-    end,
-})
