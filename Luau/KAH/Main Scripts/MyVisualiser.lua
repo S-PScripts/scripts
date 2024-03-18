@@ -76,7 +76,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		Remind("Setting...")
       	   end
 
-	   if string.sub(msg:lower(), 1, #vprefix + 3) == vprefix.."unvis" then
+	   if string.sub(msg:lower(), 1, #vprefix + 5) == vprefix.."unvis" then
            	vis.Parent = nil
                 kahcon:Disconnect()
 
@@ -93,12 +93,12 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
       	   end
 		
     	   if string.sub(msg:lower(), 1, #vprefix + 6) == vprefix.."visrad" then
-           	visradius = tonumber(string.sub(msg:lower(), #prefix + 8))
+           	visradius = tonumber(string.sub(msg:lower(), #vprefix + 8))
 		Remind("Radius changed")
       	   end
 
     	   if string.sub(msg:lower(), 1, #vprefix + 7) == vprefix.."vismode" then
-           	vismode = tonumber(string.sub(msg:lower(), #prefix + 9))
+           	vismode = tonumber(string.sub(msg:lower(), #vprefix + 9))
 		Remind("Mode changed")
       	   end
 
@@ -117,13 +117,13 @@ print("CMDS")
 end
 
 function visc()
-        local vis = Instance.new("Folder", workspace)
+        vis = Instance.new("Folder", workspace)
         local currentSong = KAHInstances:FindFirstChild("Sound") or nil
         local orbiter = LocalPlayer
 
         local paintBucket
 
-        local kahcon
+        kahcon =
 
         task.spawn(function()
             while vis.Parent == workspace do
@@ -189,9 +189,9 @@ function visc()
 	    Chat("punish " .. nm)
 	    Chat("unpunish " .. nm)
         end)
-
-        local conn
-        local conn0        
+	
+        conn =
+        conn0        
        
         task.spawn(function()
             local lastpbl = 0
