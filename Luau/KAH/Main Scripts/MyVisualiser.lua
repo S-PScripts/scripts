@@ -4,7 +4,7 @@
 -- FUNCTION SET UP --
 local function Remind(msg)
 	game.StarterGui:SetCore("SendNotification", {
-		Title = "Visualiser DS",
+		Title = "MyVisualiser.lua",
 		Text = msg,
 		Duration = 1
 	})
@@ -35,9 +35,9 @@ local vismode = 0
 local visradius = 20
 local visamt = 20
 local visorbiter = LocalPlayer.Character.HumanoidRootPart.CFrame
-viscolor = 1
-viscolor2 = 0
-viscolor3 = 0
+viscolor = 50
+viscolor2 = 100
+viscolor3 = 150
 
 local function personColor(PB, part, color)
     if not PB then
@@ -104,7 +104,9 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
     	   if string.sub(msg:lower(), 1, #vprefix + 9) == vprefix.."viscolors" then
 		local args = string.split(msg, " ")
-	        viscolor = tonumber(string.sub(msg:lower(), #vprefix + 11))
+	        viscolor = args[2]
+		viscolor2 = args[3]
+		viscolor3 = args[4]
 		Remind("Colours changed")
       	   end
 end)
@@ -200,9 +202,9 @@ function visc()
                 for _,v in pairs(vis:GetChildren()) do
                     task.spawn(function()
                         if pbl == 0 or pbl < 1 then
-                            task.spawn(personColor, paintBucket, v, Color3.fromRGB(viscolor * 255,viscolor * 255,viscolor * 255))
+                            task.spawn(personColor, paintBucket, v, Color3.fromRGB(viscolor,viscolor2,viscolor3 * 255))
                         else
-                            task.spawn(personColor, paintBucket, v, Color3.fromRGB(viscolor * 255,(viscolor * 255) - (pbl * 1.05),(viscolor * 255) - (pbl * 1.05)))
+                            task.spawn(personColor, paintBucket, v, Color3.fromRGB(viscolor * 255,(viscolor3 * 255) - (pbl * 1.05),(viscolor2 * 255) - (pbl * 1.05)))
                         end
                     end)
                 end
