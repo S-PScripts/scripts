@@ -4180,15 +4180,15 @@ end
 function checkforperm()
 	if string.match(game:HttpGet("https://inventory.roproxy.com/v1/users/" .. gcplr.UserId .. "/items/GamePass/" .. 66254), 66254) then
             Remind(gcplrn.." has perm in NBC!")
-	    Speak(gcplrn.." has perm in NBC!")
+	  --  Speak(gcplrn.." has perm in NBC!")
 	    table.insert(permusers, gcplrn)
         elseif string.match(game:HttpGet("https://inventory.roproxy.com/v1/users/" .. gcplr.UserId .. "/items/GamePass/" .. 64354), 64354) then
             Remind(gcplrn.." has perm in BC!")
-	    Speak(gcplrn.." has perm in BC!")
+	 --   Speak(gcplrn.." has perm in BC!")
 	    table.insert(permusers, gcplrn)
         else 
         	Remind(gcplrn..' does not have perm!')
-	        Speak(gcplrn..' does not have perm!')
+	     --   Speak(gcplrn..' does not have perm!')
         end
 end
 
