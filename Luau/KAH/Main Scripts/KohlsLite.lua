@@ -2675,6 +2675,17 @@ Commands required: rocket]])
          	end
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'laser' then
+         	local dasplayer = string.sub(msg:lower(), #prefix + 7)
+         	PLAYERCHECK(dasplayer)
+         	if player ~= nil then
+			laserman = player
+			laman = cplr
+			Laser()
+         	else
+               		Remind('Cannot find player with the name: '..dasplayer)
+         	end
+    end
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'surround' then
          	local dasplayer = string.sub(msg:lower(), #prefix + 10)
          	PLAYERCHECK(dasplayer)
@@ -6490,6 +6501,38 @@ function Lemon()
     	Chat("explode me")
     	task.wait(0.7)
 	Chat("music nan")
+end
+
+function Laser()
+            local goodbye = false
+            local kahcon
+            local kahcon2
+            kahcon = workspace.ChildAdded:Connect(function(Child)
+                if Child.Name == "Effect" then
+                    task.spawn(function()
+                        repeat task.spawn() 
+                            firetouchinterest(Child, laman.Character.HumanoidRootPart, 0)
+                            firetouchinterest(Child, laman.Character.HumanoidRootPart, 1)
+                        until Child.Parent ~= workspace or goodbye or not kahcon
+                    end)
+                end
+            end)
+            kahcon2 = laman.Character.HumanoidRootPart.ChildAdded:Connect(function(Child)
+                if Child.Name == "SelectionBox" and not goodbye then
+                    goodbye = true
+                    send("punish " .. laserman)
+                end
+            end)
+            Chat("gear me 130113146")
+            repeat task.wait() until game.Players.LocalPlayer.Backpack:FindFirstChild("HyperlaserGun")
+            local Laser = game.Players.LocalPlayer.Backpack:FindFirstChild("HyperlaserGun")
+            local Server = Laser:WaitForChild("ServerControl")
+            task.wait()
+            Laser.Parent = game.Players.LocalPlayer.Character
+            Server:InvokeServer("Click", true, laman.Character.HumanoidRootPart.Position)
+            repeat task.wait() until goodbye
+            kahcon:Disconnect()
+            kahcon2:Disconnect()
 end
 
 function Rail()
