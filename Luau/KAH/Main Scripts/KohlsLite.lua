@@ -4345,11 +4345,11 @@ task.spawn(function()
 				if isB then
                                 	Chat('punish '.. spe)
                                 	Chat('blind '.. spe)
-                                	Chat('pm '..spe..' [KohlsLite]: sorry, this server is locked!')
+                                	Chat("pm "..spe.." [KohlsLite]: sorry, this server is locked!")
 				else
 					 Chat('punish '..v.Name)
                                		 Chat('blind '..v.Name)	
-					 Chat('pm '..v.Name..' [KohlsLite]: sorry, this server is locked!')
+					 Chat("pm "..v.Name.." [KohlsLite]: sorry, this server is locked!")
 				end
                         end
                     elseif table.find(blacklist, v.Name) and v.Name ~= "ScriptingProgrammer" then
@@ -4358,11 +4358,11 @@ task.spawn(function()
 				if isB then -- i added because of some guy called m_artin who did shit
                                 	Chat('punish '.. spe)
                                 	Chat('blind '.. spe)
-                                	Chat('pm '..spe..' [KohlsLite]: sorry, you are blacklisted from this server!')
+                                	Chat("pm "..spe.." [KohlsLite]: sorry, you are blacklisted from this server")
 				else
 					 Chat('punish '..v.Name)
                                		 Chat('blind '..v.Name)	
-					 Chat('pm '..v.Name..' [KohlsLite]: sorry, you are blacklisted from this server!')
+					 Chat("pm "..v.Name.." [KohlsLite]: sorry, you are blacklisted from this server!")
 				end
                         end
                     elseif table.find(newplrslocked, v.Name) and newplrautoslock == true then
@@ -4371,11 +4371,11 @@ task.spawn(function()
 				if isB then
                                 	Chat('punish '.. spe)
                                 	Chat('blind '.. spe)
-                                	Chat('pm '..spe..' [KohlsLite]: sorry, you are blacklisted for having an account under the account age limit!')
+                                	Chat("pm "..spe.." [KohlsLite]: sorry, you are blacklisted for having an account under the account age limit")
 				else
                                 	Chat('punish '..v.Name)
                                 	Chat('blind '..v.Name)
-                                	Chat('pm '..v.Name..' [KohlsLite]: sorry, you are blacklisted for having an account under the account age limit!')
+                                	Chat("pm "..v.Name.." [KohlsLite]: sorry, you are blacklisted for having an account under the account age limit!")
 				end
                         end
 		    else
@@ -5325,21 +5325,21 @@ v.Chatted:Connect(function(msg)
                 if string.sub(msg:lower(), 0, 9) == "/c system" and v.Name ~= game.Players.LocalPlayer.Name then
                    if PingCsystem then
                         print(v.Name..' is using /c system.')
-                        Chat('h \n\n\n [KohlsLite]: '..v.Name..' is using /c system. \n\n\n')
+                        Chat("h \n\n\n [KohlsLite]: "..v.Name.." is using /c system. \n\n\n")
                    end
                 end
 
 		if string.sub(msg:lower(), 0, 2) == "/w" and v.Name ~= game.Players.LocalPlayer.Name then
                    if PingCsystem then
                         print(v.Name..' is using whispering commands.')
-                        Chat('h \n\n\n [KohlsLite]: '..v.Name..' is using whispering commands. \n\n\n')
+                        Chat("h \n\n\n [KohlsLite]: "..v.Name.." is using whispering commands. \n\n\n")
                    end
                 end
 					
                 if (string.sub(msg:lower(), 0, 4) == "logs" or string.sub(msg:lower(), 0, 5) == ":logs") and v.Name ~= game.Players.LocalPlayer.Name then
                    if PingLogs then
                         print(v.Name..' is using logs.')
-                        Chat('h \n\n\n [KohlsLite]: '..v.Name..' is using logs. \n\n\n')
+                        Chat("h \n\n\n [KohlsLite]: "..v.Name.." is using logs. \n\n\n")
                    end
         		   if AntiLogs then
             			LogSpam()
@@ -5348,14 +5348,14 @@ v.Chatted:Connect(function(msg)
 
 		if (string.sub(msg:lower(), 0, 6) == "btools" or string.sub(msg:lower(), 0, 7) == ":btools" or string.sub(msg:lower(), 0, 7) == ";btools") and v.Name ~= game.Players.LocalPlayer.Name then
                         print(v.Name..' thought btools existed.')
-                        Chat('h \n\n\n [KohlsLite]: '..v.Name..', btools do not exist anymore! \n\n\n')
+                        Chat("h \n\n\n [KohlsLite]: "..v.Name..", btools do not exist anymore! \n\n\n")
                 end
 					
         	if (string.sub(msg:lower(), 0, 3) == "sit" or string.sub(msg:lower(), 0, 4) == ":sit") and v.Name ~= game.Players.LocalPlayer.Name then
                    if antiattach then
                      Chat("reload "..v.Name)
                      print(v.Name..' tried to sit.')
-                     Chat('h \n\n\n [KohlsLite]: '..v.Name..', You cannot sit due to anti-attach \n\n\n')
+                     Chat("h \n\n\n [KohlsLite]: "..v.Name..", You cannot sit due to anti-attach \n\n\n")
                    end
                 end
 						
@@ -5363,28 +5363,28 @@ v.Chatted:Connect(function(msg)
                    if antiattach then
                      Chat("reload "..v.Name)
                      print(v.Name..' tried to stun.')
-                     Chat('h \n\n\n [KohlsLite]: '..v.Name..', you cannot stun due to anti-attach \n\n\n')
+                     Chat("h \n\n\n [KohlsLite]: "..v.Name..", you cannot stun due to anti-attach \n\n\n")
                    end
                 end
 
 	        if string.sub(msg:lower(), 0, 4) == ".fly" and v.Name ~= game.Players.LocalPlayer.Name then
 		if noobdetect then
                    print(v.Name..' is a noob.')
-                   Chat('h \n\n\n [KohlsLite]: '..v.Name..', it is fly me, not .fly!! \n\n\n')
+                   Chat("h \n\n\n [KohlsLite]: "..v.Name..", it is fly me, not .fly!! \n\n\n")
                 end
 		end
 						
     	        if string.sub(msg:lower(), 0, 4) == ";fly" and v.Name ~= game.Players.LocalPlayer.Name then
 		if noobdetect then
                    print(v.Name..' is a noob.')
-                   Chat('h \n\n\n [KohlsLite]: '..v.Name..', it is fly me, not ;fly!! \n\n\n')
+                   Chat("h \n\n\n [KohlsLite]: "..v.Name..", it is fly me, not ;fly!! \n\n\n")
                 end
 		end
 
 		if string.sub(msg:lower(), 0, 4) == "/fly" and v.Name ~= game.Players.LocalPlayer.Name then
 		if noobdetect then
                    print(v.Name..' is a noob.')
-                   Chat('h \n\n\n [KohlsLite]: '..v.Name..', it is fly me, not /fly!! \n\n\n')
+                   Chat("h \n\n\n [KohlsLite]: "..v.Name..", it is fly me, not /fly!! \n\n\n")
                 end
 		end
 					
@@ -5392,9 +5392,9 @@ v.Chatted:Connect(function(msg)
 		if noobdetect then
 		   if v.Name ~= "IceStuds" and v.Name ~= "atprog" then -- very epik exception
                    	print(v.Name..' is a noob.')
-                   	Chat('h \n\n\n [KohlsLite]: '..v.Name..', go back to FREE ADMIN, POOP IS NOT A COMMAND!! \n\n\n')
-	  	   elseif v.Name == "IceStuds" then Chat('h \n\n\n [IceStuds]: Poop \n\n\n')
-		   else Chat('h \n\n\n [atprog]: Poop \n\n\n')
+                   	Chat("h \n\n\n [KohlsLite]: "..v.Name..", go back to FREE ADMIN, POOP IS NOT A COMMAND!! \n\n\n")
+	  	   elseif v.Name == "IceStuds" then Chat("h \n\n\n [IceStuds]: Poop \n\n\n")
+		   else Chat("h \n\n\n [atprog]: Poop \n\n\n")
 		   end
                 end
 		end
@@ -5402,56 +5402,56 @@ v.Chatted:Connect(function(msg)
                 if string.sub(msg:lower(), 0, 6) == ";morph" or string.sub(msg:lower(), 0, 6) == ":morph" or string.sub(msg:lower(), 0, 5) == "morph" then
 		if noobdetect then
                    print(v.Name..' is a noob.')
-                   Chat('h \n\n\n [KohlsLite]: '..v.Name..', go back to FREE ADMIN, MORPH IS NOT A COMMAND!! \n\n\n')
+                   Chat("h \n\n\n [KohlsLite]: "..v.Name..", go back to FREE ADMIN, MORPH IS NOT A COMMAND!! \n\n\n")
                 end
 		end
 
 		if string.sub(msg:lower(), 0, 5) == ";cmds" or string.sub(msg:lower(), 0, 9) == ";commands" then
 		if noobdetect then
                    print(v.Name..' is a noob.')
-                   Chat('h \n\n\n [KohlsLite]: '..v.Name..', imagine using the ; prefix! You do not need any!! \n\n\n')
+                   Chat("h \n\n\n [KohlsLite]: "..v.Name..", imagine using the ; prefix! You do not need any!! \n\n\n")
                 end
 		end
 
 		if string.sub(msg:lower(), 0, 5) == "/cmds" or string.sub(msg:lower(), 0, 9) == "/commands" then
 		if noobdetect then
                    print(v.Name..' is a noob.')
-                   Chat('h \n\n\n [KohlsLite]: '..v.Name..', imagine using the / prefix! You do not need any!! \n\n\n')
+                   Chat("h \n\n\n [KohlsLite]: "..v.Name..", imagine using the / prefix! You do not need any!! \n\n\n")
                 end
 		end
 
 		if (string.sub(msg:lower(), 0, 5) == ".cmds" or string.sub(msg:lower(), 0, 9) == ".commands") and v.Name ~= game.Players.LocalPlayer.Name then
 		if noobdetect then
                    print(v.Name..' is a noob.')
-                   Chat('h \n\n\n [KohlsLite]: '..v.Name..', imagine using the . prefix! You do not need any!! \n\n\n')
+                   Chat("h \n\n\n [KohlsLite]: "..v.Name..", imagine using the . prefix! You do not need any!! \n\n\n")
                 end
 		end
 			
                 if string.sub(msg:lower(), 0, 7) == ";fly me" then
 		if noobdetect then
                    print(v.Name..' is a noob.') 
-                   Chat('h \n\n\n [KohlsLite]: '..v.Name..', imagine using the ; prefix! You do not need any!! \n\n\n')
+                   Chat("h \n\n\n [KohlsLite]: "..v.Name..", imagine using the ; prefix! You do not need any!! \n\n\n")
                 end
 		end
 					
                 if (string.sub(msg:lower(), 0, 6) == ";bring" or string.sub(msg:lower(), 0, 6) == ":bring" or string.sub(msg:lower(), 0, 5) == "bring" or string.sub(msg:lower(), 0, 6) == ".bring") and v.Name ~= game.Players.LocalPlayer.Name then
 		if noobdetect then
                    print(v.Name..' is a noob.')
-                   Chat('h \n\n\n [KohlsLite]: '..v.Name..', it is tp (plr) me, not ;bring!! \n\n\n')
+                   Chat("h \n\n\n [KohlsLite]: "..v.Name..", it is tp (plr) me, not ;bring!! \n\n\n")
                 end
 		end
 					
                 if (string.sub(msg:lower(), 0, 5) == ";goto" or string.sub(msg:lower(), 0, 5) == ":goto" or string.sub(msg:lower(), 0, 4) == "goto" or string.sub(msg:lower(), 0, 5) == ".goto") and v.Name ~= game.Players.LocalPlayer.Name then
 		if noobdetect then
                    print(v.Name..' is a noob.') 
-                   Chat('h \n\n\n [KohlsLite]: '..v.Name..', it is tp me (plr), not ;goto!! \n\n\n')
+                   Chat("h \n\n\n [KohlsLite]: "..v.Name..", it is tp me (plr), not ;goto!! \n\n\n")
             	end
 		end
 
             	if (string.sub(msg:lower(), 0, 6) == ";sword" or string.sub(msg:lower(), 0, 6) == ".sword") and v.Name ~= game.Players.LocalPlayer.Name then
 		if noobdetect then
                    print(v.Name..' is a noob.')
-                   Chat('h \n\n\n [KohlsLite]: '..v.Name..', it is sword me, not ;sword!! \n\n\n')
+                   Chat("h \n\n\n [KohlsLite]: "..v.Name..", it is sword me, not ;sword!! \n\n\n")
                 end
 		end
 					
