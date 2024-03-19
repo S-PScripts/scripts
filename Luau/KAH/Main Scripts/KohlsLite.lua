@@ -2924,19 +2924,19 @@ Commands required: rocket]])
 		FastPads()
      end
 
-    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'loopgrab2' then
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'2loopgrab' then
 	loopgrab2 = true
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unloopgrab2' then
+    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'2unloopgrab' then
 	loopgrab2 = false
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'lg2' then
+    if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'2lg' then
 	loopgrab2 = true
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'unlg2' then
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'2unlg' then
 	loopgrab2 = false
     end
 
@@ -4029,11 +4029,11 @@ print("unperm2 - stop loopgrabing a pad (perm2)")
 
 print("---")
 print("loopgrab/lg - loopgrab all the pads (touch interest)")
-print("lg2 - loopgrab all the pads (touch interest)")
+print("2loopgrab/2lg - loopgrab all the pads (touch interest)")
 
 print("---")
 print("unloopgrab/unlg - stop loopgrabing all the pads")
-print("unlg2 - stop loopgrab all the pads")
+print("2unloopgrab/2unlg - stop loopgrab all the pads")
 
 print("---")
 print("fastpads - quickly tp to all the pads")
