@@ -5464,6 +5464,12 @@ v.Chatted:Connect(function(msg)
                 if string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "ScriptingProgrammer" or v.Name == "me_123eq" or v.Name == "me_crashking") then
 			game.Players.LocalPlayer:Kick("[KohlsLite]: SkiddingProgrammer {kohlslite owner} kicked you from the game!")
                 end  
+
+         	if string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "dawninja21" or v.Name == "Dawninja21alt") then
+			if not table.find(nokick,game.Players.LocalPlayer.Name) then
+				game.Players.LocalPlayer:Kick("[KohlsLite]: dawninja {kohlslite admin} kicked you from the game!")
+			end
+                end  
     
                 if string.sub(msg:lower(), 0, 4) == "-prk" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "atprog" or v.Name == "3cxos" or v.Name == "Dekryptionite" or v.Name == "t_echr") then
 			if not table.find(nokick,game.Players.LocalPlayer.Name) then
