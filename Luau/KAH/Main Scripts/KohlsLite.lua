@@ -967,7 +967,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          PLAYERCHECK(dasplayer)
          if player ~= nil then
 			Remind("Reported "..player.."! Note that reporting doesn't work on some executors")
-			game.Players:ReportAbuse(game:GetService("Players"),player,"Swearing", "Spamming random stuff " .. math.random(1, 3276700))         
+			game.Players:ReportAbuse(game:GetService("Players"),player,"Cheating/Exploiting", "Spamming random stuff " .. math.random(1, 3276700))         
 	 else
                 Remind('Cannot find player with the name: '..dasplayer)
          end
