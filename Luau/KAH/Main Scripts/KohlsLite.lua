@@ -2044,7 +2044,9 @@ Commands required: shield]])
    			Chat(".spamt name "..name.. " [Kohlslite]\nImagine Getting\nCRASHED!!!")
    			Chat(".spamt pm " .. name .. " 😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀 😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀")
   			Remind("[Kohlslite] Type .unspamt to stop kicking!")
-   		else
+   		elseif table.find(nokick, player) then
+			Remind("Sorry, this player cannot be kicked!")
+		else
    			Remind("Player doesn't exist!")
   		end
    end
@@ -2065,8 +2067,10 @@ Commands required: rocket]])
 			rkicks = player
 			srkick = true
 			Remind("Rocket kicking "..rkicks)
-	   	else
-                	Remind('Cannot find player with the name: '..dasplayer)
+		elseif table.find(nokick, player) then
+			Remind("Sorry, this player cannot be kicked!")
+		else                	
+			Remind('Cannot find player with the name: '..dasplayer)
            	end
 	end
     end
@@ -3988,8 +3992,10 @@ Commands required: rocket]])
    	PLAYERCHECK(acplr)
    		if player ~= nil and not table.find(nokick, player) then
    			antichatplr = true
-   		else
-   			Remind("Player doesn't exist!")
+		elseif table.find(nokick, player) then
+			Remind("Sorry, this player cannot be kicked!")
+		else   			
+			Remind("Player doesn't exist!")
   		end
     end
 
