@@ -17,7 +17,8 @@ end
 local vprefix = "-"
 
 -- INPUTS --
-print("--- MyVisualiser.lua executed! Created by quivings ---")
+print("--- MyVisualiser.lua executed! Created by quivings, ported by S_P ---")
+Remind(" MyVisualiser.lua executed! Created by quivings, ported by S_P ")
 Chat("h \n\n\n [MyVisualiser.lua]: Executed! \n\n\n")
 
 -- VARIABLES --
@@ -113,7 +114,8 @@ end)
 
 -- COMMAND LIST ---
 function CMDPrint()
-print("CMDS")
+	print("cmds visual unvis visrad [args1] vismode [args1] viscolors [arg1] [args2] [args3]")
+	print("prefix is a dash")
 end
 
 function visc()
