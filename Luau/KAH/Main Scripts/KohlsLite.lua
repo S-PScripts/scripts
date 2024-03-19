@@ -1143,8 +1143,13 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'lgmusic' then
-        musicplay = tonumber(string.sub(msg:lower(), #prefix + 9)) 
+        musicplay = tonumber(string.sub(msg:lower(), #prefix + 8)) 
         if musicplay ~= nil and musicplay >= 1 and musicplay <= #musiclist then
+		if workspace.Terrain._Game.Folder:FindFirstChild("localsound") then
+			local sound = workspace.Terrain._Game.Folder:FindFirstChild("localsound")
+			sound:Stop()
+			sound:Destroy()
+		end
 		local lsound = Instance.new("Sound", workspace.Terrain._Game.Folder)
 		lsound.Name = "localsound"
 		lsound.SoundId = "rbxassetid://"..musiclist[musicplay]
