@@ -5980,7 +5980,7 @@ end
 task.spawn(function()
    while true do
 	task.wait(0)
-	if srkick then
+	if srkick and rkicker then
 	   RKick()
         end
    end
