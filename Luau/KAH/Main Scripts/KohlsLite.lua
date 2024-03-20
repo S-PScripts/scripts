@@ -1169,6 +1169,14 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 			sound:Destroy()
 	end
     end
+
+    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'msay' then
+	musicsay = true
+    end
+		
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'unmsay' then
+	musicsay = false
+    end		
 		
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'gmusic' then
         musicplay = tonumber(string.sub(msg:lower(), #prefix + 7)) 
@@ -1302,7 +1310,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                             Chat("time " .. time)
                         end
                         gjdelock = true
-			Chat("pm others You entered my domain so please wait until I decide to close it...")
+			Chat("h \n\n\n [KohlsLite]: You have entered my domain so please wait until I decide to close it... \n\n\n")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'undeiv' then  -- ported from simplekah
@@ -1392,6 +1400,12 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	      end	
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'timedur' then
+	      if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
+			Remind("The song's length is: "..game:GetService("Workspace").Terrain["_Game"].Folder.Sound.Duration)
+	      end	
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'audiolol' then
        audiotroll = true
     end
@@ -1459,6 +1473,30 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         	end
             else
             end
+        else
+        end
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'ggear' then
+        local args = string.split(msg, " ")
+        if #args >= 3 then
+            local target = args[2]
+            local gearName = table.concat(args, " ", 3)
+	    local keyword = game:GetService("HttpService"):UrlEncode(gearName)
+            local gearIndex = 0
+            local GearsJSON = game:HttpGet("https://catalog.roblox.com/v1/search/items?category=All&includeNotForSale=true&keyword="..keyword.."&limit=120")
+            local GearsDecoded = game:GetService("HttpService"):JSONDecode(GearsJSON)
+            if GearsDecoded and GearsDecoded.data then
+                for _,v in pairs(GearsDecoded.data) do
+                    local Asset
+                    local AssetOk, E = pcall(function() Asset = MarketplaceService:GetProductInfo(v.id) end)
+                    if AssetOk then
+                        if Asset.AssetTypeId == Enum.AssetType.Gear.Value then
+                            send("gear " .. target .. " " .. v.id)
+                        end
+                    end
+                end
+            end 
         else
         end
     end
@@ -2040,13 +2078,13 @@ Commands required: shield]])
    		local name = string.sub(msg:lower(), #prefix + 8)
    		PLAYERCHECK(name)
    		if player ~= nil and not table.find(nokick, player) then
-   			Chat("h \n\n\n\n PR SCRIPT ON TOP")
+   			Chat("h \n\n\n KOHLSLITE AND PR SCRIPT ON TOP \n\n\n")
    			Chat("freeze "..name)
    			Chat("dog "..name)
    			Chat("rainbowify "..name)
-   			Chat(".spamt name "..name.. " [Kohlslite]\nImagine Getting\nCRASHED!!!")
+   			Chat("name "..name.. " [KohlsLite]: \n Imagine Getting \n CRASHED!!!")
    			Chat(".spamt pm " .. name .. " 😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀 😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀")
-  			Remind("[Kohlslite] Type .unspamt to stop kicking!")
+  			Remind("[KohlsLite]: Type .unspamt to stop kicking! The slower the rainbow, the more laggy they're getting!")
    		elseif table.find(nokick, player) then
 			Remind("Sorry, this player cannot be kicked!")
 		else
@@ -6579,7 +6617,7 @@ function Ungearban(plrg)
 	Chat("tp "..plrg.." me")
 	Chat("speed "..plrg.." 0")
 	task.wait(0.5)
-        game.Players:Chat('gear me 71037101')
+        Chat('gear me 71037101')
         repeat task.wait() until game.Players.LocalPlayer.Backpack:FindFirstChild("DaggerOfShatteredDimensions")
         ungear = game.Players.LocalPlayer.Backpack:FindFirstChild("DaggerOfShatteredDimensions")
         task.wait()
