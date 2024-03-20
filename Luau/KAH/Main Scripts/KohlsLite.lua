@@ -1400,10 +1400,17 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	      end	
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'timedur' then
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'timeps' then
 	      if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
-			Remind("The song's length is: "..game:GetService("Workspace").Terrain["_Game"].Folder.Sound.Duration)
+			Remind("The playback speed is: "..game:GetService("Workspace").Terrain["_Game"].Folder.Sound.PlaybackSpeed)
 	      end	
+    end
+
+   if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'timeplay' then
+	     newPlaybackSpeed = tonumber(string.sub(msg:lower(), #prefix + 10))
+	     local Sound = game:GetService("Workspace").Terrain["_Game"].Folder.Sound
+	     Sound.PlaybackSpeed = newPlaybackSpeed
+	
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'audiolol' then
