@@ -5824,19 +5824,25 @@ task.spawn(function()
     if mymusiconly == true and musicoff == false then
 		  if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
 				if game:GetService("Workspace").Terrain["_Game"].Folder.Sound.SoundId == "http://www.roblox.com/asset/?id="..mymusiconlyid then
+						local savethisplace = game:GetService("Workspace").Terrain["_Game"].Folder.Sound.TimePosition
     		  		else
 					if antimlog then
-            					Chat("music 00000000000000000000000000" .. mymusiconlyid)
+            					Chat("music 00000000000000000000000000" .. mymusiconlyid);task.wait(0.5)
+						game:GetService("Workspace").Terrain["_Game"].Folder.Sound.TimePosition = savethisplace 
+						
 	    				else
-    			  			Chat("music "..mymusiconlyid)
+    			  			Chat("music "..mymusiconlyid);task.wait(0.5)
+						game:GetService("Workspace").Terrain["_Game"].Folder.Sound.TimePosition = savethisplace 
 	    			    	end
 				end
       		  end
       		  if not game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
 				     if antimlog then
-            					Chat("music 00000000000000000000000000" .. mymusiconlyid)
+            					Chat("music 00000000000000000000000000" .. mymusiconlyid);task.wait(0.5)
+						game:GetService("Workspace").Terrain["_Game"].Folder.Sound.TimePosition = savethisplace 
 	    			     else
-    			  		Chat("music "..mymusiconlyid)
+    			  			Chat("music "..mymusiconlyid);task.wait(0.5)
+						game:GetService("Workspace").Terrain["_Game"].Folder.Sound.TimePosition = savethisplace 
 	    			     end
       		 end
     end
