@@ -1380,6 +1380,12 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 			      Remind("Current music ID: "..game:GetService("Workspace").Terrain["_Game"].Folder.Sound.SoundId)
 	      end
     end
+
+   if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'cmusicid' then
+	      if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
+			      setclipboard(game:GetService("Workspace").Terrain["_Game"].Folder.Sound.SoundId)
+	      end
+    end
 		
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'cvol' then
 	      if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
