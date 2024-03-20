@@ -1400,6 +1400,12 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	      end	
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'timedur' then
+	      if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
+			Remind("Current time position: "..game:GetService("Workspace").Terrain["_Game"].Folder.Sound.TimeLength)
+	      end	
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'timeps' then
 	      if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
 			Remind("The playback speed is: "..game:GetService("Workspace").Terrain["_Game"].Folder.Sound.PlaybackSpeed)
@@ -1410,7 +1416,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	     newPlaybackSpeed = tonumber(string.sub(msg:lower(), #prefix + 10))
 	     local Sound = game:GetService("Workspace").Terrain["_Game"].Folder.Sound
 	     Sound.PlaybackSpeed = newPlaybackSpeed
-	
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'audiolol' then
@@ -5845,7 +5850,7 @@ task.spawn(function()
 
     if audiotroll == true then
 			if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
-				game:GetService("Workspace").Terrain["_Game"].Folder.Sound.TimePosition = math.random(1, 100) 
+				game:GetService("Workspace").Terrain["_Game"].Folder.Sound.TimePosition = math.random(0,game:GetService("Workspace").Terrain["_Game"].Folder.Sound.TimeLength*100)/100
 			end
     end
 		
