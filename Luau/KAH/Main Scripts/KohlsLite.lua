@@ -1492,7 +1492,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                     local AssetOk, E = pcall(function() Asset = MarketplaceService:GetProductInfo(v.id) end)
                     if AssetOk then
                         if Asset.AssetTypeId == Enum.AssetType.Gear.Value then
-                            send("gear " .. target .. " " .. v.id)
+                            Chat("gear " .. target .. " " .. v.id)
                         end
                     end
                 end
