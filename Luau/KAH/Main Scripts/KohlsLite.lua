@@ -5831,7 +5831,7 @@ task.spawn(function()
                         end
     		  		else
 					if antimlog then
-                        print(savethisplace)
+                     --   print(savethisplace)
                         tempdisable = true
             			Chat("music 00000000000000000000000000" .. mymusiconlyid)
                         task.wait(0.25)
@@ -5840,7 +5840,7 @@ task.spawn(function()
                         end                        
                         tempdisable = false
 	    			else
-                        print(savethisplace)
+                   --     print(savethisplace)
                         tempdisable = true;
     			  		Chat("music "..mymusiconlyid)
                         task.wait(0.25)
@@ -5853,7 +5853,7 @@ task.spawn(function()
       		  end
       		  if not game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
 				     if antimlog then
-                        print(savethisplace)
+                     --   print(savethisplace)
                         tempdisable = true
             			Chat("music 00000000000000000000000000" .. mymusiconlyid)
                         task.wait(0.25)
@@ -5862,7 +5862,7 @@ task.spawn(function()
                         end                        
                         tempdisable = false
 	    			else
-                        print(savethisplace)
+                    --    print(savethisplace)
     			  		Chat("music "..mymusiconlyid)
                         tempdisable = true
                         task.wait(0.25)
