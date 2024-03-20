@@ -2939,6 +2939,27 @@ Commands required: rocket]])
 		Chat("unskydive me")     
      end
 
+     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'fakebp' then
+		local gamefolder = game:GetService("Workspace").Terrain["_Game"]
+		if not gamefolder:FindFirstChild("PhantomStorage") then
+    			local PStore = Instance.new("Folder")
+    			PStore.Name = "PhantomStorage"
+    			PStore.Parent = gamefolder
+		end
+		local Storage = gamefolder["PhantomStorage"] -- PhantomStorage folder
+		local Phantom_Baseplate = Instance.new("Part")
+		Phantom_Baseplate.BrickColor = BrickColor.new("Bright green")
+		Phantom_Baseplate.Material = Enum.Material.Plastic
+		Phantom_Baseplate.Position = Vector3. new(0, 0.1, 0)
+		Phantom_Baseplate.Size = Vector3. new(1000, 1.2, 1000)
+		Phantom_Baseplate.Anchored = true
+		Phantom_Baseplate.Parent = Storage
+    end
+
+     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'nofakebp' then
+		game:GetService("Workspace").Terrain["_Game"]["PhantomStorage"]:Destroy()
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'fixcol' then
 		ColFix()
     end
