@@ -76,7 +76,7 @@ local personsusers = {} -- users that use persons will be placed here
 
 -- Auto stuff relating to users
 local rkick_on_sight = {} -- rocket kick player when they join ONLY WORKS WITH ONE PLAYER
-local crash_on_sight = {"SlenderMan990921"} -- crash server when player joins
+local crash_on_sight = {} -- crash server when player joins
 local mkick_on_sight = {} -- kick player with pm spam when they join ONLY WORKS WITH ONE PLAYER
 local suser_on_sight = {} -- slow a user when they join with car gear ONLY WORKS WITH ONE PLAYER
 
@@ -641,7 +641,7 @@ local anticlog = false -- for chars
 local alreadyranice = false
 
 -- Admin stuff relating to users
-local padbanned = {"padbanned"} 
+local padbanned = {} 
 local padreinforcements = false 
 
 -- Variables for moving [old]
