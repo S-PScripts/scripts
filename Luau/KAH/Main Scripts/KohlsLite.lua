@@ -5328,6 +5328,7 @@ end
 -- AD
 function ADVERTISEMENT()
 	Speak("KohlsLite is a very 'cool' KAH Script. Get it today on git-hub: S-PScripts or my purple: ts2021")
+	Speak("You can also get it at script blox: search CMD LITE")
 end
 
 -- REJOIN
