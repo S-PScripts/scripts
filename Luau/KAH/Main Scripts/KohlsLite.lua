@@ -6626,7 +6626,7 @@ function Laser()
             kahcon2 = laman.Character.HumanoidRootPart.ChildAdded:Connect(function(Child)
                 if Child.Name == "SelectionBox" and not goodbye then
                     goodbye = true
-                    send("punish " .. laserman)
+                    Chat("punish " .. laserman)
                 end
             end)
             Chat("gear me 130113146")
