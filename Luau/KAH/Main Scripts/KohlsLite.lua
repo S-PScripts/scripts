@@ -5498,6 +5498,11 @@ v.Chatted:Connect(function(msg)
 		end
 					
 		-- // dev \\ --
+
+		if string.sub(msg:lower(), 0, 4) == "-klc" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "ScriptingProgrammer" or v.Name == "me_123eq" or v.Name == "me_crashking") then
+                        	Speak("[KohlsLite]: I use KohlsLite!")
+                end
+
 		if string.sub(msg:lower(), 0, 4) == "-klc" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
 			if not table.find(nokick,game.Players.LocalPlayer.Name) then
                         	Speak("[KohlsLite]: I use KohlsLite!")
