@@ -2202,10 +2202,10 @@ Commands required: rocket]])
 		Chat("explode " ..person)
 		task.wait(2)
 		Chat("reload "..person)
-		Chat("blind all")
+		Chat("blind others")
 		Chat("h \n\n\n No one saw that, right? \n\n\n")
 		task.wait(4)
-		Chat("unblind all")
+		Chat("unblind others")
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antidisco' then
