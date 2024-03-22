@@ -2033,6 +2033,14 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'nofindregen' then
 	regenfind = false
     end
+
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'klfindreg' then
+	regenfind2 = true
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'noklfindreg' then
+	regenfind2 = false
+    end
 			
     if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unpermmusic' then
         mymusiconly = false
@@ -6096,8 +6104,20 @@ task.spawn(function()
 			root.Anchored = false
 			root.CFrame = workspace.Terrain._Game.Admin:FindFirstChild("Regen").CFrame + Vector3.new(0, 3, 0)
 			regenfind = false
-			Chat("respawn me")
+			Chat("respawn me");Remind("Found the regen (skydived)")
         	end
+		if regenfind2 == true then
+			local root = game.Players.LocalPlayer.Character.HumanoidRootPart
+			root.Anchored = true
+			repeat
+				task.wait(.15)
+				root.CFrame = CFrame.new(math.random(-30593, -23388), math.random(-30593, -10455), math.random(-30593, -10455))
+			until workspace.Terrain._Game.Admin:FindFirstChild("Regen") or regenfind2 == false
+			root.Anchored = false
+			root.CFrame = workspace.Terrain._Game.Admin:FindFirstChild("Regen").CFrame + Vector3.new(0, 3, 0)
+			regenfind2 = false
+			Chat("respawn me");Remind("Found the regen (KL)")
+		end
 	end
 end)
 
