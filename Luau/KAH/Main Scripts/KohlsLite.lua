@@ -2891,7 +2891,7 @@ Commands required: rocket]])
     end
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'ufly' then
-	 GExecute("https://raw.githubusercontent.com/S-PScripts/techls-fork/main/KAH%20Fly.lua")
+	 GExecute("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/Other%20Scripts/Fly%20KAH.lua")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'isc' then
