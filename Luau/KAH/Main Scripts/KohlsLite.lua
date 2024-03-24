@@ -2181,6 +2181,16 @@ Commands required: rocket]])
 		Remind("You should be attached to the player!")
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'iceblock' then -- why
+		local theblock = string.sub(msg:lower(), #prefix + 10)
+		task.wait(0.25)
+  	        Chat("invisible "..theblock); task.wait()
+    		Chat("freeze "..theblock);task.wait()
+                Chat("size "..theblock.." 10");task.wait()
+                Chat("clone "..theblock);task.wait()
+                Chat("respawn "..theblock)
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'cube' then -- why
 		local imacube = string.sub(msg:lower(), #prefix + 6)
 		Chat("unpackage "..imacube)
@@ -2205,10 +2215,12 @@ Commands required: rocket]])
 		task.wait(4)
 		Chat("h \n\n\n Are we ready? Hopefully our volunteer is too! Here we go! \n\n\n")
 		Chat("time 0")
-		Chat("rocket/" ..person)
+		Chat("rocket/" ..person) -- if they jump then i don't care ngl
+		Chat("jail "..person) -- ok maybe i do care
 		Chat("spin " ..person)
 		task.wait(4)
 		Chat("h \n\n\n LIFT OFF! \n\n\n")
+		Chat("unjail "..person)
 		Chat("jump " ..person)
 		task.wait(2)
 		Chat("explode " ..person)
