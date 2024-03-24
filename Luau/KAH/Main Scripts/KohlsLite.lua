@@ -5448,7 +5448,6 @@ v.Chatted:Connect(function(msg)
                    if antiattach then
                      Chat("reload "..v.Name)
                      print(v.Name..' tried to sit.')
-                     Chat("h \n\n\n [KohlsLite]: "..v.Name..", You cannot sit due to anti-attach \n\n\n")
                    end
                 end
 
@@ -5456,7 +5455,6 @@ v.Chatted:Connect(function(msg)
                    if antiattach then
                      Chat("reload "..v.Name)
                      print(v.Name..' tried to unpunish.')
-                     Chat("h \n\n\n [KohlsLite]: "..v.Name..", You cannot sit due to anti-attach \n\n\n")
                    end
                 end
 						
@@ -5464,7 +5462,6 @@ v.Chatted:Connect(function(msg)
                    if antiattach then
                      Chat("reload "..v.Name)
                      print(v.Name..' tried to stun.')
-                     Chat("h \n\n\n [KohlsLite]: "..v.Name..", you cannot stun due to anti-attach \n\n\n")
                    end
                 end
 
