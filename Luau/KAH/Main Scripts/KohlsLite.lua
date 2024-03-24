@@ -1501,13 +1501,13 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
             local target = args[2]
             local gearName = table.concat(args, " ", 3)
 	    local keyword = game:GetService("HttpService"):UrlEncode(gearName)
-            local gearIndex = 0
             local GearsJSON = game:HttpGet("https://catalog.roblox.com/v1/search/items?category=All&includeNotForSale=true&keyword="..keyword.."&limit=120")
             local GearsDecoded = game:GetService("HttpService"):JSONDecode(GearsJSON)
             if GearsDecoded and GearsDecoded.data then
                 for _,v in pairs(GearsDecoded.data) do
+		    print(v.id)
                     local Asset
-                    local AssetOk, E = pcall(function() Asset = MarketplaceService:GetProductInfo(v.id) end)
+                    local AssetOk, E = pcall(function() Asset = game:GetService("MarketplaceService"):GetProductInfo(v.id) end)
                     if AssetOk then
                         if Asset.AssetTypeId == Enum.AssetType.Gear.Value then
                             Chat("gear " .. target .. " " .. v.id)
