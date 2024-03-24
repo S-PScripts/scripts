@@ -6668,7 +6668,7 @@ function Laser()
             kahcon = workspace.ChildAdded:Connect(function(Child)
                 if Child.Name == "Effect" then
                     task.spawn(function()
-                        repeat task.spawn() 
+                        repeat task.wait() 
                             firetouchinterest(Child, laman.Character.HumanoidRootPart, 0)
                             firetouchinterest(Child, laman.Character.HumanoidRootPart, 1)
                         until Child.Parent ~= workspace or goodbye or not kahcon
