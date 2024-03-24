@@ -32,10 +32,10 @@ local KAHAdmin = KAHGameFolder:FindFirstChild("Admin")
 local KAHInstances = KAHGameFolder:FindFirstChild("Folder")
 local RunService = game:GetService('RunService')
 
-local vismode = 0
-local visradius = 20
-local visamt = 20
-local visorbiter = LocalPlayer.Character.HumanoidRootPart.CFrame
+vismode = 0
+visradius = 20
+visamt = 20
+visorbiter = LocalPlayer.Character.HumanoidRootPart.CFrame
 viscolor = 50
 viscolor2 = 100
 viscolor3 = 150
@@ -91,11 +91,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                 conn:Disconnect()
                 conn2:Disconnect()
 		Remind("Closed!")
-      	   end
-		
-    	   if string.sub(msg:lower(), 1, #vprefix + 6) == vprefix.."visrad" then
-           	visradius = tonumber(string.sub(msg:lower(), #vprefix + 8))
-		Remind("Radius changed")
       	   end
 
     	   if string.sub(msg:lower(), 1, #vprefix + 7) == vprefix.."vismode" then
