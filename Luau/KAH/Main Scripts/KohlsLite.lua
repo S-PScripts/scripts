@@ -1544,8 +1544,12 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         local args = string.split(msg, " ")
         local target = args[2]
         local specialid = args[3]
+	local charpos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
         local circus = game.Players:GetUserIdFromNameAsync(specialid)
-        Chat("char " .. target .. " " .. circus)
+        Chat("char " .. target .. " " .. circus);task.wait(0.5)
+	if target == "me" then
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = charpos
+	end
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antiabuse' then
@@ -5444,6 +5448,14 @@ v.Chatted:Connect(function(msg)
                    if antiattach then
                      Chat("reload "..v.Name)
                      print(v.Name..' tried to sit.')
+                     Chat("h \n\n\n [KohlsLite]: "..v.Name..", You cannot sit due to anti-attach \n\n\n")
+                   end
+                end
+
+	        if (string.sub(msg:lower(), 0, 8) == "unpunish" or string.sub(msg:lower(), 0, 9) == ":unpunish") and v.Name ~= game.Players.LocalPlayer.Name then
+                   if antiattach then
+                     Chat("reload "..v.Name)
+                     print(v.Name..' tried to unpunish.')
                      Chat("h \n\n\n [KohlsLite]: "..v.Name..", You cannot sit due to anti-attach \n\n\n")
                    end
                 end
