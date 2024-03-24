@@ -1505,7 +1505,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
             local GearsDecoded = game:GetService("HttpService"):JSONDecode(GearsJSON)
             if GearsDecoded and GearsDecoded.data then
                 for _,v in pairs(GearsDecoded.data) do
-		    print(v.id)
+		--    print(v.id)
                     local Asset
                     local AssetOk, E = pcall(function() Asset = game:GetService("MarketplaceService"):GetProductInfo(v.id) end)
                     if AssetOk then
