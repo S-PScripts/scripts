@@ -2183,6 +2183,8 @@ Commands required: rocket]])
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'iceblock' then -- why
 		local theblock = string.sub(msg:lower(), #prefix + 10)
+		if theblock == "me" then
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame*CFrame.new(0,-40,0)
 		task.wait(0.25)
   	        Chat("invisible "..theblock); task.wait()
     		Chat("freeze "..theblock);task.wait()
