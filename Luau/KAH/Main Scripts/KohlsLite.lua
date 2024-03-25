@@ -2590,11 +2590,7 @@ Commands required: rocket]])
     end
 			
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'qattach' then
-	QAttach()
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'sattach' then
-	QAttach2()
+	Chat("unpunish me")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'biglogs' then
@@ -2942,7 +2938,7 @@ Commands required: rocket]])
 
      if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'cfixvelo' then
 		Remind("You need to be positioned by a wall!")
-		Chat(prefix.."qattach")   
+		Chat("unpunish me")  -- dionite found that you only need this, surprising it took so long
 		task.wait(2.2)
 		Chat("unskydive me")     
      end
@@ -4214,8 +4210,7 @@ print("biglogs - make the logs bigger!")
 print("chatz - chat a string of - causing the previous messages to vanish")
 
 print("---")
-print("qattach - quickly attach to something with sit")
-print("sattach - quickly attach to something with stun")
+print("qattach - quickly attach to something with unpunish")
 
 print("---")
 print("house - teleport to the house")
@@ -6576,24 +6571,6 @@ task.spawn(function()
            end
      end
 end)
-
--- QUICK ATTACH
-function QAttach()
-      Chat("sit me")
-      task.wait(1)
-      Chat("punish me")
-      task.wait(1)
-      Chat("unpunish me")
-end
-
--- QUICK ATTACH 2
-function QAttach2()
-      Chat("stun me")
-      task.wait(1)
-      Chat("punish me")
-      task.wait(1)
-      Chat("unpunish me")
-end
 
 -- FASTPADS
 function FastPads() -- if no touchinterest or idk
