@@ -146,7 +146,7 @@ while play_Again:
 
   letters(burg)
   numbers(burg)
-  mines()
+  # mines()
   letter1=(random.randint(1,10))
   number1=(random.randint(1,10))
   global mine1
@@ -208,9 +208,9 @@ while play_Again:
   global mine15
   mine15=(letter15,number15)
 
-  
+
   minesarray=  [mine1,mine2,mine3,mine4,mine5,mine6,mine7,mine8,mine9,mine10,mine11,mine12,mine13,mine14,mine15]
-  
+
   fun = ("Courier", 20)
   c=0
   z=15
@@ -318,49 +318,49 @@ while play_Again:
     if userchoice==("blank"):
       coordsx=int(input("What is the x coordinate of the blank space?"))
       coordsy=int(input("What is the y coordinate of the blank space?"))
-        if c==>0 and coordsx==letter1 and coordsy==number1:
+      if c>=0 and coordsx==letter1 and coordsy==number1:
           print("You stepped on a mine! You lose!")
           break
-        if c==>0 and coordsx==letter2 and coordsy==number2:
+      if c>=0 and coordsx==letter2 and coordsy==number2:
           print("You stepped on a mine! You lose!")
           break
-        if c==>0 and coordsx==letter3 and coordsy==number3:
+      if c>=0 and coordsx==letter3 and coordsy==number3:
           print("You stepped on a mine! You lose!")
           break
-        if c==>0 and coordsx==letter4 and coordsy==number4:
+      if c>=0 and coordsx==letter4 and coordsy==number4:
           print("You stepped on a mine! You lose!")
           break
-        if c==>0 and coordsx==letter5 and coordsy==number5:
+      if c>=0 and coordsx==letter5 and coordsy==number5:
           print("You stepped on a mine! You lose!")
           break
-        if c==>0 and coordsx==letter6 and coordsy==number6:
+      if c>=0 and coordsx==letter6 and coordsy==number6:
           print("You stepped on a mine! You lose!")
           break
-        if c==>0 and coordsx==letter7 and coordsy==number7:
+      if c>=0 and coordsx==letter7 and coordsy==number7:
           print("You stepped on a mine! You lose!")
           break
-        if c==>0 and coordsx==letter8 and coordsy==number8:
+      if c>=0 and coordsx==letter8 and coordsy==number8:
           print("You stepped on a mine! You lose!")
           break
-        if c==>0 and coordsx==letter9 and coordsy==number9:
+      if c>=0 and coordsx==letter9 and coordsy==number9:
           print("You stepped on a mine! You lose!")
           break
-      if c==>0 and coordsx==letter10 and coordsy==number10:
+      if c>=0 and coordsx==letter10 and coordsy==number10:
           print("You stepped on a mine! You lose!")
           break
-      if c==>0 and coordsx==letter11 and coordsy==number11:
+      if c>=0 and coordsx==letter11 and coordsy==number11:
           print("You stepped on a mine! You lose!")
           break
-      if c==>0 and coordsx==letter12 and coordsy==number12:
+      if c>=0 and coordsx==letter12 and coordsy==number12:
           print("You stepped on a mine! You lose!")
           break
-      if c==>0 and coordsx==letter13 and coordsy==number13:
+      if c>=0 and coordsx==letter13 and coordsy==number13:
           print("You stepped on a mine! You lose!")
           break
-      if c==>0 and coordsx==letter14 and coordsy==number14:
+      if c>=0 and coordsx==letter14 and coordsy==number14:
           print("You stepped on a mine! You lose!")
           break
-      if c==>0 and coordsx==letter15 and coordsy==number15:
+      if c>=0 and coordsx==letter15 and coordsy==number15:
           print("You stepped on a mine! You lose!")
           break
       else:
