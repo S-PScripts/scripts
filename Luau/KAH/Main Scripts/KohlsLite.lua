@@ -711,11 +711,15 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		GExecute("https://raw.githubusercontent.com/quivings/KAH/main/CMD-Y%20(v1.56).lua")
 	end
 
-	if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'myvis' then -- PR Script ~ atprog
+	if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'myvis' then
 		Remind("WARNING: THIS SCRIPT IS A BIT BROKEN! Prefix is -")
 		GExecute("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/Main%20Scripts/MyVisualiser.lua")
 	end
-
+		
+	if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'draw' then
+		Speak("isn't it funny that kohlslite had a vis but not a draw? me too!")
+	end
+		
 	if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'tricky' then -- CREDITS TO TECH
 		Remind("This won't work if it's already been executed. Sorry!")
 		if haspersons == true then
