@@ -99,8 +99,7 @@ local Pads = Admin:WaitForChild("Pads"):GetChildren()
 
 local musicplay
 
--- Bad formatting because of github glitch ruining how the colour of the code looks :/
-
+-- Thanks to Dizzy for this idea of writing my musiclist
 -- Saved musics
 local musictable = {
     ["1"] = { id = "9048375035", name = "All dropping 8 beats" },
