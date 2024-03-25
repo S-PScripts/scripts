@@ -3,7 +3,7 @@
 -- CREATED BY SCRIPTINGPROGRAMMER/TS2021/S-PSCRIPTS
 -- A script for Kohls Admin House (KAH)
 -- Support this script today by donating robux to me (h)
--- Do not "skid" off this code by changing the name. Make your own script instead.
+-- Do not "skid" off this code by changing the name. Make your own script instead and take stuff from here if you need to.
 
 --[[
 _  _____  _   _ _     ____  _     ___ _____ _____ 
@@ -99,8 +99,8 @@ local Pads = Admin:WaitForChild("Pads"):GetChildren()
 
 local musicplay
 
--- Thanks to Dizzy for this idea of writing my musiclist
--- Saved musics
+-- Thanks to Dizzy for this idea of writing my musiclist (also I used ChatGPT to update it so cry!)
+-- All the music ids I've saved
 local musictable = {
     ["1"] = { id = "9048375035", name = "All dropping 8 beats" },
     ["2"] = { id = "6680495507", name = "Robbery" },
