@@ -1159,17 +1159,16 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
        		 musicplay = musicplay + 1
     	end
 			
-    	local musicplayAsString = tostring(musicplay)
-    	print(musicplayAsString)
+    	local mast = tostring(musicplay)
 
     	if musicsay == true then
-        	Chat("h \n\n\n [KohlsLite]: Playing music: " .. musictable[musicplayAsString].name .. ". \n\n\n")
+        	Chat("h \n\n\n [KohlsLite]: Playing music: " .. musictable[mast].name .. ". \n\n\n")
     	end
 
     	if antimlog then
-        	Chat("music 00000000000000000000000000" .. musictable[musicplayAsString].id)
+        	Chat("music 00000000000000000000000000" .. musictable[mast].id)
    	else
-        	Chat("music " .. musictable[musicplayAsString].id)
+        	Chat("music " .. musictable[mast].id)
    	end; ratelj = false
     end
 		
@@ -1183,22 +1182,21 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     	end
 
    	if musicplay == nil or musicplay == 1 then
-       		 musicplay = 1
+       		 musicplay = length
     	else
        		 musicplay = musicplay - 1
     	end
 			
-    	local musicplayAsString = tostring(musicplay)
-    	print(musicplayAsString)
+    	local mast = tostring(musicplay)
 
     	if musicsay == true then
-        	Chat("h \n\n\n [KohlsLite]: Playing music: " .. musictable[musicplayAsString].name .. ". \n\n\n")
+        	Chat("h \n\n\n [KohlsLite]: Playing music: " .. musictable[mast].name .. ". \n\n\n")
     	end
 
     	if antimlog then
-        	Chat("music 00000000000000000000000000" .. musictable[musicplayAsString].id)
+        	Chat("music 00000000000000000000000000" .. musictable[mast].id)
    	else
-        	Chat("music " .. musictable[musicplayAsString].id)
+        	Chat("music " .. musictable[mast].id)
    	end; ratelj = false
     end
 
