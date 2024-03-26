@@ -67,35 +67,37 @@ local GWhitelisted = {"me_123eq","me_crashking","ScriptingProgrammer","t_echr","
 -- Serverlock
 local slockenabled = false
 
--- Loopkilling
+-- Other stuff
 local loopkill = {}
+local byecam = {}
+local carcar = {}
 
 -- Gamepass saving
-local permusers = {} -- users that use perm will be placed here
-local personsusers = {} -- users that use persons will be placed here
+permusers = {} -- users that use perm will be placed here
+personsusers = {} -- users that use persons will be placed here
 
 -- Auto stuff relating to users
-local rkick_on_sight = {} -- rocket kick player when they join ONLY WORKS WITH ONE PLAYER
-local crash_on_sight = {} -- crash server when player joins
-local mkick_on_sight = {} -- kick player with pm spam when they join ONLY WORKS WITH ONE PLAYER
-local suser_on_sight = {} -- slow a user when they join with car gear ONLY WORKS WITH ONE PLAYER
+rkick_on_sight = {} -- rocket kick player when they join ONLY WORKS WITH ONE PLAYER
+crash_on_sight = {} -- crash server when player joins
+mkick_on_sight = {} -- kick player with pm spam when they join ONLY WORKS WITH ONE PLAYER
+suser_on_sight = {} -- slow a user when they join with car gear ONLY WORKS WITH ONE PLAYER
 
 -- Gear packs
-local periastronlist = {"108158379", "80661504", "233520257", "73829193", "69499437", "139577901", "2544549379", "120307951", "99119240", "93136802", "80597060", "159229806", "77443461"}
-local meleecodes = {"121946387", "12187348", "170897263", "427947884", "306971294", "306971294", "11999235", "28275809", "10758456", "243790334", "14719505", "13207169", "11956382", "10469910", "124472052", "20721924"}
-local guncodes = {"243007180", "116693764", "212296936", "168143042", "467138029", "42845609", "130113146", "26017478", "26014536", "9360722592", "18268645"}
-local fungears = {"111876831", "90718686", "283755431", "139578061", "90718686", "212641536", "392057539", "323477973", "78730532", "47597835", "212641536", "88143093", "73265108", "115377964", "98411393"}
-local explosivecodes = {"88885539", "88885524", "73888479", "110337853", "101110605", "29957963", "503955938", "243788010", "88146497"}
-local destructivecodes = {"125013830", "225921650", "60357972", "108158379"}
-local swordcodes = {"25740034", "638089422", "170903610", "319655422", "125013769", "108158379", "2470750640", "2041982658", "361950297", "2103274863", "181356054", "163491866", "108158439"}
-local rideablecodes = {"304719869", "2568114215", "158069143", "185422295", "346687565", "553939167", "820013867", "387285940", "163348575", "206799274", "928805891", "124127383", "125013849", "2445089071", "253519495"}
+periastronlist = {"108158379", "80661504", "233520257", "73829193", "69499437", "139577901", "2544549379", "120307951", "99119240", "93136802", "80597060", "159229806", "77443461"}
+meleecodes = {"121946387", "12187348", "170897263", "427947884", "306971294", "306971294", "11999235", "28275809", "10758456", "243790334", "14719505", "13207169", "11956382", "10469910", "124472052", "20721924"}
+guncodes = {"243007180", "116693764", "212296936", "168143042", "467138029", "42845609", "130113146", "26017478", "26014536", "9360722592", "18268645"}
+fungears = {"111876831", "90718686", "283755431", "139578061", "90718686", "212641536", "392057539", "323477973", "78730532", "47597835", "212641536", "88143093", "73265108", "115377964", "98411393"}
+explosivecodes = {"88885539", "88885524", "73888479", "110337853", "101110605", "29957963", "503955938", "243788010", "88146497"}
+destructivecodes = {"125013830", "225921650", "60357972", "108158379"}
+swordcodes = {"25740034", "638089422", "170903610", "319655422", "125013769", "108158379", "2470750640", "2041982658", "361950297", "2103274863", "181356054", "163491866", "108158439"}
+rideablecodes = {"304719869", "2568114215", "158069143", "185422295", "346687565", "553939167", "820013867", "387285940", "163348575", "206799274", "928805891", "124127383", "125013849", "2445089071", "253519495"}
 
 -- Variables for moving
 local movestatus = false
-local Kohls = workspace.Terrain:WaitForChild("_Game")
-local Map = Kohls:WaitForChild("Workspace")
-local Admin = Kohls:WaitForChild("Admin")
-local Pads = Admin:WaitForChild("Pads"):GetChildren()
+Kohls = workspace.Terrain:WaitForChild("_Game")
+Map = Kohls:WaitForChild("Workspace")
+Admin = Kohls:WaitForChild("Admin")
+Pads = Admin:WaitForChild("Pads"):GetChildren()
 
 local musicplay
 
@@ -909,6 +911,70 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          end
        end
 
+   if string.sub(msg, 1, #prefix + 5) == prefix..'names' then
+         local dasplayer = string.sub(msg:lower(), #prefix + 7)
+         PLAYERCHECK(dasplayer)
+         if player ~= nil then
+		if not table.find(byecam, player) then
+                	Chat("h \n\n\n [KohlsLite]: "..player.."'s camera is being glitched! Boo! \n\n\n")
+			Remind("Spam naming "..player)
+                	table.insert(byecam, player)
+		else
+			Remind(player.." is already being spam named!")
+		end
+         else
+                Remind('Cannot find player with the name: '..dasplayer)
+         end
+       end
+
+       if string.sub(msg, 1, #prefix + 7) == prefix..'unnames' then
+         local dasplayer = string.sub(msg:lower(), #prefix + 9)
+         PLAYERCHECK(dasplayer)
+         if player ~= nil then
+		if table.find(byecam, player) then
+               		Chat("h \n\n\n [KohlsLite]: "..player.."'s camera is no longer being glitched! Yipee! \n\n\n")
+			Remind("Unspam naming "..player)
+                	table.remove(byecam, table.find(byecam, player))
+		else
+			Remind(player.." was never spam named!")
+		end
+         else
+                Remind('Cannot find player with the name: '..dasplayer)
+         end
+       end
+
+   if string.sub(msg, 1, #prefix + 6) == prefix..'lagged' then
+         local dasplayer = string.sub(msg:lower(), #prefix + 8)
+         PLAYERCHECK(dasplayer)
+         if player ~= nil then
+		if not table.find(carcar, player) then
+                	Chat("h \n\n\n [KohlsLite]: "..player.." loves cars! Yummy! \n\n\n")
+			Remind("Spam car-ing "..player)
+                	table.insert(carcar, player)
+		else
+			Remind(player.." is already being spam carred!")
+		end
+         else
+                Remind('Cannot find player with the name: '..dasplayer)
+         end
+       end
+
+       if string.sub(msg, 1, #prefix + 8) == prefix..'unlagged' then
+         local dasplayer = string.sub(msg:lower(), #prefix + 10)
+         PLAYERCHECK(dasplayer)
+         if player ~= nil then
+		if table.find(carcar, player) then
+               		Chat("h \n\n\n [KohlsLite]: "..player.."'s hates cars! Noooooo \n\n\n")
+			Remind("Unspam car-ing "..player)
+                	table.remove(carcar, table.find(carcar, player))
+		else
+			Remind(player.." was never spam carred!")
+		end
+         else
+                Remind('Cannot find player with the name: '..dasplayer)
+         end
+       end
+		
        if string.sub(msg, 1, #prefix + 6) == prefix..'report' then
          local dasplayer = string.sub(msg:lower(), #prefix + 8)
          PLAYERCHECK(dasplayer)
@@ -2481,15 +2547,6 @@ Commands required: rocket]])
 	    DCrash()	
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'slowplayer' then
-	caruser = string.sub(msg:lower(), #prefix + 12)
-	SlowP = true
-    end
-		
-    if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'unslowplayer' then
-	SlowP = false
-    end
-
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'rockmap' then
 	StoneMap()
     end
@@ -2530,15 +2587,6 @@ Commands required: rocket]])
     		local e = string.rep("  ", 2 * (b - 1))
     		Chat("h KohlsLite ez \n\n\n\n\n\n\n\n\n\n\n\n" .. e .. _G["variable_" .. tostring(b)])
 	end
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'snplayer' then
-	nameuser = string.sub(msg:lower(), #prefix + 10)
-	SName = true
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unsnplayer' then
-	SName = false
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'sregen' then
@@ -4261,10 +4309,10 @@ print("rejoin - rejoin the server you're in")
 print("shop - switch to a different server")
 
 print("---")
-print("slowplayer - slow a player down with the car gear")
-print("unslowplayer - stop slowing a player down with the car gear")
-print("snplayer - spam name a player, naming currently breaks your cam")
-print("unsnplayer - stop spam naming a player, naming currently breaks your cam")
+print("lagged - slow a player down with the car gear")
+print("unlagged - stop slowing a player down with the car gear")
+print("names - spam name a player, naming currently breaks your cam")
+print("unnames - stop spam naming a player, naming currently breaks your cam")
 
 print("---")
 print("announce - announce a message without your username in the h")
@@ -6059,24 +6107,19 @@ end
 
 -- NAME HECK
 task.spawn(function()
-      while true do
-      		task.wait(0)
-      		if SName == true then
-	         	Chat("name ".. nameuser .." [BROKE]")
-			task.wait(0)
+	while true do
+		task.wait()
+		for i, v in ipairs(game.Players:GetPlayers()) do
+			if table.find(byecam, v.Name) then
+				if v and v.Character:FindFirstChildOfClass("Model") then
+	         			Chat("name ".. v.Name .." [BROKE]")
+				end
+			end
+			if table.find(carcar, v.Name) then
+				Chat("gear ".. v.Name .." 253519495")
+        		end
       		end
       end
-end)
-
--- SLOW PLAYER
-task.spawn(function()
-	while true do
-		task.wait(0)
-		if SlowP == true then
-              		Chat("gear ".. caruser .." 253519495")
-              		task.wait(0)
-        	end
-	end
 end)
 
 -- FIND REGEN
@@ -6448,8 +6491,7 @@ function onPlayerAdded(player)
 
 	if table.find(suser_on_sight, player.Name) then
 		Chat("h \n\n\n [KohlsLite]: Auto slowing "..player.Name.." as they are blacklisted. \n\n\n")
-		caruser = player.Name
-		SlowP = true
+		table.insert(carcar, player.Name)
     end
 
     if table.find(mkick_on_sight, player.Name) then
