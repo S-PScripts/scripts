@@ -437,7 +437,6 @@ function draw()
         task.spawn(function()
             while drawState do
                 task.wait(.5)
-                print("Draw state is:", drawState)
                 if not paintBucket or (paintBucket.Parent ~= LocalPlayer.Character and paintBucket.Parent ~= LocalPlayer.Backpack) then
                     Chat('gear me 18474459')
                     paintBucket = LocalPlayer.Backpack:WaitForChild("PaintBucket")
