@@ -2249,26 +2249,20 @@ Commands required: rocket]])
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'space' then -- kohls true anti kill
 		local person = string.sub(msg:lower(), #prefix + 7)
-		Chat("h \n\n\n Guys, we've finally done it! \n\n\n")
-		task.wait(4)
-		Chat("h \n\n\n We're sending someone to space! \n\n\n")
-		task.wait(4)
+		Chat("h \n\n\n Guys, we've finally done it! \n\n\n");task.wait(4)
+		Chat("h \n\n\n We're sending someone to space! \n\n\n");task.wait(4)
 		Chat("h \n\n\n Are we ready? Hopefully our volunteer is too! Here we go! \n\n\n")
 		Chat("time 0")
 		Chat("rocket/" ..person) -- if they jump then i don't care ngl
 		Chat("jail "..person) -- ok maybe i do care
-		Chat("spin " ..person)
-		task.wait(4)
+		Chat("spin " ..person);task.wait(4)
 		Chat("h \n\n\n LIFT OFF! \n\n\n")
 		Chat("unjail "..person)
-		Chat("jump " ..person)
-		task.wait(2)
-		Chat("explode " ..person)
-		task.wait(2)
+		Chat("jump " ..person);task.wait(2)
+		Chat("explode " ..person);task.wait(2)
 		Chat("reload "..person)
 		Chat("blind others")
-		Chat("h \n\n\n No one saw that, right? \n\n\n")
-		task.wait(4)
+		Chat("h \n\n\n No one saw that, right? \n\n\n");task.wait(4)
 		Chat("unblind others")
     end
 
@@ -2280,6 +2274,19 @@ Commands required: rocket]])
 		Chat("trip "..person)
 		task.wait(0.4)
 		game.Players:Chat("trip "..person)
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'bed' then -- ns techno
+		local person = string.sub(msg:lower(), #prefix + 5)
+		Chat("size "..person.." nan");task.wait()
+		Chat("dog "..person.."");task.wait(.2)
+		Chat("size "..person.." 2.60");task.wait()
+		Chat("paint "..person.." white");task.wait()
+		Chat("removelimbs "..person)
+		Chat("name "..person.." bed");task.wait(.2)
+		Chat("speed "..person.." 24")
+		Chat("paint "..person.." white")
+		Remind("The player should nowzzzzzzzzz!")
     end
 
    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'smack' then -- pr
