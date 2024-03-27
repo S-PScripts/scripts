@@ -5411,8 +5411,11 @@ end
 
 -- AD
 function ADVERTISEMENT()
-	Speak("KohlsLite is a very 'cool' KAH Script. Get it today on git-hub: S-PScripts or my purple: ts2021")
+	Speak("KohlsLite is a very 'cool' KAH Script. Get it today on git-hub: S-PScripts")
+	task.wait(1)
 	Speak("You can also get it at script blox: search CMD LITE")
+	task.wait(1)
+	Speak("dsc gg kohlslite")
 end
 
 -- REJOIN
@@ -6014,6 +6017,7 @@ end
 
 -- FREEZE CRASH
 function FCrash()
+      Chat("h \n\n\n dsc gg kohlslite \n\n\n")
       for i = 1,100 do
           Chat("clone all all all				fuck")
           Chat("freeze all all all				fuck")
@@ -6022,6 +6026,7 @@ end
 
 -- DOG CRASH
 function DCrash()
+      Chat("h \n\n\n dsc gg kohlslite \n\n\n")
       for i = 1,100 do
           Chat("clone all all all				fuck")
           Chat("dog all all all					fuck")
@@ -6030,6 +6035,7 @@ end
 
 -- SHIELD CRASH
 function SCrash()
+      Chat("h \n\n\n dsc gg kohlslite \n\n\n")
       for i = 1,100 do
           Chat("shield/all/all/all")
 	  Chat("rocket/all/all/all")
@@ -6404,6 +6410,7 @@ end
 	
 -- VG CRASH
 function VGCrash()
+      Chat("h \n\n\n dsc gg kohlslite \n\n\n")
       Chat("gear me 00000000000000094794847")
       repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("VampireVanquisher")
       local vg = game.Players.LocalPlayer.Backpack:FindFirstChild("VampireVanquisher")
@@ -6417,6 +6424,7 @@ function VGCrash()
 end
 
 function EmCrash()
+      Chat("h \n\n\n dsc gg kohlslite \n\n\n")
       Chat("gear me 000000000000000178076749")
       repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("Emerald Knights of the Seventh Sanctum Sword and Shield")
       local green = game.Players.LocalPlayer.Backpack:FindFirstChild("Emerald Knights of the Seventh Sanctum Sword and Shield")
@@ -6431,6 +6439,7 @@ function EmCrash()
 end
 
 function PCrash() -- lorem ipsum
+      Chat("h \n\n\n dsc gg kohlslite \n\n\n")
       Chat("gear me 0000000092628079")
       repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("OrinthianSwordAndShield")
       local ort = game.Players.LocalPlayer.Backpack:FindFirstChild("OrinthianSwordAndShield")
