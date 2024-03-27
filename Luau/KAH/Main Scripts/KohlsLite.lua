@@ -6124,7 +6124,7 @@ task.spawn(function()
 		task.wait()
 		for i, v in ipairs(game.Players:GetPlayers()) do
 			if table.find(byecam, v.Name) then
-				if v and v.Character:FindFirstChildOfClass("Model") then
+				if v and not v.Character:FindFirstChildOfClass("Model") then
 	         			Chat("name ".. v.Name .." [BROKE]")
 				end
 			end
