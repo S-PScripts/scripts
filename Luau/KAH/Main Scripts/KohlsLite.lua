@@ -5415,7 +5415,9 @@ function ADVERTISEMENT()
 	task.wait(1)
 	Speak("You can also get it at script blox: search CMD LITE")
 	task.wait(1)
-	Speak("dsc gg kohlslite")
+	Speak("dsc gg kohlslite");Speak("h dsc gg kohlslite")
+	task.wait(1)
+	Speak("h 69AGVr8QtM")
 end
 
 -- REJOIN
