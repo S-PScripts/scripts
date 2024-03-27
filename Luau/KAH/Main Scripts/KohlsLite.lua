@@ -2539,14 +2539,14 @@ Commands required: rocket]])
 	    Chat("fix")
         Chat(prefix.."perm2")
 	    musicsay = false -- lemme know if you want this to be a full feature
+        task.wait(0.5)
 	    Chat("h \n\n\n IMAGINE GETTING CRASHED BY KOHLSLITE \n\n\n")
         Chat(prefix.."gmusic9")
         Speak("dsc gg kohls lite")
-	    task.wait(0.5)
             Chat("fogcolor 0 0 0")
 	    Chat("time 0")
             Chat("fogend 0")
-	    task.wait(0.5)
+	    task.wait(0.75)
 	    DCrash()	
     end
 
