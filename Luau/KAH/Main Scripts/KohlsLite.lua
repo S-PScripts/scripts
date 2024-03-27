@@ -718,8 +718,9 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		GExecute("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/Main%20Scripts/MyVisualiser.lua")
 	end
 		
-	if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'draw' then
-		Speak("isn't it funny that kohlslite had a vis but not a draw? me too!")
+	if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'mydraw' then
+		Remind("WARNING: THIS SCRIPT IS A BIT BROKEN! Prefix is -")
+		GExecute("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/Main%20Scripts/MyVisualiser.lua")
 	end
 		
 	if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'tricky' then -- CREDITS TO TECH
