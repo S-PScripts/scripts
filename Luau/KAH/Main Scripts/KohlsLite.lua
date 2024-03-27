@@ -2638,6 +2638,8 @@ Commands required: rocket]])
     end
 			
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'qattach' then
+	Chat("sit me down")
+	task.wait(2.2)
 	Chat("unpunish me")
     end
 
@@ -2986,7 +2988,9 @@ Commands required: rocket]])
 
      if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'cfixvelo' then
 		Remind("You need to be positioned by a wall!")
-		Chat("unpunish me")  -- dionite found that you only need this, surprising it took so long
+		Chat("sit me down")
+		task.wait(2.2)
+		Chat("unpunish me")  -- dionte found that you only need this, surprising it took so long
 		task.wait(2.2)
 		Chat("unskydive me")     
      end
