@@ -6220,10 +6220,23 @@ function NoCam()
 end
 
 function NoVelo()
-      Chat("gear me 287426148")
-      Chat("gear me 119917513")
-      Chat("gear me 74385399")
-      Remind("These gears will help break the velocity!")
+    Chat("gear me 111876831")
+    repeat wait() until game.Players.LocalPlayer.Backpack:FindFirstChild("April Showers")
+    local aps = game.Players.LocalPlayer.Backpack:FindFirstChild("April Showers")
+    aps.Parent = game.Players.LocalPlayer.Character
+    wait(0.2)
+    aps:Activate()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Players.LocalPlayer:GetMouse().Hit.p.X,game.Players.LocalPlayer:GetMouse().Hit.p.Y,game.Players.LocalPlayer:GetMouse().Hit.p.Z)
+    task.wait()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame*CFrame.new(0,0,3.6)
+    Remind("Please wait for 15 seconds...");task.wait(5);Remind("10 more seconds...");task.wait(5);Remind("5 more seconds...");task.wait(5)
+    Chat("gear me 110789105")
+    repeat wait() until game.Players.LocalPlayer.Backpack:FindFirstChild("RageTable")
+    local rage = game.Players.LocalPlayer.Backpack:FindFirstChild("RageTable")
+    rage.Parent = game.Players.LocalPlayer.Character
+    wait(0.2)
+    rage:Activate()
+    Remind("Velocity should be broken for the object you wanted it to do so!")
 end
 
 
