@@ -2585,10 +2585,14 @@ Commands required: rocket]])
     		local d = "variable_" .. tostring(b)
    		_G[d] = c
 	end
-			
+
 	for b, c in ipairs(a) do
     		local e = string.rep("  ", 2 * (b - 1))
-    		Chat("h KohlsLite ez \n\n\n\n\n\n\n\n\n\n\n\n" .. e .. _G["variable_" .. tostring(b)])
+		if haspersons == true then
+			Chat("h/KohlsLite ez\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" .. e .. _G["variable_" .. tostring(b)])
+		else
+    			Chat("h KohlsLite ez\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" .. e .. _G["variable_" .. tostring(b)])
+		end
 	end
     end
 
