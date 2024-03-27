@@ -2538,8 +2538,10 @@ Commands required: rocket]])
   if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'ecrash' then
 	    Chat("fix")
 	    Chat(prefix.."gmusic9")
+        Chat(prefix.."perm2")
 	    musicsay = false -- lemme know if you want this to be a full feature
-	    Chat("h \n\n\n IMAGINE GETTING CRASHED BY KOHLSLITE dsc.gg/kohlslite \n\n\n")
+	    Chat("h \n\n\n IMAGINE GETTING CRASHED BY KOHLSLITE \n\n\n")
+        Speak("dsc gg kohls lite")
 	    task.wait(0.5)
             Chat("fogcolor 0 0 0")
 	    Chat("time 0")
