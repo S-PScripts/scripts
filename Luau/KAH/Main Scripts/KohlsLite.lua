@@ -4535,11 +4535,13 @@ task.spawn(function()
             if v:IsA('Script') then
                   if antidisco == true then    
                           if v.Name == "Disco" then
+			      v:Destroy() -- :)
                               Chat("fix")
                           end
                   end
                   if antiflash == true then    
                           if v.Name == "Flash" then
+			      v:Destroy() -- :)
                               Chat("fix")
                           end
                   end
