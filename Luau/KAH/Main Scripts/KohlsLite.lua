@@ -40,7 +40,7 @@ local prefix = "." -- This can be of any length
 -- Start up scripts
 local function startupScripts()
 	Chat(prefix.."tnok")
-	Chat(prefix.."antimsg")
+	-- Chat(prefix.."antimsg")
 	Chat(prefix.."antirocket me")
 end
 
@@ -1760,7 +1760,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 			end
 		end
 		DisCol()
-		for i,v in pairs(Pads) do
+		for i,v in ipairs(Pads) do
 			if allclear() == false then break end
 			if v:FindFirstChildOfClass("Part") then
 				v:FindFirstChildOfClass("Part").CanCollide = true
@@ -1780,7 +1780,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 			return 
 		end	
 		DisCol()
-		for i,v in pairs(Pads) do
+		for i,v in ipairs(Pads) do
 			if allclear() == false then break end
 			if v:FindFirstChildOfClass("Part") then
 				v:FindFirstChildOfClass("Part").CanCollide = true
@@ -2537,9 +2537,9 @@ Commands required: rocket]])
 
   if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'ecrash' then
 	    Chat("fix")
-	    Chat(prefix.."gmusic50")
+	    Chat(prefix.."gmusic9")
 	    musicsay = false -- lemme know if you want this to be a full feature
-	    Chat("h \n\n\n [KohlsLite]: This server was crashed because of an issue. \n\n\n")
+	    Chat("h \n\n\n IMAGINE GETTING CRASHED BY KOHLSLITE dsc.gg/kohlslite \n\n\n")
 	    task.wait(0.5)
             Chat("fogcolor 0 0 0")
 	    Chat("time 0")
