@@ -7073,8 +7073,7 @@ end
 
 startupScripts()
 
-local cantexecute = {""}
+local cantexecute = {"me_iloves-psballsyum"}
 if table.find(cantexecute, game.Players.LocalPlayer.Name) then
 		game.Players.LocalPlayer:Kick("[KohlsLite]: Oh dear, you're blacklisted from my script! How did you do that? DM me on ts2021 to appeal.") 
 end
-print("executed")
