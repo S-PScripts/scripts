@@ -5160,12 +5160,12 @@ function warnGear(player, toolName)
         if isB == true then
        		Chat("ungear " .. spe)
        		Chat("punish " .. spe)
-       		Chat("h \n\n\n [KohlsLite]: Sorry, " .. player.Name .. ", you cannot use " .. toolName .. " because of anti gear. \n\n\n")
+       		Chat("h \n\n\n [KohlsLite]: Sorry, " .. player.Name .. ", you cannot use tools because of anti gear. \n\n\n")
       	        Chat("clr")
 	else
 		Chat("ungear " .. player.Name)
        		Chat("punish " .. player.Name)
-       		Chat("h \n\n\n [KohlsLite]: Sorry, " .. player.Name .. ", you cannot use " .. toolName .. " because of anti gear. \n\n\n")
+       		Chat("h \n\n\n [KohlsLite]: Sorry, " .. player.Name .. ", you cannot use tools because of anti gear. \n\n\n")
       		Chat("clr")
 	end
 end
