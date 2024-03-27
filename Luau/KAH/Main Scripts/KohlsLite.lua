@@ -2271,6 +2271,16 @@ Commands required: rocket]])
 		task.wait(4)
 		Chat("unblind others")
     end
+
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'heaven' then -- pr
+		local person = string.sub(msg:lower(), #prefix + 8)
+		Chat("h \n\n\n WOAH, LOOK OVER THERE! THAT GUY'S ASCENDING! \n\n\n")
+		Chat("music 9061674082")
+		Chat("setgrav "..person.." -256")
+		Chat("trip "..person)
+		task.wait(0.4)
+		game.Players:Chat("trip "..person)
+    end
 		
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antidisco' then
 	antidisco = true
