@@ -2281,6 +2281,20 @@ Commands required: rocket]])
 		task.wait(0.4)
 		game.Players:Chat("trip "..person)
     end
+
+   if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'smack' then -- pr
+		local person = string.sub(msg:lower(), #prefix + 7)
+		Chat("music 5886215922")
+    		Chat("speed "..person.." 0")
+    		Chat("tp "..person.." me")
+		task.wait(0.8)
+		Speak("SMACK!")
+    		Chat("/e point")
+    		Chat("fling "..person)
+		task.wait(1.45)
+		Chat("explode "..person)
+    		Chat("music nan")
+    end
 		
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antidisco' then
 	antidisco = true
