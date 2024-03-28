@@ -3032,6 +3032,7 @@ Commands required: rocket]])
 		Remind("You need to be positioned by a wall!")
 		Chat("sit me down");task.wait(1)
 		Chat("punish me");task.wait(1)
+		Chat("unpunish me");task.wait(1)
 		Chat("unskydive me")     
      end
 
