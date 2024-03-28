@@ -5457,13 +5457,13 @@ function ADVERTISEMENT()
 	task.wait(1)
 	Speak("You can also get it at script blox: search CMD LITE")
 	task.wait(1)
-	Speak("dsc gg kohlslite");game.Players:Chat("h \n\n\n dsc gg kohlslite \n\n\n")
+	Speak("dsc gg kohls lite");game.Players:Chat("h \n\n\n dsc gg kohls lite \n\n\n")
 end
 
 function CADVERTISEMENT()
 	Speak("Join the KAH Community server today!")
 	task.wait(1)
-	Speak("dsc gg kohlslite");game.Players:Chat("h \n\n\n dsc gg kohlslite \n\n\n")
+	Speak("dsc gg kohls lite");game.Players:Chat("h \n\n\n dsc gg kohls lite \n\n\n")
 end
 
 -- REJOIN
