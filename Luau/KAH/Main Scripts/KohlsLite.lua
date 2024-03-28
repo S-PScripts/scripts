@@ -2394,7 +2394,11 @@ Commands required: rocket]])
     if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'adv' then
        ADVERTISEMENT()
     end
-
+			
+    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'cadv' then
+       CADVERTISEMENT()
+    end
+		
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'ipboom' then
        IPBOOM()
     end
@@ -5452,9 +5456,13 @@ function ADVERTISEMENT()
 	task.wait(1)
 	Speak("You can also get it at script blox: search CMD LITE")
 	task.wait(1)
-	Speak("dsc gg kohlslite");Speak("h dsc gg kohlslite")
+	Speak("dsc gg kohlslite");game.Players:Chat("h \n\n\n dsc gg kohlslite \n\n\n")
+end
+
+function CADVERTISEMENT()
+	Speak("Join the KAH Community server today!")
 	task.wait(1)
-	Speak("h 69AGVr8QtM")
+	Speak("dsc gg kohlslite");game.Players:Chat("h \n\n\n dsc gg kohlslite \n\n\n")
 end
 
 -- REJOIN
