@@ -37,11 +37,19 @@ end
 
 local prefix = "." -- This can be of any length
 
+local defaults = {".antirocket me", ".tnok", ".antimsg me"}
+
 -- Start up scripts
 local function startupScripts()
-	Chat(prefix.."tnok")
-	-- Chat(prefix.."antimsg")
-	Chat(prefix.."antirocket me")
+   	if not _G.autorunning then
+		for i = 1, #defaults do
+        		Chat(defaults[i]) 
+		end
+	else
+	    for i = 1, #_G.autorunning do
+	        	Chat(_G.autorunning[i]) 
+	    end
+	end
 end
 
 -- Serverlocked users
