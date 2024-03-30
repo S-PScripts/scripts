@@ -2585,7 +2585,7 @@ Commands required: rocket]])
         task.wait(0.5)
 	    Chat("h \n\n\n IMAGINE GETTING CRASHED BY KOHLSLITE \n\n\n")
         Chat(prefix.."gmusic9")
-        Speak("dsc gg kohls lite")
+        Speak("dsc gg kohlslite")
             Chat("fogcolor 0 0 0")
 	    Chat("time 0")
             Chat("fogend 0")
@@ -5466,26 +5466,26 @@ function ADVERTISEMENT()
 	task.wait(1)
 	Speak("Get it at script blox: search CMD LITE")
 	task.wait(1)
-	Speak("dsc gg kohls lite")
+	Speak("dsc gg kohlslite")
 	if haspersons == true then
-		Chat("m/ \n\n\n dsc gg kohls lite \n\n\n")
-		Chat("h/ \n\n\n dsc gg kohls lite \n\n\n")
+		Chat("m/ \n\n\n dsc gg kohlslite \n\n\n")
+		Chat("h/ \n\n\n dsc gg kohlslite \n\n\n")
 	else
-		Chat("m \n\n\n dsc gg kohls lite \n\n\n")
-		Chat("h \n\n\n dsc gg kohls lite \n\n\n")
+		Chat("m \n\n\n dsc gg kohlslite \n\n\n")
+		Chat("h \n\n\n dsc gg kohlslite \n\n\n")
 	end
 end
 
 function CADVERTISEMENT()
 	Speak("Join the KAH Community server today!")
 	task.wait(1)
-	Speak("dsc gg kohls lite")
+	Speak("dsc gg kohlslite")
 	if haspersons == true then
-		Chat("m/ \n\n\n dsc gg kohls lite \n\n\n")
-		Chat("h/ \n\n\n dsc gg kohls lite \n\n\n")
+		Chat("m/ \n\n\n dsc gg kohlslite \n\n\n")
+		Chat("h/ \n\n\n dsc gg kohlslite \n\n\n")
 	else
-		Chat("m \n\n\n dsc gg kohls lite \n\n\n")
-		Chat("h \n\n\n dsc gg kohls lite \n\n\n")
+		Chat("m \n\n\n dsc gg kohlslite \n\n\n")
+		Chat("h \n\n\n dsc gg kohlslite \n\n\n")
 	end
 end
 
