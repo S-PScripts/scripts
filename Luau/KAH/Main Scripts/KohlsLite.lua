@@ -678,7 +678,7 @@ Remind("Thank you for using KohlsLite v1.12! This script was created by S_P.")
 print("Say .kcmds to list some of the commands. DM me at ts2021 for the source to find other commands.")
 Remind("Say .kcmds to list some of the commands. DM me at ts2021 for the source to find other commands.")
 
-Chat("h \n\n\n [KohlsLite]: Executed! v1.12 \n\n\n")
+Chat("h \n\n\n [KohlsLite]: Executed! v1.14 \n\n\n")
 
 if game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 66254) or game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 64354) then
         perm = false 
@@ -4283,6 +4283,7 @@ print("ping - say your ping")
 print("execute - execute a lua script from chat")
 print("iy - execute iy")
 print("adv - advertise this script (pls do this you are nice if you do this :D)")
+print("cadv - advertise the kah community server (pls do this you are nice if you do this :D)")
 print("frespawn - force respawn if punished")
 
 print("---")
@@ -5461,17 +5462,31 @@ end
 
 -- AD
 function ADVERTISEMENT()
-	Speak("KohlsLite is a very 'cool' KAH Script. Get it today on git-hub: S-PScripts")
+	Speak("KohlsLite is a very 'cool' KAH Script.")
 	task.wait(1)
-	Speak("You can also get it at script blox: search CMD LITE")
+	Speak("Get it at script blox: search CMD LITE")
 	task.wait(1)
-	Speak("dsc gg kohls lite");game.Players:Chat("h \n\n\n dsc gg kohls lite \n\n\n")
+	Speak("dsc gg kohls lite")
+	if haspersons == true then
+		Chat("m/ \n\n\n dsc gg kohls lite \n\n\n")
+		Chat("h/ \n\n\n dsc gg kohls lite \n\n\n")
+	else
+		Chat("m \n\n\n dsc gg kohls lite \n\n\n")
+		Chat("h \n\n\n dsc gg kohls lite \n\n\n")
+	end
 end
 
 function CADVERTISEMENT()
 	Speak("Join the KAH Community server today!")
 	task.wait(1)
-	Speak("dsc gg kohls lite");game.Players:Chat("h \n\n\n dsc gg kohls lite \n\n\n")
+	Speak("dsc gg kohls lite")
+	if haspersons == true then
+		Chat("m/ \n\n\n dsc gg kohls lite \n\n\n")
+		Chat("h/ \n\n\n dsc gg kohls lite \n\n\n")
+	else
+		Chat("m \n\n\n dsc gg kohls lite \n\n\n")
+		Chat("h \n\n\n dsc gg kohls lite \n\n\n")
+	end
 end
 
 -- REJOIN
