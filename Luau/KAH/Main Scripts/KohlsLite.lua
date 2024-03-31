@@ -1640,7 +1640,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 			YOUantikill, ALLantikill = true, true
 			YOUantimsg = true
 			YOUantiname, ALLantiname = true, true
-			YOUantiexplode, ALLantiexplode = true, true
 			YOUantichar, ALLantichar = true, true
 			YOUantiparticles, ALLantiparticles = true, true
 			YOUantipunish, ALLantipunish = true, true
@@ -1683,7 +1682,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 			YOUantikill, ALLantikill = false, false
 			YOUantimsg = false
 			YOUantiname, ALLantiname = false, false
-			YOUantiexplode, ALLantiexplode = false, false
 			YOUantichar, ALLantichar = false, false
 			YOUantiparticles, ALLantiparticles = false, false
 			YOUantipunish, ALLantipunish = false, false
@@ -3647,40 +3645,6 @@ Commands required: rocket]])
 		Remind("Invalid argument: Must be me, others, or all")
 	end
     end
-
-    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'antiex' then
-	local args = string.split(msg, " ")
-	if args[2] == "me" then
-		YOUantiexplode = true
-		Remind("Turned this anti on for you!")
-	elseif args[2] == "others" then
-		ALLantiexplode = true
-		Remind("Turned this anti on for others!")
-	elseif args[2] == "all" then
-		YOUantiexplode = true
-		ALLantiexplode = true
-		Remind("Turned this anti on for everyone!")
-	else
-		Remind("Invalid argument: Must be me, others, or all")
-	end
-    end
-		
-    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'unantiex' then
-	local args = string.split(msg, " ")
-	if args[2] == "me" then
-		YOUantiexplode = false
-		Remind("Turned this anti off for you!")
-	elseif args[2] == "others" then
-		ALLantiexplode = false
-		Remind("Turned this anti off for others!")
-	elseif args[2] == "all" then
-		YOUantiexplode = false
-		ALLantiexplode = false
-		Remind("Turned this anti off for everyone!")
-	else
-		Remind("Invalid argument: Must be me, others, or all")
-	end
-    end
 		
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antichar' then
 	local args = string.split(msg, " ")
@@ -4196,19 +4160,24 @@ Commands required: rocket]])
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'autoff' then
 	autoff = true
+	Remind("Auto ff is on!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'unautoff' then
 	autoff = false
+	Remind("Auto ff is off!")
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'autogod' then
 	autogod = true
+	Remind("Auto god is on!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'unautogod' then
 	autogod = false
+	Remind("Auto god is off!")
     end	
+
 end)
 
 function CMDPrint()
@@ -4819,12 +4788,6 @@ task.spawn(function()
 	     end
 	end
 
-	if YOUantiexplode == true then
-	     if game.Players.LocalPlayer.Character:FindFirstChild("Explosion") then
-		Chat("reset me")
-	     end
-	end
-
 	if YOUantichar == true then
 	   if game.Players.LocalPlayer.UserId ~= game.Players.LocalPlayer.CharacterAppearanceId then
 	      Chat("unchar me")
@@ -5008,12 +4971,6 @@ task.spawn(function()
 	  				  if not v.Character.Humanoid.JumpPower == 50 then
 						Chat("normaljump "..v.Name)
 					  else end
-				end
-
-				if ALLantiexplode == true then
-	     				if v.Character:FindFirstChild("Explosion") then
-						Chat("reset "..v.Name)
-					else end
 				end
 						
 				if ALLantikill == true then
