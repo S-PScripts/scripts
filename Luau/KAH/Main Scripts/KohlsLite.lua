@@ -2431,8 +2431,8 @@ Commands required: rocket]])
 	SuperCMD(supermessage)
     end
 
-   if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'supert' then
-	amon = tonumber(string.sub(msg:lower(), #prefix + 10))
+   if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'supert' then
+	amon = tonumber(string.sub(msg:lower(), #prefix + 8))
     end
 		
    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'spamt' then
