@@ -2148,8 +2148,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'pcrash' then
-	PCrash()
-	task.wait(1)
 	PCrash()	
     end
 		
@@ -6507,18 +6505,17 @@ end
 
 function PCrash() -- lorem ipsum
       Chat("h \n\n\n dsc gg kohlslite \n\n\n")
-      Chat("gear me 0000000092628079")
-      repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("OrinthianSwordAndShield")
-      local ort = game.Players.LocalPlayer.Backpack:FindFirstChild("OrinthianSwordAndShield")
-      ort.Parent = game.Players.LocalPlayer.Character
-      task.wait(0.2)
-      ort:Activate()
-      task.wait(.15)
-      for i = 1,100 do
-          Chat("unsize me me me")
-      end
-      for i = 1,100 do
-          Chat("unsize me me me")
+      for i = 1, 2 do
+      	Chat("gear me 0000000092628079")
+      	repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("OrinthianSwordAndShield")
+      	local ort = game.Players.LocalPlayer.Backpack:FindFirstChild("OrinthianSwordAndShield")
+      	ort.Parent = game.Players.LocalPlayer.Character
+      	task.wait(0.2)
+      	ort:Activate()
+      	task.wait(.15)
+      	for i = 1,100 do
+          	Chat("unsize me me me")
+      	end
       end
 end
 
