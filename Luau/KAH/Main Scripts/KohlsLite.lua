@@ -2124,6 +2124,14 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
             		 v:Activate()
         	end
     end
+
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'dropall' then
+		local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
+        	for _, v in ipairs(Backpack:GetChildren()) do
+           		 v.Parent = workspace
+            		 v:Activate()
+        	end
+    end
 		
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'vgcrash' then
 	VGCrash()
