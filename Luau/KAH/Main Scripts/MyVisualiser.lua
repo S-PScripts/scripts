@@ -121,18 +121,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		Remind("Mode changed")
       	   end
 
-    	   if string.sub(msg:lower(), 1, #vprefix + 9) == vprefix.."viscolors" then
-		local args = string.split(msg, " ")
-	        viscolor = args[2]
-		viscolor2 = args[3]
-		viscolor3 = args[4]
-		Remind("Colours changed")
-      	   end
 end)
 
 -- COMMAND LIST ---
 function CMDPrint()
-	print("cmds visual unvis vismode [args1] viscolors [arg1] [args2] [args3]")
+	print("cmds visual unvis vismode [args1]")
 	print("draw undraw")
 	print("prefix is a dash")
 end
