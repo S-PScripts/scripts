@@ -1437,7 +1437,9 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'cmusicid' then
 	      if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
-			      setclipboard(game:GetService("Workspace").Terrain["_Game"].Folder.Sound.SoundId)
+				local url = game:GetService("Workspace").Terrain["_Game"].Folder.Sound.SoundId
+				local number = url:match("id=(%d+)")
+				setclipboard(number)
 	      end
     end
 		
