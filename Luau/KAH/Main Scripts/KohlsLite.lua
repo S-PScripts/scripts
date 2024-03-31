@@ -5042,7 +5042,7 @@ task.spawn(function()
 				
 				if ALLantismoke == true then
 	   				  if v.Character:FindFirstChild("Torso") then
-              					  if v.Name.Character.Torso:FindFirstChild("Smoke") then
+              					  if v.Character.Torso:FindFirstChild("Smoke") then
                 					    Chat("unsmoke "..v.Name)
 						  else end
 					  else end
