@@ -1,5 +1,5 @@
 -- My Visualiser.lua --
--- shitty i know --
+-- yes this is quiving's will be changed at some point yk h --
 
 -- FUNCTION SET UP --
 local function Remind(msg)
