@@ -1146,6 +1146,20 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         	newlen = tonumber(string.sub(msg:lower(), #prefix + 11))
 		Remind("Set age restrictions to "..newlen.." days!")
       end
+
+     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'pboombox' then
+	    Chat("ungear me")
+	    task.wait(0.5)
+	    Chat("gear me 212641536")
+	    task.wait(0.5)
+	    local myplay = string.sub(msg:lower(), 10 + #prefix)
+            local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
+            for i, v in ipairs(Backpack:GetChildren()) do
+                       	        v.Parent = game.Players.LocalPlayer.Character
+                        	task.wait(0.25)
+                        	v.Remote:FireServer("PlaySong", tonumber(myplay))
+            end
+    end
 		
       if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'mboombox' then
 	    Chat("ungear me")
