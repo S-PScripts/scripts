@@ -173,7 +173,8 @@ local musictable = {
     ["59"] = { id = "6805032026", name = "KILL BILL (Fast)" },
     ["60"] = { id = "1837853076", name = "SEE YOU IN HELL!" },
     ["61"] = { id = "5410085763", name = "TOKYO MACHINE - PLAY!"},
-    ["62"] = { id = "7014573768", name = "pew sfx" }
+    ["62"] = { id = "7014573768", name = "pew sfx"},
+    ["63"] = { id = "1838635121", name = "Sad End"}
 }
 
 -- Saved gears
