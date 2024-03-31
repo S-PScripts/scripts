@@ -53,7 +53,7 @@ local function startupScripts()
 end
 
 -- Serverlocked users
-local blacklist = {"SlenderMan990921","e5usp","Asphetto","91txt","LeanConsumer69","Fixydrqma","Robloxian577226532","jjthejoker7","cihanahmet1670","Fu14r","bbgurrrrl"}
+local blacklist = {"SlenderMan990921","e5usp","Asphetto","91txt","LeanConsumer69","Fixydrqma","Robloxian577226532","jjthejoker7","cihanahmet1670","Fu14r","bbgurrrrl","He4rt_4"}
 
 -- Users not affected by serverlock
 local whitelist = {"me_123eq","me_crashking","ScriptingProgrammer","t_echr","BANNter_Original","witnessfox22","IceStuds","atprog","dawninja21","Dawninja21alt","Di33le2","darkmadeboy","Dekryptionite","3cxos","hudhejeir","BIGpe7niss7","clydekash","t_echl","Ih0temyIife","D_ionte","SZCVAK"}
@@ -87,7 +87,7 @@ personsusers = {} -- users that use persons will be placed here
 -- Auto stuff relating to users
 rkick_on_sight = {} -- rocket kick player when they join ONLY WORKS WITH ONE PLAYER
 crash_on_sight = {} -- crash server when player joins
-mkick_on_sight = {} -- kick player with pm spam when they join ONLY WORKS WITH ONE PLAYER
+mkick_on_sight = {"He4rt_4"} -- kick player with pm spam when they join ONLY WORKS WITH ONE PLAYER
 suser_on_sight = {} -- slow a user when they join with car gear ONLY WORKS WITH ONE PLAYER
 
 -- Gear packs
