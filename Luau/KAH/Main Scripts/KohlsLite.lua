@@ -1147,38 +1147,31 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		Remind("Set age restrictions to "..newlen.." days!")
       end
 
-     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'pboombox' then
-	    Chat("ungear me")
-	    task.wait(0.5)
+      if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'pboombox' then
 	    Chat("gear me 212641536")
 	    task.wait(0.5)
 	    local myplay = string.sub(msg:lower(), 10 + #prefix)
-            local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
-            for i, v in ipairs(Backpack:GetChildren()) do
-                       	        v.Parent = game.Players.LocalPlayer.Character
-                        	task.wait(0.25)
-                        	v.Remote:FireServer("PlaySong", tonumber(myplay))
-            end
-    end
+            repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("SuperFlyGoldBoombox")
+      	    local bom = game.Players.LocalPlayer.Backpack:FindFirstChild("SuperFlyGoldBoombox")
+            bom.Parent = game.Players.LocalPlayer.Character
+            task.wait(0.25)
+            bom.Remote:FireServer("PlaySong", tonumber(myplay))
+      end
 		
       if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'mboombox' then
-	    Chat("ungear me")
-	    task.wait(0.5)
 	    Chat("gear me 212641536")
 	    task.wait(0.5)
 	    local myplay = string.sub(msg:lower(), 10 + #prefix)
-            local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
-            for i, v in ipairs(Backpack:GetChildren()) do
-                        	function rng() 
-					return math.random(-128, 128)
-				end
-                        	v.GripPos = Vector3.new(rng(), 1, rng())
-				task.wait(0.25)
-                       	        v.Parent = game.Players.LocalPlayer.Character
-                        	wait(0.25)
-                        	v.Remote:FireServer("PlaySong", tonumber(myplay))
-            end
-    end
+            repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("SuperFlyGoldBoombox")
+      	    local bom = game.Players.LocalPlayer.Backpack:FindFirstChild("SuperFlyGoldBoombox")
+            bom.Parent = game.Players.LocalPlayer.Character                       	    
+            task.wait(0.25)
+            bom.Remote:FireServer("PlaySong", tonumber(myplay))
+		    function rng() 
+			return math.random(-128, 128)
+	    end
+            bom.GripPos = Vector3.new(rng(), 1, rng())
+      end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'lgmusic' then
         ieatkids = string.sub(msg, #prefix + 8)
