@@ -2121,6 +2121,13 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
         	for _, v in ipairs(Backpack:GetChildren()) do
            		 v.Parent = game.Players.LocalPlayer.Character
+        	end
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'actall' then
+		local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
+        	for _, v in ipairs(Backpack:GetChildren()) do
+           		 v.Parent = game.Players.LocalPlayer.Character
             		 v:Activate()
         	end
     end
@@ -2129,7 +2136,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
         	for _, v in ipairs(Backpack:GetChildren()) do
            		 v.Parent = workspace
-            		 v:Activate()
         	end
     end
 		
@@ -4701,6 +4707,7 @@ task.spawn(function()
 	if YOUantifire == true then
 	    if game.Players.LocalPlayer.Character:FindFirstChild("Torso") then
                 if game.Players.LocalPlayer.Character.Torso:FindFirstChild("Fire") then
+		    game.Players.LocalPlayer.Character.Torso:FindFirstChild("Fire"):Destroy()
                     Chat("unfire me")
                 end
             end
@@ -4721,6 +4728,7 @@ task.spawn(function()
 			
 	if YOUantiff == true then
 	 if game.Players.LocalPlayer.Character:FindFirstChild("ForceField") then
+		game.Players.LocalPlayer.Character:FindFirstChild("ForceField"):Destroy()
                 Chat("unff me")
             end
 	end
@@ -4742,6 +4750,7 @@ task.spawn(function()
 			
 	if YOUantiglow == true then
 	   if game.Players.LocalPlayer.Character:FindFirstChild("PointLight") then
+		  game.Players.LocalPlayer.Character:FindFirstChild("PointLight"):Destroy()
                   Chat("unglow me")
             end
 	end
@@ -4797,6 +4806,7 @@ task.spawn(function()
 			
 	if YOUantiparticles == true then
 	   if game.Players.LocalPlayer.Character:FindFirstChild("ParticleEmitter") then
+		  game.Players.LocalPlayer.Character:FindFirstChild("ParticleEmitter"):Destroy()
                   Chat("unparticle me")
             end
 	end
@@ -4827,7 +4837,7 @@ task.spawn(function()
 	end
 			
 	if YOUantiseizure == true then
-	        if game.Players.LocalPlayer.Character:FindFirstChild("Seizure") then
+	    if game.Players.LocalPlayer.Character:FindFirstChild("Seizure") then
                 Chat("unseizure me")
             end
 	end
@@ -4835,6 +4845,7 @@ task.spawn(function()
 	if YOUantismoke == true then
 	     if game.Players.LocalPlayer.Character:FindFirstChild("Torso") then
                 if game.Players.LocalPlayer.Character.Torso:FindFirstChild("Smoke") then
+		    game.Players.LocalPlayer.Character.Torso:FindFirstChild("Smoke"):Destroy()
                     Chat("unsmoke me")
                 end
             end
@@ -4843,6 +4854,7 @@ task.spawn(function()
 	if YOUantisparkles == true then
 	    if game.Players.LocalPlayer.Character:FindFirstChild("Torso") then
                 if game.Players.LocalPlayer.Character.Torso:FindFirstChild("Sparkles") then
+		    game.Players.LocalPlayer.Character.Torso:FindFirstChild("Sparkles"):Destroy()
                     Chat("unsparkles me")
                 end
             end
@@ -4857,6 +4869,7 @@ task.spawn(function()
 	if YOUantispin == true then
 		if game.Players.LocalPlayer.Character:FindFirstChild("Torso") then
                 	if game.Players.LocalPlayer.Character.Torso:FindFirstChild("SPINNER") then
+				game.Players.LocalPlayer.Character.Torso:FindFirstChild("SPINNER"):Destroy()
                     		Chat("unspin me")
                 	end
                 end
@@ -4884,6 +4897,7 @@ task.spawn(function()
 			
 	if YOUantiswag == true then
 		if game.Players.LocalPlayer.Character:FindFirstChild("EpicCape") then
+		        game.Players.LocalPlayer.Character:FindFirstChild("EpicCape"):Destroy()
                 	Chat("normal me")
 		end
 	end
