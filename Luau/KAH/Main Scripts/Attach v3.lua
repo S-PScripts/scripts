@@ -87,3 +87,6 @@ function moveObject(target,wawawaa)
 		
 	end
 end
+
+    moveObject(game:GetService("Workspace").Terrain["_Game"].Workspace.Obby.Jump9,CFrame.new(-41.0650024, 1.30000007, -28.601058959961, 0, 0, -1, 0, 1, 0, 1, 0, 0))
+
