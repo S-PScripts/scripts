@@ -2161,28 +2161,6 @@ Commands required: shield]])
 	end
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'nmkick' then
-   		local name = string.sub(msg:lower(), #prefix + 8)
-   		PLAYERCHECK(name)
-   		if player ~= nil and not table.find(nokick, player) then
-   			Chat("h \n\n\n KOHLSLITE AND PR SCRIPT ON TOP \n\n\n")
-   			Chat("freeze "..name)
-   			Chat("dog "..name)
-   			Chat("rainbowify "..name)
-   			Chat("name "..name.. " [KohlsLite]: \n Imagine Getting \n CRASHED!!!")
-   			Chat(".spamt pm " .. name .. " 😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀 😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀")
-  			Remind("[KohlsLite]: Type .unspamt to stop kicking! The slower the rainbow, the more laggy they're getting!")
-   		elseif table.find(nokick, player) then
-			Remind("Sorry, this player cannot be kicked!")
-		else
-   			Remind("Player doesn't exist!")
-  		end
-   end
-
-    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'unnmkick' then
-		Chat(".unspamt")
-    end
-
    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'rkick' then
 	if haspersons == false then
 Remind([[Sorry, you don't have Person's to perform this command!
@@ -4074,6 +4052,27 @@ Commands required: rocket]])
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'unmkick' then
 	antichatplr = false
 	Chat("reset "..acplr)
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'pkick' then
+   		local acplr = string.sub(msg:lower(), #prefix + 8)
+   		PLAYERCHECK(acplr)
+   		if player ~= nil and not table.find(nokick, player) then
+   			Chat("freeze "..acplr)
+   			Chat("dog "..acplr)
+   			Chat("rainbowify "..acplr)
+   			Chat("name "..acplr.. " [KohlsLite]: \n Imagine Getting \n CRASHED!!!")
+			antichatplr = true
+   		elseif table.find(nokick, player) then
+			Remind("Sorry, this player cannot be kicked!")
+		else
+   			Remind("Player doesn't exist!")
+  		end
+   end
+
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'unpkick' then
+		antichatplr = false
+		Chat("reset "..acplr)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'autoff' then
