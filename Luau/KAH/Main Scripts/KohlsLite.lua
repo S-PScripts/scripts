@@ -193,8 +193,17 @@ local gearlist = {
     ["timegears"] = { gearid = "77443461" },
     ["admslayer"] = { gearid = { "268586231", "1103011681"} },
     ["kp"] = { gearid = {"583030187, 68539623"} },
-    ["icebreaker"] = { gearid = {"87361662", "66896601"} }
+    ["icebreaker"] = { gearid = {"87361662", "66896601"} },
+    ["periastrons"] = { gearid = {"108158379", "80661504", "233520257", "73829193", "69499437", "139577901", "2544549379", "120307951", "99119240", "93136802", "80597060", "159229806", "77443461"} },
+    ["melees"] = { gearid = {"121946387", "12187348", "170897263", "427947884", "306971294", "306971294", "11999235", "28275809", "10758456", "243790334", "14719505", "13207169", "11956382", "10469910", "124472052", "20721924"} },
+    ["guns"] = { gearid = {"243007180", "116693764", "212296936", "168143042", "467138029", "42845609", "130113146", "26017478", "26014536", "9360722592", "18268645"} },
+    ["fungears"] = { gearid = {"111876831", "90718686", "283755431", "139578061", "90718686", "212641536", "392057539", "323477973", "78730532", "47597835", "212641536", "88143093", "73265108", "115377964", "98411393" } },
+    ["explosives"] = { gearid = {"88885539", "88885524", "73888479", "110337853", "101110605", "29957963", "503955938", "243788010", "88146497"} },
+    ["destructives"] = { gearid = {"125013830", "225921650", "60357972", "108158379"} },
+    ["swords"] = { gearid = {"25740034", "638089422", "170903610", "319655422", "125013769", "108158379", "2470750640", "2041982658", "361950297", "2103274863", "181356054", "163491866", "108158439"} },
+    ["rideables"] = { gearid = {"304719869", "2568114215", "158069143", "185422295", "346687565", "553939167", "820013867", "387285940", "163348575", "206799274", "928805891", "124127383", "125013849", "2445089071", "253519495"} }
 }
+
 
 -- Saved chars
 local charlist = {
@@ -2442,110 +2451,6 @@ Commands required: rocket]])
 	spamon = true
     end
 
-  if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'sswords' then
-		local per = string.sub(msg:lower(), #prefix + 9)
-		if per ~= "" then
-			for i = 1, #periastronlist do
-					Chat("gear "..per.." ".. periastronlist[i])
-       			end
-		else
-			for i = 1, #periastronlist do
-					Chat("gear me ".. periastronlist[i])
-       			end
-		end
-  end
-
-  if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'melees' then
-		local per = string.sub(msg:lower(), #prefix + 8)
-		if per ~= "" then
-			for i = 1, #meleecodes do
-					Chat("gear "..per.." ".. meleecodes[i])
-       			end
-		else
-			for i = 1, #meleecodes do
-					Chat("gear me ".. meleecodes[i])
-       			end
-		end
-  end
-
-  if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'guns' then
-		local per = string.sub(msg:lower(), #prefix + 6)
-		if per ~= "" then
-			for i = 1, #guncodes do
-					Chat("gear "..per.." ".. guncodes[i])
-       			end
-		else
-			for i = 1, #guncodes do
-					Chat("gear me ".. guncodes[i])
-       			end
-		end
-  end
-
-  if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'fungears' then
-		local per = string.sub(msg:lower(), #prefix + 10)
-		if per ~= "" then
-			for i = 1, #fungears do
-					Chat("gear "..per.." ".. fungears[i])
-       			end
-		else
-			for i = 1, #fungears do
-					Chat("gear me ".. fungears[i])
-       			end
-		end
-  end
-
-  if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'explosives' then
-		local per = string.sub(msg:lower(), #prefix + 12)
-		if per ~= "" then
-			for i = 1, #explosivecodes do
-					Chat("gear "..per.." ".. explosivecodes[i])
-       			end
-		else
-			for i = 1, #explosivecodes do
-					Chat("gear me ".. explosivecodes[i])
-       			end
-		end
-  end
-
-  if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'destructives' then
-		local per = string.sub(msg:lower(), #prefix + 14)
-		if per ~= "" then
-			for i = 1, #destructivecodes do
-					Chat("gear "..per.." ".. destructivecodes[i])
-       			end
-		else
-			for i = 1, #destructivecodes do
-					Chat("gear me ".. destructivecodes[i])
-       			end
-		end
-  end
-
-  if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'nswords' then
-		local per = string.sub(msg:lower(), #prefix + 9)
-		if per ~= "" then
-			for i = 1, #swordcodes do
-					Chat("gear "..per.." ".. swordcodes[i])
-       			end
-		else
-			for i = 1, #swordcodes do
-					Chat("gear me ".. swordcodes[i])
-       			end
-		end
-  end
-
-  if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'rides' then
-		local per = string.sub(msg:lower(), #prefix + 7)
-		if per ~= "" then
-			for i = 1, #rideablecodes do
-					Chat("gear "..per.." ".. rideablecodes[i])
-       			end
-		else
-			for i = 1, #rideablecodes do
-					Chat("gear me ".. rideablecodes[i])
-       			end
-		end
-  end
-
   if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'cbtools' then
 		local cbt = string.sub(msg:lower(), #prefix + 9)
 		if cbt ~= "" then
@@ -4211,16 +4116,6 @@ print("unalladmin - remove everyone's free admin")
 
 print("---")
 print("ipboom - who's ip address is that?")
-
-print("---")
-print("sswords")
-print("melees")
-print("guns")
-print("fungears")
-print("explosives")
-print("destructives")
-print("nswords")
-print("rides")
 
 print("---")
 print("sspawn - save your position")
