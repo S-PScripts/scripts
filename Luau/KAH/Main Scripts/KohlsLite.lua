@@ -5969,7 +5969,7 @@ task.spawn(function()
 			end
     end
 		
-    if mymusiconly == true then
+    if mymusiconly == true then -- changed to iidk's since mine was a bit broken (doing music mymusiconlyid restarts the music!)
 		 local soundlock = tonumber(mymusiconlyid)
 		 local origsound = soundlock
 		 soundlock = "http://www.roblox.com/asset/?id="..tostring(soundlock)
@@ -6061,7 +6061,7 @@ end
 
 -- FREEZE CRASH
 function FCrash()
-      Chat("h \n\n\n dsc gg kohlslite \n\n\n")
+      Chat("h \n\n\n dsc gg kohlslite \n\n\n");task.wait(0.5)
       for i = 1,100 do
           Chat("clone all all all				fuck")
           Chat("freeze all all all				fuck")
@@ -6070,7 +6070,7 @@ end
 
 -- DOG CRASH
 function DCrash()
-      Chat("h \n\n\n dsc gg kohlslite \n\n\n")
+      Chat("h \n\n\n dsc gg kohlslite \n\n\n");task.wait(0.5)
       for i = 1,100 do
           Chat("clone all all all				fuck")
           Chat("dog all all all					fuck")
@@ -6079,7 +6079,7 @@ end
 
 -- SHIELD CRASH
 function SCrash()
-      Chat("h \n\n\n dsc gg kohlslite \n\n\n")
+      Chat("h \n\n\n dsc gg kohlslite \n\n\n");task.wait(0.5)
       for i = 1,100 do
           Chat("shield/all/all/all")
 	  Chat("rocket/all/all/all")
@@ -6087,33 +6087,30 @@ function SCrash()
       end
 end
 
--- ROCKET KICK (also temp)
-function RKick()
-      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = rkicker.Character.HumanoidRootPart.CFrame
-      for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
-			if v.Name == "Rocket" then
-				v.CanCollide = false 
-			end
-      end
-      for i,v in pairs(rkicker.Character:GetChildren()) do
-			if v.Name == "Rocket" then 
-				v.CanCollide = false 
-			end
-      end
-      Chat("setgrav "..rkicks.. "3500")
-      Chat("jail/".. rkicks)
-      for i = 1,100 do
-          Chat("rocket/"..rkicks.."/"..rkicks.."/"..rkicks)
-	  Chat("rocket/me/me/me")
-      end
-end
-
--- SPAM ROCKET KICK
+-- rocket kick
 task.spawn(function()
    while true do
 	task.wait(0)
 	if srkick and rkicker then
-	   RKick()
+	   repeat 
+	   	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = rkicker.Character.HumanoidRootPart.CFrame
+      		for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+			if v.Name == "Rocket" then
+				v.CanCollide = false 
+			end
+      		end
+      		for i,v in pairs(rkicker.Character:GetChildren()) do
+			if v.Name == "Rocket" then 
+				v.CanCollide = false 
+			end
+      	        end
+      		Chat("setgrav "..rkicks.. "3500")
+      		Chat("jail/".. rkicks)
+      		for i = 1,100 do
+          		Chat("rocket/"..rkicks.."/"..rkicks.."/"..rkicks)
+	  		Chat("rocket/me/me/me")
+      		end
+	   until not srkick or not rkicker
         end
    end
 end)
@@ -6495,9 +6492,9 @@ function EmCrash()
       end
 end
 
-function PCrash() -- lorem ipsum
+function PCrash() -- with this crash make sure to click manually
       Chat("h \n\n\n dsc gg kohlslite \n\n\n")
-      for i = 1, 2 do
+      for i = 1, 2 do -- once doesn't usually work
       	Chat("gear me 0000000092628079")
       	repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("OrinthianSwordAndShield")
       	local ort = game.Players.LocalPlayer.Backpack:FindFirstChild("OrinthianSwordAndShield")
