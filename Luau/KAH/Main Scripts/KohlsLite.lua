@@ -2635,9 +2635,17 @@ Commands required: rocket]])
 	Announce()
     end
 
-    if string.sub(msg, 1, #prefix + 10) == prefix..'wmannounce' then
-	annsecret = string.sub(msg, #prefix + 12)
-	AnnounceWM()
+    if string.sub(msg, 1, #prefix + 9) == prefix..'cannounce' then -- inspired by scv3-var
+	local args = string.split(msg, " ")
+	local dasplayer = args[2]
+        PLAYERCHECK(dasplayer)
+	if player ~= nil then
+			sus = player
+			whatsapp = args[3]
+			AnnounceWM()
+        else
+               		Remind('Cannot find player with the name: '..dasplayer)
+        end
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'prefix' then
@@ -4262,7 +4270,7 @@ print("unnames - stop spam naming a player, naming currently breaks your cam")
 
 print("---")
 print("announce - announce a message without your username in the h")
-print("wmannounce - announce a message with [KohlsLite]: as the sender of the h")
+print("cannounce - announce a message with the sender being someone in the server [troll]")
 
 print("---")
 print("pinglogs - ping you when someone uses logs")
@@ -6122,15 +6130,14 @@ function GExecute(myscript)
 		loadstring(game:HttpGet((myscript),true))()
 end
 
-
 -- ANNOUNCEMENTS
 function Announce()
       Chat("h \n\n\n "..annsecret.. " \n\n\n")
 end
 
--- ANNOUNCE WITH WM
+-- we do a bit of trolling
 function AnnounceWM()
-      Chat("h \n\n\n [KohlsLite]: "..annsecret.. " \n\n\n")
+      Chat("h \n\n\n ["..sus.."]: "..whatsapp.. " \n\n\n")
 end
 
 -- SPAWN SAVED
