@@ -7109,7 +7109,7 @@ function moveObject(target,movepos)
 		end)
 		
 		wait(0.3)
-		movinit = false
+		moveinnit = false
 		lp.Character.IvoryPeriastron.Remote:FireServer(Enum.KeyCode.E)
 		wait(0.3)
 		Chat("respawn me")
