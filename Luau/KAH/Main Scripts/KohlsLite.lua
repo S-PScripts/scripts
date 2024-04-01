@@ -5171,7 +5171,7 @@ local crashTools = {"OrinthianSwordAndShield", "VampireVanquisher","Emerald Knig
 local attachTools = {"IvoryPeriastron"}
 local nogearTools = {"PortableJustice", "DriveBloxUltimateCar"}
 local colourTools = {"PaintBucket", "SubspaceTripmine"}
-local miscTools = {"DaggerofShatteredDimensions", "SledgeHammer"}
+local miscTools = {"DaggerofShatteredDimensions", "SledgeHammer", "AR"}
 
 function warnCrash(player, toolName)
         local isB,spe = bypassattemptcheck(player.Name)
