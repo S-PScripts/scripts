@@ -9,6 +9,10 @@ local function fwait()
 	game:GetService("RunService").Heartbeat:Wait()
 end
 
+local function rwait()
+	game:GetService("RunService").Heartbeat:Wait()
+end
+
 local lp = game.Players.LocalPlayer
 
 function moveObject(target,wawawaa)
@@ -33,7 +37,7 @@ function moveObject(target,wawawaa)
 		local thedollar = wawawaa
 		
 		spawn(function()
-        		repeat game:GetService("RunService").RenderStepped:Wait()
+        		repeat rwait()
         			game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
 				game.Players.LocalPlayer.Character.HumanoidRootPart.RotVelocity = Vector3.new(0,0,0)
         			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = thedollar
