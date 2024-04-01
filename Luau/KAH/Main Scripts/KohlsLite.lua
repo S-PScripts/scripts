@@ -178,72 +178,37 @@ local musictable = {
     ["64"] = { id = "6841685130", name = "ButtonPress_53"}
 }
 
--- Saved gears
-local gearcodes = {
-    [[212641536]], -- 1
-    [[94794847]], -- 2
-    [[92628079]], -- 3
-    [[82357101]], -- 4
-    [[28277486]], -- 5
-    [[16924676]], -- 6
-    [[34870758]], -- 7
-    [[79736563]], -- 8
-    [[18474459]], -- 9
-    [[93136746]], -- 10
-    [[11999247]], -- 11
-    [[77443461]],  -- 12
-    [[268586231,1103011681]], -- 13
-    [[583030187,68539623]], -- 14
-    [[87361662,66896601]] -- 15
-}
-
--- Saved gears
-local gears = {
-    "boombox",  -- 1
-    "vg",       -- 2
-    "osas",     -- 3
-    "gb",       -- 4
-    "bhbomb",   -- 5
-    "tictac",   -- 6
-    "pgun",     -- 7
-    "camfixer", -- 8
-    "painter",  -- 9
-    "telemon",  -- 10
-    "trapmine", -- 11
-    "timegears", -- 12
-    "admslayer", -- 13
-    "kp", -- 14
-    "icebreaker" -- 15
+local gearlist = {
+    ["boombox"] = { gearid = "212641536" },
+    ["vg"] = { gearid = "94794847" },
+    ["osas"] = { gearid = "92628079" },
+    ["gb"] = { gearid = "82357101" },
+    ["bhbomb"] = { gearid = "28277486" },
+    ["tictac"] = { gearid = "16924676" },
+    ["pgun"] = { gearid = "34870758" },
+    ["camfixer"] = { gearid = "79736563" },
+    ["painter"] = { gearid = "18474459" },
+    ["telemon"] = { gearid = "93136746" },
+    ["trapmine"] = { gearid = "11999247" },
+    ["timegears"] = { gearid = "77443461" },
+    ["admslayer"] = { gearid = { "268586231", "1103011681"} },
+    ["kp"] = { gearid = {"583030187, 68539623"} },
+    ["icebreaker"] = { gearid = {"87361662", "66896601"} }
 }
 
 -- Saved chars
-local charcodes = {
-    "4844006008", -- 1
-    "1267527674", -- 2
-    "13645", 	  -- 3
-    "548456077",  -- 4
-    "45024180",   -- 5
-    "1389780396", -- 6
-    "1793973864", -- 7
-    "36377783",   -- 8
-    "1702851506", -- 9
-    "2781438808", -- 10
-    "619659263"   -- 11
-}
-
--- Saved chars
-local chars = {
-    "furry",      -- 1
-    "sierr",      -- 2
-    "telac",      -- 3
-    "epicszs",    -- 4
-    "temi",       -- 5
-    "atprog",     -- 6
-    "menaal",     -- 7
-    "agspureiam", -- 8
-    "tech",       -- 9
-    "aria",       -- 10
-    "mel"         -- 11
+local charlist = {
+    ["furry"] = { charid = "4844006008" }, -- 1
+    ["sierr"] = { charid = "1267527674" }, -- 2
+    ["telac"] = { charid = "13645" }, 	  -- 3
+    ["epicszs"] = { charid = "548456077" },  -- 4
+    ["temi"] = { charid = "45024180" },   -- 5
+    ["atprog"] = { charid = "1389780396" }, -- 6
+    ["menaal"] = { charid = "1793973864" }, -- 7
+    ["agspureiam"] = { charid = "36377783" },   -- 8
+    ["tech"] = { charid = "1702851506" }, -- 9
+    ["aria"] = { charid = "2781438808" }, -- 10
+    ["mel"] = { charid = "619659263" } -- 11
 }
 
 -- Parts
@@ -1302,15 +1267,29 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
     if string.sub(msg, 1, #prefix + 8)  == prefix..'gearlist' then
 	 Remind("Check your console by running /console!")
-         for i = 1, #gearcodes do
- 		 print(gears[i].." - "..gearcodes[i])
+	 local sortedGearNames = {}
+	 for gearname, _ in pairs(gearlist) do
+    		table.insert(sortedGearNames, gearname)
+	 end
+	 table.sort(sortedGearNames)
+         for _, gearname in ipairs(sortedGearNames) do
+    	 	local gearid = gearlist[gearname].gearid
+    	 	if type(gearid) == "table" then
+        		gearid = table.concat(gearid, ", ")
+    	 	end
+    		print(gearname .. " - IDS: " .. gearid)
 	 end
     end
 
     if string.sub(msg, 1, #prefix + 8)  == prefix..'charlist' then
 	 Remind("Check your console by running /console!")
-         for i = 1, #charcodes do
- 		 print(chars[i].." - "..charcodes[i])
+         local sortedNames = {}
+	 for charname, _ in pairs(charlist) do
+    		table.insert(sortedNames, charname)
+	 end
+	 table.sort(sortedNames)
+	 for _, charname in ipairs(sortedNames) do
+   		 print(charname .. " - IDS: " .. charlist[charname].charid)
 	 end
     end
 		
@@ -1530,28 +1509,22 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         end
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'gear' then
-        local args = string.split(msg, " ")
-        if #args >= 3 then
-            local target = args[2]
-            local gearName = table.concat(args, " ", 3)
-            local gearIndex = 0
-            for i, name in ipairs(gears) do
-                if name == gearName then
-                    gearIndex = i
-                    break
-                end
-            end
-            if gearIndex ~= 0 then
-                local gearCodes = gearcodes[gearIndex]
-        	for code in string.gmatch(gearCodes, "[^,]+") do
-            		Chat("gear " .. target .. " " .. code)
+    	 local args = string.split(msg, " ")
+    	 if #args >= 3 then
+        	local target = args[2]
+        	local gearName = args[3]
+        	local gearIDs = gearlist[gearName].gearid  -- Retrieve the gear IDs for the specified gearName
+        	if type(gearIDs) == "table" then  -- Check if the gearID is an array
+            		for _, selectedGearID in ipairs(gearIDs) do
+                		Chat("gear " .. target .. " " .. selectedGearID)
+            		end
+        	else
+           		 Chat("gear " .. target .. " " .. gearIDs)
         	end
-            else
-            end
-        else
-        end
+         end
     end
 
+		
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'ggear' then
         local args = string.split(msg, " ")
         if #args >= 3 then
@@ -1579,22 +1552,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'char' then
         local args = string.split(msg, " ")
         if #args >= 3 then
-            local target = args[2]
-            local charName = table.concat(args, " ", 3)
-            local charIndex = 0
-            for i, name in ipairs(chars) do
-                if name == charName then
-                    charIndex = i
-                    break
-                end
-            end
-            if charIndex ~= 0 then
-                local charCode = charcodes[charIndex]
-                Chat("char " .. target .. " " .. charCode)
-            else
-            end
-        else
-        end
+            	local target = args[2]
+            	local charName = args[3]
+            	local china = charlist[charName].charid
+                Chat("char " .. target .. " " .. china)
+	end
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'gchar' then
