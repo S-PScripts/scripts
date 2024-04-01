@@ -10,7 +10,7 @@ _  _____  _   _ _     ____  _     ___ _____ _____
 | |/ / _ \| | | | |   / ___|| |   |_ _|_   _| ____|
 | ' / | | | |_| | |   \___ \| |    | |  | | |  _|  
 | . \ |_| |  _  | |___ ___) | |___ | |  | | | |___ 
-|_|\_\___/|_| |_|_____|____/|_____|___| |_| |_____| v1.15 ]]
+|_|\_\___/|_| |_|_____|____/|_____|___| |_| |_____| v1.17 ]]
 
 local function Remind(msg)
 	game.StarterGui:SetCore("SendNotification", {
@@ -578,17 +578,17 @@ local Admin_Folder = Game_Folder.Admin
 
 -- Themes
 local themecode = {
-    [[time 4,outdoorambient 000 000 111]], -- 1
-    [[fogend 100,fogcolor 250 0 500]], -- 2
-    [[time 19,outdoorambient 250 100 250]], -- 3
-    [[time -,fogend 600,fogcolor 300 0 800]], -- 4
-    [[time -,fogend 25,fogcolor 255 255 51]], -- 5
-    [[time 0,fogcolor 0 0 0,fogend 25]], -- 6
-    [[fogend 75,fogcolor 0 155 255]], -- 7
-    [[time -,fogend 46,fogcolor 250 83 255]], -- 8
-    [[time -,fogend 1000,fogcolor 37 355 55]], -- 9
-    [[fogcolor 100 0 255,fogend 1000,time 6,outdoorambient 0 0 0,brightness 0.5,ambient 125 0 255]], -- 10
-    [[fix,time 7,fogend 2000,outdoorambient 0.3 0.3 0.3]] -- 11
+    {name = "dark blue", code = "time 4,outdoorambient 000 000 11"},
+    {name = "old trip", code = "fogend 100,fogcolor 250 0 500"},
+    {name = "shanty night", code = "time 19,outdoorambient 250 100 250"},
+    {name = "purple glaze", code = "time -,fogend 600,fogcolor 300 0 800"},
+    {name = "yellow mist", code = "time -,fogend 25,fogcolor 255 255 51"},
+    {name = "dark depths", code = "time 0,fogcolor 0 0 0,fogend 25"},
+    {name = "nice sky", code = "fogend 75,fogcolor 0 155 255"},
+    {name = "bright pink", code = "time -,fogend 46,fogcolor 250 83 255"},
+    {name = "acid proximity", code = "time -,fogend 1000,fogcolor 37 355 55"},
+    {name = "sapphire evening", code = "fogcolor 100 0 255,fogend 1000,time 6,outdoorambient 0 0 0,brightness 0.5,ambient 125 0 255"},
+    {name = "sunset", code = "fix,time 7,fogend 2000,outdoorambient 0.3 0.3 0.3"}
 }
 
 -- Keybinds
@@ -650,12 +650,12 @@ local welcomemsg = true
 -- local permpassid = 66254 or 64354 -> NBC, BC
 -- local personpassid = 35748 or 37127 --> NBC, BC
 
-print("Thank you for using KohlsLite v1.15! This script was created by S_P.")
-Remind("Thank you for using KohlsLite v1.15! This script was created by S_P.")
+print("Thank you for using KohlsLite v1.17! This script was created by S_P.")
+Remind("Thank you for using KohlsLite v1.17! This script was created by S_P.")
 print("Say .kcmds to list some of the commands. DM me at ts2021 for the source to find other commands.")
 Remind("Say .kcmds to list some of the commands. DM me at ts2021 for the source to find other commands.")
 
-Chat("h \n\n\n [KohlsLite]: Executed! v1.15 \n\n\n")
+Chat("h \n\n\n [KohlsLite]: Executed! v1.17 \n\n\n")
 
 if game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 66254) or game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 64354) then
         perm = false 
@@ -1503,20 +1503,29 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'theme' then
-		Chat("fix")
- 		local theme = tonumber(string.sub(msg:lower(), #prefix + 6))
-        	local themeCode = themecode[theme]
-        	if themeCode then
-            		local codes = {}
-            		for code in themeCode:gmatch("[^,]+") do
-                		table.insert(codes, code)
-           	        end
-            		for _, code in ipairs(codes) do
-                		Chat(code)
-            		end
-        	end
-        end
+    		local themeNumber = tonumber(string.sub(msg:lower(), #prefix + 6))
+    		if themeNumber and themecode[themeNumber] then
+			Chat("fix")
+        		local codeParts = {}
+        		for code in themecode[themeNumber].code:gmatch("[^,]+") do
+            			table.insert(codeParts, code)
+        		end
+                    	for i, v in ipairs(codeParts) do
+                    		Chat(v)
+                    	end
 
+    		else
+        		Remind("Invalid theme number.")
+    		end
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'themelist' then
+			Remind("Check your console by running /console!")
+			for i, theme in ipairs(themecode) do
+    				print(i .. " - " .. theme.name .. " - " .. theme.code)
+			end
+    end
+		
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'gear' then
     	 local args = string.split(msg, " ")
     	 if #args >= 3 then
@@ -4051,7 +4060,7 @@ Commands required: rocket]])
 end)
 
 function CMDPrint()
-print("---Command list for KohlsLite v1.15---")
+print("---Command list for KohlsLite v1.17---")
 print("Warning! This is NOT a full list so contact me for any other commands!")
 	
 print("---")
@@ -4298,7 +4307,7 @@ print("If it's to the game itself, just do (antiname).")
 
 print("---INFORMATION---")
 print("KohlsLite, since 2023. Created by ScriptingProgrammer/ts2021")
-print("Version is: v1.15 - 31th March 2024 Build")
+print("Version is: v1.17 - April Fools Day 2024 Build")
 print("Better than scv1 and scv2 - approved by Tech")
 
 print("--- CREDITS ---")
