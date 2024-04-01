@@ -2274,11 +2274,10 @@ Commands required: rocket]])
 		Chat("dog "..person.."");task.wait(.2)
 		Chat("size "..person.." 2.60");task.wait()
 		Chat("paint "..person.." white");task.wait()
-		Chat("removelimbs "..person)
-		Chat("name "..person.." bed");task.wait(.2)
+		Chat("removelimbs "..person);task.wait(.2)
 		Chat("speed "..person.." 24")
 		Chat("paint "..person.." white")
-		Remind("The player should nowzzzzzzzzz!")
+		Remind("The player should now be a bed!")
     end
 
    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'smack' then -- pr
