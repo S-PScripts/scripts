@@ -1,6 +1,16 @@
 -- PR SCRIPT / iidk admin
 -- it's like attach v1 and attach v2 combined
 
+local function Chat(msg)
+	game.Players:Chat(msg)
+end
+
+local function fwait()
+	game:GetService("RunService").Heartbeat:Wait()
+end
+
+local lp = game.Players.LocalPlayer
+
 function moveObject(target,wawawaa)
 	
     function equipivory()
