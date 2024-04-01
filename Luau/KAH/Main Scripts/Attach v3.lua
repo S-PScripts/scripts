@@ -10,7 +10,7 @@ local function fwait()
 end
 
 local function rwait()
-	game:GetService("RunService").Heartbeat:Wait()
+	game:GetService("RunService").RenderStepped:Wait()
 end
 
 local lp = game.Players.LocalPlayer
