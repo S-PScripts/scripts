@@ -6814,9 +6814,9 @@ function Clone(getnum)
 	 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
 end
 
---// ATTACH SHIT \\ --
+--// ATTACHING STUFF \\ --
 
--- // move object \\ --
+-- // attach v2 - credit to cmd y \\ --
 function moveobject(part, o)
 		if movestatus == false then
 			movestatus = true
@@ -6943,7 +6943,7 @@ function removelimbs()
 	end
 end
 
--- // attach 2 part \\ --
+-- // attach to the part \\ --
 function attach(part)
 		if Player.Character.Torso:FindFirstChild("Weld") then
 			Player.Character.Torso:FindFirstChild("Weld"):Destroy()
@@ -7035,6 +7035,87 @@ end
 function fwait()
 		game:GetService("RunService").Heartbeat:Wait()
 end
+-- // another special wait \\ --
+function rwait()
+	game:GetService("RunService").RenderStepped:Wait()
+end
+
+-- // Attaching v3 - credits to ii admin and pr admin \\ -- 
+-- // Not a replacement to the cmd y, just used for certain things \\ --
+local lp = game.Players.LocalPlayer
+
+function moveObject(target,movepos)
+	
+    function equipivory()
+    	if lp.Backpack:FindFirstChild("IvoryPeriastron") then
+    		lp.Backpack.IvoryPeriastron.Parent = lp.Character
+    	else
+    	    	if not lp.Character:FindFirstChild("IvoryPeriastron") then
+        	    Chat("gear me 108158379")
+        	    repeat wait() until lp.Backpack:FindFirstChild("IvoryPeriastron")
+        	    lp.Backpack.IvoryPeriastron.Parent = lp.Character
+        	end
+    	end
+    end
+	
+    equipivory()
+	
+    if lp.Character:FindFirstChild("IvoryPeriastron") then
+		local cf = lp.Character.HumanoidRootPart
+		local veloing = true
+		local gopos = movepos
+		
+		spawn(function()
+        		repeat rwait()
+        			game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+				game.Players.LocalPlayer.Character.HumanoidRootPart.RotVelocity = Vector3.new(0,0,0)
+        			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = gopos
+        			game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+				game.Players.LocalPlayer.Character.HumanoidRootPart.RotVelocity = Vector3.new(0,0,0)
+        		until not veloing
+        	end)
+		
+		wait(0.2)
+        	veloing = false
+		lp.Character.IvoryPeriastron.Remote:FireServer(Enum.KeyCode.E)
+		cf.Anchored = false
+		local moveinnit = true
+		
+		local partinstance = Instance.new("Part",cf.Parent)
+		partinstance.Anchored = true
+		partinstance.Size = Vector3.new(10,1,10)
+		partinstance.CFrame = (target.CFrame * CFrame.new(-1*(target.Size.X/2)-(lp.Character['Torso'].Size.X/2), 0, 0)) * CFrame.new(0,-3.5,0)
+		
+		spawn(function()
+			while true do
+				fwait()
+				game.Players.LocalPlayer.Character['Humanoid']:ChangeState(11)
+				target.RotVelocity = Vector3.new(0,0,0)
+		                target.Velocity = Vector3.new(0,0,0)
+		                cf.Velocity = Vector3.new(0,0,0)
+		                cf.RotVelocity = Vector3.new(0,0,0)
+			    	cf.CFrame = target.CFrame * CFrame.new(-1*(target.Size.X/2)-(lp.Character['Torso'].Size.X/2), 0, 0)
+				if not moveinnit then 
+					break 
+				end
+			end
+		end)
+		
+		spawn(function() 
+			while moveinnit do 
+				fwait() 
+				Chat('unpunish me') 
+			end 
+		end)
+		
+		wait(0.3)
+		movinit = false
+		lp.Character.IvoryPeriastron.Remote:FireServer(Enum.KeyCode.E)
+		wait(0.3)
+		Chat("respawn me")
+		
+	end
+end
 
 -- run at end to prevent bugs
 for i, v in pairs(game.Players:GetPlayers()) do
@@ -7042,9 +7123,11 @@ for i, v in pairs(game.Players:GetPlayers()) do
 	PLRSTART(v)
 end
 
+-- These run last to prevent bugs too
 startupScripts()
 
-local cantexecute = {"me_iloves-psballsyum"}
-if table.find(cantexecute, game.Players.LocalPlayer.Name) then
+-- I hope no one gets on here
+local unexecuteables = {"no one yipee"}
+if table.find(unexecuteables, game.Players.LocalPlayer.Name) then
 		game.Players.LocalPlayer:Kick("[KohlsLite]: Oh dear, you're blacklisted from my script! How did you do that? DM me on ts2021 to appeal.") 
 end
