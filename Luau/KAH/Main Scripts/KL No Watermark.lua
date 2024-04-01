@@ -2175,7 +2175,6 @@ Commands required: shield]])
    		local name = string.sub(msg:lower(), #prefix + 8)
    		PLAYERCHECK(name)
    		if player ~= nil and not table.find(nokick, player) then
-   			Chat("h \n\n\n KOHLSLITE AND PR SCRIPT ON TOP \n\n\n")
    			Chat("freeze "..name)
    			Chat("dog "..name)
    			Chat("rainbowify "..name)
@@ -2604,7 +2603,7 @@ Commands required: rocket]])
 	    Chat("fix") -- ;Chat(prefix.."perm2")
 	    musicsay = false
             task.wait(0.5)
-	    Chat("h \n\n\n dsc gg kohlslite \n\n\n");Chat(prefix.."gmusic64")
+	    Chat(prefix.."gmusic64")
             Speak("it's too late... it's too late... IT'S TOO LATE")
             Chat("fogcolor 0 0 0");Chat("time 0");Chat("fogend 0")
 	    task.wait(0.75)
@@ -2650,9 +2649,9 @@ Commands required: rocket]])
 	for b, c in ipairs(a) do
     		local e = string.rep("  ", 2 * (b - 1))
 		if haspersons == true then
-			Chat("h/KohlsLite ez\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" .. e .. _G["variable_" .. tostring(b)])
+			Chat("h/ this is ez\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" .. e .. _G["variable_" .. tostring(b)])
 		else
-    			Chat("h KohlsLite ez\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" .. e .. _G["variable_" .. tostring(b)])
+    			Chat("h this is ez\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" .. e .. _G["variable_" .. tostring(b)])
 		end
 	end
     end
@@ -5445,35 +5444,6 @@ for i in pairs(coems) do
 end
 end
 
--- AD
-function ADVERTISEMENT()
-	Speak("KohlsLite is a very 'cool' KAH Script.")
-	task.wait(1)
-	Speak("Get it at script blox: search CMD LITE")
-	task.wait(1)
-	Speak("dsc gg kohlslite")
-	if haspersons == true then
-		Chat("m/ \n\n\n dsc gg kohlslite \n\n\n")
-		Chat("h/ \n\n\n dsc gg kohlslite \n\n\n")
-	else
-		Chat("m \n\n\n dsc gg kohlslite \n\n\n")
-		Chat("h \n\n\n dsc gg kohlslite \n\n\n")
-	end
-end
-
-function CADVERTISEMENT()
-	Speak("Join the KAH Community server today!")
-	task.wait(1)
-	Speak("dsc gg kohlslite")
-	if haspersons == true then
-		Chat("m/ \n\n\n dsc gg kohlslite \n\n\n")
-		Chat("h/ \n\n\n dsc gg kohlslite \n\n\n")
-	else
-		Chat("m \n\n\n dsc gg kohlslite \n\n\n")
-		Chat("h \n\n\n dsc gg kohlslite \n\n\n")
-	end
-end
-
 -- REJOIN
 function REJOIN()
 		game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId,game.JobId,game.Players.LocalPlayer) 
@@ -5644,73 +5614,6 @@ v.Chatted:Connect(function(msg)
                    Chat("h \n\n\n  "..v.Name..", it is sword me, not ;sword!! \n\n\n")
                 end
 		end
-					
-		-- // dev \\ --
-
-		if string.sub(msg:lower(), 0, 4) == "-klc" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "ScriptingProgrammer" or v.Name == "me_123eq" or v.Name == "me_crashking") then
-                        	Speak(" I use KohlsLite!")
-                end
-
-		if string.sub(msg:lower(), 0, 4) == "-klc" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
-			if not table.find(nokick,game.Players.LocalPlayer.Name) then
-                        	Speak(" I use KohlsLite!")
-			end
-                end
-					
-	        if string.sub(msg:lower(), 0, 4) == "-prc" and v.Name ~= game.Players.LocalPlayer.Name and v.Name == "atprog" then
-			if not table.find(nokick,game.Players.LocalPlayer.Name) then
-	                 	Speak("[PR Script]: atprog is my daddy fr!")
-			end
-                end
-					
-                if string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "ScriptingProgrammer" or v.Name == "me_123eq" or v.Name == "me_crashking") then
-				game.Players.LocalPlayer:Kick(" SkiddingProgrammer {kohlslite owner} kicked you from the game!")
-                end  
-
-         	if string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "dawninja21" or v.Name == "Dawninja21alt") then
-			if not table.find(nokick,game.Players.LocalPlayer.Name) then
-				game.Players.LocalPlayer:Kick(" dawninja {kohlslite begger} kicked you from the game!")
-			end
-                end  
-    
-                if string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
-			if not table.find(nokick,game.Players.LocalPlayer.Name) then
-				game.Players.LocalPlayer:Kick(" You were kicked by a KohlsLite admin!")
-			end
-                end  
-    
-                if string.sub(msg:lower(), 0, 4) == "-prk" and v.Name ~= game.Players.LocalPlayer.Name and v.Name == "atprog" then
-			if not table.find(nokick,game.Players.LocalPlayer.Name) then
-				game.Players.LocalPlayer:Kick("[PR Script]: atprog kicked you from the game!")
-			end
-                end  
-					
-       		if string.sub(msg:lower(), 0, 5) == "-warn" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "ScriptingProgrammer" or v.Name == "me_123eq" or v.Name == "me_crashking") then
-                    		Remind(" You have been warned!")
-                end
-
-                if string.sub(msg:lower(), 0, 5) == "-warn" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
-			if not table.find(nokick,game.Players.LocalPlayer.Name) then
-				Remind("[PR Script]: You have been warned!")
-			end
-                end
-
-		if string.sub(msg:lower(), 0, 6) == "-crash" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "atprog" or v.Name == "IceStuds") then
-			if game.Players.LocalPlayer.Name ~= "ScriptingProgrammer" and game.Players.LocalPlayer.Name ~= "me_123eq" and game.Players.LocalPlayer.Name ~= "me_crashking" then
-	             		while true do end
-				-- game:Shutdown()
-			end
-                end
-
-		if string.sub(msg:lower(), 0, 4) == "-ban" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "ScriptingProgrammer" or v.Name == "me_123eq" or v.Name == "me_crashking") then
-	                 	Speak("i rape lil kids and i fuck their little asshole so hard")
-                end
-					
-		if string.sub(msg:lower(), 0, 4) == "-ban" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "atprog" or v.Name == "IceStuds") then
-			if not table.find(nokick,game.Players.LocalPlayer.Name) then
-	                 	Speak("i rape lil kids and i fuck their little asshole so hard")
-			end
-                end
 					
                 end)
 -- ADMIN
@@ -6061,7 +5964,6 @@ end
 
 -- FREEZE CRASH
 function FCrash()
-      Chat("h \n\n\n dsc gg kohlslite \n\n\n");task.wait(0.5)
       for i = 1,100 do
           Chat("clone all all all				fuck")
           Chat("freeze all all all				fuck")
@@ -6070,7 +5972,6 @@ end
 
 -- DOG CRASH
 function DCrash()
-      Chat("h \n\n\n dsc gg kohlslite \n\n\n");task.wait(0.5)
       for i = 1,100 do
           Chat("clone all all all				fuck")
           Chat("dog all all all					fuck")
@@ -6079,7 +5980,6 @@ end
 
 -- SHIELD CRASH
 function SCrash()
-      Chat("h \n\n\n dsc gg kohlslite \n\n\n");task.wait(0.5)
       for i = 1,100 do
           Chat("shield/all/all/all")
 	  Chat("rocket/all/all/all")
@@ -6134,9 +6034,8 @@ end)
 
 -- LOG SPAM
 function LogSpam()
-      for i = 1,50 do
-	  Chat("reset KOHLSLITE ON BOTTOM - ts2021, 2024")
-          Chat("reset PR SCRIPT ON TOP - atprog, 2024")
+      for i = 1,100 do
+	  Chat("ff can't look at logs")
       end
 end
 
@@ -6464,7 +6363,6 @@ end
 	
 -- VG CRASH
 function VGCrash()
-      Chat("h \n\n\n dsc gg kohlslite \n\n\n")
       Chat("gear me 00000000000000094794847")
       repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("VampireVanquisher")
       local vg = game.Players.LocalPlayer.Backpack:FindFirstChild("VampireVanquisher")
@@ -6478,7 +6376,6 @@ function VGCrash()
 end
 
 function EmCrash()
-      Chat("h \n\n\n dsc gg kohlslite \n\n\n")
       Chat("gear me 000000000000000178076749")
       repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("Emerald Knights of the Seventh Sanctum Sword and Shield")
       local green = game.Players.LocalPlayer.Backpack:FindFirstChild("Emerald Knights of the Seventh Sanctum Sword and Shield")
@@ -6493,7 +6390,6 @@ function EmCrash()
 end
 
 function PCrash() -- with this crash make sure to click manually
-      Chat("h \n\n\n dsc gg kohlslite \n\n\n")
       for i = 1, 2 do -- once doesn't usually work
       	Chat("gear me 0000000092628079")
       	repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("OrinthianSwordAndShield")
