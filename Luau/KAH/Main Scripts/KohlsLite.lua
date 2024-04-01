@@ -1,9 +1,7 @@
--- Github made a crappy update and it broke a bunch of colours in this script (looks ugly when not in editor mode!)
-
 -- CREATED BY SCRIPTINGPROGRAMMER/TS2021/S-PSCRIPTS
--- A script for Kohls Admin House (KAH)
--- Support this script today by donating robux to me (h)
--- Do not "skid" off this code by changing the name. Make your own script instead and take stuff from here if you need to.
+-- A free, open source script for Kohls Admin House (KAH)
+-- Support this script today by donating Robux to me :)
+-- Please do not "skid" off this code by just changing the name and removing the dev section (I'll add you to my autokick if you do!). Make your own script instead and take stuff from here if you need to.
 
 --[[
 _  _____  _   _ _     ____  _     ___ _____ _____ 
@@ -204,7 +202,6 @@ local gearlist = {
     ["rideables"] = { gearid = {"304719869", "2568114215", "158069143", "185422295", "346687565", "553939167", "820013867", "387285940", "163348575", "206799274", "928805891", "124127383", "125013849", "2445089071", "253519495"} }
 }
 
-
 -- Saved chars
 local charlist = {
     ["furry"] = { charid = "4844006008" }, -- 1
@@ -217,7 +214,8 @@ local charlist = {
     ["agspureiam"] = { charid = "36377783" },   -- 8
     ["tech"] = { charid = "1702851506" }, -- 9
     ["aria"] = { charid = "2781438808" }, -- 10
-    ["mel"] = { charid = "619659263" } -- 11
+    ["mel"] = { charid = "619659263" }, -- 11
+    ["noob"] = { charid = "18" } -- 12
 }
 
 -- Parts
@@ -2126,6 +2124,9 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'dropall' then
 		local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
+	        for _, v in ipairs(Backpack:GetChildren()) do
+           		 v.Parent = game.Players.LocalPlayer.Character
+        	end
         	for _, v in ipairs(Backpack:GetChildren()) do
            		 v.Parent = workspace
         	end
@@ -2240,7 +2241,7 @@ Commands required: rocket]])
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'iceblock' then -- why
 		local theblock = string.sub(msg:lower(), #prefix + 10)
 		if theblock == "me" then
-			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame*CFrame.new(0,-50,0)
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame*CFrame.new(0,-40,0)
 		end
 		task.wait(0.25)
   	        Chat("invisible "..theblock); task.wait()
@@ -2292,7 +2293,7 @@ Commands required: rocket]])
 		Chat("setgrav "..person.." -256")
 		Chat("trip "..person)
 		task.wait(0.4)
-		game.Players:Chat("trip "..person)
+		Chat("trip "..person)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'bed' then -- ns techno
@@ -2307,6 +2308,19 @@ Commands required: rocket]])
 		Remind("The player should now be a bed!")
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'kitten' then -- nak3d would get tagged
+		local meow = string.sub(msg:lower(), 1, #prefix + 8)
+		PLAYERCHECK(meow)
+		if player ~= nil then
+			 kit = cplr
+			 if kit and kit.Character and kit.Character.Head then
+            			Chat("paint "..kit.Name.." "..kit.Character.Head.BrickColor.Name)
+       			 end
+         	else
+                	Remind('Cannot find player with the name: '..dasplayer)
+         end
+    end
+
    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'smack' then -- pr
 		local person = string.sub(msg:lower(), #prefix + 7)
 		Chat("music 5886215922")
@@ -2319,6 +2333,18 @@ Commands required: rocket]])
 		task.wait(1.45)
 		Chat("explode "..person)
     		Chat("music nan")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'bend' then -- pr
+		local bendin = string.sub(msg:lower(), #prefix + 6)
+		Chat("rocket/"..bendin);task.wait(.5)
+		Chat("freeze "..bendin)
+		Chat("unrocket/"..bendin);task.wait(.34)
+		Chat("name "..bendin.." "..bendin);task.wait(.34)
+		Chat("thaw "..bendin);task.wait(.34)
+		Chat("unseizure "..bendin)
+		Chat("tp "..bendin.." "..bendin)
+		Chat("sit "..bendin)
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antidisco' then
@@ -2666,7 +2692,7 @@ Commands required: rocket]])
 		NOK()
     end
 		
-    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'nok2' then
+    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'2nok' then
 		NOK2()
     end
 
@@ -2975,6 +3001,10 @@ Commands required: rocket]])
 		GravFix()
     end
 
+     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'novelo' then
+		NoVelo()
+     end
+		
      if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'breakvelo' then
 		NoVelo()
      end
@@ -4208,7 +4238,7 @@ print("stonemap/rockmap - make the map stone")
 
 print("---")
 print("NOK - no obby kill")
-print("NOK2 - no obby kill")
+print("2NOK - no obby kill")
 
 print("---")
 print("sp - set your speed without the command")
@@ -5832,9 +5862,13 @@ task.spawn(function()
     task.wait(0)
 			
     if antimusic == true then
-		  if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
-				 	Chat(prefix.."stopm")
-      		  end
+		  for i,v in pairs(workspace:GetDescendants()) do
+            		if v:IsA("Sound") then 
+				if v.Playing then 
+					v:Stop() 
+				end 
+			end
+       		  end
     end
 
     if audiotroll == true then
@@ -6129,7 +6163,12 @@ end
 -- Cam Break
 function NoCam()
       Chat("gear me 4842207161")
-      Remind("Right Click! If you're on mobile, it may not work tapping normally :P")
+      repeat task.wait() until game.Players.LocalPlayer.Backpack:FindFirstChild("AR")
+      local cambrek = game.Players.LocalPlayer.Backpack:FindFirstChild("AR")
+      cambrek.Parent = game.Players.LocalPlayer.Character
+      task.wait(0.2)
+      cambrek:Activate()
+      Remind("The camera is now broken into shiftlock - you won't see the effect until you rejoin.")
 end
 
 function NoVelo()
@@ -6237,13 +6276,10 @@ end
 
 -- NOK 2
 function NOK2()
-  local objs = game:GetService("Workspace").Terrain._Game.Workspace.Obby:GetChildren()
-  for i, obj in pairs(objs) do
-	coroutine.wrap(function()
-        	pcall(function()
-                    obj.TouchInterest:Destroy()
-                end)
-        end)()
+  for i,v in pairs(workspace.Terrain["_Game"]["Workspace"].Obby:GetDescendants()) do
+        if v:IsA("TouchTransmitter") then 
+			v:Destroy() 
+	end
   end
   Remind("Rejoin the server to revert!")
 end
@@ -6427,7 +6463,6 @@ function onPlayerAdded(player)
 		srkick = true
 		rkicks = player.Name
 		rkicker = player
-		RKick()   
     end
 
 	if table.find(suser_on_sight, player.Name) then
