@@ -696,15 +696,15 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		GExecute("https://raw.githubusercontent.com/quivings/KAH/main/CMD-Y%20(v1.56).lua")
 	end
 
---[[	if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'myvis' then
-		Remind("WARNING: THIS SCRIPT IS A BIT BROKEN! Prefix is -")
+        if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'myvis' then
+		Remind("WARNING: THIS SCRIPT MIGHT BE BROKEN RIGHT NOW! Prefix is -")
 		GExecute("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/Main%20Scripts/MyVisualiser.lua")
 	end
 		
 	if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'mydraw' then
 		Remind("WARNING: THIS SCRIPT IS A BIT BROKEN! Prefix is -")
 		GExecute("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/Main%20Scripts/MyVisualiser.lua")
-	end]]
+	end
 		
 	if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'tricky' then -- CREDITS TO TECH
 		Remind("This might not work if it's already been executed. Sorry!")
