@@ -51,16 +51,83 @@ local function startupScripts()
 end
 
 -- Serverlocked users
-local blacklist = {"SlenderMan990921","e5usp","Asphetto","91txt","LeanConsumer69","Fixydrqma","Robloxian577226532","jjthejoker7","cihanahmet1670","Fu14r","bbgurrrrl","He4rt_4"}
+local blacklist = {
+    "SlenderMan990921",
+    "e5usp",
+    "Asphetto",
+    "91txt",
+    "LeanConsumer69",
+    "Fixydrqma",
+    "Robloxian577226532",
+    "jjthejoker7",
+    "cihanahmet1670",
+    "Fu14r",
+    "bbgurrrrl",
+    "He4rt_4"
+}
 
 -- Users not affected by serverlock
-local whitelist = {"me_123eq","me_crashking","ScriptingProgrammer","t_echr","BANNter_Original","witnessfox22","IceStuds","atprog","dawninja21","Dawninja21alt","Di33le2","darkmadeboy","Dekryptionite","3cxos","hudhejeir","BIGpe7niss7","clydekash","t_echl","Ih0temyIife","D_ionte","SZCVAK"}
+local whitelist = {
+    "me_123eq",
+    "me_crashking",
+    "ScriptingProgrammer",
+    "t_echr",
+    "BANNter_Original",
+    "witnessfox22",
+    "IceStuds",
+    "atprog",
+    "dawninja21",
+    "Dawninja21alt",
+    "Di33le2",
+    "darkmadeboy",
+    "Dekryptionite",
+    "3cxos",
+    "hudhejeir",
+    "BIGpe7niss7",
+    "clydekash",
+    "t_echl",
+    "Ih0temyIife",
+    "D_ionte",
+    "SZCVAK"
+}
 
 -- Players you cannot kick
-local nokick = {"me_123eq","me_crashking","ScriptingProgrammer","t_echr","BANNter_Original","witnessfox22","IceStuds","atprog","Di33le2","Dekryptionite","3cxos","hudhejeir","BIGpe7niss7","clydekash","t_echl","dawninja21"}
+local nokick = {
+    "me_123eq",
+    "me_crashking",
+    "ScriptingProgrammer",
+    "t_echr",
+    "BANNter_Original",
+    "witnessfox22",
+    "IceStuds",
+    "atprog",
+    "Di33le2",
+    "Dekryptionite",
+    "3cxos",
+    "hudhejeir",
+    "BIGpe7niss7",
+    "clydekash",
+    "t_echl",
+    "dawninja21"
+}
 
 -- Players with special perms
-local specialperms = {"me_123eq","me_crashking","ScriptingProgrammer","t_echr","witnessfox22","IceStuds","atprog","Di33le2","Dekryptionite","3cxos","BIGpe7niss7","clydekash","t_echl","dawninja21"}
+local specialperms = {
+    "me_123eq",
+    "me_crashking",
+    "ScriptingProgrammer",
+    "t_echr",
+    "witnessfox22",
+    "IceStuds",
+    "atprog",
+    "Di33le2",
+    "Dekryptionite",
+    "3cxos",
+    "BIGpe7niss7",
+    "clydekash",
+    "t_echl",
+    "dawninja21"
+}
 
 -- New users get blacklisted (prevent crashers)
 local newplrslocked = {} -- don't edit!!
@@ -68,7 +135,28 @@ local newplrautoslock = true -- if new players under 21 days join they get black
 local newlen = 21 -- control what is considered as a new account
 
 -- Users that can use blacklisted gears (or gears when antigear is on)
-local GWhitelisted = {"me_123eq","me_crashking","ScriptingProgrammer","t_echr","BANNter_Original","witnessfox22","IceStuds","atprog","dawninja21","Dawninja21alt","Di33le2","darkmadeboy","Dekryptionite","3cxos","hudhejeir","BIGpe7niss7","clydekash","t_echl","Ih0temyIife","SZCVAK"}
+local GWhitelisted = {
+    "me_123eq",
+    "me_crashking",
+    "ScriptingProgrammer",
+    "t_echr",
+    "BANNter_Original",
+    "witnessfox22",
+    "IceStuds",
+    "atprog",
+    "dawninja21",
+    "Dawninja21alt",
+    "Di33le2",
+    "darkmadeboy",
+    "Dekryptionite",
+    "3cxos",
+    "hudhejeir",
+    "BIGpe7niss7",
+    "clydekash",
+    "t_echl",
+    "Ih0temyIife",
+    "SZCVAK"
+}
 
 -- Serverlock
 local slockenabled = false
@@ -87,16 +175,6 @@ rkick_on_sight = {} -- rocket kick player when they join ONLY WORKS WITH ONE PLA
 crash_on_sight = {} -- crash server when player joins
 mkick_on_sight = {"He4rt_4","hellokitty2kute"} -- kick player with pm spam when they join ONLY WORKS WITH ONE PLAYER
 suser_on_sight = {} -- slow a user when they join with car gear ONLY WORKS WITH ONE PLAYER
-
--- Gear packs
-periastronlist = {"108158379", "80661504", "233520257", "73829193", "69499437", "139577901", "2544549379", "120307951", "99119240", "93136802", "80597060", "159229806", "77443461"}
-meleecodes = {"121946387", "12187348", "170897263", "427947884", "306971294", "306971294", "11999235", "28275809", "10758456", "243790334", "14719505", "13207169", "11956382", "10469910", "124472052", "20721924"}
-guncodes = {"243007180", "116693764", "212296936", "168143042", "467138029", "42845609", "130113146", "26017478", "26014536", "9360722592", "18268645"}
-fungears = {"111876831", "90718686", "283755431", "139578061", "90718686", "212641536", "392057539", "323477973", "78730532", "47597835", "212641536", "88143093", "73265108", "115377964", "98411393"}
-explosivecodes = {"88885539", "88885524", "73888479", "110337853", "101110605", "29957963", "503955938", "243788010", "88146497"}
-destructivecodes = {"125013830", "225921650", "60357972", "108158379"}
-swordcodes = {"25740034", "638089422", "170903610", "319655422", "125013769", "108158379", "2470750640", "2041982658", "361950297", "2103274863", "181356054", "163491866", "108158439"}
-rideablecodes = {"304719869", "2568114215", "158069143", "185422295", "346687565", "553939167", "820013867", "387285940", "163348575", "206799274", "928805891", "124127383", "125013849", "2445089071", "253519495"}
 
 -- Variables for moving
 local movestatus = false
