@@ -101,16 +101,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		  Remind("Setting...")
       	  end
 
-   	  if string.sub(msg:lower(), 1, #vprefix + 4) == vprefix.."draw" then
-           	  drawState = true; draw()
-		  Remind("Setting...")
-      	  end
-
-   	  if string.sub(msg:lower(), 1, #vprefix + 6) == vprefix.."undraw" then
-           	  drawState = false; draw()
-		  Remind("Closed!");Chat('clr')
-          end
-
 	  if string.sub(msg:lower(), 1, #vprefix + 5) == vprefix.."unvis" then
            	vis.Parent = nil
                 kahcon:Disconnect()
@@ -152,6 +142,22 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		end
       	  end
 
+   	  if string.sub(msg:lower(), 1, #vprefix + 4) == vprefix.."draw" then
+           	  drawState = true; draw()
+		  Remind("Setting...")
+      	  end
+
+   	  if string.sub(msg:lower(), 1, #vprefix + 6) == vprefix.."undraw" then
+           	  drawState = false; draw()
+		  Remind("Closed!");Chat('clr')
+          end
+
+
+   	  if string.sub(msg:lower(), 1, #vprefix + 5) == vprefix.."dsize" then
+           	  brushSize = tonumber(string.sub(msg:lower(), #vprefix + 7))
+		  Remind("Size changed")
+      	  end
+		
   	  if string.sub(msg:lower(), 1, #vprefix + 2) == vprefix.."rj" then
            	game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId,game.JobId,game.Players.LocalPlayer) 
       	  end
