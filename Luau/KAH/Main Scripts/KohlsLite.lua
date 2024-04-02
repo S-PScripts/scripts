@@ -2300,7 +2300,7 @@ Commands required: rocket]])
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'kitten' then -- nak3d would get tagged
-		local meow = string.sub(msg:lower(), 1, #prefix + 8)
+		local meow = string.sub(msg:lower(), #prefix + 8)
 		PLAYERCHECK(meow)
 		if player ~= nil then
 			 kit = cplr
