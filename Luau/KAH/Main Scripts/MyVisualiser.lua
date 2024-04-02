@@ -266,7 +266,7 @@ function visc()
                         spin = 0
                     end
                     local iter = math.rad(spin+(_*(360/#vis:GetChildren())))
-                    local z = visradius + pbl/ (1 ~= 100 and (100 - 1) or .01)
+                    local z = Toggles.VisRadius + pbl/ (1 ~= 100 and (100 - 1) or .01)
                     local g = pbl / (35 ~= 100 and (100-35) or .01)
                     local p = CFrame.new(typeof(Toggles.VisOrbiter) == "CFrame" and Toggles.VisOrbiter.X or Toggles.VisOrbiter.Character.HumanoidRootPart.CFrame.X,typeof(Toggles.VisOrbiter) == "CFrame" and Toggles.VisOrbiter.Y or Toggles.VisOrbiter.Character.HumanoidRootPart.CFrame.Y,typeof(Toggles.VisOrbiter) == "CFrame" and Toggles.VisOrbiter.Z or Toggles.VisOrbiter.Character.HumanoidRootPart.CFrame.Z) * CFrame.Angles(axis == "x" and iter or 0, axis == "y" and iter or 0, axis == "z" and iter or 0) * CFrame.new(0,0,z)
                     local AddVector = Vector3.new(0,0,0)
