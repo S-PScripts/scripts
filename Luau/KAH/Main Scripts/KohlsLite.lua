@@ -1623,7 +1623,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     	 local args = string.split(msg, " ")
     	 if #args >= 3 then
         	local target = args[2]
-        	local gearName = args[3]
+        	local gearName = table.concat(args, " ", 3)
         	local gearIDs = gearlist[gearName].gearid  -- Retrieve the gear IDs for the specified gearName
         	if type(gearIDs) == "table" then  -- Check if the gearID is an array
             		for _, selectedGearID in ipairs(gearIDs) do
@@ -1664,7 +1664,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         local args = string.split(msg, " ")
         if #args >= 3 then
             	local target = args[2]
-            	local charName = args[3]
+            	local charName = table.concat(args, " ", 3)
             	local china = charlist[charName].charid
                 Chat("char " .. target .. " " .. china)
 	end
@@ -1673,7 +1673,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'gchar' then
         local args = string.split(msg, " ")
         local target = args[2]
-        local specialid = args[3]
+        local specialid = table.concat(args, " ", 3)
 	local charpos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
         local circus = game.Players:GetUserIdFromNameAsync(specialid)
         Chat("char " .. target .. " " .. circus);task.wait(0.5)
@@ -2777,7 +2777,7 @@ Commands required: rocket]])
         PLAYERCHECK(dasplayer)
 	if player ~= nil then
 			sus = player
-			whatsapp = args[3]
+			whatsapp = table.concat(args, " ", 3)
 			AnnounceWM()
         else
                		Remind('Cannot find player with the name: '..dasplayer)
@@ -6309,7 +6309,7 @@ end
 
 -- we do a bit of trolling
 function AnnounceWM()
-      Chat("h \n\n\n ["..sus.."]: "..whatsapp.. " \n\n\n")
+      Chat("h \n\n\n "..sus..": "..whatsapp.. " \n\n\n")
 end
 
 -- SPAWN SAVED
