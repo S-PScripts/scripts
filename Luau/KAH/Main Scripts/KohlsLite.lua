@@ -697,13 +697,21 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	end
 
         if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'myvis' then
-		Remind("Prefix is -")
-		GExecute("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/Main%20Scripts/MyVisualiser.lua")
+		if haspersons == true then
+			Remind("Prefix is -")
+			GExecute("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/Main%20Scripts/MyVisualiser.lua")
+		else 
+			Remind("Sorry, you need persons for this command!")
+		end
 	end
 		
 	if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'mydraw' then
-		Remind("Prefix is -")
-		GExecute("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/Main%20Scripts/MyVisualiser.lua")
+		if haspersons == true then
+			Remind("Prefix is -")
+			GExecute("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/Main%20Scripts/MyVisualiser.lua")
+		else 
+			Remind("Sorry, you need persons for this command!")
+		end
 	end
 		
 	if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'tricky' then -- CREDITS TO TECH
