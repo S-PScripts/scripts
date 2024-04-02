@@ -2312,7 +2312,7 @@ Commands required: rocket]])
        			 end
          	else
                 	Remind('Cannot find player with the name: '..meow)
-         end
+         	end
     end
 
    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'smack' then -- pr
@@ -2327,6 +2327,19 @@ Commands required: rocket]])
 		task.wait(1.45)
 		Chat("explode "..person)
     		Chat("music nan")
+    end
+
+   if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'dumb' then -- pr
+		local dum = string.sub(msg:lower(), #prefix + 6)
+		PLAYERCHECK(dum)	
+		if player ~= nil then
+			dummy = player
+			idum = cplr
+			DumbGuy()
+		else
+			Remind('Cannot find player with the name: '..dum)
+		end
+
     end
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'bend' then -- pr
@@ -6708,6 +6721,27 @@ function Lemon()
     	Chat("explode me")
     	task.wait(0.7)
 	Chat("music nan")
+end
+
+function DumbGuy()
+	Chat("speed "..dummy.." 0")
+        Chat("music 131453190")
+        wait(0.2)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = idum.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,-3) * CFrame.Angles(0,math.rad(180),0)
+        Speak("Don't believe me?");task.wait(0.9)
+        Speak("Here,");task.wait(0.6)
+        Speak("I'll put you on.");task.wait(0.6)
+        Chat("gear me 212641536")
+        repeat wait() until game.Players.LocalPlayer.Backpack:FindFirstChild("SuperFlyGoldBoombox")
+        boomba = game.Players.LocalPlayer.Backpack:FindFirstChild("SuperFlyGoldBoombox")
+        boomba.Parent = game.Players.LocalPlayer.Character
+        wait(1)
+        boomba:Destroy()
+        Chat("That's you!")
+        Chat("/e point");task.wait(0.9)
+        Chat("That's how dumb you sound!");task.wait(1)
+        Chat("music nan")
+        Chat("speed "..dummy.." 16")
 end
 
 function Laser()
