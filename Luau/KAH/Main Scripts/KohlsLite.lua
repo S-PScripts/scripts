@@ -4849,7 +4849,7 @@ task.spawn(function()
 				end
 				
 				if ALLantifire == true then
-	   				 if v.Character:FindFirstChild("Torso") then
+	   				 if v.Character and v.Character:FindFirstChild("Torso") then
                 				if v.Character.Torso:FindFirstChild("Fire") then
                     					Chat("unfire "..v.Name)
 						else end
@@ -4857,7 +4857,7 @@ task.spawn(function()
 				end
 				
 				if ALLantifreeze == true then
-	     				if v.Character:FindFirstChild("ice") then
+	     				if v.Character and v.Character:FindFirstChild("ice") then
                					 Chat("thaw "..v.Name)
 					else end
 				end
@@ -4870,13 +4870,13 @@ task.spawn(function()
 				end
 				
 				if ALLantiff == true then
-	 				if v.Character:FindFirstChild("ForceField") then
+	 				if v.Character and v.Character:FindFirstChild("ForceField") then
                 				Chat("unff "..v.Name)
 					else end
 				end
 
 	 			if checkperm2 == true then
-					 if v.Character:FindFirstChild("ForceField") then
+					 if v.Character and v.Character:FindFirstChild("ForceField") then
 						if not table.find(permusers, v.Name) then
                 					print(v.Name.." has perm.")
 							table.insert(permusers, v.Name)
@@ -4886,7 +4886,7 @@ task.spawn(function()
 				 end
 				
 				if ALLantiglow == true then
-	   				if v.Character:FindFirstChild("PointLight") then
+	   				if v.Character and v.Character:FindFirstChild("PointLight") then
                   				Chat("unglow "..v.Name)
 					else end
 				end
@@ -4910,13 +4910,13 @@ task.spawn(function()
 				end
 						
 				if ALLantikill == true then
-	 				  if v.Character.Humanoid.Health == 0 then
+	 				  if v.Character and v.Character.Humanoid.Health == 0 then
                  				   Chat("reset "..v.Name)
 					  else end
 				end
 
 				if table.find(loopkill, v.Name) then
-					if v.Character.Humanoid.Health ~= 0 then
+					if v.Character and v.Character.Humanoid.Health ~= 0 then
                     				Chat("kill "..v.Name)
 					end
         			end
@@ -4934,7 +4934,7 @@ task.spawn(function()
 				end
 				
 				if ALLantiparticles == true then
-	   				if v.Character:FindFirstChild("ParticleEmitter") then
+	   				if v.Character and v.Character:FindFirstChild("ParticleEmitter") then
                					   Chat("unparticle"..v.Name)
 					else end
 				end
@@ -4946,7 +4946,7 @@ task.spawn(function()
 				end
 				
 				if ALLantirocket == true then
-	 				  if v.Character:FindFirstChild("Rocket") then
+	 				  if v.Character and v.Character:FindFirstChild("Rocket") then
           				      Chat("reload "..v.Name)
 					  else end
 				end
@@ -4959,13 +4959,13 @@ task.spawn(function()
 				end
 				
 				if ALLantiseizure == true then
-	      				  if v.Character:FindFirstChild("Seizure") then
+	      				  if v.Character and v.Character:FindFirstChild("Seizure") then
            				     Chat("unseizure "..v.Name)
 					  else end
 				end
 				
 				if ALLantismoke == true then
-	   				  if v.Character:FindFirstChild("Torso") then
+	   				  if v.Character and v.Character:FindFirstChild("Torso") then
               					  if v.Character.Torso:FindFirstChild("Smoke") then
                 					    Chat("unsmoke "..v.Name)
 						  else end
@@ -4973,7 +4973,7 @@ task.spawn(function()
 				end
 				
 				if ALLantisparkles == true then
-					    if v.Character:FindFirstChild("Torso") then
+					    if v.Character and v.Character:FindFirstChild("Torso") then
               					  if v.Character.Torso:FindFirstChild("Sparkles") then
                    					 Chat("unsparkles "..v.Name)
 						  else end
@@ -4987,7 +4987,7 @@ task.spawn(function()
 				end
 
 				if ALLantispin == true then
-					if v.Character:FindFirstChild("Torso") then
+					if v.Character and v.Character:FindFirstChild("Torso") then
                 				if v.Character.Torso:FindFirstChild("SPINNER") then
                     					Chat("unspin "..v.Name)
                 				end
@@ -5008,7 +5008,7 @@ task.spawn(function()
 				end
 
 				if ALLantisetgrav == true then
-					if v.Character:FindFirstChild("Torso") then
+					if v.Character and v.Character:FindFirstChild("Torso") then
                 				if v.Character.Torso:FindFirstChildOfClass("BodyForce") then
 							Chat("respawn "..v.Name)
 						end
@@ -5016,7 +5016,7 @@ task.spawn(function()
 				end
 					
 				if ALLantiswag == true then
-					if v.Character:FindFirstChild("EpicCape") then
+					if v.Character and v.Character:FindFirstChild("EpicCape") then
                 				Chat("normal "..v.Name)
 					end
 				end
