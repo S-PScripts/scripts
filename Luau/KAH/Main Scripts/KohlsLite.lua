@@ -6014,6 +6014,16 @@ task.spawn(function()
 	if srkick and rkicker then
 	   repeat 
 		task.wait(0)
+		if not game.Players.LocalPlayer.Character then 
+			repeat task.wait(0) until game.Players.LocalPlayer.Character 
+		end
+		if not rkicker.Character then 
+			if rkicker then
+				repeat task.wait(0) until rkicker.Character or not rkicker
+			else 
+				srkick = false
+			end
+		end
 	   	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = rkicker.Character.HumanoidRootPart.CFrame
       		for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
 			if v.Name == "Rocket" then
