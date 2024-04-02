@@ -2715,7 +2715,7 @@ Commands required: rocket]])
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'ungearban' then
 		local plrg = string.sub(msg:lower(), #prefix + 11)
-		if plrg == "" then
+		if plrg == "" or plrg == "me" then
          		game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, true)
 		else 
 			Ungearban(plrg)
