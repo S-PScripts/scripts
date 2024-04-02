@@ -2899,6 +2899,16 @@ Commands required: rocket]])
          	local getnumber = string.sub(msg:lower(), #prefix + 7)
          	Clone(getnumber)
     end
+
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'table' then
+         	local getnumber = string.sub(msg:lower(), #prefix + 7)
+         	Table(getnumber)
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'dance' then
+         	local getnumber = string.sub(msg:lower(), #prefix + 7)
+         	Potion(getnumber)
+    end
 		
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'nuke' then
          	local dasplayer = string.sub(msg:lower(), #prefix + 6)
@@ -7001,6 +7011,38 @@ function Clone(getnum)
          repeat task.wait() until (#workspace:GetChildren() - oldchild) >= tonumber(getnum) 
 	 Chat("ungear me")
 	 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
+end
+
+function Table(getnum)
+	for i = 1, tonumber(getnum) do
+        	Chat("gear me 110789105")
+	end
+	local oldchild = #workspace:GetChildren()
+	repeat task.wait() until #game.Players.LocalPlayer.Backpack:GetChildren() >= tonumber(getnum) 
+ 	local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
+        for _, v in ipairs(Backpack:GetChildren()) do
+           		 v.Parent = game.Players.LocalPlayer.Character
+			 task.wait(0.1)
+            		 v:Activate()
+        end
+        repeat task.wait() until (#workspace:GetChildren() - oldchild) >= tonumber(getnum) 
+	Chat("ungear me");Chat("reset me")
+end
+
+function Potion(getnum)
+	for i = 1, tonumber(getnum) do
+        	Chat("gear me 27858062")
+	end
+	local oldchild = #workspace:GetChildren()
+	repeat task.wait() until #game.Players.LocalPlayer.Backpack:GetChildren() >= tonumber(getnum) 
+ 	local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
+        for _, v in ipairs(Backpack:GetChildren()) do
+           		 v.Parent = game.Players.LocalPlayer.Character
+			 task.wait(0.1)
+            		 v:Activate()
+        end
+        repeat task.wait() until (#workspace:GetChildren() - oldchild) >= tonumber(getnum) 
+	Chat("ungear me");Chat("reset me")
 end
 
 --// ATTACHING STUFF \\ --
