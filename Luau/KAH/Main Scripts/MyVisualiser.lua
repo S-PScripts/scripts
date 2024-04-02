@@ -269,8 +269,8 @@ function visc()
 	    Chat("unpunish " .. nm)
         end)
 
-        local conn
-        local conn0        
+        conn =
+        conn0        
 
         task.spawn(function()
             local lastpbl = 0
