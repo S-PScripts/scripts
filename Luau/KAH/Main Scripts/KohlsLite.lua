@@ -2232,11 +2232,24 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         	end
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'invall' then
+		local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
+		local Character = game.Players.LocalPlayer.Character
+        	for _, v in ipairs(Character:GetChildren()) do
+			 if v:IsA("Tool") then
+           		 	v.Parent = Backpack
+			 end
+        	end
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'dropall' then
 		local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
-	        for _, v in ipairs(Backpack:GetChildren()) do
-           		 v.Parent = game.Players.LocalPlayer.Character
-        	end
+		local Character = game.Players.LocalPlayer.Character
+		for _, v in ipairs(Character:GetChildren()) do
+			 if v:IsA("Tool") then
+           		 	v.Parent = Backpack
+			 end        	
+		end
         	for _, v in ipairs(Backpack:GetChildren()) do
            		 v.Parent = workspace
         	end
