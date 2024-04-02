@@ -14,6 +14,16 @@ local function Chat(msg)
         game.Players:Chat(msg)
 end
 
+function PLAYERCHECK(plr)
+  for i, v in pairs(game.Players:GetPlayers()) do
+      if string.sub(v.Name:lower(), 1, #plr) == plr:lower() then
+          player = v.Name
+	  cplr = v
+          Remind("[debug]: Found "..player)
+      end
+  end
+end
+
 local vprefix = "-"
 
 -- INPUTS --
@@ -79,30 +89,30 @@ local VisBindable = Instance.new("BindableEvent")
 
 -- COMMAND HUB --
 game.Players.LocalPlayer.Chatted:Connect(function(msg)
-	      task.wait(0)
+	  task.wait(0)
 
     	  if string.sub(msg:lower(), 1, #vprefix + 4) == vprefix.."cmds" then
            	  CMDPrint()
-	   	        Remind("Check your console by running /console!")
-      	end
+	   	  Remind("Check your console by running /console!")
+      	  end
 
     	  if string.sub(msg:lower(), 1, #vprefix + 6) == vprefix.."visual" then
            	  visc()
-		          Remind("Setting...")
-      	end
+		  Remind("Setting...")
+      	  end
 
-   	    if string.sub(msg:lower(), 1, #vprefix + 4) == vprefix.."draw" then
+   	  if string.sub(msg:lower(), 1, #vprefix + 4) == vprefix.."draw" then
            	  drawState = true; draw()
-		          Remind("Setting...")
-      	end
+		  Remind("Setting...")
+      	  end
 
-   	    if string.sub(msg:lower(), 1, #vprefix + 6) == vprefix.."undraw" then
+   	  if string.sub(msg:lower(), 1, #vprefix + 6) == vprefix.."undraw" then
            	  drawState = false; draw()
-		          Remind("Closed!");Chat('clr')
-        end
+		  Remind("Closed!");Chat('clr')
+          end
 
-	      if string.sub(msg:lower(), 1, #vprefix + 5) == vprefix.."unvis" then
-           	    vis.Parent = nil
+	  if string.sub(msg:lower(), 1, #vprefix + 5) == vprefix.."unvis" then
+           	vis.Parent = nil
                 kahcon:Disconnect()
 
                 vis:Destroy()
@@ -113,14 +123,39 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                 end
 
                 conn:Disconnect()
-		            Remind("Closed!")
-      	end
+		Remind("Closed!")
+      	  end
 
     	  if string.sub(msg:lower(), 1, #vprefix + 7) == vprefix.."vismode" then
            	Toggles.VisMode = tonumber(string.sub(msg:lower(), #vprefix + 9))
-		          Remind("Mode changed")
-      	end
+		Remind("Mode changed")
+      	  end
 
+    	  if string.sub(msg:lower(), 1, #vprefix + 6) == vprefix.."visamt" then
+           	Toggles.VisAmt = tonumber(string.sub(msg:lower(), #vprefix + 8))
+		Remind("Amount changed")
+      	  end
+		
+    	  if string.sub(msg:lower(), 1, #vprefix + 6) == vprefix.."visrad" then
+           	Toggles.VisRadius = tonumber(string.sub(msg:lower(), #vprefix + 8))
+		Remind("Radius changed")
+      	  end
+
+    	  if string.sub(msg:lower(), 1, #vprefix + 6) == vprefix.."visorb" then
+		local dasplayer = string.sub(msg:lower(), #vprefix + 8)
+		PLAYERCHECK(dasplayer)
+		if player ~= nil then
+           		Toggles.VisOrbiter = cplr
+			Remind("Orbiter changed")
+		else
+			Remind("Player does not exist!")
+		end
+      	  end
+
+  	  if string.sub(msg:lower(), 1, #vprefix + 2) == vprefix.."rj" then
+           	game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId,game.JobId,game.Players.LocalPlayer) 
+      	  end
+		
 end)
 
 -- COMMAND LIST ---
