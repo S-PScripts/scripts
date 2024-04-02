@@ -3716,6 +3716,14 @@ Commands required: rocket]])
 	end             
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antikick' then
+		antikick2 = true
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unantikick' then
+		antikick2 = false
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'unantirocket' then
  	local args = string.split(msg, " ")
 	if args[2] == "me" then
@@ -5053,31 +5061,38 @@ game:GetService("RunService").RenderStepped:Connect(function()
 	task.wait(0)
         for i, v in ipairs(game.Players:GetPlayers()) do
 	    if v.Backpack and v.Character then
-            if v.Backpack:FindFirstChild("VampireVanquisher") or v.Character:FindFirstChild("VampireVanquisher") then
-               if v ~= game.Players.LocalPlayer and anticrash2 == true and not table.find(GWhitelisted, v.Name) then
-                Chat("ungear "..v.Name)
-                Chat("punish "..v.Name)
-                Chat("h \n\n\n [KohlsLite]: Sorry, "..v.Name.. ", you cannot use the Vampire Vanquisher due to anti crash (2). \n\n\n")
-               end
-            end
-			
-            if v.Backpack:FindFirstChild("OrinthianSwordAndShield") or v.Character:FindFirstChild("OrinthianSwordAndShield") then
-               if v ~= game.Players.LocalPlayer and anticrash2 == true and not table.find(GWhitelisted, v.Name) then
-                Chat("ungear "..v.Name)
-                Chat("punish "..v.Name)
-                Chat("h \n\n\n [KohlsLite]: Sorry, "..v.Name.. ", you cannot use the Orinthian Sword and Shield due to anti crash (2). \n\n\n")
-               end
-            end
-			
-	    for i, gear in pairs(v.Backpack:GetChildren()) do
-            	if gear:IsA("Tool") and antigear2 == true then
-               		if v.Name ~= game.Players.LocalPlayer.Name and not table.find(GWhitelisted, v.Name) then
-				Chat("ungear "..v.Name)
-				Chat("punish "..v.Name)
-                		Chat("h \n\n\n [KohlsLite]: Sorry, "..v.Name.. ", you cannot use gears due to anti gear (2). \n\n\n")
-			end
+            	if v.Backpack:FindFirstChild("VampireVanquisher") or v.Character:FindFirstChild("VampireVanquisher") then
+               		if v ~= game.Players.LocalPlayer and anticrash2 == true and not table.find(GWhitelisted, v.Name) then
+                		Chat("ungear "..v.Name)
+                		Chat("punish "..v.Name)
+                		Chat("h \n\n\n [KohlsLite]: Sorry, "..v.Name.. ", you cannot use the Vampire Vanquisher due to anti crash (2). \n\n\n")
+               		end
             	end
-       	    end
+			
+            	if v.Backpack:FindFirstChild("OrinthianSwordAndShield") or v.Character:FindFirstChild("OrinthianSwordAndShield") then
+               		if v ~= game.Players.LocalPlayer and anticrash2 == true and not table.find(GWhitelisted, v.Name) then
+                		Chat("ungear "..v.Name)
+                		Chat("punish "..v.Name)
+                		Chat("h \n\n\n [KohlsLite]: Sorry, "..v.Name.. ", you cannot use the Orinthian Sword and Shield due to anti crash (2). \n\n\n")
+               		end
+            	end
+
+		if v.Backpack:FindFirstChild("DriveBloxUltimateCar") or v.Character:FindFirstChild("DriveBloxUltimateCar") then
+               		if v == game.Players.LocalPlayer and antikick2 == true then
+				game.Players.LocalPlayer:FindFirstChild("DriveBloxUltimateCar"):Destroy()
+                		Chat("ungear me")
+               		end
+            	end
+			
+	    	for i, gear in pairs(v.Backpack:GetChildren()) do
+            		if gear:IsA("Tool") and antigear2 == true then
+               			if v.Name ~= game.Players.LocalPlayer.Name and not table.find(GWhitelisted, v.Name) then
+					Chat("ungear "..v.Name)
+					Chat("punish "..v.Name)
+                			Chat("h \n\n\n [KohlsLite]: Sorry, "..v.Name.. ", you cannot use gears due to anti gear (2). \n\n\n")
+				end
+            		end
+       	    	end
 	    end
      end 
 end)
@@ -6425,8 +6440,7 @@ function EmCrash()
 end
 
 function PCrash() -- with this crash make sure to click manually
-      Chat("h \n\n\n dsc gg kohlslite \n\n\n")
-      for i = 1, 2 do -- once doesn't usually work
+        Chat("h \n\n\n dsc gg kohlslite \n\n\n")
       	Chat("gear me 0000000092628079")
       	repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("OrinthianSwordAndShield")
       	local ort = game.Players.LocalPlayer.Backpack:FindFirstChild("OrinthianSwordAndShield")
@@ -6437,7 +6451,7 @@ function PCrash() -- with this crash make sure to click manually
       	for i = 1,100 do
           	Chat("unsize me me me")
       	end
-      end
+	Chat("gear me 0000000092628079")
 end
 
 -- WELCOME/LEAVE MSG
