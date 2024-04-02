@@ -6013,6 +6013,7 @@ task.spawn(function()
 	task.wait(0)
 	if srkick and rkicker then
 	   repeat 
+		task.wait(0)
 	   	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = rkicker.Character.HumanoidRootPart.CFrame
       		for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
 			if v.Name == "Rocket" then
