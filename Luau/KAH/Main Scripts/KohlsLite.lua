@@ -1722,6 +1722,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		ColFix()
     end
 
+   if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'devcmd' then
+			moveObject(game:GetService("Workspace").Terrain["_Game"].Workspace.Obby.Jump9,CFrame.new(-41.0650024, 1.30000007, -28.601058959961, 0, 0, -1, 0, 1, 0, 1, 0, 0))
+    end
+
+
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'fixregen' then
 		if movestatus == true then 
 			return 
