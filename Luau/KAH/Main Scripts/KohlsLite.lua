@@ -2308,7 +2308,7 @@ Commands required: rocket]])
             			Chat("paint "..kit.Name.." "..kit.Character.Head.BrickColor.Name)
        			 end
          	else
-                	Remind('Cannot find player with the name: '..dasplayer)
+                	Remind('Cannot find player with the name: '..meow)
          end
     end
 
