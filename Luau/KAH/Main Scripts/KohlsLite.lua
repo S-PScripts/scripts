@@ -6737,9 +6737,9 @@ function DumbGuy()
         boomba.Parent = game.Players.LocalPlayer.Character
         wait(1)
         boomba:Destroy()
-        Chat("That's you!")
+        Speak("That's you!")
         Chat("/e point");task.wait(0.9)
-        Chat("That's how dumb you sound!");task.wait(1)
+        Speak("That's how dumb you sound!");task.wait(1)
         Chat("music nan")
         Chat("speed "..dummy.." 16")
 end
