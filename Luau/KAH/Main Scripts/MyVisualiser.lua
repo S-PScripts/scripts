@@ -178,7 +178,7 @@ function visc()
 
         repeat task.wait() 
 
-        until #vis:GetChildren() >= Toggles.VisAm
+        until #vis:GetChildren() >= Toggles.VisAmt
 
         local oldPos = {}
         local angle = 0
