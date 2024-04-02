@@ -4068,7 +4068,7 @@ Commands required: rocket]])
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'pkick' then
-   		local acplr = string.sub(msg:lower(), #prefix + 8)
+   		acplr = string.sub(msg:lower(), #prefix + 8)
    		PLAYERCHECK(acplr)
    		if player ~= nil and not table.find(nokick, player) then
    			Chat("freeze "..acplr)
@@ -6524,12 +6524,25 @@ function onPlayerLeaving(player)
     end
 
     if table.find(suser_on_sight, player.Name) then
-		SlowP = false
+		table.remove(carcar, table.find(carcar, player))
+    end
+
+    if table.find(carcar, player.Name) then
+		table.remove(carcar, table.find(carcar, player))
+    end
+
+    if table.find(byecam, player.Name) then
+		table.remove(byecam, table.find(byecam, player))
+    end
+
+    if acplr == player.Name then
+		antichatplr = false
     end
 	
     if table.find(mkick_on_sight, player.Name) then
 		antichatplr = false
     end
+
     task.wait()
 end
 
