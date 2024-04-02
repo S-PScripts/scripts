@@ -96,6 +96,10 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	   	  Remind("Check your console by running /console!")
       	  end
 
+   	  if string.sub(msg:lower(), 1, #vprefix + 7) == vprefix.."vprefix" then
+           	  vprefix = string.sub(msg:lower(), #vprefix + 9)
+      	  end
+
     	  if string.sub(msg:lower(), 1, #vprefix + 6) == vprefix.."visual" then
            	  visc()
 		  Remind("Setting...")
@@ -166,9 +170,29 @@ end)
 
 -- COMMAND LIST ---
 function CMDPrint()
-	print("cmds visual unvis vismode [args1]")
-	print("draw undraw")
-	print("prefix is a dash")
+	print("--- MyVisualiser.lua ---")
+	print("")
+	print("vprefix - set the prefix, default is a dash - ")
+	print("cmds - show the commands in this script")
+	print("rj - rejoin the server")
+	print("")
+	print("--- Visualiser ---")
+	print("visual - start the part visualiser")
+	print("unvis - end the part visualiser")
+	print("")
+	print("vismode - set the visualiser mode")
+	print("visamt - set the amount of parts for the visualiser")
+	print("visrad - set the radius of the visualiser")
+	print("visorb - set the player that the visualiser will go around")
+	print("")
+	print("--- Drawing ---")
+	print("draw - start drawing")
+	print("undraw - stop drawing")
+	print("")
+	print("dsize - set the draw size")
+	print("")
+	print("--- Information ---")
+	print("Script by quiving, ported by TS2021")
 end
 
 function visc()
