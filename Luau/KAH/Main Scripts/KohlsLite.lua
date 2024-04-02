@@ -4100,7 +4100,7 @@ Commands required: rocket]])
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'pkick' then
-   		acplr = string.sub(msg:lower(), #prefix + 8)
+   		acplr = string.sub(msg:lower(), #prefix + 7)
    		PLAYERCHECK(acplr)
    		if player ~= nil and not table.find(nokick, player) then
    			Chat("freeze "..acplr)
