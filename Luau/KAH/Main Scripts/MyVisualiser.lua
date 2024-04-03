@@ -122,17 +122,32 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
     	  if string.sub(msg:lower(), 1, #vprefix + 7) == vprefix.."vismode" then
            	Toggles.VisMode = tonumber(string.sub(msg:lower(), #vprefix + 9))
-		Remind("Mode changed")
+		if Toggles.VisMode ~= nil then 
+			Remind("Mode changed")
+		end
       	  end
 
     	  if string.sub(msg:lower(), 1, #vprefix + 6) == vprefix.."visamt" then
            	Toggles.VisAmt = tonumber(string.sub(msg:lower(), #vprefix + 8))
-		Remind("Amount changed")
+		if Toggles.VisAmt ~= nil then 
+			Remind("Amount changed")
+		end
       	  end
 		
     	  if string.sub(msg:lower(), 1, #vprefix + 6) == vprefix.."visrad" then
            	Toggles.VisRadius = tonumber(string.sub(msg:lower(), #vprefix + 8))
-		Remind("Radius changed")
+		if Toggles.VisRadius ~= nil then 
+			Remind("Radius changed")
+		end
+      	  end
+
+   	  if string.sub(msg:lower(), 1, #vprefix + 6) == vprefix.."viscol" then
+		local args = string.split(msg, " ")
+           	local Red = tonumber(args[2])
+		local Green = tonumber(args[3])
+		local Blue = tonumber(args[4])
+		Toggles.VisColor = Color3.new(Red,Green,Blue)
+		Remind("Colours changed")
       	  end
 
     	  if string.sub(msg:lower(), 1, #vprefix + 6) == vprefix.."visorb" then
@@ -184,6 +199,7 @@ function CMDPrint()
 	print("visamt - set the amount of parts for the visualiser")
 	print("visrad - set the radius of the visualiser")
 	print("visorb - set the player that the visualiser will go around")
+	print("viscol - set the visualiser colors [arg] [arg] [arg]")
 	print("")
 	print("--- Drawing ---")
 	print("draw - start drawing")
