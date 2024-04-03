@@ -254,7 +254,8 @@ local musictable = {
     ["62"] = { id = "7014573768", name = "pew sfx"},
     ["63"] = { id = "1838635121", name = "Sad End"},
     ["64"] = { id = "6841685130", name = "ButtonPress_53"},
-    ["65"] = { id = "1839817591", name = "Animation Opening"}
+    ["65"] = { id = "1839817591", name = "Animation Opening"},
+    ["66"] = { id = "1837879082", name = "Paradise Falls"}
 }
 
 local gearlist = {
@@ -2685,8 +2686,7 @@ Commands required: rocket]])
 	    Chat("fix") -- ;Chat(prefix.."perm2")
 	    musicsay = false
             task.wait(0.5)
-	    Chat("h \n\n\n dm me to join the kah community server \n\n\n");Chat(prefix.."gmusic64")
-            Speak("join the kah community server today ts 2021")
+	--    Chat("h \n\n\n Roblox: Sorry about the crash, we're trying to fix our servers! \n\n\n");Chat(prefix.."gmusic66")
             Chat("fogcolor 0 0 0");Chat("time 0");Chat("fogend 0");Chat("paint all black")
 	    task.wait(0.75)
 	    DCrash()	
