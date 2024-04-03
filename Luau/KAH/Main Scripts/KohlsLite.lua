@@ -2912,6 +2912,7 @@ Commands required: rocket]])
          	local dasplayer = string.sub(msg:lower(), #prefix + 9)
          	PLAYERCHECK(dasplayer)
          	if player ~= nil then
+			xplayer = player
 			Gearban()
          	else
                		Remind('Cannot find player with the name: '..dasplayer)
@@ -6724,7 +6725,8 @@ function onPlayerAdded(player)
 
     if autogb == true then 
 		cplr = player
-		player = player.Name
+		xplayer = player.Name
+		print(cplr);print(xplayer)
 		Gearban()
     end
     task.wait()
@@ -6871,7 +6873,7 @@ end
 function Gearban()
 	Chat("gear me 82357101")
         Chat("unff all")
-        Chat("speed " ..player.. " 0")
+        Chat("speed " ..xplayer.. " 0")
    	local pos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = cplr.Character.HumanoidRootPart.CFrame
         local cappy = cplr.Character
