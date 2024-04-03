@@ -2992,6 +2992,11 @@ Commands required: rocket]])
 	REJOIN()
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 2) == prefix..'rj' then
+	Remind("Rejoinning... please wait!")
+	REJOIN()
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'shop' then
 	Remind("Serverhopping... please wait!")
 	Remind("[WARN]: THIS MAY REJOIN YOU TO THE SAME SERVER.")
