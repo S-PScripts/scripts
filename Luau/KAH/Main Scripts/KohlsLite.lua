@@ -1833,6 +1833,60 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		    moveObject(workspace.Terrain["_Game"].Workspace.Baseplate,CFrame.new(-501, 0.100000001, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1))
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'fixspawn' then
+		if movestatus == true then 
+			return 
+		end	
+		DisCol()
+		if Map:FindFirstChild("Spawn1") then
+			moveobject(Map:FindFirstChild("Spawn1"), 2)
+			repeat fwait() until movestatus == false
+			Chat("respawn me")
+		end
+		task.wait(1)
+		if Map:FindFirstChild("Spawn2") then
+			moveobject(Map:FindFirstChild("Spawn2"), 2)
+			repeat fwait() until movestatus == false
+			Chat("respawn me")
+		end
+		task.wait(1)
+		if Map:FindFirstChild("Spawn3") then
+			moveobject(Map:FindFirstChild("Spawn3"), 2)
+			repeat fwait() until movestatus == false
+			Chat("respawn me")
+		end
+		GravFix()
+		Chat("respawn me")
+		ColFix()
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'movespawn' then
+		if movestatus == true then 
+			return 
+		end	
+		DisCol()
+		if Map:FindFirstChild("Spawn1") then
+			moveobject(Map:FindFirstChild("Spawn1"), 1)
+			repeat fwait() until movestatus == false
+			Chat("respawn me")
+		end
+		task.wait(1)
+		if Map:FindFirstChild("Spawn2") then
+			moveobject(Map:FindFirstChild("Spawn2"), 1)
+			repeat fwait() until movestatus == false
+			Chat("respawn me")
+		end
+		task.wait(1)
+		if Map:FindFirstChild("Spawn3") then
+			moveobject(Map:FindFirstChild("Spawn3"), 1)
+			repeat fwait() until movestatus == false
+			Chat("respawn me")
+		end
+		GravFix()
+		Chat("respawn me")
+		ColFix()
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'fixregen' then
 		if movestatus == true then 
 			return 
