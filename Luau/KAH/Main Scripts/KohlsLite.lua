@@ -4595,11 +4595,16 @@ function checkforperm()
 	if string.match(game:HttpGet("https://inventory.roproxy.com/v1/users/" .. gcplr.UserId .. "/items/GamePass/" .. 66254), 66254) then
             Remind(gcplrn.." has perm in NBC!")
 	  --  Speak(gcplrn.." has perm in NBC!")
-	    table.insert(permusers, gcplrn)
+	    if not table.find(permusers, gcplrn) then
+	    	table.insert(permusers, gcplrn)
+	    end
         elseif string.match(game:HttpGet("https://inventory.roproxy.com/v1/users/" .. gcplr.UserId .. "/items/GamePass/" .. 64354), 64354) then
             Remind(gcplrn.." has perm in BC!")
 	   -- Speak(gcplrn.." has perm in BC!")
 	    table.insert(permusers, gcplrn)
+	    if not table.find(permusers, gcplrn) then
+	    	table.insert(permusers, gcplrn)
+	    end
         else 
         	Remind(gcplrn..' does not have perm!')
 	    --    Speak(gcplrn..' does not have perm!')
@@ -4612,10 +4617,16 @@ function checkforpersons()
             Remind(gcplrn.." has persons in NBC!")
 	   -- Speak(gcplrn.." has persons in NBC!")
 	    table.insert(personsusers, gcplrn)
+	    if not table.find(personsusers, gcplrn) then
+	    	table.insert(personsusers, gcplrn)
+	    end
         elseif string.match(game:HttpGet("https://inventory.roproxy.com/v1/users/" .. gcplr.UserId .. "/items/GamePass/" .. 37127), 37127) then
             Remind(gcplrn.." has persons in BC!")
 	   -- Speak(gcplrn.." has persons in BC!")
 	    table.insert(personsusers, gcplrn)
+	    if not table.find(personsusers, gcplrn) then
+	    	table.insert(personsusers, gcplrn)
+	    end
         else 
         	Remind(gcplrn..' does not have persons!')
 	     --   Speak(gcplrn..' does not have persons!')
