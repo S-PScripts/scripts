@@ -2913,6 +2913,7 @@ Commands required: rocket]])
          	PLAYERCHECK(dasplayer)
          	if player ~= nil then
 			xplayer = player
+			xplr = cplr
 			Gearban()
          	else
                		Remind('Cannot find player with the name: '..dasplayer)
@@ -6724,7 +6725,7 @@ function onPlayerAdded(player)
     end
 
     if autogb == true then 
-		cplr = player
+		xplr = player
 		xplayer = player.Name
 		print(cplr);print(xplayer)
 		Gearban()
@@ -6875,8 +6876,8 @@ function Gearban()
         Chat("unff all")
         Chat("speed " ..xplayer.. " 0")
    	local pos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = cplr.Character.HumanoidRootPart.CFrame
-        local cappy = cplr.Character
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = xplr.Character.HumanoidRootPart.CFrame
+        local cappy = xplr.Character
 	repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("PortableJustice")
 	local tool = game.Players.LocalPlayer.Backpack:FindFirstChild("PortableJustice")
         tool.Parent = game.Players.LocalPlayer.Character
