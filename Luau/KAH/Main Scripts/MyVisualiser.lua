@@ -121,8 +121,9 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
       	  end
 
     	  if string.sub(msg:lower(), 1, #vprefix + 7) == vprefix.."vismode" then
-           	Toggles.VisMode = tonumber(string.sub(msg:lower(), #vprefix + 9))
-		if Toggles.VisMode ~= nil and Toggles.VisMode > 0 and Toggles.VisMode < 5 then 
+           	vism = tonumber(string.sub(msg:lower(), #vprefix + 9))
+		if vism ~= nil and vism > -1 and vism < 5 then 
+			Toggles.VisMode = vism
 			Remind("Mode changed")
 		else
 			Remind("Invalid mode (0 to 4)")
@@ -130,15 +131,17 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
       	  end
 
     	  if string.sub(msg:lower(), 1, #vprefix + 6) == vprefix.."visamt" then
-           	Toggles.VisAmt = tonumber(string.sub(msg:lower(), #vprefix + 8))
+           	visa = tonumber(string.sub(msg:lower(), #vprefix + 8))
 		if Toggles.VisAmt ~= nil then 
+			Toggles.VisAmt = visa
 			Remind("Amount changed")
 		end
       	  end
 		
     	  if string.sub(msg:lower(), 1, #vprefix + 6) == vprefix.."visrad" then
-           	Toggles.VisRadius = tonumber(string.sub(msg:lower(), #vprefix + 8))
+		visr = tonumber(string.sub(msg:lower(), #vprefix + 8))
 		if Toggles.VisRadius ~= nil then 
+			Toggles.VisRadius = visr
 			Remind("Radius changed")
 		end
       	  end
@@ -177,6 +180,16 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
    	  if string.sub(msg:lower(), 1, #vprefix + 5) == vprefix.."dsize" then
            	  brushSize = tonumber(string.sub(msg:lower(), #vprefix + 7))
 		  Remind("Size changed")
+      	  end
+
+   	  if string.sub(msg:lower(), 1, #vprefix + 4) == vprefix.."dcol" then
+		local args = string.split(msg, " ")
+           	local Red = tonumber(args[2])
+		local Green = tonumber(args[3])
+		local Blue = tonumber(args[4])
+		partColorer.Color = Color3.new(Red,Green,Blue)
+		selectedColor = partColorer.Color		  
+		Remind("Colours changed")
       	  end
 		
   	  if string.sub(msg:lower(), 1, #vprefix + 2) == vprefix.."rj" then
