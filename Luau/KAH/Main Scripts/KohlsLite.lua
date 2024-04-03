@@ -1624,8 +1624,8 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     	 if #args >= 3 then
         	local target = args[2]
         	local gearName = table.concat(args, " ", 3)
-        	local gearIDs = gearlist[gearName].gearid  -- Retrieve the gear IDs for the specified gearName
-        	if type(gearIDs) == "table" then  -- Check if the gearID is an array
+        	local gearIDs = gearlist[gearName].gearid 
+        	if type(gearIDs) == "table" then
             		for _, selectedGearID in ipairs(gearIDs) do
                 		Chat("gear " .. target .. " " .. selectedGearID)
             		end
