@@ -122,8 +122,10 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
     	  if string.sub(msg:lower(), 1, #vprefix + 7) == vprefix.."vismode" then
            	Toggles.VisMode = tonumber(string.sub(msg:lower(), #vprefix + 9))
-		if Toggles.VisMode ~= nil then 
+		if Toggles.VisMode ~= nil and Toggles.VisMode > 0 and Toggles.VisMode < 5 then 
 			Remind("Mode changed")
+		else
+			Remind("Invalid mode (0 to 4)")
 		end
       	  end
 
