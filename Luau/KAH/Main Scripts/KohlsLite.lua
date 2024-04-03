@@ -6727,7 +6727,7 @@ function onPlayerAdded(player)
     if autogb == true then 
 		xplr = player
 		xplayer = player.Name
-		print(cplr);print(xplayer)
+		print(xplr);print(xplayer)
 		Gearban()
     end
     task.wait()
