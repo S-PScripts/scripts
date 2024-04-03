@@ -2629,8 +2629,8 @@ Commands required: rocket]])
 	    Chat("fix") -- ;Chat(prefix.."perm2")
 	    musicsay = false
             task.wait(0.5)
-	    Chat("h \n\n\n dm ts2021 to join the kah community server \n\n\n");Chat(prefix.."gmusic64")
-            Speak("it's too late... it's too late... IT'S TOO LATE")
+	    Chat("h \n\n\n dm me to join the kah community server \n\n\n");Chat(prefix.."gmusic64")
+            Speak("join the kah community server today ts 2021")
             Chat("fogcolor 0 0 0");Chat("time 0");Chat("fogend 0");Chat("paint all black")
 	    task.wait(0.75)
 	    DCrash()	
@@ -5039,7 +5039,7 @@ task.spawn(function()
 				end
 				
 				if ALLantihealthc == true then
-	   				if not v.Character.Humanoid.Health == 100 then
+	   				if v.Character.Humanoid.Health ~= 100 then
 						Chat("health "..v.Name.." 100")
 					else end
        				 end
@@ -5051,19 +5051,19 @@ task.spawn(function()
        				 end
 				
 				if ALLantijump == true then
-	  				  if not v.Character.Humanoid.JumpPower == 50 then
+	  				  if v.Character.Humanoid and v.Character.Humanoid.JumpPower ~= 50 then
 						Chat("normaljump "..v.Name)
 					  else end
 				end
 						
 				if ALLantikill == true then
-	 				  if v.Character and v.Character.Humanoid.Health == 0 then
+	 				  if v.Character.Humanoid and v.Character.Humanoid.Health ~= 0 then
                  				   Chat("reset "..v.Name)
 					  else end
 				end
 
 				if table.find(loopkill, v.Name) then
-					if v.Character and v.Character.Humanoid.Health ~= 0 then
+					if v.Character.Humanoid and v.Character.Humanoid.Health ~= 0 then
                     				Chat("kill "..v.Name)
 					end
         			end
@@ -5529,7 +5529,7 @@ function ADVERTISEMENT()
 	task.wait(1)
 	Speak("Get it at script blox: search CMD LITE")
 	task.wait(1)
-	Speak("dm ts2021 to join the kohlslite server or check the logs")
+	Speak("dm ts 2021 to join the kohlslite server or check the logs")
 	task.wait(1)
 	Speak("or go to dsc gg kohlslite")
 	if haspersons == true then
@@ -5544,7 +5544,7 @@ end
 function CADVERTISEMENT()
 	Speak("Join the KAH Community server today!")
 	task.wait(1)
-	Speak("dm ts2021 to join the kah community server or check the logs")
+	Speak("dm ts 2021 to join the kah community server or check the logs")
 	task.wait(1)
 	Speak("or go to dsc gg kohlslite")
 	if haspersons == true then
