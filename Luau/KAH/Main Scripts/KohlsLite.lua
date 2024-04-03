@@ -4824,7 +4824,7 @@ task.spawn(function()
 	end
 			
 	if YOUantihealthc == true then
-	   if not game.Players.LocalPlayer.Character.Humanoid.Health == 100 then
+	   if game.Players.LocalPlayer.Character.Humanoid and game.Players.LocalPlayer.Character.Humanoid.Health ~= 100 then
 		Chat("health me 100")         
 	   end
         end
@@ -4836,15 +4836,15 @@ task.spawn(function()
         end
 			
 	if YOUantijump == true then
-	    if not game.Players.LocalPlayer.Character.Humanoid.JumpPower == 50 then
+	    if game.Players.LocalPlayer.Character.Humanoid and game.Players.LocalPlayer.Character.Humanoid.JumpPower ~= 50 then
                 game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
             end
 	end
 			
 	if YOUantikill == true then
-	   if game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
+	   if game.Players.LocalPlayer.Character.Humanoid and game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
                     Chat("reset me")
-                end
+           end
 	end
 			
 	if YOUantimsg == true then
@@ -5039,7 +5039,7 @@ task.spawn(function()
 				end
 				
 				if ALLantihealthc == true then
-	   				if v.Character.Humanoid.Health ~= 100 then
+	   				if v.Character.Humanoid and v.Character.Humanoid.Health ~= 100 then
 						Chat("health "..v.Name.." 100")
 					else end
        				 end
@@ -5057,7 +5057,7 @@ task.spawn(function()
 				end
 						
 				if ALLantikill == true then
-	 				  if v.Character.Humanoid and v.Character.Humanoid.Health ~= 0 then
+	 				  if v.Character.Humanoid and v.Character.Humanoid.Health == 0 then
                  				   Chat("reset "..v.Name)
 					  else end
 				end
