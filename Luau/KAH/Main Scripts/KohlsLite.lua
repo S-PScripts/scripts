@@ -2686,7 +2686,7 @@ Commands required: rocket]])
 	    Chat("fix") -- ;Chat(prefix.."perm2")
 	    musicsay = false
             task.wait(0.5)
-	--    Chat("h \n\n\n Roblox: Sorry about the crash, we're trying to fix our servers! \n\n\n");Chat(prefix.."gmusic66")
+	    Chat("h \n\n\n Roblox: Sorry about the crash, we're trying to fix our servers! \n\n\n");Chat(prefix.."gmusic66")
             Chat("fogcolor 0 0 0");Chat("time 0");Chat("fogend 0");Chat("paint all black")
 	    task.wait(0.75)
 	    DCrash()	
