@@ -88,7 +88,8 @@ local whitelist = {
     "t_echl",
     "Ih0temyIife",
     "D_ionte",
-    "SZCVAK"
+    "SZCVAK",
+    "TheRealestOnHere"
 }
 
 -- Players you cannot kick
@@ -155,7 +156,8 @@ local GWhitelisted = {
     "clydekash",
     "t_echl",
     "Ih0temyIife",
-    "SZCVAK"
+    "SZCVAK",
+    "TheRealestOnHere"
 }
 
 -- Serverlock
@@ -2256,12 +2258,12 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unpermmusic' then
         mymusiconly = false
         musicoff = true
-	Chat("music OFF")
+	Chat("stopmusic")
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'offmusic' then
         musicoff = true
-	Chat("music OFF")
+	Chat("stopmusic")
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'onmusic' then
@@ -6111,47 +6113,62 @@ task.spawn(function()
 			end
     end
 		
-    if mymusiconly == true then -- changed to iidk's since mine was a bit broken (doing music mymusiconlyid restarts the music!)
-		 local soundlock = tonumber(mymusiconlyid)
-		 local origsound = soundlock
-		 soundlock = "http://www.roblox.com/asset/?id="..tostring(soundlock)
-		 local gwawg = 0
-		 repeat 
-			task.wait(0.1) 
-			gwawg = gwawg + 0.1
-    				if workspace.Terrain["_Game"].Folder:FindFirstChild("Sound") and musicoff == false then
-        				local music = workspace.Terrain["_Game"].Folder:FindFirstChild("Sound")
-        				if music.IsLoaded and music.SoundId == soundlock then
-           					if gwawg > music.TimeLength then 
-								gwawg = 0 
-						end 
-           					
-						if math.abs(music.TimePosition - gwawg) > 0.5 then
-              						 	music.TimePosition = gwawg
-            					end
-        				end
-						
-       					if music.SoundId ~= soundlock and musicoff == false then
-						if antimlog then
-        						Chat("music 00000000000000000000000000000"..tostring(origsound))
-						else
-							Chat("music "..tostring(origsound))
-						end        				
+    if mymusiconly == true then
+    	local soundlock = tonumber(mymusiconlyid)
+    	local origsound = soundlock
+    	soundlock = "http://www.roblox.com/asset/?id="..tostring(soundlock)
+    	local lastUpdateTime = tick()
+    	local gwawg = 0
+    	repeat 
+        	task.wait(0.1)
+        	local currentTime = tick() 
+        	local elapsedTime = currentTime - lastUpdateTime 
+        	lastUpdateTime = currentTime 
+
+       	 	gwawg = gwawg + elapsedTime 
+
+        	if workspace.Terrain["_Game"].Folder:FindFirstChild("Sound") and musicoff == false then
+            		local music = workspace.Terrain["_Game"].Folder:FindFirstChild("Sound")
+            		if music.IsLoaded and music.SoundId == soundlock then
+				-- print(music.TimePosition);print(gwawg)
+                		if gwawg > music.TimeLength then 
+                    			gwawg = 0 
+                		end 
+                
+                		if math.abs(music.TimePosition - gwawg) > 0.5 then
+                    			if gwawg < music.TimePosition - 1 or gwawg > music.TimePosition + 1 then
+                       				print(music.TimePosition) ; print(gwawg)
+                       				music.TimePosition = gwawg ; Remind("Fixed the time position!")
+                   			end
+                		end
+            		end
+            
+            		if music.SoundId ~= soundlock then
+				if musicoff == false then
+			        	if antimlog then
+                    				Chat("music 00000000000000000000000000000"..tostring(origsound))
+                			else
+                    				Chat("music "..tostring(origsound))
 					end
-						
-       					if music.Playing == false and musicoff == false then
-           							music:Play() 
-        				end
-    				else
-					if antimlog and musicoff == false then
-        					Chat("music 00000000000000000000000000000"..tostring(origsound))
-					else
-						Chat("music "..tostring(origsound))
-					end
-    				end
-		until not mymusiconly
-    	end
+                		end                    
+           		 end
+            
+            		if music.Playing == false and musicoff == false then
+                			music:Play() 
+            		end
+        	else
+			if musicoff == false then
+            			if antimlog then
+                			Chat("music 00000000000000000000000000000"..tostring(origsound))
+            			else
+               			 	Chat("music "..tostring(origsound))
+				end
+            		end
+        	end
+    		until not mymusiconly
+	end
   end
+
 end)
 
 -- GOTO
