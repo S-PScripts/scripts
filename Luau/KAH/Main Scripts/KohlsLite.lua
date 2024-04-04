@@ -5041,7 +5041,7 @@ task.spawn(function()
 	end
 			
 	if YOUantispeed == true then
-	    if not game.Players.LocalPlayer.Character.Humanoid.WalkSpeed == 16 then
+	    if game.Players.LocalPlayer.Character.Humanoid and game.Players.LocalPlayer.Character.Humanoid.WalkSpeed ~= 16 then
                 game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
             end
 	end
@@ -5158,7 +5158,7 @@ task.spawn(function()
 				end
 				
 				if ALLantihealthc == true then
-	   				if v.Character.Humanoid and v.Character.Humanoid.Health ~= 100 then
+	   				if v.Character.Humanoid.Health ~= 100 then
 						Chat("health "..v.Name.." 100")
 					else end
        				 end
@@ -5170,19 +5170,19 @@ task.spawn(function()
        				 end
 				
 				if ALLantijump == true then
-	  				  if v.Character.Humanoid and v.Character.Humanoid.JumpPower ~= 50 then
+	  				  if v.Character.Humanoid.JumpPower ~= 50 then
 						Chat("normaljump "..v.Name)
 					  else end
 				end
 						
 				if ALLantikill == true then
-	 				  if v.Character.Humanoid and v.Character.Humanoid.Health == 0 then
+	 				  if v.Character.Humanoid.Health == 0 then
                  				   Chat("reset "..v.Name)
 					  else end
 				end
 
 				if table.find(loopkill, v.Name) then
-					if v.Character.Humanoid and v.Character.Humanoid.Health ~= 0 then
+					if v.Character.Humanoid.Health ~= 0 then
                     				Chat("kill "..v.Name)
 					end
         			end
@@ -5201,7 +5201,7 @@ task.spawn(function()
 				
 				if ALLantiparticles == true then
 	   				if v.Character and v.Character:FindFirstChild("ParticleEmitter") then
-               					   Chat("unparticle"..v.Name)
+               					   Chat("unparticle "..v.Name)
 					else end
 				end
 				
@@ -5247,7 +5247,7 @@ task.spawn(function()
 				end
 				
 				if ALLantispeed == true then
-	   				 if not v.Character.Humanoid.WalkSpeed == 16 then
+	   				 if v.Character.Humanoid.WalkSpeed ~= 16 then
 						Chat("speed "..v.Name.." 16")
 					 else end
 				end
