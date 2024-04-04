@@ -1589,6 +1589,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'permmusic' then
         musicoff = false
         mymusiconly = true
+	gottenmode = 2
         mymusiconlyid = tonumber(string.sub(msg:lower(), #prefix + 11))
     end
 
