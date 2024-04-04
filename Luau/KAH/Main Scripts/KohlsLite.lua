@@ -3334,11 +3334,11 @@ Commands required: rocket]])
 	antigear = false
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antigear2' then
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'2antigear' then
 	antigear2 = true
     end
 		
-    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantigear2' then
+    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'2unantigear' then
 	antigear2 = false
     end
 		
@@ -3965,6 +3965,14 @@ Commands required: rocket]])
 		antikick2 = false
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'antit' then
+		antitoolm = true
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'unantit' then
+		antitoolm = false
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'unantirocket' then
  	local args = string.split(msg, " ")
 	if args[2] == "me" then
@@ -4582,11 +4590,13 @@ print("---")
 print("anticrash - anti-crash with vg or osas")
 print("2anticrash - anti-crash with vg or osas")
 print("antigear - stop users from using gears")
-print("antigear2 - stop users from using gears")
+print("2antigear - stop users from using gears")
 print("antipaint - stop users from using the paint bucket and Subspace Tripmine")
 print("antigb - stop users from using the portable justice and car gear") 
 print("noblt - stop users using other misc blacklisted tools")
 print("antiattach2 - stop users from using the Ivory Periastron [exploiter]")
+print("antit - stop yourself from using gears")
+print("antikick - stop yourself from using hotpotato, bluebucket and the car gear")
 
 print("---")
 print("antichat - stop people chatting by spamming m command full of emojis")
@@ -5387,6 +5397,14 @@ game:GetService("RunService").RenderStepped:Connect(function()
 					Chat("ungear "..v.Name)
 					Chat("punish "..v.Name)
                 			Chat("h \n\n\n [KohlsLite]: Sorry, "..v.Name.. ", you cannot use gears due to anti gear (2). \n\n\n")
+				end
+            		end
+       	    	end
+
+	    	for i, gear in pairs(v.Backpack:GetChildren()) do
+            		if gear:IsA("Tool") and antitoolm == true then
+               			if v.Name == game.Players.LocalPlayer.Name then
+					gear:Destroy()
 				end
             		end
        	    	end
