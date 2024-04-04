@@ -1716,6 +1716,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 			YOUantijump, ALLantijump = true, true
 			YOUantikill, ALLantikill = true, true
 			YOUantimsg = true
+			YOUantinoclip = true
 			YOUantiname, ALLantiname = true, true
 			YOUantichar, ALLantichar = true, true
 			YOUantiparticles, ALLantiparticles = true, true
@@ -1759,6 +1760,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 			YOUantijump, ALLantijump = false, false
 			YOUantikill, ALLantikill = false, false
 			YOUantimsg = false
+			YOUantinoclip = false
 			YOUantiname, ALLantiname = false, false
 			YOUantichar, ALLantichar = false, false
 			YOUantiparticles, ALLantiparticles = false, false
@@ -3832,6 +3834,16 @@ Commands required: rocket]])
 		Remind("Invalid argument: Must be me, others, or all")
 	end
     end
+
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'antinoc' then -- yes
+		YOUantinoclip = true
+		Remind("Turned this anti on for you!")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'unantinoc' then -- yes
+		YOUantinoclip = false
+		Remind("Turned this anti off for you!")
+    end
 		
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antichar' then
 	local args = string.split(msg, " ")
@@ -3869,10 +3881,12 @@ Commands required: rocket]])
 		
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'antimsg' then
 	YOUantimsg = true
+	Remind("Turned this anti on for you!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'unantimsg' then
 	YOUantimsg = false
+	Remind("Turned this anti off for you!")
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antiname' then
@@ -4952,6 +4966,19 @@ task.spawn(function()
                 Chat("clip me")
             end
 	end
+
+	if YOUantinoclip == true then
+	    if game.Players.LocalPlayer.PlayerGui:FindFirstChild("NoClip") then
+		game.Players.LocalPlayer.PlayerGui:FindFirstChild("NoClip"):Destroy()
+		if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character.Torso then 
+			game.Players.LocalPlayer.Character.Torso.Anchored = false 
+		end
+            	if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character.Humanoid then 
+			game.Players.LocalPlayer.Character.Humanoid.PlatformStand = false 
+		end
+                Chat("clip me")
+            end
+	end
 			
 	if YOUantiff == true then
 	 if game.Players.LocalPlayer.Character:FindFirstChild("ForceField") then
@@ -5188,7 +5215,7 @@ task.spawn(function()
                					 Chat("clip "..v.Name)
 					else end
 				end
-				
+	
 				if ALLantiff == true then
 	 				if v.Character and v.Character:FindFirstChild("ForceField") then
                 				Chat("unff "..v.Name)
