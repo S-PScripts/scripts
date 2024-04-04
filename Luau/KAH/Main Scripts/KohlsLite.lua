@@ -1550,7 +1550,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'timedur' then
 	      if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
-			Remind("Current time position: "..game:GetService("Workspace").Terrain["_Game"].Folder.Sound.TimeLength)
+			Remind("Time length: "..game:GetService("Workspace").Terrain["_Game"].Folder.Sound.TimeLength)
 	      end	
     end
 
