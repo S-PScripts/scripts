@@ -4929,10 +4929,13 @@ task.spawn(function()
 	end
 			
 	if YOUantiglow == true then
-	   if game.Players.LocalPlayer.Character:FindFirstChild("PointLight") then
-		  game.Players.LocalPlayer.Character:FindFirstChild("PointLight"):Destroy()
-                  Chat("unglow me")
-            end
+		local torso = game.Players.LocalPlayer.Character:WaitForChild("Torso", 1)
+			for i,v in pairs(torso:GetChildren()) do
+                		if v:IsA("PointLight") then
+		    				v:Destroy()
+                    				Chat("unglow me")
+               			end
+            		end
 	end
 			
 	if YOUantihealthc == true then
@@ -4985,10 +4988,13 @@ task.spawn(function()
 	end
 			
 	if YOUantiparticles == true then
-	   if game.Players.LocalPlayer.Character:FindFirstChild("ParticleEmitter") then
-		  game.Players.LocalPlayer.Character:FindFirstChild("ParticleEmitter"):Destroy()
-                  Chat("unparticle me")
-            end
+		local torso = game.Players.LocalPlayer.Character:WaitForChild("Torso", 1)
+			for i,v in pairs(torso:GetChildren()) do
+                		if v:IsA("ParticleEmitter") then
+		    				v:Destroy()
+                    				Chat("unparticles me")
+               			end
+            		end
 	end
 			
 	if YOUantipunish == true then
@@ -5032,12 +5038,13 @@ task.spawn(function()
 	end
 			
 	if YOUantisparkles == true then
-	    if game.Players.LocalPlayer.Character:FindFirstChild("Torso") then
-                if game.Players.LocalPlayer.Character.Torso:FindFirstChild("Sparkles") then
-		    game.Players.LocalPlayer.Character.Torso:FindFirstChild("Sparkles"):Destroy()
-                    Chat("unsparkles me")
-                end
-            end
+		local torso = game.Players.LocalPlayer.Character:WaitForChild("Torso", 1)
+			for i,v in pairs(torso:GetChildren()) do
+                		if v:IsA("Sparkles") then
+		    				v:Destroy()
+                    				Chat("unparticles me")
+               			end
+            		end
 	end
 			
 	if YOUantispeed == true then
@@ -5152,9 +5159,13 @@ task.spawn(function()
 				 end
 				
 				if ALLantiglow == true then
-	   				if v.Character and v.Character:FindFirstChild("PointLight") then
-                  				Chat("unglow "..v.Name)
-					else end
+					local torso = v.Character:WaitForChild("Torso", 1)
+					for i,x in pairs(torso:GetChildren()) do
+                				if x:IsA("PointLight") then
+		    					x:Destroy()
+                    					Chat("unglow "..v.Name)
+               					end
+            				end
 				end
 				
 				if ALLantihealthc == true then
@@ -5198,11 +5209,15 @@ task.spawn(function()
 						Chat("reset "..v.Name)
 					   else end
 				end
-				
+
 				if ALLantiparticles == true then
-	   				if v.Character and v.Character:FindFirstChild("ParticleEmitter") then
-               					   Chat("unparticle "..v.Name)
-					else end
+					local torso = v.Character:WaitForChild("Torso", 1)
+					for i,x in pairs(torso:GetChildren()) do
+                				if x:IsA("ParticleEmitter") then
+		    					x:Destroy()
+                    					Chat("unparticle "..v.Name)
+               					end
+            				end
 				end
 				
 				if ALLantipunish == true then
@@ -5237,13 +5252,15 @@ task.spawn(function()
 						  else end
 					  else end
 				end
-				
+
 				if ALLantisparkles == true then
-					    if v.Character and v.Character:FindFirstChild("Torso") then
-              					  if v.Character.Torso:FindFirstChild("Sparkles") then
-                   					 Chat("unsparkles "..v.Name)
-						  else end
-					    else end
+					local torso = v.Character:WaitForChild("Torso", 1)
+					for i,x in pairs(torso:GetChildren()) do
+                				if x:IsA("Sparkles") then
+		    					x:Destroy()
+                    					Chat("unsparkles "..v.Name)
+               					end
+            				end
 				end
 				
 				if ALLantispeed == true then
