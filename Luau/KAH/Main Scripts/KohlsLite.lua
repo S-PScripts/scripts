@@ -1643,7 +1643,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'turn' then
     	local args = string.split(msg, " ")
     	if #args >= 3 then
-		local ifjeojafdsdfsoj = args[2]
         	local turner = args[3]
         	local daturnings = turnlist[turner]
         	if daturnings then
