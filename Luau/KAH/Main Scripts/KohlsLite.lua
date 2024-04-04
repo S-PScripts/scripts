@@ -848,7 +848,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          end
        end
 		
-	if string.sub(msg, 1, #prefix + 6)  == prefix..'wllist' then
+	if string.sub(msg, 1, #prefix + 6)  == prefix..'listwl' then
 	   Remind("Check your console by running /console!")
            for i = 1, #whitelist do
  		 print(whitelist[i])
@@ -934,7 +934,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          end
        end
 
-	if string.sub(msg, 1, #prefix + 10)  == prefix..'gearwllist' then
+	if string.sub(msg, 1, #prefix + 10)  == prefix..'listgearwl' then
 	   Remind("Check your console by running /console!")
            for i = 1, #GWhitelisted do
  		 print(GWhitelisted[i])
@@ -1152,7 +1152,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          end
        end
 		
-	if string.sub(msg, 1, #prefix + 6)  == prefix..'bllist' then
+	if string.sub(msg, 1, #prefix + 6)  == prefix..'listbl' then
 	   Remind("Check your console by running /console!")
            for i = 1, #blacklist do
  		 print(blacklist[i])
@@ -4405,9 +4405,9 @@ print("ungearwl - unwhitelist a user to use gears with antigear/anticrash etc. o
 print("unadmin - remove a user's free admin")
 
 print("---")
-print("wllist - print all whitelisted players")
-print("bllist - print all blacklisted players")
-print("gearwllist - print all gear whitelisted players")
+print("listwl - print all whitelisted players")
+print("listbl - print all blacklisted players")
+print("listgearwl - print all gear whitelisted players")
 print("adminlist - print all admined players")
 print("musiclist - print all the saved musics")
 print("permusers - users that use perm")
