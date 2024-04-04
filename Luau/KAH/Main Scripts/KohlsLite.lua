@@ -1592,6 +1592,17 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         mymusiconlyid = tonumber(string.sub(msg:lower(), #prefix + 11))
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'2permmusic' then
+	if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
+				local url = game:GetService("Workspace").Terrain["_Game"].Folder.Sound.SoundId
+				local number = url:match("id=(%d+)")
+				gottenmode = 1
+				musicoff = false
+        			mymusiconly = true
+       				mymusiconlyid = number
+	end
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'bring' then
         bringu = (string.sub(msg:lower(), #prefix + 7))
 	Bring()
@@ -6292,7 +6303,13 @@ task.spawn(function()
     	local origsound = soundlock
     	soundlock = "http://www.roblox.com/asset/?id="..tostring(soundlock)
     	local lastUpdateTime = tick()
-    	local gwawg = 0
+	local music = workspace.Terrain["_Game"].Folder:FindFirstChild("Sound")
+	if gottenmode == 1 then
+    		gwawg = tonumber(music.TimePosition)
+		print(music.TimePosition)
+	else 
+		gwawg = 0
+	end
     	repeat 
         	task.wait(0.1)
         	local currentTime = tick() 
