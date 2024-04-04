@@ -1700,6 +1700,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 			antioutamb = true
 			YOUantiblind = true
 			YOUantigs = true
+			YOUantiaddon, ALLantiaddon = true, true
 			YOUanticlone, ALLanticlone = true, true
 			YOUantidog, ALLantidog = true, true
 			YOUantifire, ALLantifire = true, true
@@ -1743,6 +1744,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 			antioutamb = false
 			YOUantiblind = false
 			YOUantigs = false
+			YOUantiaddon, ALLantiaddon = false, false
 			YOUanticlone, ALLanticlone = false, false
 			YOUantifire, ALLantifire = false, false
 			YOUantifreeze, ALLantifreeze = false, false
@@ -3420,6 +3422,40 @@ Commands required: rocket]])
 	YOUantiblind = false
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antiaddon' then
+	local args = string.split(msg, " ")
+	if args[2] == "me" then
+		YOUantiaddon = true
+		Remind("Turned this anti on for you!")
+	elseif args[2] == "others" then
+		ALLantiaddon = true
+		Remind("Turned this anti on for others!")
+	elseif args[2] == "all" then
+		YOUantiaddon = true
+		ALLantiaddon = true
+		Remind("Turned this anti on for everyone!")
+	else
+		Remind("Invalid argument: Must be me, others, or all")
+	end
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantiaddon' then
+	local args = string.split(msg, " ")
+	if args[2] == "me" then
+		YOUantiaddon = false
+		Remind("Turned this anti off for you!")
+	elseif args[2] == "others" then
+		ALLantiaddon = false
+		Remind("Turned this anti off for others!")
+	elseif args[2] == "all" then
+		YOUantiaddon = false
+		ALLantiaddon = false
+		Remind("Turned this anti off for everyone!")
+	else
+		Remind("Invalid argument: Must be me, others, or all")
+	end
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'anticlone' then
 	local args = string.split(msg, " ")
 	if args[2] == "me" then
@@ -4826,6 +4862,13 @@ task.spawn(function()
 			game.Workspace.CurrentCamera:FindFirstChild("GrayScale"):Destroy()	
 		end
 	end
+
+	if YOUantiaddon == true then
+	    if game.Players.LocalPlayer.Character:FindFirstChild("Addon") then
+		    game.Players.LocalPlayer.Character:FindFirstChild("Addon"):Destroy()
+		    Chat("reset me")
+            end
+	end
 			
 	if YOUanticlone == true then
 	    if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild(game.Players.LocalPlayer.Name) then
@@ -5050,6 +5093,13 @@ task.spawn(function()
 		--	print("Debug msg 1")
 			if v.Name ~= game.Players.LocalPlayer.Name then
 				-- print("Debug msg 2: "..v.Name)
+
+				if YOUantiaddon == true then
+	    				if v.Character:FindFirstChild("Addon") then
+		   				 Chat("reset "..v.Name)
+           				end
+				end
+					
 				if ALLanticlone == true then
 	    				if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild(v.Name) then
                 				Chat("unclone "..v.Name)
@@ -5299,7 +5349,21 @@ game:GetService("RunService").RenderStepped:Connect(function()
                 		Chat("ungear me")
                		end
             	end
-			
+
+		if v.Backpack:FindFirstChild("BlueBucket") or v.Character:FindFirstChild("BlueBucket") then -- doesn't even kick anymore lmao
+               		if v == game.Players.LocalPlayer and antikick2 == true then
+				game.Players.LocalPlayer:FindFirstChild("BlueBucket"):Destroy()
+                		Chat("ungear me")
+               		end
+            	end
+		
+		if v.Backpack:FindFirstChild("HotPotato") or v.Character:FindFirstChild("HotPotato") then -- doesn't even kick anymore lmao
+               		if v == game.Players.LocalPlayer and antikick2 == true then
+				game.Players.LocalPlayer:FindFirstChild("HotPotato"):Destroy()
+                		Chat("ungear me")
+               		end
+            	end
+				
 	    	for i, gear in pairs(v.Backpack:GetChildren()) do
             		if gear:IsA("Tool") and antigear2 == true then
                			if v.Name ~= game.Players.LocalPlayer.Name and not table.find(GWhitelisted, v.Name) then
