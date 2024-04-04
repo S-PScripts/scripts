@@ -257,7 +257,8 @@ local musictable = {
     ["65"] = { id = "1839817591", name = "Animation Opening"},
     ["66"] = { id = "1837879082", name = "Paradise Falls"},
     ["67"] = { id = "1837392641", name = "Cannibal Collection"},
-    ["68"] = { id = "6901063458", name = "Rihanna - SOS"}
+    ["68"] = { id = "6901063458", name = "Rihanna - SOS"},
+    ["69"] = { id = "16662831858", name = "WahRA - Idk Remix"}
 }
 
 local gearlist = {
@@ -3792,6 +3793,40 @@ Commands required: rocket]])
 	elseif args[2] == "all" then
 		YOUantikill = false
 		ALLantikill = false
+		Remind("Turned this anti off for everyone!")
+	else
+		Remind("Invalid argument: Must be me, others, or all")
+	end
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'antifly' then -- forgot to add this to the list lmao
+	local args = string.split(msg, " ")
+	if args[2] == "me" then
+		YOUantifly = true
+		Remind("Turned this anti on for you!")
+	elseif args[2] == "others" then
+		ALLantifly = true
+		Remind("Turned this anti on for others!")
+	elseif args[2] == "all" then
+		YOUantifly = true
+		ALLantifly = true
+		Remind("Turned this anti on for everyone!")
+	else
+		Remind("Invalid argument: Must be me, others, or all")
+	end
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'unantifly' then -- forgot to add this to the list lmao
+	local args = string.split(msg, " ")
+	if args[2] == "me" then
+		YOUantifly = false
+		Remind("Turned this anti off for you!")
+	elseif args[2] == "others" then
+		ALLantifly = false
+		Remind("Turned this anti off for others!")
+	elseif args[2] == "all" then
+		YOUantifly = false
+		ALLantifly = false
 		Remind("Turned this anti off for everyone!")
 	else
 		Remind("Invalid argument: Must be me, others, or all")
