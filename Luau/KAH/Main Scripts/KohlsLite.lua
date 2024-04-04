@@ -256,7 +256,7 @@ local musictable = {
     ["64"] = { id = "6841685130", name = "ButtonPress_53"},
     ["65"] = { id = "1839817591", name = "Animation Opening"},
     ["66"] = { id = "1837879082", name = "Paradise Falls"},
-    ["67"] = { id = "1837392641", name = "Cannibal Collection"}
+    ["67"] = { id = "1837392641", name = "Cannibal Collection"},
     ["68"] = { id = "6901063458", name = "Rihanna - SOS"}
 }
 
