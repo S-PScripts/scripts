@@ -287,6 +287,12 @@ local gearlist = {
     ["rideables"] = { gearid = {"304719869", "2568114215", "158069143", "185422295", "346687565", "553939167", "820013867", "387285940", "163348575", "206799274", "928805891", "124127383", "125013849", "2445089071", "253519495"} }
 }
 
+-- only works for yourself, i need to fix this.
+local turnlist = {
+    ["furry"] = {name = {"char me 18", "paint me Institutional white", "hat me 10563319994", "hat me 12578728695", "shirt me 10571467676", "pants me 10571468508"}},
+    ["female"] = {name = {"char me 31342830", "task.wait(1)", "removehats me", "paint me Institutional white", "hat me 7141674388", "hat me 7033871971", "shirt me 5933990311", "pants me 7219538593"}}
+}
+
 -- Saved chars
 local charlist = {
     ["furry"] = { charid = "4844006008" }, -- 1
@@ -1631,6 +1637,23 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     		end
     end
 
+if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'turn' then
+    local args = string.split(msg, " ")
+    if #args >= 3 then
+        local turner = args[3]
+        local daturnings = turnlist[turner]
+        if daturnings then
+            for i, code in ipairs(daturnings.name) do
+                Chat(code)
+            end
+        else
+            Remind("Invalid turn")
+        end
+    else
+        Remind("Invalid turn")
+    end
+end
+
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'themelist' then
 			Remind("Check your console by running /console!")
 			for i, theme in ipairs(themecode) do
@@ -1688,6 +1711,8 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                 Chat("char " .. target .. " " .. china)
 	end
     end
+
+
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'gchar' then
         local args = string.split(msg, " ")
