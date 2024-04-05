@@ -90,7 +90,8 @@ local whitelist = {
     "D_ionte",
     "SZCVAK",
     "TheRealestOnHere",
-    "Altsarecooleh"
+    "Altsarecooleh",
+    "idonthacklol101ns"
 }
 
 -- Players you cannot kick
@@ -112,7 +113,8 @@ local nokick = {
     "t_echl",
     "SZCVAK",
     "TheRealestOnHere",
-    "Altsarecooleh"
+    "Altsarecooleh",
+    "idonthacklol101ns"
 }
 
 -- Players with special perms
@@ -130,6 +132,7 @@ local specialperms = {
     "BIGpe7niss7",
     "clydekash",
     "t_echl",
+    "idonthacklol101ns"
 }
 
 -- New users get blacklisted (prevent crashers)
