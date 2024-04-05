@@ -89,7 +89,8 @@ local whitelist = {
     "Ih0temyIife",
     "D_ionte",
     "SZCVAK",
-    "TheRealestOnHere"
+    "TheRealestOnHere",
+    "Altsarecooleh"
 }
 
 -- Players you cannot kick
@@ -109,7 +110,9 @@ local nokick = {
     "BIGpe7niss7",
     "clydekash",
     "t_echl",
-    "dawninja21"
+    "SZCVAK",
+    "TheRealestOnHere",
+    "Altsarecooleh"
 }
 
 -- Players with special perms
@@ -127,7 +130,6 @@ local specialperms = {
     "BIGpe7niss7",
     "clydekash",
     "t_echl",
-    "dawninja21"
 }
 
 -- New users get blacklisted (prevent crashers)
@@ -157,7 +159,8 @@ local GWhitelisted = {
     "t_echl",
     "Ih0temyIife",
     "SZCVAK",
-    "TheRealestOnHere"
+    "TheRealestOnHere",
+    "Altsarecooleh"
 }
 
 -- Serverlock
