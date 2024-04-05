@@ -6490,7 +6490,7 @@ end)
 -- FOG DANCING
 task.spawn(function()
    while true do
-	task.wait(0) -- rate limit
+	task.wait(0.1) -- rate limit
 	if fogdance == true then
 		        if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
 					pbl = game:GetService("Workspace").Terrain["_Game"].Folder.Sound.PlaybackLoudness / 10
@@ -6499,6 +6499,7 @@ task.spawn(function()
 	end
 
 	if ccolours == true then
+			Chat("fogend 0")
 		        Chat("fogcolor " ..tostring(math.random(0, 255)) .." " .. tostring(math.random(0, 255)) .. " " .. tostring(math.random(0, 255)))
 	end
    end
@@ -7661,5 +7662,8 @@ startupScripts()
 -- I hope no one gets on here
 local unexecuteables = {"no one yipee"}
 if table.find(unexecuteables, game.Players.LocalPlayer.Name) then
-		game.Players.LocalPlayer:Kick("[KohlsLite]: Oh dear, you're blacklisted from my script! How did you do that? DM me on ts2021 to appeal.") 
+		pcall(function()
+			game.Players.LocalPlayer:Kick("[KohlsLite]: Oh dear, you're blacklisted from my script! How did you do that? DM me on ts2021 to appeal.") 
+		end)
+		task.wait(2.5);
 end
