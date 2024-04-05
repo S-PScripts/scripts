@@ -1260,22 +1260,20 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'lgmusic' then
         ieatkids = string.sub(msg, #prefix + 8)
-	if workspace.Terrain._Game.Folder:FindFirstChild("localsound") then
-			local sound = workspace.Terrain._Game.Folder:FindFirstChild("localsound")
-			sound:Stop()
-			sound:Destroy()
+	if workspace.Terrain["_Game"].Folder:FindFirstChild("localsound") then
+			lsound:Stop()
+			lsound:Destroy()
 	end
-	local lsound = Instance.new("Sound", workspace.Terrain._Game.Folder)
+	lsound = Instance.new("Sound", workspace.Terrain["_Game"].Folder)
 	lsound.Name = "localsound"
 	lsound.SoundId = "rbxassetid://"..musictable[ieatkids].id
 	lsound:Play()        
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'unlgmusic' then
-      	if workspace.Terrain._Game.Folder:FindFirstChild("localsound") then
-			local sound = workspace.Terrain._Game.Folder:FindFirstChild("localsound")
-			sound:Stop()
-			sound:Destroy()
+      	if workspace.Terrain["_Game"].Folder:FindFirstChild("localsound") then
+			lsound:Stop()
+			lsound:Destroy()
 	end
     end
 
@@ -3260,16 +3258,8 @@ Commands required: rocket]])
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'loopgrab' then
 	loopgrab = true
     end
-
-    if string.sub(msg:lower(), 1, #prefix + 2) == prefix..'lg' then
-	loopgrab = true
-    end
-
+		
     if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unloopgrab' then
-	loopgrab = false
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'unlg' then
 	loopgrab = false
     end
 
@@ -3282,14 +3272,6 @@ Commands required: rocket]])
     end
 
     if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'2unloopgrab' then
-	loopgrab2 = false
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'2lg' then
-	loopgrab2 = true
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'2unlg' then
 	loopgrab2 = false
     end
 
@@ -4471,12 +4453,12 @@ print("unperm - stop loopgrabing a pad(perm)")
 print("unperm2 - stop loopgrabing a pad (perm2)")
 
 print("---")
-print("loopgrab/lg - loopgrab all the pads (touch interest)")
-print("2loopgrab/2lg - loopgrab all the pads (touch interest)")
+print("loopgrab - loopgrab all the pads (touch interest)")
+print("loopgrab2 - loopgrab all the pads (touch interest)")
 
 print("---")
-print("unloopgrab/unlg - stop loopgrabing all the pads")
-print("2unloopgrab/2unlg - stop loopgrab all the pads")
+print("unloopgrab - stop loopgrabing all the pads")
+print("2unloopgrab - stop loopgrab all the pads")
 
 print("---")
 print("fastpads - quickly tp to all the pads")
@@ -6159,7 +6141,7 @@ task.spawn(function()
     while true do 
         task.wait(0)
     	coroutine.wrap(function() -- PadAbuse
-			if loopgrab == true then
+			if loopgrab == true and firetouchinterest then
 				local pads = game:GetService("Workspace").Terrain["_Game"].Admin.Pads:GetChildren("Head")
 				for i, pad in pairs(pads) do
 					coroutine.wrap(function()
@@ -6194,7 +6176,7 @@ task.spawn(function()
          local character = game.Players.LocalPlayer.Character
          local headOfCharacter = character and character:FindFirstChild("Head")
 
-         if head and headOfCharacter then
+         if head and headOfCharacter and firetouchinterest then
             firetouchinterest(head, headOfCharacter, 1)
             firetouchinterest(head, headOfCharacter, 0)
             firetouchinterest(head, headOfCharacter, 1)
@@ -6216,7 +6198,7 @@ task.spawn(function()
         task.wait(0)
         coroutine.wrap(function()
 			      local spr = game.Players.LocalPlayer.Character:FindFirstChild("Head")
-			      if perm ~= true or workspace.Terrain._Game.Admin.Pads:FindFirstChild(game.Players.LocalPlayer.Name.."'s admin") ~= nil then 
+			      if (perm ~= true or workspace.Terrain._Game.Admin.Pads:FindFirstChild(game.Players.LocalPlayer.Name.."'s admin") ~= nil) and firetouchinterest then 
 			      else
 				    pcall(function()
 					      local pad = workspace.Terrain._Game.Admin.Pads:FindFirstChild("Touch to get admin")
@@ -7071,7 +7053,9 @@ end)
 
 -- REGEN
 function Regen()
-     fireclickdetector(game:GetService("Workspace").Terrain["_Game"].Admin.Regen.ClickDetector, 0)
+	if fireclickdetector then
+     		fireclickdetector(game:GetService("Workspace").Terrain["_Game"].Admin.Regen.ClickDetector, 0)
+	end
 end
 
 --SPAMREGEN
