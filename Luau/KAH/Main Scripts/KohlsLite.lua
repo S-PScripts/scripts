@@ -3186,6 +3186,21 @@ Commands required: rocket]])
                		Remind('Cannot find player with the name: '..dasplayer)
          end
     end
+
+   if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'breakanims' then
+	local dasplayer = string.sub(msg:lower(), #prefix + 12)
+        PLAYERCHECK(dasplayer)
+        if player ~= nil then
+			bokck = player
+			    Chat('reset ' .. bokck)
+            		    task.wait()
+            		    Chat('name ' .. bokck .. ' Torso')
+            		    task.wait()
+            		    Chat("unname " .. bokck)
+         else
+               		Remind('Cannot find player with the name: '..dasplayer)
+         end
+    end
 		
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'nocam' then
 		NoCam()
