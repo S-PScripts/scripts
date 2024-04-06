@@ -1,0 +1,33 @@
+local part = workspace.Terrain["_Game"].Workspace.Baseplate
+
+-- array of players currently touching this part
+-- manipulated with table.find and table.remove because it's guaranteed not to grow larger than 100 players
+local playersTouching = {}
+
+function getPlayerFromRootPart(part)
+	return part.Name == "HumanoidRootPart" and game.Players:GetPlayerFromCharacter(part.Parent)
+end
+
+function onTouch(part)
+	local player = getPlayerFromRootPart(part)
+	if not player then return end -- do nothing if this isn't a player's rootpart
+	if table.find(playersTouching, player) then return end -- player somehow triggered Touched while still touching the part
+	table.insert(playersTouching, player) -- player is now in the list of touching players
+
+	-- your code that should run when player enters the region here
+	print("Entered", player)
+end
+
+function onTouchEnded(part)
+	local player = getPlayerFromRootPart(part)
+	if not player then return end
+	local index = table.find(playersTouching, player)
+	if not index then return end -- player somehow triggered TouchEnded without having touched the part
+	table.remove(playersTouching, index)
+
+	-- your code that should run when player exits the region here
+	print("Exited", player)
+end
+
+part.Touched:Connect(onTouch)
+part.TouchEnded:Connect(onTouchEnded)
