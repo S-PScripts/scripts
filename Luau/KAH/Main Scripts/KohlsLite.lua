@@ -132,7 +132,8 @@ local specialperms = {
     "BIGpe7niss7",
     "clydekash",
     "t_echl",
-    "idonthacklol101ns"
+    "idonthacklol101ns",
+    "dawninja21"
 }
 
 -- New users get blacklisted (prevent crashers)
