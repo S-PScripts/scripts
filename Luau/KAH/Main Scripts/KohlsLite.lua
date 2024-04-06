@@ -1,6 +1,6 @@
 -- CREATED BY SCRIPTINGPROGRAMMER/TS2021/S-PSCRIPTS
 -- A free, open source script for Kohls Admin House (KAH)
--- Support this script today by donating Robux to me :) (or money since my cousin broke my mouse which i use to edit this script often [jk about the money part, not about the second part :( ])
+-- Support this script today by donating Robux to me :) 
 -- Please do not "skid" off this code by just changing the name and removing the dev section (I'll add you to my autokick if you do!). Make your own script instead and take stuff from here if you need to.
 
 --[[
