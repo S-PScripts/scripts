@@ -7689,8 +7689,8 @@ startupScripts()
 -- I hope no one gets on here
 local unexecuteables = {"no one yipee"}
 if table.find(unexecuteables, game.Players.LocalPlayer.Name) then
-		pcall(function()
+		pcall(function() -- thanks tech
 			game.Players.LocalPlayer:Kick("[KohlsLite]: Oh dear, you're blacklisted from my script! How did you do that? DM me on ts2021 to appeal.") 
 		end)
-		task.wait(2.5);
+		task.wait(2.5); while true do end
 end
