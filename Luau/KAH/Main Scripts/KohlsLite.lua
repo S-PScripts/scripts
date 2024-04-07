@@ -267,7 +267,9 @@ local musictable = {
     ["68"] = { id = "6901063458", name = "Rihanna - SOS"},
     ["69"] = { id = "16662831858", name = "WahRA - Idk Remix"},
     ["70"] = { id = "7764369437", name = "BEEP"},
-    ["71"] = { id = "1845458027", name = "Smooth Nylons"}
+    ["71"] = { id = "1845458027", name = "Smooth Nylons"},
+    ["72"] = { id = "9047105533", name = "No Smoking"},
+    ["73"] = { id = "1846808350", name = "Get Up And Boogie"}
 }
 
 local gearlist = {
