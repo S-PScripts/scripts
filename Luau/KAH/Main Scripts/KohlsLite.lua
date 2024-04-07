@@ -115,7 +115,6 @@ local nokick = {
     "TheRealestOnHere",
     "Altsarecooleh",
     "idonthacklol101ns",
-    "dawninja21"
 }
 
 -- Players with special perms
