@@ -115,7 +115,7 @@ local nokick = {
     "TheRealestOnHere",
     "Altsarecooleh",
     "idonthacklol101ns",
-    "dawninja21"
+    "dawninja21",
     "dawninja21alt"
 }
 
