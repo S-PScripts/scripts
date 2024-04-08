@@ -1,13 +1,6 @@
 -- My Visualiser.lua --
 -- yes this is quiving's will be changed at some point yk h --
 
-if _G.visexecuted then 
-	return 
-	Remind("You've already executed MyVisualiser.lua!") 
-end
-
-_G.visexecuted = true
-
 -- FUNCTION SET UP --
 local function Remind(msg)
 	game.StarterGui:SetCore("SendNotification", {
@@ -16,6 +9,13 @@ local function Remind(msg)
 		Duration = 1
 	})
 end;
+
+if _G.visexecuted then 
+	return 
+	Remind("You've already executed MyVisualiser.lua!") 
+end
+
+_G.visexecuted = true
 
 local function Chat(msg)
         game.Players:Chat(msg)
