@@ -2769,7 +2769,7 @@ Commands required: rocket]])
 	    Chat("fix") -- ;Chat(prefix.."perm2")
 	    musicsay = false
             task.wait(0.5)
-	    Chat("h \n\n\n Roblox: Sorry about the crash, we're trying to fix our servers! \n\n\n");Chat(prefix.."gmusic62")
+	    Chat("h \n\n\n imagine crashed by j0ro \n\n\n");Chat(prefix.."gmusic62")
             Chat("fogcolor 0 0 0");Chat("time 0");Chat("fogend 0");Chat("paint all black")
 	    task.wait(0.75)
 	    DCrash()	
@@ -6532,7 +6532,7 @@ end
 
 -- DOG CRASH
 function DCrash()
-      Chat("h \n\n\n dsc gg kohlslite \n\n\n");task.wait(0.5)
+      --Chat("h \n\n\n dsc gg kohlslite \n\n\n");task.wait(0.5)
       for i = 1,100 do
           Chat("clone all all all				fuck")
           Chat("dog all all all					fuck")
