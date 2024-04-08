@@ -92,7 +92,8 @@ local whitelist = {
     "SZCVAK",
     "TheRealestOnHere",
     "Altsarecooleh",
-    "idonthacklol101ns"
+    "idonthacklol101ns",
+    "Me_ChurchOfSat4n"
 }
 
 -- Players you cannot kick
