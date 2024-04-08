@@ -105,7 +105,7 @@ local nokick = {
     "BANNter_Original",
     "witnessfox22",
     "IceStuds",
- --   "atprog",
+    "atprog",
     "Di33le2",
     "Dekryptionite",
     "3cxos",
@@ -142,6 +142,7 @@ local specialperms = {
     "idonthacklol101ns",
     "dawninja21",
     "dawninja21alt",
+    "disunize",
     "Altsarecooleh"
 }
 
