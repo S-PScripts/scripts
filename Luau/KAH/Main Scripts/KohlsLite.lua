@@ -2769,7 +2769,7 @@ Commands required: rocket]])
 	    Chat("fix") -- ;Chat(prefix.."perm2")
 	    musicsay = false
             task.wait(0.5);Chat(prefix.."unantimsg")
-	    Chat("h \n\n\n imagine crashed by j0ro \n\n\n");Chat(prefix.."gmusic62")
+	    Chat("h \n\n\n imagine getting crashed by JORO \n\n\n");Chat(prefix.."gmusic62")
             Chat("fogcolor 0 0 0");Chat("time 0");Chat("fogend 0");Chat("paint all black")
 	    task.wait(0.75)
 	    DCrash()	
