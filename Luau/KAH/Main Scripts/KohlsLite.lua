@@ -7013,6 +7013,11 @@ function onPlayerAdded(player)
         Chat("h \n\n\n [KohlsLite]: Tech [OWNER OF SCV3-VAR] joined the server! \n\n\n")
         print("Tech [OWNER OF SCV3-VAR] joined the server!")
        end
+
+ if (player.Name == "dawninja21" or player.Name == "dawninja21alt") and player.Name ~= game.Players.LocalPlayer then
+        Chat("h \n\n\n [KohlsLite]: Stewie [OWNER OF EXILE ADMIN SCRIPT] joined the server! \n\n\n")
+        print("dawninja21 [OWNER OF EXILE ADMIN SCRIPT!] joined the server!")
+       end
 	
     if player.AccountAge < newlen == true and newplrautoslock == true then
 	 Chat("h \n\n\n [KohlsLite]: Automatically banned "..player.Name.." for being on an account under the account age limit. \n\n\n")
