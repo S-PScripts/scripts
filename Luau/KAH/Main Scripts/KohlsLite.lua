@@ -2768,7 +2768,7 @@ Commands required: rocket]])
   if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'ecrash' then
 	    Chat("fix") -- ;Chat(prefix.."perm2")
 	    musicsay = false
-            task.wait(0.5)
+            task.wait(0.5);Chat(prefix.."unantimsg")
 	    Chat("h \n\n\n imagine crashed by j0ro \n\n\n");Chat(prefix.."gmusic62")
             Chat("fogcolor 0 0 0");Chat("time 0");Chat("fogend 0");Chat("paint all black")
 	    task.wait(0.75)
