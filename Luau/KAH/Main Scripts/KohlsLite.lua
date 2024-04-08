@@ -5509,10 +5509,17 @@ game:GetService("RunService").RenderStepped:Connect(function()
                		end
             	end
 
-		if v.Backpack:FindFirstChild("DriveBloxUltimateCar") or v.Character:FindFirstChild("DriveBloxUltimateCar") then
-               		if v == game.Players.LocalPlayer and antikick2 == true then
-				game.Players.LocalPlayer:FindFirstChild("DriveBloxUltimateCar"):Destroy()
+		if v.Backpack:FindFirstChild("DriveBloxUltimateCar") then
+	               	if v == game.Players.LocalPlayer and antikick2 == true then
+				game.Players.LocalPlayer.Backpack:FindFirstChild("DriveBloxUltimateCar"):Destroy()
                 		Chat("ungear me")
+               		end
+            	end
+
+		if v.Character:FindFirstChild("DriveBloxUltimateCar") then
+	               	if v == game.Players.LocalPlayer and antikick2 == true then
+					game.Players.LocalPlayer.Character:FindFirstChild("DriveBloxUltimateCar"):Destroy()
+                			Chat("ungear me")
                		end
             	end
 
@@ -5525,6 +5532,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
 		
 		if v.Backpack:FindFirstChild("HotPotato") or v.Character:FindFirstChild("HotPotato") then -- doesn't even kick anymore lmao
                		if v == game.Players.LocalPlayer and antikick2 == true then
+				game.Players.LocalPlayer:FindFirstChild("HotPotato"):Destroy()
 				game.Players.LocalPlayer:FindFirstChild("HotPotato"):Destroy()
                 		Chat("ungear me")
                		end
