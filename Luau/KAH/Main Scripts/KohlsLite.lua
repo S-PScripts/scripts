@@ -37,6 +37,7 @@ local prefix = "." -- This can be of any length
 
 local defaults = {".antirocket me", ".tnok", ".antimsg me"}
 
+local bending
 -- Start up scripts
 local function startupScripts()
    	if not _G.autorunning then
@@ -2486,6 +2487,25 @@ Commands required: rocket]])
 		Chat("size " .. imacube .. " 2.5")
 		Chat("shiny" .. imacube)
 		Remind("The player should now be a cube!")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'over' then -- why
+		if bending == true then -- double chat attempted fix but probs won't work
+			return 
+		else 
+			bending = true
+			local ucrazy = string.sub(msg:lower(), #prefix + 6)
+			Chat("rocket/"..ucrazy);task.wait(.4)
+			Chat("freeze "..ucrazy)
+			Chat("unrocket/" ..ucrazy);task.wait(.4)
+			Chat("name " .. ucrazy .. " ")
+			Chat("thaw " .. ucrazy)
+			Chat("unseizure " .. ucrazy)
+			Chat("tp " .. ucrazy .. ucrazy)
+			Chat("sit " .. ucrazy)
+			Remind("The player should now be bending!")
+			bending = false
+		end
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'space' then -- kohls true anti kill
