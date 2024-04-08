@@ -118,7 +118,8 @@ local nokick = {
     "dawninja21",
     "dawninja21alt",
     "GAMMINGBUDD_REAL",
-    "Artyuiiiiti"
+    "Artyuiiiiti",
+    "Altsarecooleh"
 }
 
 -- Players with special perms
@@ -138,7 +139,8 @@ local specialperms = {
     "t_echl",
     "idonthacklol101ns",
     "dawninja21",
-    "dawninja21alt"
+    "dawninja21alt",
+    "Altsarecooleh"
 }
 
 -- New users get blacklisted (prevent crashers)
