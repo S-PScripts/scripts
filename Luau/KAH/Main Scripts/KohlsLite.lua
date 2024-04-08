@@ -104,7 +104,7 @@ local nokick = {
     "BANNter_Original",
     "witnessfox22",
     "IceStuds",
-    "atprog",
+ --   "atprog",
     "Di33le2",
     "Dekryptionite",
     "3cxos",
@@ -5555,7 +5555,7 @@ local crashTools = {"OrinthianSwordAndShield", "VampireVanquisher","Emerald Knig
 local attachTools = {"IvoryPeriastron"}
 local nogearTools = {"PortableJustice", "DriveBloxUltimateCar"}
 local colourTools = {"PaintBucket", "SubspaceTripmine"}
-local miscTools = {"DaggerofShatteredDimensions", "SledgeHammer", "AR"}
+local miscTools = {"DaggerofShatteredDimensions", "SledgeHammer", "AR", "TransmorphRayGun"}
 local ninejntools = {"HyperlaserGun","TransmorphRayGun"}
 
 function warnCrash(player, toolName)
