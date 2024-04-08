@@ -5564,8 +5564,8 @@ local crashTools = {"OrinthianSwordAndShield", "VampireVanquisher","Emerald Knig
 local attachTools = {"IvoryPeriastron"}
 local nogearTools = {"PortableJustice"}
 local colourTools = {"PaintBucket", "SubspaceTripmine"}
-local miscTools = {"DaggerofShatteredDimensions", "SledgeHammer", "AR", "TransmorphRayGun"}
-local ninejntools = {"HyperlaserGun","TransmorphRayGun"}
+local miscTools = {"DaggerofShatteredDimensions", "SledgeHammer", "AR", "Transmorph"}
+local ninejntools = {"HyperlaserGun","Transmorph"}
 
 function warnCrash(player, toolName)
         local isB,spe = bypassattemptcheck(player.Name)
