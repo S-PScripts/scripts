@@ -6985,7 +6985,7 @@ function onPlayerAdded(player)
 		rkicker = player
     end
 
-	if table.find(suser_on_sight, player.Name) then
+    if table.find(suser_on_sight, player.Name) then
 		Chat("h \n\n\n [KohlsLite]: Auto slowing "..player.Name.." as they are blacklisted. \n\n\n")
 		table.insert(carcar, player.Name)
     end
@@ -6998,6 +6998,7 @@ function onPlayerAdded(player)
 
     if table.find(crash_on_sight, player.Name) then
 	Chat("h \n\n\n [KohlsLite]: Server automatically crashed due to blacklisted user ("..player.Name..") joining. \n\n\n")
+	print(player.Name.." joined the server. Server was automatically crashed as they are blacklisted.")
 	DCrash()  
     end
 
