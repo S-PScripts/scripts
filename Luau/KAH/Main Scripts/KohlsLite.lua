@@ -5556,6 +5556,7 @@ local attachTools = {"IvoryPeriastron"}
 local nogearTools = {"PortableJustice", "DriveBloxUltimateCar"}
 local colourTools = {"PaintBucket", "SubspaceTripmine"}
 local miscTools = {"DaggerofShatteredDimensions", "SledgeHammer", "AR"}
+local ninejntools = {"HyperlaserGun","TransmorphRayGun"}
 
 function warnCrash(player, toolName)
         local isB,spe = bypassattemptcheck(player.Name)
@@ -5635,6 +5636,21 @@ function warnPaint(player, toolName)
 	end
 end
 
+function warn9jn(player, toolName)
+        local isB,spe = bypassattemptcheck(player.Name)
+        if isB == true then
+       		Chat("ungear " .. spe)
+       		Chat("punish " .. spe)
+       		Chat("h \n\n\n [KohlsLite]: Sorry, " .. player.Name .. ", you cannot use " .. toolName .. " because of 9jn. \n\n\n")
+      	        Chat("clr")
+	else
+		Chat("ungear " .. player.Name)
+       		Chat("punish " .. player.Name)
+       		Chat("h \n\n\n [KohlsLite]: Sorry, " .. player.Name .. ", you cannot use " .. toolName .. " because of 9jn. \n\n\n")
+      		Chat("clr")
+	end
+end
+
 function warnMisc(player, toolName)
         local isB,spe = bypassattemptcheck(player.Name)
         if isB == true then
@@ -5658,6 +5674,21 @@ function checkPlayerBackpack(player)
             if tool and anticrash then
 		if player.Name ~= game.Players.LocalPlayer.Name and not table.find(GWhitelisted, player.Name) then
                    warnCrash(player, toolName)
+                   break
+                end
+            end
+        end
+    end
+end
+
+function check9jn(player)
+    local backpack = player:FindFirstChild("Backpack")
+    if backpack then
+        for _, toolName in ipairs(ninejntools) do
+            local tool = backpack:FindFirstChild(toolName)
+            if tool and antiraygun then
+		if player.Name ~= game.Players.LocalPlayer.Name and not table.find(GWhitelisted, player.Name) then
+                   warn9jn(player, toolName)
                    break
                 end
             end
@@ -5748,6 +5779,7 @@ game.Players.PlayerAdded:Connect(function(player)
 	    checkPlayerATTBackpack(player)
 	    checkPlayerPBackpack(player)
 	    checkPlayerMiBackpack(player)
+	    check9jn(player)
     end)
             checkPlayerBackpack(player)
 	    checkPlayerGBackpack(player)
@@ -5755,6 +5787,7 @@ game.Players.PlayerAdded:Connect(function(player)
 	    checkPlayerATTBackpack(player)
 	    checkPlayerPBackpack(player)
 	    checkPlayerMiBackpack(player)
+	    check9jn(player)
 end)
 
 game:GetService("RunService").Heartbeat:Connect(function()
@@ -5767,6 +5800,7 @@ game:GetService("RunService").Heartbeat:Connect(function()
 	    checkPlayerATTBackpack(player)
 	    checkPlayerPBackpack(player)
 	    checkPlayerMiBackpack(player)
+	    check9jn(player)
         end
     end
 end)
@@ -5780,6 +5814,7 @@ for _, player in ipairs(game.Players:GetPlayers()) do
 	    checkPlayerATTBackpack(player)
 	    checkPlayerPBackpack(player)
 	    checkPlayerMiBackpack(player)
+	    check9jn(player)
     end
 end
 
@@ -7710,6 +7745,9 @@ end
 
 -- run at end to prevent bugs
 for i, v in pairs(game.Players:GetPlayers()) do
+	if v.Name == "9jn" then
+			antiraygun = true
+	end
 	task.wait(0)
 	PLRSTART(v)
 end
