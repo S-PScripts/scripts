@@ -5682,7 +5682,7 @@ function checkPlayerBackpack(player)
             local tool = backpack:FindFirstChild(toolName)
             if tool and anticrash then
 		if player.Name ~= game.Players.LocalPlayer.Name and not table.find(GWhitelisted, player.Name) then
-                   warnCrash(player, toolName)
+                   warnCrash(player, toolName);task.wait(0.1)
                    break
                 end
             end
@@ -5697,7 +5697,7 @@ function check9jn(player)
             local tool = backpack:FindFirstChild(toolName)
             if tool and antiraygun then
 		if player.Name ~= game.Players.LocalPlayer.Name and not table.find(GWhitelisted, player.Name) then
-                   warn9jn(player, toolName)
+                   warn9jn(player, toolName);task.wait(0.1)
                    break
                 end
             end
@@ -5712,7 +5712,7 @@ function checkPlayerAGBackpack(player)
             local tool = backpack:FindFirstChild(toolName)
             if tool and antigb then
 		if player.Name ~= game.Players.LocalPlayer.Name and not table.find(GWhitelisted, player.Name) then
-                   warnAGBan(player, toolName)
+                   warnAGBan(player, toolName);task.wait(0.1)
                    break
                 end
             end
@@ -5726,7 +5726,7 @@ function checkPlayerGBackpack(player)
         for _, toolName in ipairs(player.Backpack:GetChildren()) do
     	    if toolName:IsA("Tool") and antigear then
 	             if player.Name ~= game.Players.LocalPlayer.Name and not table.find(GWhitelisted, player.Name) then
-                        warnGear(player, toolName)
+                        warnGear(player, toolName);task.wait(0.1)
                         break
 		     end
             end
@@ -5741,7 +5741,7 @@ function checkPlayerATTBackpack(player)
             local tool = backpack:FindFirstChild(toolName)
             if tool and antiattach2 then
 		if player.Name ~= game.Players.LocalPlayer.Name and not table.find(GWhitelisted, player.Name) then
-                   warnAttach(player, toolName)
+                   warnAttach(player, toolName);task.wait(0.1)
                    break
                 end
             end
@@ -5756,7 +5756,7 @@ function checkPlayerPBackpack(player)
             local tool = backpack:FindFirstChild(toolName)
             if tool and antipaint then
 		if player.Name ~= game.Players.LocalPlayer.Name and not table.find(GWhitelisted, player.Name) then
-                   warnPaint(player, toolName)
+                   warnPaint(player, toolName);task.wait(0.1)
                    break
                 end
             end
@@ -5771,7 +5771,7 @@ function checkPlayerMiBackpack(player)
             local tool = backpack:FindFirstChild(toolName)
             if tool and noblt then
 		if player.Name ~= game.Players.LocalPlayer.Name and not table.find(GWhitelisted, player.Name) then
-                   warnMisc(player, toolName)
+                   warnMisc(player, toolName);task.wait(0.1)
                    break
                 end
             end
