@@ -5562,7 +5562,7 @@ end)
 -- ANTIS FOR CRASHING ATTACHING GEARBANNING AND HAVING A GEAR
 local crashTools = {"OrinthianSwordAndShield", "VampireVanquisher","Emerald Knights of the Seventh Sanctum Sword and Shield"}
 local attachTools = {"IvoryPeriastron"}
-local nogearTools = {"PortableJustice", "DriveBloxUltimateCar"}
+local nogearTools = {"PortableJustice"}
 local colourTools = {"PaintBucket", "SubspaceTripmine"}
 local miscTools = {"DaggerofShatteredDimensions", "SledgeHammer", "AR", "TransmorphRayGun"}
 local ninejntools = {"HyperlaserGun","TransmorphRayGun"}
