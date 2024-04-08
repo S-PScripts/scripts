@@ -250,7 +250,7 @@ local musictable = {
     ["42"] = { id = "6770303644", name = "Minecraft Chest" },
     ["43"] = { id = "6783714255", name = "Brooklyn blood bop" },
     ["44"] = { id = "1838028467", name = "VIP Me" },
-    ["45"] = { id = "1848354536", name = "chill back" },
+    ["45"] = { id = "1848354536", name = "James Clarke - Relaxed Scene" }, -- chill back
     ["46"] = { id = "45819151", name = "sad depressing music 4am" },
     ["47"] = { id = "6828176320", name = "Painted black" },
     ["48"] = { id = "5410084188", name = "WRLD - Hang Up" },
