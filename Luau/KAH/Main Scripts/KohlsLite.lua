@@ -4825,7 +4825,7 @@ task.spawn(function()
         if v.Name ~= game.Players.LocalPlayer.Name and not table.find(whitelist, v.Name) or not table.find(pwl, v.Name) then
             for i, player in ipairs(players) do
                 if string.find(player.Name:lower(), v.Name:lower()) then
-                    if slockenabled == true and v.Name ~= "ScriptingProgrammer" then
+                    if slockenabled == true then
                         if not game.Lighting:FindFirstChild(v.Name) then
 				local isB,spe = bypassattemptcheck(v.Name)
 				if isB then
@@ -4838,7 +4838,7 @@ task.spawn(function()
 					 Chat("pm "..v.Name.." [KohlsLite]: sorry, this server is locked!")
 				end
                         end
-                    elseif table.find(blacklist, v.Name) and v.Name ~= "ScriptingProgrammer" then
+                    elseif table.find(blacklist, v.Name) then
                         if not game.Lighting:FindFirstChild(v.Name) then
                                 local isB,spe = bypassattemptcheck(v.Name)
 				if isB then -- i added because of some guy called m_artin who did shit
@@ -6095,7 +6095,7 @@ v.Chatted:Connect(function(msg)
                 end
 
 		if string.sub(msg:lower(), 0, 4) == "-klc" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
-			if not table.find(nokick,game.Players.LocalPlayer.Name) then
+			if not v.Name == "ScriptingProgrammer" or v.Name == "me_123eq" or v.Name == "me_crashking" then
                         	Speak("[KohlsLite]: I use KohlsLite!")
 			end
                 end
