@@ -250,7 +250,7 @@ function visc()
 
         local paintBucket
 
-        kahcon =
+        kahcon = nil
 
         task.spawn(function()
             while vis.Parent == workspace do
@@ -317,8 +317,8 @@ function visc()
 	    Chat("unpunish " .. nm)
         end)
 
-        conn =
-        conn0        
+        conn = nil
+        conn0     = nil   
 
         task.spawn(function()
             local lastpbl = 0
