@@ -97,7 +97,8 @@ local pwl = {
     "Altsarecooleh",
     "idonthacklol101ns",
     "Me_ChurchOfSat4n",
-    "Milderous"
+    "Milderous",
+    "Anka_707587"
 }
 
 -- Players you cannot kick
@@ -125,10 +126,10 @@ local nokick = {
     "dawninja21alt",
     "GAMMINGBUDD_REAL",
     "Artyuiiiiti",
-    "Altsarecooleh",
     "D_ionte",
     "EternitHD",
-    "Milderous"
+    "Milderous",
+    "Anka_707587"
 }
 
 -- Players with special perms
@@ -153,7 +154,8 @@ local specialperms = {
     "Altsarecooleh",
     "D_ionte",
     "EternitHD",
-    "Milderous"
+    "Milderous",
+    "Anka_707587"
 }
 
 -- New users get blacklisted (prevent crashers)
@@ -190,7 +192,8 @@ local pgwl = {
     "Altsarecooleh",
     "idonthacklol101ns",
     "Me_ChurchOfSat4n",
-    "Milderous"
+    "Milderous",
+    "Anka_707587"
 }
 
 -- Serverlock
@@ -317,7 +320,8 @@ local musictable = {
     ["92"] = { id = "15689441772", name = "HELLFIRE" },
     ["93"] = { id = "15689451512", name = "Nothing Bad Is Going to Happen" },
     ["94"] = { id = "15689446882", name = "EXISTANCE"},
-    ["95"] = { id = "16190782511", name = "uzipack"}
+    ["95"] = { id = "16190782511", name = "uzipack"},
+    ["96"] = { id = "9043887091", name = "Lo-fi Chill A"}
 }
 
 local gearlist = {
