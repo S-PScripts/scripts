@@ -8097,7 +8097,7 @@ end
 startupScripts()
 
 -- I hope no one gets on here
-local unexecuteables = {"ns_173"}
+local unexecuteables = {""}
 if table.find(unexecuteables, game.Players.LocalPlayer.Name) then
                 pcall(function() -- thanks tech
                         game.Players.LocalPlayer:Kick("[KohlsLite]: Oh dear, you're blacklisted from my script! How did you do that? DM me on ts2021 to appeal.") 
