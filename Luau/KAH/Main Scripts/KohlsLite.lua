@@ -289,7 +289,22 @@ local musictable = {
     ["70"] = { id = "7764369437", name = "BEEP"},
     ["71"] = { id = "1845458027", name = "Smooth Nylons"},
     ["72"] = { id = "9047105533", name = "No Smoking"},
-    ["73"] = { id = "1846808350", name = "Get Up And Boogie"}
+    ["73"] = { id = "1846808350", name = "Get Up And Boogie"},
+    ["74"] = { id = "14366981962", name = "Diss na Hagi Łagi"},
+    ["75"] = { id = "11265157079", name = "Advance Slayer"},
+    ["76"] = { id = "11265140685", name = "Untitled"},
+    ["77"] = { id = "11265166921", name = "Pierniki"},
+    ["78"] = { id = "11265137944", name = "Slayers Hatred"},
+    ["79"] = { id = "11265148479", name = "Amogus"},
+    ["80"] = { id = "11265145737", name = "Blaze You"},
+    ["81"] = { id = "11265173310", name = "Biszkopty"},
+    ["82"] = { id = "11265164947", name = "Chipsy"},
+    ["83"] = { id = "11496561844", name = "Fresh New Age"},
+    ["84"] = { id = "14884822656", name = "CyPhrix - StartUpSequence.cprx"},
+    ["85"] = { id = "14884819670", name = "CyPhrix - Wobble"},
+    ["86"] = { id = "14884823796", name = "XRAY"},
+    ["87"] = { id = "14884823178", name = "Three Dimensions"},
+    ["88"] = { id = "14884817162", name = "Angel Hour"}
 }
 
 local gearlist = {
