@@ -304,7 +304,8 @@ local musictable = {
     ["85"] = { id = "14884819670", name = "CyPhrix - Wobble"},
     ["86"] = { id = "14884823796", name = "XRAY"},
     ["87"] = { id = "14884823178", name = "Three Dimensions"},
-    ["88"] = { id = "14884817162", name = "Angel Hour"}
+    ["88"] = { id = "14884817162", name = "Angel Hour"},
+    ["89"] = { id = "14884823527", name = "Outcome"}
 }
 
 local gearlist = {
@@ -2795,7 +2796,7 @@ Commands required: rocket]])
 	    Chat("fix") -- ;Chat(prefix.."perm2")
 	    musicsay = false
             task.wait(0.5);Chat(prefix.."unantimsg")
-	    Chat("h \n\n\n [This server has been closed for maintanence] \n\n\n");Chat(prefix.."gmusic62")
+	    Chat("h \n\n\n see you soon \n\n\n");Chat(prefix.."gmusic89")
             Chat("fogcolor 0 0 0");Chat("time 0");Chat("fogend 0");Chat("paint all black")
 	    task.wait(0.75)
 	    DCrash()	
