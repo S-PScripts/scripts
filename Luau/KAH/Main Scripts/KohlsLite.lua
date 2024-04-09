@@ -127,7 +127,8 @@ local nokick = {
     "Artyuiiiiti",
     "Altsarecooleh",
     "D_ionte",
-    "EternitHD"
+    "EternitHD",
+    "Milderous"
 }
 
 -- Players with special perms
@@ -151,7 +152,8 @@ local specialperms = {
     "disunize",
     "Altsarecooleh",
     "D_ionte",
-    "EternitHD"
+    "EternitHD",
+    "Milderous"
 }
 
 -- New users get blacklisted (prevent crashers)
