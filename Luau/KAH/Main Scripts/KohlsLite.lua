@@ -321,7 +321,8 @@ local musictable = {
     ["93"] = { id = "15689451512", name = "Nothing Bad Is Going to Happen" },
     ["94"] = { id = "15689446882", name = "EXISTANCE"},
     ["95"] = { id = "16190782511", name = "uzipack"},
-    ["96"] = { id = "9043887091", name = "Lo-fi Chill A"}
+    ["96"] = { id = "9043887091", name = "Lo-fi Chill A"},
+    ["97"] = { id = "1837768517", name = "Bossa Me (a)"}
 }
 
 local gearlist = {
