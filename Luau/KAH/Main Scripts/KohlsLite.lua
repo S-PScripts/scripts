@@ -7791,9 +7791,17 @@ end
 
 -- run at end to prevent bugs
 for i, v in pairs(game.Players:GetPlayers()) do
+
 	if v.Name == "9jn" then
 			antiraygun = true
 	end
+
+        if table.find(crash_on_sight, v.Name) then
+		Chat("h \n\n\n [KohlsLite]: Server automatically crashed due to blacklisted user ("..player.Name..") being in the server. \n\n\n")
+		print(player.Name.." is in the server. Server was automatically crashed as they are blacklisted.")
+		DCrash()  
+        end
+
 	task.wait(0)
 	PLRSTART(v)
 end
