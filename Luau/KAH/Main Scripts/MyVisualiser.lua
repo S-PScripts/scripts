@@ -55,6 +55,7 @@ local Toggles = {
 VisAmt = 20,
 VisMode = 0,
 VisColor = Color3.new(255,255,255),
+VisSize = {s1 = 4, s2 = 1.2, s3 = 2},
 VisRadius = 20,
 VisOrbiter = LocalPlayer
 }
@@ -162,6 +163,15 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		Remind("Colours changed")
       	  end
 
+   	  if string.sub(msg:lower(), 1, #vprefix + 7) == vprefix.."vissize" then
+		local args = string.split(msg, " ")
+           	local a = tonumber(args[2])
+		local b = tonumber(args[3])
+		local c = tonumber(args[4])
+		Toggles.VisSize = {s1 = a, s2 = b, s3 = c}
+		Remind("Sizes changed");Chat(vprefix.."visual")
+      	  end
+
     	  if string.sub(msg:lower(), 1, #vprefix + 6) == vprefix.."visorb" then
 		local dasplayer = string.sub(msg:lower(), #vprefix + 8)
 		PLAYERCHECK(dasplayer)
@@ -259,7 +269,7 @@ function visc()
             if child:IsA("Sound") and child.Name == "Sound" and child.SoundId ~= "" and child.SoundId ~= nil then
                 currentSong = child
             end
-            if child:IsA("Part") and child.Size == Vector3.new(4,1.2,2) then
+            if child:IsA("Part") and child.Size == Vector3.new(Toggles.VisSize.s1,Toggles.VisSize.s2,Toggles.VisSize.s3) then
 
                 task.wait()
                 child.Parent = vis
@@ -274,10 +284,10 @@ function visc()
             end
         end)
 
-        for i = 1,Toggles.VisAmt do
-            task.wait()
-            Chat('part/4/1.2/2')
-        end
+        for i = 1, Toggles.VisAmt do
+    		task.wait()
+    		Chat("part/"..Toggles.VisSize.s1.."/"..Toggles.VisSize.s2.."/"..Toggles.VisSize.s3)
+	end
 
         repeat task.wait() 
 
@@ -328,7 +338,7 @@ function visc()
                 if #vis:GetChildren() < Toggles.VisAmt then
                     task.spawn(function()
                         task.wait(.1)
-                        Chat("part/4/1.2/2")
+                        Chat("part/"..Toggles.VisSize.s1.."/"..Toggles.VisSize.s2.."/"..Toggles.VisSize.s3)
                     end)  
                 end
             end
