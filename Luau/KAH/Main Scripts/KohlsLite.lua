@@ -125,7 +125,8 @@ local nokick = {
     "dawninja21alt",
     "GAMMINGBUDD_REAL",
     "Artyuiiiiti",
-    "Altsarecooleh"
+    "Altsarecooleh",
+    "D_ionte"
 }
 
 -- Players with special perms
@@ -147,7 +148,8 @@ local specialperms = {
     "dawninja21",
     "dawninja21alt",
     "disunize",
-    "Altsarecooleh"
+    "Altsarecooleh",
+    "D_ionte"
 }
 
 -- New users get blacklisted (prevent crashers)
@@ -182,7 +184,7 @@ local pgwl = {
     "SZCVAK",
     "TheRealestOnHere",
     "Altsarecooleh",
-   "idonthacklol101ns",
+    "idonthacklol101ns",
     "Me_ChurchOfSat4n",
     "Milderous"
 }
