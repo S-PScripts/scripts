@@ -2847,6 +2847,10 @@ Commands required: rocket]])
         StoneMap()
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'hammer' then
+        SpHammer()
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'icemap' then
         if alreadyranice == true then
                 Remind("You already ran this command! To prevent crashes you cannot run it again, sorry!")
@@ -4809,7 +4813,7 @@ print("Better than scv1 and scv2 - approved by Tech")
 print("--- CREDITS ---")
 print("Tech and other admins of SC with Shortcut v1, v2 and v3")
 print("atprog with his PR Script")
-print("iiDk's with iiDk's admin as PR Script is based off it")
+print("iiDk's with ii's stupid admin as PR Script is based off it")
 print("Gojo [SimpleKAH] for gears and char ids")
 print("Dizzy [ROUTE] for music ids hahaha I'm a muskid")
 
@@ -7461,6 +7465,202 @@ function StoneMap()
         end)
         task.spawn(function()
             stoneTool2.ServerControl:InvokeServer("KeyPress", {["Key"] = "x", ["Down"] = true})
+        end)
+end
+
+-- By iidk!
+function SpHammer()
+        Remind("From ii's stupid admin!")
+        Chat("gear me 10468797")
+        local hammer = game.Players.LocalPlayer.Backpack:WaitForChild("BanHammer")
+        local mode = "kill"
+
+        local phrases = {"Missclick","Really","Oops","Why","That is a very bad sin","while true do end","LOLWUT","You have been spun"}
+
+        
+        game.Players.LocalPlayer.Chatted:Connect(function(msg)
+                
+	           if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'hmode' then
+                                local args = string.split(msg, " ")
+                                if #args == 2 then
+                                        mode = args[2]
+                                end
+                   end
+                
+	           if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'hcmds' then       
+                                 Remind("Check your console by doing /console in chat!")
+                                 HCMDS()
+                   end
+        end)
+
+        function HCMDS()
+
+print("- Main -")
+print("hcmds - print the commands")
+print("hmode - set the mode")
+
+print("- Mode -")
+print("kill - used by default")
+print("anchor - freezes the player")
+print("unanchor - unfreezes the player")
+print("nil - punishes player")
+print("nan - sets size to nan")
+print("smack - smacks the player (unequip hammer right after hitting someone with this enabled)")
+print("spin - spins the player and plays music")
+print("smite - paints player black and explodes them")
+print("fling - flings the player")
+print("label - gives them a random name")
+print("furry - rawr")
+print("fem - maid outfit")
+print("color - paints the player a random color")
+print("duck - quack quack")
+
+print("- Script by iiDk, ported for KohlsLite. -")
+
+        end
+        
+        hammer.Handle.Touched:Connect(function(p)
+	        local sound = 10730819
+	        if p.Parent == game.Players.LocalPlayer.Character then return end
+	        if not p.Parent:FindFirstChild("Humanoid") then return end
+	        if #p.Parent.Name:split(" ")>1 then return end
+                
+	        if mode == "kill" then
+		        Chat("kill "..p.Parent.Name)
+	        end
+                
+	        if mode == "unanchor" then
+		        sound = 12221990
+		        Chat("unfreeze "..p.Parent.Name)
+	        end
+                
+	        if mode == "anchor" then
+		        sound = 12222152
+		        Chat("freeze "..p.Parent.Name)
+	        end
+                
+	        if mode == "nil" then
+		        if p.Name ~= "Base" then
+			        sound = 4676738150
+			        Chat("punish "..p.Parent.Name)
+		        end
+	        end
+                
+	        if mode == "nan" then
+		        if p.Name ~= "Base" then
+			        sound = 135361652
+			        Chat("size "..p.Parent.Name.." nan")
+		        end
+	        end
+                
+	        if mode == "smack" then
+		        if p.Name ~= "Base" then
+			        sound = 5886215922
+			        game.Players:Chat("speed "..p.Parent.Name.." 0")
+			        game.Players:Chat("tp "..p.Parent.Name.." me")
+			        spawn(function()
+			            wait(0.8)
+			            Chat("/e point")
+			            wait(0.1)
+			            Chat("fling "..p.Parent.Name)
+			        end)
+		        end
+	        end
+                
+	        if mode == "spin" then
+	                sound = 1846368080
+		        Chat("music 1846368080")
+		        Chat("spin "..p.Parent.Name)
+		        Chat("speed "..p.Parent.Name.." 0")
+	        end
+                
+	        if mode == "smite" then
+		        sound = 12222030
+		        Chat("ff me")
+		        Chat("explode "..p.Parent.Name)
+		        Chat("kill "..p.Parent.Name)
+		        Chat("paint "..p.Parent.Name.." Really black")
+		        spawn(function()
+		            wait(1)
+		            Chat("unff me")
+		        end)
+	        end
+                
+	        if mode == "fling" then
+		        sound = 12222046
+		        Chat("fling "..p.Parent.Name)
+	        end
+                
+	        if mode == "label" then
+		        sound = 12222140
+		        Chat("name "..p.Parent.Name.." "..phrases[math.random(1,#phrases)])
+	        end
+                
+	        if mode == "furry" then
+	            sound = 4821245570
+	            spawn(function()
+	                v = game.Players[p.Parent.Name]
+                        Chat("char "..v.Name.." 18")
+                        wait(0.5)
+                        Chat("paint "..v.Name.." Institutional white")
+                        wait()
+                        Chat("hat "..v.Name.." 10563319994")
+                        wait()
+                        Chat("hat "..v.Name.." 12578728695")
+                        wait()
+                        Chat("shirt "..v.Name.." 10571467676")
+                        wait()
+                        Chat("pants "..v.Name.." 10571468508")
+                        wait()
+                        Chat("tp "..v.Name.." me")
+                    end)
+	        end
+                
+	        if mode == "fem" then
+	            sound = 5064301214
+	            spawn(function()
+	                game.Players:Chat("char "..p.Parent.Name.." 31342830")
+	                v = game.Players[p.Parent.Name]
+                        repeat wait() until v and v.Character and v.Character:FindFirstChild("Ultra-Fabulous Hair")
+                        wait(0.3)
+                        Chat("removehats "..p.Parent.Name)
+                        wait()
+                        Chat("paint "..p.Parent.Name.." Institutional white")
+                        wait()
+                        Chat("hat "..p.Parent.Name.." 7141674388")
+                        wait()
+                        Chat("hat "..p.Parent.Name.." 7033871971")
+                        wait()
+                        Chat("shirt "..p.Parent.Name.." 5933990311")
+                        wait()
+                        Chat("pants "..p.Parent.Name.." 7219538593")
+                        wait()
+                        Chat("tp "..v.Name.." me")
+                    end)
+	        end
+                
+	        if mode == "color" then
+		        Chat("paint "..p.Parent.name.." "..BrickColor.Random().Name)
+	        end
+                
+	        if mode == "duck" then
+		        Chat("invisible "..p.Parent.Name)
+		        Chat("hat "..p.Parent.Name.." 6532336503")
+		        Chat("spin "..p.Parent.Name)
+		        Chat("speed "..p.Parent.Name.." 0")
+	        end
+                
+	        if mode == "color" then
+		        Chat("music 11900833")
+	        else
+		        Chat("music "..tostring(sound))
+	        end
+                
+	        repeat wait()  until game:GetService("Workspace").Terrain["_Game"].Folder.Sound.IsLoaded
+	        spawn(function()
+	            wait(game:GetService("Workspace").Terrain["_Game"].Folder.Sound.TimeLength)
+	            Chat("music nan")
+	        end)
         end)
 end
 
