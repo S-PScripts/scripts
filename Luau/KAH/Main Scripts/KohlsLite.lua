@@ -261,13 +261,13 @@ local musictable = {
     ["42"] = { id = "6770303644", name = "Minecraft Chest" },
     ["43"] = { id = "6783714255", name = "Brooklyn blood bop" },
     ["44"] = { id = "1838028467", name = "VIP Me" },
-    ["45"] = { id = "1848354536", name = "James Clarke - Relaxed Scene" }, -- chill back
+    ["45"] = { id = "1848354536", name = "James Clarke - Relaxed Scene" }, -- chill back (alt name before i found the actual original music)
     ["46"] = { id = "45819151", name = "sad depressing music 4am" },
     ["47"] = { id = "6828176320", name = "Painted black" },
     ["48"] = { id = "5410084188", name = "WRLD - Hang Up" },
     ["49"] = { id = "6911766512", name = "Cyber Chainsaw" },
     ["50"] = { id = "7612400047", name = "Unknown" },
-    ["51"] = { id = "16190783444", name = "CHIPI CHIPI CHAPA CHAPA" },
+    ["51"] = { id = "16190783444", name = "Dubidubidu (Techno Remix)" }, -- chipi chipi chapa chapa (alt name before i found clipply)
     ["52"] = { id = "16190782786", name = "Lil Kuudere X sukoyomi" },
     ["53"] = { id = "6844230235", name = "WHAT THE HELL" },
     ["54"] = { id = "15689451063", name = "Interworld - Metamorphosis" },
@@ -309,7 +309,8 @@ local musictable = {
     ["90"] = { id = "14366982317", name = "GTA"},
     ["91"] = { id = "15689442195", name = "CEO"},
     ["92"] = { id = "15689441772", name = "HELLFIRE" },
-    ["93"] = { id = "15689451512", name = "Nothing Bad Is Going to Happen" }
+    ["93"] = { id = "15689451512", name = "Nothing Bad Is Going to Happen" },
+    ["94"] = { id = "15689446882", name = "EXISTANCE"}
 }
 
 local gearlist = {
