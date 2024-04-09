@@ -1652,21 +1652,23 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
        antimusic = false
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'permmusic' then
+    if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'pmu' then
         musicoff = false
         mymusiconly = true
         gottenmode = 2
         mymusiconlyid = tonumber(string.sub(msg:lower(), #prefix + 11))
+        Remind("Perm music is on")
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'2permmusic' then
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'2pmu' then
         if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
                                 local url = game:GetService("Workspace").Terrain["_Game"].Folder.Sound.SoundId
                                 local number = url:match("id=(%d+)")
                                 gottenmode = 1
                                 musicoff = false
                                 mymusiconly = true
-                                       mymusiconlyid = number
+                                mymusiconlyid = number
+                                Remind("Perm music is on (set to current id)")
         end
     end
 
@@ -2359,10 +2361,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         regenfind2 = false
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unpermmusic' then
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'unpmu' then
         mymusiconly = false
         musicoff = true
         Chat("stopmusic")
+        Remind("Perm music is off")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'offmusic' then
@@ -4713,8 +4716,8 @@ print("supercmd - spam text a set amount of times")
 print("supert - times the spam should happen (anything above 128 exceeds the rate limit)")
 
 print("---")
-print("permmusic - your music only, if someone tries to change or stop it changes back")
-print("unpermmusic - not your music only anymore")
+print("pmu - your music only, if someone tries to change or stop it changes back")
+print("unpmu - not your music only anymore")
 print("offmusic - turn the perm music off temporarily")
 print("onmusic - turn perm music on")
 print("antimusic - stop music from playing")
