@@ -175,7 +175,10 @@ local GWhitelisted = {
     "Ih0temyIife",
     "SZCVAK",
     "TheRealestOnHere",
-    "Altsarecooleh"
+    "Altsarecooleh",
+   "idonthacklol101ns",
+    "Me_ChurchOfSat4n",
+    "Milderous"
 }
 
 -- Serverlock
