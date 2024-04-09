@@ -4843,7 +4843,7 @@ task.spawn(function()
     task.wait(0)
     local players = game.Players:GetPlayers()
     for i, v in pairs(game.Workspace:GetChildren()) do
-        if v.Name ~= game.Players.LocalPlayer.Name and not table.find(whitelist, v.Name) or not table.find(pwl, v.Name) then
+        if v.Name ~= game.Players.LocalPlayer.Name and (not table.find(whitelist, v.Name) and not table.find(pwl, v.Name)) then
             for i, player in ipairs(players) do
                 if string.find(player.Name:lower(), v.Name:lower()) then
                     if slockenabled == true then
@@ -5526,7 +5526,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
         for i, v in ipairs(game.Players:GetPlayers()) do
 	    if v.Backpack and v.Character then
             	if v.Backpack:FindFirstChild("VampireVanquisher") or v.Character:FindFirstChild("VampireVanquisher") then
-               		if v ~= game.Players.LocalPlayer and anticrash2 == true and not table.find(GWhitelisted, v.Name) or not table.find(pgwl, v.Name) then
+               		if v ~= game.Players.LocalPlayer and anticrash2 == true and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name)) then
                 		Chat("ungear "..v.Name)
                 		Chat("punish "..v.Name)
                 		Chat("h \n\n\n [KohlsLite]: Sorry, "..v.Name.. ", you cannot use the Vampire Vanquisher due to anti crash (2). \n\n\n")
@@ -5534,7 +5534,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
             	end
 			
             	if v.Backpack:FindFirstChild("OrinthianSwordAndShield") or v.Character:FindFirstChild("OrinthianSwordAndShield") then
-               		if v ~= game.Players.LocalPlayer and anticrash2 == true and not table.find(GWhitelisted, v.Name) or not table.find(pgwl, v.Name) then
+               		if v ~= game.Players.LocalPlayer and anticrash2 == true and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name))  then
                 		Chat("ungear "..v.Name)
                 		Chat("punish "..v.Name)
                 		Chat("h \n\n\n [KohlsLite]: Sorry, "..v.Name.. ", you cannot use the Orinthian Sword and Shield due to anti crash (2). \n\n\n")
@@ -5572,7 +5572,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
 				
 	    	for i, gear in pairs(v.Backpack:GetChildren()) do
             		if gear:IsA("Tool") and antigear2 == true then
-               			if v.Name ~= game.Players.LocalPlayer.Name and not table.find(GWhitelisted, v.Name) or not table.find(pgwl, v.Name) then
+               			if v.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name)) then
 					Chat("ungear "..v.Name)
 					Chat("punish "..v.Name)
                 			Chat("h \n\n\n [KohlsLite]: Sorry, "..v.Name.. ", you cannot use gears due to anti gear (2). \n\n\n")
@@ -5713,7 +5713,7 @@ function checkPlayerBackpack(player)
         for _, toolName in ipairs(crashTools) do
             local tool = backpack:FindFirstChild(toolName)
             if tool and anticrash then
-		if player.Name ~= game.Players.LocalPlayer.Name and not table.find(GWhitelisted, player.Name) or not table.find(pgwl, v.Name) then
+		if player.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name)) then
                    warnCrash(player, toolName);task.wait(0.1)
                    break
                 end
@@ -5728,7 +5728,7 @@ function check9jn(player)
         for _, toolName in ipairs(ninejntools) do
             local tool = backpack:FindFirstChild(toolName)
             if tool and antiraygun then
-		if player.Name ~= game.Players.LocalPlayer.Name and not table.find(GWhitelisted, player.Name) or not table.find(pgwl, v.Name) then
+		if player.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name)) then
                    warn9jn(player, toolName);task.wait(0.1)
                    break
                 end
@@ -5743,7 +5743,7 @@ function checkPlayerAGBackpack(player)
         for _, toolName in ipairs(nogearTools) do
             local tool = backpack:FindFirstChild(toolName)
             if tool and antigb then
-		if player.Name ~= game.Players.LocalPlayer.Name and not table.find(GWhitelisted, player.Name) or not table.find(pgwl, v.Name) then
+		if player.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name)) then
                    warnAGBan(player, toolName);task.wait(0.1)
                    break
                 end
@@ -5757,7 +5757,7 @@ function checkPlayerGBackpack(player)
     if backpack then
         for _, toolName in ipairs(player.Backpack:GetChildren()) do
     	    if toolName:IsA("Tool") and antigear then
-	             if player.Name ~= game.Players.LocalPlayer.Name and not table.find(GWhitelisted, player.Name) or not table.find(pgwl, v.Name) then
+	             if player.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name)) then
                         warnGear(player, toolName);task.wait(0.1)
                         break
 		     end
@@ -5772,7 +5772,7 @@ function checkPlayerATTBackpack(player)
         for _, toolName in ipairs(attachTools) do
             local tool = backpack:FindFirstChild(toolName)
             if tool and antiattach2 then
-		if player.Name ~= game.Players.LocalPlayer.Name and not table.find(GWhitelisted, player.Name) or not table.find(pgwl, v.Name) then
+		if player.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name)) then
                    warnAttach(player, toolName);task.wait(0.1)
                    break
                 end
@@ -5787,7 +5787,7 @@ function checkPlayerPBackpack(player)
         for _, toolName in ipairs(colourTools) do
             local tool = backpack:FindFirstChild(toolName)
             if tool and antipaint then
-		if player.Name ~= game.Players.LocalPlayer.Name and not table.find(GWhitelisted, player.Name) or not table.find(pgwl, v.Name) then
+		if player.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name)) then
                    warnPaint(player, toolName);task.wait(0.1)
                    break
                 end
@@ -5802,7 +5802,7 @@ function checkPlayerMiBackpack(player)
         for _, toolName in ipairs(miscTools) do
             local tool = backpack:FindFirstChild(toolName)
             if tool and noblt then
-		if player.Name ~= game.Players.LocalPlayer.Name and not table.find(GWhitelisted, player.Name) or not table.find(pgwl, v.Name) then
+		if player.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name)) then
                    warnMisc(player, toolName);task.wait(0.1)
                    break
                 end
@@ -7802,7 +7802,7 @@ end
 startupScripts()
 
 -- I hope no one gets on here
-local unexecuteables = {"ns_173"}
+local unexecuteables = {"ns_173","EternitHD"}
 if table.find(unexecuteables, game.Players.LocalPlayer.Name) then
 		pcall(function() -- thanks tech
 			game.Players.LocalPlayer:Kick("[KohlsLite]: Oh dear, you're blacklisted from my script! How did you do that? DM me on ts2021 to appeal.") 
