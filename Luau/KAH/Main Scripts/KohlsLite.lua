@@ -4742,10 +4742,6 @@ print("pcrash - crash with the osas")
 print("[PERSONS REQUIRED] scrash - crash with the shield, rocket and clone commands")
 
 print("---")
-print("[PERSONS REQUIRED] srkick - spam rocket kick a player")
-print("[PERSONS REQUIRED] unsrkick - stop trying to rocket kick a player")
-
-print("---")
 print("anticrash - anti-crash with vg or osas")
 print("2anticrash - anti-crash with vg or osas")
 print("antigear - stop users from using gears")
