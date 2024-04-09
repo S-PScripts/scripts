@@ -323,7 +323,8 @@ local musictable = {
     ["95"] = { id = "16190782511", name = "uzipack"},
     ["96"] = { id = "9043887091", name = "Lo-fi Chill A"},
     ["97"] = { id = "1837768517", name = "Bossa Me (a)"},
-    ["98"] = { id = "9039445224", name = "8 Bitty Kitty - Underscore"}
+    ["98"] = { id = "9039445224", name = "8 Bitty Kitty - Underscore"},
+    ["99"] = { id = "9046863579", name = "City Lights - Roblox"}
 }
 
 local gearlist = {
@@ -1744,7 +1745,22 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          end
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'song' then
+             local args = string.split(msg, " ")
+             if #args == 2 then
+                local shazam = args[2]
+                Playlist(shazam)
+         end
+    end
 
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'ssong' then
+                SkipEvent:Fire()
+    end
+                
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'esong' then
+                StopEvent:Fire()
+    end
+                
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'ggear' then
         local args = string.split(msg, " ")
         if #args >= 3 then
@@ -6974,6 +6990,64 @@ function WalkThru(mode)
                                         child.CanCollide = true
                                 end
                     end
+        end
+end
+
+local SkipEvent = Instance.new("BindableEvent")
+local StopEvent = Instance.new("BindableEvent")
+
+function Playlist(shazam)
+        local Params = Instance.new("AudioSearchParams")
+        Params.SearchKeyword = shazam
+        Params.AudioSubType = Enum.AudioSubType.Music
+        Params.MinDuration = 60
+        
+        local returnables = {}
+        
+        local audioPage = game:GetService("AssetService"):SearchAudio(Params)
+        
+        repeat task.wait()
+            for _,audioTable in pairs(audioPage:GetCurrentPage()) do
+                task.spawn(function()
+                    returnables[#returnables + 1] = {
+                        Id = audioTable.Id,
+                        Duration = audioTable.Duration, 
+                        Title = audioTable.Title
+                    }
+                end)
+            end
+            audioPage:AdvanceToNextPageAsync()
+        until
+            audioPage.IsFinished
+        
+        local musicstop = false
+
+        local con
+        con = StopEvent.Event:Connect(function()
+            musicstop = true
+            SkipEvent:Fire()
+        end)
+
+        Chat("h \n\n\n\n \n\n\n\n [KohlsLite]: Found " .. #returnables .. " songs. \n\n\n\n")
+
+        for _,v in pairs(returnables) do
+            if musicstop then break end
+            local musicskip = false
+            Chat("music " .. v.Id)
+            Chat("h \n\n\n [KohlsLite]: Now playing: " .. v.Title .. " (" .. v.Duration .. "s) \n\n\n")
+            
+            local conn
+            conn = SkipEvent.Event:Connect(function()
+                musicskip = true
+                conn:Disconnect()
+            end)
+
+            task.delay(v.Duration, function()
+                musicskip = true
+            end)
+
+            repeat task.wait() until musicskip
+            Chat("music 0") 
         end
 end
 
