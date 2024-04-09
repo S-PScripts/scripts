@@ -6993,8 +6993,8 @@ function WalkThru(mode)
         end
 end
 
-local SkipEvent = Instance.new("BindableEvent")
-local StopEvent = Instance.new("BindableEvent")
+SkipEvent = Instance.new("BindableEvent")
+StopEvent = Instance.new("BindableEvent")
 
 function Playlist(shazam)
         local Params = Instance.new("AudioSearchParams")
