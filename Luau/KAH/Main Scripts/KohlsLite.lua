@@ -97,7 +97,8 @@ local pwl = {
     "Altsarecooleh",
     "idonthacklol101ns",
     "Me_ChurchOfSat4n",
-    "Milderous"
+    "Milderous",
+    "EternitHD"
 }
 
 -- Players you cannot kick
