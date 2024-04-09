@@ -36,7 +36,7 @@ local vprefix = "-"
 -- INPUTS --
 print("--- MyVisualiser.lua executed! Created by quivings, ported by S_P ---")
 Remind(" MyVisualiser.lua executed! Created by quivings, ported by S_P ")
-Chat("h \n\n\n [MyVisualiser.lua]: Executed! \n\n\n")
+--Chat("h \n\n\n [MyVisualiser.lua]: Executed! \n\n\n")
 
 -- VARIABLES --
 
