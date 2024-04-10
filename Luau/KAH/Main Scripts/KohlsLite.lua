@@ -39,6 +39,7 @@ local defaults = {".antirocket me", ".tnok", ".antimsg me"}
 
 local bending
 local eincrash
+
 -- Start up scripts
 local function startupScripts()
            if not _G.autorunning then
@@ -3138,6 +3139,22 @@ Commands required: rocket]])
 				wld = cplr
 				mode = table.concat(args, " ", 3)
                         	Welding(mode)
+                 	else
+                               Remind('Cannot find player with the name: '..dasplayer)
+                	 end
+		end
+    end
+
+
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'hfreeze' then
+                local args = string.split(msg, " ")
+        	if #args == 2 then
+            		local target = args[2]
+                 	PLAYERCHECK(target)
+                 	if target ~= nil then
+                        	welder = player
+				wld = cplr
+                        	HFreeze()
                  	else
                                Remind('Cannot find player with the name: '..dasplayer)
                 	 end
@@ -7681,6 +7698,29 @@ function Welding(mode)
         	local wat = game.Players.LocalPlayer.Backpack:FindFirstChild("Watermelon")
         	wat.Parent = game.Players.LocalPlayer.Character
 	end
+end
+
+function HFreeze()
+	local originalCFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+    	Chat("gear me 130113146")
+	Chat("speed "..welder.." 0")
+    	repeat wait() until game.Players.LocalPlayer.Backpack:FindFirstChild("HyperlaserGun")
+    	local gun = game.Players.LocalPlayer.Backpack:FindFirstChild("HyperlaserGun")
+    	gun.Parent = game.Players.LocalPlayer.Character
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = wld.Character.Head.CFrame * CFrame.new(-1,-1,4)
+	wait(.3333)
+	repeat wait() 
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = wld.Character.Head.CFrame * CFrame.new(-1,-1,4)
+	spawn(function()
+	    	local A_1 = "Click"
+		local A_2 = true
+		local A_3 = wld.Character.Head.Position
+		gun.ServerControl:InvokeServer(A_1, A_2, A_3)
+	end)
+	until wld.Character.Head:FindFirstChildOfClass("SelectionBox")
+	Chat("reset me")
+	wait(0.25)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame=originalCFrame
 end
 
 function DumbGuy()
