@@ -2381,12 +2381,17 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         regenfind = false
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'klfindreg' then
+    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'2findregen' then
         regenfind2 = true
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'noklfindreg' then
+    if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'2nofindregen' then
         regenfind2 = false
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'leakedreg' then
+        leakedcords()
+
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'unpmu' then
@@ -6819,6 +6824,7 @@ task.spawn(function()
                                 task.wait(.15)
                                 root.CFrame = CFrame.new(math.random(-30593, -23388), math.random(-30593, -10455), math.random(-30593, -10455))
                         until workspace.Terrain._Game.Admin:FindFirstChild("Regen") or regenfind2 == false
+			PlayerService.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0, 0, 0)
                         root.Anchored = false
                         root.CFrame = workspace.Terrain._Game.Admin:FindFirstChild("Regen").CFrame + Vector3.new(0, 3, 0)
                         regenfind2 = false
@@ -6826,6 +6832,48 @@ task.spawn(function()
                 end
         end
 end)
+
+-- leaked regen
+function leakedcords()
+
+	local function clientloadpos(thecord) -- cmdy
+		PlayerService.LocalPlayer.Character.Parent = workspace
+		PlayerService.LocalPlayer.Character.HumanoidRootPart.CFrame = thecord
+	end
+
+	clientloadpos(CFrame.new(Vector3.new(1000000, 1000000, 1000000)));task.wait(.5)
+	clientloadpos(CFrame.new(Vector3.new(1000000, 1000003, -1000000)));task.wait(.5)
+	clientloadpos(CFrame.new(Vector3.new(1000000, -1000003, -1000000)));task.wait(.5)
+	clientloadpos(CFrame.new(Vector3.new(1000000, -1000000, -3)));task.wait(.5)
+	clientloadpos(CFrame.new(Vector3.new(3, -1000000, 1000000)));task.wait(.5)
+	clientloadpos(CFrame.new(Vector3.new(1000000, -3, -1000000)));task.wait(.5)
+	clientloadpos(CFrame.new(Vector3.new(-1000000, -3, 1000000)));task.wait(.5)
+	clientloadpos(CFrame.new(Vector3.new(1000000, 3, 1000000)));task.wait(.5)
+	clientloadpos(CFrame.new(Vector3.new(1000000, 1000003, 1000000)));task.wait(.5)
+	clientloadpos(CFrame.new(Vector3.new(1000000, -1000003, 1000000)));task.wait(.5)
+	clientloadpos(CFrame.new(Vector3.new(454545, 150000, -678678)));task.wait(.5)
+	clientloadpos(CFrame.new(Vector3.new(306712, 420552, 398158)));task.wait(.5)
+	clientloadpos(CFrame.new(Vector3.new(-1000000, 1000003, 1000000)));task.wait(.5)
+	clientloadpos(CFrame.new(Vector3.new(-1000000, 1000003, -1000000)));task.wait(.5)
+	clientloadpos(CFrame.new(Vector3.new(-1000000, -1000003, -1000000)));task.wait(.5)
+	clientloadpos(CFrame.new(Vector3.new(45400, -49860, 56673)));task.wait(.5)
+	clientloadpos(CFrame.new(Vector3.new(56470, -48312, 28578)));task.wait(.5)
+	clientloadpos(CFrame.new(Vector3.new(75304, -49638, 47300)));task.wait(.5)
+	clientloadpos(CFrame.new(Vector3.new(34120, -48830, 30233)));task.wait(.5)
+	clientloadpos(CFrame.new(Vector3.new(34120, -48830, 30233)));task.wait(.5)
+	clientloadpos(CFrame.new(Vector3.new(77822, -49751, 79116)));task.wait(.5)
+	clientloadpos(CFrame.new(Vector3.new(42682, -29202, 29886)));task.wait(.5)
+	clientloadpos(CFrame.new(Vector3.new(51052, -49558, 34068)));task.wait(.5)
+	clientloadpos(CFrame.new(Vector3.new(-251773, 1000003, 382563)));task.wait(.5)
+	clientloadpos(CFrame.new(0, 2.5, 0));task.wait(.5)
+	if workspace.Terrain._Game.Admin:FindFirstChild("Regen") then
+		Remind("Found regen!");Chat("respawn me")
+	else
+		Remind("Couldn't find regen!");Chat("respawn me")
+	end
+
+end
+
 
 -- LUA CMDS
 function Execute(testcode)
