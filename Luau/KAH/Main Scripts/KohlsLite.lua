@@ -805,6 +805,14 @@ local AntiLogs = false
 local noobdetect = true
 local welcomemsg = true
 
+function transformToColor3(col)
+	local r = col.r
+	local g = col.g
+	local b = col.b
+	return Color3.new(r,g,b)
+end
+
+
 -- local permpassid = 66254 or 64354 -> NBC, BC
 -- local personpassid = 35748 or 37127 --> NBC, BC
 
@@ -3000,11 +3008,31 @@ Commands required: rocket]])
         Remind("Your current prefix is "..prefix)
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'paintmap' then
-        _G.ColourHere = string.sub(msg, #prefix + 10) -- global as we use a loadstring here
-        GExecute("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/Other%20Scripts/Paint%20Map.lua")
-    end
+   if string.sub(msg:lower(), 1, #prefix + 4) == prefix.."pmap" then
+		local colourhere = string.sub(msg, #prefix + 6)
+			
+		Chat(prefix.."gear me painter")
+    		repeat wait() until game.Players.LocalPlayer.Backpack:FindFirstChild("PaintBucket")
+    		local paint = game.Players.LocalPlayer.Backpack:FindFirstChild("PaintBucket")
+   		paint.Parent = game.Players.LocalPlayer.Character
+			
+		for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
+			task.spawn(function()
+				if v:IsA("Part") then
+					local Partse =
+					{
+						["Part"] = v,
+						["Color"] = transformToColor3(BrickColor.new(colourhere))
+					}
+					game:GetService("Workspace")[game.Players.LocalPlayer.Name].PaintBucket:WaitForChild("Remotes").ServerControls:InvokeServer("PaintPart", Partse)
+				end
+			end)
+		end
+		task.wait(1)
+		Chat("ungear me")
+	end
 
+		
    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'autoafk' then
         autoafk = true
    end
@@ -4693,7 +4721,7 @@ print("spamon - start spamming again")
 
 print("---")
 print("fixpaint - fix the paint")
-print("paintmap - paint the map a colour")
+print("pmap - paint the map a colour")
 
 print("---")
 print("icemap - make the map ice")
