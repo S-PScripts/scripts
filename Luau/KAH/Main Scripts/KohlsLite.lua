@@ -324,7 +324,8 @@ local musictable = {
     ["96"] = { id = "9043887091", name = "Lo-fi Chill A"},
     ["97"] = { id = "1837768517", name = "Bossa Me (a)"},
     ["98"] = { id = "9039445224", name = "8 Bitty Kitty - Underscore"},
-    ["99"] = { id = "9046863579", name = "City Lights - Roblox"}
+    ["99"] = { id = "9046863579", name = "City Lights - Roblox"},
+    ["100"] = { id = "15689457918", name = "nMisaki - Dream Girl (sped up)"}
 }
 
 local gearlist = {
@@ -1356,7 +1357,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
            Chat("h \n\n\n [KohlsLite]: Playing music: ".. musictable[musicplay].name ..". \n\n\n")
         end
         if antimlog then
-            Chat("music 00000000000000000000000000" .. musictable[musicplay].id)
+            Chat("music 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000" .. musictable[musicplay].id)
         else
             Chat("music " .. musictable[musicplay].id)
         end;musicplay = tonumber(musicplay)
@@ -1373,7 +1374,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                     Chat("h \n\n\n [KohlsLite]: Playing music: " .. musictable[rizz].name .. ". \n\n\n")
          end
          if antimlog then
-                    Chat("music 00000000000000000000000000" .. musictable[rizz].id)
+                    Chat("music 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000" .. musictable[rizz].id)
          else
                 Chat("music " ..musictable[rizz].id)
          end
@@ -1401,7 +1402,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
             end
 
             if antimlog then
-                Chat("music 00000000000000000000000000" .. musictable[mast].id)
+                Chat("music 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000" .. musictable[mast].id)
            else
                 Chat("music " .. musictable[mast].id)
            end; ratelj = false
@@ -1429,7 +1430,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
             end
 
             if antimlog then
-                Chat("music 00000000000000000000000000" .. musictable[mast].id)
+                Chat("music 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000" .. musictable[mast].id)
            else
                 Chat("music " .. musictable[mast].id)
            end; ratelj = false
