@@ -5314,8 +5314,8 @@ task.spawn(function()
                         if v.Name ~= game.Players.LocalPlayer.Name then
                                 -- print("Debug msg 2: "..v.Name)
 
-                                if YOUantiaddon == true then
-                                            if v.Character:FindFirstChild("Addon") then
+                                if ALLantiaddon == true then
+                                            if v.Character and v.Character:FindFirstChild("Addon") then
                                                     Chat("reset "..v.Name)
                                            end
                                 end
