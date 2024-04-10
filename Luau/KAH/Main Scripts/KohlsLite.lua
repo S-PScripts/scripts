@@ -3161,6 +3161,21 @@ Commands required: rocket]])
 		end
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'tattach' then
+                local args = string.split(msg, " ")
+        	if #args == 2 then
+            		local target = args[2]
+                 	PLAYERCHECK(target)
+                 	if target ~= nil then
+                        	welder = player
+				wld = cplr
+                        	TAttach()
+                 	else
+                               Remind('Cannot find player with the name: '..dasplayer)
+                	 end
+		end
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'clone' then
                  local getnumber = string.sub(msg:lower(), #prefix + 7)
                  Clone(getnumber)
@@ -7740,6 +7755,18 @@ function HFreeze()
 	Chat("reset me")
 	wait(0.25)
 	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame=originalCFrame
+end
+
+function TAttach()
+	Chat("speed "..welder.." 0")
+	Chat("setgrav "..welder.." 3500")
+	Chat("freeze "..welder)
+	Chat("unfreeze "..welder)
+	repeat wait() until wld.Character:FindFirstChild("ice")
+	wld.Character.ice:Destroy()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = wld.Character.HumanoidRootPart.CFrame*CFrame.new(1.5,0,0)
+	wait(0.25)
+	Chat("unpunish me");Chat("invis me")
 end
 
 function DumbGuy()
