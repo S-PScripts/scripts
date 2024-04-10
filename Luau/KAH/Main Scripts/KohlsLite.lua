@@ -214,6 +214,7 @@ rkick_on_sight = {} -- rocket kick player when they join ONLY WORKS WITH ONE PLA
 crash_on_sight = {} -- crash server when player joins [jhjssikeksms]
 mkick_on_sight = {"He4rt_4","hellokitty2kute"} -- kick player with pm spam when they join ONLY WORKS WITH ONE PLAYER
 suser_on_sight = {} -- slow a user when they join with car gear ONLY WORKS WITH ONE PLAYER
+furry_on_sight = {"jhjssikeksms"}
 
 -- Variables for moving
 local movestatus = false
@@ -3115,6 +3116,7 @@ Commands required: rocket]])
                                Remind('Cannot find player with the name: '..dasplayer)
                  end
     end
+
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'surround' then
                  local dasplayer = string.sub(msg:lower(), #prefix + 10)
                  PLAYERCHECK(dasplayer)
@@ -3124,6 +3126,22 @@ Commands required: rocket]])
                  else
                                Remind('Cannot find player with the name: '..dasplayer)
                  end
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'weld' then
+                local args = string.split(msg, " ")
+        	if #args >= 3 then
+            		local target = args[2]
+                 	PLAYERCHECK(target)
+                 	if target ~= nil then
+                        	welder = player
+				wld = cplr
+				mode = table.concat(args, " ", 3)
+                        	Welding(mode)
+                 	else
+                               Remind('Cannot find player with the name: '..dasplayer)
+                	 end
+		end
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'clone' then
@@ -7348,6 +7366,10 @@ function onPlayerAdded(player)
                 acplr = player.Name
     end
 
+    if table.find(furry_on_sight, player.Name) then
+                Chat(prefix.."char "..player.Name.." furry")
+    end
+
     if table.find(crash_on_sight, player.Name) then
         Chat("h \n\n\n [KohlsLite]: Server automatically crashed due to blacklisted user ("..player.Name..") joining. \n\n\n")
         print(player.Name.." joined the server. Server was automatically crashed as they are blacklisted.")
@@ -7617,6 +7639,43 @@ function Lemon()
             Chat("explode me")
             task.wait(0.7)
         Chat("music nan")
+end
+
+function Welding(mode)
+	Chat("speed "..welder.." 0")
+        Chat("freeze "..welder)
+        Chat("unfreeze "..welder)
+        repeat wait() until wld.Character:FindFirstChild("ice")
+        wld.Character.ice:Destroy()
+        Chat("gear me 74385399")
+        repeat wait() until game.Players.LocalPlayer.Backpack:FindFirstChild("RemoteExplosiveDetonator")
+        local Detonator = game.Players.LocalPlayer.Backpack:FindFirstChild("RemoteExplosiveDetonator")
+        Detonator.Parent = game.Players.LocalPlayer.Character
+	if mode == "right arm" then
+        	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = wld.Character.HumanoidRootPart.CFrame*CFrame.new(0,0,1.5)
+	elseif mode == "left arm" then
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = wld.Character.HumanoidRootPart.CFrame*CFrame.new(-2.5,0,1.5)
+	elseif mode == "torso" then
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = wld.Character.HumanoidRootPart.CFrame*CFrame.new(-1.5,0,1.5)
+	elseif mode == "hold" then
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = wld.Character.HumanoidRootPart.CFrame*CFrame.new(-0.5,0,1.5)
+	else
+		mode = "hold"
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = wld.Character.HumanoidRootPart.CFrame*CFrame.new(-0.5,0,1.5)
+	end
+        wait(0.2)
+        local Act = "Activate"
+        local Pos = wld.Character.HumanoidRootPart.Position
+        Detonator.RemoteEvent:FireServer(Act, Pos)
+        wait(0.3)
+	if mode == "hold" then
+   		 Detonator:Destroy()
+    		 Chat("removetools me")
+    	         Chat("gear me 22787248")
+    	         repeat wait() until game.Players.LocalPlayer.Backpack:FindFirstChild("Watermelon")
+        	local wat = game.Players.LocalPlayer.Backpack:FindFirstChild("Watermelon")
+        	wat.Parent = game.Players.LocalPlayer.Character
+	end
 end
 
 function DumbGuy()
