@@ -7669,10 +7669,10 @@ function Welding(mode)
         Detonator.RemoteEvent:FireServer(Act, Pos)
         wait(0.3)
 	if mode == "hold" then
-   		 Detonator:Destroy()
-    		 Chat("removetools me")
-    	         Chat("gear me 22787248")
-    	         repeat wait() until game.Players.LocalPlayer.Backpack:FindFirstChild("Watermelon")
+   		Detonator:Destroy()
+    		Chat("ungear me");task.wait(0.1)
+    	        Chat("gear me 22787248")
+    	        repeat wait() until game.Players.LocalPlayer.Backpack:FindFirstChild("Watermelon")
         	local wat = game.Players.LocalPlayer.Backpack:FindFirstChild("Watermelon")
         	wat.Parent = game.Players.LocalPlayer.Character
 	end
