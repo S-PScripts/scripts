@@ -4582,7 +4582,26 @@ Commands required: rocket]])
                   end
    end
 
-    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'unpkick' then
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'unpkick' then
+                antichatplr = false
+                Chat("reset "..acplr)
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'bkick' then
+                   acplr = string.sub(msg:lower(), #prefix + 7)
+                   PLAYERCHECK(acplr)
+                   if player ~= nil and not table.find(nokick, player) then
+                           Chat(prefix.."laser "..acplr)
+			   Chat("blind "..acplr)
+                        antichatplr = true
+                   elseif table.find(nokick, player) then
+                        Remind("Sorry, this player cannot be kicked!")
+                else
+                           Remind("Player doesn't exist!")
+                  end
+   end
+
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'unbkick' then
                 antichatplr = false
                 Chat("reset "..acplr)
     end
