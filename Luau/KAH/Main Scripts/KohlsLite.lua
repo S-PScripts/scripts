@@ -5776,7 +5776,7 @@ function checkPlayerBackpack(player)
         for _, toolName in ipairs(crashTools) do
             local tool = backpack:FindFirstChild(toolName)
             if tool and anticrash then
-                if player.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name)) then
+                if player.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, player.Name) and not table.find(pgwl, player.Name)) then
                    warnCrash(player, toolName)
                    break
                 end
@@ -5791,7 +5791,7 @@ function check9jn(player)
         for _, toolName in ipairs(ninejntools) do
             local tool = backpack:FindFirstChild(toolName)
             if tool and antiraygun then
-                if player.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name)) then
+                if player.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, player.Name) and not table.find(pgwl, player.Name)) then
                    warn9jn(player, toolName)
                    break
                 end
@@ -5806,7 +5806,7 @@ function checkPlayerAGBackpack(player)
         for _, toolName in ipairs(nogearTools) do
             local tool = backpack:FindFirstChild(toolName)
             if tool and antigb then
-                if player.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name)) then
+                if player.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, player.Name) and not table.find(pgwl, player.Name)) then
                    warnAGBan(player, toolName)
                    break
                 end
@@ -5820,7 +5820,7 @@ function checkPlayerGBackpack(player)
     if backpack then
         for _, toolName in ipairs(player.Backpack:GetChildren()) do
                 if toolName:IsA("Tool") and antigear then
-                     if player.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name)) then
+                     if player.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, player.Name) and not table.find(pgwl, player.Name)) then
                         warnGear(player, toolName)
                         break
                      end
@@ -5835,7 +5835,7 @@ function checkPlayerATTBackpack(player)
         for _, toolName in ipairs(attachTools) do
             local tool = backpack:FindFirstChild(toolName)
             if tool and antiattach2 then
-                if player.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name)) then
+                if player.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, player.Name) and not table.find(pgwl, player.Name)) then
                    warnAttach(player, toolName)
                    break
                 end
@@ -5850,7 +5850,7 @@ function checkPlayerPBackpack(player)
         for _, toolName in ipairs(colourTools) do
             local tool = backpack:FindFirstChild(toolName)
             if tool and antipaint then
-                if player.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name)) then
+                if player.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, player.Name) and not table.find(pgwl, player.Name)) then
                    warnPaint(player, toolName)
                    break
                 end
@@ -5865,7 +5865,7 @@ function checkPlayerMiBackpack(player)
         for _, toolName in ipairs(miscTools) do
             local tool = backpack:FindFirstChild(toolName)
             if tool and noblt then
-                if player.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name)) then
+                if player.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, player.Name) and not table.find(pgwl, player.Name)) then
                    warnMisc(player, toolName)
                    break
                 end
