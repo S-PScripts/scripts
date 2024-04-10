@@ -3159,6 +3159,11 @@ Commands required: rocket]])
                  Potion(getnumber)
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'cannon' then
+                 local getnumber = string.sub(msg:lower(), #prefix + 8)
+                 Cannon(getnumber)
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'nuke' then
                  local dasplayer = string.sub(msg:lower(), #prefix + 6)
                  PLAYERCHECK(dasplayer)
@@ -5772,7 +5777,7 @@ function checkPlayerBackpack(player)
             local tool = backpack:FindFirstChild(toolName)
             if tool and anticrash then
                 if player.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name)) then
-                   warnCrash(player, toolName);task.wait(0.1)
+                   warnCrash(player, toolName)
                    break
                 end
             end
@@ -5787,7 +5792,7 @@ function check9jn(player)
             local tool = backpack:FindFirstChild(toolName)
             if tool and antiraygun then
                 if player.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name)) then
-                   warn9jn(player, toolName);task.wait(0.1)
+                   warn9jn(player, toolName)
                    break
                 end
             end
@@ -5802,7 +5807,7 @@ function checkPlayerAGBackpack(player)
             local tool = backpack:FindFirstChild(toolName)
             if tool and antigb then
                 if player.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name)) then
-                   warnAGBan(player, toolName);task.wait(0.1)
+                   warnAGBan(player, toolName)
                    break
                 end
             end
@@ -5816,7 +5821,7 @@ function checkPlayerGBackpack(player)
         for _, toolName in ipairs(player.Backpack:GetChildren()) do
                 if toolName:IsA("Tool") and antigear then
                      if player.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name)) then
-                        warnGear(player, toolName);task.wait(0.1)
+                        warnGear(player, toolName)
                         break
                      end
             end
@@ -5831,7 +5836,7 @@ function checkPlayerATTBackpack(player)
             local tool = backpack:FindFirstChild(toolName)
             if tool and antiattach2 then
                 if player.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name)) then
-                   warnAttach(player, toolName);task.wait(0.1)
+                   warnAttach(player, toolName)
                    break
                 end
             end
@@ -5846,7 +5851,7 @@ function checkPlayerPBackpack(player)
             local tool = backpack:FindFirstChild(toolName)
             if tool and antipaint then
                 if player.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name)) then
-                   warnPaint(player, toolName);task.wait(0.1)
+                   warnPaint(player, toolName)
                    break
                 end
             end
@@ -5861,7 +5866,7 @@ function checkPlayerMiBackpack(player)
             local tool = backpack:FindFirstChild(toolName)
             if tool and noblt then
                 if player.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name)) then
-                   warnMisc(player, toolName);task.wait(0.1)
+                   warnMisc(player, toolName)
                    break
                 end
             end
@@ -8046,7 +8051,7 @@ end
 function Clone(getnum)
          local pos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
          for i = 1, tonumber(getnum) do
-                    Chat('gear me 72644644')
+                    Chat('gear me 72644644');task.wait(0.01)
          end
          local oldchild = #workspace:GetChildren()
          repeat task.wait() until #game.Players.LocalPlayer.Backpack:GetChildren() >= tonumber(getnum) 
@@ -8062,7 +8067,7 @@ end
 
 function Table(getnum)
         for i = 1, tonumber(getnum) do
-                Chat("gear me 110789105")
+                Chat("gear me 110789105");task.wait(0.01)
         end
         local oldchild = #workspace:GetChildren()
         repeat task.wait() until #game.Players.LocalPlayer.Backpack:GetChildren() >= tonumber(getnum) 
@@ -8078,7 +8083,23 @@ end
 
 function Potion(getnum)
         for i = 1, tonumber(getnum) do
-                Chat("gear me 27858062")
+                Chat("gear me 27858062");task.wait(0.01)
+        end
+        local oldchild = #workspace:GetChildren()
+        repeat task.wait() until #game.Players.LocalPlayer.Backpack:GetChildren() >= tonumber(getnum) 
+         local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
+        for _, v in ipairs(Backpack:GetChildren()) do
+                            v.Parent = game.Players.LocalPlayer.Character
+                         task.wait(0.1)
+                             v:Activate()
+        end
+        repeat task.wait() until (#workspace:GetChildren() - oldchild) >= tonumber(getnum) 
+        Chat("ungear me");Chat("reset me")
+end
+
+function Cannon(getnum)
+        for i = 1, tonumber(getnum) do
+                Chat("gear me 42201538");task.wait(0.01)
         end
         local oldchild = #workspace:GetChildren()
         repeat task.wait() until #game.Players.LocalPlayer.Backpack:GetChildren() >= tonumber(getnum) 
