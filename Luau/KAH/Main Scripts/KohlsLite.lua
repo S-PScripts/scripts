@@ -5655,7 +5655,7 @@ local attachTools = {"IvoryPeriastron"}
 local nogearTools = {"PortableJustice"}
 local colourTools = {"PaintBucket", "SubspaceTripmine"}
 local miscTools = {"DaggerofShatteredDimensions", "SledgeHammer", "AR", "Transmorpher"}
-local ninejntools = {"HyperlaserGun","Transmorpher"}
+local ninejntools = {"HyperlaserGun","Transmorpher","ConfusoRay-672"}
 
 function warnCrash(player, toolName)
         local isB,spe = bypassattemptcheck(player.Name)
