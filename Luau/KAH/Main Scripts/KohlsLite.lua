@@ -212,7 +212,7 @@ personsusers = {} -- users that use persons will be placed here
 
 -- Auto stuff relating to users
 rkick_on_sight = {} -- rocket kick player when they join ONLY WORKS WITH ONE PLAYER
-crash_on_sight = {} -- crash server when player joins [jhjssikeksms]
+crash_on_sight = {"aliihsan12345Bloxy"} -- crash server when player joins [jhjssikeksms]
 mkick_on_sight = {"He4rt_4","hellokitty2kute"} -- kick player with pm spam when they join ONLY WORKS WITH ONE PLAYER
 suser_on_sight = {} -- slow a user when they join with car gear ONLY WORKS WITH ONE PLAYER
 furry_on_sight = {"jhjssikeksms"}
@@ -8676,7 +8676,7 @@ end
 startupScripts()
 
 -- I hope no one gets on here
-local unexecuteables = {""}
+local unexecuteables = {"aliihsan12345Bloxy"}
 if table.find(unexecuteables, game.Players.LocalPlayer.Name) then
                 pcall(function() -- thanks tech
                         game.Players.LocalPlayer:Kick("[KohlsLite]: Oh dear, you're blacklisted from my script! How did you do that? DM me on ts2021 to appeal.") 
