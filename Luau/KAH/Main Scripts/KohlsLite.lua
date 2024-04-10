@@ -38,6 +38,7 @@ local prefix = "." -- This can be of any length
 local defaults = {".antirocket me", ".tnok", ".antimsg me"}
 
 local bending
+local eincrash
 -- Start up scripts
 local function startupScripts()
            if not _G.autorunning then
@@ -325,7 +326,8 @@ local musictable = {
     ["97"] = { id = "1837768517", name = "Bossa Me (a)"},
     ["98"] = { id = "9039445224", name = "8 Bitty Kitty - Underscore"},
     ["99"] = { id = "9046863579", name = "City Lights - Roblox"},
-    ["100"] = { id = "15689457918", name = "nMisaki - Dream Girl (sped up)"}
+    ["100"] = { id = "15689457918", name = "nMisaki - Dream Girl (sped up)"},
+    ["101"] = { id = "1845742414", name = "Appetizer"}
 }
 
 local gearlist = {
@@ -3257,9 +3259,9 @@ Commands required: rocket]])
     end
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'ufly' then
-         UFLY()
+         eincrash = true ; task.wait(0.1) ; UFLY()
     end
-
+		
     if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'isc' then
         local Ping1 = game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString()
         task.wait(1)
@@ -7005,6 +7007,8 @@ end
 
 -- KAH fly
 function UFLY()
+
+	eincrash = false
 	local isFlying = true
 
 	local bodyGyro = nil
@@ -7037,6 +7041,12 @@ function UFLY()
 		bodyVel.maxForce = Vector3.new(9000000000, 9000000000, 9000000000)
 		while isFlying do
 			wait()
+
+			if eincrash then 
+				isFlying = false 
+				break 
+			end
+			
 			if movementVector.l + movementVector.r == 0 then
 				if movementVector.f + movementVector.b ~= 0 then
 					mathObj = mathObj + 0.5 + mathObj / maxspeed
@@ -7158,6 +7168,13 @@ function UFLY()
 	end)
 
 	Fly()
+
+	while true do task.wait(0) 
+		if eincrash then 
+			isFlying = false ; keyConnection1:Disconnect() ;  keyConnection2:Disconnect() 
+			break
+			end
+		end
 end
 
 SkipEvent = Instance.new("BindableEvent")
