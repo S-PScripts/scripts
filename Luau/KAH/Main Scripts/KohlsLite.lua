@@ -5638,7 +5638,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
                                        if v.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name)) then
                                         Chat("ungear "..v.Name)
                                         Chat("punish "..v.Name)
-                                        Chat("h \n\n\n [KohlsLite]: Sorry, "..v.Name.. ", you cannot use gears due to anti gear (2). \n\n\n")
+                                       Chat("h \n\n\n [KohlsLite]: Sorry, " .. player.Name .. ", you cannot use tools because of anti gear (2). \n\n\n")
                                 end
                             end
                            end
@@ -5685,12 +5685,12 @@ function warnGear(player, toolName)
         if isB == true then
                        Chat("ungear " .. spe)
                        Chat("punish " .. spe)
-                       Chat("h \n\n\n [KohlsLite]: Sorry, " .. player.Name .. ", you cannot use tools because of anti gear. \n\n\n")
+                       Chat("h \n\n\n [KohlsLite]: Sorry, " .. player.Name .. ", you cannot use " .. toolName.Name .. "  because of anti gear. \n\n\n")
                       Chat("clr")
         else
                 Chat("ungear " .. player.Name)
                        Chat("punish " .. player.Name)
-                       Chat("h \n\n\n [KohlsLite]: Sorry, " .. player.Name .. ", you cannot use tools because of anti gear. \n\n\n")
+                       Chat("h \n\n\n [KohlsLite]: Sorry, " .. player.Name .. ", you cannot use " .. toolName.Name .. "  because of anti gear. \n\n\n")
                       Chat("clr")
         end
 end
