@@ -3029,7 +3029,7 @@ Commands required: rocket]])
 			end)
 		end
 		task.wait(1)
-		Chat("ungear me")
+		Chat("ungear me");Chat("unpaint all")
 	end
 
 		
