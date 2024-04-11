@@ -6806,7 +6806,7 @@ task.spawn(function()
         while true do
                 task.wait(0)
                 if regenfind == true then
-                              local root = game.Players.LocalPlayer.Character.HumanoidRootPart
+                        local root = game.Players.LocalPlayer.Character.HumanoidRootPart
                         root.Anchored = true
                         repeat
                                 wait(.15)
@@ -6818,6 +6818,8 @@ task.spawn(function()
                         Chat("respawn me");Remind("Found the regen (skydived)")
                 end
                 if regenfind2 == true then
+			local Player = game.Players.LocalPlayer
+			local PlayerService = game:GetService("Players")
                         local root = game.Players.LocalPlayer.Character.HumanoidRootPart
                         root.Anchored = true
                         repeat
@@ -6835,6 +6837,9 @@ end)
 
 -- leaked regen
 function leakedcords()
+
+	local Player = game.Players.LocalPlayer
+	local PlayerService = game:GetService("Players")
 
 	local function clientloadpos(thecord) -- cmdy
 		PlayerService.LocalPlayer.Character.Parent = workspace
@@ -7066,10 +7071,9 @@ function FRespawn()
     game.Players.LocalPlayer.Character:Destroy()
 end
 
-local Player = game.Players.LocalPlayer
-local PlayerService = game:GetService("Players")
-
 function MRespawn()
+			local Player = game.Players.LocalPlayer
+			local PlayerService = game:GetService("Players")
                         local char = game.Players.LocalPlayer.Character
                         if char:FindFirstChildOfClass("Humanoid") then 
                                 char:FindFirstChildOfClass("Humanoid"):ChangeState(15) 
@@ -8249,6 +8253,8 @@ function Cannon(getnum)
 end
 
 --// ATTACHING STUFF \\ --
+local Player = game.Players.LocalPlayer
+local PlayerService = game:GetService("Players")
 
 -- // attach v2 - credit to cmd y \\ --
 function moveobject(part, o)
