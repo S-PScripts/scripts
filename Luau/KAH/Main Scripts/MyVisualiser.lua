@@ -497,7 +497,7 @@ function draw()
             nextPart = true
             if Child:IsA("Part") and Child.Name == "Part" and (roundNumber(Child.Size.X, 3) == size.X) and (roundNumber(Child.Size.Y, 3) == size.Y) and (roundNumber(Child.Size.Z, 3) == size.Z) then
 
-                ----sethiddenproperty(Child, "NetworkOwnershipRule", Enum.NetworkOwnership.Manual)
+                --sethiddenproperty(Child, "NetworkOwnershipRule", Enum.NetworkOwnership.Manual)
 
                 local s = Instance.new("ForceField", Child)
                 s.Visible = false
