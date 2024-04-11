@@ -3022,16 +3022,16 @@ Commands required: rocket]])
 		PaintMap(colourhere)
    end
 
- if string.sub(msg:lower(), 1, #prefix + 5) == prefix.."rbase" then
-		if Loops.rainbowbaseplate == false then
-			Loops.rainbowbaseplate = true
+ if string.sub(msg:lower(), 1, #prefix + 4) == prefix.."rmap" then
+		if Loops.rainbowmap == false then
+			Loops.rainbowmap = true
 			rmap()
 		end
    end
 
-   if string.sub(msg:lower(), 1, #prefix + 7) == prefix.."unrbase" then
-		Loops.rainbowbaseplate = false
-		--FixPaint()
+   if string.sub(msg:lower(), 1, #prefix + 6) == prefix.."unrmap" then
+		Loops.rainbowmap = false
+		task.wait(1);FixPaint()
    end
 
 
@@ -8214,7 +8214,7 @@ print("- Script by iiDk, ported for KohlsLite. -")
 end
 
 Loops = {}
-Loops.rainbowbaseplate = false
+Loops.rainbowmap = false
 
 function rmap()
 		Chat(prefix.."gear me painter")
@@ -8223,7 +8223,7 @@ function rmap()
    		paint.Parent = game.Players.LocalPlayer.Character 
 
 		local RainbowValue = 0
-		Loops.rainbowbaseplate = true
+		Loops.rainbowmap = true
     		repeat task.wait()
 
        				if not game.Players.LocalPlayer.Character:FindFirstChild("PaintBucket") then 
@@ -8239,7 +8239,7 @@ function rmap()
     				end
 
 				fwait()
-					if Loops.rainbowbaseplate then
+					if Loops.rainbowmap then
 						paintmap(Color3.fromHSV(RainbowValue,1,1).R,Color3.fromHSV(RainbowValue,1,1).G,Color3.fromHSV(RainbowValue,1,1).B)
 						paint:WaitForChild("Remotes").ServerControls:InvokeServer("PaintPart",{
                             					["Part"] = game:GetService("Workspace").Terrain["_Game"].Workspace.Baseplate,
@@ -8247,12 +8247,10 @@ function rmap()
                         			})
 					end
 		
-		until not Loops.rainbowbaseplate
+		until not Loops.rainbowmap
 end
 
-     function paintmap(R,G,B)
-		
-		
+function paintmap(R,G,B)
 	        coroutine.wrap(function()
 			pcall(function()
 				colorAPI.colorHouse_2({
@@ -8287,10 +8285,7 @@ end
 		colorAPI.colorAdminDivs_2(R,G,B)
 	        colorAPI.colorRegen_2(R,G,B)
 		colorAPI.colorPads_2(R,G,B)
-
-
-    end
-
+end
 
 function IceMap()
         Chat("ungear me")
@@ -8953,7 +8948,7 @@ colorAPI.colorBuildingBricks = function(arg)
 				if v.Name == "Part20" or v.Name == "Part28" or v.Name == "Part4" or v.Name == "Part45" or v.Name == "Part8" then
 					colorAPI.color(v, TP) -- Default is "Toothpaste"
 				end
-			end)
+			end)()
 		end
 end
 
