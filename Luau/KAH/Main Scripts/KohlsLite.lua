@@ -3591,6 +3591,14 @@ Commands required: rocket]])
         noblt = false
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'antiray' then
+        antiraygun = true
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'unantiray' then
+        antiraygun = false
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'novoid' then
                 workspace.FallenPartsDestroyHeight = 0/0
     end
@@ -4681,7 +4689,6 @@ print("unpadban - allow user to use admin pads again")
 print("padreinf - stop users from taking more than 2 admin pads")
 print("unpadreinf - allow users to take more than 2 admin pads again")
 
-
 print("---")
 print("wl - whitelist a player from serverlocks")
 print("bl - blacklist a player (serverlock to certain players)")
@@ -4749,6 +4756,7 @@ print("fixgrav - fix gravity")
 
 print("---")
 print("goto - alt to tp me plr")
+print("cgoto - goto without admin")
 print("bring - alt to tp plr me")
 
 print("---")
@@ -4784,7 +4792,7 @@ print("fixpaint - fix the paint")
 print("pmap/paintmap - paint the map a colour")
 
 print("---")
-print("icemap - make the map ice")
+print("icemap - make the map ice - WARNING: THIS COMMAND MIGHT CRASH YOU")
 print("stonemap/rockmap - make the map stone")
 
 print("---")
@@ -4872,16 +4880,49 @@ print("2antigear - stop users from using gears")
 print("antipaint - stop users from using the paint bucket and Subspace Tripmine")
 print("antigb - stop users from using the portable justice and car gear") 
 print("noblt - stop users using other misc blacklisted tools")
+print("antiray - stop users from using the ray gun")
 print("antiattach2 - stop users from using the Ivory Periastron [exploiter]")
 print("antit - stop yourself from using gears")
 print("antikick - stop yourself from using hotpotato, bluebucket and the car gear")
 
 print("---")
-print("antichat - stop people chatting by spamming m command full of emojis")
-print("unantichat - allow people to chat again")
-print("mkick - crash players with emojis using pm. You can use this instead of h as pm can be more effective.")
-print("unmkick - stop trying to crash players with emojis")
+print("ffix - fix your gravity and collision if it breaks when trying to move/fix stuff!")
+print("fixgrav - fix gravity")
+print("fixvelo - fix velocity")
+print("fixcol - fix collisions")
 
+print("---")
+print("fixbp - fix the baseplate")
+print("movebp - move the baseplate")
+print("fixspawn - fix the spawns")
+print("movespawn - move the spawns")
+print("fixregen - fix the regen")
+print("moveregen - move the regen")
+print("fixpads - fix the pads")
+print("movepads - move the pads")
+print("fixfl - fix the floor")
+print("movefl - move the floor")
+print("fixobby - fix the obby")
+print("moveobby - move the obby")
+print("fixkb - fix the kill bricks")
+print("movekb - move the kill bricks")
+print("fixobox - fix the obby box")
+print("moveobox - move the obby box")
+print("fixadv - fix the admin dividers")
+print("moveadv - move the admin dividers")
+print("fixhouse - fix the house")
+print("movehouse - move the house")
+print("fixbb - fix the building bricks")
+print("movebb - move the building bricks")
+	
+print("---")
+print("antichat - crash everyone else by spamming a m command full of emojis")
+print("unantichat - stop trying to crash players with emojis.")
+print("mkick - crash players with emojis using pm.")
+print("unmkick - stop trying to crash players with emojis.")
+print("rkick - crash someone using the rocket.")
+print("unrkick - stop trying to crash people using the rocket.")
+	
 print("---")
 print("rail - rail a player")
 print("surround - surround a player with planes")
@@ -8718,9 +8759,31 @@ for i, v in pairs(game.Players:GetPlayers()) do
         end
 
         if table.find(crash_on_sight, v.Name) then
-                Chat("h \n\n\n [KohlsLite]: Server automatically crashed due to blacklisted user ("..player.Name..") being in the server. \n\n\n")
-                print(player.Name.." is in the server. Server was automatically crashed as they are blacklisted.")
+                Chat("h \n\n\n [KohlsLite]: Server automatically crashed due to blacklisted user ("..v.Name..") being in the server. \n\n\n")
+                print(v.Name.." is in the server. Server was automatically crashed as they are blacklisted.")
                 DCrash()  
+        end
+
+        if table.find(rkick_on_sight, v.Name) then
+                Chat("h \n\n\n [KohlsLite]: Auto rocket kicking "..v.Name.." as they are blacklisted. \n\n\n")
+                srkick = true
+                rkicks = v.Name
+                rkicker = v
+        end
+
+        if table.find(suser_on_sight, v.Name) then
+                Chat("h \n\n\n [KohlsLite]: Auto slowing "..player.Name.." as they are blacklisted. \n\n\n")
+                table.insert(carcar, v.Name)
+        end
+
+        if table.find(mkick_on_sight, v.Name) then
+                Chat("h \n\n\n [KohlsLite]: Auto message kicking "..v.Name.." as they are blacklisted. \n\n\n")
+                antichatplr = true
+                acplr = v.Name
+        end
+
+        if table.find(furry_on_sight, player.Name) then
+                Chat(prefix.."char "..v.Name.." furry")
         end
 
         task.wait(0)
