@@ -2107,18 +2107,18 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                         return 
                 end        
                 DisCol()
-                if Map["Basic House"]:FindFirstChild("SmoothBlockModel38") then
-                        moveobject(Map["Basic House"]:FindFirstChild("SmoothBlockModel38"), 2)
+                if game.Workspace.Terrain["_Game"].Workspace["Basic House"]:FindFirstChild("SmoothBlockModel38") then
+                        moveobject(game.Workspace.Terrain["_Game"].Workspace["Basic House"]:FindFirstChild("SmoothBlockModel38"), 2)
                         repeat fwait() until movestatus == false
                         Chat("respawn me")
                 end
-                if Map["Basic House"]:FindFirstChild("SmoothBlockModel40") then
-                        moveobject(Map["Basic House"]:FindFirstChild("SmoothBlockModel40"), 2)
+                if game.Workspace.Terrain["_Game"].Workspace["Basic House"]:FindFirstChild("SmoothBlockModel40") then
+                        moveobject(game.Workspace.Terrain["_Game"].Workspace["Basic House"]:FindFirstChild("SmoothBlockModel40"), 2)
                         repeat fwait() until movestatus == false
                         Chat("respawn me")
                 end
-                if Map["Basic House"]:FindFirstChild("SmoothBlockModel112") then
-                        moveobject(Map["Basic House"]:FindFirstChild("SmoothBlockModel112"), 2)
+                if game.Workspace.Terrain["_Game"].Workspace["Basic House"]:FindFirstChild("SmoothBlockModel112") then
+                        moveobject(game.Workspace.Terrain["_Game"].Workspace["Basic House"]:FindFirstChild("SmoothBlockModel112"), 2)
                         repeat fwait() until movestatus == false
                         Chat("respawn me")
                 end
@@ -2132,18 +2132,18 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                         return 
                 end        
                 DisCol()
-                if Map["Basic House"]:FindFirstChild("SmoothBlockModel38") then
-                        moveobject(Map["Basic House"]:FindFirstChild("SmoothBlockModel38"), 1)
+                if game.Workspace.Terrain["_Game"].Workspace["Basic House"]:FindFirstChild("SmoothBlockModel38") then
+                        moveobject(game.Workspace.Terrain["_Game"].Workspace["Basic House"]:FindFirstChild("SmoothBlockModel38"), 1)
                         repeat fwait() until movestatus == false
                         Chat("respawn me")
                 end
-                if Map["Basic House"]:FindFirstChild("SmoothBlockModel40") then
-                        moveobject(Map["Basic House"]:FindFirstChild("SmoothBlockModel40"), 1)
+                if game.Workspace.Terrain["_Game"].Workspace["Basic House"]:FindFirstChild("SmoothBlockModel40") then
+                        moveobject(game.Workspace.Terrain["_Game"].Workspace["Basic House"]:FindFirstChild("SmoothBlockModel40"), 1)
                         repeat fwait() until movestatus == false
                         Chat("respawn me")
                 end
-                if Map["Basic House"]:FindFirstChild("SmoothBlockModel112") then
-                        moveobject(Map["Basic House"]:FindFirstChild("SmoothBlockModel112"), 1)
+                if game.Workspace.Terrain["_Game"].Workspace["Basic House"]:FindFirstChild("SmoothBlockModel112") then
+                        moveobject(game.Workspace.Terrain["_Game"].Workspace["Basic House"]:FindFirstChild("SmoothBlockModel112"), 1)
                         repeat fwait() until movestatus == false
                         Chat("respawn me")
                 end
@@ -2158,13 +2158,13 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                         return 
                 end
                 DisCol()
-                for _,v in pairs(Map["Obby Box"]:GetChildren()) do
+                for _,v in pairs(workspace.Terrain._Game.Workspace["Obby Box"]:GetChildren()) do
                         if allclear() == false then break end
                         moveobject(v, 2)
                         repeat fwait() until movestatus == false
                         Chat("respawn me")
                 end
-                for _,v in pairs(Map.Obby:GetChildren()) do
+                for _,v in pairs(game.Workspace.Terrain["_Game"].Workspace["Obby"]:GetChildren()) do
                         if allclear() == false then break end
                         moveobject(v, 2)
                         repeat fwait() until movestatus == false
@@ -2181,13 +2181,13 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                         return 
                 end
                 DisCol()
-                for _,v in pairs(Map["Obby Box"]:GetChildren()) do
+                for _,v in pairs(workspace.Terrain._Game.Workspace["Obby Box"]:GetChildren()) do
                         if allclear() == false then break end
                         moveobject(v, 1)
                         repeat fwait() until movestatus == false
                         Chat("respawn me")
                 end
-                for _,v in pairs(Map.Obby:GetChildren()) do
+                for _,v in pairs(game.Workspace.Terrain["_Game"].Workspace["Obby"]:GetChildren()) do
                         if allclear() == false then break end
                         moveobject(v, 1)
                         repeat fwait() until movestatus == false
@@ -2204,7 +2204,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                         return 
                 end
                 DisCol()
-                for _,v in pairs(Map.Obby:GetChildren()) do
+                for _,v in pairs(game.Workspace.Terrain["_Game"].Workspace["Obby"]:GetChildren()) do
                         if allclear() == false then break end
                         moveobject(v, 2)
                         repeat fwait() until movestatus == false
@@ -2221,7 +2221,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                         return 
                 end
                 DisCol()
-                for _,v in pairs(Map.Obby:GetChildren()) do
+                for _,v in pairs(game.Workspace.Terrain["_Game"].Workspace["Obby"]:GetChildren()) do
                         if allclear() == false then break end
                         moveobject(v, 1)
                         repeat fwait() until movestatus == false
@@ -2238,7 +2238,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                         return 
                 end
                 DisCol()
-                for _,v in pairs(Map["Obby Box"]:GetChildren()) do
+                for _,v in pairs(workspace.Terrain._Game.Workspace["Obby Box"]:GetChildren()) do
                         if allclear() == false then break end
                         moveobject(v, 2)
                         repeat fwait() until movestatus == false
@@ -2255,7 +2255,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                         return 
                 end
                 DisCol()
-                for _,v in pairs(Map["Obby Box"]:GetChildren()) do
+                for _,v in pairs(workspace.Terrain._Game.Workspace["Obby Box"]:GetChildren()) do
                         if allclear() == false then break end
                         moveobject(v, 1)
                         repeat fwait() until movestatus == false
@@ -2271,7 +2271,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                         return 
                 end
                 DisCol()
-                for _,v in pairs(Map["Admin Dividers"]:GetChildren()) do
+                for _,v in pairs(game.Workspace.Terrain["_Game"].Workspace["Admin Dividers"]:GetChildren()) do
                         if allclear() == false then break end
                         moveobject(v, 2)
                         repeat fwait() until movestatus == false
@@ -2287,7 +2287,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                         return 
                 end
                 DisCol()
-                for _,v in pairs(Map["Admin Dividers"]:GetChildren()) do
+                for _,v in pairs(game.Workspace.Terrain["_Game"].Workspace["Admin Dividers"]:GetChildren()) do
                         if allclear() == false then break end
                         moveobject(v, 1)
                         repeat fwait() until movestatus == false
@@ -2303,7 +2303,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                         return 
                 end
                 DisCol()
-                for _,v in pairs(Map["Basic House"]:GetChildren()) do
+                for _,v in pairs(game.Workspace.Terrain["_Game"].Workspace["Basic House"]:GetChildren()) do
                         if allclear() == false then break end
                         moveobject(v, 2)
                         repeat fwait() until movestatus == false
@@ -2319,7 +2319,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                         return 
                 end
                 DisCol()
-                for _,v in pairs(Map["Basic House"]:GetChildren()) do
+                for _,v in pairs(game.Workspace.Terrain["_Game"].Workspace["Basic House"]:GetChildren()) do
                         if allclear() == false then break end
                         moveobject(v, 1)
                         repeat fwait() until movestatus == false
@@ -2335,7 +2335,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                         return 
                 end
                 DisCol()
-                for _,v in pairs(Map["Building Bricks"]:GetChildren()) do
+                for _,v in pairs(game.Workspace.Terrain["_Game"].Workspace["Building Bricks"]:GetChildren()) do
                         if allclear() == false then break end
                         moveobject(v, 2)
                         repeat fwait() until movestatus == false
@@ -2351,7 +2351,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                         return 
                 end
                 DisCol()
-                for _,v in pairs(Map["Building Bricks"]:GetChildren()) do
+                for _,v in pairs(game.Workspace.Terrain["_Game"].Workspace["Building Bricks"]:GetChildren()) do
                         if allclear() == false then break end
                         moveobject(v, 1)
                         repeat fwait() until movestatus == false
@@ -8226,7 +8226,7 @@ function rmap()
 		Loops.rainbowmap = true
     		repeat task.wait()
 
-       				if not game.Players.LocalPlayer.Character:FindFirstChild("PaintBucket") then 
+       				if not game.Players.LocalPlayer.Character:FindFirstChild("PaintBucket") then  				print('aaa')
 						Chat(prefix.."gear me painter")
 				    		repeat wait() until game.Players.LocalPlayer.Backpack:FindFirstChild("PaintBucket")
     						paint = game.Players.LocalPlayer.Backpack:FindFirstChild("PaintBucket")
@@ -8239,14 +8239,15 @@ function rmap()
     				end
 
 				fwait()
-					if Loops.rainbowmap then
+
+				if game.Players.LocalPlayer.Character:FindFirstChild("PaintBucket") then ready = true else ready = false end
+				if Loops.rainbowmap and ready == true then
 						paintmap(Color3.fromHSV(RainbowValue,1,1).R,Color3.fromHSV(RainbowValue,1,1).G,Color3.fromHSV(RainbowValue,1,1).B)
 						paint:WaitForChild("Remotes").ServerControls:InvokeServer("PaintPart",{
                             					["Part"] = game:GetService("Workspace").Terrain["_Game"].Workspace.Baseplate,
                            					["Color"] = Color3.fromHSV(RainbowValue,1,1)
                         			})
-					end
-		
+				end		
 		until not Loops.rainbowmap
 end
 
