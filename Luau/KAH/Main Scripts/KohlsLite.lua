@@ -207,6 +207,8 @@ local loopkill = {}
 local byecam = {}
 local carcar = {}
 
+antikill = {}
+
 -- Gamepass saving
 permusers = {} -- users that use perm will be placed here
 personsusers = {} -- users that use persons will be placed here
@@ -1385,7 +1387,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          end
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'nmusic' then -- if it double executes fuck you
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'nmusic' then -- if it double executes ... you
             if ratelj then print("anti double execution worked!") return end
             ratelj = true
 
@@ -1413,7 +1415,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
            end; ratelj = false
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'pmusic' then -- if it double executes fuck you
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'pmusic' then -- if it double executes ... you
             if ratelj then print("anti double execution worked!") return end
             ratelj = true
 
@@ -3989,35 +3991,65 @@ Commands required: rocket]])
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antikill' then
         local args = string.split(msg, " ")
-        if args[2] == "me" then
-                YOUantikill = true
-                Remind("Turned this anti on for you!")
-        elseif args[2] == "others" then
-                ALLantikill = true
-                Remind("Turned this anti on for others!")
-        elseif args[2] == "all" then
-                YOUantikill = true
-                ALLantikill = true
-                Remind("Turned this anti on for everyone!")
-        else
-                Remind("Invalid argument: Must be me, others, or all")
+	if #args == 2 then
+        	if args[2] == "me" then
+                	YOUantikill = true
+                	Remind("Turned this anti on for you!")
+        	elseif args[2] == "others" then
+                	ALLantikill = true
+                	Remind("Turned this anti on for others!")
+        	elseif args[2] == "all" then
+               		YOUantikill = true
+                	ALLantikill = true
+                	Remind("Turned this anti on for everyone!")
+        	else
+		  	kia = args[2]
+           	  	PLAYERCHECK(kia)
+	         	if player ~= nil then
+				if not table.find(antikill, player) then
+					Remind(player.." is on the list now!")
+					table.insert(antikill, player)
+				else
+					Remind(player.." is already in the table!")
+				end
+                 	else                           
+                        	Remind('Cannot find player with the name: '..dasplayer)
+			end
+                end
+	else
+                Remind("Invalid amount of arguments: Must be me, others, all or a player!")
         end
     end
 
     if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unantikill' then
         local args = string.split(msg, " ")
-        if args[2] == "me" then
-                YOUantikill = false
-                Remind("Turned this anti off for you!")
-        elseif args[2] == "others" then
-                ALLantikill = false
-                Remind("Turned this anti off for others!")
-        elseif args[2] == "all" then
-                YOUantikill = false
-                ALLantikill = false
-                Remind("Turned this anti off for everyone!")
-        else
-                Remind("Invalid argument: Must be me, others, or all")
+        if #args == 2 then
+        	if args[2] == "me" then
+                	YOUantikill = false
+                	Remind("Turned this anti off for you!")
+        	elseif args[2] == "others" then
+                	ALLantikill = false
+                	Remind("Turned this anti off for others!")
+        	elseif args[2] == "all" then
+               		YOUantikill = false
+                	ALLantikill = false
+                	Remind("Turned this anti off for everyone!")
+        	else
+		  	kia = args[2]
+           	  	PLAYERCHECK(kia)
+	         	if player ~= nil then
+				if table.find(antikill, player) then
+					Remind(player.." is no longer in the table!")
+					table.remove(antikill, table.find(antikill, player))
+				else
+					Remind(player.." was never in the list!")
+				end
+                 	else                           
+                        	Remind('Cannot find player with the name: '..dasplayer)
+			end
+                end
+	else
+                Remind("Invalid amount of arguments: Must be me, others, all or a player!")
         end
     end
 
@@ -4582,6 +4614,7 @@ Commands required: rocket]])
         acplr = string.sub(msg:lower(), #prefix + 7)
            PLAYERCHECK(acplr)
                    if player ~= nil and not table.find(nokick, player) then
+			acplr = player
                            antichatplr = true
                 elseif table.find(nokick, player) then
                         Remind("Sorry, this player cannot be kicked!")
@@ -5023,7 +5056,7 @@ task.spawn(function()
                     elseif table.find(blacklist, v.Name) then
                         if not game.Lighting:FindFirstChild(v.Name) then
                                 local isB,spe = bypassattemptcheck(v.Name)
-                                if isB then -- i added because of some guy called m_artin who did shit
+                                if isB then -- i added because of some guy called m_artin who did crap
                                         Chat('punish '.. spe)
                                         Chat('blind '.. spe)
                                         Chat("pm "..spe.." [KohlsLite]: sorry, you are blacklisted from this server")
@@ -5528,7 +5561,7 @@ task.spawn(function()
                                           else end
                                 end
 
-                                if ALLantikill == true then
+                                if ALLantikill == true or table.find(antikill, v.Name) then
                                            if v.Character.Humanoid.Health == 0 then
                                                     Chat("reset "..v.Name)
                                           else end
@@ -6717,7 +6750,6 @@ end
 
 -- FREEZE CRASH
 function FCrash()
-      Chat("h \n\n\n dsc gg kohlslite \n\n\n");task.wait(0.5)
       for i = 1,100 do
           Chat("clone all all all                                fuck")
           Chat("freeze all all all                                fuck")
@@ -6726,7 +6758,6 @@ end
 
 -- DOG CRASH
 function DCrash()
-      --Chat("h \n\n\n dsc gg kohlslite \n\n\n");task.wait(0.5)
       for i = 1,100 do
           Chat("clone all all all                                fuck")
           Chat("dog all all all                                        fuck")
@@ -6735,7 +6766,6 @@ end
 
 -- SHIELD CRASH
 function SCrash()
-      Chat("h \n\n\n dsc gg kohlslite \n\n\n");task.wait(0.5)
       for i = 1,100 do
           Chat("shield/all/all/all")
           Chat("rocket/all/all/all")
@@ -7410,7 +7440,6 @@ end
 
 -- VG CRASH
 function VGCrash()
-      Chat("h \n\n\n dsc gg kohlslite \n\n\n")
       Chat("gear me 00000000000000094794847")
       repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("VampireVanquisher")
       local vg = game.Players.LocalPlayer.Backpack:FindFirstChild("VampireVanquisher")
@@ -7424,7 +7453,6 @@ function VGCrash()
 end
 
 function EmCrash()
-      Chat("h \n\n\n dsc gg kohlslite \n\n\n")
       Chat("gear me 000000000000000178076749")
       repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("Emerald Knights of the Seventh Sanctum Sword and Shield")
       local green = game.Players.LocalPlayer.Backpack:FindFirstChild("Emerald Knights of the Seventh Sanctum Sword and Shield")
@@ -7439,7 +7467,6 @@ function EmCrash()
 end
 
 function PCrash() -- with this crash make sure to click manually
-        Chat("h \n\n\n dsc gg kohlslite \n\n\n")
               Chat("gear me 0000000092628079")
               repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("OrinthianSwordAndShield")
               local ort = game.Players.LocalPlayer.Backpack:FindFirstChild("OrinthianSwordAndShield")
@@ -7748,8 +7775,10 @@ function FixPaint()
 				RR = colorAPI.transformToColor3(BrickColor.new("Really red"))	
 			})
 	end)
-		
-	colorAPI.color(game.Workspace.Terrain["_Game"].Workspace["Baseplate"], colorAPI.transformToColor3(BrickColor.new("Bright green")))
+
+	if game.Workspace.Terrain["_Game"].Workspace["Baseplate"] then
+		colorAPI.color(game.Workspace.Terrain["_Game"].Workspace["Baseplate"], colorAPI.transformToColor3(BrickColor.new("Bright green")))
+	end
 		
 	spawn(function()
 		colorAPI.colorObbyBox(colorAPI.transformToColor3(BrickColor.new("Teal")))
