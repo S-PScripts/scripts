@@ -3022,6 +3022,19 @@ Commands required: rocket]])
 		PaintMap(colourhere)
    end
 
+ if string.sub(msg:lower(), 1, #prefix + 5) == prefix.."rbase" then
+		if Loops.rainbowbaseplate == false then
+			Loops.rainbowbaseplate = true
+			rmap()
+		end
+   end
+
+   if string.sub(msg:lower(), 1, #prefix + 7) == prefix.."unrbase" then
+		Loops.rainbowbaseplate = false
+		--FixPaint()
+   end
+
+
    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'autoafk' then
         autoafk = true
    end
@@ -7775,10 +7788,6 @@ function FixPaint()
 			})
 	end)
 
-	if game.Workspace.Terrain._Game.Workspace.Baseplate then
-		colorAPI.color(game.Workspace.Terrain["_Game"].Workspace["Baseplate"], colorAPI.transformToColor3(BrickColor.new("Bright green")))
-	end
-		
 	spawn(function()
 		colorAPI.colorObbyBox(colorAPI.transformToColor3(BrickColor.new("Teal")))
 	end)
@@ -7795,6 +7804,14 @@ function FixPaint()
 		colorAPI.colorPads(colorAPI.transformToColor3(BrickColor.new("Bright green")))
 		
 	end)
+
+	if game.Workspace.Terrain["_Game"].Workspace["Baseplate"] then
+		colorAPI.color(game.Workspace.Terrain["_Game"].Workspace["Baseplate"], colorAPI.transformToColor3(BrickColor.new("Bright green")))
+	end
+
+	if game:GetService("Workspace").Terrain["_Game"].Admin.Regen then
+		colorAPI.color(game:GetService("Workspace").Terrain["_Game"].Admin.Regen, colorAPI.transformToColor3(BrickColor.new("Bright violet")))
+	end
 
 	task.wait(1)
 	Chat("ungear me")
@@ -8195,6 +8212,85 @@ print("- Script by iiDk, ported for KohlsLite. -")
 	        end)
         end)
 end
+
+Loops = {}
+Loops.rainbowbaseplate = false
+
+function rmap()
+		Chat(prefix.."gear me painter")
+    		repeat wait() until game.Players.LocalPlayer.Backpack:FindFirstChild("PaintBucket")
+    		paint = game.Players.LocalPlayer.Backpack:FindFirstChild("PaintBucket")
+   		paint.Parent = game.Players.LocalPlayer.Character 
+
+		local RainbowValue = 0
+		Loops.rainbowbaseplate = true
+    		repeat task.wait()
+
+       				if not game.Players.LocalPlayer.Character:FindFirstChild("PaintBucket") then 
+						Chat(prefix.."gear me painter")
+				    		repeat wait() until game.Players.LocalPlayer.Backpack:FindFirstChild("PaintBucket")
+    						paint = game.Players.LocalPlayer.Backpack:FindFirstChild("PaintBucket")
+   						paint.Parent = game.Players.LocalPlayer.Character    	 
+				end
+
+        			RainbowValue = RainbowValue + 1/50
+    			        if RainbowValue >= 1 then
+        				RainbowValue = 0
+    				end
+
+				fwait()
+					if Loops.rainbowbaseplate then
+						paintmap(Color3.fromHSV(RainbowValue,1,1).R,Color3.fromHSV(RainbowValue,1,1).G,Color3.fromHSV(RainbowValue,1,1).B)
+						paint:WaitForChild("Remotes").ServerControls:InvokeServer("PaintPart",{
+                            					["Part"] = game:GetService("Workspace").Terrain["_Game"].Workspace.Baseplate,
+                           					["Color"] = Color3.fromHSV(RainbowValue,1,1)
+                        			})
+					end
+		
+		until not Loops.rainbowbaseplate
+end
+
+     function paintmap(R,G,B)
+		
+		
+	        coroutine.wrap(function()
+			pcall(function()
+				colorAPI.colorHouse_2({
+					wallsC = {R,G,B},
+					baseC = {R,G,B},
+					roofC = {R,G,B},
+					WANDDC = {R,G,B},
+					stairsC = {R,G,B},
+					floorC = {R,G,B},
+					rooftsC = {R,G,B},
+					chiC = {R,G,B}
+				})
+			end)
+		end)()
+
+		spawn(function()
+				colorAPI.colorBuildingBricks_2({
+					DarkStoneGrey = {R,G,B},
+					DeepBlue = {R,G,B},
+					NY = {R,G,B},
+					IW = {R,G,B},
+					LimeGreen = {R,G,B},
+					MSG = {R,G,B},
+					RB = {R,G,B},
+					TP = {R,G,B},
+					RR = {R,G,B}
+				})
+		end)
+		
+		colorAPI.colorObbyBox_2(R,G,B)
+		colorAPI.colorObbyBricks_2(R,G,B)
+		colorAPI.colorAdminDivs_2(R,G,B)
+	        colorAPI.colorRegen_2(R,G,B)
+		colorAPI.colorPads_2(R,G,B)
+
+
+    end
+
 
 function IceMap()
         Chat("ungear me")
@@ -8640,6 +8736,19 @@ colorAPI.color = function(Part, color)
 	end)
 	coroutine.resume(thread)
 end
+
+ 
+colorAPI.color_2 = function(Part, R,G,B)
+	local thread = coroutine.create(function() -- x3.5 speed boost
+		local Arguments =
+        {
+            ["Part"] = Part,
+            ["Color"] = Color3.new(R,G,B)
+        }
+        game:GetService("Workspace")[game:GetService("Players").LocalPlayer.Name].PaintBucket:WaitForChild("Remotes").ServerControls:InvokeServer("PaintPart", Arguments)
+	end)
+	coroutine.resume(thread)
+end
  
 colorAPI.transformToColor3 = function(col)
     local r = col.r
@@ -8647,26 +8756,57 @@ colorAPI.transformToColor3 = function(col)
     local b = col.b
     return Color3.new(r,g,b);
 end
- 
+
+colorAPI.transformToColor3_2 = function(BrickClr)
+	if typeof(BrickClr) == "BrickColor" then
+		return BrickClr.Color.R,BrickClr.Color.G,BrickClr.Color.B
+	end
+end
+
 -- colorAPI.Color3 = function(brickColor)
 --     return colorAPI.transformToColor3(BrickColor.new(brickColor))
 -- end
- 
+
+colorAPI.colorRegen_2 = function(R,G,B)
+		if workspace.Terrain._Game.Admin:FindFirstChild("Regen") then
+			colorAPI.color_2(workspace.Terrain._Game.Admin.Regen,R,G,B)
+		end    
+end    
+
+
 colorAPI.colorObbyBox = function(color) -- Default is "Teal"
 	for i,v in pairs(game.Workspace.Terrain["_Game"].Workspace["Obby Box"]:GetChildren()) do
 		colorAPI.color(v, color) -- colorAPI.transformToColor3(BrickColor.new("Bright red"))
 	end
 end
- 
+
+colorAPI.colorObbyBox_2 = function(R,G,B)
+	for i,v in pairs(workspace.Terrain._Game.Workspace["Obby Box"]:GetChildren()) do
+		colorAPI.color_2(v,R,G,B)
+	end
+end
+
 colorAPI.colorObbyBricks = function(color)-- Default is "Really red"
 	  for i,v in pairs(game.Workspace.Terrain["_Game"].Workspace["Obby"]:GetChildren()) do
 		colorAPI.color(v, color)
 	end
 end
- 
+
+colorAPI.colorObbyBricks_2 = function(R,G,B)
+	  for i,v in pairs(game.Workspace.Terrain["_Game"].Workspace["Obby"]:GetChildren()) do
+		colorAPI.color_2(v, R,G,B)
+	end
+end
+
 colorAPI.colorAdminDivs = function(color)-- Default is "Dark stone grey"
 	for i,v in pairs(game.Workspace.Terrain["_Game"].Workspace["Admin Dividers"]:GetChildren()) do
 		colorAPI.color(v, color)
+	end
+end
+
+colorAPI.colorAdminDivs_2 = function(R,G,B)
+	for i,v in pairs(game.Workspace.Terrain["_Game"].Workspace["Admin Dividers"]:GetChildren()) do
+		colorAPI.color_2(v, R,G,B)
 	end
 end
  
@@ -8675,7 +8815,13 @@ colorAPI.colorPads = function(color)-- Default is "Bright green"
 		colorAPI.color(v.Head, color)
 	end
 end
- 
+
+colorAPI.colorPads_2 = function(R,G,B)
+	for i,v in pairs(game.Workspace.Terrain["_Game"].Admin["Pads"]:GetChildren()) do
+		colorAPI.color_2(v.Head, R,G,B)
+	end
+end
+
 colorAPI.colorHouse = function(arg)
 	  local wallsC = arg.wallsC
 	  local baseC = arg.baseC
@@ -8724,7 +8870,39 @@ colorAPI.colorHouse = function(arg)
 			end)()
 		end
 end
- 
+
+
+colorAPI.colorHouse_2 = function(Extra)
+		local OutlinesAndWDWS = Extra.WANDDC
+		local Walls = Extra.wallsC
+		local Roof = Extra.roofC
+		local ChimneyTopParts = Extra.chiC
+		for i,v in pairs(workspace.Terrain._Game.Workspace["Basic House"]:GetChildren()) do
+			coroutine.resume(coroutine.create(function()
+				if v.Name == "SmoothBlockModel103" or v.Name == "SmoothBlockModel105" or v.Name == "SmoothBlockModel106" or v.Name == "SmoothBlockModel108" or v.Name == "SmoothBlockModel11" or v.Name == "SmoothBlockModel113" or v.Name == "SmoothBlockModel114" or v.Name == "SmoothBlockModel115" or v.Name == "SmoothBlockModel116" or v.Name == "SmoothBlockModel118" or v.Name == "SmoothBlockModel122" or v.Name == "SmoothBlockModel126" or v.Name == "SmoothBlockModel129" or v.Name == "SmoothBlockModel13" or v.Name == "SmoothBlockModel130" or v.Name == "SmoothBlockModel131" or v.Name == "SmoothBlockModel132" or v.Name == "SmoothBlockModel134" or v.Name == "SmoothBlockModel135" or v.Name == "SmoothBlockModel14" or v.Name == "SmoothBlockModel140" or v.Name == "SmoothBlockModel142" or v.Name == "SmoothBlockModel147" or v.Name == "SmoothBlockModel15" or v.Name == "SmoothBlockModel154" or v.Name == "SmoothBlockModel155" or v.Name == "SmoothBlockModel164" or v.Name == "SmoothBlockModel166" or v.Name == "SmoothBlockModel173" or v.Name == "SmoothBlockModel176" or v.Name == "SmoothBlockModel179" or v.Name == "SmoothBlockModel185" or v.Name == "SmoothBlockModel186" or v.Name == "SmoothBlockModel190" or v.Name == "SmoothBlockModel191" or v.Name == "SmoothBlockModel196" or v.Name == "SmoothBlockModel197" or v.Name == "SmoothBlockModel198" or v.Name == "SmoothBlockModel20" or v.Name == "SmoothBlockModel201" or v.Name == "SmoothBlockModel203" or v.Name == "SmoothBlockModel205" or v.Name == "SmoothBlockModel207" or v.Name == "SmoothBlockModel208" or v.Name == "SmoothBlockModel209" or v.Name == "SmoothBlockModel210" or v.Name == "SmoothBlockModel211" or v.Name == "SmoothBlockModel213" or v.Name == "SmoothBlockModel218" or v.Name == "SmoothBlockModel22" or v.Name == "SmoothBlockModel223" or v.Name == "SmoothBlockModel224" or v.Name == "SmoothBlockModel226" or v.Name == "SmoothBlockModel26" or v.Name == "SmoothBlockModel29" or v.Name == "SmoothBlockModel30" or v.Name == "SmoothBlockModel31" or v.Name == "SmoothBlockModel36" or v.Name == "SmoothBlockModel37" or v.Name == "SmoothBlockModel38" or v.Name == "SmoothBlockModel39" or v.Name == "SmoothBlockModel41" or v.Name == "SmoothBlockModel48" or v.Name == "SmoothBlockModel49" or v.Name == "SmoothBlockModel51" or v.Name == "SmoothBlockModel56" or v.Name == "SmoothBlockModel67" or v.Name == "SmoothBlockModel68" or v.Name == "SmoothBlockModel69" or v.Name == "SmoothBlockModel70" or v.Name == "SmoothBlockModel72" or v.Name == "SmoothBlockModel75" or v.Name == "SmoothBlockModel8" or v.Name == "SmoothBlockModel81" or v.Name == "SmoothBlockModel85" or v.Name == "SmoothBlockModel93" or v.Name == "SmoothBlockModel98" then
+					colorAPI.color_2(v,Walls[1], Walls[2], Walls[3])
+				end
+				if v.Name == "SmoothBlockModel10" or v.Name == "SmoothBlockModel101" or v.Name == "SmoothBlockModel117" or v.Name == "SmoothBlockModel121" or v.Name == "SmoothBlockModel144" or v.Name == "SmoothBlockModel145" or v.Name == "SmoothBlockModel146" or v.Name == "SmoothBlockModel148" or v.Name == "SmoothBlockModel150" or v.Name == "SmoothBlockModel159" or v.Name == "SmoothBlockModel161" or v.Name == "SmoothBlockModel171" or v.Name == "SmoothBlockModel174" or v.Name == "SmoothBlockModel175" or v.Name == "SmoothBlockModel181" or v.Name == "SmoothBlockModel182" or v.Name == "SmoothBlockModel183" or v.Name == "SmoothBlockModel192" or v.Name == "SmoothBlockModel194" or v.Name == "SmoothBlockModel195" or v.Name == "SmoothBlockModel199" or v.Name == "SmoothBlockModel204" or v.Name == "SmoothBlockModel206" or v.Name == "SmoothBlockModel212" or v.Name == "SmoothBlockModel217" or v.Name == "SmoothBlockModel228" or v.Name == "SmoothBlockModel24" or v.Name == "SmoothBlockModel27" or v.Name == "SmoothBlockModel35" or v.Name == "SmoothBlockModel4" or v.Name == "SmoothBlockModel43" or v.Name == "SmoothBlockModel45" or v.Name == "SmoothBlockModel46" or v.Name == "SmoothBlockModel50" or v.Name == "SmoothBlockModel53" or v.Name == "SmoothBlockModel57" or v.Name == "SmoothBlockModel60" or v.Name == "SmoothBlockModel64" or v.Name == "SmoothBlockModel65" or v.Name == "SmoothBlockModel66" or v.Name == "SmoothBlockModel7" or v.Name == "SmoothBlockModel71" or v.Name == "SmoothBlockModel73" or v.Name == "SmoothBlockModel82" or v.Name == "SmoothBlockModel83" or v.Name == "SmoothBlockModel89" or v.Name == "SmoothBlockModel99" then
+					colorAPI.color_2(v,OutlinesAndWDWS[1],OutlinesAndWDWS[2],OutlinesAndWDWS[3])
+				end
+				if v.Name == "SmoothBlockModel100" or v.Name == "SmoothBlockModel102" or v.Name == "SmoothBlockModel104" or v.Name == "SmoothBlockModel107" or v.Name == "SmoothBlockModel109" or v.Name == "SmoothBlockModel110" or v.Name == "SmoothBlockModel111" or v.Name == "SmoothBlockModel119" or v.Name == "SmoothBlockModel12" or v.Name == "SmoothBlockModel120" or v.Name == "SmoothBlockModel123" or v.Name == "SmoothBlockModel124" or v.Name == "SmoothBlockModel125" or v.Name == "SmoothBlockModel127" or v.Name == "SmoothBlockModel128" or v.Name == "SmoothBlockModel133" or v.Name == "SmoothBlockModel136" or v.Name == "SmoothBlockModel137" or v.Name == "SmoothBlockModel138" or v.Name == "SmoothBlockModel139" or v.Name == "SmoothBlockModel141" or v.Name == "SmoothBlockModel143" or v.Name == "SmoothBlockModel149" or v.Name == "SmoothBlockModel151" or v.Name == "SmoothBlockModel152" or v.Name == "SmoothBlockModel153" or v.Name == "SmoothBlockModel156" or v.Name == "SmoothBlockModel157" or v.Name == "SmoothBlockModel158" or v.Name == "SmoothBlockModel16" or v.Name == "SmoothBlockModel163" or v.Name == "SmoothBlockModel167" or v.Name == "SmoothBlockModel168" or v.Name == "SmoothBlockModel169" or v.Name == "SmoothBlockModel17" or v.Name == "SmoothBlockModel170" or v.Name == "SmoothBlockModel172" or v.Name == "SmoothBlockModel177" or v.Name == "SmoothBlockModel18" or v.Name == "SmoothBlockModel180" or v.Name == "SmoothBlockModel184" or v.Name == "SmoothBlockModel187" or v.Name == "SmoothBlockModel188" or v.Name == "SmoothBlockModel189" or v.Name == "SmoothBlockModel19" or v.Name == "SmoothBlockModel193" or v.Name == "SmoothBlockModel2" or v.Name == "SmoothBlockModel200" or v.Name == "SmoothBlockModel202" or v.Name == "SmoothBlockModel21" or v.Name == "SmoothBlockModel214" or v.Name == "SmoothBlockModel215" or v.Name == "SmoothBlockModel216" or v.Name == "SmoothBlockModel219" or v.Name == "SmoothBlockModel220" or v.Name == "SmoothBlockModel221" or v.Name == "SmoothBlockModel222" or v.Name == "SmoothBlockModel225" or v.Name == "SmoothBlockModel227" or v.Name == "SmoothBlockModel229" or v.Name == "SmoothBlockModel23" or v.Name == "SmoothBlockModel230" or v.Name == "SmoothBlockModel231" or v.Name == "SmoothBlockModel25" or v.Name == "SmoothBlockModel28" or v.Name == "SmoothBlockModel32" or v.Name == "SmoothBlockModel33" or v.Name == "SmoothBlockModel34" or v.Name == "SmoothBlockModel42" or v.Name == "SmoothBlockModel44" or v.Name == "SmoothBlockModel47" or v.Name == "SmoothBlockModel54" or v.Name == "SmoothBlockModel55" or v.Name == "SmoothBlockModel58" or v.Name == "SmoothBlockModel59" or v.Name == "SmoothBlockModel6" or v.Name == "SmoothBlockModel61" or v.Name == "SmoothBlockModel62" or v.Name == "SmoothBlockModel63" or v.Name == "SmoothBlockModel74" or v.Name == "SmoothBlockModel76" or v.Name == "SmoothBlockModel77" or v.Name == "SmoothBlockModel78" or v.Name == "SmoothBlockModel79" or v.Name == "SmoothBlockModel80" or v.Name == "SmoothBlockModel84" or v.Name == "SmoothBlockModel86" or v.Name == "SmoothBlockModel87" or v.Name == "SmoothBlockModel88" or v.Name == "SmoothBlockModel90" or v.Name == "SmoothBlockModel91" or v.Name == "SmoothBlockModel92" or v.Name == "SmoothBlockModel94" or v.Name == "SmoothBlockModel95" or v.Name == "SmoothBlockModel96" then
+					colorAPI.color_2(v,Roof[1],Roof[2],Roof[3])
+				end
+				if v.Name == "SmoothBlockModel160" or v.Name == "SmoothBlockModel165" or v.Name == "SmoothBlockModel178" or v.Name == "SmoothBlockModel162" then
+					colorAPI.color_2(v,ChimneyTopParts[1],ChimneyTopParts[2],ChimneyTopParts[3])
+				end
+				if v.Name == "SmoothBlockModel1" or v.Name == "SmoothBlockModel5" or v.Name == "SmoothBlockModel3" or v.Name == "SmoothBlockModel9" then
+					colorAPI.color_2(v,Extra.stairsC[1],Extra.stairsC[2],Extra.stairsC[3])
+				end
+				if v.Name == "SmoothBlockModel97" or v.Name == "SmoothBlockModel52" then
+					colorAPI.color_2(v,Extra.rooftsC[1],Extra.rooftsC[2],Extra.rooftsC[3])
+				end
+			end))
+		end
+		colorAPI.color_2(workspace.Terrain["_Game"].Workspace["Basic House"].SmoothBlockModel40,Extra.baseC[1],Extra.baseC[2],Extra.baseC[3])
+		colorAPI.color_2(workspace.Terrain._Game.Workspace["Basic House"].SmoothBlockModel112,Extra.floorC[1],Extra.floorC[2],Extra.floorC[3])
+end
+
 colorAPI.colorBuildingBricks = function(arg)
 		local DarkStoneGrey = arg.DarkStoneGrey
 		local DeepBlue = arg.DeepBlue
@@ -8775,9 +8953,44 @@ colorAPI.colorBuildingBricks = function(arg)
 				if v.Name == "Part20" or v.Name == "Part28" or v.Name == "Part4" or v.Name == "Part45" or v.Name == "Part8" then
 					colorAPI.color(v, TP) -- Default is "Toothpaste"
 				end
-			end)()
+			end)
 		end
 end
+
+colorAPI.colorBuildingBricks_2 = function(Extra)
+		local DarkStoneGrey = Extra.DarkStoneGrey
+		local DeepBlue = Extra.DeepBlue
+		local NY = Extra.NY
+		local IW = Extra.IW
+		local LimeGreen = Extra.LimeGreen
+		local MSG = Extra.MSG
+		local RB = Extra.RB
+		local TP = Extra.TP
+		local RR = Extra.RR
+		for i,v in pairs(workspace.Terrain._Game.Workspace["Building Bricks"]:GetChildren()) do
+			coroutine.resume(coroutine.create(function()
+				if v.Name == "Part31" or v.Name == "Part29" or v.Name == "Part55" then
+					colorAPI.color_2(v,DarkStoneGrey[1],DarkStoneGrey[2],DarkStoneGrey[3])
+				elseif v.Name == "Part43" or v.Name == "Part3" or v.Name == "Part25" or v.Name == "Part18" or v.Name == "Part11" then
+					colorAPI.color_2(v,DeepBlue[1],DeepBlue[2],DeepBlue[3])
+				elseif v.Name == "Part44" or v.Name == "Part6" or v.Name == "Part24" or v.Name == "Part15" or v.Name == "Part12" then
+					colorAPI.color_2(v,NY[1],NY[2],NY[3])
+				elseif v.Name == "Part7" or v.Name == "Part13" or v.Name == "Part21" or v.Name == "Part23" then
+					colorAPI.color_2(v,IW[1], IW[2], IW[3])
+				elseif v.Name == "Part5" or v.Name == "Part9" or v.Name == "Part17" or v.Name == "Part26" or v.Name == "Part38" then
+					colorAPI.color_2(v,LimeGreen[1], LimeGreen[2], LimeGreen[3])
+				elseif v.Name == "Part2" or v.Name == "Part14" or v.Name == "Part19" or v.Name == "Part27" then
+					colorAPI.color_2(v,RB[1], RB[2], RB[3])
+				elseif v.Name == "Part1" or v.Name == "Part10" or v.Name == "Part16" or v.Name == "Part22" or v.Name == "Part37" then
+					colorAPI.color_2(v,RR[1], RR[2], RR[3])
+				elseif v.Name == "Part45" or v.Name == "Part4" or v.Name == "Part8" or v.Name == "Part20" or v.Name == "Part28" then
+					colorAPI.color_2(v,TP[1], TP[2], TP[3])
+				else
+					colorAPI.color_2(v,MSG[1], MSG[2], MSG[3])
+				end
+			end))
+		end
+	end
 
 -- Player stuff
 for i, v in pairs(game.Players:GetPlayers()) do
