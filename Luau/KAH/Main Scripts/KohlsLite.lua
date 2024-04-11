@@ -4949,9 +4949,9 @@ print("Dizzy [ROUTE] for music ids hahaha I'm a muskid")
 print("--- ADDITIONAL INFO ---")
 print("1a. This script has some stuff missing and some stuff broken but it's not really finished. There's many stuff I'm still adding.")
 print("1b. If you want a good script and have some money/robux, get Shortcut v3-var by dming techq")
-print("2a. With the \n\n\n that hides your username, it does NOT work on newer Roblox guis (my old main and my second alt have it.")
+print("2a. With the /n/n/n that hides your username, it does NOT work on newer Roblox guis (my old main and my second alt have it.")
 print("2b. Instead, it will show as the name at the top.")
-print("2c. I cannot change the \n\n\n or the text won't be on the bar which is ugly. Sorry!")
+print("2c. I cannot change the /n/n/n or the text won't be on the bar which is ugly. Sorry!")
 
 end
 
@@ -8782,7 +8782,7 @@ for i, v in pairs(game.Players:GetPlayers()) do
                 acplr = v.Name
         end
 
-        if table.find(furry_on_sight, player.Name) then
+        if table.find(furry_on_sight, v.Name) then
                 Chat(prefix.."char "..v.Name.." furry")
         end
 
