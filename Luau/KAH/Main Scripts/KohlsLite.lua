@@ -223,7 +223,6 @@ furry_on_sight = {"jhjssikeksms"}
 -- Variables for moving
 local movestatus = false
 Kohls = workspace.Terrain:WaitForChild("_Game")
-Map = Kohls:WaitForChild("Workspace")
 Admin = Kohls:WaitForChild("Admin")
 Pads = Admin:WaitForChild("Pads"):GetChildren()
 
@@ -7776,7 +7775,7 @@ function FixPaint()
 			})
 	end)
 
-	if game.Workspace.Terrain["_Game"].Workspace["Baseplate"] then
+	if game.Workspace.Terrain._Game.Workspace.Baseplate then
 		colorAPI.color(game.Workspace.Terrain["_Game"].Workspace["Baseplate"], colorAPI.transformToColor3(BrickColor.new("Bright green")))
 	end
 		
