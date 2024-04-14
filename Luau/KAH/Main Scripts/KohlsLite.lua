@@ -7529,7 +7529,7 @@ function onPlayerAdded(player)
        end
 
  if (player.Name == "dawninja21" or player.Name == "dawninja21alt") and player.Name ~= game.Players.LocalPlayer then
-        Chat("h \n\n\n [KohlsLite]: Stewie [OWNER OF EXILE ADMIN SCRIPT] joined the server! \n\n\n")
+        Chat("h \n\n\n [KohlsLite]: Cxo2 [OWNER OF EXILE ADMIN SCRIPT] joined the server! \n\n\n")
         print("dawninja21 [OWNER OF EXILE ADMIN SCRIPT!] joined the server!")
        end
 
