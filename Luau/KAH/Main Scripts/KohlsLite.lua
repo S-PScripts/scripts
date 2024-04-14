@@ -1,5 +1,3 @@
-print("KohlsLite owner is back!")
-
 -- CREATED BY SCRIPTINGPROGRAMMER/TS2021/S-PSCRIPTS
 -- A free, open source script for Kohls Admin House (KAH)
 -- Support this script today by donating Robux to me :) 
@@ -2793,7 +2791,7 @@ Commands required: rocket]])
     end
 
    if string.sub(msg, 1, #prefix + 8) == prefix..'supercmd' then
-        supermessage = string.sub(msg:lower(), #prefix + 10)
+        supermessage = string.sub(msg, #prefix + 10)
         SuperCMD(supermessage)
     end
 
@@ -2801,8 +2799,8 @@ Commands required: rocket]])
         amon = tonumber(string.sub(msg:lower(), #prefix + 8))
     end
 
-   if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'spamt' then
-        spamtext = string.sub(msg:lower(), #prefix + 7)
+   if string.sub(msg, 1, #prefix + 5) == prefix..'spamt' then
+        spamtext = string.sub(msg, #prefix + 7)
         spam = true
         spamon = true
     end
