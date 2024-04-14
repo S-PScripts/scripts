@@ -102,7 +102,8 @@ local pwl = {
     "idonthacklol101ns",
     "Me_ChurchOfSat4n",
     "Milderous",
-    "Anka_707587"
+    "Anka_707587",
+    "DionteIsCute"
 }
 
 -- Players you cannot kick
@@ -133,7 +134,8 @@ local nokick = {
     "D_ionte",
     "EternitHD",
     "Milderous",
-    "Anka_707587"
+    "Anka_707587",
+    "DionteIsCute"
 }
 
 -- Players with special perms
@@ -159,7 +161,8 @@ local specialperms = {
     "D_ionte",
     "EternitHD",
     "Milderous",
-    "Anka_707587"
+    "Anka_707587",
+    "DionteIsCute"
 }
 
 -- New users get blacklisted (prevent crashers)
