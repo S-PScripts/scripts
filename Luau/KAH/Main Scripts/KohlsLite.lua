@@ -1,3 +1,5 @@
+print("KohlsLite owner is back!")
+
 -- CREATED BY SCRIPTINGPROGRAMMER/TS2021/S-PSCRIPTS
 -- A free, open source script for Kohls Admin House (KAH)
 -- Support this script today by donating Robux to me :) 
