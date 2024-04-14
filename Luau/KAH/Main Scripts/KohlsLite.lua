@@ -198,7 +198,8 @@ local pgwl = {
     "Me_ChurchOfSat4n",
     "Milderous",
     "Anka_707587",
-    "D_ionte"
+    "D_ionte",
+    "DionteIsCute"
 }
 
 -- Serverlock
