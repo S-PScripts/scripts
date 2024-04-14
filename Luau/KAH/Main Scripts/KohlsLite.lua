@@ -6328,7 +6328,9 @@ v.Chatted:Connect(function(msg)
                 end
 
                 if string.sub(msg:lower(), 0, 4) == "-klc" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
-           			Speak("[KohlsLite]: I use KohlsLite!")
+				if v.Name ~= "ScriptingProgrammer" then 
+           				Speak("[KohlsLite]: I use KohlsLite!")
+				end
                 end  
 
                 if string.sub(msg:lower(), 0, 4) == "-prc" and v.Name ~= game.Players.LocalPlayer.Name and v.Name == "atprog" then
