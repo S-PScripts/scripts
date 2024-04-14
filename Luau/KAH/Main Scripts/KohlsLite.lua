@@ -2790,7 +2790,7 @@ Commands required: rocket]])
         InitTool()
     end
 
-   if string.sub(msg, 1, #prefix + 8) == prefix..'supercmd' then
+   if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'supercmd' then
         supermessage = string.sub(msg, #prefix + 10)
         SuperCMD(supermessage)
     end
