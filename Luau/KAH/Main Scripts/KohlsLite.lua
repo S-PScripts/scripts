@@ -3413,13 +3413,21 @@ Commands required: rocket]])
                 VFix()
      end
 
-     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'cfixvelo' then
+     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'bpfixv' then
                 Remind("You need to be positioned by a wall!")
                 Chat("sit me down");task.wait(1)
                 Chat("punish me");task.wait(1)
                 Chat("unpunish me");task.wait(1)
                 Chat("unskydive me")     
      end
+
+   if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'nbpfixv' then
+	local target = workspace.Terrain["_Game"].Workspace.Baseplate
+	movepart(target)  
+	repeat task.wait() until mready = true
+	Chat("unskydive me");task.wait(1);Chat("respawn me")
+     end
+
 
      if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'fakebp' then
                 local gamefolder = game:GetService("Workspace").Terrain["_Game"]
@@ -4799,7 +4807,7 @@ print("nocam/breakcam - break the camera with the AR")
 print("fixcam - fix the camera (client side)")
 print("wbcam/wfcam - break/fix the camera with the blizzard wand")
 print("fixvelo - fix your velocity")
-print("cfixvelo - fix baseplate velocity serverside [position yourself against a wall]")
+print("bpfixv - fix baseplate velocity serverside [position yourself against a wall]")
 print("fixcol - fix collisions")
 print("fixgrav - fix gravity")
 
@@ -8723,31 +8731,33 @@ function moveObject(target,movepos)
         end
 end
 
--- attach v1 --
-function movepart()
+-- attach v1 for fixing baseplate --
+function movepart(target)
+	repeat wait() until game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")
 	local cf = game.Players.LocalPlayer.Character.HumanoidRootPart
-	local movin = true
+	local rmoving = true;mready = false
 
 	task.spawn(function()
-		while true do
-			fwait()
-			game.Players.LocalPlayer.Character['Humanoid']:ChangeState(11)
-			cf.CFrame = target.CFrame * CFrame.new(-1*(target.Size.X/2)-(game.Players.LocalPlayer.Character['Torso'].Size.X/2), 0, 0)
-			if not movin then
-				break 
+			while true do
+				fwait()
+				game.Players.LocalPlayer.Character['Humanoid']:ChangeState(11)
+				cf.CFrame = target.CFrame * CFrame.new(-1*(target.Size.X/2)-(game.Players.LocalPlayer.Character['Torso'].Size.X/2), 0, 0)
+				if not rmoving then 
+					break 
+				end
 			end
-		end
 	end)
-
+		
 	task.spawn(function() 
-		while movin do 
-			wait(.1) 
-			game.Players:Chat('unpunish me') 
-		end 
+			while rmoving do 
+				task.wait(.1) 
+				Chat('unpunish me') 
+			end 
 	end)
 
-	wait(0.25)
-	movin = false
+	task.wait(0.25)
+	rmoving = false;mready = true
+
 end
 
 -- // COLOR API \\ --
