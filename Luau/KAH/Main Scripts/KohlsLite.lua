@@ -3030,6 +3030,10 @@ Commands required: rocket]])
 		if Loops.rainbowmap == false then
 			Loops.rainbowmap = true
 			rmap()
+		else
+			Loops.rainbowmap = false ; task.wait(0.1)
+			Loops.rainbowmap = true
+			rmap()
 		end
    end
 
@@ -3424,7 +3428,7 @@ Commands required: rocket]])
    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'nbpfixv' then
 	local target = workspace.Terrain["_Game"].Workspace.Baseplate
 	movepart(target)  
-	repeat task.wait() until mready = true
+	repeat task.wait() until mready == true
 	Chat("unskydive me");task.wait(1);Chat("respawn me")
      end
 
@@ -8229,31 +8233,38 @@ Loops = {}
 Loops.rainbowmap = false
 
 function rmap()
-		Chat(prefix.."gear me painter")
-    		repeat wait() until game.Players.LocalPlayer.Backpack:FindFirstChild("PaintBucket")
-    		paint = game.Players.LocalPlayer.Backpack:FindFirstChild("PaintBucket")
-   		paint.Parent = game.Players.LocalPlayer.Character 
+
+		function Pcheck()
+				t = false
+       				if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Backpack then
+					if game.Players.LocalPlayer.Character:FindFirstChild("PaintBucket") then
+						t = true
+					elseif game.Players.LocalPlayer.Backpack:FindFirstChild("PaintBucket") then
+					    	paint = game.Players.LocalPlayer.Backpack:FindFirstChild("PaintBucket")
+   						paint.Parent = game.Players.LocalPlayer.Character
+						t = true
+					else
+						Chat(prefix.."gear me painter")
+				    		repeat wait() until game.Players.LocalPlayer.Backpack:FindFirstChild("PaintBucket")
+    						paint = game.Players.LocalPlayer.Backpack:FindFirstChild("PaintBucket")
+   						paint.Parent = game.Players.LocalPlayer.Character
+						t = true
+					end
+				end
+		end
 
 		local RainbowValue = 0
 		Loops.rainbowmap = true
     		repeat task.wait()
-
-       				if not game.Players.LocalPlayer.Character:FindFirstChild("PaintBucket") then  				print('aaa')
-						Chat(prefix.."gear me painter")
-				    		repeat wait() until game.Players.LocalPlayer.Backpack:FindFirstChild("PaintBucket")
-    						paint = game.Players.LocalPlayer.Backpack:FindFirstChild("PaintBucket")
-   						paint.Parent = game.Players.LocalPlayer.Character    	 
-				end
-
         			RainbowValue = RainbowValue + 1/50
     			        if RainbowValue >= 1 then
         				RainbowValue = 0
     				end
 
 				fwait()
+				PCheck()
 
-				if game.Players.LocalPlayer.Character:FindFirstChild("PaintBucket") then ready = true else ready = false end
-				if Loops.rainbowmap and ready == true then
+				if Loops.rainbowmap and t then
 						paintmap(Color3.fromHSV(RainbowValue,1,1).R,Color3.fromHSV(RainbowValue,1,1).G,Color3.fromHSV(RainbowValue,1,1).B)
 						paint:WaitForChild("Remotes").ServerControls:InvokeServer("PaintPart",{
                             					["Part"] = game:GetService("Workspace").Terrain["_Game"].Workspace.Baseplate,
@@ -8761,6 +8772,8 @@ function movepart(target)
 end
 
 -- // COLOR API \\ --
+-- // the reason why there's dupes is because of rainbow map needing the RGB instead of colour name and the api not having a conversion \\ --
+
 colorAPI = {}
  
 colorAPI.color = function(Part, color)
