@@ -8640,6 +8640,7 @@ end
 function fwait()
                 game:GetService("RunService").Heartbeat:Wait()
 end
+
 -- // another special wait \\ --
 function rwait()
         game:GetService("RunService").RenderStepped:Wait()
@@ -8720,6 +8721,33 @@ function moveObject(target,movepos)
                 Chat("respawn me")
 
         end
+end
+
+-- attach v1 --
+function movepart()
+	local cf = game.Players.LocalPlayer.Character.HumanoidRootPart
+	local movin = true
+
+	task.spawn(function()
+		while true do
+			fwait()
+			game.Players.LocalPlayer.Character['Humanoid']:ChangeState(11)
+			cf.CFrame = target.CFrame * CFrame.new(-1*(target.Size.X/2)-(game.Players.LocalPlayer.Character['Torso'].Size.X/2), 0, 0)
+			if not movin then
+				break 
+			end
+		end
+	end)
+
+	task.spawn(function() 
+		while movin do 
+			wait(.1) 
+			game.Players:Chat('unpunish me') 
+		end 
+	end)
+
+	wait(0.25)
+	movin = false
 end
 
 -- // COLOR API \\ --
