@@ -8321,36 +8321,21 @@ end
 function IceMap()
         Chat("ungear me")
         task.wait(0.5)
-         local plasticTool
+         local Bloxy
         Chat('gear me 2758794374')
         repeat task.wait() until game.Players.LocalPlayer.Backpack:FindFirstChild("2019BloxyAward")
-        plasticTool = game.Players.LocalPlayer.Backpack:FindFirstChild("2019BloxyAward")
+        Bloxy = game.Players.LocalPlayer.Backpack:FindFirstChild("2019BloxyAward")
         task.wait()
-        plasticTool.Parent = game.Players.LocalPlayer.Character
+        Bloxy.Parent = game.Players.LocalPlayer.Character
         task.wait()
         Remind("This will get most of the parts but not all of them!")
-        for _,part in pairs(game.Workspace:GetDescendants()) do
-            task.wait()
-            task.spawn(function()
-                task.wait()
-                if part:IsA("Part") then
-                    local MassCheck = part:Clone()
-                    MassCheck.Material = Enum.Material.Ice
-                    if MassCheck:GetMass() <= 5 then
-                        return
-                    end
-                    repeat 
-                        plasticTool:Activate()
-                        task.wait()
-                        firetouchinterest(plasticTool:WaitForChild("Handle"), part, 0)
-                        firetouchinterest(plasticTool:WaitForChild("Handle"), part, 1)
-                    until
-                        (part.Material == Enum.Material.Ice and part.BrickColor == BrickColor.new("Bright yellow")) or plasticTool.Parent ~= game.Players.LocalPlayer.Character
-                end
-            end)
+           for i,v in pairs(game:GetService("Workspace").Terrain["_Game"]:GetDescendants()) do
+        if v:IsA("BasePart") then
+            firetouchinterest(v,Bloxy.Handle,0)
+            firetouchinterest(v,Bloxy.Handle,1)
         end
-        task.wait()
-        Chat("ungear me") -- without this you CRASH
+    end
+      
 end
 
 function Surround(mode)
