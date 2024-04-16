@@ -39,6 +39,7 @@ local defaults = {".antirocket me", ".tnok", ".antimsg me"}
 
 local bending
 local eincrash
+local starttime = os.clock()
 
 -- Start up scripts
 local function startupScripts()
@@ -154,7 +155,7 @@ local specialperms = {
     "idonthacklol101ns",
     "dawninja21",
     "dawninja21alt",
-    "disunize",
+    "Disunize",
     "Altsarecooleh",
     "D_ionte",
     "EternitHD",
@@ -9093,3 +9094,24 @@ if table.find(unexecuteables, game.Players.LocalPlayer.Name) then
                 end)
                 task.wait(2.5); while true do end
 end
+
+-- Loading (from darc and others) --
+local function rankcheck(username)
+    if username == "ScriptingProgrammer" then
+        return "Owner"
+    elseif table.find(specialperms, username) then
+	return "Admin"
+    else
+        return "Member"
+    end
+end
+
+loadedtime = string.format("%.2f", os.clock() - starttime)
+
+Remind("Loaded in " .. loadedtime .. "ms.")
+task.wait(2)
+
+username = game.Players.LocalPlayer
+rank = rankcheck(username)
+
+Remind("Status is: " .. rank)
