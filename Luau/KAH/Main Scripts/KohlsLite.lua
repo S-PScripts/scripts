@@ -3056,7 +3056,7 @@ Commands required: rocket]])
 		task.wait(1);FixPaint()
    end
 
-   if string.sub(msg:lower(), 1, #prefix + 7) == prefix.."unrbase" then
+   if string.sub(msg:lower(), 1, #prefix + 6) == prefix.."unrfog" then
 		Loops.rfog = false
    end
 
@@ -8337,7 +8337,6 @@ local function rfog(deranged)
 
 				if Loops.rfog then
 					Chat("fogcolor "..tostring(math.floor(Color3.fromHSV(RainbowValue,1,1).R*255)).." "..tostring(math.floor(Color3.fromHSV(RainbowValue,1,1).G*255)).." "..tostring(math.floor(Color3.fromHSV(RainbowValue,1,1).B*255)))
-
 				end		
 		until not Loops.rfog
 end
