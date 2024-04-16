@@ -734,9 +734,6 @@ local antimlog = false -- for music
 local antiglog = false -- for gears
 local anticlog = false -- for chars
 
--- Debug
-local alreadyranice = false
-
 -- Admin stuff relating to users
 local padbanned = {} 
 local padreinforcements = false 
@@ -2869,13 +2866,8 @@ Commands required: rocket]])
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'icemap' then
-        if alreadyranice == true then
-                Remind("You already ran this command! To prevent crashes you cannot run it again, sorry!")
-        else 
                 Remind("If this crashes you then that sucks!")
-                alreadyranice = true
                 IceMap()
-        end
     end
 
     if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'byp' then -- it works but i still don't care if it sometimes doesn't bypass!
