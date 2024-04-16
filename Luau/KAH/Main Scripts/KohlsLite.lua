@@ -1569,7 +1569,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                             gjbpfgcl = gjbpfgcl + 20
                             Chat("fogcolor " .. "200 " .. "0 " .. gjbpfgcl)
                      end
-                     Chat("h \n\n\n [KohlsLite]: Hollow Purple! \n\n\n")
+                     Chat("h \n\n\n [KohlsLite]: Hollow purple! \n\n\n")
                         Chat("speed others inf")
                      for i = 1,10 do
                             task.wait(0.2)
@@ -1590,6 +1590,8 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                 Chat("clr")
                 Chat("removeclones")
                 Chat("removejails")
+		Chat(prefix.."fixpaint")
+		Chat("unpaint all")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'volm' then -- rap e
