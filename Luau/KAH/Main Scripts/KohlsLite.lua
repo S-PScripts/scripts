@@ -3024,9 +3024,25 @@ Commands required: rocket]])
 			Loops.rainbowmap = true
 			rmap()
 		else
-			Loops.rainbowmap = false ; task.wait(0.1)
-			Loops.rainbowmap = true
-			rmap()
+			Remind("Already enabled!")
+		end
+   end
+
+ if string.sub(msg:lower(), 1, #prefix + 5) == prefix.."rbase" then
+		if Loops.rbase == false then
+			Loops.rbase = true
+			rbase()
+		else
+			Remind("Already enabled!")
+		end
+   end
+
+ if string.sub(msg:lower(), 1, #prefix + 4) == prefix.."rfog" then
+		if Loops.rfog == false then
+			Loops.rfog = true
+			rfog()
+		else
+			Remind("Already enabled!")
 		end
    end
 
@@ -3035,6 +3051,14 @@ Commands required: rocket]])
 		task.wait(1);FixPaint()
    end
 
+   if string.sub(msg:lower(), 1, #prefix + 7) == prefix.."unrbase" then
+		Loops.rbase = false
+		task.wait(1);FixPaint()
+   end
+
+   if string.sub(msg:lower(), 1, #prefix + 7) == prefix.."unrbase" then
+		Loops.rfog = false
+   end
 
    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'autoafk' then
         autoafk = true
@@ -8230,27 +8254,29 @@ end
 
 Loops = {}
 Loops.rainbowmap = false
+Loops.rbase = false
+Loops.rfog = false
 
-function rmap()
-
-		function Pcheck()
-				t = false
-       				if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Backpack then
-					if game.Players.LocalPlayer.Character:FindFirstChild("PaintBucket") then
-						t = true
-					elseif game.Players.LocalPlayer.Backpack:FindFirstChild("PaintBucket") then
-					    	paint = game.Players.LocalPlayer.Backpack:FindFirstChild("PaintBucket")
-   						paint.Parent = game.Players.LocalPlayer.Character
-						t = true
-					else
-						Chat(prefix.."gear me painter")
-				    		repeat wait() until game.Players.LocalPlayer.Backpack:FindFirstChild("PaintBucket")
-    						paint = game.Players.LocalPlayer.Backpack:FindFirstChild("PaintBucket")
-   						paint.Parent = game.Players.LocalPlayer.Character
-						t = true
-					end
-				end
+function Pcheck()
+		t = false
+       		if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Backpack then
+			if game.Players.LocalPlayer.Character:FindFirstChild("PaintBucket") then
+				t = true
+			elseif game.Players.LocalPlayer.Backpack:FindFirstChild("PaintBucket") then
+				paint = game.Players.LocalPlayer.Backpack:FindFirstChild("PaintBucket")
+   				paint.Parent = game.Players.LocalPlayer.Character
+				t = true
+			else
+				Chat(prefix.."gear me painter")
+				repeat wait() until game.Players.LocalPlayer.Backpack:FindFirstChild("PaintBucket")
+    				paint = game.Players.LocalPlayer.Backpack:FindFirstChild("PaintBucket")
+   				paint.Parent = game.Players.LocalPlayer.Character
+				t = true
+			end
 		end
+end
+
+local function rmap()
 
 		local RainbowValue = 0
 		Loops.rainbowmap = true
@@ -8271,6 +8297,49 @@ function rmap()
                         			})
 				end		
 		until not Loops.rainbowmap
+end
+
+local function rbase()
+
+		local RainbowValue = 0
+		Loops.rbase = true
+    		repeat task.wait()
+        			RainbowValue = RainbowValue + 1/50
+    			        if RainbowValue >= 1 then
+        				RainbowValue = 0
+    				end
+
+				fwait()
+				PCheck()
+
+				if Loops.rbase and t then
+						paint:WaitForChild("Remotes").ServerControls:InvokeServer("PaintPart",{
+                            					["Part"] = game:GetService("Workspace").Terrain["_Game"].Workspace.Baseplate,
+                           					["Color"] = Color3.fromHSV(RainbowValue,1,1)
+                        			})
+				end		
+		until not Loops.rbase
+end
+
+local function rfog(deranged)
+
+		local RainbowValue = 0
+		Loops.rfog = true
+    		repeat task.wait(0.05)
+        			RainbowValue = RainbowValue + 1/250
+    			        if RainbowValue >= 1 then
+        				RainbowValue = 0
+    				end
+
+				if game.Lighting.FogEnd ~= deranged then
+            					Chat("fogend "..tostring(deranged))
+        			end
+
+				if Loops.rfog then
+					Chat("fogcolor "..tostring(math.floor(Color3.fromHSV(RainbowValue,1,1).R*255)).." "..tostring(math.floor(Color3.fromHSV(RainbowValue,1,1).G*255)).." "..tostring(math.floor(Color3.fromHSV(RainbowValue,1,1).B*255)))
+
+				end		
+		until not Loops.rfog
 end
 
 function paintmap(R,G,B)
