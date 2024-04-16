@@ -7702,7 +7702,13 @@ task.spawn(function()
      while true do
            task.wait(0)
            if SRegen == true then
-              Regen()
+                for i,v in pairs(game.Players:GetChildren()) do
+                                for i,pad in pairs(game:GetService("Workspace").Terrain["_Game"].Admin.Pads:GetDescendants()) do
+                                        if pad.Name == v.Name.."'s admin" then
+                                               Regen()
+                                        end
+                                end
+                end
            end
      end
 end)
