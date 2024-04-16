@@ -8319,23 +8319,19 @@ function paintmap(R,G,B)
 end
 
 function IceMap()
-        Chat("ungear me")
-        task.wait(0.5)
-         local Bloxy
         Chat('gear me 2758794374')
         repeat task.wait() until game.Players.LocalPlayer.Backpack:FindFirstChild("2019BloxyAward")
-        Bloxy = game.Players.LocalPlayer.Backpack:FindFirstChild("2019BloxyAward")
+        local Bloxy = game.Players.LocalPlayer.Backpack:FindFirstChild("2019BloxyAward")
         task.wait()
         Bloxy.Parent = game.Players.LocalPlayer.Character
         task.wait()
         Remind("This will get most of the parts but not all of them!")
-           for i,v in pairs(game:GetService("Workspace").Terrain["_Game"]:GetDescendants()) do
-        if v:IsA("BasePart") then
-            firetouchinterest(v,Bloxy.Handle,0)
-            firetouchinterest(v,Bloxy.Handle,1)
-        end
-    end
-      
+        for i,v in pairs(game:GetService("Workspace").Terrain["_Game"]:GetDescendants()) do
+        	if v:IsA("BasePart") then
+           		 firetouchinterest(v,Bloxy.Handle,0)
+           		 firetouchinterest(v,Bloxy.Handle,1)
+       		end
+    	end
 end
 
 function Surround(mode)
