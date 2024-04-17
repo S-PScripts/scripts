@@ -8389,7 +8389,8 @@ function IceMap()
         Bloxy.Parent = game.Players.LocalPlayer.Character
         task.wait()
         Remind("This will get most of the parts but not all of them!")
-        for i,v in pairs(game:GetService("Workspace").Terrain["_Game"]:GetDescendants()) do
+        for i,v in pairs(game.Workspace:GetDescendants()) do
+		task.wait(0)
         	if v:IsA("BasePart") then
            		 firetouchinterest(v,Bloxy.Handle,0)
            		 firetouchinterest(v,Bloxy.Handle,1)
