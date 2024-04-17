@@ -244,7 +244,7 @@ local musictable = {
     ["6"] = { id = "6847929757", name = "LONER" },
     ["7"] = { id = "1839029458", name = "Exotico Speedo" },
     ["8"] = { id = "35930009", name = "Monster Mash" },
-    ["9"] = { id = "6772846771", name = "THOT!" },
+    ["9"] = { id = "6772846771", name = "TOT!" },
     ["10"] = { id = "11808880515", name = "women song" },
     ["11"] = { id = "6681840651", name = "What?!" },
     ["12"] = { id = "1841647093", name = "Life in an Elevator" },
@@ -336,7 +336,21 @@ local musictable = {
     ["98"] = { id = "9039445224", name = "8 Bitty Kitty - Underscore"},
     ["99"] = { id = "9046863579", name = "City Lights - Roblox"},
     ["100"] = { id = "15689457918", name = "nMisaki - Dream Girl (sped up)"},
-    ["101"] = { id = "1845742414", name = "Appetizer"}
+    ["101"] = { id = "1845742414", name = "Appetizer"},
+    ["102"] = { id = "6889574376", name = "Rascal!"},
+    ["103"] = { id = "7029024726", name = "Throttle - Bloom"},
+    ["104"] = { id = "1840612595", name = "A New Renaissance"},  
+    ["105"] = { id = "1836054144", name = "Upbeat Dude"},
+    ["106"] = { id = "1837275138", name = "Never Enough"},
+    ["107"] = { id = "1839917800", name = "Unknown"},
+    ["108"] = { id = "1840221593", name = "Fit For Life (A)"},
+    ["109"] = { id = "9041863801", name = "Unknown"},
+    ["110"] = { id = "1836711447", name = "Just Like Me"},
+    ["111"] = { id = "1845070869", name = "Eye Open"},
+    ["112"] = { id = "1847863129", name = "Tech Synth A"},
+    ["113"] = { id = "1845073388", name = "Need For Speed"},
+    ["114"] = { id = "1845092143", name = "Super Nova"},
+    ["115"] = { id = "12927783342", name = "Unknown"}
 }
 
 local gearlist = {
