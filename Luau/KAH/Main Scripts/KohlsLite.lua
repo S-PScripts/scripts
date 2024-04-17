@@ -3040,9 +3040,10 @@ Commands required: rocket]])
    end
 
  if string.sub(msg:lower(), 1, #prefix + 4) == prefix.."rfog" then
+		deran = tonumber(string.sub(msg:lower(), #prefix + 6))
 		if Loops.rfog == false then
 			Loops.rfog = true
-			rfog()
+			rfog(deran)
 		else
 			Remind("Already enabled!")
 		end
