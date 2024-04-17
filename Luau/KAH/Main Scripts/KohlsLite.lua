@@ -8279,7 +8279,7 @@ function Pcheck()
 		end
 end
 
-local function rmap()
+function rmap()
 
 		local RainbowValue = 0
 		Loops.rainbowmap = true
@@ -8302,7 +8302,7 @@ local function rmap()
 		until not Loops.rainbowmap
 end
 
-local function rbase()
+function rbase()
 
 		local RainbowValue = 0
 		Loops.rbase = true
@@ -8324,7 +8324,7 @@ local function rbase()
 		until not Loops.rbase
 end
 
-local function rfog(deranged)
+function rfog(deranged)
 
 		local RainbowValue = 0
 		Loops.rfog = true
