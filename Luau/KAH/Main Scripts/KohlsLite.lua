@@ -1931,7 +1931,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                         return 
                 end
                 DisCol()
-                moveobject(Map.Baseplate, 2)
+                moveobject(game.Workspace.Terrain["_Game"].Workspace["Baseplate"], 2)
                 repeat fwait() until movestatus == false
                 GravFix()
                 Chat("respawn me")
@@ -1943,7 +1943,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                         return 
                 end
                 DisCol()
-                moveobject(Map.Baseplate, 1)
+                moveobject(game.Workspace.Terrain["_Game"].Workspace["Baseplate"], 1)
                 repeat fwait() until movestatus == false
                 GravFix()
                 Chat("respawn me")
@@ -9097,7 +9097,7 @@ colorAPI.colorBuildingBricks_2 = function(Extra)
 -- Player stuff
 for i, v in pairs(game.Players:GetPlayers()) do
 
-        if v.Name == "9jn" then
+        if v.Name == "9jn" or v.Name == "9gn" then
                         antiraygun = true
         end
 
