@@ -8260,7 +8260,7 @@ Loops.rainbowmap = false
 Loops.rbase = false
 Loops.rfog = false
 
-function Pcheck()
+function PCheck()
 		t = false
        		if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Backpack then
 			if game.Players.LocalPlayer.Character:FindFirstChild("PaintBucket") then
