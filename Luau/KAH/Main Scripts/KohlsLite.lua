@@ -831,6 +831,7 @@ local welcomemsg = true
 -- local permpassid = 66254 or 64354 -> NBC, BC
 -- local personpassid = 35748 or 37127 --> NBC, BC
 
+print("- Information -")
 print("Thank you for using KohlsLite v1.20! This script was created by S_P.")
 Remind("Thank you for using KohlsLite v1.20! This script was created by S_P.")
 print("Say .kcmds to list some of the commands. DM me at ts2021 for the source to find other commands.")
@@ -838,6 +839,7 @@ Remind("Say .kcmds to list some of the commands. DM me at ts2021 for the source 
 
 Chat("h \n\n\n [KohlsLite]: Executed! v1.20 \n\n\n")
 
+print("- Perm check -")
 if game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 66254) or game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 64354) then
         perm = false 
         hasperm = true -- used
@@ -848,6 +850,7 @@ else
         print("A perm pad was given - you don't have the Perm Admin gamepass!")
 end
 
+print("- Persons check -")
 if game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 35748) or game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 37127) then
         haspersons = true -- used!
         print("You have Person299's Admin! You have access to more features!")
@@ -9173,10 +9176,11 @@ end
 
 loadedtime = string.format("%.2f", os.clock() - starttime)
 
-Remind("Loaded in " .. loadedtime .. "ms.")
+print("- Debug information -")
+print("Loaded in " .. loadedtime .. "ms.")
 task.wait(2)
 
 username = game.Players.LocalPlayer
 rank = rankcheck(username)
 
-Remind("Status is: " .. rank)
+print("Status is: " .. rank)
