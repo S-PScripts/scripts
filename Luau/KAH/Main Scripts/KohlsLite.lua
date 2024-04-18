@@ -2885,8 +2885,13 @@ Commands required: rocket]])
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'icemap' then
-                Remind("If this crashes you then that sucks!")
-                IceMap()
+		IsOnMobile = table.find({Enum.Platform.IOS, Enum.Platform.Android}, game:GetService("UserInputService"):GetPlatform()) -- infinite yield duh
+		if IsOnMobile then
+                	Remind("You have been detected as being on mobile. This command will not run to prevent crashing.")
+		else
+                	Remind("If you crash... that sucks!")
+               		IceMap()
+	        end
     end
 
     if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'byp' then -- it works but i still don't care if it sometimes doesn't bypass!
