@@ -33,10 +33,10 @@ task.spawn(function()
         CheckSound();Chat("clr");
 end)
 
-getgenv().bassline = true
+local ldelay = 5
 
 -- LYRICS
-task.delay(5, function() 
+task.delay(ldelay, function()
     CheckSound();Chat(" -- message --");wait()
     CheckSound();Chat(" -- message --");wait()
 end)
