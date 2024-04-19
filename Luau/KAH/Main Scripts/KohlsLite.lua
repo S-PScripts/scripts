@@ -6821,16 +6821,16 @@ end
 -- FREEZE CRASH
 function FCrash()
       for i = 1,100 do
-          Chat("clone all all all                                fuck")
-          Chat("freeze all all all                                fuck")
+          Chat("clone all all all                                dsc.gg/kohlslite")
+          Chat("freeze all all all                                dsc.gg/kohlslite")
       end
 end
 
 -- DOG CRASH
 function DCrash()
       for i = 1,100 do
-          Chat("clone all all all                                fuck")
-          Chat("dog all all all                                        fuck")
+          Chat("clone all all all                                dsc.gg/kohlslite")
+          Chat("dog all all all                                        dsc.gg/kohlslite")
       end
 end
 
