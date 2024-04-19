@@ -2077,6 +2077,18 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                 setclipboard(q)
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'cusername' then
+ 		local dasplayer = string.sub(msg:lower(), #prefix + 11)
+                PLAYERCHECK(dasplayer)
+                if player ~= nil  then
+        		su = player
+			setclipboard(su)
+			Remind("Successfully copied the player's username to clipboard.")
+                else                        
+                        Remind('Cannot find player with the name: '..dasplayer)
+                end
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'fixpads' then        
                 if movestatus == true then 
                         return 
@@ -9185,7 +9197,7 @@ print("- Debug information -")
 print("Loaded in " .. loadedtime .. "ms.")
 task.wait(2)
 
-username = game.Players.LocalPlayer
+username = game.Players.LocalPlayer.Name
 rank = rankcheck(username)
 
 print("Status is: " .. rank)
