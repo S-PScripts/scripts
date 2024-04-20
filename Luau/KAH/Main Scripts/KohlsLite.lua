@@ -3487,6 +3487,13 @@ Commands required: rocket]])
      end
 
 
+   if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'flipbp' then
+	local target = workspace.Terrain["_Game"].Workspace.Baseplate
+	movepart(target)  
+	repeat task.wait() until mready == true
+	Chat("trip me");task.wait(1);Chat("respawn me")
+     end
+
      if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'fakebp' then
                 local gamefolder = game:GetService("Workspace").Terrain["_Game"]
                 if not gamefolder:FindFirstChild("PhantomStorage") then
