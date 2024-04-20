@@ -1178,7 +1178,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          PLAYERCHECK(dasplayer)
          if player ~= nil then
                 if not table.find(blacklist, player) then
-                        Chat("h \n\n\n [KohlsLite]: "..player.." has been blacklisted. \n\n\n")
+                        Chat("h \n\n\n [KohlsLite]: "..player.." has been blacklisted. \n\n\n");Regen()
                         Remind("Blacklisted "..player)
                         table.insert(blacklist, player)
                 else
@@ -1282,7 +1282,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
        end
 
        if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'slock' then
-        Chat("h \n\n\n [KohlsLite]: Server is locked! \n\n\n")
+        Chat("h \n\n\n [KohlsLite]: Server is locked! \n\n\n");Regen()
         slockenabled = true
        end
 
@@ -3047,14 +3047,26 @@ Commands required: rocket]])
 
    if string.sub(msg:lower(), 1, #prefix + 4) == prefix.."pmap" then
 		local colourhere = string.sub(msg, #prefix + 6)
-		PaintMap(colourhere)
+		PaintMap(colourhere,"norm")
    end
 
    if string.sub(msg:lower(), 1, #prefix + 8) == prefix.."paintmap" then
 		local colourhere = string.sub(msg, #prefix + 10)
-		PaintMap(colourhere)
+		PaintMap(colourhere,"norm")
    end
 
+  if string.sub(msg:lower(), 1, #prefix + 9) == prefix.."messpaint" then
+		PaintMap(colourhere,"random")
+   end
+
+   if string.sub(msg:lower(), 1, #prefix + 6) == prefix.."rbgmap" then
+		local args = string.split(msg, " ")
+		r = args[2] 
+		g = args[3]
+		b = args[4]
+		PaintMap_2(r,g,b)
+   end
+		
  if string.sub(msg:lower(), 1, #prefix + 4) == prefix.."rmap" then
 		if Loops.rainbowmap == false then
 			Loops.rainbowmap = true
@@ -3268,14 +3280,49 @@ Commands required: rocket]])
                  Table(getnumber)
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'dance' then
-                 local getnumber = string.sub(msg:lower(), #prefix + 7)
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'potion' then
+                 local getnumber = string.sub(msg:lower(), #prefix + 8)
                  Potion(getnumber)
+    end
+
+   if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'tripmine' then
+                 local getnumber = string.sub(msg:lower(), #prefix + 10)
+                 MineTrip(getnumber)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'cannon' then
                  local getnumber = string.sub(msg:lower(), #prefix + 8)
                  Cannon(getnumber)
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'zombie' then
+                 local getnumber = string.sub(msg:lower(), #prefix + 8)
+                 Zombie(getnumber)
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'alpaca' then
+                 local getnumber = string.sub(msg:lower(), #prefix + 8)
+                 Alpaca(getnumber)
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'piano' then
+                 local getnumber = string.sub(msg:lower(), #prefix + 7)
+                 Piano(getnumber)
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'bdrop' then
+                 local getnumber = string.sub(msg:lower(), #prefix + 7)
+                 Bassdrop(getnumber)
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'cstory' then
+                 local getnumber = string.sub(msg:lower(), #prefix + 8)
+                 Coolstory(getnumber)
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'banana' then
+                 local getnumber = string.sub(msg:lower(), #prefix + 8)
+                 Banana(getnumber)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'nuke' then
@@ -7757,7 +7804,7 @@ function Regen()
         end
 end
 
---SPAMREGEN
+-- regen auto
 task.spawn(function()
      while true do
            task.wait(0)
@@ -7815,7 +7862,7 @@ function Gearban()
 end
 
 -- Paint map
-function PaintMap(colourhere)
+function PaintMap(colourhere,mode)
 	Chat(prefix.."gear me painter")
     	repeat wait() until game.Players.LocalPlayer.Backpack:FindFirstChild("PaintBucket")
     	local paint = game.Players.LocalPlayer.Backpack:FindFirstChild("PaintBucket")
@@ -7824,12 +7871,43 @@ function PaintMap(colourhere)
 	for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
 		task.spawn(function()
 			if v:IsA("Part") then
-				local Partse =
-				{
-					["Part"] = v,
-					["Color"] = colorAPI.transformToColor3(BrickColor.new(colourhere))
-				}
-				game:GetService("Workspace")[game.Players.LocalPlayer.Name].PaintBucket:WaitForChild("Remotes").ServerControls:InvokeServer("PaintPart", Partse)
+				if mode == "norm" then
+					local Partse =
+					{
+						["Part"] = v,
+						["Color"] = colorAPI.transformToColor3(BrickColor.new(colourhere))
+					}
+					game:GetService("Workspace")[game.Players.LocalPlayer.Name].PaintBucket:WaitForChild("Remotes").ServerControls:InvokeServer("PaintPart", Partse)
+				else
+					local Partse =
+					{
+						["Part"] = v,
+						["Color"] = Color3.fromRGB(math.random(0,255),math.random(0,255),math.random(0,255))
+					}
+					game:GetService("Workspace")[game.Players.LocalPlayer.Name].PaintBucket:WaitForChild("Remotes").ServerControls:InvokeServer("PaintPart", Partse)
+				end
+			end
+		end)
+	end
+	task.wait(1)
+	Chat("ungear me");Chat("unpaint all")
+end
+
+function PaintMap_2(r,g,b)
+	Chat(prefix.."gear me painter")
+    	repeat wait() until game.Players.LocalPlayer.Backpack:FindFirstChild("PaintBucket")
+    	local paint = game.Players.LocalPlayer.Backpack:FindFirstChild("PaintBucket")
+   	paint.Parent = game.Players.LocalPlayer.Character
+			
+	for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
+		task.spawn(function()
+			if v:IsA("Part") then
+					local Partse =
+					{
+						["Part"] = v,
+						["Color"] = Color3.fromRGB(r,g,b)
+					}
+					game:GetService("Workspace")[game.Players.LocalPlayer.Name].PaintBucket:WaitForChild("Remotes").ServerControls:InvokeServer("PaintPart", Partse)
 			end
 		end)
 	end
@@ -8465,6 +8543,7 @@ function Surround(mode)
 end
 
 function Clone(getnum)
+	 Chat("ungear me");task.wait(0.5)
          local pos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
          for i = 1, tonumber(getnum) do
                     Chat('gear me 72644644');task.wait(0.01)
@@ -8474,7 +8553,7 @@ function Clone(getnum)
          local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
          for _, v in ipairs(Backpack:GetChildren()) do
                             v.Parent = game.Players.LocalPlayer.Character
-                             v:Activate()
+                            v:Activate()
          end
          repeat task.wait() until (#workspace:GetChildren() - oldchild) >= tonumber(getnum) 
          Chat("ungear me")
@@ -8482,50 +8561,172 @@ function Clone(getnum)
 end
 
 function Table(getnum)
+	Chat("ungear me");task.wait(0.5)
         for i = 1, tonumber(getnum) do
                 Chat("gear me 110789105");task.wait(0.01)
         end
-        local oldchild = #workspace:GetChildren()
+      --  local oldchild = #workspace:GetChildren()
         repeat task.wait() until #game.Players.LocalPlayer.Backpack:GetChildren() >= tonumber(getnum) 
-         local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
+        local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
         for _, v in ipairs(Backpack:GetChildren()) do
                             v.Parent = game.Players.LocalPlayer.Character
-                         task.wait(0.1)
-                             v:Activate()
+                            task.wait(0.01)
+                            v:Activate()
         end
-        repeat task.wait() until (#workspace:GetChildren() - oldchild) >= tonumber(getnum) 
+    --    repeat task.wait() until (#workspace:GetChildren() - oldchild) >= tonumber(getnum) 
         Chat("ungear me");Chat("reset me")
 end
 
 function Potion(getnum)
+	Chat("ungear me");task.wait(0.5)
         for i = 1, tonumber(getnum) do
                 Chat("gear me 27858062");task.wait(0.01)
         end
-        local oldchild = #workspace:GetChildren()
+   --     local oldchild = #workspace:GetChildren()
         repeat task.wait() until #game.Players.LocalPlayer.Backpack:GetChildren() >= tonumber(getnum) 
-         local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
+        local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
         for _, v in ipairs(Backpack:GetChildren()) do
                             v.Parent = game.Players.LocalPlayer.Character
-                         task.wait(0.1)
-                             v:Activate()
+                            task.wait(0.01)
+                            v:Activate()
         end
-        repeat task.wait() until (#workspace:GetChildren() - oldchild) >= tonumber(getnum) 
+   --     repeat task.wait() until (#workspace:GetChildren() - oldchild) >= tonumber(getnum) 
+        Chat("ungear me");Chat("reset me")
+end
+
+function MineTrip(getnum)
+	Chat("ungear me");task.wait(0.5)
+        for i = 1, tonumber(getnum) do
+                Chat("gear me 11999247");task.wait(0.01)
+        end
+   --     local oldchild = #workspace:GetChildren()
+        repeat task.wait() until #game.Players.LocalPlayer.Backpack:GetChildren() >= tonumber(getnum) 
+        local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
+        for _, v in ipairs(Backpack:GetChildren()) do
+                            v.Parent = game.Players.LocalPlayer.Character
+                            task.wait(0.01)
+                            v:Activate()
+        end
+   --     repeat task.wait() until (#workspace:GetChildren() - oldchild) >= tonumber(getnum) 
         Chat("ungear me");Chat("reset me")
 end
 
 function Cannon(getnum)
+	Chat("ungear me");task.wait(0.5)
         for i = 1, tonumber(getnum) do
                 Chat("gear me 42201538");task.wait(0.01)
         end
-        local oldchild = #workspace:GetChildren()
+     --   local oldchild = #workspace:GetChildren()
         repeat task.wait() until #game.Players.LocalPlayer.Backpack:GetChildren() >= tonumber(getnum) 
-         local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
+        local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
         for _, v in ipairs(Backpack:GetChildren()) do
                             v.Parent = game.Players.LocalPlayer.Character
-                         task.wait(0.1)
-                             v:Activate()
+                            task.wait(0.01)
+                            v:Activate()
         end
-        repeat task.wait() until (#workspace:GetChildren() - oldchild) >= tonumber(getnum) 
+      --  repeat task.wait() until (#workspace:GetChildren() - oldchild) >= tonumber(getnum) 
+        Chat("ungear me");Chat("reset me")
+end
+
+function Zombie(getnum)
+	Chat("ungear me");task.wait(0.5)
+        for i = 1, tonumber(getnum) do
+                Chat("gear me 26421972");task.wait(0.01)
+        end
+     --   local oldchild = #workspace:GetChildren()
+        repeat task.wait() until #game.Players.LocalPlayer.Backpack:GetChildren() >= tonumber(getnum) 
+        local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
+        for _, v in ipairs(Backpack:GetChildren()) do
+                            v.Parent = game.Players.LocalPlayer.Character
+                            task.wait(0.01)
+                            v:Activate()
+        end
+      --  repeat task.wait() until (#workspace:GetChildren() - oldchild) >= tonumber(getnum) 
+        Chat("ungear me");Chat("reset me")
+end
+
+function Alpaca(getnum)
+	Chat("ungear me");task.wait(0.5)
+        for i = 1, tonumber(getnum) do
+                Chat("gear me 292969139");task.wait(0.01)
+        end
+     --   local oldchild = #workspace:GetChildren()
+        repeat task.wait() until #game.Players.LocalPlayer.Backpack:GetChildren() >= tonumber(getnum) 
+        local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
+        for _, v in ipairs(Backpack:GetChildren()) do
+                            v.Parent = game.Players.LocalPlayer.Character
+                            task.wait(0.01)
+                            v:Activate()
+        end
+      --  repeat task.wait() until (#workspace:GetChildren() - oldchild) >= tonumber(getnum) 
+        Chat("ungear me");Chat("reset me")
+end
+
+function Piano(getnum)
+	Chat("ungear me");task.wait(0.5)
+        for i = 1, tonumber(getnum) do
+                Chat("gear me 113299590");task.wait(0.01)
+        end
+     --   local oldchild = #workspace:GetChildren()
+        repeat task.wait() until #game.Players.LocalPlayer.Backpack:GetChildren() >= tonumber(getnum) 
+        local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
+        for _, v in ipairs(Backpack:GetChildren()) do
+                            v.Parent = game.Players.LocalPlayer.Character
+                            task.wait(0.01)
+                            v:Activate()
+        end
+      --  repeat task.wait() until (#workspace:GetChildren() - oldchild) >= tonumber(getnum) 
+        Chat("ungear me");Chat("reset me")
+end
+
+function Bassdrop(getnum)
+	Chat("ungear me");task.wait(0.5)
+        for i = 1, tonumber(getnum) do
+                Chat("gear me 152233094");task.wait(0.01)
+        end
+     --   local oldchild = #workspace:GetChildren()
+        repeat task.wait() until #game.Players.LocalPlayer.Backpack:GetChildren() >= tonumber(getnum) 
+        local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
+        for _, v in ipairs(Backpack:GetChildren()) do
+                            v.Parent = game.Players.LocalPlayer.Character
+                            task.wait(0.01)
+                            v:Activate()
+        end
+      --  repeat task.wait() until (#workspace:GetChildren() - oldchild) >= tonumber(getnum) 
+        Chat("ungear me");Chat("reset me")
+end
+
+function Coolstory(getnum)
+	Chat("ungear me");task.wait(0.5)
+        for i = 1, tonumber(getnum) do
+                Chat("gear me 119101643");task.wait(0.01)
+        end
+     --   local oldchild = #workspace:GetChildren()
+        repeat task.wait() until #game.Players.LocalPlayer.Backpack:GetChildren() >= tonumber(getnum) 
+        local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
+        for _, v in ipairs(Backpack:GetChildren()) do
+                            v.Parent = game.Players.LocalPlayer.Character
+                            task.wait(0.01)
+                            v:Activate()
+        end
+      --  repeat task.wait() until (#workspace:GetChildren() - oldchild) >= tonumber(getnum) 
+        Chat("ungear me");Chat("reset me")
+end
+
+function Banana(getnum)
+	Chat("ungear me");task.wait(0.5)
+        for i = 1, tonumber(getnum) do
+                Chat("gear me 119101643");task.wait(0.01)
+        end
+     --   local oldchild = #workspace:GetChildren()
+        repeat task.wait() until #game.Players.LocalPlayer.Backpack:GetChildren() >= tonumber(getnum) 
+        local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
+        for _, v in ipairs(Backpack:GetChildren()) do
+                            v.Parent = game.Players.LocalPlayer.Character
+                            task.wait(0.01)
+                            v:Activate()
+        end
+      --  repeat task.wait() until (#workspace:GetChildren() - oldchild) >= tonumber(getnum) 
         Chat("ungear me");Chat("reset me")
 end
 
