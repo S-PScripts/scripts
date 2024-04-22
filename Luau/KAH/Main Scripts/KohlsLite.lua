@@ -1552,6 +1552,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                             Chat("fogend " .. gjdeivfgend)
                             Chat("fogcolor " .. gjdeivrfgcl .. " " .. gjdeivgfgcl .. " " .. gjdeivbfgcl)
                             Chat("time " .. time)
+			    if gjdelock then break end
                         end
                         gjdelock = true
                         Chat("h \n\n\n [KohlsLite]: You have entered my domain so please wait until I decide to close it... \n\n\n")
