@@ -3,6 +3,8 @@
 -- Support this script today by donating Robux to me :) 
 -- Please do not "skid" off this code by just changing the name and removing the dev section (I'll add you to my autokick if you do!). Make your own script instead and take stuff from here if you need to.
 
+-- i have diarrhoea that's why i'm not updating ;o
+
 --[[
 _  _____  _   _ _     ____  _     ___ _____ _____ 
 | |/ / _ \| | | | |   / ___|| |   |_ _|_   _| ____|
