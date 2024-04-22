@@ -2880,7 +2880,7 @@ Commands required: rocket]])
             Chat("fix") -- ;Chat(prefix.."perm2")
             musicsay = false
             task.wait(0.5);Chat(prefix.."unantimsg")
-            Chat("h \n\n\n see you soon \n\n\n");Chat(prefix.."gmusic89")
+            Chat("h \n\n\n uwu \n\n\n");Chat(prefix.."gmusic105")
             Chat("fogcolor 0 0 0");Chat("time 0");Chat("fogend 0");Chat("paint all black")
             task.wait(0.75)
             DCrash()        
