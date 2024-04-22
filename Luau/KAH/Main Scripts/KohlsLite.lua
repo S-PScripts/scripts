@@ -10,7 +10,7 @@ _  _____  _   _ _     ____  _     ___ _____ _____
 | |/ / _ \| | | | |   / ___|| |   |_ _|_   _| ____|
 | ' / | | | |_| | |   \___ \| |    | |  | | |  _|  
 | . \ |_| |  _  | |___ ___) | |___ | |  | | | |___ 
-|_|\_\___/|_| |_|_____|____/|_____|___| |_| |_____| v1.20 ]]
+|_|\_\___/|_| |_|_____|____/|_____|___| |_| |_____| v1.33 ]]
 
 local function Remind(msg)
         game.StarterGui:SetCore("SendNotification", {
@@ -834,12 +834,12 @@ local welcomemsg = true
 -- local personpassid = 35748 or 37127 --> NBC, BC
 
 print("- Information -")
-print("Thank you for using KohlsLite v1.20! This script was created by S_P.")
-Remind("Thank you for using KohlsLite v1.20! This script was created by S_P.")
+print("Thank you for using KohlsLite v1.33! This script was created by S_P.")
+Remind("Thank you for using KohlsLite v1.33! This script was created by S_P.")
 print("Say .kcmds to list some of the commands. DM me at ts2021 for the source to find other commands.")
 Remind("Say .kcmds to list some of the commands. DM me at ts2021 for the source to find other commands.")
 
-Chat("h \n\n\n [KohlsLite]: Executed! v1.20 \n\n\n")
+Chat("h \n\n\n [KohlsLite]: Executed! v1.33 \n\n\n")
 
 print("- Perm check -")
 if game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 66254) or game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 64354) then
@@ -4830,7 +4830,7 @@ Commands required: rocket]])
 end)
 
 function CMDPrint()
-print("---Command list for KohlsLite v1.20---")
+print("---Command list for KohlsLite v1.33---")
 print("Warning! This is NOT a full list so contact me for any other commands!")
 
 print("---")
@@ -5108,7 +5108,7 @@ print("If it's to the game itself, just do (antiname).")
 
 print("---INFORMATION---")
 print("KohlsLite, since 2023. Created by ScriptingProgrammer/ts2021")
-print("Version is: v1.20 - 10th April 2024 Build")
+print("Version is: v1.33 - 22nd April 2024 Build")
 print("Better than scv1 and scv2 - approved by Tech")
 
 print("--- CREDITS ---")
@@ -8568,6 +8568,21 @@ function Table(getnum)
         for i = 1, tonumber(getnum) do
                 Chat("gear me 110789105");task.wait(0.01)
         end
+  --      local oldchild = #workspace:GetChildren()
+        repeat task.wait() until #game.Players.LocalPlayer.Backpack:GetChildren() >= tonumber(getnum) 
+        local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
+        for _, v in ipairs(Backpack:GetChildren()) do
+                            v.Parent = game.Players.LocalPlayer.Character
+                            task.wait(0.01)
+                            v:Activate()
+        end
+end
+
+function Potion(getnum)
+	Chat("ungear me");task.wait(0.5)
+        for i = 1, tonumber(getnum) do
+                Chat("gear me 27858062");task.wait(0.01)
+        end
       --  local oldchild = #workspace:GetChildren()
         repeat task.wait() until #game.Players.LocalPlayer.Backpack:GetChildren() >= tonumber(getnum) 
         local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
@@ -8576,25 +8591,6 @@ function Table(getnum)
                             task.wait(0.01)
                             v:Activate()
         end
-    --    repeat task.wait() until (#workspace:GetChildren() - oldchild) >= tonumber(getnum) 
-        Chat("ungear me");Chat("reset me")
-end
-
-function Potion(getnum)
-	Chat("ungear me");task.wait(0.5)
-        for i = 1, tonumber(getnum) do
-                Chat("gear me 27858062");task.wait(0.01)
-        end
-   --     local oldchild = #workspace:GetChildren()
-        repeat task.wait() until #game.Players.LocalPlayer.Backpack:GetChildren() >= tonumber(getnum) 
-        local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
-        for _, v in ipairs(Backpack:GetChildren()) do
-                            v.Parent = game.Players.LocalPlayer.Character
-                            task.wait(0.01)
-                            v:Activate()
-        end
-   --     repeat task.wait() until (#workspace:GetChildren() - oldchild) >= tonumber(getnum) 
-        Chat("ungear me");Chat("reset me")
 end
 
 function MineTrip(getnum)
@@ -8602,7 +8598,7 @@ function MineTrip(getnum)
         for i = 1, tonumber(getnum) do
                 Chat("gear me 11999247");task.wait(0.01)
         end
-   --     local oldchild = #workspace:GetChildren()
+     --   local oldchild = #workspace:GetChildren()
         repeat task.wait() until #game.Players.LocalPlayer.Backpack:GetChildren() >= tonumber(getnum) 
         local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
         for _, v in ipairs(Backpack:GetChildren()) do
@@ -8610,8 +8606,6 @@ function MineTrip(getnum)
                             task.wait(0.01)
                             v:Activate()
         end
-   --     repeat task.wait() until (#workspace:GetChildren() - oldchild) >= tonumber(getnum) 
-        Chat("ungear me");Chat("reset me")
 end
 
 function Cannon(getnum)
@@ -8627,8 +8621,6 @@ function Cannon(getnum)
                             task.wait(0.01)
                             v:Activate()
         end
-      --  repeat task.wait() until (#workspace:GetChildren() - oldchild) >= tonumber(getnum) 
-        Chat("ungear me");Chat("reset me")
 end
 
 function Zombie(getnum)
@@ -8644,8 +8636,6 @@ function Zombie(getnum)
                             task.wait(0.01)
                             v:Activate()
         end
-      --  repeat task.wait() until (#workspace:GetChildren() - oldchild) >= tonumber(getnum) 
-        Chat("ungear me");Chat("reset me")
 end
 
 function Alpaca(getnum)
@@ -8661,8 +8651,6 @@ function Alpaca(getnum)
                             task.wait(0.01)
                             v:Activate()
         end
-      --  repeat task.wait() until (#workspace:GetChildren() - oldchild) >= tonumber(getnum) 
-        Chat("ungear me");Chat("reset me")
 end
 
 function Piano(getnum)
@@ -8678,8 +8666,6 @@ function Piano(getnum)
                             task.wait(0.01)
                             v:Activate()
         end
-      --  repeat task.wait() until (#workspace:GetChildren() - oldchild) >= tonumber(getnum) 
-        Chat("ungear me");Chat("reset me")
 end
 
 function Bassdrop(getnum)
@@ -8695,8 +8681,6 @@ function Bassdrop(getnum)
                             task.wait(0.01)
                             v:Activate()
         end
-      --  repeat task.wait() until (#workspace:GetChildren() - oldchild) >= tonumber(getnum) 
-        Chat("ungear me");Chat("reset me")
 end
 
 function Coolstory(getnum)
@@ -8712,14 +8696,12 @@ function Coolstory(getnum)
                             task.wait(0.01)
                             v:Activate()
         end
-      --  repeat task.wait() until (#workspace:GetChildren() - oldchild) >= tonumber(getnum) 
-        Chat("ungear me");Chat("reset me")
 end
 
 function Banana(getnum)
 	Chat("ungear me");task.wait(0.5)
         for i = 1, tonumber(getnum) do
-                Chat("gear me 119101643");task.wait(0.01)
+                Chat("gear me 29100449");task.wait(0.01)
         end
      --   local oldchild = #workspace:GetChildren()
         repeat task.wait() until #game.Players.LocalPlayer.Backpack:GetChildren() >= tonumber(getnum) 
@@ -8729,8 +8711,6 @@ function Banana(getnum)
                             task.wait(0.01)
                             v:Activate()
         end
-      --  repeat task.wait() until (#workspace:GetChildren() - oldchild) >= tonumber(getnum) 
-        Chat("ungear me");Chat("reset me")
 end
 
 --// ATTACHING STUFF \\ --
