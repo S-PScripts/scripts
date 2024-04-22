@@ -8389,12 +8389,14 @@ function PCheck()
 			elseif game.Players.LocalPlayer.Backpack:FindFirstChild("PaintBucket") then
 				paint = game.Players.LocalPlayer.Backpack:FindFirstChild("PaintBucket")
    				paint.Parent = game.Players.LocalPlayer.Character
+				Chat(prefix.."rpaintui")
 				t = true
 			else
 				Chat(prefix.."gear me painter")
 				repeat wait() until game.Players.LocalPlayer.Backpack:FindFirstChild("PaintBucket")
     				paint = game.Players.LocalPlayer.Backpack:FindFirstChild("PaintBucket")
    				paint.Parent = game.Players.LocalPlayer.Character
+				Chat(prefix.."rpaintui")
 				t = true
 			end
 		end
