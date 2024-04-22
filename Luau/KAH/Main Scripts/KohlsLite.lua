@@ -3520,7 +3520,7 @@ Commands required: rocket]])
                 VFix()
      end
 
-     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'bpfixv' then
+     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'obpfixv' then
                 Remind("You need to be positioned by a wall!")
                 Chat("sit me down");task.wait(1)
                 Chat("punish me");task.wait(1)
@@ -3528,7 +3528,7 @@ Commands required: rocket]])
                 Chat("unskydive me")     
      end
 
-   if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'nbpfixv' then
+   if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'bpfixv' then
 	local target = workspace.Terrain["_Game"].Workspace.Baseplate
 	movepart(target)  
 	repeat task.wait() until mready == true
@@ -4921,7 +4921,7 @@ print("nocam/breakcam - break the camera with the AR")
 print("fixcam - fix the camera (client side)")
 print("wbcam/wfcam - break/fix the camera with the blizzard wand")
 print("fixvelo - fix your velocity")
-print("bpfixv - fix baseplate velocity serverside [position yourself against a wall]")
+print("nbpfixv - fix baseplate velocity serverside")
 print("fixcol - fix collisions")
 print("fixgrav - fix gravity")
 
