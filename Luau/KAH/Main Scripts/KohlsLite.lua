@@ -104,7 +104,8 @@ local pwl = {
     "Me_ChurchOfSat4n",
     "Milderous",
     "Anka_707587",
-    "DionteIsCute"
+    "DionteIsCute",
+    "me_capybara"
 }
 
 -- Players you cannot kick
@@ -136,7 +137,8 @@ local nokick = {
     "EternitHD",
     "Milderous",
     "Anka_707587",
-    "DionteIsCute"
+    "DionteIsCute",
+    "me_capybara"
 }
 
 -- Players with special perms
