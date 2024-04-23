@@ -3646,6 +3646,9 @@ Commands required: rocket]])
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'noadsky' then
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,1000,0)
     end
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'ungearme' then
+                Chat("ungear me																					all")
+    end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'nowater' then
                 SuperCMD("gear me 88146497")
@@ -5111,6 +5114,9 @@ print("rail - rail a player")
 print("surround - surround a player with planes")
 print("nuke - nuke a player with planes")
 
+print("---")
+print("ungearme - ungear yourself... Right???")
+
 print("---ANTI INFORMATION--")
 print("There are also many other antis!")
 print("For antis relating to the player, do (antiname) me/others/all")
@@ -5123,7 +5129,7 @@ print("Version is: v1.33 - 22nd April 2024 Build")
 print("Better than scv1 and scv2 - approved by Tech")
 
 print("--- CREDITS ---")
-print("Tech and other admins of SC with Shortcut v1, v2 and v3")
+print("Tech and other admins of SC with Shortcut v1, v2 and v3 [var] (and some ideas)")
 print("atprog with his PR Script")
 print("iiDk's with ii's stupid admin as PR Script is based off it")
 print("Gojo [SimpleKAH] for gears and char ids")
