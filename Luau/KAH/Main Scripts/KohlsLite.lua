@@ -4915,7 +4915,7 @@ print("nocam/breakcam - break the camera with the AR")
 print("fixcam - fix the camera (client side)")
 print("wbcam/wfcam - break/fix the camera with the blizzard wand")
 print("fixvelo - fix your velocity")
-print("nbpfixv - fix baseplate velocity serverside")
+print("bpfixv - fix baseplate velocity serverside")
 print("fixcol - fix collisions")
 print("fixgrav - fix gravity")
 
