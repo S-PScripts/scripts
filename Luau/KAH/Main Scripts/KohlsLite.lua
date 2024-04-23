@@ -1331,21 +1331,21 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
       if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'mboombox' then
             Chat("gear me 212641536")
-            task.wait(0.5) ; print("DEBUGGGGGGGGG")
+            task.wait(0.5) ; print("YEEEEEEEEEEE")
             local check = string.sub(msg:lower(), #prefix + 10, #prefix + 10) ; print(check)
 	    if check == "g" then
 			local idrinkrum = string.sub(msg, #prefix + 11) ; print(idrinkrum)
 			task.wait(0)
-			local myplay = musictable[idrinkrum].id ; print(myplay) ; print("dj2")
+			myplay = musictable[idrinkrum].id ; print(myplay) ; print("dj2")
 	    else
-			local myplay = string.sub(msg:lower(), #prefix + 10)
+			myplay = string.sub(msg:lower(), 10 + #prefix)
 	    end
             repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("SuperFlyGoldBoombox")
             local bom = game.Players.LocalPlayer.Backpack:FindFirstChild("SuperFlyGoldBoombox")
             bom.Parent = game.Players.LocalPlayer.Character                                   
             task.wait(0.25)
-            bom.Remote:FireServer("PlaySong", tonumber(myplay))
-            function rng() 
+	    bom.Remote:FireServer("PlaySong", tonumber(myplay))
+	    function rng() 
                 	return math.random(-128, 128)
             end
             bom.GripPos = Vector3.new(rng(), 1, rng())
