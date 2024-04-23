@@ -1334,17 +1334,17 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
             task.wait(0.5)
             local check = string.sub(msg:lower(), #prefix + 10, #prefix + 10) ; print(check)
 	    if check == "g" then
-			local idrinkrum = tonumber(string.sub(msg:lower(), #prefix + 11)) ; print(idrinkrum)
-			task.wait(0.1)
-			local myplay = musictable[idrinkrum].id ; print(myplay) ; print("d3")
+			local idrinkrum = string.sub(msg, #prefix + 11) ; print(idrinkrum)
+			task.wait(0)
+			local myplay = musictable[idrinkrum].id ; print(myplay) ; print("dj2")
 	    else
-			local myplay = tonumber(string.sub(msg:lower(), #prefix + 10)) ; print(myplay) ; print("2nd")
+			local myplay = string.sub(msg:lower(), #prefix + 10)
 	    end
             repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("SuperFlyGoldBoombox")
             local bom = game.Players.LocalPlayer.Backpack:FindFirstChild("SuperFlyGoldBoombox")
             bom.Parent = game.Players.LocalPlayer.Character                                   
             task.wait(0.25)
-            bom.Remote:FireServer("PlaySong", myplay)
+            bom.Remote:FireServer("PlaySong", tonumber(myplay))
             function rng() 
                 	return math.random(-128, 128)
             end
