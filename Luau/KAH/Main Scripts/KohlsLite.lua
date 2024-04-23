@@ -1336,7 +1336,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	    if check == "g" then
 			local idrinkrum = tonumber(string.sub(msg:lower(), #prefix + 11)) ; print(idrinkrum)
 			task.wait(0.1)
-			local myplay = musictable[idrinkrum].id ; print(myplay) ; print("1st")
+			local myplay = musictable[idrinkrum].id ; print(myplay) ; print("d3")
 	    else
 			local myplay = tonumber(string.sub(msg:lower(), #prefix + 10)) ; print(myplay) ; print("2nd")
 	    end
