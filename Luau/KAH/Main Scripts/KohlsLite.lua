@@ -2908,7 +2908,7 @@ Commands required: rocket]])
 	        end
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'byp' then -- it works but i still don't care if it sometimes doesn't bypass!
+    if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'byp' then -- created by tech-187, open source on his repo :)
         local args = string.split(msg, " ")
         local cmd = args[1]
             local bypsed = table.concat(args, " ", 2)
@@ -2926,7 +2926,7 @@ Commands required: rocket]])
                    _G[d] = c
         end
 
-        for b, c in ipairs(a) do
+        for b, c in ipairs(a) do -- it works but i still don't care if it sometimes doesn't bypass!
                     local e = string.rep("  ", 2 * (b - 1))
                 if haspersons == true then
                         Chat("h/KohlsLite ez\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" .. e .. _G["variable_" .. tostring(b)])
