@@ -3359,6 +3359,18 @@ Commands required: rocket]])
                  end
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'dkick' then
+                 local dasplayer = string.sub(msg:lower(), #prefix + 7)
+		 PLAYERCHECK(dasplayer)
+                 if player ~= nil then
+			dk = cplr
+			dkicked = player
+                        dkick(dk, dkicked)
+                 else
+                        Remind('Cannot find player with the name: '..dasplayer)
+                 end
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'rpaintui' then
                 for i,v in ipairs(game.Players.LocalPlayer.PlayerGui:GetChildren()) do
                                 if v.Name == "SelectionBox" or v.Name == "LineHandleAdornment" or v.Name == "PaletteGui" then
@@ -7126,6 +7138,33 @@ end
 function AnnounceWM()
       Chat("h \n\n\n "..sus..": "..whatsapp.. " \n\n\n")
 end
+                       
+function dkick(dk, dkicked)
+	    local ota = #workspace:FindFirstChild(dkicked):GetChildren()
+            Chat('skydive ' .. dkicked)
+            repeat task.wait() until workspace:FindFirstChild(dkicked).HumanoidRootPart.CFrame.Y >= 999
+            task.wait()
+            Chat('punish ' .. dkicked)
+            repeat task.wait() until game.Lighting:FindFirstChild(dkicked)
+
+            repeat 
+                if not game.Lighting:FindFirstChild(dkicked) then
+                    Chat('punish ' .. dkicked) 
+                end 
+                task.wait() 
+                Chat("dog " .. dkicked .. " " .. dkicked .. " " .. dkicked)
+                task.wait() 
+                Chat("freeze " .. dkicked .. " " .. dkicked .. " " .. dkicked) 
+            until 
+                (#game.Lighting:FindFirstChild(dkicked):GetChildren() - ota) >= 1500
+            
+            task.wait(.5)
+            Chat("noclip " .. dkicked)
+            task.wait()
+            Chat('unpunish ' .. dkicked)
+            task.wait()
+            Chat('kill ' .. dkicked .. " " .. dkicked .. " " .. dkicked)
+end
 
 -- SPAWN SAVED
 function Spawn()
@@ -8114,6 +8153,7 @@ function Laser()
             local goodbye = false
             local kahcon
             local kahcon2
+
             kahcon = workspace.ChildAdded:Connect(function(Child)
                 if Child.Name == "Effect" then
                     task.spawn(function()
@@ -8124,12 +8164,14 @@ function Laser()
                     end)
                 end
             end)
+
             kahcon2 = laman.Character.HumanoidRootPart.ChildAdded:Connect(function(Child)
                 if Child.Name == "SelectionBox" and not goodbye then
                     goodbye = true
                     Chat("punish " .. laserman)
                 end
             end)
+
             Chat("gear me 130113146")
             repeat task.wait() until game.Players.LocalPlayer.Backpack:FindFirstChild("HyperlaserGun")
             local Laser = game.Players.LocalPlayer.Backpack:FindFirstChild("HyperlaserGun")
