@@ -1335,9 +1335,9 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
             local check = string.sub(msg:lower(), #prefix + 10, #prefix + 11) ; print(check)
 	    if check == "g" then
 			local idrinkrum = tonumber(string.sub(msg:lower(), #prefix + 12)) ; print(idrinkrum)
-			local myplay = musictable[idrinkrum].id ; print(myplay) ; print("tiojets")
+			local myplay = musictable[idrinkrum].id ; print(myplay) ; print("Mode1")
 	    else
-			local myplay = tonumber(string.sub(msg:lower(), #prefix + 10)) ; print(myplay) ; print("kfao")
+			local myplay = tonumber(string.sub(msg:lower(), #prefix + 10)) ; print(myplay) ; print("Mode2")
 	    end
             repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("SuperFlyGoldBoombox")
             local bom = game.Players.LocalPlayer.Backpack:FindFirstChild("SuperFlyGoldBoombox")
