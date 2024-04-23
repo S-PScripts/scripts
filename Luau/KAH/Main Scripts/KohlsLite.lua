@@ -1332,7 +1332,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
       if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'mboombox' then
             Chat("gear me 212641536")
             task.wait(0.5)
-            local check = string.sub(msg:lower(), #prefix + 10, #prefix + 11)
+            local check = string.sub(msg:lower(), #prefix + 10, #prefix + 11) ; print(check)
 	    if check == "g" then
 			local idrinkrum = tonumber(string.sub(msg:lower(), #prefix + 12)) ; print(idrinkrum)
 			local myplay = musictable[idrinkrum].id ; print(myplay) ; print("tiojets")
