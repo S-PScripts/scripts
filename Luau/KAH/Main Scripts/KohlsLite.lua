@@ -105,7 +105,8 @@ local pwl = {
     "Milderous",
     "Anka_707587",
     "DionteIsCute",
-    "me_capybara"
+    "me_capybara",
+    "E4_DQ"
 }
 
 -- Players you cannot kick
