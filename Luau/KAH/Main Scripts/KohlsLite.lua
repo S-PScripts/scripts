@@ -1332,14 +1332,19 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
       if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'mboombox' then
             Chat("gear me 212641536")
             task.wait(0.5)
-            local myplay = string.sub(msg:lower(), 10 + #prefix)
+	    if string.sub(msg:lower(), 10 + #prefix, 11 + #prefix) == "g" then
+			local idrinkrum = string.sub(msg:lower(), 12 + #prefix)
+			local myplay = musictable[idrinkrum].id
+	    else
+			local myplay = tonumber(string.sub(msg:lower(), 10 + #prefix))
+	    end
             repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("SuperFlyGoldBoombox")
-                  local bom = game.Players.LocalPlayer.Backpack:FindFirstChild("SuperFlyGoldBoombox")
+            local bom = game.Players.LocalPlayer.Backpack:FindFirstChild("SuperFlyGoldBoombox")
             bom.Parent = game.Players.LocalPlayer.Character                                   
             task.wait(0.25)
-            bom.Remote:FireServer("PlaySong", tonumber(myplay))
-                    function rng() 
-                        return math.random(-128, 128)
+            bom.Remote:FireServer("PlaySong", myplay)
+            function rng() 
+                	return math.random(-128, 128)
             end
             bom.GripPos = Vector3.new(rng(), 1, rng())
       end
@@ -1677,10 +1682,12 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antimusic' then
        mymusiconly = false
        antimusic = true
+	Remind("Anti music is on! Do 'pmu (NO ID AFTER IT!!)' if this command doesn't work well")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantimusic' then
        antimusic = false
+	Remind("Turned anti music off!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'pmu' then
@@ -5029,6 +5036,10 @@ print("gmusic(num) - play saved music")
 print("rgmusic - play a random saved music")
 print("nmusic - play the next saved music")
 print("pmusic - play the previous saved music")
+
+print("---")
+print("mboombox (musicid) - play a music on your boombox at a random place away from you")
+print("pboombox (musicid) - play a music on your boombox without inserting it into the box :)")
 
 print("---")
 print("vgcrash - crash with the vg")
