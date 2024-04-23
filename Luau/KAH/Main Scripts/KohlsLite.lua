@@ -1332,11 +1332,12 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
       if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'mboombox' then
             Chat("gear me 212641536")
             task.wait(0.5)
-	    if string.sub(msg:lower(), 10 + #prefix, 11 + #prefix) == "g" then
-			local idrinkrum = tonumber(string.sub(msg:lower(), 12 + #prefix)) ; print(idrinkrum)
+            local check = string.sub(msg:lower(), #prefix + 10, #prefix + 11)
+	    if check == "g" then
+			local idrinkrum = tonumber(string.sub(msg:lower(), #prefix + 12)) ; print(idrinkrum)
 			local myplay = musictable[idrinkrum].id ; print(myplay) ; print("tiojets")
 	    else
-			local myplay = tonumber(string.sub(msg:lower(), 10 + #prefix)) ; print(myplay)
+			local myplay = tonumber(string.sub(msg:lower(), #prefix + 10)) ; print(myplay) ; print("kfao")
 	    end
             repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("SuperFlyGoldBoombox")
             local bom = game.Players.LocalPlayer.Backpack:FindFirstChild("SuperFlyGoldBoombox")
