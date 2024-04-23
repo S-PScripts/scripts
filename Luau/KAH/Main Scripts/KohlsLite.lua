@@ -20,12 +20,12 @@ local function Remind(msg)
         })
 end;
 
-if _G.kohlsexecuted then 
+if getgenv().kohlsexecuted then 
         return 
         Remind("You've already executed KohlsLite!") 
 end
 
-_G.kohlsexecuted = true
+getgenv().kohlsexecuted = true
 
 local function Chat(msg)
       game.Players:Chat(msg)
@@ -35,7 +35,11 @@ local function Speak(msg)
     game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(msg, "All")
 end
 
-local prefix = "." -- This can be of any length
+if getgenv().theprefix then
+	prefix = getgenv().theprefix
+else
+	prefix = "." -- This can be of any length
+end
 
 local defaults = {".antirocket me", ".tnok", ".antimsg me"}
 
@@ -45,13 +49,13 @@ local starttime = os.clock()
 
 -- Start up scripts
 local function startupScripts()
-           if not _G.autorunning then
+           if not getgenv().autoruncmds then
                 for i = 1, #defaults do
                         Chat(defaults[i]) 
                 end
         else
-            for i = 1, #_G.autorunning do
-                        Chat(_G.autorunning[i]) 
+            for i = 1, #getgenv().autoruncmds do
+                        Chat(getgenv().autoruncmds[i])
             end
         end
 end
