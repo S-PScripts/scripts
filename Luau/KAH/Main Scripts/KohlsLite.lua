@@ -1321,22 +1321,27 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
       if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'pboombox' then
             Chat("gear me 212641536")
             task.wait(0.5)
-            local myplay = string.sub(msg:lower(), 10 + #prefix)
+            local check = string.sub(msg:lower(), #prefix + 10, #prefix + 10)
+	    if check == "g" then
+			local idrinkrum = string.sub(msg, #prefix + 11) ; task.wait(0)
+			myplay = musictable[idrinkrum].id
+	    else
+			myplay = string.sub(msg:lower(), 10 + #prefix)
+	    end
             repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("SuperFlyGoldBoombox")
-                  local bom = game.Players.LocalPlayer.Backpack:FindFirstChild("SuperFlyGoldBoombox")
-            bom.Parent = game.Players.LocalPlayer.Character
+            local bom = game.Players.LocalPlayer.Backpack:FindFirstChild("SuperFlyGoldBoombox")
+            bom.Parent = game.Players.LocalPlayer.Character                                   
             task.wait(0.25)
-            bom.Remote:FireServer("PlaySong", tonumber(myplay))
+	    bom.Remote:FireServer("PlaySong", tonumber(myplay))
       end
 
       if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'mboombox' then
             Chat("gear me 212641536")
-            task.wait(0.5) ; print("YEEEEEEEEEEE")
-            local check = string.sub(msg:lower(), #prefix + 10, #prefix + 10) ; print(check)
+            task.wait(0.5)
+            local check = string.sub(msg:lower(), #prefix + 10, #prefix + 10)
 	    if check == "g" then
-			local idrinkrum = string.sub(msg, #prefix + 11) ; print(idrinkrum)
-			task.wait(0)
-			myplay = musictable[idrinkrum].id ; print(myplay) ; print("dj2")
+			local idrinkrum = string.sub(msg, #prefix + 11) ; task.wait(0)
+			myplay = musictable[idrinkrum].id
 	    else
 			myplay = string.sub(msg:lower(), 10 + #prefix)
 	    end
