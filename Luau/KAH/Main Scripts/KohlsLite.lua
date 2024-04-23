@@ -9380,3 +9380,5 @@ username = game.Players.LocalPlayer.Name
 rank = rankcheck(username)
 
 print("Status is: " .. rank)
+
+print("if you think i'm a skid go cry i don't care")
