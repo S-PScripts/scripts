@@ -31,3 +31,13 @@ end
 
 part.Touched:Connect(onTouch)
 part.TouchEnded:Connect(onTouchEnded)
+
+local tool = script.Parent -- Replace 'script.Parent' with the reference to your tool
+
+tool.Unequipped:Connect(function()
+    tool.Handle.Transparency = 0 -- Set the transparency of the tool handle to 0 to make it visible again
+end)
+
+tool.Equipped:Connect(function()
+    tool.Handle.Transparency = 1 -- Set the transparency of the tool handle to 1 to make it invisible
+end)
