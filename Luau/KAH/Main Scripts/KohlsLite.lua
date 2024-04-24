@@ -6540,12 +6540,12 @@ v.Chatted:Connect(function(msg)
                 end
 
                 if string.sub(msg:lower(), 0, 4) == "-ban" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "ScriptingProgrammer" or v.Name == "me_123eq" or v.Name == "me_crashking") then
-                                 Speak("i rape lil kids and i fuck their little asshole so hard")
+                                 Speak("Spamming like how I spammed little kids")
                 end
 
                 if string.sub(msg:lower(), 0, 4) == "-ban" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "atprog" or v.Name == "IceStuds") then
                         if not table.find(nokick,game.Players.LocalPlayer.Name) then
-                                 Speak("i rape lil kids and i fuck their little asshole so hard")
+                                Speak("Spamming like how I spammed little kids")
                         end
                 end
 
