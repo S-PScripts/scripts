@@ -829,8 +829,8 @@ local welcomemsg = true
 print("- Information -")
 print("Thank you for using KohlsLite v1.33! This script was created by S_P.")
 Remind("Thank you for using KohlsLite v1.33! This script was created by S_P.")
-print("Say .kcmds to list some of the commands. DM me at ts2021 for the source to find other commands.")
-Remind("Say .kcmds to list some of the commands. DM me at ts2021 for the source to find other commands.")
+print("Say .kcmds to list some of the commands. DM me at ts2021x for the source to find other commands.")
+Remind("Say .kcmds to list some of the commands. DM me at ts2021x for the source to find other commands.")
 
 Chat("h \n\n\n [KohlsLite]: Executed! v1.33 \n\n\n")
 
@@ -9427,7 +9427,7 @@ startupScripts()
 local unexecuteables = {"aliihsan12345Bloxy","XxSmurfXxSmurfXx","Dj_jake85"}
 if table.find(unexecuteables, game.Players.LocalPlayer.Name) then
                 pcall(function() -- thanks tech
-                        game.Players.LocalPlayer:Kick("[KohlsLite]: Oh dear, you're blacklisted from my script! How did you do that? DM me on ts2021 to appeal.") 
+                        game.Players.LocalPlayer:Kick("[KohlsLite]: Oh dear, you're blacklisted from my script! How did you do that? DM me on ts2021x to appeal.") 
                 end)
                 task.wait(2.5); while true do end
 end
