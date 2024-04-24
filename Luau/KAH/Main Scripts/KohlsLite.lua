@@ -1541,6 +1541,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'deiv' then -- ported from simplekah
+			gjdelock = false
                         Chat("h \n\n\n [KohlsLite]: Domain Expansion: Infinity Void \n\n\n")
                         local gjdeivfgend = 2000
                         local gjdeivrfgcl = 255
@@ -1557,16 +1558,20 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                             Chat("fogend " .. gjdeivfgend)
                             Chat("fogcolor " .. gjdeivrfgcl .. " " .. gjdeivgfgcl .. " " .. gjdeivbfgcl)
                             Chat("time " .. time)
-			    if gjdelock then break end
+			    if gjdelock == "stop" then
+					return 
+			    end
                         end
-                        gjdelock = true
-                        Chat("h \n\n\n [KohlsLite]: You have entered my domain so please wait until I decide to close it... \n\n\n")
+			if gjdelock ~= "stop" then
+                        	gjdelock = true
+                        	Chat("h \n\n\n [KohlsLite]: You have entered my domain so please wait until I decide to close it... \n\n\n")
+			end
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'undeiv' then  -- ported from simplekah
                         Chat("fix")
                         Chat("reload all")
-                        gjdelock = false
+                        gjdelock = "stop"
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'tropics' then  -- ported from simplekah
