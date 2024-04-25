@@ -4857,7 +4857,7 @@ Commands required: rocket]])
 end)
 
 function CMDPrint()
-print("---Command list for KohlsLite v1.33---")
+print("---Command list for KohlsLite---")
 print("Warning! This is NOT a full list so contact me for any other commands!")
 
 print("---")
@@ -6278,30 +6278,33 @@ function ADVERTISEMENT()
         task.wait(1)
         Speak("Get it at script blox: search CMD LITE")
         task.wait(1)
-        Speak("dm ts 2021 to join the kohlslite server or check the logs")
-        task.wait(1)
-        Speak("or go to dsc gg kohlslite")
+        Speak("dm ts 2021x to join the kohlslite server or check the logs")
         if haspersons == true then
                 Chat("m/ \n\n\n dsc gg kohlslite \n\n\n")
                 Chat("h/ \n\n\n dsc gg kohlslite \n\n\n")
+		Chat("ff dsc gg kohlslite")
         else
                 Chat("m \n\n\n dsc gg kohlslite \n\n\n")
                 Chat("h \n\n\n dsc gg kohlslite \n\n\n")
+			Chat("ff dsc gg kohlslite")
+
         end
 end
 
 function CADVERTISEMENT()
         Speak("Join the KAH Community server today!")
         task.wait(1)
-        Speak("dm ts 2021 to join the kah community server or check the logs")
-        task.wait(1)
-        Speak("or go to dsc gg kohlslite")
+        Speak("dm ts 2021x to join the kah community server or check the logs")
         if haspersons == true then
                 Chat("m/ \n\n\n dsc gg kohlslite \n\n\n")
                 Chat("h/ \n\n\n dsc gg kohlslite \n\n\n")
+			Chat("ff dsc gg kohlslite")
+
         else
                 Chat("m \n\n\n dsc gg kohlslite \n\n\n")
                 Chat("h \n\n\n dsc gg kohlslite \n\n\n")
+			Chat("ff dsc gg kohlslite")
+
         end
 end
 
