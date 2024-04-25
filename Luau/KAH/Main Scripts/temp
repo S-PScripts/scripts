@@ -41,3 +41,17 @@ end)
 tool.Equipped:Connect(function()
     tool.Handle.Transparency = 1 -- Set the transparency of the tool handle to 1 to make it invisible
 end)
+
+a = "hello"
+
+-- Split the string into individual characters
+local chars = {}
+for char in a:gmatch(".") do
+    table.insert(chars, char)
+end
+
+-- Print out each letter with increasing number of spaces
+for i, char in ipairs(chars) do
+    local spaces = string.rep(" ", i-1)
+    print(spaces .. char)
+end
