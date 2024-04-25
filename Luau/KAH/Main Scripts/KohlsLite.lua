@@ -6286,7 +6286,7 @@ function ADVERTISEMENT()
         else
                 Chat("m \n\n\n dsc gg kohlslite \n\n\n")
                 Chat("h \n\n\n dsc gg kohlslite \n\n\n")
-			Chat("ff dsc gg kohlslite")
+		Chat("ff dsc gg kohlslite")
 
         end
 end
@@ -6298,12 +6298,12 @@ function CADVERTISEMENT()
         if haspersons == true then
                 Chat("m/ \n\n\n dsc gg kohlslite \n\n\n")
                 Chat("h/ \n\n\n dsc gg kohlslite \n\n\n")
-			Chat("ff dsc gg kohlslite")
+		Chat("ff dsc gg kohlslite")
 
         else
                 Chat("m \n\n\n dsc gg kohlslite \n\n\n")
                 Chat("h \n\n\n dsc gg kohlslite \n\n\n")
-			Chat("ff dsc gg kohlslite")
+		Chat("ff dsc gg kohlslite")
 
         end
 end
