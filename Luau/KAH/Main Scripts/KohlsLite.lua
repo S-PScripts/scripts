@@ -2557,6 +2557,9 @@ Commands required: rocket]])
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'unrkick' then
                 srkick = false
                 Remind("Stopped rocket kicking "..player)
+		Chat("unrocket/all/all/all")
+		Chat("respawn me "..player)
+		Chat("removejails")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'welmsg' then
