@@ -3019,6 +3019,10 @@ Commands required: rocket]])
         House()
     end
 
+    if string.sub(msg:lower(), 1, 3)  == '-re' then
+        Chat("reset me")
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'hhouse' then
        if haspersons then Chat("invis/me") else Chat("invis me") end
        House()
