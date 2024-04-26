@@ -3397,7 +3397,7 @@ Commands required: rocket]])
                  end
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'dkick' then
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'dkick' then -- buggy!
                  local dasplayer = string.sub(msg:lower(), #prefix + 7)
 		 PLAYERCHECK(dasplayer)
                  if player ~= nil then
@@ -3410,7 +3410,7 @@ Commands required: rocket]])
                  end
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'undkick' then
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'undkick' then -- buggy!
                  local dasplayer = string.sub(msg:lower(), #prefix + 9)
 		 PLAYERCHECK(dasplayer)
                  if player ~= nil then
