@@ -3,7 +3,7 @@ _  _____  _   _ _     ____  _     ___ _____ _____
 | |/ / _ \| | | | |   / ___|| |   |_ _|_   _| ____|
 | ' / | | | |_| | |   \___ \| |    | |  | | |  _|  
 | . \ |_| |  _  | |___ ___) | |___ | |  | | | |___ 
-|_|\_\___/|_| |_|_____|____/|_____|___| |_| |_____| v1.41 ]]
+|_|\_\___/|_| |_|_____|____/|_____|___| |_| |_____| v1.416 ]]
 
 -- This free, open-source script is for the Roblox game Kohls Admin House (KAH)
 -- Created by ScriptingProgrammer (Roblox) / TS2021 (Discord) / S-PScripts (GitHub)
@@ -29,7 +29,7 @@ getgenv().kohlsexecuted = true -- don't touch!
 
 getgenv().deprefix = "." -- This can be of any length
 
-getgenv().klversion = "1.41" -- The version of KohlsLite, of course.
+getgenv().klversion = "1.416" -- The version of KohlsLite, of course.
 
 local function Chat(msg)
       game.Players:Chat(msg)
@@ -2907,7 +2907,8 @@ Commands required: rocket]])
     end
 
   if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'dicrash' then
-            Chat(prefix.."gchar all D_ionte");Chat(prefix.."gmusic62");Chat("h \n\n\n all praise dionte \n\n\n")
+	    musicsay = false -- na ts2021 forgot this jit tripping - from ts2021
+            Chat(prefix.."gchar all D_ionte");Chat(prefix.."gmusic62");Chat("h \n\n\n all praise dionte \n\n\n");Chat("name all D_ionte is our hero")
 	    task.wait(1)
 	    DCrash()
     end
