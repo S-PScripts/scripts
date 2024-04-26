@@ -3582,15 +3582,16 @@ Commands required: rocket]])
    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'bpfixv' then
 	local target = workspace.Terrain["_Game"].Workspace.Baseplate
 	movepart(target)  
-	repeat task.wait() until mready == true
-	Chat("skydive me");task.wait(0.5);Chat("unskydive me");task.wait(0.5);Chat("respawn me")
+	repeat task.wait() until mready == true ; task.wait(0.33)
+	Chat("skydive me");task.wait(0.33);Chat("unskydive me");task.wait(0.33);Chat("respawn me")
      end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'flipbp' then
+	Remind("Flipping...")
 	local target = workspace.Terrain["_Game"].Workspace.Baseplate
 	movepart(target)  
-	repeat task.wait() until mready == true
-	Chat("skydive me");task.wait(0.5);Chat("unskydive me");task.wait(0.5);Chat("trip me");task.wait(0.5);Chat("respawn me")
+	repeat task.wait() until mready == true ; task.wait(0.33)
+	Chat("skydive me");task.wait(0.33);Chat("unskydive me");task.wait(0.33);Chat("trip me");task.wait(0.33);Chat("respawn me")
      end
 
      if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'fakebp' then
