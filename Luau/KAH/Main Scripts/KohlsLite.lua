@@ -29,7 +29,7 @@ getgenv().kohlsexecuted = true -- don't touch!
 
 getgenv().deprefix = "." -- This can be of any length
 
-getgenv().klversion = "1.4" -- The version of KohlsLite, of course.
+getgenv().klversion = "1.405" -- The version of KohlsLite, of course.
 
 local function Chat(msg)
       game.Players:Chat(msg)
@@ -6984,8 +6984,9 @@ end
 
 -- rocket kick
 function rkickplr(rkicker,rkicks)
-           repeat 
-                task.wait(0)
+task.spawn(function() 
+	while true do 
+		task.wait(0)
 
                 if not game.Players.LocalPlayer.Character then 
                         repeat task.wait(0) until game.Players.LocalPlayer.Character 
@@ -6993,7 +6994,7 @@ function rkickplr(rkicker,rkicks)
 
                 if not rkicker.Character then 
                         if rkicker then
-                                repeat task.wait(0) until rkicker.Character or not rkicker
+                                repeat task.wait(0) until rkicker.Character or not rkicker or srkick == false
 				if not rkicker then 
 					srkick = false 
 				end
@@ -7023,8 +7024,11 @@ function rkickplr(rkicker,rkicks)
                 for i = 1,100 do
                           Chat("rocket/"..rkicks.."/"..rkicks.."/"..rkicks)
                           Chat("rocket/me/me/me")
+			  if srkick == false then break end
+			  if not rkicker then break end
                 end
-           until not srkick or not rkicker
+	end
+end)
 end
 
 -- FOG DANCING
@@ -8496,6 +8500,7 @@ Loops = {}
 Loops.rainbowmap = false
 Loops.rbase = false
 Loops.rfog = false
+Loops.rkick = false
 
 function PCheck()
 		t = false
