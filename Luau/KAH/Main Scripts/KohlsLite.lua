@@ -7002,7 +7002,7 @@ function rkickplr(rkicker,rkicks)
                         end
                 end
 
-		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame * CFrame.Angles(0,math.rad(180),0)*CFrame.new(0,0,-2)
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = rkicker.Character.HumanoidRootPart.CFrame * CFrame.Angles(0,math.rad(180),0)*CFrame.new(0,0,-2)
 
                 for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
                		if v.Name == "Rocket" then
