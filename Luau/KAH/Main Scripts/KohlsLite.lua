@@ -29,7 +29,7 @@ getgenv().kohlsexecuted = true -- don't touch!
 
 getgenv().deprefix = "." -- This can be of any length
 
-getgenv().klversion = "1.405" -- The version of KohlsLite, of course.
+getgenv().klversion = "1.407" -- The version of KohlsLite, of course.
 
 local function Chat(msg)
       game.Players:Chat(msg)
@@ -6984,6 +6984,9 @@ end
 
 -- rocket kick
 function rkickplr(rkicker,rkicks)
+Chat("respawn "..rkicks)
+Chat("setgrav "..rkicks.. " 3500")
+Chat("jail/".. rkicks)
 task.spawn(function() 
 	while true do 
 		task.wait(0)
@@ -7014,10 +7017,6 @@ task.spawn(function()
                                 v.CanCollide = false 
                         end
                 end
-
-		Chat("respawn "..rkicks)
-                Chat("setgrav "..rkicks.. " 3500")
-                Chat("jail/".. rkicks)
 
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = rkicker.Character.HumanoidRootPart.CFrame * CFrame.Angles(0,math.rad(180),0)*CFrame.new(0,0,-2)
 
