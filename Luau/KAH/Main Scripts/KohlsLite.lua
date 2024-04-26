@@ -836,7 +836,7 @@ Remind("Thank you for using KohlsLite. The version you are using is v"..getgenv(
 print("Say .kcmds to list some of the commands. DM me at ts2021x for help.")
 Remind("Say .kcmds to list some of the commands. DM me at ts2021x for help.")
 
-Chat("h \n\n\n [KohlsLite]: Executed! Version: "..version.." \n\n\n") -- i finally changed it xd
+Chat("h \n\n\n [KohlsLite]: Executed! Version: "..getgenv().klversion.." \n\n\n") -- i finally changed it xd
 
 print("\n\n\n")
 print("- Perm check -")
