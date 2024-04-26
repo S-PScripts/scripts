@@ -3,13 +3,14 @@ _  _____  _   _ _     ____  _     ___ _____ _____
 | |/ / _ \| | | | |   / ___|| |   |_ _|_   _| ____|
 | ' / | | | |_| | |   \___ \| |    | |  | | |  _|  
 | . \ |_| |  _  | |___ ___) | |___ | |  | | | |___ 
-|_|\_\___/|_| |_|_____|____/|_____|___| |_| |_____| v1.33 ]]
+|_|\_\___/|_| |_|_____|____/|_____|___| |_| |_____| v1.4 ]]
 
--- CREATED BY SCRIPTINGPROGRAMMER/TS2021/S-PSCRIPTS
--- A free, open-source script for Kohls Admin House (KAH)
--- Support this script today by donating Robux to me :) 
--- Please do not "skid" off this code by changing the name and removing the dev section (I'll add you to my autokick if you do!). 
--- You can make your own script instead and take stuff from here if necessary.
+-- This free, open-source script is for the Roblox game Kohls Admin House (KAH)
+-- Created by ScriptingProgrammer (Roblox) / TS2021 (Discord) / S-PScripts (GitHub)
+
+-- Support this script today by donating Robux to me!
+-- Please do not "skid" off this code by changing the name and removing the dev section. It makes me annoyed!
+-- You can make your own script instead of skidding and you can take stuff from here if necessary.
 
 local function Remind(msg)
         game.StarterGui:SetCore("SendNotification", {
@@ -27,6 +28,8 @@ end
 getgenv().kohlsexecuted = true -- don't touch!
 
 getgenv().deprefix = "." -- This can be of any length
+
+getgenv().klversion = "1.4" -- The version of KohlsLite, of course.
 
 local function Chat(msg)
       game.Players:Chat(msg)
@@ -828,13 +831,14 @@ local welcomemsg = true
 -- local personpassid = 35748 or 37127 --> NBC, BC
 
 print("- Information -")
-print("Thank you for using KohlsLite v1.33! This script was created by S_P.")
-Remind("Thank you for using KohlsLite v1.33! This script was created by S_P.")
-print("Say .kcmds to list some of the commands. DM me at ts2021x for the source to find other commands.")
-Remind("Say .kcmds to list some of the commands. DM me at ts2021x for the source to find other commands.")
+print("Thank you for using KohlsLite. The version you are using is v"..getgenv().klversion..". This script was created by S_P.")
+Remind("Thank you for using KohlsLite. The version you are using is v"..getgenv().klversion..". This script was created by S_P.")
+print("Say .kcmds to list some of the commands. DM me at ts2021x for help.")
+Remind("Say .kcmds to list some of the commands. DM me at ts2021x for help.")
 
-Chat("h \n\n\n [KohlsLite]: Executed! v1.33 \n\n\n")
+Chat("h \n\n\n [KohlsLite]: Executed! Version: "..version.." \n\n\n") -- i finally changed it xd
 
+print("\n\n\n")
 print("- Perm check -")
 if game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 66254) or game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 64354) then
         perm = false 
@@ -846,6 +850,7 @@ else
         print("A perm pad was given - you don't have the Perm Admin gamepass!")
 end
 
+print("\n\n\n")
 print("- Persons check -")
 if game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 35748) or game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 37127) then
         haspersons = true -- used!
@@ -4880,47 +4885,47 @@ function CMDPrint()
 print("---Command list for KohlsLite---")
 print("Warning! This is NOT a full list so contact me for any other commands!")
 
-print("---")
+print("\n\n\n")
 print("perm - loopgrab a random pad (touch interest)")
 print("perm2 - loopgrab a random pad (collisions)")
 
-print("---")
+print("\n\n\n")
 print("unperm - stop loopgrabing a pad(perm)")
 print("unperm2 - stop loopgrabing a pad (perm2)")
 
-print("---")
+print("\n\n\n")
 print("loopgrab - loopgrab all the pads (touch interest)")
 print("loopgrab2 - loopgrab all the pads (touch interest)")
 
-print("---")
+print("\n\n\n")
 print("unloopgrab - stop loopgrabing all the pads")
 print("2unloopgrab - stop loopgrab all the pads")
 
-print("---")
+print("\n\n\n")
 print("fastpads - quickly tp to all the pads")
 print("regen - regenerate the admin pads")
 print("sregen - spam regenerate the admin pads")
 print("unsregen - stop spam regenerating the admin pads")
 
-print("---")
+print("\n\n\n")
 print("padban - stop a user from using the admin pads")
 print("unpadban - allow user to use admin pads again")
 print("padreinf - stop users from taking more than 2 admin pads")
 print("unpadreinf - allow users to take more than 2 admin pads again")
 
-print("---")
+print("\n\n\n")
 print("wl - whitelist a player from serverlocks")
 print("bl - blacklist a player (serverlock to certain players)")
 print("gearwl - whitelist a user to use gears with antigear/anticrash etc. on")
 print("admin - give a user free admin that can be used off yours")
 
-print("---")
+print("\n\n\n")
 print("unwl - unwhitelist a player from serverlocks")
 print("unbl - unblacklist a player")
 print("ungearwl - unwhitelist a user to use gears with antigear/anticrash etc. on")
 print("unadmin - remove a user's free admin")
 
-print("---")
+print("\n\n\n")
 print("listwl - print all whitelisted players")
 print("listbl - print all blacklisted players")
 print("listgearwl - print all gear whitelisted players")
@@ -4929,25 +4934,25 @@ print("musiclist - print all the saved musics")
 print("permusers - users that use perm")
 print("personsusers - users that use persons")
 
-print("---")
+print("\n\n\n")
 print("slock - serverlock a server")
 print("unslock - serverlock a server")
 print("newplrslock - automatically blacklist a new user (acc age under 21 days)")
 print("unnewplrslock - stop automatic blacklist for new users (acc age under 21 days)")
 
-print("---")
+print("\n\n\n")
 print("alladmin - give everyone's free admin")
 print("unalladmin - remove everyone's free admin")
 
-print("---")
+print("\n\n\n")
 print("ipboom - who's ip address is that?")
 
-print("---")
+print("\n\n\n")
 print("sspawn - save your position")
 print("gsspawn - go to saved position")
 print("pspawn - print your current position")
 
-print("---")
+print("\n\n\n")
 print("prefix - set the prefix")
 print("ping - say your ping")
 print("execute - execute a lua script from chat")
@@ -4956,107 +4961,104 @@ print("adv - advertise this script (pls do this you are nice if you do this :D)"
 print("cadv - advertise the kah community server (pls do this you are nice if you do this :D)")
 print("frespawn - force respawn if punished")
 
-print("---")
+print("\n\n\n")
 print("welmsg - welcome people to the server (and leave msg too)")
 print("unwelmsg - no more welcome and leave msg")
 
-print("---")
+print("\n\n\n")
 print("autoafk - names you as afk when you're afk")
 print("unautoafk - stops naming you as afk when you're afk")
 
-print("---")
+print("\n\n\n")
 print("nocam/breakcam - break the camera with the AR")
 print("fixcam - fix the camera (client side)")
 print("wbcam/wfcam - break/fix the camera with the blizzard wand")
-print("fixvelo - fix your velocity")
 print("bpfixv - fix baseplate velocity serverside")
-print("fixcol - fix collisions")
-print("fixgrav - fix gravity")
 
-print("---")
+print("\n\n\n")
 print("goto - alt to tp me plr")
 print("cgoto - goto without admin")
 print("bring - alt to tp plr me")
 
-print("---")
+print("\n\n\n")
 print("biglogs - make the logs bigger!")
 print("chatz - chat a string of - causing the previous messages to vanish")
 
-print("---")
+print("\n\n\n")
 print("qattach - quickly attach to something with unpunish")
 
-print("---")
+print("\n\n\n")
 print("house - teleport to the house")
 print("spawn - teleport to spawn")
 
-print("---")
+print("\n\n\n")
 print("infjump - infinite jump")
 print("uninfjump - stop infinite jump")
 
-print("---")
+print("\n\n\n")
 print("checkperm - check player for perm")
 print("checkpersons - check player for persons")
 print("checkgps - check player for both")
 print("checkbp - check a player's backpack")
 
-print("---")
+print("\n\n\n")
 print("spamt - start spamming something")
 print("unspamt - stop spamming")
 print("spamw/spamw - the spam wait")
 print("spamoff - stop spamming (temp)")
 print("spamon - start spamming again")
 
-print("---")
+print("\n\n\n")
 print("fixpaint - fix the paint")
 print("pmap/paintmap - paint the map a colour")
 
-print("---")
+print("\n\n\n")
 print("icemap - make the map ice - WARNING: THIS COMMAND MIGHT CRASH YOU")
 print("stonemap/rockmap - make the map stone")
 
-print("---")
+print("\n\n\n")
 print("NOK - no obby kill")
 print("2NOK - no obby kill")
 
-print("---")
+print("\n\n\n")
 print("sp - set your speed without the command")
 print("jp - set your jump power without the command")
 print("hlth - set your health without the command")
 print("ufly - the kah fly but without actually using the cmd!")
 
-print("---")
+print("\n\n\n")
 print("gear (plr) (name) - just a shortcut if you don't know gear ids")
 print("char (plr) (name) - just a shortcut if you don't know char ids")
 print("boombox - shortcut for gear plr boombox")
 
-print("---")
+print("\n\n\n")
 print("rejoin - rejoin the server you're in")
 print("shop - switch to a different server")
 
-print("---")
+print("\n\n\n")
 print("lagged - slow a player down with the car gear")
 print("unlagged - stop slowing a player down with the car gear")
 print("names - spam name a player, naming currently breaks your cam")
 print("unnames - stop spam naming a player, naming currently breaks your cam")
 
-print("---")
+print("\n\n\n")
 print("announce - announce a message without your username in the h")
 print("cannounce - announce a message with the sender being someone in the server [troll]")
 
-print("---")
+print("\n\n\n")
 print("pinglogs - ping you when someone uses logs")
 print("antilogs - spams logs when someone tries using it")
 print("pingcsystem - ping you when someone uses /c system (or /w)")
 print("logspam - spam the logs")
 
-print("---")
+print("\n\n\n")
 print("gearban - stop a user from using gears with the portable justice")
 
-print("---")
+print("\n\n\n")
 print("supercmd - spam text a set amount of times")
 print("supert - times the spam should happen (anything above 128 exceeds the rate limit)")
 
-print("---")
+print("\n\n\n")
 print("pmu - your music only, if someone tries to change or stop it changes back")
 print("unpmu - not your music only anymore")
 print("offmusic - turn the perm music off temporarily")
@@ -5064,7 +5066,7 @@ print("onmusic - turn perm music on")
 print("antimusic - stop music from playing")
 print("unantimusic - lets people use music again")
 
-print("---")
+print("\n\n\n")
 print("remusic - restart the current music")
 print("volm - set the volume of the music")
 print("cvol - print the current volume of music")
@@ -5072,30 +5074,30 @@ print("musicid - print the current music id")
 print("timepos - set the time position")
 print("timeis - print the current time position")
 
-print("---")
+print("\n\n\n")
 print("pausem - pause the music")
 print("playm - play the music")
 print("stopm - stop the music")
 print("startm - start the music")
 
-print("---")
+print("\n\n\n")
 print("gmusic(num) - play saved music")
 print("rgmusic - play a random saved music")
 print("nmusic - play the next saved music")
 print("pmusic - play the previous saved music")
 
-print("---")
+print("\n\n\n")
 print("mboombox (musicid) - play a music on your boombox at a random place away from you")
 print("pboombox (musicid) - play a music on your boombox without inserting it into the box :)")
 
-print("---")
+print("\n\n\n")
 print("vgcrash - crash with the vg")
 print("dcrash - crash with clone and dog commands") 
 print("fcrash - crash with clone and freeze commands")
 print("pcrash - crash with the osas")
 print("[PERSONS REQUIRED] scrash - crash with the shield, rocket and clone commands")
 
-print("---")
+print("\n\n\n")
 print("anticrash - anti-crash with vg or osas")
 print("2anticrash - anti-crash with vg or osas")
 print("antigear - stop users from using gears")
@@ -5109,13 +5111,13 @@ print("antit - stop yourself from using gears")
 print("antikick - stop yourself from using hotpotato, bluebucket and the car gear")
 print("antitrip - anti trip mine")
 
-print("---")
+print("\n\n\n")
 print("ffix - fix your gravity and collision if it breaks when trying to move/fix stuff!")
 print("fixgrav - fix gravity")
 print("fixvelo - fix velocity")
 print("fixcol - fix collisions")
 
-print("---")
+print("\n\n\n")
 print("fixbp - fix the baseplate")
 print("movebp - move the baseplate")
 print("fixspawn - fix the spawns")
@@ -5139,7 +5141,7 @@ print("movehouse - move the house")
 print("fixbb - fix the building bricks")
 print("movebb - move the building bricks")
 	
-print("---")
+print("\n\n\n")
 print("antichat - crash everyone else by spamming a m command full of emojis")
 print("unantichat - stop trying to crash players with emojis.")
 print("mkick - crash players with emojis using pm.")
@@ -5147,25 +5149,29 @@ print("unmkick - stop trying to crash players with emojis.")
 print("rkick - crash someone using the rocket.")
 print("unrkick - stop trying to crash people using the rocket.")
 	
-print("---")
+print("\n\n\n")
 print("rail - rail a player")
 print("surround - surround a player with planes")
 print("nuke - nuke a player with planes")
 
-print("---")
+print("\n\n\n")
 print("ungearme - ungear yourself... Right???")
 
-print("---ANTI INFORMATION--")
+print("\n\n\n")
+print("--- ANTI INFORMATION ---")
 print("There are also many other antis!")
 print("For antis relating to the player, do (antiname) me/others/all")
 print("To turn off the antis, do un(antiname) me/others/all")
 print("If it's to the game itself, just do (antiname).")
 
-print("---INFORMATION---")
+print("\n\n\n")
+print("--- INFORMATION ---")
 print("KohlsLite, since 2023. Created by ScriptingProgrammer/ts2021")
-print("Version is: v1.33 - 22nd April 2024 Build")
-print("Better than scv1 and scv2 - approved by Tech")
+print("For help, please contact me on Discord at ts2021x")
+print("The version you are using is v"..getgenv().klversion..". This build was created on 26th April 2024 Build")
+print("Better than scv1 and scv2 - approved by Tech!")
 
+print("\n\n\n")
 print("--- CREDITS ---")
 print("Tech and other admins of SC with Shortcut v1, v2 and v3 [var] (and some ideas)")
 print("atprog with his PR Script")
@@ -5173,6 +5179,7 @@ print("iiDk's with ii's stupid admin as PR Script is based off it")
 print("Gojo [SimpleKAH] for gears and char ids")
 print("Dizzy [ROUTE] for music ids hahaha I'm a muskid")
 
+print("\n\n\n")
 print("--- ADDITIONAL INFO ---")
 print("1a. This script has some stuff missing and some stuff broken but it's not really finished. There's many stuff I'm still adding.")
 print("1b. If you want a good script and have some money/robux, get Shortcut v3-var by dming techq")
@@ -5225,7 +5232,7 @@ function checkforpersons()
         end
 end
 
--- SLOCK/BL/WL (REALLY UNTOUCHED SO IT WAS BROKEN FOR A WHILE LMAO)
+-- Serverlock, blacklist, whitelist (not that good but decent still)
 task.spawn(function()
     while true do
     task.wait(0)
