@@ -3403,7 +3403,19 @@ Commands required: rocket]])
                  if player ~= nil then
 			dk = cplr
 			dkicked = player
+			dkickin = true
                         dkick(dk, dkicked)
+                 else
+                        Remind('Cannot find player with the name: '..dasplayer)
+                 end
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'undkick' then
+                 local dasplayer = string.sub(msg:lower(), #prefix + 9)
+		 PLAYERCHECK(dasplayer)
+                 if player ~= nil then
+			dkickin = false
+			Chat("respawn "..dkicked)
                  else
                         Remind('Cannot find player with the name: '..dasplayer)
                  end
@@ -7209,7 +7221,7 @@ function dkick(dk, dkicked)
                 task.wait() 
                 Chat("freeze " .. dkicked .. " " .. dkicked .. " " .. dkicked) 
             until 
-                (#game.Lighting:FindFirstChild(dkicked):GetChildren() - ota) >= 1500
+                (#game.Lighting:FindFirstChild(dkicked):GetChildren() - ota) >= 1500 or dkickin == false
             
             task.wait(.5)
             Chat("noclip " .. dkicked)
@@ -7217,6 +7229,7 @@ function dkick(dk, dkicked)
             Chat('unpunish ' .. dkicked)
             task.wait()
             Chat('kill ' .. dkicked .. " " .. dkicked .. " " .. dkicked)
+	    dkickin = false
 end
 
 -- SPAWN SAVED
