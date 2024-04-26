@@ -3,7 +3,7 @@ _  _____  _   _ _     ____  _     ___ _____ _____
 | |/ / _ \| | | | |   / ___|| |   |_ _|_   _| ____|
 | ' / | | | |_| | |   \___ \| |    | |  | | |  _|  
 | . \ |_| |  _  | |___ ___) | |___ | |  | | | |___ 
-|_|\_\___/|_| |_|_____|____/|_____|___| |_| |_____| v1.4 ]]
+|_|\_\___/|_| |_|_____|____/|_____|___| |_| |_____| v1.41 ]]
 
 -- This free, open-source script is for the Roblox game Kohls Admin House (KAH)
 -- Created by ScriptingProgrammer (Roblox) / TS2021 (Discord) / S-PScripts (GitHub)
@@ -29,7 +29,7 @@ getgenv().kohlsexecuted = true -- don't touch!
 
 getgenv().deprefix = "." -- This can be of any length
 
-getgenv().klversion = "1.407" -- The version of KohlsLite, of course.
+getgenv().klversion = "1.41" -- The version of KohlsLite, of course.
 
 local function Chat(msg)
       game.Players:Chat(msg)
