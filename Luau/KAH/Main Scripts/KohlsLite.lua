@@ -2545,7 +2545,7 @@ Commands required: rocket]])
                    PLAYERCHECK(dasplayer)
                    if player ~= nil and not table.find(nokick, player) then
                         rkickplr(cplr,player)
-                        Remind("Rocket kicking "..rkicks)
+                        Remind("Rocket kicking "..player)
                 elseif table.find(nokick, player) then
                         Remind("Sorry, this player cannot be kicked!")
                 else                        
@@ -2556,7 +2556,7 @@ Commands required: rocket]])
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'unrkick' then
                 srkick = false
-                Remind("Stopped rocket kicking "..rkicks)
+                Remind("Stopped rocket kicking "..player)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'welmsg' then
@@ -7002,8 +7002,6 @@ function rkickplr(rkicker,rkicks)
                         end
                 end
 
-		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = rkicker.Character.HumanoidRootPart.CFrame * CFrame.Angles(0,math.rad(180),0)*CFrame.new(0,0,-2)
-
                 for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
                		if v.Name == "Rocket" then
                                 v.CanCollide = false 
@@ -7019,6 +7017,8 @@ function rkickplr(rkicker,rkicks)
 		Chat("respawn "..rkicks)
                 Chat("setgrav "..rkicks.. " 3500")
                 Chat("jail/".. rkicks)
+
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = rkicker.Character.HumanoidRootPart.CFrame * CFrame.Angles(0,math.rad(180),0)*CFrame.new(0,0,-2)
 
                 for i = 1,100 do
                           Chat("rocket/"..rkicks.."/"..rkicks.."/"..rkicks)
