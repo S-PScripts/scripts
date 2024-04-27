@@ -3295,6 +3295,10 @@ Commands required: rocket]])
 		JNUKE()
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'skcraze' then
+		SKCRAZE()
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'weld' then
                 local args = string.split(msg, " ")
         	if #args >= 3 then
@@ -3440,6 +3444,16 @@ Commands required: rocket]])
                  if player ~= nil then
 			dkickin = false
 			Chat("respawn "..dkicked)
+                 else
+                        Remind('Cannot find player with the name: '..dasplayer)
+                 end
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'slag' then -- buggy!
+                 local dasplayer = string.sub(msg:lower(), #prefix + 6)
+		 PLAYERCHECK(dasplayer)
+                 if player ~= nil then
+                        slag(cplr, player)
                  else
                         Remind('Cannot find player with the name: '..dasplayer)
                  end
@@ -6630,14 +6644,6 @@ v.Chatted:Connect(function(msg)
                 end
 
                 end)
-
-if string.sub(msg:lower(), 0, 4) == "-hrc" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "dawninja21" or v.Name == "dawninja21alt" or v.Name == "darkmadeboy") then
-                                Speak("[Hydra.lua]: Hydra.lua on top!")
-                end
-
-                if string.sub(msg:lower(), 0, 4) == "-hrk" and v.Name ~= game.Players.LocalPlayer.Name and v.Name == "dawninja21" then
-                                        game.Players.LocalPlayer:Kick("[Hydra.lua]: DarkSpecies has kicked you from the game.")
-end
 -- ADMIN
             if (alladmin == true or table.find(FAdmins, v.Name)) and not table.find(blacklist, v.Name) and not table.find(newplrslocked, v.Name) and not slockenabled and v.Name ~= game.Players.LocalPlayer.Name then
                     local command = string.gsub(msg:lower(), "me", v.Name)
@@ -7271,6 +7277,85 @@ function dkick(dk, dkicked)
 	    	dkickin = false
             end
 end
+
+function slag(tplr, tpln)
+            local stop = false
+        --    local oldPosi = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+
+            Chat("freeze " .. tpln)
+            tplr.Character:WaitForChild("ice")
+            Chat("name " .. tpln .. " ")
+            task.wait()
+            Chat("thaw " .. tpln)
+        
+            for i = 1,30 do
+                Chat("gear me 2274759555")
+                task.wait(.05)
+            end
+
+            local pass = false
+
+            repeat task.wait() until #game.Players.LocalPlayer.Backpack:GetChildren() >= 30
+
+            local conn1
+            local conn2
+            local Skates = {}
+            local primarySkate = Skates[1]
+            local toCF = tplr.Character.HumanoidRootPart.CFrame * CFrame.new(0,-3,0)
+
+            workspace.ChildAdded:Connect(function(Skate)
+                if Skate.Name == "Skateboard" and not table.find(Skates, Skate) then
+                    for _,v in pairs(Skate:GetChildren()) do
+                        if v:IsA("BasePart") then
+                            v.CanCollide = false
+                            v.CanTouch = false
+                            v.Massless = true
+                        end
+                    end
+                    Skate.ChildAdded:Connect(function(v)
+                        if v:IsA("BasePart") then
+                            v.CanCollide = false
+                            v.CanTouch = false
+                            v.Massless = true
+                        end
+                    end)
+                    table.insert(Skates, Skate)
+                    Skate.PrimaryPart = Skate:WaitForChild("SkateboardPlatform")
+                    Skate.PrimaryPart.Velocity = Vector3.new(30,4,0)
+                    local skatespos = #Skates
+                    RunService.Heartbeat:Connect(function()
+                        Skate.PrimaryPart.Velocity = Vector3.new(30,4,0)
+                        Skate:SetPrimaryPartCFrame(tplr.Character.HumanoidRootPart.CFrame * CFrame.new(0,-3 + skatespos * .25,0))
+                    end)
+                end
+            end)
+
+            for _, Tool in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+                if Tool.Name == "GoldenSkateboard" then
+                    thread(function()
+                        Tool:WaitForChild("LocalScript").Disabled = true
+                        Tool:WaitForChild("RemoteControl"):WaitForChild("ClientControl").OnClientInvoke = function(Value)
+                            if Value == "MousePosition" then
+                                return tplr.Character.HumanoidRootPart.Position
+                            end
+                        end
+                        Tool.Parent = game.Players.LocalPlayer.Character
+                        task.wait()
+                        Tool:Activate()
+                    end)
+                    task.wait()
+                end
+            end
+
+            task.delay(3.25, function()
+                Chat("reset " .. tpln)
+                task.wait()
+                Chat("unskydive " .. tpln)
+		Chat("thaw " .. tpln)
+                task.wait()
+            end)
+end
+
 
 -- SPAWN SAVED
 function Spawn()
@@ -8766,6 +8851,7 @@ function JNUKE()
                 game.Players.LocalPlayer.Character.RocketJumper.FireRocket:FireServer(Vector3.new(math.random(-200,200), math.random(-40,40), math.random(-200,200)),Vector3.new(math.random(-200,200), math.random(0,50), math.random(-200,200)))
             end
 	    task.wait(10)
+	    Chat("ungear me")
 end
 
 function RNuke(range)
@@ -8783,6 +8869,26 @@ function RNuke(range)
         			end)
    		 	end
 	     end
+end
+
+function SKCRAZE()
+ 	for i = 1,50 do
+            Chat("gear me 200237939")
+        end
+        
+        repeat task.wait() until #game.Players.LocalPlayer.Backpack:GetChildren() >= 50
+        
+        for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+                v.Parent = game.Players.LocalPlayer.Character
+                v:Activate()
+        end
+        
+        workspace.ChildAdded:Connect(function(mdl)
+            task.wait()
+            if mdl:IsA("Model") then
+                mdl:WaitForChild("SkateBoardPlatform").CanCollide = false
+            end
+        end)
 end
 
 function Clone(getnum)
