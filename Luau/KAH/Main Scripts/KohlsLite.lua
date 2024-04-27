@@ -5185,6 +5185,11 @@ print("\n\n\n")
 print("ungearme - ungear yourself... Right???")
 
 print("\n\n\n")
+print("laser - laser and punish someone at the same time. they cannot respawn and are stuck in limbo")
+print("hfreeze - laser someone but stop them from fully getting lasered. they get stuck with a laser outline")
+print("tattach - attach to a player to control them!")
+
+print("\n\n\n")
 print("--- ANTI INFORMATION ---")
 print("There are also many other antis!")
 print("For antis relating to the player, do (antiname) me/others/all")
@@ -7229,14 +7234,17 @@ function dkick(dk, dkicked)
                 Chat("freeze " .. dkicked .. " " .. dkicked .. " " .. dkicked) 
             until 
                 (#game.Lighting:FindFirstChild(dkicked):GetChildren() - ota) >= 1500 or dkickin == false
-            
-            task.wait(.5)
-            Chat("noclip " .. dkicked)
-            task.wait()
-            Chat('unpunish ' .. dkicked)
-            task.wait()
-            Chat('kill ' .. dkicked .. " " .. dkicked .. " " .. dkicked)
-	    dkickin = false
+
+	    if dkickin == false then 
+	    else
+            	task.wait(.5)
+            	Chat("noclip " .. dkicked)
+            	task.wait()
+            	Chat('unpunish ' .. dkicked)
+           	task.wait()
+            	Chat('kill ' .. dkicked .. " " .. dkicked .. " " .. dkicked)
+	    	dkickin = false
+            end
 end
 
 -- SPAWN SAVED
@@ -7436,7 +7444,7 @@ function Dummy()
                         repeat task.wait() until not game.Players.LocalPlayer.Character:FindFirstChildOfClass("Pants")
                         task.wait(0.5)
                         Chat("name me NPC")
-                        repeat wait() until game.Players.LocalPlayer.Character:FindFirstChild("NPC")
+                        repeat task.wait() until game.Players.LocalPlayer.Character:FindFirstChild("NPC")
                         Chat("clone me")
                         task.wait(0.5)
                         Chat("unchar me")
