@@ -2831,6 +2831,14 @@ Commands required: rocket]])
         antitripmine = false
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'antiegg' then
+        antiegg = true
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'unantiegg' then
+        antiegg = false
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'antibright' then
         antibrightness = true
     end
@@ -2982,9 +2990,9 @@ Commands required: rocket]])
         for b, c in ipairs(a) do -- it works but i still don't care if it sometimes doesn't bypass!
                     local e = string.rep("  ", 2 * (b - 1))
                 if haspersons == true then
-                        Chat("h/KohlsLite ez\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" .. e .. _G["variable_" .. tostring(b)])
+                        Chat("h/KohlsLite ez\n\n\n\n\n\n\n\n\n\n" .. e .. _G["variable_" .. tostring(b)])
                 else
-                            Chat("h KohlsLite ez\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" .. e .. _G["variable_" .. tostring(b)])
+                            Chat("h KohlsLite ez\n\n\n\n\n\n\n\n\n\n" .. e .. _G["variable_" .. tostring(b)])
                 end
         end
     end
@@ -4486,6 +4494,16 @@ Commands required: rocket]])
         Remind("Turned this anti off for you!")
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'antisky' then
+        YOUantisky = true
+        Remind("Turned this anti on for you!")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'unantisky' then
+        YOUantisky = false
+        Remind("Turned this anti off for you!")
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antiname' then
         local args = string.split(msg, " ")
         if args[2] == "me" then
@@ -5525,6 +5543,12 @@ task.spawn(function()
            end
         end
 
+        if antiegg == true then
+           if workspace:FindFirstChild("EggBomb") then
+              workspace:FindFirstChild("EggBomb"):Destroy()
+              Chat("clr")
+           end
+        end
         if antiambient == true then
                 if game.Lighting.Ambient ~= Color3.new(0,0,0) then
                         Chat("ambient 0 0 0")
@@ -5582,6 +5606,15 @@ task.spawn(function()
 	if YOUantivoid == true then 
 		if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character.HumanoidRootPart then
             		if game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y < -7 then
+                		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.X,5,game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Z)
+                		game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity.X,0,game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity.Z)
+            		end
+		end
+	end
+
+	if YOUantisky == true then 
+		if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character.HumanoidRootPart then
+            		if game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y > 256 then
                 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.X,5,game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Z)
                 		game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity.X,0,game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity.Z)
             		end
