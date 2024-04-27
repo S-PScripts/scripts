@@ -1654,6 +1654,14 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
               end
     end
 
+   if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'audiolog' then
+		Loops.alog = true
+   end
+
+   if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unaudiolog' then
+		Loops.alog = false
+   end
+
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'cvol' then
               if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
                               Remind("Current volume: "..game:GetService("Workspace").Terrain["_Game"].Folder.Sound.Volume)
@@ -8787,8 +8795,8 @@ print("- Script by iiDk, ported for KohlsLite. -")
 		        Chat("music "..tostring(sound))
 	        end
                 
-	        repeat wait()  until game:GetService("Workspace").Terrain["_Game"].Folder.Sound.IsLoaded
-	        spawn(function()
+	        repeat task.wait()  until game:GetService("Workspace").Terrain["_Game"].Folder.Sound.IsLoaded
+	        task.spawn(function()
 	            wait(game:GetService("Workspace").Terrain["_Game"].Folder.Sound.TimeLength)
 	            Chat("music nan")
 	        end)
@@ -8800,6 +8808,23 @@ Loops.rainbowmap = false
 Loops.rbase = false
 Loops.rfog = false
 Loops.rkick = false
+Loops.alog = false
+
+musiclog = {}
+
+task.spawn(function()
+	while true do
+		task.wait(0)
+		if Loops.alog then
+			if workspace.Terrain["_Game"].Folder:FindFirstChild("Sound") then
+				musicid = workspace.Terrain["_Game"].Folder:FindFirstChild("Sound").SoundId
+				if not table.find(musiclog, musicid) then
+					print("The song being played is "..workspace.Terrain["_Game"].Folder:FindFirstChild("Sound").SoundId)
+				end
+			end
+		end
+	end
+end)
 
 function PCheck()
 		t = false
