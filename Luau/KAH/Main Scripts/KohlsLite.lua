@@ -225,6 +225,7 @@ crash_on_sight = {"aliihsan12345Bloxy"} -- crash server when player joins
 mkick_on_sight = {"He4rt_4","hellokitty2kute"} -- kick player with pm spam when they join ONLY WORKS WITH ONE PLAYER
 suser_on_sight = {} -- slow a user when they join with car gear ONLY WORKS WITH ONE PLAYER
 furry_on_sight = {"jhjssikeksms"} -- nine jay n
+gb_on_sight = {}
 
 -- Variables for moving
 local movestatus = false
@@ -8059,7 +8060,7 @@ function onPlayerAdded(player)
         DCrash()  
     end
 
-    if autogb == true then 
+    if autogb == true or table.find(gb_on_sight, player.Name) then 
                 xplr = player
                 xplayer = player.Name
                 print(xplr);print(xplayer)
@@ -9831,6 +9832,12 @@ for i, v in pairs(game.Players:GetPlayers()) do
 
         if table.find(furry_on_sight, v.Name) then
                 Chat(prefix.."char "..v.Name.." furry")
+        end
+
+        if table.find(gb_on_sight, v.Name) then 
+                xplr = player
+                xplayer = player.Name
+                Gearban()
         end
 
         task.wait(0)
