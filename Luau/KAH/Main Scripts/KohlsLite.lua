@@ -3361,9 +3361,14 @@ Commands required: rocket]])
                  Potion(getnumber)
     end
 
-   if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'tripmine' then
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'tripmine' then
                  local getnumber = string.sub(msg:lower(), #prefix + 10)
                  MineTrip(getnumber)
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'spike' then
+                 local getnumber = string.sub(msg:lower(), #prefix + 7)
+                 Spike(getnumber)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'cannon' then
@@ -3399,6 +3404,12 @@ Commands required: rocket]])
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'banana' then
                  local getnumber = string.sub(msg:lower(), #prefix + 8)
                  Banana(getnumber)
+    end
+
+   if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'sjail' then
+		Chat("jail me")
+       		task.wait(0.2)
+        	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,4,0)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'nuke' then
@@ -8975,6 +8986,29 @@ function Cannon(getnum)
                             task.wait(0.01)
                             v:Activate()
         end
+end
+
+function Spike(getnum)
+	Chat("ungear me");task.wait(0.5)
+        for i = 1, tonumber(getnum) do
+                Chat("gear me 59848474");task.wait(0.01)
+        end
+     --   local oldchild = #workspace:GetChildren()
+        repeat task.wait() until #game.Players.LocalPlayer.Backpack:GetChildren() >= tonumber(getnum) 
+        local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
+        for _, v in ipairs(Backpack:GetChildren()) do
+                            v.Parent = game.Players.LocalPlayer.Character
+        end
+	task.wait(0.1)
+	for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+    		if v:IsA("Tool") then
+        		v.ClientInput:FireServer(Enum.KeyCode.E)
+        		task.wait()
+        		v:Activate()
+       			task.wait()
+        		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.Angles(0,math.rad(360/tonumber(args[1])),0)
+    		end
+	end
 end
 
 function Zombie(getnum)
