@@ -2618,7 +2618,7 @@ Commands required: rocket]])
                 Remind("You should be attached to the player!")
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'iceblock' then -- why
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'iceblock' then -- c ube
                 local theblock = string.sub(msg:lower(), #prefix + 10)
                 if theblock == "me" then
                         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame*CFrame.new(0,-40,0)
@@ -2647,12 +2647,57 @@ Commands required: rocket]])
                 Remind("The player should now be a cube!")
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'tank' then -- why
+    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'tank' then -- thomas
                 local thomas = string.sub(msg:lower(), #prefix + 6)
 		Chat("removelimbs "..thomas);task.wait(0.5)
 		Chat("dog "..thomas);task.wait(0.5)
 		Chat("creeper "..thomas)
                 Remind("The player should now be a tank!")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'ufo' then -- ufo!!!
+                local ufo = string.sub(msg:lower(), #prefix + 5)
+		for i = 1, 7 do
+			Chat("size "..ufo.." 0.3")
+		end
+		coht("unsize "..ufo)
+		Chat("size "..ufo.." 4")
+		Chat("paint "..ufo.." brown")
+		task.wait(0.25)
+		Chat("removelimbs "..ufo)
+		Chat("dog "..ufo)
+		Chat("rainbowify "..ufo)
+		Chat("spin "..ufo)
+                Remind("The player should now be a ufo!")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'rat' then -- rawr
+	        local eww = string.sub(msg:lower(), #prefix + 5)
+		Chat("char "..eww.." 6")
+		task.wait(1)
+		Chat("hat "..eww.." 6203125039")
+		Chat("size "..eww.." 0.8")
+		Chat("speed "..eww.." 26")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'titan' then -- yeah im adding scv1 cmds lol
+	        local thatanime = string.sub(msg:lower(), #prefix + 7)
+		Chat("char "..thatanime.." 4")
+		task.wait(1)
+		Chat("skydive "..thatanime)
+		Chat("paint "..thatanime.." red")
+		Chat("size "..thatanime.." 5")
+		Chat("speed "..thatanime.." 24")
+		Chat("pants "..thatanime.." 1187508947")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'headfloat' then -- yeah im adding scv1 cmds lol
+	        local hf = string.sub(msg:lower(), #prefix + 11)
+		Chat("size "..hf.." 0.5")
+		task.wait(0.25)
+		Chat("bighead "..hf)
+		task.wait(0.25)
+		Chat("unsize "..hf)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'over' then -- why
