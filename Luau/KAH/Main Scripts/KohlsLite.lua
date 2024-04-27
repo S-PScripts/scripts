@@ -2424,6 +2424,14 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'toregen' then
         regentp()
     end
+	
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'rparts' then
+	for i,v in pairs(workspace.Terrain["_Game"].Folder:GetChildren()) do
+		if v:IsA("Part") and v.Name == "Part" then
+			v:Destroy()
+		end
+	end
+    end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'lrobb' then
          LocalObby("remove")
@@ -3027,7 +3035,12 @@ Commands required: rocket]])
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'biglogs' then
-            game.Players.LocalPlayer.PlayerGui:FindFirstChild("ScrollGui").TextButton.Frame.Size = UDim2.new(0,1000,0,1000)
+	    danum = tonumber(string.sub(msg:lower(), #prefix + 9))
+	    if danum == "" then
+            		game.Players.LocalPlayer.PlayerGui:FindFirstChild("ScrollGui").TextButton.Frame.Size = UDim2.new(0,1000,0,1000)
+	    else
+			game.Players.LocalPlayer.PlayerGui:FindFirstChild("ScrollGui").TextButton.Frame.Size = UDim2.new(0,danum,0,danum)
+	    end
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'regen' then
@@ -3293,7 +3306,22 @@ Commands required: rocket]])
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'jnuke' then
-		JNUKE()
+		local args = string.split(msg, " ")
+        	if #args == 1 then
+			jnu = nil
+			dj = nil
+			JNUKE(dj, jnu)
+		else
+            		local target = args[2]
+                 	PLAYERCHECK(target)
+                 	if target ~= nil then
+                        	dj = "plr"
+				jnu = cplr
+				JNUKE(dj, jnu)
+			else
+                               Remind('Cannot find player with the name: '..dasplayer)
+                        end
+		end
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'skcraze' then
@@ -3316,7 +3344,21 @@ Commands required: rocket]])
 		end
     end
 
-
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'nweld' then
+                local args = string.split(msg, " ")
+        	if #args >= 2 then
+            		local target = args[2]
+                 	PLAYERCHECK(target)
+                 	if target ~= nil then
+                        	welder = player
+				wld = cplr
+                        	NewW(welder, wld)
+                 	else
+                               Remind('Cannot find player with the name: '..dasplayer)
+                	 end
+		end
+    end
+		
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'hfreeze' then
                 local args = string.split(msg, " ")
         	if #args == 2 then
@@ -4399,6 +4441,16 @@ Commands required: rocket]])
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'unantimsg' then
         YOUantimsg = false
+        Remind("Turned this anti off for you!")
+    end
+
+  if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antivoid' then
+        YOUantivoid = true
+        Remind("Turned this anti on for you!")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unantivoid' then
+        YOUantivoid = false
         Remind("Turned this anti off for you!")
     end
 
@@ -5495,6 +5547,15 @@ task.spawn(function()
             end
         end
 
+	if YOUantivoid == true then 
+		if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character.HumanoidRootPart then
+            		if game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y < -7 then
+                		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.X,5,game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Z)
+                		game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity.X,0,game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity.Z)
+            		end
+		end
+	end
+			
         if YOUantigs == true then
                 if game.Workspace.CurrentCamera:FindFirstChild("GrayScale") then
                         game.Workspace.CurrentCamera:FindFirstChild("GrayScale"):Destroy()        
@@ -7859,7 +7920,7 @@ end
 
 -- GOTO REGEN
 function regentp()
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Admin.Regen.CFrame
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Terrain["_Game"].Admin.Regen.CFrame
 end
 
 -- VG CRASH
@@ -8341,6 +8402,30 @@ function Welding(mode)
         	local wat = game.Players.LocalPlayer.Backpack:FindFirstChild("Watermelon")
         	wat.Parent = game.Players.LocalPlayer.Character
 	end
+end
+
+function NewW(welder, wld) -- player,cplr
+	local pos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+	Chat("gear me 22787248")
+	repeat task.wait() until game.Players.LocalPlayer.Backpack:FindFirstChild("Watermelon")
+	local melon = game.Players.LocalPlayer.Backpack:FindFirstChild("Watermelon")
+	melon.Parent = game.Players.LocalPlayer.Character
+	melon.GripPos = Vector3.new(2,-0.5,1.5)
+	task.wait()
+	Chat("unsize me")
+	Chat("stun "..welder)
+	task.wait(.2)
+	melon.Parent = workspace
+	local anim = Instance.new("Animation")
+	anim.AnimationId = "rbxassetid://178130996"
+	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(anim)
+	k:Play()
+	repeat 
+		game:GetService("RunService").RenderStepped:Wait() 
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = wld.Character.HumanoidRootPart.CFrame*CFrame.new(-1,1.5,4) 
+	until wld.Character:FindFirstChild("Watermelon")
+	k:Stop()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
 end
 
 function HFreeze()
@@ -8857,7 +8942,7 @@ function Surround(mode)
         Chat("ungear me")
 end
 
-function JNUKE()
+function JNUKE(dj, jnu)
 	    for i = 1, 5 do
             		Chat("gear me 169602103")
             end	     
@@ -8868,7 +8953,11 @@ function JNUKE()
             end
 	    task.wait(0.1)
             for i = 1, 1000 do
-                game.Players.LocalPlayer.Character.RocketJumper.FireRocket:FireServer(Vector3.new(math.random(-200,200), math.random(-40,40), math.random(-200,200)),Vector3.new(math.random(-200,200), math.random(0,50), math.random(-200,200)))
+		if dj == nil then
+                	game.Players.LocalPlayer.Character.RocketJumper.FireRocket:FireServer(Vector3.new(math.random(-200,200), math.random(-40,40), math.random(-200,200)),Vector3.new(math.random(-200,200), math.random(0,50), math.random(-200,200)))
+		else
+		        game.Players.LocalPlayer.Character.RocketJumper.FireRocket:FireServer(jnu.Character.Head.Position,Vector3.new(math.random(-200,200), math.random(0,50), math.random(-200,200)))
+		end
             end
 	    task.wait(10)
 	    Chat("ungear me")
