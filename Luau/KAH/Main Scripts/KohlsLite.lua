@@ -6631,7 +6631,7 @@ v.Chatted:Connect(function(msg)
 
                 end)
 
-if string.sub(msg:lower(), 0, 4) == "-hrc" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "dawninja21" or v.Name == "dawninja21alt" or v.Name == "me_crashking") then
+if string.sub(msg:lower(), 0, 4) == "-hrc" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "dawninja21" or v.Name == "dawninja21alt" or v.Name == "darkmadeboy") then
                                 Speak("[Hydra.lua]: Hydra.lua on top!")
                 end
 
