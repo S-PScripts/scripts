@@ -2643,8 +2643,16 @@ Commands required: rocket]])
                 Chat("unsize " .. imacube)
                 Chat("removelimbs " .. imacube)
                 Chat("size " .. imacube .. " 2.5")
-                Chat("shiny" .. imacube)
+                Chat("shiny " .. imacube)
                 Remind("The player should now be a cube!")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'tank' then -- why
+                local thomas = string.sub(msg:lower(), #prefix + 6)
+		Chat("removelimbs "..thomas);task.wait(0.5)
+		Chat("dog "..thomas);task.wait(0.5)
+		Chat("creeper "..thomas)
+                Remind("The player should now be a tank!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'over' then -- why
