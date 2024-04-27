@@ -1854,8 +1854,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         end
     end
 
-
-
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'gchar' then
         local args = string.split(msg, " ")
         local target = args[2]
@@ -3174,8 +3172,42 @@ Commands required: rocket]])
         end
     end
 
+    if string.sub(msg, 1, #prefix + 6) == prefix..'shlong' then
+		local args = string.split(msg, " ")
+		if #args == 3 then
+        		local dasplayer = args[2]
+			PLAYERCHECK(dasplayer)
+			if player ~= nil then
+				puser = cplr
+				local len = tonumber(args[3])
+				Loops.pp = true
+				pp(puser, len)
+			else
+				Remind('Cannot find player with the name: '..dasplayer)
+			end		
+		else
+			Remind("Invalid amount of arguments.")
+		end
+    end
+
+    if string.sub(msg, 1, #prefix + 8) == prefix..'unshlong' then
+		local args = string.split(msg, " ")
+		if #args == 2 then
+        		local dasplayer = args[2]
+			PLAYERCHECK(dasplayer)
+			if player ~= nil then
+				Loops.pp = false
+			else
+				Remind('Cannot find player with the name: '..dasplayer)
+			end		
+		else
+			Remind("Invalid amount of arguments.")
+		end
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'prefix' then
         prefix = string.sub(msg:lower(), #prefix + 8)
+	Remind("Changed the prefix!")
     end
 
     if string.sub(msg:lower(), 1, 7) == 'cprefix' then
@@ -8640,6 +8672,30 @@ function Laser()
             kahcon2:Disconnect()
 end
 
+function pp(puser, len)
+	local part = nil
+	conn = workspace.Terrain["_Game"].Folder.ChildAdded:Connect(function(v)
+		if not part and v.Size == Vector3.new(1,1,len) then
+			part = v
+			conn:Disconnect()
+		end
+	end)
+
+	Chat("part/1/1/"..tostring(len))
+	repeat task.wait() until part
+
+	PCheck():WaitForChild("Remotes").ServerControls:InvokeServer("PaintPart",{["Part"]=part,["Color"]=puser.Character.Head.Color})
+	part.CanCollide = false
+
+	Loops.penis = true
+	repeat 
+		rwait()
+		part.CFrame = puser.Character.Torso.CFrame * CFrame.new(0,-1,len*-0.5)
+		part.Velocity = Vector3.new(-30,0.5,0.5)
+	until not Loops.pp or not part
+	Loops.pp = false
+end
+
 function Rail()
         Chat("ff " ..railer)
         Chat("god " ..railer)
@@ -8896,7 +8952,7 @@ Loops = {}
 Loops.rainbowmap = false
 Loops.rbase = false
 Loops.rfog = false
-Loops.rkick = false
+Loops.pp = false
 Loops.alog = false
 
 musiclog = {}
