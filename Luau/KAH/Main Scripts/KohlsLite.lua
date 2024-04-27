@@ -2012,6 +2012,10 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                     moveObject(workspace.Terrain["_Game"].Workspace.Baseplate,CFrame.new(-501, 0.100000001, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1))
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'fcam' then
+			FCAM()
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'fixspawn' then
                 if movestatus == true then 
                         return 
@@ -2509,6 +2513,10 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'vgcrash' then
         VGCrash()
+    end
+
+   if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'cocrash' then
+        CoCrash()
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'emcrash' then
@@ -3272,10 +3280,19 @@ Commands required: rocket]])
                  PLAYERCHECK(dasplayer)
                  if player ~= nil then
                         surrer = player
-                        Surround(1)
+                        Surround("sur")
                  else
                                Remind('Cannot find player with the name: '..dasplayer)
                  end
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'rnuke' then
+                range = tonumber(string.sub(msg:lower(), #prefix + 7))
+		RNuke(range)
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'jnuke' then
+		JNUKE()
     end
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'weld' then
@@ -3385,7 +3402,7 @@ Commands required: rocket]])
                  PLAYERCHECK(dasplayer)
                  if player ~= nil then
                         surrer = player
-                        Surround(2)
+                        Surround("nuke")
                  else
                                Remind('Cannot find player with the name: '..dasplayer)
                  end
@@ -7316,6 +7333,24 @@ function TogCam()
     wand:Activate()
 end
 
+function FCAM()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(99999,99999,99999)
+	local instancechina = Instance.new("Part",game.Players.LocalPlayer.Character)
+	instancechina.Anchored = true
+	instancechina.Size = Vector3.new(10,1,10)
+	instancechina.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,-5,0)
+    	Chat("gear me 94794847")
+    	repeat task.wait() until game.Players.LocalPlayer.Backpack:FindFirstChild("VampireVanquisher")
+    	local VampireVanquisher = game.Players.LocalPlayer.Backpack:FindFirstChild("VampireVanquisher")
+    	VampireVanquisher.Parent = game.Players.LocalPlayer.Character
+    	repeat task.wait() until not game.Players.LocalPlayer.Character.VampireVanquisher:FindFirstChild("Coffin")
+    	repeat task.wait()
+    		firetouchinterest(VampireVanquisher.Handle,v.Character.Head,0)
+		firetouchinterest(VampireVanquisher.Handle,v.Character.Head,1)
+    	until game.Players.LocalPlayer:DistanceFromCharacter(v.Character.Head.Position) < 10
+        Chat("respawn me")
+end
+
 -- FIX CAM (client)
 function FixCam()
                 task.spawn(function()
@@ -7726,6 +7761,18 @@ function VGCrash()
       for i = 1,100 do
           Chat("unsize me me me")
       end
+end
+
+function CoCrash()
+    Chat("gear me 94794847")
+    repeat task.wait() until game.Players.LocalPlayer.Backpack:FindFirstChild("VampireVanquisher")
+    game.Players.LocalPlayer.Backpack:FindFirstChild("VampireVanquisher").Parent = game.Players.LocalPlayer.Character
+    repeat task.wait() until not game.Players.LocalPlayer.Character.VampireVanquisher:FindFirstChild("Coffin")
+    repeat task.wait() until game.Players.LocalPlayer.Character.VampireVanquisher:FindFirstChild("Remote")
+    game.Players.LocalPlayer.Character.VampireVanquisher.Remote:FireServer(Enum.KeyCode.Q)
+    for i = 1, 5 do
+        game.Players:Chat("unsize me")
+    end
 end
 
 function EmCrash()
@@ -8689,12 +8736,45 @@ function Surround(mode)
                         c:WaitForChild("OnMouseClick"):FireServer((workspace[surrer].HumanoidRootPart.CFrame * CFrame.new(x, 0, z)).p)
                 end
         end
-        if mode == 1 then
+        if mode == "sur" then
                 task.wait(1)
         else 
                 task.wait(10)
         end
         Chat("ungear me")
+end
+
+function JNUKE()
+	    for i = 1, 5 do
+            		Chat("gear me 169602103")
+            end	     
+            repeat task.wait() until #game.Players.LocalPlayer.Backpack:GetChildren() >= 5
+            local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
+            for _, v in ipairs(Backpack:GetChildren()) do
+                            v.Parent = game.Players.LocalPlayer.Character
+            end
+	    task.wait(0.1)
+            for i = 1, 1000 do
+                game.Players.LocalPlayer.Character.RocketJumper.FireRocket:FireServer(Vector3.new(math.random(-200,200), math.random(-40,40), math.random(-200,200)),Vector3.new(math.random(-200,200), math.random(0,50), math.random(-200,200)))
+            end
+	    task.wait(10)
+end
+
+function RNuke(range)
+             SuperCMD("gear me 88885539")
+	     task.wait(0.1)
+             local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
+             for _, v in ipairs(Backpack:GetChildren()) do
+                            v.Parent = game.Players.LocalPlayer.Character
+             end
+	     task.wait(0.1)
+             for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+			if v:IsA("Tool") then
+        			pcall(function()
+            				v.OnMouseClick:FireServer(game.Players.LocalPlayer.Character.HumanoidRootPart.Position+Vector3.new(math.random(range*-1,range),0,math.random(range*-1,range)))
+        			end)
+   		 	end
+	     end
 end
 
 function Clone(getnum)
