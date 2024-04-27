@@ -3,9 +3,10 @@ _  _____  _   _ _     ____  _     ___ _____ _____
 | |/ / _ \| | | | |   / ___|| |   |_ _|_   _| ____|
 | ' / | | | |_| | |   \___ \| |    | |  | | |  _|  
 | . \ |_| |  _  | |___ ___) | |___ | |  | | | |___ 
-|_|\_\___/|_| |_|_____|____/|_____|___| |_| |_____| v1.418 ]]
+|_|\_\___/|_| |_|_____|____/|_____|___| |_| |_____| v1.42 ]]
 
 -- This free, open-source script is for the Roblox game Kohls Admin House (KAH)
+-- You can play KAH here: https://www.roblox.com/games/112420803/Kohls-Admin-House-NBC-Updated
 -- Created by ScriptingProgrammer (Roblox) / TS2021 (Discord) / S-PScripts (GitHub)
 
 -- Support this script today by donating Robux to me!
@@ -29,7 +30,7 @@ getgenv().kohlsexecuted = true -- don't touch!
 
 getgenv().deprefix = "." -- This can be of any length
 
-getgenv().klversion = "1.418" -- The version of KohlsLite, of course.
+getgenv().klversion = "1.42" -- The version of KohlsLite, of course.
 
 local function Chat(msg)
       game.Players:Chat(msg)
@@ -9759,9 +9760,9 @@ if table.find(unexecuteables, game.Players.LocalPlayer.Name) then
                 task.wait(2.5); while true do end
 end
 
--- Loading (from darc and others) --
+-- Loading (from pqko and others) --
 local function rankcheck(username)
-    if username == "ScriptingProgrammer" then
+    if username == "ScriptingProgrammer" or username == "me_123eq" then
         return "Owner"
     elseif table.find(specialperms, username) then
 	return "Admin"
@@ -9772,13 +9773,18 @@ end
 
 loadedtime = string.format("%.2f", os.clock() - starttime)
 
+print("\n\n\n")
 print("- Debug information -")
 print("Loaded in " .. loadedtime .. "ms.")
-task.wait(2)
 
 username = game.Players.LocalPlayer.Name
 rank = rankcheck(username)
 
-print("Status is: " .. rank)
+print("Your rank is: " .. rank)
 
-print("if you think i'm a skid go cry i don't care")
+--[[
+_  _____  _   _ _     ____  _     ___ _____ _____ 
+| |/ / _ \| | | | |   / ___|| |   |_ _|_   _| ____|
+| ' / | | | |_| | |   \___ \| |    | |  | | |  _|  
+| . \ |_| |  _  | |___ ___) | |___ | |  | | | |___ 
+|_|\_\___/|_| |_|_____|____/|_____|___| |_| |_____| ]]
