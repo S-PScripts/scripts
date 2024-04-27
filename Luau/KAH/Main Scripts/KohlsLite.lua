@@ -3306,6 +3306,29 @@ Commands required: rocket]])
 		RNuke(range)
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'dnuke' then
+ 		local args = string.split(msg, " ")
+        	if #args == 3 then
+            		local amount = tonumber(args[2])
+			local range = tonumber(args[3])
+			local user = nil
+			RoNuke(amount, range, user)
+		elseif #args == 4 then
+			local tar = args[4]
+			PLAYERCHECK(tar)
+			if tar ~= nil then
+				local amount = tonumber(args[2])
+				local range = tonumber(args[3])
+				user = cplr
+				RoNuke(amount, range, user)
+			else
+				Remind("ERROR: Player doesn't exist!")
+			end
+		else
+			Remind("ERROR: Invalid amount of args (it should be 3 or 4)")
+		end
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'jnuke' then
 		local args = string.split(msg, " ")
         	if #args == 1 then
@@ -8962,6 +8985,40 @@ function JNUKE(dj, jnu)
             end
 	    task.wait(10)
 	    Chat("ungear me")
+end
+
+function dropRock(Position)
+	spawn(function()
+		Chat('gear me 90718686')
+		repeat task.wait() until game.Players.LocalPlayer.Backpack:FindFirstChild("ConjurorsFist")
+		local fist = game.Players.LocalPlayer.Backpack:FindFirstChild("ConjurorsFist")
+		fist.Parent = game.Players.LocalPlayer.Character
+		task.wait(0.25)
+		fist.Client.Disabled = true
+		function fist.MouseLoc.OnClientInvoke()
+			return Position
+		end
+		fist:Activate()
+		wait(3.5)
+		fist:Destroy()
+		Chat("ungear me")
+	end)
+end
+
+function RoNuke(amount, range, user)
+	if user == nil then
+		for i = 1, amount do
+			dropRock(Vector3.new(
+				math.random(range*-1,range),
+				math.random(range*-1,range),
+				math.random(range*-1,range)
+			))
+		end
+	else
+		if user and user.Character and user.Character:FindFirstChild("Head") then
+			dropRock(user.Character.Head.Position)
+		end
+	end
 end
 
 function RNuke(range)
