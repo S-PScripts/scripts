@@ -3854,10 +3854,12 @@ Commands required: rocket]])
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'nowater' then
                 SuperCMD("gear me 88146497")
+		Chat("Do actall on water places")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'watermap' then
                 SuperCMD("gear me 236438668")
+		Chat("Do actall then ungear so they don't retract")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'fixpaint' then
