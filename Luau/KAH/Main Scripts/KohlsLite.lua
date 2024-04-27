@@ -8987,8 +8987,8 @@ function JNUKE(dj, jnu)
 	    Chat("ungear me")
 end
 
-function dropRock(Position)
-	spawn(function()
+function fistdrop(Position)
+	task.spawn(function()
 		Chat('gear me 90718686')
 		repeat task.wait() until game.Players.LocalPlayer.Backpack:FindFirstChild("ConjurorsFist")
 		local fist = game.Players.LocalPlayer.Backpack:FindFirstChild("ConjurorsFist")
@@ -9008,7 +9008,7 @@ end
 function RoNuke(amount, range, user)
 	if user == nil then
 		for i = 1, amount do
-			dropRock(Vector3.new(
+			fistdrop(Vector3.new(
 				math.random(range*-1,range),
 				math.random(range*-1,range),
 				math.random(range*-1,range)
@@ -9016,7 +9016,7 @@ function RoNuke(amount, range, user)
 		end
 	else
 		if user and user.Character and user.Character:FindFirstChild("Head") then
-			dropRock(user.Character.Head.Position)
+			fistdrop(user.Character.Head.Position)
 		end
 	end
 end
