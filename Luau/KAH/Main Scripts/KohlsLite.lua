@@ -5235,6 +5235,7 @@ print("logspam - spam the logs")
 
 print("\n\n\n")
 print("gearban - stop a user from using gears with the portable justice")
+print("ungearban - woah, what might this be? also you can ungearban yourself too xd")
 
 print("\n\n\n")
 print("supercmd - spam text a set amount of times")
