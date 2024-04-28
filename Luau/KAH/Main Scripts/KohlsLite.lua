@@ -41,9 +41,9 @@ local function Speak(msg)
 end
 
 if getgenv().theprefix then
-	local prefix = getgenv().theprefix
+	prefix = getgenv().theprefix
 else
-	local prefix = getgenv().deprefix
+	prefix = getgenv().deprefix
 end
 
 local defaults = {".antirocket me", ".tnok", ".antimsg me"} -- you don't need to change these
