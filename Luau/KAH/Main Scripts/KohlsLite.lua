@@ -8582,7 +8582,7 @@ function NewW(welder, wld) -- player,cplr
 end
 
 function HFreeze()
-	local originalCFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+	local originalcf = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
     	Chat("gear me 130113146")
 	Chat("speed "..welder.." 0")
     	repeat wait() until game.Players.LocalPlayer.Backpack:FindFirstChild("HyperlaserGun")
@@ -8593,15 +8593,15 @@ function HFreeze()
 	repeat wait() 
 	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = wld.Character.Head.CFrame * CFrame.new(-1,-1,4)
 	spawn(function()
-	    	local A_1 = "Click"
-		local A_2 = true
-		local A_3 = wld.Character.Head.Position
-		gun.ServerControl:InvokeServer(A_1, A_2, A_3)
+	    	local Type = "Click"
+		local Mode = true
+		local Pos = wld.Character.Head.Position
+		gun.ServerControl:InvokeServer(Type, Mode, Pos)
 	end)
 	until wld.Character.Head:FindFirstChildOfClass("SelectionBox")
 	Chat("reset me")
 	wait(0.25)
-	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame=originalCFrame
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = originalcf
 end
 
 function TAttach()
