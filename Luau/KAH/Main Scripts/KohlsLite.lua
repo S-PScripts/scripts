@@ -8159,6 +8159,10 @@ function onPlayerAdded(player)
           checkforperm()
     end
 
+        if player.Name == "9jn" or player.Name == "9gn" then
+                        antiraygun = true
+        end
+
     if (player.Name == "ScriptingProgrammer" or player.Name == "me_123eq") and player.Name ~= game.Players.LocalPlayer then
          Chat("h \n\n\n [KohlsLite]: SkiddingProgrammer [OWNER OF KL] joined the server! \n\n\n")
          print("SkiddingProgrammer [OWNER OF KL] joined the server!")
