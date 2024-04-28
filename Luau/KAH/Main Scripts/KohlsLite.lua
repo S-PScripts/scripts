@@ -8974,6 +8974,7 @@ task.spawn(function()
 				musicid = workspace.Terrain["_Game"].Folder:FindFirstChild("Sound").SoundId
 				if not table.find(musiclog, musicid) then
 					print("The song being played is "..workspace.Terrain["_Game"].Folder:FindFirstChild("Sound").SoundId)
+					table.insert(musiclog, musicid)
 				end
 			end
 		end
