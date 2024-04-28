@@ -3440,6 +3440,11 @@ Commands required: rocket]])
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'skcraze' then
 		SKCRAZE()
+		skf = true
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'unskcraze' then
+		skf = false
     end
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'weld' then
@@ -8682,7 +8687,13 @@ function pp(puser, len)
 	Chat("part/1/1/"..tostring(len))
 	repeat task.wait() until part
 
-	PCheck():WaitForChild("Remotes").ServerControls:InvokeServer("PaintPart",{["Part"]=part,["Color"]=puser.Character.Head.Color})
+	Chat(prefix.."gear me painter")
+	repeat wait() until game.Players.LocalPlayer.Backpack:FindFirstChild("PaintBucket")
+    	paint = game.Players.LocalPlayer.Backpack:FindFirstChild("PaintBucket")
+   	paint.Parent = game.Players.LocalPlayer.Character
+	Chat(prefix.."rpaintui")
+
+	paint:WaitForChild("Remotes").ServerControls:InvokeServer("PaintPart",{["Part"]=part,["Color"]=puser.Character.Head.Color})
 	part.CanCollide = false
 
 	Loops.penis = true
@@ -9218,12 +9229,15 @@ function SKCRAZE()
                 v:Activate()
         end
         
-        workspace.ChildAdded:Connect(function(mdl)
+        conn = workspace.ChildAdded:Connect(function(mdl)
             task.wait()
             if mdl:IsA("Model") then
                 mdl:WaitForChild("SkateBoardPlatform").CanCollide = false
             end
         end)
+
+	repeat task.wait(0) until skf == false
+	conn:Disconnect()
 end
 
 function Clone(getnum)
@@ -9322,7 +9336,7 @@ function Spike(getnum)
         		task.wait()
         		v:Activate()
        			task.wait()
-        		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.Angles(0,math.rad(360/tonumber(args[1])),0)
+        		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.Angles(0,math.rad(360/tonumber(getnum)),0)
     		end
 	end
 end
