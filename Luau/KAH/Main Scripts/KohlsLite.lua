@@ -7501,7 +7501,6 @@ end
 
 function slag(tplr, tpln)
             local stop = false
-        --    local oldPosi = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 
             Chat("freeze " .. tpln)
             tplr.Character:WaitForChild("ice")
@@ -7522,38 +7521,43 @@ function slag(tplr, tpln)
             local conn2
             local Skates = {}
             local primarySkate = Skates[1]
+
+            local oldPosi = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
             local toCF = tplr.Character.HumanoidRootPart.CFrame * CFrame.new(0,-3,0)
 
             workspace.ChildAdded:Connect(function(Skate)
                 if Skate.Name == "Skateboard" and not table.find(Skates, Skate) then
-                    for _,v in pairs(Skate:GetChildren()) do
-                        if v:IsA("BasePart") then
-                            v.CanCollide = false
-                            v.CanTouch = false
-                            v.Massless = true
-                        end
-                    end
-                    Skate.ChildAdded:Connect(function(v)
-                        if v:IsA("BasePart") then
-                            v.CanCollide = false
-                            v.CanTouch = false
-                            v.Massless = true
-                        end
-                    end)
-                    table.insert(Skates, Skate)
-                    Skate.PrimaryPart = Skate:WaitForChild("SkateboardPlatform")
-                    Skate.PrimaryPart.Velocity = Vector3.new(30,4,0)
-                    local skatespos = #Skates
-                    RunService.Heartbeat:Connect(function()
-                        Skate.PrimaryPart.Velocity = Vector3.new(30,4,0)
-                        Skate:SetPrimaryPartCFrame(tplr.Character.HumanoidRootPart.CFrame * CFrame.new(0,-3 + skatespos * .25,0))
-                    end)
+                    	for _,v in pairs(Skate:GetChildren()) do
+                        	if v:IsA("BasePart") then
+                            		v.CanCollide = false
+                            		v.CanTouch = false
+                           		v.Massless = true
+                        	end
+                    	end
+		
+                    	Skate.ChildAdded:Connect(function(v)
+                        	if v:IsA("BasePart") then
+                            		v.CanCollide = false
+                            		v.CanTouch = false
+                            		v.Massless = true
+                        	end	
+                    	end)
+		
+                   	table.insert(Skates, Skate)
+                    	Skate.PrimaryPart = Skate:WaitForChild("SkateboardPlatform")
+                    	Skate.PrimaryPart.Velocity = Vector3.new(30,4,0)
+                    	local skatespos = #Skates
+		
+                    	RunService.Heartbeat:Connect(function()
+                        	Skate.PrimaryPart.Velocity = Vector3.new(30,4,0)
+                        	Skate:SetPrimaryPartCFrame(tplr.Character.HumanoidRootPart.CFrame * CFrame.new(0,-3 + skatespos * .25,0))
+                    	end)
                 end
             end)
 
             for _, Tool in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
                 if Tool.Name == "GoldenSkateboard" then
-                    thread(function()
+                    task.spawn(function()
                         Tool:WaitForChild("LocalScript").Disabled = true
                         Tool:WaitForChild("RemoteControl"):WaitForChild("ClientControl").OnClientInvoke = function(Value)
                             if Value == "MousePosition" then
