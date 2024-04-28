@@ -8971,13 +8971,13 @@ Loops.alog = false
 
 musiclog = {}
 
-KL_FOLDER = "KohlsLite"
+--[[KL_FOLDER = "KohlsLite"
 if isfolder(KL_FOLDER) then
 	print("debug.dev : Folder exists")
 else
 	makefolder("KohlsLite")
 	print("debug.dev : Made 'KOHLSLITE' folder")
-end
+end]]
 
 task.spawn(function()
 	while true do
