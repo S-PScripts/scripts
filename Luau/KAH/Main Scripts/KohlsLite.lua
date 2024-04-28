@@ -30,7 +30,7 @@ getgenv().kohlsexecuted = true -- don't touch!
 
 getgenv().deprefix = "." -- This can be of any length
 
-getgenv().klversion = "1.46" -- The version of KohlsLite, of course.
+getgenv().klversion = "1.46 dev" -- The version of KohlsLite, of course.
 
 local function Chat(msg)
       game.Players:Chat(msg)
@@ -8979,7 +8979,21 @@ task.spawn(function()
 				musicid = workspace.Terrain["_Game"].Folder:FindFirstChild("Sound").SoundId
 				if not table.find(musiclog, musicid) then
 					print("The song being played is "..workspace.Terrain["_Game"].Folder:FindFirstChild("Sound").SoundId)
+                                	nmusicid = musicid:match("id=(%d+)")
 					table.insert(musiclog, musicid)
+					if writefile and readfile then -- thanks dizzy
+	    					local cd = os.date("%Y-%m-%d %H:%M:%S")
+    						local logdsc = "Audio was detected at: [ ".. cd .. " ] \n The music id was: [ " .. nmusicid .. " ] \n The music file is : [ ".. musicid .." ]\n"
+   						local file = "KLaudiolog.txt"
+    						local text = ""
+	
+    						if isfile(file) then
+        						text = readfile(file)
+    						end
+	
+    						text = text .. logdsc
+   					 	writefile(file, text)
+					end
 				end
 			end
 		end
