@@ -3,7 +3,7 @@ _  _____  _   _ _     ____  _     ___ _____ _____
 | |/ / _ \| | | | |   / ___|| |   |_ _|_   _| ____|
 | ' / | | | |_| | |   \___ \| |    | |  | | |  _|  
 | . \ |_| |  _  | |___ ___) | |___ | |  | | | |___ 
-|_|\_\___/|_| |_|_____|____/|_____|___| |_| |_____| v1.45 ]]
+|_|\_\___/|_| |_|_____|____/|_____|___| |_| |_____| v1.46 ]]
 
 -- This free, open-source script is for the Roblox game Kohls Admin House (KAH)
 -- You can play KAH here: https://www.roblox.com/games/112420803/Kohls-Admin-House-NBC-Updated
@@ -30,7 +30,7 @@ getgenv().kohlsexecuted = true -- don't touch!
 
 getgenv().deprefix = "." -- This can be of any length
 
-getgenv().klversion = "1.45" -- The version of KohlsLite, of course.
+getgenv().klversion = "1.46" -- The version of KohlsLite, of course.
 
 local function Chat(msg)
       game.Players:Chat(msg)
@@ -771,7 +771,8 @@ local themecode = {
     {name = "bright pink", code = "time -,fogend 46,fogcolor 250 83 255"},
     {name = "acid proximity", code = "time -,fogend 1000,fogcolor 37 355 55"},
     {name = "sapphire evening", code = "fogcolor 100 0 255,fogend 1000,time 6,outdoorambient 0 0 0,brightness 0.5,ambient 125 0 255"},
-    {name = "sunset", code = "fix,time 7,fogend 2000,outdoorambient 0.3 0.3 0.3"}
+    {name = "sunset", code = "fix,time 7,fogend 2000,outdoorambient 0.3 0.3 0.3"},
+    {name = "true black", code = "time 0,fogcolor 0 0 0,fogend 0"}
 }
 
 -- Keybinds
