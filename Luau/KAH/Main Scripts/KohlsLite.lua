@@ -3423,7 +3423,7 @@ Commands required: rocket]])
 			jnu = nil
 			dj = nil
 			JNUKE(dj, jnu)
-		else
+		elseif #args == 2 then
             		local target = args[2]
                  	PLAYERCHECK(target)
                  	if target ~= nil then
@@ -3433,6 +3433,8 @@ Commands required: rocket]])
 			else
                                Remind('Cannot find player with the name: '..dasplayer)
                         end
+		else
+			Remind("Invalid amount of arguments.")
 		end
     end
 
