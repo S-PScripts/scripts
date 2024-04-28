@@ -30,7 +30,7 @@ getgenv().kohlsexecuted = true -- don't touch!
 
 getgenv().deprefix = "." -- This can be of any length
 
-getgenv().klversion = "1.47" -- The version of KohlsLite, of course.
+getgenv().klversion = "1.47_DEV" -- The version of KohlsLite, of course.
 
 local function Chat(msg)
       game.Players:Chat(msg)
@@ -8971,6 +8971,14 @@ Loops.alog = false
 
 musiclog = {}
 
+KL_FOLDER = "KohlsLite"
+if isfolder(KL_FOLDER) then
+	print("debug.dev : Folder exists")
+else
+	makefolder("KohlsLite")
+	print("debug.dev : Made 'KOHLSLITE' folder")
+end
+
 task.spawn(function()
 	while true do
 		task.wait(0)
@@ -8984,7 +8992,7 @@ task.spawn(function()
 					if writefile and readfile then -- thanks dizzy
 	    					local cd = os.date("%Y-%m-%d %H:%M:%S")
     						local logdsc = "Audio was detected at: [ ".. cd .. " ] \n The music id was: [ " .. nmusicid .. " ] \n The music file is : [ ".. musicid .." ]\n"
-   						local file = "KLaudiolog.txt"
+   						local file = "KohlsLite/AudioLogger.txt"
     						local text = ""
 	
     						if isfile(file) then
