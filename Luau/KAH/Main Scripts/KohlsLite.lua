@@ -3107,7 +3107,7 @@ Commands required: rocket]])
         House()
     end
 
-    if string.sub(msg:lower(), 1, 3)  == '-re' then
+    if string.sub(msg:lower(), 1, 3)  == ',re' then
         Chat("reset me")
     end
 
