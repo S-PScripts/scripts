@@ -49,6 +49,7 @@ end
 local defaults = {".antirocket me", ".tnok", ".antimsg me"} -- you don't need to change these
 
 local bending -- ignore
+local ratelj -- ignore
 local eincrash -- ignore
 local starttime = os.clock() -- ignore
 
@@ -2698,25 +2699,6 @@ Commands required: rocket]])
 		Chat("unsize "..hf)
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'over' then -- why
-                if bending == true then -- double chat attempted fix but probs won't work
-                        return 
-                else 
-                        bending = true
-                        local ucrazy = string.sub(msg:lower(), #prefix + 6)
-                        Chat("rocket/"..ucrazy);task.wait(.4)
-                        Chat("freeze "..ucrazy)
-                        Chat("unrocket/" ..ucrazy);task.wait(.4)
-                        Chat("name " .. ucrazy .. " ")
-                        Chat("thaw " .. ucrazy)
-                        Chat("unseizure " .. ucrazy)
-                        Chat("tp " .. ucrazy .. ucrazy)
-                        Chat("sit " .. ucrazy)
-                        Remind("The player should now be bending!")
-                        bending = false
-                end
-    end
-
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'space' then -- kohls true anti kill
                 local person = string.sub(msg:lower(), #prefix + 7)
                 Chat("h \n\n\n Guys, we've finally done it! \n\n\n");task.wait(4)
@@ -2798,16 +2780,21 @@ Commands required: rocket]])
 
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'bend' then -- pr
-                local bendin = string.sub(msg:lower(), #prefix + 6)
-                Chat("rocket/"..bendin);task.wait(.5)
-                Chat("freeze "..bendin)
-                Chat("unrocket/"..bendin);task.wait(.34)
-                Chat("name "..bendin.." "..bendin);task.wait(.34)
-                Chat("thaw "..bendin);task.wait(.34)
-                Chat("unseizure "..bendin)
-                Chat("tp "..bendin.." "..bendin)
-                Chat("sit "..bendin)
+    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'bend' then -- pr/cxodek script
+		if bending then return 
+		else
+			bending = true
+                	local bendin = string.sub(msg:lower(), #prefix + 6)
+                	Chat("rocket/"..bendin);task.wait(.5)
+                	Chat("freeze "..bendin)
+                	Chat("unrocket/"..bendin);task.wait(.34)
+                	Chat("name "..bendin.." "..bendin);task.wait(.34)
+                	Chat("thaw "..bendin);task.wait(.34)
+                	Chat("unseizure "..bendin)
+                	Chat("tp "..bendin.." "..bendin)
+                	Chat("sit "..bendin)
+			bending = false
+		end
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antidisco' then
@@ -8093,16 +8080,18 @@ function VGCrash()
       end
 end
 
+-- ALT VG CRASH
 function CoCrash()
-    Chat("gear me 94794847")
-    repeat task.wait() until game.Players.LocalPlayer.Backpack:FindFirstChild("VampireVanquisher")
-    game.Players.LocalPlayer.Backpack:FindFirstChild("VampireVanquisher").Parent = game.Players.LocalPlayer.Character
-    repeat task.wait() until not game.Players.LocalPlayer.Character.VampireVanquisher:FindFirstChild("Coffin")
-    repeat task.wait() until game.Players.LocalPlayer.Character.VampireVanquisher:FindFirstChild("Remote")
-    game.Players.LocalPlayer.Character.VampireVanquisher.Remote:FireServer(Enum.KeyCode.Q)
-    for i = 1, 5 do
+      Chat("gear me 00000000000000094794847")
+      repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("VampireVanquisher")
+      local vg = game.Players.LocalPlayer.Backpack:FindFirstChild("VampireVanquisher")
+      vg.Parent = game.Players.LocalPlayer.Character
+      repeat task.wait() until not game.Players.LocalPlayer.Character.VampireVanquisher:FindFirstChild("Coffin")
+      repeat task.wait() until game.Players.LocalPlayer.Character.VampireVanquisher:FindFirstChild("Remote")
+      game.Players.LocalPlayer.Character.VampireVanquisher.Remote:FireServer(Enum.KeyCode.Q)
+      for i = 1, 5 do
         game.Players:Chat("unsize me")
-    end
+      end
 end
 
 function EmCrash()
@@ -8121,7 +8110,7 @@ end
 
 function PCrash() -- with this crash make sure to click manually
 	for i = 1, 2 do
-              Chat("gear me 0000000092628079")
+              Chat("gear me 00000000000000092628079")
               repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("OrinthianSwordAndShield")
               local ort = game.Players.LocalPlayer.Backpack:FindFirstChild("OrinthianSwordAndShield")
               ort.Parent = game.Players.LocalPlayer.Character
