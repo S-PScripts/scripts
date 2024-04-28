@@ -2660,7 +2660,7 @@ Commands required: rocket]])
 		for i = 1, 7 do
 			Chat("size "..ufo.." 0.3")
 		end
-		coht("unsize "..ufo)
+		Chat("unsize "..ufo)
 		Chat("size "..ufo.." 4")
 		Chat("paint "..ufo.." brown")
 		task.wait(0.25)
