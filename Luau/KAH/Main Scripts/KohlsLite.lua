@@ -3788,11 +3788,11 @@ Commands required: rocket]])
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'wbcam' then
-                TogCam()    
+                TogCam("b")    
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'wfcam' then
-                TogCam()    
+                TogCam("f")    
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'breakcam' then
@@ -7648,9 +7648,8 @@ function NoVelo()
     Remind("Velocity should be broken for the object you wanted it to do so!")
 end
 
-
 -- BREAK AND FIX CAM 2
-function TogCam()
+function TogCam(mode)
     Chat("tp others me")
     Chat("gear me 68354832")
     repeat wait() until game.Players.LocalPlayer.Backpack:FindFirstChild("BlizzardWand")
@@ -7658,6 +7657,10 @@ function TogCam()
     wand.Parent = game.Players.LocalPlayer.Character
     wait(0.2)
     wand:Activate()
+    if mode == "b" then
+    		wait(0.4)
+    		Chat("reset all")
+    end
 end
 
 function FCAM()
