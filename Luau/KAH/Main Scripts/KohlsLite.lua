@@ -3420,14 +3420,14 @@ Commands required: rocket]])
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'jnuke' then
 		local args = string.split(msg, " ")
         	if #args == 1 then
+			dj = "default"
 			jnu = nil
-			dj = nil
 			JNUKE(dj, jnu)
 		elseif #args == 2 then
             		local target = args[2]
                  	PLAYERCHECK(target)
                  	if target ~= nil then
-                        	dj = "plr"
+                        	dj = "player"
 				jnu = cplr
 				JNUKE(dj, jnu)
 			else
@@ -9145,7 +9145,7 @@ function JNUKE(dj, jnu)
             end
 	    task.wait(0.1)
             for i = 1, 1000 do
-		if dj == nil then
+		if dj == "default" then
                 	game.Players.LocalPlayer.Character.RocketJumper.FireRocket:FireServer(Vector3.new(math.random(-200,200), math.random(-40,40), math.random(-200,200)),Vector3.new(math.random(-200,200), math.random(0,50), math.random(-200,200)))
 		else
 		        game.Players.LocalPlayer.Character.RocketJumper.FireRocket:FireServer(jnu.Character.Head.Position,Vector3.new(math.random(-200,200), math.random(0,50), math.random(-200,200)))
