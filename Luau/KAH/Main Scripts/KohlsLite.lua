@@ -3401,12 +3401,12 @@ Commands required: rocket]])
 			local range = tonumber(args[3])
 			local user = nil
 			RoNuke(amount, range, user)
-		elseif #args == 4 then
-			local tar = args[4]
+		elseif #args == 2 then
+			local tar = args[2]
 			PLAYERCHECK(tar)
 			if tar ~= nil then
-				local amount = tonumber(args[2])
-				local range = tonumber(args[3])
+				local amount = nil
+				local range = nil
 				user = cplr
 				RoNuke(amount, range, user)
 			else
