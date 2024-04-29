@@ -13,6 +13,8 @@ _  _____  _   _ _     ____  _     ___ _____ _____
 -- Please do not "skid" off this code by changing the name and removing the dev section. It makes me annoyed!
 -- You can make your own script instead of skidding and you can take stuff from here if necessary.
 
+-- This script does not work on Codex!!!
+
 local function Remind(msg)
         game.StarterGui:SetCore("SendNotification", {
                 Title = "KohlsLite",
