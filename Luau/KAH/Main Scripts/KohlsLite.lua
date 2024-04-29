@@ -3,7 +3,7 @@ _  _____  _   _ _     ____  _     ___ _____ _____
 | |/ / _ \| | | | |   / ___|| |   |_ _|_   _| ____|
 | ' / | | | |_| | |   \___ \| |    | |  | | |  _|  
 | . \ |_| |  _  | |___ ___) | |___ | |  | | | |___ 
-|_|\_\___/|_| |_|_____|____/|_____|___| |_| |_____| v1.48 ]]
+|_|\_\___/|_| |_|_____|____/|_____|___| |_| |_____| v1.485 ]]
 
 -- This free, open-source script is for the Roblox game Kohls Admin House (KAH)
 -- You can play KAH here: https://www.roblox.com/games/112420803/Kohls-Admin-House-NBC-Updated
@@ -32,7 +32,7 @@ getgenv().kohlsexecuted = true -- don't touch!
 
 getgenv().deprefix = "." -- This can be of any length
 
-getgenv().klversion = "1.48" -- The version of KohlsLite, of course.
+getgenv().klversion = "1.485" -- The version of KohlsLite, of course.
 
 local function Chat(msg)
       game.Players:Chat(msg)
@@ -3514,7 +3514,7 @@ Commands required: rocket]])
 		end
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'acton'
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'acton' then
 		local args = string.split(msg, " ")
         	if #args == 3 then
 			local act = args[2]
@@ -3559,7 +3559,7 @@ Commands required: rocket]])
 				Remind("Invalid action!")
 			end
 		else
-			Remind("Invalid amount of arguments (should be 3)
+			Remind("Invalid amount of arguments. (it should be 3)")
 		end
     end
 
@@ -5407,12 +5407,15 @@ print("slag - lag a player with skateboards")
 print("\n\n\n")
 print("weld (player) (mode) - weld to a player - options are right/left arm, torso and hold")
 print("nweld - better weld for the hold mode")
+print("dummy - create a test dummy")
 
 print("\n\n\n")
 print("ungearme - ungear yourself... Right???")
+print("rpaintui - remove paint UI")
+
+print("\n\n\n")
 print("isc - check if the server crashed")
 print("getping - say your ping")
-print("rpaintui - remove paint ui")
 
 print("\n\n\n")
 print("acton (name) (times) - activate a gear a set amount of times from the saved list")
@@ -5434,7 +5437,7 @@ print("surround - surround a player with planes")
 print("nuke - nuke a player with planes")
 print("jnuke (optional: player) - nuke a player or the map with the RocketJumper gear")
 print("dnuke (amount) (range) (optional: player) - nuke the map with the ConjurorsFist")
-print("rnuke (range) - nuke the map with planes)
+print("rnuke (range) - nuke the map with planes)")
 
 print("\n\n\n")
 print("laser - laser and punish someone at the same time. they cannot respawn and are stuck in limbo")
@@ -10182,4 +10185,4 @@ _  _____  _   _ _     ____  _     ___ _____ _____
 | |/ / _ \| | | | |   / ___|| |   |_ _|_   _| ____|
 | ' / | | | |_| | |   \___ \| |    | |  | | |  _|  
 | . \ |_| |  _  | |___ ___) | |___ | |  | | | |___ 
-|_|\_\___/|_| |_|_____|____/|_____|___| |_| |_____| ]]
+|_|\_\___/|_| |_|_____|____/|_____|___| |_| |_____| ON TOP ]]
