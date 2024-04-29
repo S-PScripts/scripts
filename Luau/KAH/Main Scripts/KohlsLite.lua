@@ -32,7 +32,7 @@ getgenv().kohlsexecuted = true -- don't touch!
 
 getgenv().deprefix = "." -- This can be of any length
 
-getgenv().klversion = "1.489_dev" -- The version of KohlsLite, of course.
+getgenv().klversion = "1.489_dev_new_edit" -- The version of KohlsLite, of course.
 
 local function Chat(msg)
       game.Players:Chat(msg)
