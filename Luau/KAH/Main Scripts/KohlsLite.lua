@@ -32,7 +32,7 @@ getgenv().kohlsexecuted = true -- don't touch!
 
 getgenv().deprefix = "." -- This can be of any length
 
-getgenv().klversion = "1.487" -- The version of KohlsLite, of course.
+getgenv().klversion = "1.487_DEV" -- The version of KohlsLite, of course.
 
 local function Chat(msg)
       game.Players:Chat(msg)
@@ -118,7 +118,8 @@ local pwl = {
     "Anka_707587",
     "DionteIsCute",
     "me_capybara",
-    "E4_DQ"
+    "E4_DQ",
+    "vgcrash"
 }
 
 -- Players you cannot kick
@@ -3041,6 +3042,21 @@ Commands required: rocket]])
         end
     end
 
+		    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'testcmd' then
+
+			a = "Hello world"
+
+			local chars = {}
+			for char in a:gmatch(".") do
+    				table.insert(chars, char)
+			end
+
+			for i, char in ipairs(chars) do
+    				local spaces = string.rep(" ", (i-1) * 4)
+    				Chat("h/KohlsLite ez\n\n\n\n\n\n\n\n\n\n" .. spaces .. char)
+			end
+		end
+		
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'sregen' then
         SRegen = true
     end
