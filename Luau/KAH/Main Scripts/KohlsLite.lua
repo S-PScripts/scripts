@@ -2724,8 +2724,8 @@ Commands required: rocket]])
 		Chat("unhat "..target)
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'blender' then -- kohlsnoob
-	        local daddyhelpmee = string.sub(msg:lower(), #prefix + 8)
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'blender' then -- kohlsnoob
+	        local daddyhelpmee = string.sub(msg:lower(), #prefix + 9)
 		Chat("jail "..daddyhelpmee)
 		Chat("stun "..daddyhelpmee)
 		Chat("spin "..daddyhelpmee)
