@@ -3,7 +3,7 @@ _  _____  _   _ _     ____  _     ___ _____ _____
 | |/ / _ \| | | | |   / ___|| |   |_ _|_   _| ____|
 | ' / | | | |_| | |   \___ \| |    | |  | | |  _|  
 | . \ |_| |  _  | |___ ___) | |___ | |  | | | |___ 
-|_|\_\___/|_| |_|_____|____/|_____|___| |_| |_____| v1.47 ]]
+|_|\_\___/|_| |_|_____|____/|_____|___| |_| |_____| v1.48 ]]
 
 -- This free, open-source script is for the Roblox game Kohls Admin House (KAH)
 -- You can play KAH here: https://www.roblox.com/games/112420803/Kohls-Admin-House-NBC-Updated
@@ -32,7 +32,7 @@ getgenv().kohlsexecuted = true -- don't touch!
 
 getgenv().deprefix = "." -- This can be of any length
 
-getgenv().klversion = "1.47_DEV" -- The version of KohlsLite, of course.
+getgenv().klversion = "1.48" -- The version of KohlsLite, of course.
 
 local function Chat(msg)
       game.Players:Chat(msg)
@@ -778,8 +778,10 @@ local themecode = {
 }
 
 -- Keybinds
-local housekeybind = "h" -- Keybinds?!
-local rekeybind = "r"
+local housekeybind = "h" -- house keybind
+local rekeybind = "r" -- reset keybind
+local flykeybind = "f" -- fly keybind
+-- local crashkey = "e" 
 
 -- Auto things when people join
 local autogpcheck = true -- automatically check for player's gamepasses
@@ -1660,6 +1662,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'audiolog' then
 		Loops.alog = true
+		Remind("Saving to your workspace..")
    end
 
    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unaudiolog' then
@@ -1780,7 +1783,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                                     Chat(code)
                             end
                        else
-                            Remind("Invalid turn chosen.")
+                            Remind("Invalid turn (char) chosen.")
                 end
             end
     end
@@ -3413,10 +3416,10 @@ Commands required: rocket]])
 				user = cplr
 				RoNuke(amount, range, user)
 			else
-				Remind("ERROR: Player doesn't exist!")
+				Remind("Player doesn't exist!")
 			end
 		else
-			Remind("ERROR: Invalid amount of args (it should be 3 or 4)")
+			Remind("Invalid amount of arguments. (it should be 3 or 4)")
 		end
     end
 
@@ -3511,64 +3514,53 @@ Commands required: rocket]])
 		end
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'clone' then
-                 local getnumber = string.sub(msg:lower(), #prefix + 7)
-                 Clone(getnumber)
-    end
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'acton'
+		local args = string.split(msg, " ")
+        	if #args == 3 then
+			local act = args[2]
+			local getnumber = args[3]
+			if act == "clone" then
+				Clone(getnumber)
+		
+			elseif act == "table" or act == "raig" then
+		                Table(getnumber)
+		
+			elseif act == "potion" or act == "dance" then
+				Potion(getnumber)
+		
+			elseif act == "tripmine" or act == "trip" then
+		                 MineTrip(getnumber)
+		
+			elseif act == "table" then
+                		 Spike(getnumber)
+		
+			elseif act == "cannon" then
+		                 Cannon(getnumber)
+		
+			elseif act == "zombie" then
+				 Zombie(getnumber)
+		
+			elseif act == "alpaca" then
+				 Alpaca(getnumber)
+		
+			elseif act == "piano" or act == "mozart" then
+		                 Piano(getnumber)
 
-    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'table' then
-                 local getnumber = string.sub(msg:lower(), #prefix + 7)
-                 Table(getnumber)
-    end
+			elseif act == "bdrop" or act == "bassdrop" then
+		                 Bassdrop(getnumber)
 
-    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'potion' then
-                 local getnumber = string.sub(msg:lower(), #prefix + 8)
-                 Potion(getnumber)
-    end
+			elseif act == "cstory" or act == "coolstory" then
+		                 Coolstory(getnumber)
 
-    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'tripmine' then
-                 local getnumber = string.sub(msg:lower(), #prefix + 10)
-                 MineTrip(getnumber)
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'spike' then
-                 local getnumber = string.sub(msg:lower(), #prefix + 7)
-                 Spike(getnumber)
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'cannon' then
-                 local getnumber = string.sub(msg:lower(), #prefix + 8)
-                 Cannon(getnumber)
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'zombie' then
-                 local getnumber = string.sub(msg:lower(), #prefix + 8)
-                 Zombie(getnumber)
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'alpaca' then
-                 local getnumber = string.sub(msg:lower(), #prefix + 8)
-                 Alpaca(getnumber)
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'piano' then
-                 local getnumber = string.sub(msg:lower(), #prefix + 7)
-                 Piano(getnumber)
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'bdrop' then
-                 local getnumber = string.sub(msg:lower(), #prefix + 7)
-                 Bassdrop(getnumber)
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'cstory' then
-                 local getnumber = string.sub(msg:lower(), #prefix + 8)
-                 Coolstory(getnumber)
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'banana' then
-                 local getnumber = string.sub(msg:lower(), #prefix + 8)
-                 Banana(getnumber)
+			elseif act == "banana" then
+		                 Banana(getnumber)
+			
+			else
+				Remind("Invalid action!")
+			end
+		else
+			Remind("Invalid amount of arguments (should be 3)
+		end
     end
 
    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'sjail' then
@@ -5408,11 +5400,41 @@ print("unrkick - stop trying to crash people using the rocket.")
 	
 print("\n\n\n")
 print("rail - rail a player")
-print("surround - surround a player with planes")
-print("nuke - nuke a player with planes")
+print("skcraze - start a frenzy of skateboards!")
+print("unskcraze - stop the frenzy")
+print("slag - lag a player with skateboards")
+
+print("\n\n\n")
+print("weld (player) (mode) - weld to a player - options are right/left arm, torso and hold")
+print("nweld - better weld for the hold mode")
 
 print("\n\n\n")
 print("ungearme - ungear yourself... Right???")
+print("isc - check if the server crashed")
+print("getping - say your ping")
+print("rpaintui - remove paint ui")
+
+print("\n\n\n")
+print("acton (name) (times) - activate a gear a set amount of times from the saved list")
+		
+print("\n\n\n")
+print("theme (num) - themes!")
+print("gear (plr) (name) - give a player a gear from the saved list")
+print("char (plr) (name) - change a player's character from the saved list")
+print("gear (plr) (name) - give a player a gear - put a keyword as the name (PaintBucket for example) and gears will be searched in Roblox's catalogue with the name")
+print("char (plr) (name) - change a player's character to the user specified")
+
+print("\n\n\n")
+print("song - start a playlist of songs. Just enter a keyword (for example, lofi or phonk) and songs with the name will be searched in Roblox's audio library")
+print("ssong - skip a song in the playlist")
+print("esong - end the playlist")
+
+print("\n\n\n")
+print("surround - surround a player with planes")
+print("nuke - nuke a player with planes")
+print("jnuke (optional: player) - nuke a player or the map with the RocketJumper gear")
+print("dnuke (amount) (range) (optional: player) - nuke the map with the ConjurorsFist")
+print("rnuke (range) - nuke the map with planes)
 
 print("\n\n\n")
 print("laser - laser and punish someone at the same time. they cannot respawn and are stuck in limbo")
@@ -6646,6 +6668,14 @@ game.Players.LocalPlayer:GetMouse().KeyDown:connect(function(key)
         if key:lower() == rekeybind then
                 Chat("reset me")
         end        
+
+	if key:lower() == flykeybind then
+                Chat(prefix.."ufly")
+        end   
+
+	--[[if key:lower() == crashkey then
+                DCrash()
+        end     ]]
 end)
 
 -- some antis and admin system
