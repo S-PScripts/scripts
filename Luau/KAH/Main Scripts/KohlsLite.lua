@@ -2725,7 +2725,7 @@ Commands required: rocket]])
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'blender' then -- kohlsnoob
-	        local daddyhelpmee = string.sub(msg:lower(), #prefix + 7)
+	        local daddyhelpmee = string.sub(msg:lower(), #prefix + 8)
 		Chat("jail "..daddyhelpmee)
 		Chat("stun "..daddyhelpmee)
 		Chat("spin "..daddyhelpmee)
