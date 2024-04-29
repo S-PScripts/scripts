@@ -5435,6 +5435,8 @@ print("dummy - create a test dummy")
 print("\n\n\n")
 print("ungearme - ungear yourself... Right???")
 print("rpaintui - remove paint UI")
+print("byp (text) - bypass message as h (by tech)")
+print("nbyp (text) - bypass message as h (by me)")
 
 print("\n\n\n")
 print("isc - check if the server crashed")
