@@ -42,7 +42,8 @@ tool.Equipped:Connect(function()
     tool.Handle.Transparency = 1 -- Set the transparency of the tool handle to 1 to make it invisible
 end)
 
-a = "hello"
+-- altered version of tech's chatbypasser :0
+a = "Hello world"
 
 -- Split the string into individual characters
 local chars = {}
@@ -52,6 +53,6 @@ end
 
 -- Print out each letter with increasing number of spaces
 for i, char in ipairs(chars) do
-    local spaces = string.rep(" ", i-1)
+    local spaces = string.rep(" ", (i-1) * 4) -- Increase the size of spaces by multiplying (i-1) by 2
     print(spaces .. char)
 end
