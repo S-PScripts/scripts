@@ -3257,7 +3257,8 @@ Commands required: rocket]])
 			Loops.rainbowmap = true
 			rmap()
 		else
-			Remind("Already enabled!")
+			Loops.rainbowmap = false
+			Remind("Disabled since it was already enabled!")
 		end
    end
 
@@ -3266,7 +3267,8 @@ Commands required: rocket]])
 			Loops.rbase = true
 			rbase()
 		else
-			Remind("Already enabled!")
+			Loops.rbase = false
+			Remind("Disabled since it was already enabled!")
 		end
    end
 
@@ -3276,7 +3278,8 @@ Commands required: rocket]])
 			Loops.rfog = true
 			rfog(deran)
 		else
-			Remind("Already enabled!")
+			Loops.rfog = false
+			Remind("Disabled since it was already enabled!")
 		end
    end
 
