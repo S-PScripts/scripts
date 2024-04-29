@@ -8846,13 +8846,13 @@ function arena(plr1, plr2)
         	task.spawn(function()
             		while true do 
 				fwait()
-				if isnetworkowner(part) then
+			--	if isnetworkowner(part) then
                				part.Velocity = Vector3.new(-30,0,0)
                 			part.CanCollide = false
                				part.CFrame = indexPosition[localIndex] 
-				else 
-					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = part.CFrame
-				end
+				--else 
+				--	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = part.CFrame
+			--	end
             		end
        		 end)
     	   end
