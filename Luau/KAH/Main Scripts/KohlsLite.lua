@@ -3,7 +3,7 @@ _  _____  _   _ _     ____  _     ___ _____ _____
 | |/ / _ \| | | | |   / ___|| |   |_ _|_   _| ____|
 | ' / | | | |_| | |   \___ \| |    | |  | | |  _|  
 | . \ |_| |  _  | |___ ___) | |___ | |  | | | |___ 
-|_|\_\___/|_| |_|_____|____/|_____|___| |_| |_____| v1.487 ]]
+|_|\_\___/|_| |_|_____|____/|_____|___| |_| |_____| v1.489 ]]
 
 -- This free, open-source script is for the Roblox game Kohls Admin House (KAH)
 -- You can play KAH here: https://www.roblox.com/games/112420803/Kohls-Admin-House-NBC-Updated
@@ -32,7 +32,7 @@ getgenv().kohlsexecuted = true -- don't touch!
 
 getgenv().deprefix = "." -- This can be of any length
 
-getgenv().klversion = "1.488_DEV" -- The version of KohlsLite, of course.
+getgenv().klversion = "1.489" -- The version of KohlsLite, of course.
 
 local function Chat(msg)
       game.Players:Chat(msg)
@@ -3203,6 +3203,15 @@ Commands required: rocket]])
 			end		
 		else
 			Remind("Invalid amount of arguments.")
+		end
+    end
+
+    if string.sub(msg, 1, #prefix + 5) == prefix..'arena' then
+		local args = string.split(msg, " ")
+		if #args == 3 then
+				local plr1 = args[2]
+				local plr2 = args[2]
+				arena(plr1, plr2)
 		end
     end
 
@@ -8771,6 +8780,103 @@ function pp(puser, len)
 		part.Velocity = Vector3.new(-30,0.5,0.5)
 	until not Loops.pp or not part
 	Loops.pp = false
+end
+
+function arena(plr1, plr2)
+    local partIndex = 1
+    local indexPosition = {
+    		CFrame.new(-130,5,-55),
+    		CFrame.new(-140,5,-55),
+    		CFrame.new(-150,5,-55),
+    		CFrame.new(-130,5,-65),
+    		CFrame.new(-140,5,-65),
+    		CFrame.new(-150,5,-65),
+    		CFrame.new(-130,5,-75),
+    		CFrame.new(-140,5,-75),
+    		CFrame.new(-150,5,-75),
+    		CFrame.new(-154, 8, -51),
+    		CFrame.new(-126, 8, -79),
+   		CFrame.new(-154, 8, -79),
+    		CFrame.new(-126, 8, -51),
+    		CFrame.new(-154, 9, -56, 1, 0, 0, 0, 1, 0, 0, 0, 1),
+    		CFrame.new(-154, 9, -65, 1, 0, 0, 0, 1, 0, 0, 0, 1),
+    		CFrame.new(-154, 9, -74, 1, 0, 0, 0, 1, 0, 0, 0, 1),
+    		CFrame.new(-126, 9, -56, 1, 0, 0, 0, 1, 0, 0, 0, 1),
+    		CFrame.new(-126, 9, -65, 1, 0, 0, 0, 1, 0, 0, 0, 1),
+    		CFrame.new(-126, 9, -74, 1, 0, 0, 0, 1, 0, 0, 0, 1),
+    		CFrame.new(-131, 9, -79, 0, 0, 1, 0, 1, 0, -1, 0, 0),
+    		CFrame.new(-140, 9, -79, 0, 0, 1, 0, 1, 0, -1, 0, 0),
+    		CFrame.new(-149, 9, -79, 0, 0, 1, 0, 1, 0, -1, 0, 0),
+   		CFrame.new(-131, 9, -51, 0, 0, 1, 0, 1, 0, -1, 0, 0),
+    		CFrame.new(-140, 9, -51, 0, 0, 1, 0, 1, 0, -1, 0, 0),
+    		CFrame.new(-149, 9, -51, 0, 0, 1, 0, 1, 0, -1, 0, 0),
+   }
+
+   local origin = CFrame.new(-130, 3.7, -45)
+   game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = origin
+   task.wait(0.25)
+
+   local basepart = Instance.new("Part",game.Players.LocalPlayer.Character)
+	basepart.CFrame = CFrame.new(-140,5,-65)
+	basepart.Anchored = true
+	basepart.Transparency = 0.5
+	basepart.Size = Vector3.new(30,2.55,30)
+
+   local function tpplrs()
+        		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(128.923386, 14, -53.6450806, 0.677816927, 3.43786546e-08, 0.735230744, 3.28579688e-08, 1, -7.70511051e-08, -0.735230744, 7.63847297e-08, 0.677816927)
+        		task.wait(0.25)
+			Chat("tp "..plr1.." me")
+    			task.wait(0.5)
+        		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(151.167755, 14, -76.1952133, -0.709251344, -1.77910238e-08, -0.704955637, -4.14884234e-08, 1, 1.65041545e-08, 0.704955637, 4.09530934e-08, -0.709251344)
+      	 		task.wait(0.25)
+			Chat("tp "..plr2.." me")
+    end
+
+    Connections.arena = workspace.Terrain["_Game"].Folder.ChildAdded:Connect(function(part)
+    	 if part.Size == Vector3.new(10,2.5,10) or part.Size == Vector3.new(1,5,1) or part.Size == Vector3.new(1, 1, 9) then
+        	local localIndex = partIndex
+        	partIndex = partIndex + 1
+			
+        	if partIndex > 25 then 
+			tpplrs() 
+			Connections.arena:Disconnect() 
+		end
+			
+        	task.spawn(function()
+            		while true do 
+				fwait()
+				if isnetworkowner(part) then
+               				part.Velocity = Vector3.new(-30,0,0)
+                			part.CanCollide = false
+               				part.CFrame = indexPosition[localIndex] 
+				else 
+					game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = part.CFrame
+				end
+            		end
+       		 end)
+    	   end
+    end)
+
+    for i = 1, 9 do
+    	Chat("part/10/2.5/10")
+    	task.wait(0.5)
+    end
+
+    task.wait(0.5)
+
+    for i = 1, 4 do
+   	Chat("part/1/5/1")
+    	task.wait(0.5)
+    end
+
+    task.wait(0.5)
+
+    for i = 1, 12 do
+    	Chat("part/1/1/9")
+   	task.wait(0.5)
+    end
+
+    task.wait()
 end
 
 function Rail()
