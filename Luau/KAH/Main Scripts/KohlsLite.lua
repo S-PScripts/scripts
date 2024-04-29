@@ -3021,6 +3021,26 @@ Commands required: rocket]])
         SpHammer()
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'platform' then
+		if Loops.platform then 
+			return Remind("You already have a platform!")
+		else
+			Remind("Setting a platform up...")
+	        	Loops.platform = true
+			Platform()
+		end
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'noplatform' then
+		Remind("Removing the platform...")
+		Loops.platform = false  
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unplatform' then
+		Remind("Removing the platform...")
+		Loops.platform = false  
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'icemap' then
 		IsOnMobile = table.find({Enum.Platform.IOS, Enum.Platform.Android}, game:GetService("UserInputService"):GetPlatform()) -- infinite yield duh
 		if IsOnMobile then
@@ -3059,7 +3079,7 @@ Commands required: rocket]])
         end
     end
 
-     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'nbyp' then -- my version
+     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'nbyp' then -- my version (might work better)
 			local args = string.split(msg, " ")
         		local cmd = args[1]
             		local bypsed = table.concat(args, " ", 2)
@@ -8959,6 +8979,32 @@ function StoneMap()
         end)
 end
 
+function Platform() -- based off pr script
+    Loops.platform = true
+    repeat 
+	rwait()
+	pcall(function()
+        	if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character.Head then
+            		if not workspace.Terrain:FindFirstChild("KL_PLATFORM") then
+                		local fakepart = Instance.new("Part",workspace.Terrain)
+				fakepart.Name = "KL_PLATFORM"
+				fakepart.Size = Vector3.new(10,1,10)
+				fakepart.Anchored = true
+				fakepart.CanCollide = true
+				fakepart.Color = game.Players.LocalPlayer.Character.Torso.Color
+		        	fakepart.TopSurface = "Smooth"
+				fakepart.BottomSurface = "Smooth"
+				fakepart.Material = "SmoothPlastic"
+            		else
+               			local fakepart = workspace.Terrain:FindFirstChild("KL_PLATFORM")
+                		fakepart.Color = game.Players.LocalPlayer.Character.Torso.Color
+                		fakepart.CFrame = CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.X,0.199999332,game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Z) * CFrame.Angles(0,math.rad(game.Players.LocalPlayer.Character.HumanoidRootPart.Orientation.Y),0) 
+            		end
+        	end
+   	 end)
+    until not Loops.platform
+end
+
 -- By iidk!
 function SpHammer()
         Remind("From ii's stupid admin!")
@@ -9161,6 +9207,7 @@ Loops.rbase = false
 Loops.rfog = false
 Loops.pp = false
 Loops.alog = false
+Loops.platform = false
 
 musiclog = {}
 
