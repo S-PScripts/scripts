@@ -1207,8 +1207,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                 if table.find(blacklist, player) then
                         Chat("h \n\n\n [KohlsLite]: "..player.." has been unblacklisted! \n\n\n")
                         table.remove(blacklist, table.find(blacklist, player))
+			if table.find(newplrslocked, player) then
+				 table.remove(newplrslocked, table.find(newplrslocked, player))
+			end
                         Remind("Unblacklisted "..player)
-                               Chat('unblind '..player)
+                        Chat('unblind '..player)
                         Chat('unpunish '..player)
                 else
                         Remind(player.." was never blacklisted!")        
@@ -5269,6 +5272,7 @@ print("slock - serverlock a server")
 print("unslock - serverlock a server")
 print("newplrslock - automatically blacklist a new user (acc age under 21 days)")
 print("unnewplrslock - stop automatic blacklist for new users (acc age under 21 days)")
+print("plrnewlen - set the account age minimum for users")
 
 print("\n\n\n")
 print("alladmin - give everyone's free admin")
@@ -5624,10 +5628,12 @@ task.spawn(function()
                                 if isB then
                                         Chat('punish '.. spe)
                                         Chat('blind '.. spe)
+					Chat('skydive '.. spe)
                                         Chat("pm "..spe.." [KohlsLite]: sorry, this server is locked!")
                                 else
                                          Chat('punish '..v.Name)
-                                                Chat('blind '..v.Name)        
+                                         Chat('blind '..v.Name)   
+                                         Chat('skydive '..v.Name)        
                                          Chat("pm "..v.Name.." [KohlsLite]: sorry, this server is locked!")
                                 end
                         end
@@ -5637,10 +5643,12 @@ task.spawn(function()
                                 if isB then -- i added because of some guy called m_artin who did crap
                                         Chat('punish '.. spe)
                                         Chat('blind '.. spe)
+					Chat('skydive '.. spe)
                                         Chat("pm "..spe.." [KohlsLite]: sorry, you are blacklisted from this server")
                                 else
                                          Chat('punish '..v.Name)
-                                                Chat('blind '..v.Name)        
+                                         Chat('blind '..v.Name)   
+                                         Chat('skydive '..v.Name)        
                                          Chat("pm "..v.Name.." [KohlsLite]: sorry, you are blacklisted from this server!")
                                 end
                         end
@@ -5650,10 +5658,12 @@ task.spawn(function()
                                 if isB then
                                         Chat('punish '.. spe)
                                         Chat('blind '.. spe)
+	                                Chat('skydive '..spe)        
                                         Chat("pm "..spe.." [KohlsLite]: sorry, you are blacklisted for having an account under the account age limit")
                                 else
                                         Chat('punish '..v.Name)
                                         Chat('blind '..v.Name)
+	                                Chat('skydive '..v.Name)
                                         Chat("pm "..v.Name.." [KohlsLite]: sorry, you are blacklisted for having an account under the account age limit!")
                                 end
                         end
