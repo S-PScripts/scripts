@@ -32,7 +32,7 @@ getgenv().kohlsexecuted = true -- don't touch!
 
 getgenv().deprefix = "." -- This can be of any length
 
-getgenv().klversion = "1.489" -- The version of KohlsLite, of course.
+getgenv().klversion = "1.489_dev" -- The version of KohlsLite, of course.
 
 local function Chat(msg)
       game.Players:Chat(msg)
@@ -8832,6 +8832,7 @@ function arena(plr1, plr2)
 			Chat("tp "..plr2.." me")
     end
 
+    local Connections = {}
     Connections.arena = workspace.Terrain["_Game"].Folder.ChildAdded:Connect(function(part)
     	 if part.Size == Vector3.new(10,2.5,10) or part.Size == Vector3.new(1,5,1) or part.Size == Vector3.new(1, 1, 9) then
         	local localIndex = partIndex
