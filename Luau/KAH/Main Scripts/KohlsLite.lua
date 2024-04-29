@@ -5533,12 +5533,14 @@ end
 function checkforperm()
         if string.match(game:HttpGet("https://inventory.roproxy.com/v1/users/" .. gcplr.UserId .. "/items/GamePass/" .. 66254), 66254) then
             Remind(gcplrn.." has perm in NBC!")
+            Chat("h \n\n\n\n \n\n\n\n [KohlsLite]: " .. gcplrn .. " has perm in NBC! \n\n\n\n")
           --  Speak(gcplrn.." has perm in NBC!")
             if not table.find(permusers, gcplrn) then
                     table.insert(permusers, gcplrn)
             end
         elseif string.match(game:HttpGet("https://inventory.roproxy.com/v1/users/" .. gcplr.UserId .. "/items/GamePass/" .. 64354), 64354) then
             Remind(gcplrn.." has perm in BC!")
+	    Chat("h \n\n\n\n \n\n\n\n [KohlsLite]: " .. gcplrn .. " has perm in BC! \n\n\n\n")
            -- Speak(gcplrn.." has perm in BC!")
             table.insert(permusers, gcplrn)
             if not table.find(permusers, gcplrn) then
@@ -5546,6 +5548,7 @@ function checkforperm()
             end
         else 
                 Remind(gcplrn..' does not have perm!')
+	        Chat("h \n\n\n\n \n\n\n\n [KohlsLite]: " .. gcplrn .. " does not perm! \n\n\n\n")
             --    Speak(gcplrn..' does not have perm!')
         end
 end
@@ -5554,6 +5557,7 @@ end
 function checkforpersons()
         if string.match(game:HttpGet("https://inventory.roproxy.com/v1/users/" .. gcplr.UserId .. "/items/GamePass/" .. 35748), 35748) then
             Remind(gcplrn.." has persons in NBC!")
+	    Chat("h \n\n\n\n \n\n\n\n [KohlsLite]: " .. gcplrn .. " has persons in NBC! \n\n\n\n")
            -- Speak(gcplrn.." has persons in NBC!")
             table.insert(personsusers, gcplrn)
             if not table.find(personsusers, gcplrn) then
@@ -5561,6 +5565,7 @@ function checkforpersons()
             end
         elseif string.match(game:HttpGet("https://inventory.roproxy.com/v1/users/" .. gcplr.UserId .. "/items/GamePass/" .. 37127), 37127) then
             Remind(gcplrn.." has persons in BC!")
+	    Chat("h \n\n\n\n \n\n\n\n [KohlsLite]: " .. gcplrn .. " has persons in BC! \n\n\n\n")
            -- Speak(gcplrn.." has persons in BC!")
             table.insert(personsusers, gcplrn)
             if not table.find(personsusers, gcplrn) then
@@ -5568,6 +5573,7 @@ function checkforpersons()
             end
         else 
                 Remind(gcplrn..' does not have persons!')
+		Chat("h \n\n\n\n \n\n\n\n [KohlsLite]: " .. gcplrn .. " does not persons! \n\n\n\n")
              --   Speak(gcplrn..' does not have persons!')
         end
 end
