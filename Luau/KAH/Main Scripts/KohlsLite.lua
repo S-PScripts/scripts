@@ -2611,7 +2611,7 @@ Commands required: rocket]])
         clickexplode = false
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'control' then -- really funny ngl
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'control' then -- really funny ngl (scv1)
                 local dogman = string.sub(msg:lower(), #prefix + 9)
                 Chat("speed "..dogman.." 0")
                 Chat("dog me "..dogman)
@@ -2625,7 +2625,7 @@ Commands required: rocket]])
                 Remind("You should be attached to the player!")
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'iceblock' then -- c ube
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'iceblock' then -- pr script
                 local theblock = string.sub(msg:lower(), #prefix + 10)
                 if theblock == "me" then
                         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame*CFrame.new(0,-40,0)
@@ -2638,7 +2638,7 @@ Commands required: rocket]])
                 Chat("respawn "..theblock)
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'cube' then -- why
+    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'cube' then -- cmdv3/pi
                 local imacube = string.sub(msg:lower(), #prefix + 6)
                 Chat("unpackage "..imacube)
                 for i = 1,15 do
@@ -2654,7 +2654,7 @@ Commands required: rocket]])
                 Remind("The player should now be a cube!")
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'tank' then -- thomas
+    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'tank' then -- thomas the tank engine - from yt video
                 local thomas = string.sub(msg:lower(), #prefix + 6)
 		Chat("removelimbs "..thomas);task.wait(0.5)
 		Chat("dog "..thomas);task.wait(0.5)
@@ -2662,7 +2662,7 @@ Commands required: rocket]])
                 Remind("The player should now be a tank!")
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'ufo' then -- ufo!!!
+    if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'ufo' then -- ufo!!! scv1
                 local ufo = string.sub(msg:lower(), #prefix + 5)
 		for i = 1, 7 do
 			Chat("size "..ufo.." 0.3")
@@ -2678,7 +2678,7 @@ Commands required: rocket]])
                 Remind("The player should now be a ufo!")
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'rat' then -- rawr
+    if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'rat' then -- scv1
 	        local eww = string.sub(msg:lower(), #prefix + 5)
 		Chat("char "..eww.." 6")
 		task.wait(1)
@@ -2696,6 +2696,17 @@ Commands required: rocket]])
 		Chat("size "..thatanime.." 5")
 		Chat("speed "..thatanime.." 24")
 		Chat("pants "..thatanime.." 1187508947")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'tnt' then -- sHaZam!
+	        local iduckingexplodedinmypants = string.sub(msg:lower(), #prefix + 5)
+		Chat("removepants "..iduckingexplodedinmypants)
+		Chat("removeshirt "..iduckingexplodedinmypants)
+		Chat("paint "..player.." red")
+		task.wait(1)
+		Chat("bonfire "..iduckingexplodedinmypants)
+		task.wait(2)
+		Chat("explode "..iduckingexplodedinmypants)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'headfloat' then -- yeah im adding scv1 cmds lol
