@@ -775,8 +775,16 @@ local themecode = {
     {name = "bright pink", code = "time -,fogend 46,fogcolor 250 83 255"},
     {name = "acid proximity", code = "time -,fogend 1000,fogcolor 37 355 55"},
     {name = "sapphire evening", code = "fogcolor 100 0 255,fogend 1000,time 6,outdoorambient 0 0 0,brightness 0.5,ambient 125 0 255"},
-    {name = "sunset", code = "fix,time 7,fogend 2000,outdoorambient 0.3 0.3 0.3"},
-    {name = "true black", code = "time 0,fogcolor 0 0 0,fogend 0"}
+    {name = "sunrise", code = "fix,time 7,fogend 2000,outdoorambient 0.3 0.3 0.3"},
+    {name = "true black", code = "time 0,fogcolor 0 0 0,fogend 0"},
+    {name = "sunset", code = "fix,time 17.4,colorshifttop 600 400 0,colorshiftbottom 600 400 0"},
+    {name = "ice", code = "fix,time 17.4,fogcolor -100 -400 -600,fogend 500,colorshifttop 0 255 255,colorshiftbottom 0 255 255"},
+    {name = "blood", code = "fix,fogcolor 255 0 0,fogend 150,ambient 255 0 0,colorshifttop 255 0 0,colorshiftbottom 255 0 0"},
+    {name = "aesthetic", code = "fix,time 15,fogend 500,fogcolor -400 -191 -139,outdoorambient 191 143 95,colorshifttop 255 191 139"},
+    {name = "heaven", code = "fix,time 14,fogend 200,fogcolor -300 -300 -300,outdoorambient -400 -400 -400,ambient -400 -400 -400"},
+    {name = "hell", code = "fix,time 0,outdoorambient -600 0 0,ambient -600 0 0,fogcolor -600 0 0,fogend 500,colorshiftbottom -600 0 0,colorshifttop -600 0 0,brightness 2"},
+    {name = "shadowy town", code = "fix,fogend 70,fogcolor 0 0 0,brightness 0"},
+    {name = "snow", code = "fix,time 17.4,colorshifttop 255 255 255,colorshiftbottom 255 255 255"}
 }
 
 -- Keybinds
@@ -2699,6 +2707,16 @@ Commands required: rocket]])
 		Chat("size "..thatanime.." 5")
 		Chat("speed "..thatanime.." 24")
 		Chat("pants "..thatanime.." 1187508947")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'taxi' then -- kohlsnoob
+	        local target = string.sub(msg:lower(), #prefix + 6)
+		Chat("dog "..target)
+		Chat("paint "..target.." gold")
+		Chat("speed "..target.." 100")
+		Chat("trail "..target.." gold")
+		Chat("god "..target)
+		Chat("unhat "..target)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'tnt' then -- sHaZam!
@@ -5857,6 +5875,17 @@ task.spawn(function()
                         end
                     end
         end
+
+     --[[   if YOUantifling == true then
+			if game.Players.LocalPlayer.Character:FindFirstChild("BFRC") then
+                                workspace:WaitForChild(game.Players.LocalPlayer.Name).Humanoid.Sit = false
+				game.Players.LocalPlayer.Character.Torso.AssemblyLinearVelocity = Vector3.new(0,0,0)
+				fwait()
+				game.Players.LocalPlayer.Character:FindFirstChild("BFRC"):Destroy()
+				game.Players.LocalPlayer.Character.Torso.AssemblyLinearVelocity = Vector3.new(0,0,0)
+	                end
+                    end
+        end]]
 
         if YOUantifire == true then
             if game.Players.LocalPlayer.Character:FindFirstChild("Torso") then
