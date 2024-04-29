@@ -206,7 +206,8 @@ local pgwl = {
     "Milderous",
     "Anka_707587",
     "D_ionte",
-    "DionteIsCute"
+    "DionteIsCute",
+    "vgcrash"
 }
 
 -- Serverlock
