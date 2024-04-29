@@ -3518,7 +3518,7 @@ Commands required: rocket]])
 		local args = string.split(msg, " ")
         	if #args == 3 then
 			local act = args[2]
-			local getnumber = args[3]
+			local getnumber = tonumber(args[3])
 			if act == "clone" then
 				Clone(getnumber)
 		
