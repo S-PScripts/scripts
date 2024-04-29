@@ -387,9 +387,13 @@ local gearlist = {
 
 local turnlist = {
     ["furry"] = {name = {"char [args2] 18", "paint [args2] Institutional white", "hat [args2] 10563319994", "hat [args2] 12578728695", "shirt [args2] 10571467676", "pants [args2] 10571468508"}},
-    ["female"] = {name = {"char [args2] 31342830", "removehats [args2]", "paint [args2] Institutional white", "hat [args2] 7141674388", "hat [args2] 7033871971", "shirt [args2] 5933990311", "pants [args2] 7219538593"}}
-}
+    ["female"] = {name = {"char [args2] 31342830", "removehats [args2]", "paint [args2] Institutional white", "hat [args2] 7141674388", "hat [args2] 7033871971", "shirt [args2] 5933990311", "pants [args2] 7219538593"}},
+    ["cop"] = {name = {"unhat [args2]", "shirt [args2] 3759924160", "hat [args2] 7310970599", "face [args2] 86487700", "pants [args2] 6214369602"}},
+    ["hacker"] = {name = {"unhat [args2]", "hat [args2] 4995698441", "shirt [args2] 4800661980", "pants [args2] 3149138619", "hat [args2] 4995698441", "trail [args2] green", "paint [args2] black"}},
+    ["thief"] = {name = {"unhat [args2]", "trail [args2] black", "paint [args2] black", "hat [args2] 20642008", "hat [args2] 4855031321", "hat [args2] 4904891637", "shirt [args2] 4656776376", "pants [args2] 129459077", "hat [args2] 4531231804"}}
 
+}
+	
 local function replaceArgs2(name, args2)
     return string.gsub(name, "%[args2%]", args2)
 end
@@ -407,7 +411,8 @@ local charlist = {
     ["tech"] = { charid = "1702851506" }, -- 9
     ["aria"] = { charid = "2781438808" }, -- 10
     ["mel"] = { charid = "619659263" }, -- 11
-    ["noob"] = { charid = "18" } -- 12
+    ["noob"] = { charid = "18" }, -- 12
+    ["bacon"] = { charid = "2568447690" } -- 13
 }
 
 -- Parts
@@ -2719,6 +2724,14 @@ Commands required: rocket]])
 		Chat("unhat "..target)
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'blender' then -- kohlsnoob
+	        local daddyhelpmee = string.sub(msg:lower(), #prefix + 7)
+		Chat("jail "..daddyhelpmee)
+		Chat("stun "..daddyhelpmee)
+		Chat("spin "..daddyhelpmee)
+		Chat("fire "..daddyhelpmee)
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'tnt' then -- sHaZam!
 	        local iduckingexplodedinmypants = string.sub(msg:lower(), #prefix + 5)
 		Chat("removepants "..iduckingexplodedinmypants)
@@ -3209,6 +3222,7 @@ Commands required: rocket]])
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'hhouse' then
        if haspersons then Chat("invis/me") else Chat("invis me") end
+       task.wait(.35)
        House()
        task.wait(.35)
        if haspersons then Chat("vis/me") else Chat("vis me") end
@@ -3228,6 +3242,18 @@ Commands required: rocket]])
 		task.wait(0.5)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
 	end
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'void' then -- kohlsnoob
+		local fakehelperhaha = string.sub(msg:lower(), #prefix + 6)
+       		local opos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0, -200, 0)
+		task.wait(.45)
+		Chat("tp "..fakehelperhaha.." me")
+		Chat("unfly "..fakehelperhaha)
+		task.wait()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = opos
+		Remind("Player has been sent to the void!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'spawn' then
@@ -7376,14 +7402,13 @@ function Bring()
       Chat("tp "..bringu.." me")
 end
 
-
 function VFix()
     for i,v in pairs(game:GetService("Workspace").Terrain._Game.Workspace:GetDescendants()) do
         if v:IsA("BasePart") then
             v.Velocity = Vector3.new(0,0,0)
         end
     end
-    game.Workspace.Terrain._Game.Workspace.Baseplate.AssemblyLinearVelocity = Vector3.new(0, 0, 0)
+    workspace.Terrain._Game.Workspace.Baseplate.AssemblyLinearVelocity = Vector3.new(0, 0, 0)
 end
 
 function ColFix()
