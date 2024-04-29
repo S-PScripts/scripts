@@ -2805,6 +2805,22 @@ Commands required: rocket]])
 		end
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'ruin' then -- pr/vitalux script
+                local rrrr = string.sub(msg:lower(), #prefix + 6)
+		Chat("unpunish "..rrrr);task.wait()
+	--	Chat("invis "..rrrr)
+		Chat("reset "..rrrr)
+	--	Chat("invis "..rrrr)
+		Chat("kill "..rrrr)
+		Chat("trip "..rrrr)
+		Chat("setgrav "..rrrr.." -inf");task.wait(.1)
+	--	Chat("invis "..rrrr)
+		Chat("unpunish "..rrrr.." "..rrrr.." "..rrrr);task.wait(.2)
+	--	Chat("invis "..rrrr)task.wait(.2)
+		Chat("reset "..rrrr);task.wait(.15)
+		Chat("punish "..rrrr.." "..rrrr.." "..rrrr)
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antidisco' then
         antidisco = true
     end
@@ -8174,7 +8190,7 @@ function CoCrash()
       repeat task.wait() until game.Players.LocalPlayer.Character.VampireVanquisher:FindFirstChild("Remote")
       game.Players.LocalPlayer.Character.VampireVanquisher.Remote:FireServer(Enum.KeyCode.Q)
       for i = 1, 5 do
-        game.Players:Chat("unsize me")
+        Chat("unsize me")
       end
 end
 
@@ -8691,6 +8707,7 @@ function TAttach()
 	Chat("unfreeze "..welder)
 	repeat wait() until wld.Character:FindFirstChild("ice")
 	wld.Character.ice:Destroy()
+	Chat("speed "..welder.." 0")
 	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = wld.Character.HumanoidRootPart.CFrame*CFrame.new(1.5,0,0)
 	wait(0.25)
 	Chat("unpunish me");Chat("invis me")
@@ -9024,8 +9041,8 @@ print("- Script by iiDk, ported for KohlsLite. -")
 	        if mode == "smack" then
 		        if p.Name ~= "Base" then
 			        sound = 5886215922
-			        game.Players:Chat("speed "..p.Parent.Name.." 0")
-			        game.Players:Chat("tp "..p.Parent.Name.." me")
+			        Chat("speed "..p.Parent.Name.." 0")
+			        Chat("tp "..p.Parent.Name.." me")
 			        spawn(function()
 			            wait(0.8)
 			            Chat("/e point")
@@ -9087,7 +9104,7 @@ print("- Script by iiDk, ported for KohlsLite. -")
 	        if mode == "fem" then
 	            sound = 5064301214
 	            spawn(function()
-	                game.Players:Chat("char "..p.Parent.Name.." 31342830")
+	                Chat("char "..p.Parent.Name.." 31342830")
 	                v = game.Players[p.Parent.Name]
                         repeat wait() until v and v.Character and v.Character:FindFirstChild("Ultra-Fabulous Hair")
                         wait(0.3)
