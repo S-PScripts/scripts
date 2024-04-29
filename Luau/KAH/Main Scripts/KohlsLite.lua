@@ -5714,7 +5714,7 @@ task.spawn(function()
         end
 
 	if YOUantivoid == true then 
-		if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character.HumanoidRootPart then
+		if game.Players.LocalPlayer.Character --[[ and game.Players.LocalPlayer.Character.HumanoidRootPart]] then
             		if game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y < -7 then
                 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.X,5,game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Z)
                 		game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity.X,0,game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity.Z)
@@ -5723,7 +5723,7 @@ task.spawn(function()
 	end
 
 	if YOUantisky == true then 
-		if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character.HumanoidRootPart then
+		if game.Players.LocalPlayer.Character --[[ and game.Players.LocalPlayer.Character.HumanoidRootPart]] then
             		if game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y > 256 then
                 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.X,5,game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Z)
                 		game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity.X,0,game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity.Z)
@@ -9085,6 +9085,7 @@ function rmap()
                         			})
 				end		
 		until not Loops.rainbowmap
+		Remind("CLOSED!")
 end
 
 function rbase()
