@@ -2935,6 +2935,46 @@ Commands required: rocket]])
 		Remind("Float spinned the player.")
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'yeet' then -- kohlsnoob
+                local yeetusmcgleetus = string.sub(msg:lower(), #prefix + 6)
+		Chat("sit "..yeetusmcgleetus)
+		Chat("nograv "..yeetusmcgleetus)
+		Chat("ff "..yeetusmcgleetus)
+		for i = 1, 5 do
+			chat("explode "..yeetusmcgleetus)
+		end
+		Remind("Your victim has been to who knows where")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'creeper' then -- kohlsnoob
+		local pearlharbour = string.sub(msg:lower(), #prefix + 9)
+		Chat("h \n\n\n [KohlsLite]: UH OH, IS THAT A CREEPER? RUN!!! \n\n\n")
+		Chat("unff "..pearlharbour)
+		chat("removehats "..pearlharbour)
+		chat("creeper "..pearlharbour)
+		local woahwoahwoah = "red"
+		task.wait(1)
+		local e = nil
+		for i = 1,20 do
+			chat("paint "..pearlharbour.." "..woahwoahwoah)
+			if woahwoahwoah == "red" then 
+				woahwoahwoah = "green"
+			else
+				woahwoahwoah = "red"
+			end
+			if i < 11 then
+				task.wait(((10-i) *.1) + (i * .005))
+				if i == 10 then
+					e = ((10-i) *.1) + (i*.005)
+				end
+			else
+				task.wait(e)
+			end
+		end
+		task.wait()
+		chat("explode "..pearlharbour)
+    end
+		
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antidisco' then
         antidisco = true
 	Remind("Enabled this anti!")
