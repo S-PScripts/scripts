@@ -3930,6 +3930,16 @@ Commands required: rocket]])
                  end
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'nslag' then -- buggy!
+                 local dasplayer = string.sub(msg:lower(), #prefix + 7)
+		 PLAYERCHECK(dasplayer)
+                 if player ~= nil then
+                        lagify(cplr,player)
+                 else
+                        Remind('Cannot find player with the name: '..dasplayer)
+                 end
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'rpaintui' then
                 for i,v in ipairs(game.Players.LocalPlayer.PlayerGui:GetChildren()) do
                                 if v.Name == "SelectionBox" or v.Name == "LineHandleAdornment" or v.Name == "PaletteGui" then
@@ -9854,6 +9864,49 @@ function SKCRAZE()
 	repeat task.wait(0) until skf == false
 	conn:Disconnect()
 end
+
+function lagify(plr,pln)
+   	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(99999,99999,99999)
+
+    	local thepartfake = Instance.new("Part",game.Players.LocalPlayer.Character)
+    	thepartfake.Anchored = true
+    	thepartfake.Size = Vector3.new(100,1,100)
+    	thepartfake.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,-5,0)
+
+    	task.wait(0.25)
+    	Chat("tp "..pln.." me")
+        repeat task.wait() until game.Players.LocalPlayer:DistanceFromCharacter(plr.Character.Head.Position) < 10
+
+        Chat("freeze "..pln)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = plr.Character.Head.CFrame * CFrame.new(0,25,1.5)
+        
+	for i = 1, 50 do
+    		Chat("gear me 200237939")
+    	end
+
+   	repeat task.wait() until #game.Players.LocalPlayer.Backpack:GetChildren() > 40
+	task.wait(0.1)
+
+   	for i, x in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+        	spawn(function()
+        		x.Parent = game.Players.LocalPlayer.Character
+       		 	task.wait(0.1)
+        		x.LocalScript.Disabled = true
+       	 		x:WaitForChild("RemoteControl"):WaitForChild("ClientControl").OnClientInvoke =
+						function(Value)
+        						return plr.Character.Head.Position + Vector3.new(0,2,0)
+        					end
+        		repeat task.wait()
+				x:Activate()
+        		until x.Parent ~= game.Players.LocalPlayer.Character
+        	end)
+   	end
+    
+        repeat task.wait() until #game.Players.LocalPlayer.Backpack:GetChildren() < 5
+        task.wait(0.4)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0,0,0)
+        Chat("respawn me")
+    end
 
 function Clone(getnum)
 	 Chat("ungear me");task.wait(0.5)
