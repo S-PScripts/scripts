@@ -2767,6 +2767,25 @@ Commands required: rocket]])
 		Remind("Turned player into a titan!!!")
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'speaker' then -- yeah im adding scv1 cmds lol
+	        local spek = string.sub(msg:lower(), #prefix + 9)
+		Chat("char "..spek.." 1702851506")
+		task.wait(1.2)
+		Chat("skydive "..spek.."")
+		task.wait(.35)
+		Chat("size "..spek.." 0.3")
+		Chat("size "..spek.." 0.3")
+		Chat("creeper "..spek.."")
+		Chat("paint "..spek.." black")
+		Chat("size "..spek.." 10")
+		Chat("size "..spek.." 5")
+		Chat("speed "..spek.." 32")
+		task.wait(5)
+		Chat("paint "..spek.." black")
+		Chat("paint"..spek.." black")
+		Remind("SPEAKER SPEAKER SPEAKER SPEAKER SPEAKER SPEAKER SPEAKER SPEAKER SPEAKER SPEAKER")
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'dogrock' then -- noobsploit/shazam
 		local drock = string.sub(msg:lower(), #prefix + 9)
 		Chat("dog "..drock)
