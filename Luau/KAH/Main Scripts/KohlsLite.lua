@@ -2741,6 +2741,7 @@ Commands required: rocket]])
 		Chat("bonfire "..iduckingexplodedinmypants)
 		task.wait(2)
 		Chat("explode "..iduckingexplodedinmypants)
+		Remind("KABLAM!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'headfloat' then -- yeah im adding scv1 cmds lol
@@ -2750,6 +2751,7 @@ Commands required: rocket]])
 		Chat("bighead "..hf)
 		task.wait(0.25)
 		Chat("unsize "..hf)
+	        Remind("The player's head should now be floating!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'space' then -- kohls true anti kill
@@ -2846,6 +2848,7 @@ Commands required: rocket]])
                 	Chat("unseizure "..bendin)
                 	Chat("tp "..bendin.." "..bendin)
                 	Chat("sit "..bendin)
+			Remind("The player should be ready... for uhhhh")
 			bending = false
 		end
     end
@@ -2864,102 +2867,136 @@ Commands required: rocket]])
 	--	Chat("invis "..rrrr)task.wait(.2)
 		Chat("reset "..rrrr);task.wait(.15)
 		Chat("punish "..rrrr.." "..rrrr.." "..rrrr)
+		Remind("Broke/glitched the player.")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'fspin' then -- kohlsnoob
+                local target = string.sub(msg:lower(), #prefix + 7)
+		Chat("unfly "..target)
+		Chat("nograv "..target)
+		Chat("stun "..target)
+		Chat("spin "..target)
+		Remind("Float spinned the player.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antidisco' then
         antidisco = true
+	Remind("Enabled this anti!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantidisco' then
         antidisco = false
+	Remind("Disable this anti!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antiflash' then
         antiflash = true
+	Remind("Enabled this anti!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantiflash' then
         antiflash = false
+	Remind("Disable this anti!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'antifogend' then
         antifogend = true
+	Remind("Enabled this anti!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'unantifogend' then
         antifogend = false
+	Remind("Disable this anti!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'antiilight' then
         antiilight = true
+	Remind("Enabled this anti!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'unantiilight' then
         antiilight = false
+	Remind("Disable this anti!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'antifogstart' then
         antifogstart = true
+	Remind("Enabled this anti!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 14) == prefix..'unantifogstart' then
         antifogstart = false
+	Remind("Disable this anti!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antifogc' then
         antifogcolor = true
+	Remind("Enabled this anti!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unantifogc' then
         antifogcolor = false
+	Remind("Disable this anti!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antitime' then
         antitime = true
+	Remind("Enabled this anti!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unantitime' then
         antitime = false
+	Remind("Disable this anti!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'antiamb' then
         antiambient = true
+	Remind("Enabled this anti!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'unantiamb' then
         antiambient = false
+	Remind("Disable this anti!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antitrip' then
         antitripmine = true
+	Remind("Enabled this anti!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unantitrip' then
         antitripmine = false
+	Remind("Disable this anti!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'antiegg' then
         antiegg = true
+	Remind("Enabled this anti!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'unantiegg' then
         antiegg = false
+	Remind("Disable this anti!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'antibright' then
         antibrightness = true
+	Remind("Enabled this anti!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'unantibright' then
         antibrightness = false
+	Remind("Disabled this anti!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'antioutamb' then
         antioutamb = true
+	Remind("Enabled this anti!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'unantioutamb' then
         antioutamb = false
+	Remind("Disable this anti!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'adv' then
@@ -2976,30 +3013,36 @@ Commands required: rocket]])
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'logspam' then
        LogSpam()
+       Remind("Logs have been spammed!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'tptool' then
         InitTool()
+        Remind("You should have been given a TP tool now!")
     end
 
    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'supercmd' then
         supermessage = string.sub(msg, #prefix + 10)
         SuperCMD(supermessage)
+	Remind("Supercmding your message...")
     end
 
    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'supert' then
         amon = tonumber(string.sub(msg:lower(), #prefix + 8))
+        Remind("Supercmd amount has been modified.")
     end
 
    if string.sub(msg, 1, #prefix + 5) == prefix..'spamt' then
         spamtext = string.sub(msg, #prefix + 7)
         spam = true
         spamon = true
+        Remind("Spamming the requested text!")
     end
 
    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'unspamt' then
         spam = false
         spamon = false
+        Remind("Stopped spamming the requested text!")
     end
 
    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'chatz' then
@@ -3008,18 +3051,22 @@ Commands required: rocket]])
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'spamw' then
         spamwait = tonumber(string.sub(msg:lower(), #prefix + 7))
+        Remind("Spam wait has been modified!")
     end
 
    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'spamwait' then
         spamwait = tonumber(string.sub(msg:lower(), #prefix + 10))
+        Remind("Spam wait has been modified!")
     end
 
    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'spamoff' then
         spamon = false
+	Remind("Spamming has been paused.")
     end
 
   if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'spamon' then
         spamon = true
+	Remind("Spamming has been resumed.")
     end
 
   if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'cbtools' then
@@ -3056,10 +3103,12 @@ Commands required: rocket]])
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'rockmap' then
         StoneMap()
+        Remind("Wait around 10 seconds for the effect to be permanent.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'stonemap' then
         StoneMap()
+        Remind("Wait around 10 seconds for the effect to be permanent.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'hammer' then
@@ -3147,18 +3196,22 @@ Commands required: rocket]])
 		
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'sregen' then
         SRegen = true
+	Remind("Non-perm players can no longer get admin")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'unsregen' then
         SRegen = false
+	Remind("Non-perm players can now get admin again.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'autogpc' then
         autogpcheck = true
+	Remind("Now checking players for perm and persons upon joining.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'unautogpc' then
         autogpcheck = false
+	Remind("No longer checking players for perm and persons upon joining.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'padban' then
@@ -3206,14 +3259,17 @@ Commands required: rocket]])
 	    else
 			game.Players.LocalPlayer.PlayerGui:FindFirstChild("ScrollGui").TextButton.Frame.Size = UDim2.new(0,danum,0,danum)
 	    end
+	    Remind("If you did this on mobile... you're dumb.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'regen' then
         Regen()
+	Remind("Teleported to the regen (if it's loaded)")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'house' then
         House()
+	Remind("Teleported to the house.")
     end
 
     if string.sub(msg:lower(), 1, 3)  == ',re' then
@@ -5290,8 +5346,8 @@ print("2unloopgrab - stop loopgrab all the pads")
 print("\n\n\n")
 print("fastpads - quickly tp to all the pads")
 print("regen - regenerate the admin pads")
-print("sregen - spam regenerate the admin pads")
-print("unsregen - stop spam regenerating the admin pads")
+print("sregen - like padreinforcements but players can't have ANY admin pads")
+print("unsregen -  turn it off")
 
 print("\n\n\n")
 print("padban - stop a user from using the admin pads")
@@ -9072,7 +9128,6 @@ function StoneMap()
         task.wait()
         stoneTool1.Parent, stoneTool2.Parent = game.Players.LocalPlayer.Character, game.Players.LocalPlayer.Character
         task.wait()
-        Remind("Wait around 10 seconds for the effect to be permanent")
         task.spawn(function()
             stoneTool1.ServerControl:InvokeServer("KeyPress", {["Key"] = "x", ["Down"] = true})
         end)
