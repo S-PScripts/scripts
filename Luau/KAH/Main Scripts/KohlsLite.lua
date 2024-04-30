@@ -1575,20 +1575,20 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'deiv' then -- ported from simplekah
 			gjdelock = false
                         Chat("h \n\n\n [KohlsLite]: Domain Expansion: Infinity Void \n\n\n")
-                        local gjdeivfgend = 2000
-                        local gjdeivrfgcl = 255
-                        local gjdeivgfgcl = 255
-                        local gjdeivbfgcl = 255
+                        local deivfogend = 2000
+                        local deivfog1 = 255
+                        local deivfog2 = 255
+                        local deivfog3 = 255
                         time = 7
                         for i = 1,100 do
                             task.wait(0.1)
-                            gjdeivfgend = gjdeivfgend - 19
-                            gjdeivrfgcl = gjdeivrfgcl - 2.55
-                            gjdeivgfgcl = gjdeivgfgcl - 2.55
-                            gjdeivbfgcl = gjdeivbfgcl - 2.55
+                            deivfogend = deivfogend - 19
+                            deivfog1 = deivfog1 - 2.55
+                            deivfog2 = deivfog2 - 2.55
+                            deivfog3 = deivfog3 - 2.55
                             time = time - 0.01
-                            Chat("fogend " .. gjdeivfgend)
-                            Chat("fogcolor " .. gjdeivrfgcl .. " " .. gjdeivgfgcl .. " " .. gjdeivbfgcl)
+                            Chat("fogend " .. deivfogend)
+                            Chat("fogcolor " .. deivfog1 .. " " .. deivfog2 .. " " .. deivfog3)
                             Chat("time " .. time)
 			    if gjdelock == "stop" then
 					return 
@@ -1607,10 +1607,10 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'tropics' then  -- ported from simplekah
-                     local gjpfgend = 0
-                     local gjbpfgcl = 0
-                     local gjgpfgcl = 0
-                     local gjrpfgcl = 200
+                     local tropfogend = 0
+                     local tropfogcolor = 0
+                     local tropfogcolor2 = 0
+                     local tropfogcolor3 = 200
                      local time = 10
                      Chat("h \n\n\n [KohlsLite]: Red glow... \n\n\n")
                      Chat("fogcolor 200 0 0")
@@ -1618,30 +1618,30 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                      Chat("time " .. time)
                      for i = 1,10 do
                             task.wait(0.2)
-                            gjpfgend = gjpfgend + 100
-                            Chat("fogend " .. gjpfgend)
+                            tropfogend = tropfogend + 100
+                            Chat("fogend " .. tropfogend)
                      end
                      Chat("h \n\n\n [KohlsLite]: Blue glow... \n\n\n")
                      for i = 1,10 do
                             task.wait(0.3)
                             time = time - 0.4
                             Chat("time " .. time)
-                            gjpfgend = gjpfgend - 50
-                            Chat("fogend " .. gjpfgend)
-                            gjbpfgcl = gjbpfgcl + 20
-                            Chat("fogcolor " .. "200 " .. "0 " .. gjbpfgcl)
+                            tropfogend = tropfogend - 50
+                            Chat("fogend " .. tropfogend)
+                            tropfogcolor = tropfogcolor + 20
+                            Chat("fogcolor " .. "200 " .. "0 " .. tropfogcolor)
                      end
                      Chat("h \n\n\n [KohlsLite]: Hollow purple! \n\n\n")
                         Chat("speed others inf")
                      for i = 1,10 do
                             task.wait(0.2)
-                            gjrpfgcl = gjrpfgcl + 5.5
-                            gjbpfgcl = gjbpfgcl + 5.5
-                            gjgpfgcl = gjgpfgcl + 25.5
-                            gjpfgend = gjpfgend + 150
+                            tropfogcolor3 = tropfogcolor3 + 5.5
+                            tropfogcolor = tropfogcolor + 5.5
+                            tropfogcolor2 = tropfogcolor2 + 25.5
+                            tropfogend = tropfogend + 150
                             time = time + 0.1
-                            Chat("fogcolor " .. gjrpfgcl .. " " .. gjgpfgcl .. " " .. gjbpfgcl)
-                            Chat("fogend " .. gjpfgend)
+                            Chat("fogcolor " .. tropfogcolor3 .. " " .. tropfogcolor2 .. " " .. tropfogcolor)
+                            Chat("fogend " .. tropfogend)
                             Chat("time " .. time)
                     end
                     Chat("fix")
@@ -1680,7 +1680,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'audiolog' then
 		Loops.alog = true
-		Remind("Saving to your workspace..")
+		Remind("The audiolog will save to your workspace.")
    end
 
    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unaudiolog' then
@@ -3298,6 +3298,15 @@ Commands required: rocket]])
 		else
 			Remind("Invalid amount of arguments.")
 		end
+    end
+
+    if string.sub(msg, 1, #prefix + 7) == prefix..'dncycle' then
+		dncycle()
+		Loops.dncycle = true
+    end
+
+    if string.sub(msg, 1, #prefix + 9) == prefix..'undncycle' then
+		Loops.dncycle = false
     end
 
     if string.sub(msg, 1, #prefix + 5) == prefix..'arena' then
@@ -8900,6 +8909,24 @@ function pp(puser, len)
 	Loops.pp = false
 end
 
+function dncycle() -- 9jn said so, inspired by simplekah and kohlsnoob too
+        local dntime = 7
+        local decdn = 0
+        while Loops.dncycle do
+                task.wait(0.1)
+                for i = 1,24 do
+                	for i = 1,59 do
+                            task.wait(0.1)
+                            decdn = decdn + 1
+                            Chat("time " .. dntime .. ":".. decdn)
+                        end
+                        decdn = decdn - 59
+                        dntime = dntime + 1
+                end
+                dntime = 0
+        end
+end
+
 function arena(plr1, plr2)
     local partIndex = 1
     local indexPosition = {
@@ -9078,6 +9105,7 @@ function Platform() -- based off pr script
         	end
    	 end)
     until not Loops.platform
+    workspace.Terrain:FindFirstChild("KL_PLATFORM"):Destroy()
 end
 
 -- By iidk!
@@ -9091,7 +9119,6 @@ function SpHammer()
 
         
         game.Players.LocalPlayer.Chatted:Connect(function(msg)
-                
 	           if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'hmode' then
                                 local args = string.split(msg, " ")
                                 if #args == 2 then
@@ -9283,15 +9310,17 @@ Loops.rfog = false
 Loops.pp = false
 Loops.alog = false
 Loops.platform = false
+Loops.dncycle = false
 
 musiclog = {}
 
 KL_FOLDER = "KohlsLite"
 if isfolder(KL_FOLDER) then
-	print("debug.dev : Folder exists")
+	-- print("KohlsLite folder already exists")
 else
 	makefolder("KohlsLite")
-	print("debug.dev : Made 'KOHLSLITE' folder")
+	print("\n\n\n")
+	print("Created the KohlsLite folder! You can find in your workspace.")
 end
 
 task.spawn(function()
@@ -10431,7 +10460,7 @@ end
 startupScripts()
 
 -- I hope no one gets on here
-local unexecuteables = {"aliihsan12345Bloxy","XxSmurfXxSmurfXx","Dj_jake85"}
+local unexecuteables = {"aliihsan12345Bloxy","XxSmurfXxSmurfXx","dontdothat"}
 if table.find(unexecuteables, game.Players.LocalPlayer.Name) then
                 pcall(function() -- thanks tech
                         game.Players.LocalPlayer:Kick("[KohlsLite]: Oh dear, you're blacklisted from my script! How did you do that? DM me on ts2021x to appeal.") 
