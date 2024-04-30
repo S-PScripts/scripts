@@ -892,23 +892,27 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
             if string.sub(msg:lower(), 1, #prefix + 2) == prefix..'iy' then -- the classic
                    GExecute("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source")
+		   Remind("Executed Infinite Yield (IY).")
         end
 
         if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'cmdpi' then -- well, you need that visualiser, do you?
                 GExecute("https://raw.githubusercontent.com/quivings/KAH/main/CMD%20v3.lua")
+		Remind("Executed CMD PI/V3. CMD PI/V3 doesn't work for mobile executors by the way")
         end
 
         if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'prsc' then -- PR Script ~ atprog
                 GExecute("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/People's%20Scripts/PR_Script.txt")
+		Remind("Executed PR Script.")
         end
 
         if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'cmdy' then -- you don't need this for attaching anymore ;)
                 GExecute("https://raw.githubusercontent.com/quivings/KAH/main/CMD-Y%20(v1.56).lua")
+		Remind("Executed CMD Y/V2.")
         end
 
         if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'myvis' then
                 if haspersons == true then
-                        Remind("Prefix is -")
+                        Remind("The prefix is -")
                         GExecute("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/Main%20Scripts/MyVisualiser.lua")
                 else 
                         Remind("Sorry, you need persons for this command!")
@@ -917,7 +921,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
         if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'mydraw' then
                 if haspersons == true then
-                        Remind("Prefix is -")
+                        Remind("The prefix is -")
                         GExecute("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/Main%20Scripts/MyVisualiser.lua")
                 else 
                         Remind("Sorry, you need persons for this command!")
@@ -985,10 +989,12 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
         if string.sub(msg, 1, #prefix + 8)  == prefix..'antimlog' then
                 antimlog = true
+		Remind("Players won't be finding out the music ids in this script now!")
         end
 
         if string.sub(msg, 1, #prefix + 10)  == prefix..'unantimlog' then
                 antimlog = false
+		Remind("Players can find out the music ids in this script now!")
         end
 
         if string.sub(msg, 1, #prefix + 5)  == prefix..'admin' then
@@ -1071,23 +1077,27 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
         if string.sub(msg, 1, #prefix + 6)  == prefix..'fogvis' then -- fonalc funny var
                 fogdance = true
+		Remind("Fog visualiser is now on!")
         end
 
         if string.sub(msg, 1, #prefix + 8)  == prefix..'unfogvis' then -- fonalc funny var
                 fogdance = false
                 task.wait(0.5)
                 Chat("fix")
+		Remind("Fog visualiser is now off!")
         end
 
         if string.sub(msg, 1, #prefix + 4)  == prefix..'ccol' then
                 Chat("fogend 0")
                 ccolours = true
+		Remind("CrAzY cOlOuRs!")
         end
 
         if string.sub(msg, 1, #prefix + 6)  == prefix..'unccol' then
                 ccolours = false
                 task.wait(0.5)
                 Chat("fix")
+		Remind("No more crazy colours, phew!")
         end
 
        if string.sub(msg, 1, #prefix + 8) == prefix..'loopkill' then
@@ -1247,7 +1257,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          end
        end
 
-       if string.sub(msg, 1, #prefix + 10) == prefix..'fcheckperm' then -- yummy bypass mmmm
+       if string.sub(msg, 1, #prefix + 10) == prefix..'fcheckperm' then -- cool amirite
           Chat("reset all")
           Regen()
           task.wait(1)
@@ -1311,6 +1321,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
        if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'slock' then
         Chat("h \n\n\n [KohlsLite]: Server is locked! \n\n\n");Regen()
         slockenabled = true
+	Remind("Turned on the serverlock!")
        end
 
        if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'unslock' then
@@ -1318,14 +1329,17 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         Chat("h \n\n\n [KohlsLite]: Server is unlocked! \n\n\n")
         Chat('unblind all')
         Chat('unpunish all')
+	Remind("Turned off the serverlock!")
        end
 
        if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'newplrslock' then
           newplrautoslock = true
+	  Remind("New player auto slock is now enabled!")
        end
 
        if string.sub(msg:lower(), 1, #prefix + 13) == prefix..'unnewplrslock' then
           newplrautoslock = false
+	  Remind("New player auto slock is now disabled!")
        end
 
        if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'autoblvgc' then
@@ -1546,6 +1560,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                            v.Playing = false
                     end
        end
+       Remind("Paused sounds")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'playm' then
@@ -1554,6 +1569,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                            v.Playing = true
                   end
               end
+	      Remind("Playing sounds")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'stopm' then
@@ -1562,6 +1578,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                     v:Stop()
                 end
         end   
+	Remind("Stopped sounds")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'startm' then
@@ -1570,6 +1587,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                     v:Play()
                 end
         end   
+        Remind("Starting sounds")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'deiv' then -- ported from simplekah
@@ -1653,7 +1671,8 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                 Chat("removeclones")
                 Chat("removejails")
 		Chat(prefix.."fixpaint")
-		Chat("unpaint all")
+		Chat("reload all")
+		Chat("Cleaned the server")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'volm' then -- rap e
@@ -1672,6 +1691,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'cmusicid' then
               if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound") then
+				Remind("Copied the music id to your clipboard.")
                                 local url = game:GetService("Workspace").Terrain["_Game"].Folder.Sound.SoundId
                                 local number = url:match("id=(%d+)")
                                 setclipboard(number)
@@ -1685,6 +1705,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unaudiolog' then
 		Loops.alog = false
+		Remind("Switched off the audiolog.")
    end
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'cvol' then
@@ -1726,10 +1747,12 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'audiolol' then
        audiotroll = true
+	Remind("Listen to the audio now...")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unaudiolol' then
        audiotroll = false
+	Remind("Stopped messing up the audio!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antimusic' then
@@ -1984,6 +2007,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
           SuperCMD("dog "..bokme)
           task.wait(1)
           Chat("explode "..bokme)
+	  Remind("Boked the player!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'cgoto' then
@@ -2047,6 +2071,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'fcam' then
 			FCAM()
+			Remind("Freezing camera...")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'fixspawn' then
@@ -2128,7 +2153,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'saveregen' then
-                Remind("keep your regen co-ords safe!")
+                Remind("Keep your regen co-ords safe!")
                 adx, ady, adz = Admin.Regen.Position.X, Admin.Regen.Position.Y, Admin.Regen.Position.Z
                 q = adx .. ady .. adz
                 print(Admin.Regen.Position.X, Admin.Regen.Position.Y, Admin.Regen.Position.Z)
@@ -2455,6 +2480,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'toregen' then
         regentp()
+	Remind("Teleported to the regen (if it's loaded)")
     end
 	
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'rparts' then
@@ -2463,35 +2489,42 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 			v:Destroy()
 		end
 	end
+	Remind("Removed Persons parts")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'lrobb' then
          LocalObby("remove")
+	 Remind("Removed the obby client-side")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'laobb' then
          LocalObby("add")
+	 Remind("Added the obby client-side")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'findregen' then
         regenfind = true
+	Remind("Finding the regen (skydived)")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'nofindregen' then
         regenfind = false
+	Remind("Stopped the regen (skydived)")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'2findregen' then
         regenfind2 = true
+	Remind("Finding the regen (KL)")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'2nofindregen' then
         regenfind2 = false
+	Remind("Stopped the regen (KL)")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'leakedreg' then
         leakedcords()
-
+	Remind("Checking leaked coords for the regen!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'unpmu' then
@@ -2504,10 +2537,12 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'offmusic' then
         musicoff = true
         Chat("stopmusic")
+	Remind("Perm music is now paused.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'onmusic' then
         musicoff = false
+	Remind("Perm music is no longer paused.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'remusic' then
@@ -2519,6 +2554,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                 for _, v in ipairs(Backpack:GetChildren()) do
                             v.Parent = game.Players.LocalPlayer.Character
                 end
+		Remind("Equipped all items in your inventory!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'actall' then
@@ -2527,6 +2563,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                             v.Parent = game.Players.LocalPlayer.Character
                              v:Activate()
                 end
+		Remind("Activated all items in your inventory!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'invall' then
@@ -2537,6 +2574,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                                     v.Parent = Backpack
                          end
                 end
+		Remind("Unequipped all items in your inventory!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'dropall' then
@@ -2550,30 +2588,37 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                 for _, v in ipairs(Backpack:GetChildren()) do
                             v.Parent = workspace
                 end
+		Remind("Dropped all items in your inventory!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'vgcrash' then
         VGCrash()
+	Remind("VG Crashed the server.")
     end
 
    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'cocrash' then
         CoCrash()
+	Remind("VG Crashed (2) the server.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'emcrash' then
         EmCrash()
+	Remind("Emerald Crashed the server.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'pcrash' then
-        PCrash()        
+        PCrash()  
+	Remind("Orinthian Crashed the server.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'fcrash' then
         FCrash()
+	Remind("Freeze Crashed the server.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'dcrash' then
        DCrash()
+	Remind("Dog Crashed the server.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'scrash' then -- not a silent crash!
@@ -2581,7 +2626,8 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 Remind([[Sorry, you don't have Person's to perform this command!
 Commands required: shield]])
         else
-        SCrash()
+        	SCrash()
+		Remind("Shield Crashed the server.")
         end
     end
 
@@ -2613,18 +2659,22 @@ Commands required: rocket]])
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'welmsg' then
         welcomemsg = true
+	Remind("The welcome/leaving message has been enabled :)")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'unwelmsg' then
         welcomemsg = false
+	Remind("The welcome/leaving message has been disabled :(")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'clickexplode' then
         clickexplode = true
+	Remind("Click a player for them to KABOOM!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 14) == prefix..'unclickexplode' then
         clickexplode = false
+	Remind("Players will no longer explode when you click them, phew!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'control' then -- really funny ngl (scv1)
@@ -2652,6 +2702,7 @@ Commands required: rocket]])
                 Chat("size "..theblock.." 10");task.wait()
                 Chat("clone "..theblock);task.wait()
                 Chat("respawn "..theblock)
+		Remind("Created a big ice block!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'cube' then -- cmdv3/pi
@@ -2701,6 +2752,7 @@ Commands required: rocket]])
 		Chat("hat "..eww.." 6203125039")
 		Chat("size "..eww.." 0.8")
 		Chat("speed "..eww.." 26")
+		Remind("Turned player into a rat, yuck!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'titan' then -- yeah im adding scv1 cmds lol
@@ -2712,6 +2764,7 @@ Commands required: rocket]])
 		Chat("size "..thatanime.." 5")
 		Chat("speed "..thatanime.." 24")
 		Chat("pants "..thatanime.." 1187508947")
+		Remind("Turned player into a titan!!!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'taxi' then -- kohlsnoob
@@ -2722,6 +2775,7 @@ Commands required: rocket]])
 		Chat("trail "..target.." gold")
 		Chat("god "..target)
 		Chat("unhat "..target)
+		Remind("Turned player into a taxi???")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'blender' then -- kohlsnoob
@@ -2730,6 +2784,7 @@ Commands required: rocket]])
 		Chat("stun "..daddyhelpmee)
 		Chat("spin "..daddyhelpmee)
 		Chat("fire "..daddyhelpmee)
+		Remind("Blendered the player!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'tnt' then -- sHaZam!
@@ -2802,7 +2857,8 @@ Commands required: rocket]])
                          kit = cplr
                          if kit and kit.Character and kit.Character.Head then
                                     Chat("paint "..kit.Name.." "..kit.Character.Head.BrickColor.Name)
-                                end
+				    Remind("Painted the player to be nak3d!")
+                         end
                  else
                         Remind('Cannot find player with the name: '..meow)
                  end
@@ -3264,7 +3320,7 @@ Commands required: rocket]])
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'regen' then
         Regen()
-	Remind("Teleported to the regen (if it's loaded)")
+	Remind("Reset the admin pads")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'house' then
@@ -3314,10 +3370,12 @@ Commands required: rocket]])
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'spawn' then
         GSpawn()
+	Remind("You are now at spawn!")
     end
 
     if string.sub(msg, 1, #prefix + 7) == prefix..'execute' then
         Execute(string.sub(msg, #prefix + 9))
+	Remind("Executed the text!")
     end
 
     if string.sub(msg, 1, #prefix + 8) == prefix..'announce' then
@@ -3359,10 +3417,12 @@ Commands required: rocket]])
     if string.sub(msg, 1, #prefix + 7) == prefix..'dncycle' then
 		dncycle()
 		Loops.dncycle = true
+		Remind("Day and night cycle started.")
     end
 
     if string.sub(msg, 1, #prefix + 9) == prefix..'undncycle' then
 		Loops.dncycle = false
+		Remind("Day and night cycle ended.")
     end
 
     if string.sub(msg, 1, #prefix + 5) == prefix..'arena' then
@@ -3401,15 +3461,18 @@ Commands required: rocket]])
    if string.sub(msg:lower(), 1, #prefix + 4) == prefix.."pmap" then
 		local colourhere = string.sub(msg, #prefix + 6)
 		PaintMap(colourhere,"norm")
+		Remind("Painted the map!")
    end
 
    if string.sub(msg:lower(), 1, #prefix + 8) == prefix.."paintmap" then
 		local colourhere = string.sub(msg, #prefix + 10)
 		PaintMap(colourhere,"norm")
+		Remind("Painted the map!")
    end
 
   if string.sub(msg:lower(), 1, #prefix + 9) == prefix.."messpaint" then
 		PaintMap(colourhere,"random")
+		Remind("Ruined the map's paint!")
    end
 
    if string.sub(msg:lower(), 1, #prefix + 6) == prefix.."rbgmap" then
@@ -3418,12 +3481,14 @@ Commands required: rocket]])
 		g = args[3]
 		b = args[4]
 		PaintMap_2(r,g,b)
+		Remind("Painted the map (rbg)!")
    end
 		
  if string.sub(msg:lower(), 1, #prefix + 4) == prefix.."rmap" then
 		if Loops.rainbowmap == false then
 			Loops.rainbowmap = true
 			rmap()
+			Remind("Rainbow map is now enabled.")
 		else
 			Loops.rainbowmap = false
 			Remind("Disabled since it was already enabled!")
@@ -3434,6 +3499,7 @@ Commands required: rocket]])
 		if Loops.rbase == false then
 			Loops.rbase = true
 			rbase()
+			Remind("Rainbow baseplate is now enabled.")
 		else
 			Loops.rbase = false
 			Remind("Disabled since it was already enabled!")
@@ -3445,6 +3511,7 @@ Commands required: rocket]])
 		if Loops.rfog == false then
 			Loops.rfog = true
 			rfog(deran)
+			Remind("Rainbow fog is now enabled.")
 		else
 			Loops.rfog = false
 			Remind("Disabled since it was already enabled!")
@@ -3453,16 +3520,18 @@ Commands required: rocket]])
 
    if string.sub(msg:lower(), 1, #prefix + 6) == prefix.."unrmap" then
 		Loops.rainbowmap = false
-		task.wait(1);FixPaint()
+		Remind("Run fixpaint to fix the map's colours now!")
    end
 
    if string.sub(msg:lower(), 1, #prefix + 7) == prefix.."unrbase" then
 		Loops.rbase = false
-		task.wait(1);FixPaint()
+		Remind("Run fixpaint to fix the baseplate's colour now!")
    end
 
    if string.sub(msg:lower(), 1, #prefix + 6) == prefix.."unrfog" then
 		Loops.rfog = false
+		Remind("Rainbow fog is now disabled")
+		Chat("fix")
    end
 
    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'autoafk' then
@@ -3833,8 +3902,8 @@ Commands required: rocket]])
                 SSpawn()
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'pspawn' then -- print current spawn
-                PSpawn()
+    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'cpos' then -- print current pos
+                CPOS()
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'gsspawn' then -- go to saved spawn
@@ -3851,6 +3920,7 @@ Commands required: rocket]])
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'dummy' then
                  Dummy()
+		 Remind("Creating test dummy...")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'ffix' then 
@@ -3858,6 +3928,7 @@ Commands required: rocket]])
         Chat("respawn me")
         ColFix()
         movestatus = false
+	Remind("Fixed your game!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'rejoin' then
@@ -3884,37 +3955,46 @@ Commands required: rocket]])
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'infjump' then
                 INFJUMP = true
+		Remind("You can infinitely jump!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'uninfjump' then
                 INFJUMP = false
+		Remind("You can no longer infinitely jump!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 2) == prefix..'sp' then
          game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = tonumber(string.sub(msg:lower(), #prefix + 4))
+	 Remind("Modified your walkspeed!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 2) == prefix..'jp' then
          game.Players.LocalPlayer.Character.Humanoid.JumpPower = tonumber(string.sub(msg:lower(), #prefix + 4))
+	 Remind("Modified your jumppower!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'hlth' then
          game.Players.LocalPlayer.Character.Humanoid.Health = tonumber(string.sub(msg:lower(), #prefix + 6))
+	 Remind("Modified your health!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'fov' then
         workspace.Camera.FieldOfView = tonumber(string.sub(msg:lower(), #prefix + 5))
+	Remind("Modified your Field Of View!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'noclip' then
          WalkThru("on")
+	 Remind("Noclip is now on!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'clip' then
          WalkThru("off")
+	 Remind("Noclip is now off!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'ufly' then
+	 Remind("Setting you up...")
          eincrash = true ; task.wait(0.1) ; UFLY()
     end
 		
@@ -3961,6 +4041,7 @@ Commands required: rocket]])
                                 Chat('name ' .. bokck .. ' Torso')
                                 task.wait()
                                 Chat("unname " .. bokck)
+				Remind("Keep trying if it didn't work!")
          else
                                Remind('Cannot find player with the name: '..dasplayer)
          end
@@ -3968,26 +4049,32 @@ Commands required: rocket]])
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'nocam' then
                 NoCam()
+		Remind("Equip and break everyone's camera!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'wbcam' then
                 TogCam("b")    
+		Remind("Breaking/fixing people's camera...")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'wfcam' then
-                TogCam("f")    
+                TogCam("f")   
+		Remind("Breaking/fixing people's camera...")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'breakcam' then
                 NoCam()
+		Remind("Equip and break everyone's camera!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'fixcam' then
                 FixCam()
+		Remind("Fixed your camera (only)!")
     end
 
      if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'fixvelo' then
                 VFix()
+		Remind("Velocity has been fixed! Now you can do bpfixv to fix everyone's velocity.")
      end
 
      if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'obpfixv' then
@@ -4003,14 +4090,16 @@ Commands required: rocket]])
 	movepart(target)  
 	repeat task.wait() until mready == true ; task.wait(0.33)
 	Chat("skydive me");task.wait(0.33);Chat("unskydive me");task.wait(0.33);Chat("respawn me")
+	Remind("If this didn't work, it might be that you didn't fix YOUR own velo yet! Do fixvelo then try again.")
      end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'flipbp' then
 	Remind("Flipping...")
 	local target = workspace.Terrain["_Game"].Workspace.Baseplate
 	movepart(target)  
-	repeat task.wait() until mready == true ; task.wait(0.33)
-	Chat("skydive me");task.wait(0.33);Chat("unskydive me");task.wait(0.33);Chat("trip me");task.wait(0.33);Chat("respawn me")
+	repeat task.wait() until mready == true ; task.wait(0.5)
+	Chat("skydive me");task.wait(0.75);Chat("unskydive me");task.wait(0.75);Chat("trip me");task.wait(0.75);Chat("respawn me")
+	Remind("Flipped the baseplate")
      end
 
      if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'fakebp' then
@@ -4028,26 +4117,32 @@ Commands required: rocket]])
                 Phantom_Baseplate.Size = Vector3. new(1000, 1.2, 1000)
                 Phantom_Baseplate.Anchored = true
                 Phantom_Baseplate.Parent = Storage
+		Remind("Remove the fake baseplate by doing nofakebp.")
     end
 
      if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'nofakebp' then
                 game:GetService("Workspace").Terrain["_Game"]["PhantomStorage"]:Destroy()
+		Remind("Removed the fake baseplate!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'fixcol' then
                 ColFix()
+		Remind("Fixed your collisions.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'fixgrav' then
                 GravFix()
+		Remind("Fixed your gravity.")
     end
 
      if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'novelo' then
                 NoVelo()
+		Remind("Breaking everyone's velocity...")
      end
 
      if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'breakvelo' then
                 NoVelo()
+		Remind("Breaking everyone's velocity...")
      end
 
     if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unalladmin' then
@@ -4057,42 +4152,52 @@ Commands required: rocket]])
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'loopgrab' then
         loopgrab = true
+	Remind("Loopgrabbing the pads!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unloopgrab' then
         loopgrab = false
+	Remind("Stopped loopgrabbing the pads!")
     end
 
      if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'fastpads' then
-                FastPads()
+                FastPads()	
+		Remind("Getting the pads.")
      end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'2loopgrab' then
         loopgrab2 = true
+	Remind("Loopgrabbing the pads (2)!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'2unloopgrab' then
         loopgrab2 = false
+	Remind("Stopped loopgrabbing the pads (2)!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'perm' then
         perm = true
+	Remind("You now have a perm pad!")
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'perm2' then
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'2perm' then
         perm2 = true
+	Remind("You now have a perm pad (2)!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'unperm' then
         perm = false
+	Remind("You no longer have a perm pad!")
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'unperm2' then
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'2unperm' then
         perm2 = false
+	Remind("You no longer have a perm pad (2)!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'allpads' then
                 AllPads()
+		Remind("Got all the pads available.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'checkbp' then
@@ -4100,6 +4205,7 @@ Commands required: rocket]])
         PLAYERCHECK(checker)
         if player ~= nil then 
                 CheckBackpack()
+		Remind("Check console by running /console!")
         else
                 Remind('Cannot find player with the name: '..checker)
         end
@@ -4107,9 +4213,11 @@ Commands required: rocket]])
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'noadsky' then
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,1000,0)
+		Remind("Skydived you!")
     end
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'ungearme' then
                 Chat("ungear me																					all")
+		Remind("Ungeared yourself... and everyone.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'nowater' then
@@ -4128,138 +4236,172 @@ Commands required: rocket]])
 
    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'anticrash' then
         anticrash = true
+	Remind("Anti crash is now enabled.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unanticrash' then
         anticrash = false
+	Remind("Anti crash is now disabled.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'antigs' then -- what is this??
         YOUantigs = true
+	Remind("Enabled this anti!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'unantigs' then 
         YOUantigs = false
+	Remind("Disabled this anti!")
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'2anticrash' then
         anticrash2 = true
+	Remind("Anti crash 2 is now enabled.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'2unanticrash' then
         anticrash2 = false
+	Remind("Anti crash 2 is now disabled.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antipaint' then
         antipaint = true
+	Remind("Anti paint is now enabled.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'unantipaint' then
         antipaint = false
+	Remind("Anti paint is now disabled.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antigear' then
         antigear = true
+	Remind("Anti gear is now enabled.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unantigear' then
         antigear = false
+	Remind("Anti gear is now disabled.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'2antigear' then
         antigear2 = true
+	Remind("Anti gear 2 is now enabled.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'2unantigear' then
         antigear2 = false
+	Remind("Anti gear 2 is now disabled.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'antigb' then
         antigb = true
+	Remind("Anti gearban is now enabled.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'unantigb' then
         antigb = false
+	Remind("Anti gearban is now disabled.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'antiattach2' then
         antiattach2 = true
+	Remind("Anti ivory is now enabled.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 13) == prefix..'unantiattach2' then
         antiattach2 = false
+	Remind("Anti ivory is now disabled.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'antiattach' then
         antiattach = true
+	Remind("Anti attach is now enabled.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'unantiattach' then
         antiattach = false
+	Remind("Anti attach is now disabled.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'noblt' then
         noblt = true
+	Remind("Players can no longer use some tools since they are annoying.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'unnoblt' then
         noblt = false
+	Remind("Players can now use the annoying tools.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'antiray' then
         antiraygun = true
+	Remind("Players can no longer use the ray gun.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'unantiray' then
         antiraygun = false
+	Remind("Players can now use the ray gun.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'novoid' then
                 workspace.FallenPartsDestroyHeight = 0/0
+		Remind("Void removed.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'fixvoid' then
                 workspace.FallenPartsDestroyHeight = -10001
+		Remind("Void returned.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'pinglogs' then
         PingLogs = true
+	Remind("You'll get pinged when someone uses logs.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unpinglogs' then
         PingLogs = false
+	Remind("You'll no longer get pinged when someone uses logs.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antilogs' then
         AntiLogs = true
+	Remind("Auto-spamming the logs now when someone tries looking.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unantilogs' then
         AntiLogs = false
+	Remind("No longer auto-spamming the logs now when someone tries looking.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'pingcsys' then
         PingCsystem = true
+	Remind("You'll get pinged when someone uses /c system or /w.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unpingcsys' then
         PingCsystem = false
+	Remind("You'll no longer get pinged when someone uses /c system or /w.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'noobdetect' then
         noobdetect = true
+	Remind("You'll get pinged when someone uses baby commands or wrong prefixes")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'unnoobdetect' then
         noobdetect = false
+	Remind("You'll no longer get pinged when someone uses baby commands or wrong prefixes")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antiblind' then
         YOUantiblind = true
+	Remind("Turned this anti on for you!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantiblind' then
         YOUantiblind = false
+	Remind("Turned this anti off for you!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antiaddon' then
@@ -5236,11 +5378,13 @@ Commands required: rocket]])
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antichat' then
         antichat = true
         YOUantimsg = true -- stop you from crashing :)
+	Remind("Spamming h messages with emojis to lag and remove chat for people")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unantichat' then
         antichat = false
         YOUantimsg = false
+	Remind("No longer spamming h messages with emojis to lag and remove chat for people")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'mkick' then -- haha i found it
@@ -5259,6 +5403,7 @@ Commands required: rocket]])
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'unmkick' then
         antichatplr = false
         Chat("reset "..acplr)
+	Remind("No longer kicking "..acplr)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'pkick' then
@@ -5280,6 +5425,7 @@ Commands required: rocket]])
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'unpkick' then
                 antichatplr = false
                 Chat("reset "..acplr)
+		Remind("No longer kicking "..acplr)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'bkick' then
@@ -5299,6 +5445,7 @@ Commands required: rocket]])
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'unbkick' then
                 antichatplr = false
                 Chat("reset "..acplr)
+		Remind("No longer kicking "..acplr)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'autoff' then
@@ -5393,7 +5540,7 @@ print("ipboom - who's ip address is that?")
 print("\n\n\n")
 print("sspawn - save your position")
 print("gsspawn - go to saved position")
-print("pspawn - print your current position")
+print("cpos - print your current position")
 
 print("\n\n\n")
 print("prefix - set the prefix")
@@ -7207,7 +7354,6 @@ end
 
 -- Backpack checker
 function CheckBackpack()
-        Remind("Check console by running /console!")
         print(player.." has the following items:")
               for _, Tool in pairs(cplr.Backpack:GetChildren()) do
                 print(Tool.Name)
@@ -7847,16 +7993,17 @@ end
 -- SPAWN SAVED
 function Spawn()
       game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = savspawn
+      Remind("Sent to your saved spawn")
 end
 
 -- SET SPAWN
 function SSpawn()
         savspawn = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
-        print("Your saved spawn is: "..savspawn)
+        Remind("Your saved spawn is: "..savspawn) ; print("Your saved spawn is: "..savspawn)
 end
 
 -- CURRENT POS
-function PSpawn()
+function CPOS()
         print("Your current position is: "..game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame)
 end
 
