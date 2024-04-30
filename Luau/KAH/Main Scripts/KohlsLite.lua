@@ -2767,6 +2767,21 @@ Commands required: rocket]])
 		Remind("Turned player into a titan!!!")
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'dogrock' then -- noobsploit/shazam
+		local drock = string.sub(msg:lower(), #prefix + 9)
+		Chat("dog "..drock)
+		task.wait(0.25)
+		Chat("size "..drock.." 0.3")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'rdogrock' then -- noobsploit/shazam
+		local drock = string.sub(msg:lower(), #prefix + 10)
+		Chat("trail "..drock.." rainbow")
+		Chat("dog "..drock)
+		task.wait(0.25)
+		Chat("size "..drock.." 0.3")
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'taxi' then -- kohlsnoob
 	        local target = string.sub(msg:lower(), #prefix + 6)
 		Chat("dog "..target)
