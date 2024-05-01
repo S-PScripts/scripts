@@ -4136,7 +4136,6 @@ Commands required: rocket]])
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'nocam' then
                 NoCam()
-		Remind("Equip and break everyone's camera!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'wbcam' then
@@ -4151,7 +4150,6 @@ Commands required: rocket]])
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'breakcam' then
                 NoCam()
-		Remind("Equip and break everyone's camera!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'fixcam' then
