@@ -3781,6 +3781,18 @@ Commands required: rocket]])
 		end
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'rcannon' then
+		rcannon("def")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'wrcannon' then
+		rcannon("wide")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'astrike' then
+		ASTRIKE()
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'skcraze' then
 		SKCRAZE()
 		skf = true
@@ -5869,9 +5881,18 @@ print("esong - end the playlist")
 print("\n\n\n")
 print("surround - surround a player with planes")
 print("nuke - nuke a player with planes")
-print("jnuke (optional: player) - nuke a player or the map with the RocketJumper gear")
-print("dnuke (amount) (range) (optional: player) - nuke the map with the ConjurorsFist")
-print("rnuke (range) - nuke the map with planes)")
+print("rnuke (range) - nuke the map with planes")
+
+print("jnuke - nuke the map with the RocketJumper gear")
+print("jnuke (player) - nuke a player with the RocketJumper")
+print("astrike - nuke an area with the RocketJumper by using your mouse!")
+
+print("dnuke (amount) (range) - nuke the map with the ConjurorsFist")
+print("dnuke (player) - nuke a player with the ConjurorsFist")
+
+print("rfgun (bullets) - rapid fire gun!")
+print("rcannon - rail cannon")
+print("wrcannon - wide rail cannon")
 
 print("\n\n\n")
 print("laser - laser and punish someone at the same time. they cannot respawn and are stuck in limbo")
@@ -9981,6 +10002,77 @@ function RFGUN(bullets)
 				Connections.rapidfiregun:Disconnect()
 			end
 		end)
+end
+
+function ASTRIKE()
+		local Connections = {}
+		Connections.airstrike = game:GetService("UserInputService").InputBegan:Connect(function(inputa,gp)
+			if gp then return end
+			if inputa.UserInputType == Enum.UserInputType.MouseButton1 then
+		
+				for i = 1, 5 do
+            				Chat("gear me 169602103")
+            			end
+		
+            			repeat task.wait() until #game.Players.LocalPlayer.Backpack:GetChildren() >= 5
+
+				local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
+         			for _, v in ipairs(Backpack:GetChildren()) do
+                            		v.Parent = game.Players.LocalPlayer.Character
+				end
+			
+				for i = 1, 1000 do
+                			pcall(function()
+                   				 game.Players.LocalPlayer.Character.RocketJumper.FireRocket:FireServer(game.Players.LocalPlayer:GetMouse().Hit.p,Vector3.new(math.random(-200,200), math.random(0,50), math.random(-200,200)))
+                			end)
+           			end
+           
+				task.wait(10)
+		
+            			Chat("ungear me")
+		    		Connections.airstrike:Disconnect()
+
+			end
+		end)
+end
+
+function rcannon(mode)
+	local s, f = 
+	pcall(function()
+   		local theblue = 15
+    		for x = 1, theblue do
+        		for i = 1, theblue do
+            			Chat("gear me 79446473")
+            			repeat task.wait() until game.Players.LocalPlayer.Backpack:FindFirstChild("Railgun")
+				rag = game.Players.LocalPlayer.Backpack:FindFirstChild("Railgun")
+            			rag.GripPos = (CFrame.Angles(0,0,math.rad(x*(360/theblue)))*CFrame.new(math.cos(i*(360/theblue))*10,0,math.sin(i*(theblue/360))*10)).p
+            			rag.Parent = game.Players.LocalPlayer.Character
+       	 		end
+    		end
+    	end) 
+
+	if not s then Remind(f) end
+
+        task.wait(0.25)
+        Chat("invis me")
+   	game.Players.LocalPlayer.Character.Humanoid.HipHeight = 8
+
+        local Connections = {}
+        Connections.cannonthing = game:GetService("UserInputService").InputBegan:Connect(function(inputa,gp)
+   	        if gp then return end
+    		if inputa.UserInputType == Enum.UserInputType.MouseButton1 then
+        		
+			for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+            			if v:IsA("Tool") then
+					if mode == "wide" then
+						v.Click:FireServer((v.Handle.CFrame*CFrame.new(0,0,-100)).p)
+					else
+               			 		v.Click:FireServer(game.Players.LocalPlayer:GetMouse().Hit.p)
+					end
+           			end
+       			end
+    		end
+   	end)
 end
 
 function Clone(getnum)
