@@ -3222,14 +3222,19 @@ Commands required: rocket]])
             Chat("fogcolor 0 0 0");Chat("time 0");Chat("fogend 0");Chat("paint all black")
             task.wait(0.75)
             DCrash()        
-    end
-
-  if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'dicrash' then
+  end
+-- magic shift of the indent
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'dicrash' then
 	    musicsay = false -- na ts2021 forgot this jit tripping - from ts2021
             Chat(prefix.."gchar all D_ionte");Chat(prefix.."gmusic62");Chat("h \n\n\n all praise dionte \n\n\n");Chat("name all D_ionte is our hero")
 	    task.wait(1.5)
 	    DCrash()
     end
+  
+  --[[  if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'fredcrash' then
+		musicsay = false 
+		
+    end]]
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'rockmap' then
         StoneMap()
