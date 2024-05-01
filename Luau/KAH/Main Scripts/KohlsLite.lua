@@ -3858,40 +3858,40 @@ Commands required: rocket]])
 			local getnumber = args[3]
 			if act == "clone" then
 				Clone(getnumber)
-		
+				Remind("Action: Clone")
 			elseif act == "table" or act == "raig" then
 		                Table(getnumber)
-		
+				Remind("Action: Table")
 			elseif act == "potion" or act == "dance" then
 				Potion(getnumber)
-		
+				Remind("Action: Potion")
 			elseif act == "tripmine" or act == "trip" then
 		                 MineTrip(getnumber)
-		
+				 Remind("Action: Tripmine")
 			elseif act == "spike" then
                 		 Spike(getnumber)
-		
+		 		 Remind("Action: Spike")
 			elseif act == "cannon" then
 		                 Cannon(getnumber)
-		
+				 Remind("Action: Cannon")
 			elseif act == "zombie" then
 				 Zombie(getnumber)
-		
+				 Remind("Action: Zombie")
 			elseif act == "alpaca" then
 				 Alpaca(getnumber)
-		
+				 Remind("Action: Alpaca")
 			elseif act == "piano" or act == "mozart" then
 		                 Piano(getnumber)
-
+				 Remind("Action: Piano")
 			elseif act == "bdrop" or act == "bassdrop" then
 		                 Bassdrop(getnumber)
-
+				 Remind("Action: Bassdrop")
 			elseif act == "cstory" or act == "coolstory" then
 		                 Coolstory(getnumber)
-
+				 Remind("Action: Coolstory")
 			elseif act == "banana" then
 		                 Banana(getnumber)
-			
+				 Remind("Action: Banana")
 			else
 				Remind("Invalid action!")
 			end
@@ -3937,7 +3937,8 @@ Commands required: rocket]])
 			dk = cplr
 			dkicked = player
 			dkickin = true
-                        dkick(dk, dkicked)
+                        dkick(dk, kicked)
+			Remind("Dog kicking the player...")
                  else
                         Remind('Cannot find player with the name: '..dasplayer)
                  end
@@ -3959,6 +3960,7 @@ Commands required: rocket]])
 		 PLAYERCHECK(dasplayer)
                  if player ~= nil then
                         slag(cplr, player)
+			Remind("Skate lagging the player")
                  else
                         Remind('Cannot find player with the name: '..dasplayer)
                  end
@@ -3969,6 +3971,7 @@ Commands required: rocket]])
 		 PLAYERCHECK(dasplayer)
                  if player ~= nil then
                         lagify(cplr,player)
+			Remind("Skate lagging the player (2)")
                  else
                         Remind('Cannot find player with the name: '..dasplayer)
                  end
