@@ -10058,7 +10058,7 @@ function rcannon(mode)
    	game.Players.LocalPlayer.Character.Humanoid.HipHeight = 8
 
         local Connections = {}
-        Connections.cannonthing = game:GetService("UserInputService").InputBegan:Connect(function(inputa,gp)
+        Connections.cannoning = game:GetService("UserInputService").InputBegan:Connect(function(inputa,gp)
    	        if gp then return end
     		if inputa.UserInputType == Enum.UserInputType.MouseButton1 then
         		
@@ -10071,6 +10071,9 @@ function rcannon(mode)
 					end
            			end
        			end
+
+    			Chat("reset me")
+    			Connections.cannoning:Disconnect()
     		end
    	end)
 end
