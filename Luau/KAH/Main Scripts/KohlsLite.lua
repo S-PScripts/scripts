@@ -3900,6 +3900,11 @@ Commands required: rocket]])
 		end
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'rfgun' then
+	bullets = tonumber(string.sub(msg:lower(), #prefix + 7))
+	RFGUN(bullets)
+    end
+
    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'sjail' then
 		Chat("jail me")
        		task.wait(0.2)
@@ -9947,6 +9952,36 @@ function lagify(plr,pln)
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(0,0,0)
         Chat("respawn me")
     end
+
+function RFGUN(bullets)
+		local Connections = {}
+		Connections.rapidfiregun = game:GetService("UserInputService").InputBegan:Connect(function(inputa,gp)
+			if gp then return end
+			if inputa.UserInputType == Enum.UserInputType.MouseButton1 then
+		
+				for i = 1, bullets do
+    					Chat("gear me 139578207")
+    					task.wait()
+				end
+			
+				task.wait(0.2)
+			
+				for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+    					v.Parent = game.Players.LocalPlayer.Character
+    					task.wait()
+    					local clickc = game.Players.LocalPlayer:GetMouse().Hit.p
+   					v.Click:FireServer(clickc)
+				end
+			
+				for i = 1, bullets do
+    					task.wait(0.1)
+				end
+
+				Chat("ungear me")
+				Connections.rapidfiregun:Disconnect()
+			end
+		end)
+end
 
 function Clone(getnum)
 	 Chat("ungear me");task.wait(0.5)
