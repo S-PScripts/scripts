@@ -9602,12 +9602,17 @@ Loops.dncycle = false
 musiclog = {}
 
 KL_FOLDER = "KohlsLite"
-if isfolder(KL_FOLDER) then
-	-- print("KohlsLite folder already exists")
-else
-	makefolder("KohlsLite")
-	print("\n\n\n")
-	print("Created the KohlsLite folder! You can find in your workspace.")
+if writefile and readfile then
+	if isfolder(KL_FOLDER) then
+		-- placeholder text uwu
+	else
+		makefolder("KohlsLite")
+		print("\n\n\n")
+		print("Created the KohlsLite folder! You can find in your workspace.")
+		local file_welcome = "KohlsLite/Welcome.txt"
+		local file_text = "Thank you for using KohlsLite! If you need help, please DM me at ts2021x."
+		writefile(KL_FOLDER,file_text)
+	end
 end
 
 task.spawn(function()
@@ -9622,7 +9627,7 @@ task.spawn(function()
 					table.insert(musiclog, musicid)
 					if writefile and readfile then -- thanks dizzy
 	    					local cd = os.date("%Y-%m-%d %H:%M:%S")
-    						local logdsc = "Audio was detected at: [ ".. cd .. " ] \n The music id was: [ " .. nmusicid .. " ] \n The music file is : [ ".. musicid .." ]\n"
+    						local logdsc = "Audio was detected at: [ ".. cd .. " ] \n The music id was: [ " .. nmusicid .. " ] \n The music file was : [ ".. musicid .." ]\n"
    						local file = "KohlsLite/AudioLogger.txt"
     						local text = ""
 	
@@ -10825,4 +10830,4 @@ _  _____  _   _ _     ____  _     ___ _____ _____
 | |/ / _ \| | | | |   / ___|| |   |_ _|_   _| ____|
 | ' / | | | |_| | |   \___ \| |    | |  | | |  _|  
 | . \ |_| |  _  | |___ ___) | |___ | |  | | | |___ 
-|_|\_\___/|_| |_|_____|____/|_____|___| |_| |_____| ON TOP ]]
+|_|\_\___/|_| |_|_____|____/|_____|___| |_| |_____| ]]
