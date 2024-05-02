@@ -1,22 +1,21 @@
 --[[
- █████               █████      ████          ████   ███   █████            
-░░███               ░░███      ░░███         ░░███  ░░░   ░░███             
- ░███ █████  ██████  ░███████   ░███   █████  ░███  ████  ███████    ██████ 
- ░███░░███  ███░░███ ░███░░███  ░███  ███░░   ░███ ░░███ ░░░███░    ███░░███
- ░██████░  ░███ ░███ ░███ ░███  ░███ ░░█████  ░███  ░███   ░███    ░███████ 
- ░███░░███ ░███ ░███ ░███ ░███  ░███  ░░░░███ ░███  ░███   ░███ ███░███░░░  
- ████ █████░░██████  ████ █████ █████ ██████  █████ █████  ░░█████ ░░██████ 
-░░░░ ░░░░░  ░░░░░░  ░░░░ ░░░░░ ░░░░░ ░░░░░░  ░░░░░ ░░░░░    ░░░░░   ░░░░░░   v1.5 ]]
 
--- This free, open-source script is for the Roblox game Kohls Admin House (KAH)
--- You can play KAH here: https://www.roblox.com/games/112420803/Kohls-Admin-House-NBC-Updated
--- Created by ScriptingProgrammer (Roblox) / TS2021 (Discord) / S-PScripts (GitHub)
+██╗  ██╗ ██████╗ ██╗  ██╗██╗     ███████╗██╗     ██╗████████╗███████╗
+██║ ██╔╝██╔═══██╗██║  ██║██║     ██╔════╝██║     ██║╚══██╔══╝██╔════╝
+█████╔╝ ██║   ██║███████║██║     ███████╗██║     ██║   ██║   █████╗  
+██╔═██╗ ██║   ██║██╔══██║██║     ╚════██║██║     ██║   ██║   ██╔══╝  
+██║  ██╗╚██████╔╝██║  ██║███████╗███████║███████╗██║   ██║   ███████╗
+╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝╚═╝   ╚═╝   ╚══════╝ v1.5
 
--- Support this script today by donating Robux to me!
--- Please do not "skid" off this code by changing the name and removing the dev section. It makes me annoyed!
--- You can make your own script instead of skidding and you can take stuff from here if necessary.
+-> This free, open-source script is for the Roblox game Kohls Admin House (KAH)
+-> You can play KAH here: https://www.roblox.com/games/112420803/Kohls-Admin-House-NBC-Updated
+-> Created by ScriptingProgrammer (Roblox) / TS2021 (Discord) / S-PScripts (GitHub)
 
--- This script does not work on Codex!!!
+-> Support this script today by donating Robux to me!
+-> Please do not "skid" off this code by changing the name and removing the dev section. It makes me annoyed!
+-> You can make your own script instead of skidding and you can take stuff from here if necessary.
+
+]]
 
 local function Remind(msg)
         game.StarterGui:SetCore("SendNotification", {
@@ -35,7 +34,7 @@ getgenv().kohlsexecuted = true -- don't touch!
 
 getgenv().deprefix = "." -- This can be of any length
 
-getgenv().klversion = "1.49" -- The version of KohlsLite, of course.
+getgenv().klversion = "1.5" -- The version of KohlsLite, of course.
 
 local function Chat(msg)
       game.Players:Chat(msg)
@@ -10733,7 +10732,7 @@ colorAPI.colorHouse = function(arg)
 	  local rooftsC = arg.rooftsC
 	  local chiC = arg.chiC
  
-	  -------------------------------------------------------------------- House (really messy ik) --------------------------------------------------------------------
+	  -------------------------------------------------------------------- House --------------------------------------------------------------------
  
 		for i,v in pairs(game.Workspace.Terrain["_Game"].Workspace["Basic House"]:GetChildren()) do
 			coroutine.wrap(function()
@@ -10963,7 +10962,7 @@ Stats.rank = rankcheck(Stats.username)
 
 print("Your rank is: " .. Stats.rank)
 
--- BLACKLIST FOR KOHLSLITE --
+-- KohlsLite Blacklist --
 local unexecuteables = {"aliihsan12345Bloxy","XxSmurfXxSmurfXx","dontdothat"}
 if table.find(unexecuteables, game.Players.LocalPlayer.Name) then
                 pcall(function() -- thanks tech
@@ -10971,5 +10970,3 @@ if table.find(unexecuteables, game.Players.LocalPlayer.Name) then
                 end)
                 task.wait(2.5); while true do end
 end
-
--- KohlsLite OFFICIAL -- 
