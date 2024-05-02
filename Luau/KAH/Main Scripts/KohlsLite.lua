@@ -356,7 +356,8 @@ local musictable = {
     ["111"] = { id = "1845070869", name = "Eye Open"},
     ["112"] = { id = "1847863129", name = "Tech Synth A"},
     ["113"] = { id = "1845073388", name = "Need For Speed"},
-    ["114"] = { id = "1845092143", name = "Super Nova"}
+    ["114"] = { id = "1845092143", name = "Super Nova"},
+    ["115"] = { id = "1840006904", name = "Tricky (a)"}
 }
 
 local gearlist = {
