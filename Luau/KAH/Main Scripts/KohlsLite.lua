@@ -4326,7 +4326,7 @@ Commands required: rocket]])
 		Remind("Skydived you!")
     end
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'ungearme' then
-                Chat("ungear me																					all")
+                Chat("ungear me																				all	all")
 		Remind("Ungeared yourself... and everyone.")
     end
 
@@ -5711,14 +5711,17 @@ print("spamon - start spamming again")
 print("\n\n\n")
 print("fixpaint - fix the paint")
 print("pmap/paintmap - paint the map a colour")
+print("messpaint - what do you think?")
 
 print("\n\n\n")
 print("icemap - make the map ice - WARNING: THIS COMMAND MIGHT CRASH YOU")
 print("stonemap/rockmap - make the map stone")
 
 print("\n\n\n")
-print("NOK - no obby kill")
-print("2NOK - no obby kill")
+print("nok - no obby kill")
+print("2nok - no obby kill")
+print("tnok - temp no obby kill")
+print("untnok - un temp no obby kill")
 
 print("\n\n\n")
 print("sp - set your speed without the command")
