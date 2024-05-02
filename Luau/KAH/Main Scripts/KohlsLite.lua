@@ -3788,14 +3788,17 @@ Commands required: rocket]])
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'rcannon' then
 		rcannon("def")
+		Remind "Debug message"
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'wrcannon' then
 		rcannon("wide")
+		Remind "Debug message"
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'astrike' then
 		ASTRIKE()
+		Remind "Debug message"
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'skcraze' then
