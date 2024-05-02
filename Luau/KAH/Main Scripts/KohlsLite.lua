@@ -1,9 +1,12 @@
 --[[
-_  _____  _   _ _     ____  _     ___ _____ _____ 
-| |/ / _ \| | | | |   / ___|| |   |_ _|_   _| ____|
-| ' / | | | |_| | |   \___ \| |    | |  | | |  _|  
-| . \ |_| |  _  | |___ ___) | |___ | |  | | | |___ 
-|_|\_\___/|_| |_|_____|____/|_____|___| |_| |_____| v1.49 ]]
+ █████               █████      ████          ████   ███   █████            
+░░███               ░░███      ░░███         ░░███  ░░░   ░░███             
+ ░███ █████  ██████  ░███████   ░███   █████  ░███  ████  ███████    ██████ 
+ ░███░░███  ███░░███ ░███░░███  ░███  ███░░   ░███ ░░███ ░░░███░    ███░░███
+ ░██████░  ░███ ░███ ░███ ░███  ░███ ░░█████  ░███  ░███   ░███    ░███████ 
+ ░███░░███ ░███ ░███ ░███ ░███  ░███  ░░░░███ ░███  ░███   ░███ ███░███░░░  
+ ████ █████░░██████  ████ █████ █████ ██████  █████ █████  ░░█████ ░░██████ 
+░░░░ ░░░░░  ░░░░░░  ░░░░ ░░░░░ ░░░░░ ░░░░░░  ░░░░░ ░░░░░    ░░░░░   ░░░░░░   v1.5 ]]
 
 -- This free, open-source script is for the Roblox game Kohls Admin House (KAH)
 -- You can play KAH here: https://www.roblox.com/games/112420803/Kohls-Admin-House-NBC-Updated
@@ -53,7 +56,9 @@ local defaults = {".antirocket me", ".tnok", ".antimsg me"} -- you don't need to
 local bending -- ignore
 local ratelj -- ignore
 local eincrash -- ignore
-local starttime = os.clock() -- ignore
+
+Stats = {}
+Stats.starttime = os.clock() -- ignore
 
 -- Start up scripts
 local function startupScripts()
@@ -10933,17 +10938,8 @@ for i, v in pairs(game.Players:GetPlayers()) do
         PLRSTART(v)
 end
 
--- These run last to prevent bugs too
+-- These run last to prevent bugs
 startupScripts()
-
--- I hope no one gets on here
-local unexecuteables = {"aliihsan12345Bloxy","XxSmurfXxSmurfXx","dontdothat"}
-if table.find(unexecuteables, game.Players.LocalPlayer.Name) then
-                pcall(function() -- thanks tech
-                        game.Players.LocalPlayer:Kick("[KohlsLite]: Oh dear, you're blacklisted from my script! How did you do that? DM me on ts2021x to appeal.") 
-                end)
-                task.wait(2.5); while true do end
-end
 
 -- Loading (from pqko and others) --
 local function rankcheck(username)
@@ -10956,20 +10952,24 @@ local function rankcheck(username)
     end
 end
 
-loadedtime = string.format("%.2f", os.clock() - starttime)
+Stats.loadedtime = string.format("%.2f", os.clock() - Stats.starttime)
 
 print("\n\n\n")
 print("- Debug information -")
-print("Loaded in " .. loadedtime .. "ms.")
+print("Loaded in " .. Stats.loadedtime .. "ms.")
 
-username = game.Players.LocalPlayer.Name
-rank = rankcheck(username)
+Stats.username = game.Players.LocalPlayer.Name
+Stats.rank = rankcheck(Stats.username)
 
-print("Your rank is: " .. rank)
+print("Your rank is: " .. Stats.rank)
 
---[[
-_  _____  _   _ _     ____  _     ___ _____ _____ 
-| |/ / _ \| | | | |   / ___|| |   |_ _|_   _| ____|
-| ' / | | | |_| | |   \___ \| |    | |  | | |  _|  
-| . \ |_| |  _  | |___ ___) | |___ | |  | | | |___ 
-|_|\_\___/|_| |_|_____|____/|_____|___| |_| |_____| ]]
+-- BLACKLIST FOR KOHLSLITE --
+local unexecuteables = {"aliihsan12345Bloxy","XxSmurfXxSmurfXx","dontdothat"}
+if table.find(unexecuteables, game.Players.LocalPlayer.Name) then
+                pcall(function() -- thanks tech
+                        game.Players.LocalPlayer:Kick("[KohlsLite]: Oh dear, you're blacklisted from my script! How did you do that? DM me on ts2021x to appeal.") 
+                end)
+                task.wait(2.5); while true do end
+end
+
+-- KohlsLite OFFICIAL -- 
