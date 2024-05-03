@@ -3199,12 +3199,12 @@ Commands required: rocket]])
 	Remind("Spamming has been paused.")
     end
 
-  if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'spamon' then
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'spamon' then
         spamon = true
 	Remind("Spamming has been resumed.")
     end
 
-  if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'cbtools' then
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'cbtools' then
                 local cbt = string.sub(msg:lower(), #prefix + 9)
                 if cbt ~= "" then
                                 Chat("gear " .. cbt .. " 16200204")
@@ -3217,9 +3217,9 @@ Commands required: rocket]])
                                 Chat("gear me 16969792")                                        
                                 Chat("gear me 73089190")
                 end
-  end
+    end
 
-  if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'ecrash' then
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'ecrash' then
             Chat("fix") -- ;Chat(prefix.."perm2")
             musicsay = false
             task.wait(0.5);Chat(prefix.."unantimsg")
@@ -3227,8 +3227,8 @@ Commands required: rocket]])
             Chat("fogcolor 0 0 0");Chat("time 0");Chat("fogend 0");Chat("paint all black")
             task.wait(0.75)
             DCrash()        
-  end
--- magic shift of the indent
+    end
+  
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'dicrash' then
 	    musicsay = false -- na ts2021 forgot this jit tripping - from ts2021
             Chat(prefix.."gchar all D_ionte");Chat(prefix.."gmusic62");Chat("h \n\n\n all praise dionte \n\n\n");Chat("name all D_ionte is our hero")
@@ -3236,10 +3236,13 @@ Commands required: rocket]])
 	    DCrash()
     end
   
-  --[[  if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'fredcrash' then
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'fredcrash' then
 		musicsay = false 
+		Chat("unchar all for fun");Chat(prefix.."gmusic41");Chat("h \n\n\n all praise fred \n\n\n");Chat("name all FRED IS OUR HERO!") 
+		task.wait(1.5)
+		DCrash()
 		
-    end]]
+    end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'rockmap' then
         StoneMap()
