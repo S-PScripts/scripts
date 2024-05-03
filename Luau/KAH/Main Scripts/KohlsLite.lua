@@ -5,17 +5,15 @@
 █████╔╝ ██║   ██║███████║██║     ███████╗██║     ██║   ██║   █████╗  
 ██╔═██╗ ██║   ██║██╔══██║██║     ╚════██║██║     ██║   ██║   ██╔══╝  
 ██║  ██╗╚██████╔╝██║  ██║███████╗███████║███████╗██║   ██║   ███████╗
-╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝╚═╝   ╚═╝   ╚══════╝ v1.5
+╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝╚═╝   ╚═╝   ╚══════╝ v1.5 ]]
 
--> This free, open-source script is for the Roblox game Kohls Admin House (KAH)
--> You can play KAH here: https://www.roblox.com/games/112420803/Kohls-Admin-House-NBC-Updated
--> Created by ScriptingProgrammer (Roblox) / TS2021 (Discord) / S-PScripts (GitHub)
+-- This free, open-source script is for the Roblox game Kohls Admin House (KAH)
+-- You can play KAH here: https://www.roblox.com/games/112420803/Kohls-Admin-House-NBC-Updated
+-- Created by ScriptingProgrammer (Roblox) / TS2021 (Discord) / S-PScripts (GitHub)
 
--> Support this script today by donating Robux to me!
--> Please do not "skid" off this code by changing the name and removing the dev section. It makes me annoyed!
--> You can make your own script instead of skidding and you can take stuff from here if necessary.
-
-]]
+-- Support this script today by donating Robux to me!
+-- Please do not "skid" off this code by changing the name and removing the dev section. It makes me annoyed!
+-- You can make your own script instead of skidding and you can take stuff from here if necessary.
 
 local function Remind(msg)
         game.StarterGui:SetCore("SendNotification", {
