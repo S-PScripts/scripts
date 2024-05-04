@@ -32,7 +32,7 @@ getgenv().kohlsexecuted = true -- don't touch!
 
 getgenv().deprefix = "." -- This can be of any length
 
-getgenv().klversion = "1.5" -- The version of KohlsLite, of course.
+getgenv().klversion = "1.5 FIXED" -- The version of KohlsLite, of course.
 
 local function Chat(msg)
       game.Players:Chat(msg)
@@ -43,9 +43,9 @@ local function Speak(msg)
 end
 
 if getgenv().theprefix then
-	local prefix = getgenv().theprefix
+	prefix = getgenv().theprefix
 else
-	local prefix = getgenv().deprefix
+	prefix = getgenv().deprefix
 end
 
 local defaults = {".antirocket me", ".tnok", ".antimsg me"} -- you don't need to change these
@@ -3254,7 +3254,7 @@ Commands required: rocket]])
   
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'fredcrash' then
 		musicsay = false 
-		Chat("unchar all for fun");Chat(prefix.."gmusic41");Chat("h \n\n\n all praise fred \n\n\n");Chat("name all FRED IS OUR HERO!") 
+		Chat(prefix.."gchar all FR6DDiie");Chat(prefix.."gmusic41");Chat("h \n\n\n all praise fred \n\n\n");Chat("name all FRED IS OUR HERO!") 
 		task.wait(1.5)
 		DCrash()
 		
