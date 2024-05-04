@@ -2660,6 +2660,50 @@ Commands required: rocket]])
 		Chat("removejails")
     end
 
+   if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'skick' then
+
+-- if only you didn't handle it like a child, then this wouldn't have been leaked - tech and ts2021
+
+	-- Bad seed kick script. Found by Digitality.
+	-- This kick script was made by ts2021.
+	local victim = string.sub(msg:lower(), #prefix + 7)
+
+  	for i, v in pairs(game.Players:GetPlayers()) do
+     		 if string.sub(v.Name:lower(), 1, #victim) == victim:lower() then
+          		kick = v
+          		kickname = v.Name
+      		end
+  	end
+
+	-- game.Players:Chat("ungear me")
+
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =kick.Character.HumanoidRootPart.CFrame
+
+	-- game.Players:Chat("setgrav "..kickname.." 3500")
+
+	-- game.Players:Chat("speed "..kickname.." 0")
+
+	--[[ if not kick.Character:FindFirstChild("ForceField") then
+		game.Players:Chat("ff "..kickname) 
+	end ]]
+
+	for i = 1, 100 do
+		game.Players:Chat("gear me 1645056094")
+	end
+
+	local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
+
+	for _, v in ipairs(Backpack:GetChildren()) do
+                            v.Parent = game.Players.LocalPlayer.Character
+                            task.wait(0)
+                            v:Activate()
+	end
+
+	game.Players:Chat("punish me")
+	task.wait(0.5)
+	game.Players:Chat("unpunish me")
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'welmsg' then
         welcomemsg = true
 	Remind("The welcome/leaving message has been enabled :)")
