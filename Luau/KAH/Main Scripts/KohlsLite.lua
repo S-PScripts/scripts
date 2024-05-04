@@ -3011,7 +3011,25 @@ Commands required: rocket]])
 		task.wait()
 		chat("explode "..pearlharbour)
     end
-		
+
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'gbreak' then -- pr script
+		local golding = string.sub(msg:lower(), #prefix + 8)
+		Chat("freeze " .. golding)
+                for i = 1, 100 do
+                    Chat("dog " .. golding)
+                end
+                task.wait(.4)
+                for i = 1, 100 do
+                    Chat("dog " .. golding)
+                end
+                task.wait(.1)
+                Chat("goldify " .. golding)
+                task.wait(.2)
+                Chat("thaw " .. golding)
+                task.wait(.2)
+                Chat("explode " .. golding)
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antidisco' then
         antidisco = true
 	Remind("Enabled this anti!")
