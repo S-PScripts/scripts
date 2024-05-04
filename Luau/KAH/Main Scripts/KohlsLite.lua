@@ -4201,6 +4201,7 @@ Commands required: rocket]])
         PLAYERCHECK(dasplayer)
         if player ~= nil then
                         clientcheck = player
+			Chat("reload ".. clientcheck) ; task.wait(0.5)
                         Chat("unpunish " .. clientcheck)
                         Chat("unfly " .. clientcheck)
                         Chat("thaw " .. clientcheck)
