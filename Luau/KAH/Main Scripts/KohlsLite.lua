@@ -2660,7 +2660,7 @@ Commands required: rocket]])
 		Chat("removejails")
     end
 
-   if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'skick' then
+   if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'skick' then -- unifinished >:(
 
 -- if only you didn't handle it like a child, then this wouldn't have been leaked - tech and ts2021
 
