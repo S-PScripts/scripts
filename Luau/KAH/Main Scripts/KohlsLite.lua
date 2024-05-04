@@ -3744,8 +3744,14 @@ Commands required: rocket]])
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'rnuke' then
-                range = tonumber(string.sub(msg:lower(), #prefix + 7))
-		RNuke(range)
+		local args = string.split(msg, " ")
+        	if #args == 3 then
+                	range = tonumber(args[2])
+			amount = tonumber(args[3])
+			RNuke(amount, range)
+		else
+			Remind("Invalid amount of arguments.")
+		end
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'dnuke' then
@@ -5898,14 +5904,14 @@ print("esong - end the playlist")
 print("\n\n\n")
 print("surround - surround a player with planes")
 print("nuke - nuke a player with planes")
-print("rnuke (range) - nuke the map with planes")
+print("rnuke (amount) (range) - nuke the map with planes")
 
 print("jnuke - nuke the map with the RocketJumper gear")
 print("jnuke (player) - nuke a player with the RocketJumper")
 print("astrike - nuke an area with the RocketJumper by using your mouse!")
 
-print("dnuke (amount) (range) - nuke the map with the ConjurorsFist")
-print("dnuke (player) - nuke a player with the ConjurorsFist")
+print("dnuke (amount) (range) - nuke the map with the conjuror's fist")
+print("dnuke (player) - nuke a player with the conjuror's fist")
 
 print("rfgun (bullets) - rapid fire gun!")
 print("rcannon - rail cannon")
@@ -9908,8 +9914,10 @@ function RoNuke(amount, range, user)
 	end
 end
 
-function RNuke(range)
-             SuperCMD("gear me 88885539")
+function RNuke(amount, range)
+    	     for i = 1, amount do
+	             Chat("gear me 88885539")
+	     end
 	     task.wait(0.1)
              local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
              for _, v in ipairs(Backpack:GetChildren()) do
@@ -9948,7 +9956,7 @@ function SKCRAZE()
 	conn:Disconnect()
 end
 
-function lagify(plr,pln)
+function lagify(plr, pln)
    	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(99999,99999,99999)
 
     	local thepartfake = Instance.new("Part",game.Players.LocalPlayer.Character)
