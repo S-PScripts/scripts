@@ -32,7 +32,7 @@ getgenv().kohlsexecuted = true -- don't touch!
 
 getgenv().deprefix = "." -- This can be of any length
 
-getgenv().klversion = "1.5 FIXED" -- The version of KohlsLite, of course.
+getgenv().klversion = "1.5 INFDEV" -- The version of KohlsLite, of course.
 
 local function Chat(msg)
       game.Players:Chat(msg)
@@ -2695,7 +2695,7 @@ Commands required: rocket]])
 
 	for _, v in ipairs(Backpack:GetChildren()) do
                             v.Parent = game.Players.LocalPlayer.Character
-                            task.wait(0)
+                       --     task.wait(0)
                             v:Activate()
 	end
 
