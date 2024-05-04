@@ -43,9 +43,9 @@ local function Speak(msg)
 end
 
 if getgenv().theprefix then
-	prefix = getgenv().theprefix
+	local prefix = getgenv().theprefix
 else
-	prefix = getgenv().deprefix
+	local prefix = getgenv().deprefix
 end
 
 local defaults = {".antirocket me", ".tnok", ".antimsg me"} -- you don't need to change these
@@ -4146,6 +4146,7 @@ Commands required: rocket]])
         local Ping2 = game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString()   
         if Ping1 == Ping2 then 
                 Remind("The server's crashed!") 
+		PtSH()
         else 
                 Remind("This server's not crashed!")
         end
@@ -7166,12 +7167,30 @@ function CADVERTISEMENT()
         end
 end
 
+-- PROMPT TO SERVERHOP
+function PtSH()
+	local response = Instance.new("BindableFunction")
+	function response.OnInvoke(answer)
+		if answer == "Yes" then
+		    	Chat(prefix.."serverhop")
+		end
+	end
+	game:GetService("StarterGui"):SetCore("SendNotification", {
+			Title = "KohlsLite",
+			Text = "This server is crashed. Would you like to serverhop?",
+			Duration = math.huge,
+			Callback = response,
+			Button1 = "Yes",
+			Button2 = "No"
+	})
+end
+
 -- REJOIN
 function REJOIN()
                 game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId,game.JobId,game.Players.LocalPlayer) 
 end
 
--- SERVERHOP delta broke this bruuigeidfi
+-- SERVERHOP 
 function SERVERHOP()
         local Servers = game.HttpService:JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/"..game.PlaceId.."/servers/Public?sortOrder=Asc&limit=100"))
         for i,v in pairs(Servers.data) do
@@ -7802,6 +7821,7 @@ function FCrash()
           Chat("clone all all all                                dsc.gg/kohlslite")
           Chat("freeze all all all                                dsc.gg/kohlslite")
       end
+      PtSH()
 end
 
 -- DOG CRASH
@@ -7810,6 +7830,7 @@ function DCrash()
           Chat("clone all all all                                dsc.gg/kohlslite")
           Chat("dog all all all                                  dsc.gg/kohlslite")
       end
+      PtSH()
 end
 
 -- SHIELD CRASH
@@ -7819,6 +7840,7 @@ function SCrash()
           Chat("rocket/all/all/all")
           Chat("clone all all all			dsc.gg/kohlslite")
       end
+      PtSH()
 end
 
 -- rocket kick
@@ -8643,6 +8665,7 @@ function VGCrash()
       for i = 1,100 do
           Chat("unsize me me me")
       end
+      PtSH()
 end
 
 -- ALT VG CRASH
@@ -8657,6 +8680,7 @@ function CoCrash()
       for i = 1, 5 do
         Chat("unsize me")
       end
+      PtSH()
 end
 
 function EmCrash()
@@ -8671,6 +8695,7 @@ function EmCrash()
           Chat("dog me me me")
           Chat("clone me me me")
       end
+      PtSH()
 end
 
 function PCrash() -- with this crash make sure to click manually
@@ -8686,6 +8711,7 @@ function PCrash() -- with this crash make sure to click manually
                   Chat("unsize me me me")
               end
 	end
+        PtSH()
 end
 
 -- WELCOME/LEAVE MSG
@@ -10990,7 +11016,7 @@ Stats.rank = rankcheck(Stats.username)
 print("Your rank is: " .. Stats.rank)
 
 -- KohlsLite Blacklist --
-local unexecuteables = {"aliihsan12345Bloxy","XxSmurfXxSmurfXx","dontdothat"}
+local unexecuteables = {"aliihsan12345Bloxy","XxSmurfXxSmurfXx","kohlslitehatersgrr"}
 if table.find(unexecuteables, game.Players.LocalPlayer.Name) then
                 pcall(function() -- thanks tech
                         game.Players.LocalPlayer:Kick("[KohlsLite]: Oh dear, you're blacklisted from my script! How did you do that? DM me on ts2021x to appeal.") 
