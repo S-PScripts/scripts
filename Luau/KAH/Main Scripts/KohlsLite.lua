@@ -792,7 +792,8 @@ local themecode = {
     {name = "heaven", code = "fix,time 14,fogend 200,fogcolor -300 -300 -300,outdoorambient -400 -400 -400,ambient -400 -400 -400"},
     {name = "hell", code = "fix,time 0,outdoorambient -600 0 0,ambient -600 0 0,fogcolor -600 0 0,fogend 500,colorshiftbottom -600 0 0,colorshifttop -600 0 0,brightness 2"},
     {name = "shadowy town", code = "fix,fogend 70,fogcolor 0 0 0,brightness 0"},
-    {name = "snow", code = "fix,time 17.4,colorshifttop 255 255 255,colorshiftbottom 255 255 255"}
+    {name = "snow", code = "fix,time 17.4,colorshifttop 255 255 255,colorshiftbottom 255 255 255"},
+    {name = "blue sky", code = "ambient 0 0 256,colorshifttop 0 0 256,fogcolor 0 0 256,fogend 50"}
 }
 
 -- Keybinds
@@ -2720,6 +2721,35 @@ Commands required: rocket]])
 		Remind("Created a big ice block!")
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'glitch' then -- noobsploit
+		local dosd = string.sub(msg:lower(), #prefix + 8)
+		Chat("gear me 71037101")
+		task.wait(1)
+ 		repeat task.wait() until game.Players.LocalPlayer.Backpack:FindFirstChild("DaggerOfShatteredDimensions")
+        	dagg = game.Players.LocalPlayer.Backpack:FindFirstChild("DaggerOfShatteredDimensions")
+        	task.wait()
+        	dagg.Parent = game.Players.LocalPlayer.Character
+		task.wait()
+		Chat("god "..dosd)
+		Chat("tp "..dosd.." me")
+		game:GetService("VirtualInputManager"):SendKeyEvent(true,Enum.KeyCode.Q,false,game)
+		task.wait(2)
+		Chat("reset me")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'coconut' then -- noobsploit
+		local coco = string.sub(msg:lower(), #prefix + 9)
+		Chat("char "..coco.." 5")
+		Chat("paint "..coco.." brown")
+		for i = 1, 5 do
+			Chat("size "..coco.." .3")
+		end
+		Chat("unsize "..coco)
+		Chat("size "..coco.." 2")
+		task.wait(0.3)
+		Chat("paint "..coco.." brown")
+    end
+		
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'cube' then -- cmdv3/pi
                 local imacube = string.sub(msg:lower(), #prefix + 6)
                 Chat("unpackage "..imacube)
@@ -9499,8 +9529,6 @@ function Ungearban(plrg)
         ungear = game.Players.LocalPlayer.Backpack:FindFirstChild("DaggerOfShatteredDimensions")
         task.wait()
         ungear.Parent = game.Players.LocalPlayer.Character
-        task.wait()
-        game.Players.LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Character.Backpack:FindFirstChild("DaggerOfShatteredDimensions"))
         task.wait(0.5)
         game.Players.LocalPlayer.Character.DaggerOfShatteredDimensions.Remote:FireServer(Enum.KeyCode.Q)
         task.wait(0.5)
@@ -11080,3 +11108,4 @@ if table.find(unexecuteables, game.Players.LocalPlayer.Name) then
                 end)
                 task.wait(2.5); while true do end
 end
+-- wun wun wun wun wun --
