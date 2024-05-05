@@ -6054,14 +6054,25 @@ Commands required: rocket]])
 		Remind("Disabled swimming!")
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'noanims' then
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'stopanims' then
 		local Char = game.Players.LocalPlayer.Character
 		local Hum = Char:FindFirstChildOfClass("Humanoid") or Char:FindFirstChildOfClass("AnimationController")
 		for i,v in next, Hum:GetPlayingAnimationTracks() do
 			v:Stop()
 		end
-		Remind("Disabled animations!")
+		Remind("Stopped animations!")
     end
+
+   if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'noanim' then
+		game.Players.LocalPlayer.Character.Animate.Disabled = true
+		Remind("Removed animations!")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'reanim' then
+		game.Players.LocalPlayer.Character.Animate.Disabled = true
+		Remind("Added animations!")
+    end
+
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'animsp' then
 		local args = string.split(msg, " ")
