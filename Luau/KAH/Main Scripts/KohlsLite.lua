@@ -5755,7 +5755,8 @@ Commands required: rocket]])
 	animation.AnimationId = "rbxassetid://" .. dances[math.random(1, #dances)]
 	danceTrack = game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid"):LoadAnimation(animation)
 	danceTrack.Looped = true
-	danceTrack:Play()    
+	danceTrack:Play()  
+	Remind("Started dancing!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'undance' then
@@ -5773,6 +5774,7 @@ Commands required: rocket]])
 		Spasm = pchar:FindFirstChildOfClass('Humanoid'):LoadAnimation(SpasmAnim)
 		Spasm:Play()
 		Spasm:AdjustSpeed(99)
+		Remind("Started spasming!")
 	else
 		Remind("This command requires the r6 rig type. Do r6.")
 	end
@@ -5792,6 +5794,7 @@ Commands required: rocket]])
 		local k = game.Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid'):LoadAnimation(Anim)
 		k:Play(0)
 		k:AdjustSpeed(1)
+		Remind("Throwing your head!")
 	else
 		Remind("This command requires the r6 rig type. Do r6.")
 	end
@@ -5805,12 +5808,16 @@ Commands required: rocket]])
 		else
 			hs = cplr
 		end
+
 		RunService = game:GetService("RunService")
+
 		if headSit then 
 			headSit:Disconnect() 
 		end
+
 		game.Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid').Sit = true
 		task.wait()
+
 		headSit = RunService.Heartbeat:Connect(function()
 			if game:GetService("Players"):FindFirstChild(hs.Name) and hs.Character ~= nil and getRoot(hs.Character) and getRoot(game.Players.LocalPlayer.Character) and game.Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid').Sit == true then
 					getRoot(game.Players.LocalPlayer.Character).CFrame = getRoot(hs.Character).CFrame * CFrame.Angles(0,math.rad(0),0)* CFrame.new(0,1.6,0.4)
@@ -5818,6 +5825,7 @@ Commands required: rocket]])
 					headSit:Disconnect()
 			end
 		end)
+		Remind("Headsitting on the player!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'carpet' then
@@ -5828,7 +5836,9 @@ Commands required: rocket]])
 		else
 			caplr = cplr
 		end
+
 		RunService = game:GetService("RunService")
+
 		if not checkforR15(game.Players.LocalPlayer) then
 			Chat(prefix..'uncarpet')
 			task.wait()
@@ -5836,18 +5846,23 @@ Commands required: rocket]])
 			carpetAnim.AnimationId = "rbxassetid://282574440"
 			carpet = game.Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid'):LoadAnimation(carpetAnim)
 			carpet:Play(.1, 1, 1)
+
 			local carpetplr = caplr
+
 			carpetDied = game.Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid').Died:Connect(function()
 				carpetLoop:Disconnect()
 				carpet:Stop()
 				carpetAnim:Destroy()
 				carpetDied:Disconnect()
 			end)
+
 			carpetLoop = RunService.Heartbeat:Connect(function()
 				pcall(function()
 					getRoot(game.Players.LocalPlayer.Character).CFrame = getRoot(carpetplr.Character).CFrame
 				end)
 			end)
+
+			Remind("You're a carget for the player!")
 		else
 			Remind("This command requires the r6 rig type. Do r6.")
 		end
@@ -5859,26 +5874,38 @@ Commands required: rocket]])
 			carpetDied:Disconnect()
 			carpet:Stop()
 			carpetAnim:Destroy()
+			Remind("You're no longer a carget for the player!")
 		end
      end
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'bang' then
-		local dasplayer = string.sub(msg:lower(), #prefix + 6)
+		local args = string.split(msg, " ")
+                if #args == 3 then
+                        bangsp = tonumber(args[3])
+                end
+		local dasplayer = args[2]
         	PLAYERCHECK(dasplayer)
         	if player == nil then 
 			return 
 		else
 			banger = cplr
 		end
+
 		Chat(prefix.."unbang")
 		RunService = game:GetService("RunService")
 		task.wait()
+
 		local humanoid = game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid")
 		bangAnim = Instance.new("Animation")
 		bangAnim.AnimationId = not checkforR15(game.Players.LocalPlayer) and "rbxassetid://148840371" or "rbxassetid://5918726674"
 		bang = humanoid:LoadAnimation(bangAnim)
 		bang:Play(0.1, 1, 1)
-		bang:AdjustSpeed(3)
+		if #args == 3 then 
+			bang:AdjustSpeed(bangsp)
+		else
+			bang:AdjustSpeed(3)
+		end
+
 		bangDied = humanoid.Died:Connect(function()
 			bang:Stop()
 			bangAnim:Destroy()
@@ -5888,12 +5915,14 @@ Commands required: rocket]])
 
 		local bangplr = banger
 		local bangOffet = CFrame.new(0, 0, 1.1)
+
 		bangLoop = RunService.Stepped:Connect(function()
 			pcall(function()
 				local otherRoot = getTorso(bangplr.Character)
 				getRoot(game.Players.LocalPlayer.Character).CFrame = otherRoot.CFrame * bangOffet
 			end)
 		end)
+		Remind("You're banging the player! uwu owo")
 	end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'unbang' then
@@ -5902,6 +5931,7 @@ Commands required: rocket]])
 		bang:Stop()
 		bangAnim:Destroy()
 		bangLoop:Disconnect()
+		Remind("You're no longer banging the player! uwu owo")
 	end
     end
 
@@ -5925,6 +5955,7 @@ Commands required: rocket]])
 			end
 		end)
 	end
+	Remind("Muted people's boomboxes!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'unmutebb' then
@@ -5932,6 +5963,7 @@ Commands required: rocket]])
 	if not notifiedRespectFiltering and SoundService.RespectFilteringEnabled then 
 			notifiedRespectFiltering = true 
 	end
+
 	local players = game.Players:GetPlayers()
 	for i, v in pairs(players) do
 		task.spawn(function()
@@ -5942,36 +5974,42 @@ Commands required: rocket]])
 			end
 		end)
         end
+	Remind("Unmuted people's boomboxes!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'view' then
-	local dasplayer = string.sub(msg:lower(), #prefix + 6)
-        PLAYERCHECK(dasplayer)
-        if player == nil then 
-		return 
-	else
-		brokeboi = cplr
-	end
-	StopFreecam()
+		local dasplayer = string.sub(msg:lower(), #prefix + 6)
+        	PLAYERCHECK(dasplayer)
+        	if player == nil then 
+			return 
+		else
+			brokeboi = cplr
+		end
+
+		StopFreecam()
 		if viewDied then
 			viewDied:Disconnect()
 			viewChanged:Disconnect()
 		end
+
 		viewing = brokeboi
 		workspace.CurrentCamera.CameraSubject = viewing.Character
 		Remind("Viewing " .. brokeboi.Name)
+
 		local function viewDiedFunc()
 			repeat wait() until brokeboi.Character ~= nil and getRoot(brokeboi.Character)
 			workspace.CurrentCamera.CameraSubject = viewing.Character
 		end
+
 		viewDied = brokeboi.CharacterAdded:Connect(viewDiedFunc)
 		local function viewChangedFunc()
 			workspace.CurrentCamera.CameraSubject = viewing.Character
 		end
+
 		viewChanged = workspace.CurrentCamera:GetPropertyChangedSignal("CameraSubject"):Connect(viewChangedFunc)
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'view' then
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'unview' then
 	StopFreecam()
 	for i,v in pairs(workspace:GetDescendants()) do
 		if v.Name:lower() == getstring(1):lower() and v:IsA("BasePart") then
@@ -5979,6 +6017,7 @@ Commands required: rocket]])
 			workspace.CurrentCamera.CameraSubject = v
 		end
 	end
+	Remind("No longer viewing the player.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'spin' then
@@ -5993,6 +6032,7 @@ Commands required: rocket]])
 	Spin.Parent = getRoot(game.Players.LocalPlayer.Character)
 	Spin.MaxTorque = Vector3.new(0, math.huge, 0)
 	Spin.AngularVelocity = Vector3.new(0,spinSpeed,0)
+	Remind("Spinning without admin! Cool amirite?")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'unspin' then
@@ -6001,14 +6041,43 @@ Commands required: rocket]])
 			v:Destroy()
 		end
 	end
+	Remind("No longer spinning!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'swim' then
 		swim()
+		Remind("Enabled swimming!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'unswim' then
 		unswim()
+		Remind("Disabled swimming!")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'noanims' then
+		local Char = game.Players.LocalPlayer.Character
+		local Hum = Char:FindFirstChildOfClass("Humanoid") or Char:FindFirstChildOfClass("AnimationController")
+		for i,v in next, Hum:GetPlayingAnimationTracks() do
+			v:Stop()
+		end
+		Remind("Disabled animations!")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'animsp' then
+		local args = string.split(msg, " ")
+                if #args == 2 then
+                        anisp = tonumber(args[2])
+                end
+		local Char = game.Players.LocalPlayer.Character
+		local Hum = Char:FindFirstChildOfClass("Humanoid") or Char:FindFirstChildOfClass("AnimationController")
+		for i,v in next, Hum:GetPlayingAnimationTracks() do
+			if #args == 2 then
+				v:AdjustSpeed(anisp)
+			else
+				v:AdjustSpeed(1)
+			end
+		end
+		Remind("Modified animation speed!")
     end
 
 end)
@@ -11584,4 +11653,4 @@ if table.find(unexecuteables, game.Players.LocalPlayer.Name) then
                 task.wait(2.5); while true do end
 end
 
--- End
+-- Created with ❤️ -- s_p xxx
