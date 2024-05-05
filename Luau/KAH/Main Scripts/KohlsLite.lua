@@ -783,7 +783,8 @@ local themecode = {
     {name = "bright pink", code = "time -,fogend 46,fogcolor 250 83 255"},
     {name = "acid proximity", code = "time -,fogend 1000,fogcolor 37 355 55"},
     {name = "sapphire evening", code = "fogcolor 100 0 255,fogend 1000,time 6,outdoorambient 0 0 0,brightness 0.5,ambient 125 0 255"},
-    {name = "sunrise", code = "fix,time 7,fogend 2000,outdoorambient 0.3 0.3 0.3"},
+    {name = "sunrise rtx", code = "fix,time 7,fogend 2000,outdoorambient 0.3 0.3 0.3"},
+    {name = "sunrise", code = "fix,time 7.15,colorshifttop 600 400 0,colorshiftbottom 600 400 0"},
     {name = "true black", code = "time 0,fogcolor 0 0 0,fogend 0"},
     {name = "sunset", code = "fix,time 17.4,colorshifttop 600 400 0,colorshiftbottom 600 400 0"},
     {name = "ice", code = "fix,time 17.4,fogcolor -100 -400 -600,fogend 500,colorshifttop 0 255 255,colorshiftbottom 0 255 255"},
@@ -792,6 +793,7 @@ local themecode = {
     {name = "heaven", code = "fix,time 14,fogend 200,fogcolor -300 -300 -300,outdoorambient -400 -400 -400,ambient -400 -400 -400"},
     {name = "hell", code = "fix,time 0,outdoorambient -600 0 0,ambient -600 0 0,fogcolor -600 0 0,fogend 500,colorshiftbottom -600 0 0,colorshifttop -600 0 0,brightness 2"},
     {name = "shadowy town", code = "fix,fogend 70,fogcolor 0 0 0,brightness 0"},
+    {name = "noir swamp", code = "fix,time 100,outdoorambient 0 0 099,brightness 0"},
     {name = "snow", code = "fix,time 17.4,colorshifttop 255 255 255,colorshiftbottom 255 255 255"},
     {name = "blue sky", code = "ambient 0 0 256,colorshifttop 0 0 256,fogcolor 0 0 256,fogend 50"}
 }
