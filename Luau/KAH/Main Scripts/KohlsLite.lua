@@ -5972,6 +5972,14 @@ Commands required: rocket]])
 	end
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'swim' then
+		swim()
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'unswim' then
+		unswim()
+    end
+
 end)
 
 function CMDPrint()
@@ -9061,7 +9069,68 @@ function ChangeRig(rig)
 	end
 end
 
+swimming = false
+local oldgrav = workspace.Gravity
+local swimbeat = nil
+
+function swim()
+	if not swimming and game.Players.LocalPlayer and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid") then
+		RunService = game:GetService("RunService")
+		UserInputService = game:GetService("UserInputService")
+
+		oldgrav = workspace.Gravity
+		workspace.Gravity = 0
+
+		local swimDied = function()
+			workspace.Gravity = oldgrav
+			swimming = false
+		end
+
+		local Humanoid = game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid")
+		gravReset = Humanoid.Died:Connect(swimDied)
+
+		local enums = Enum.HumanoidStateType:GetEnumItems()
+		table.remove(enums, table.find(enums, Enum.HumanoidStateType.None))
+		for i, v in pairs(enums) do
+			Humanoid:SetStateEnabled(v, false)
+		end
+
+		Humanoid:ChangeState(Enum.HumanoidStateType.Swimming)
+		swimbeat = RunService.Heartbeat:Connect(function()
+			pcall(function()
+				game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = ((Humanoid.MoveDirection ~= Vector3.new() or UserInputService:IsKeyDown(Enum.KeyCode.Space)) and game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity or Vector3.new())
+			end)
+		end)
+
+		swimming = true
+	end
+end
+
+function unswim()
+	if game.Players.LocalPlayer and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid") then
+		workspace.Gravity = oldgrav
+		swimming = false
+
+		if gravReset then
+			gravReset:Disconnect()
+		end
+
+		if swimbeat ~= nil then
+			swimbeat:Disconnect()
+			swimbeat = nil
+		end
+
+		local Humanoid = game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid")
+		local enums = Enum.HumanoidStateType:GetEnumItems()
+		table.remove(enums, table.find(enums, Enum.HumanoidStateType.None))
+		for i, v in pairs(enums) do
+			Humanoid:SetStateEnabled(v, true)
+		end
+	end
+end
+
 fcRunning = false
+
 function StopFreecam()
 	if not fcRunning then 
 		return
@@ -11471,4 +11540,5 @@ if table.find(unexecuteables, game.Players.LocalPlayer.Name) then
                 end)
                 task.wait(2.5); while true do end
 end
--- wun wun wun wun wun --
+
+-- End
