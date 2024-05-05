@@ -4212,6 +4212,10 @@ Commands required: rocket]])
 	Remind("Modified your Field Of View!")
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'grav' then
+		workspace.Gravity = tonumber(string.sub(msg:lower(), #prefix + 6))
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'noclip' then
          WalkThru("on")
 	 Remind("Noclip is now on!")
