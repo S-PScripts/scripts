@@ -5764,6 +5764,13 @@ Commands required: rocket]])
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'headsit' then
+		local dasplayer = string.sub(msg:lower(), #prefix + 9)
+        	PLAYERCHECK(mrmrmrmr)
+        	if player == nil then 
+			return 
+		else
+			hs = cplr
+		end
 		RunService = game:GetService("RunService")
 		if headSit then 
 			headSit:Disconnect() 
