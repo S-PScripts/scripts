@@ -5912,7 +5912,44 @@ Commands required: rocket]])
 		end)
         end
     end
-	
+
+    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'view' then
+	local dasplayer = string.sub(msg:lower(), #prefix + 6)
+        PLAYERCHECK(dasplayer)
+        if player == nil then 
+		return 
+	else
+		brokeboi = cplr
+	end
+	StopFreecam()
+		if viewDied then
+			viewDied:Disconnect()
+			viewChanged:Disconnect()
+		end
+		viewing = brokeboi
+		workspace.CurrentCamera.CameraSubject = viewing.Character
+		Remind("Viewing " .. brokeboi.Name)
+		local function viewDiedFunc()
+			repeat wait() until brokeboi.Character ~= nil and getRoot(brokeboi.Character)
+			workspace.CurrentCamera.CameraSubject = viewing.Character
+		end
+		viewDied = brokeboi.CharacterAdded:Connect(viewDiedFunc)
+		local function viewChangedFunc()
+			workspace.CurrentCamera.CameraSubject = viewing.Character
+		end
+		viewChanged = workspace.CurrentCamera:GetPropertyChangedSignal("CameraSubject"):Connect(viewChangedFunc)
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'view' then
+	StopFreecam()
+	for i,v in pairs(workspace:GetDescendants()) do
+		if v.Name:lower() == getstring(1):lower() and v:IsA("BasePart") then
+			wait(0.1)
+			workspace.CurrentCamera.CameraSubject = v
+		end
+	end
+    end
+
 end)
 
 function CMDPrint()
@@ -9000,6 +9037,52 @@ function ChangeRig(rig)
 				Chat("kill me");Remind("SUCCESS! Please wait until you respawn.")
 		end
 	end
+end
+
+fcRunning = false
+function StopFreecam()
+	if not fcRunning then 
+		return
+	end
+
+	RunService = game:GetService("RunService")
+	UserInputService = game:GetService("UserInputService")
+	ContextActionService = game:GetService("ContextActionService")
+
+	navSpeed = 1
+
+	function Zero(t)
+		for k, v in pairs(t) do
+			t[k] = v * 0
+		end
+	end
+
+	Zero(keyboard)
+	Zero(mouse)
+
+	ContextActionService:UnbindAction("FreecamKeyboard")
+	ContextActionService:UnbindAction("FreecamMousePan")
+
+	RunService:UnbindFromRenderStep("Freecam")
+
+	workspace.Camera.FieldOfView = 70
+	workspace.Camera.CameraType = cameraType
+	cameraType = nil
+
+	workspace.Camera.CFrame = cameraCFrame
+	cameraCFrame = nil
+
+	workspace.Camera.Focus = cameraFocus
+	cameraFocus = nil
+
+	UserInputService.MouseIconEnabled = mouseIconEnabled
+	mouseIconEnabled = nil
+
+	UserInputService.MouseBehavior = mouseBehavior
+	mouseBehavior = nil
+
+	workspace.Camera.FieldOfView = 70
+	fcRunning = false
 end
 
 -- GOTO REGEN
