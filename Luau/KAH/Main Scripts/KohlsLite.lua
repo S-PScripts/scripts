@@ -4217,6 +4217,7 @@ Commands required: rocket]])
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'noclip' then
+	 Chat(prefix.."platform")
          WalkThru("on")
 	 Remind("Noclip is now on!")
     end
@@ -8648,11 +8649,11 @@ end
 
 function WalkThru(mode)
         if mode == "on" then
-                        for _, child in pairs(game.Workspace:GetDescendants()) do
-                                if child:IsA("BasePart") and child.CanCollide == true then
+                    for _, child in pairs(game.Workspace:GetDescendants()) do
+                                if child:IsA("BasePart") and child.CanCollide == true and child.Name ~= "KL_PLATFORM" then
                                         child.CanCollide = false
                                 end
-                        end
+                    end
         else 
                     for _, child in pairs(game.Workspace:GetDescendants()) do
                                 if child:IsA("BasePart") and child.CanCollide == false then
