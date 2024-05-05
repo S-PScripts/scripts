@@ -5796,6 +5796,7 @@ Commands required: rocket]])
 		else
 			caplr = cplr
 		end
+		RunService = game:GetService("RunService")
 		if not checkforR15(game.Players.LocalPlayer) then
 			Chat(prefix..'uncarpet')
 			task.wait()
@@ -8371,7 +8372,8 @@ function slag(tplr, tpln)
                     	Skate.PrimaryPart = Skate:WaitForChild("SkateboardPlatform")
                     	Skate.PrimaryPart.Velocity = Vector3.new(30,4,0)
                     	local skatespos = #Skates
-		
+
+			RunService = game:GetService("RunService")
                     	RunService.Heartbeat:Connect(function()
                         	Skate.PrimaryPart.Velocity = Vector3.new(30,4,0)
                         	Skate:SetPrimaryPartCFrame(tplr.Character.HumanoidRootPart.CFrame * CFrame.new(0,-3 + skatespos * .25,0))
@@ -9430,7 +9432,7 @@ function NewW(welder, wld) -- player,cplr
 	local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(anim)
 	k:Play()
 	repeat 
-		game:GetService("RunService").RenderStepped:Wait() 
+		rwait()
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = wld.Character.HumanoidRootPart.CFrame*CFrame.new(-1,1.5,4) 
 	until wld.Character:FindFirstChild("Watermelon")
 	k:Stop()
