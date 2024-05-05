@@ -32,7 +32,7 @@ getgenv().kohlsexecuted = true -- don't touch!
 
 getgenv().deprefix = "." -- This can be of any length
 
-getgenv().klversion = "1.52 edu" -- The version of KohlsLite, of course.
+getgenv().klversion = "1.53" -- The version of KohlsLite, of course.
 
 local function Chat(msg)
       game.Players:Chat(msg)
@@ -5687,8 +5687,17 @@ Commands required: rocket]])
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'unautogod' then
         autogod = false
         Remind("Auto god is off!")
-    end        
+    end      
 
+
+    if string.sub(msg:lower(), 1, #prefix + 2) == prefix..'r6' then
+        ChangeRig("R6")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'r15' then
+        ChangeRig("R15")
+    end  
+		
 end)
 
 function CMDPrint()
@@ -8744,6 +8753,27 @@ function Playlist(shazam)
             repeat task.wait() until musicskip
             Chat("music 0") 
         end
+end
+
+-- R15 checker
+function checkforR15()
+	if game.Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid').RigType == Enum.HumanoidRigType.R15 then
+		return true
+	end
+end
+
+-- Rig Changer it (for new commands COMING SOON!)
+function ChangeRig(rig)
+	AvatarEditorService = game:GetService("AvatarEditorService")
+	local humanoid = game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid")
+	if humanoid then
+		AvatarEditorService:PromptSaveAvatar(humanoid.HumanoidDescription, Enum.HumanoidRigType[rig])
+		local result = AvatarEditorService.PromptSaveAvatarCompleted:Wait()
+		if result == Enum.AvatarPromptResult.Success then
+				--game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
+				Chat("kill me");Remind("SUCCESS! Please wait until you respawn.")
+		end
+	end
 end
 
 -- GOTO REGEN
