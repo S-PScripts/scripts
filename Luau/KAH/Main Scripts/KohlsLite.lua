@@ -3530,8 +3530,8 @@ Commands required: rocket]])
     end
 
     if string.sub(msg, 1, #prefix + 7) == prefix..'dncycle' then
-		dncycle()
 		Loops.dncycle = true
+		dncycle()
 		Remind("Day and night cycle started.")
     end
 
