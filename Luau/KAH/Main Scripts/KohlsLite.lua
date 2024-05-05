@@ -10169,7 +10169,7 @@ function rcannon(mode)
             	Chat("gear me 79446473")
             	repeat task.wait() until game.Players.LocalPlayer.Backpack:FindFirstChild("Railgun")
 		rag = game.Players.LocalPlayer.Backpack:FindFirstChild("Railgun")
-            	rag.GripPos = GripPos=(CFrame.Angles(0,0,math.rad(i2*(360/theblue)))*CFrame.new(math.cos(i*(360/theblue))*10,0,math.sin(i*(theblue/360))*10)).p
+            	rag.GripPos = (CFrame.Angles(0,0,math.rad(i*(360/i)))*CFrame.new(math.cos(i*(360/i))*10,0,math.sin(i*(i/360))*10)).p
             	rag.Parent = game.Players.LocalPlayer.Character
        	 end
 
