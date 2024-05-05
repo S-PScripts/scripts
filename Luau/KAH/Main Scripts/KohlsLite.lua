@@ -5787,6 +5787,47 @@ Commands required: rocket]])
 			end
 		end)
     end
+
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'carpet' then
+		local dasplayer = string.sub(msg:lower(), #prefix + 8)
+        	PLAYERCHECK(mrmrmrmr)
+        	if player == nil then 
+			return 
+		else
+			caplr = cplr
+		end
+		if not checkforR15(game.Players.LocalPlayer) then
+			Chat(prefix..'uncarpet')
+			task.wait()
+			carpetAnim = Instance.new("Animation")
+			carpetAnim.AnimationId = "rbxassetid://282574440"
+			carpet = game.Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid'):LoadAnimation(carpetAnim)
+			carpet:Play(.1, 1, 1)
+			local carpetplr = caplr
+			carpetDied = game.Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid').Died:Connect(function()
+				carpetLoop:Disconnect()
+				carpet:Stop()
+				carpetAnim:Destroy()
+				carpetDied:Disconnect()
+			end)
+			carpetLoop = RunService.Heartbeat:Connect(function()
+				pcall(function()
+					getRoot(game.Players.LocalPlayer.Character).CFrame = getRoot(carpetplr.Character).CFrame
+				end)
+			end)
+		else
+			Remind("This command requires the r6 rig type. Do r6.")
+		end
+	end
+
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'uncarpet' then
+		if carpetLoop then
+			carpetLoop:Disconnect()
+			carpetDied:Disconnect()
+			carpet:Stop()
+			carpetAnim:Destroy()
+		end
+     end
 		
 end)
 
