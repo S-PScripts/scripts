@@ -2073,8 +2073,15 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'fcam' then
-			FCAM()
-			Remind("Freezing camera...")
+		local dasplayer = string.sub(msg:lower(), #prefix + 6)
+                PLAYERCHECK(dasplayer)
+                if player ~= nil then
+                        FCAM(cplr, player)
+			Remind("Freezing the person's camera...")
+        
+                else                        
+                        Remind('Cannot find player with the name: '..dasplayer)
+                end
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'fixspawn' then
@@ -8278,7 +8285,7 @@ function TogCam(mode)
     end
 end
 
-function FCAM()
+function FCAM(cplr, player)
 	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(99999,99999,99999)
 	local instancechina = Instance.new("Part",game.Players.LocalPlayer.Character)
 	instancechina.Anchored = true
@@ -8290,9 +8297,9 @@ function FCAM()
     	VampireVanquisher.Parent = game.Players.LocalPlayer.Character
     	repeat task.wait() until not game.Players.LocalPlayer.Character.VampireVanquisher:FindFirstChild("Coffin")
     	repeat task.wait()
-    		firetouchinterest(VampireVanquisher.Handle,v.Character.Head,0)
-		firetouchinterest(VampireVanquisher.Handle,v.Character.Head,1)
-    	until game.Players.LocalPlayer:DistanceFromCharacter(v.Character.Head.Position) < 10
+    		firetouchinterest(VampireVanquisher.Handle,cplr.Character.Head,0)
+		firetouchinterest(VampireVanquisher.Handle,cplr.Character.Head,1)
+    	until game.Players.LocalPlayer:DistanceFromCharacter(cplr.Character.Head.Position) < 10
         Chat("respawn me")
 end
 
