@@ -15,6 +15,9 @@
 -- Please do not "skid" off this code by changing the name and removing the dev section. It makes me annoyed!
 -- You can make your own script instead of skidding and you can take stuff from here if necessary.
 
+-- NEW IMPORTANT NOTE: THIS SCRIPT IS GOING TO BE MORE LIKE A HYBRID OF INFINITE YIELD AND KAH SCRIPTS NOW! --
+-- THIS IS SO IT CAN COMPETE WITH PROTON ADMIN (FOR SOME FEATURES NOT ALL OF THEM!!!) --
+
 local function Remind(msg)
         game.StarterGui:SetCore("SendNotification", {
                 Title = "KohlsLite",
