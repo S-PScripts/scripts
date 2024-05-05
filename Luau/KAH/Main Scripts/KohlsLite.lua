@@ -2877,7 +2877,7 @@ Commands required: rocket]])
                 Chat("unblind others")
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'heaven' then -- pr
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'tripin' then -- pr
                 local person = string.sub(msg:lower(), #prefix + 8)
                 Chat("h \n\n\n WOAH, LOOK OVER THERE! THAT GUY'S ASCENDING! \n\n\n")
                 Chat("music 9061674082")
@@ -2885,6 +2885,14 @@ Commands required: rocket]])
                 Chat("trip "..person)
                 task.wait(0.4)
                 Chat("trip "..person)
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'ascend' then -- kohlsnoob
+                local person = string.sub(msg:lower(), #prefix + 8)
+		chat("unfly "..person)
+		chat("setgrav "..person.." -270")
+		chat("stun "..person)
+		chat("glow "..person.." 0 0 255")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'bed' then -- ns techno
