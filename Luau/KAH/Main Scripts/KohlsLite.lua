@@ -9732,7 +9732,6 @@ Loops.pp = false
 Loops.alog = false
 Loops.platform = false
 Loops.dncycle = false
-Loops.raid = false
 
 musiclog = {}
 
