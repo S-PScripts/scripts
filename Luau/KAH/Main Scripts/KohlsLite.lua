@@ -32,7 +32,7 @@ getgenv().kohlsexecuted = true -- don't touch!
 
 getgenv().deprefix = "." -- This can be of any length
 
-getgenv().klversion = "1.53" -- The version of KohlsLite, of course.
+getgenv().klversion = "1.54 XD" -- The version of KohlsLite, of course.
 
 local function Chat(msg)
       game.Players:Chat(msg)
@@ -5697,6 +5697,55 @@ Commands required: rocket]])
     if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'r15' then
         ChangeRig("R15")
     end  
+
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'dance' then
+	local dances = {"27789359", "30196114", "248263260", "45834924", "33796059", "28488254", "52155728"}
+	if checkforR15(game.Players.LocalPlayer) then
+		dances = {"3333432454", "4555808220", "4049037604", "4555782893", "10214311282", "10714010337", "10713981723", "10714372526", "10714076981", "10714392151", "11444443576"}
+	end
+	local animation = Instance.new("Animation")
+	animation.AnimationId = "rbxassetid://" .. dances[math.random(1, #dances)]
+	danceTrack = game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid"):LoadAnimation(animation)
+	danceTrack.Looped = true
+	danceTrack:Play()    
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'undance' then
+	danceTrack:Stop()
+	danceTrack:Destroy()   
+    end  
+
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'spasm' then
+	if not checkforR15(game.Players.LocalPlayer) then
+		local pchar = game.Players.LocalPlayer.Character
+		local AnimationId = "33796059"
+		SpasmAnim = Instance.new("Animation")
+		SpasmAnim.AnimationId = "rbxassetid://"..AnimationId
+		Spasm = pchar:FindFirstChildOfClass('Humanoid'):LoadAnimation(SpasmAnim)
+		Spasm:Play()
+		Spasm:AdjustSpeed(99)
+	else
+		Remind("This command requires the r6 rig type. Do r6.")
+	end
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'unspasm' then
+		Spasm:Stop()
+		SpasmAnim:Destroy()
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'headthrow' then
+	if not checkforR15(game.Players.LocalPlayer) then
+		local AnimationId = "35154961"
+		local Anim = Instance.new("Animation")
+		Anim.AnimationId = "rbxassetid://"..AnimationId
+		local k = game.Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid'):LoadAnimation(Anim)
+		k:Play(0)
+		k:AdjustSpeed(1)
+	else
+		Remind("This command requires the r6 rig type. Do r6.")
+	end
+    end
 		
 end)
 
