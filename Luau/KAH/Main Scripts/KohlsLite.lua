@@ -54,6 +54,12 @@ local bending -- ignore
 local ratelj -- ignore
 local eincrash -- ignore
 
+editedspeedis = 16
+editedspeed = true
+
+editedjumpis = 50
+editedjump = true
+
 local notifiedRespectFiltering = false
 
 Stats = {}
@@ -4189,9 +4195,31 @@ Commands required: rocket]])
 	 Remind("Modified your walkspeed!")
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'editsp' then
+	 editedspeed = true
+	 editedspeedis = tonumber(string.sub(msg:lower(), #prefix + 8))
+	 Remind("Your walkspeed is set until you unset it!")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'uneditsp' then
+	 editedspeed = false
+	 Remind("Unset the walkspeed.")
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 2) == prefix..'jp' then
          game.Players.LocalPlayer.Character.Humanoid.JumpPower = tonumber(string.sub(msg:lower(), #prefix + 4))
 	 Remind("Modified your jumppower!")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'editjp' then
+	 editedjump = true
+	 editedjumpis = tonumber(string.sub(msg:lower(), #prefix + 8))
+	 Remind("Your jumppower is set until you unset it!")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'uneditjp' then
+	 editedjump = false
+	 Remind("Unset the jumppower.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'minzoom' then
@@ -6756,6 +6784,12 @@ task.spawn(function()
             end
         end
 
+        if editedjump == true then
+            if game.Players.LocalPlayer.Character.Humanoid and game.Players.LocalPlayer.Character.Humanoid.JumpPower ~= editedjumpis then
+                game.Players.LocalPlayer.Character.Humanoid.JumpPower = editedjumpis
+            end
+        end
+
         if YOUantikill == true then
            if game.Players.LocalPlayer.Character.Humanoid and game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
                     Chat("reset me")
@@ -6850,6 +6884,12 @@ task.spawn(function()
         if YOUantispeed == true then
             if game.Players.LocalPlayer.Character.Humanoid and game.Players.LocalPlayer.Character.Humanoid.WalkSpeed ~= 16 then
                 game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+            end
+        end
+
+        if editedspeed == true then
+            if game.Players.LocalPlayer.Character.Humanoid and game.Players.LocalPlayer.Character.Humanoid.WalkSpeed ~= editedspeedis then
+                game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = editedspeedis
             end
         end
 
