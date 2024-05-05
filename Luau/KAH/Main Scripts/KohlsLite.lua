@@ -32,7 +32,7 @@ getgenv().kohlsexecuted = true -- don't touch!
 
 getgenv().deprefix = "." -- This can be of any length
 
-getgenv().klversion = "1.52 new" -- The version of KohlsLite, of course.
+getgenv().klversion = "1.52 edu" -- The version of KohlsLite, of course.
 
 local function Chat(msg)
       game.Players:Chat(msg)
@@ -10169,7 +10169,7 @@ function rcannon(mode)
             	Chat("gear me 79446473")
             	repeat task.wait() until game.Players.LocalPlayer.Backpack:FindFirstChild("Railgun")
 		rag = game.Players.LocalPlayer.Backpack:FindFirstChild("Railgun")
-            	rag.GripPos = (CFrame.Angles(0,0,math.rad(x*(360/theblue)))*CFrame.new(math.cos(i*(360/theblue))*10,0,math.sin(i*(theblue/360))*10)).p
+            	rag.GripPos = GripPos=(CFrame.Angles(0,0,math.rad(i2*(360/theblue)))*CFrame.new(math.cos(i*(360/theblue))*10,0,math.sin(i*(theblue/360))*10)).p
             	rag.Parent = game.Players.LocalPlayer.Character
        	 end
 
