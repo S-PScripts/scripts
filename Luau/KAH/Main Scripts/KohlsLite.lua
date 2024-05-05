@@ -2660,10 +2660,10 @@ Commands required: rocket]])
 		Chat("removejails")
     end
 
-   if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'skick' then -- 
-	Remind("removed by request of digitality")
-end
-
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'skick' then 
+	Remind("ERROR: This kick was removed by request of Digitality.")
+	-- Removed by request of Digitality --
+    end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'welmsg' then
         welcomemsg = true
@@ -3539,6 +3539,9 @@ end
 				local plr1 = args[2]
 				local plr2 = args[2]
 				arena(plr1, plr2)
+				Remind("Building the arena")
+		else
+				Remind("Please give 3 arguments - arena (plr1) (plr2).")
 		end
     end
 
