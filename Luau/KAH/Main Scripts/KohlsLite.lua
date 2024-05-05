@@ -54,6 +54,8 @@ local bending -- ignore
 local ratelj -- ignore
 local eincrash -- ignore
 
+local notifiedRespectFiltering = false
+
 Stats = {}
 Stats.starttime = os.clock() -- ignore
 
@@ -5777,10 +5779,8 @@ Commands required: rocket]])
 			headSit:Disconnect() 
 		end
 		game.Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid').Sit = true
-		local headSit = nil
 		task.wait()
-		headSit = 
-		RunService.Heartbeat:Connect(function()
+		headSit = RunService.Heartbeat:Connect(function()
 			if game:GetService("Players"):FindFirstChild(hs.Name) and hs.Character ~= nil and getRoot(hs.Character) and getRoot(game.Players.LocalPlayer.Character) and game.Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid').Sit == true then
 					getRoot(game.Players.LocalPlayer.Character).CFrame = getRoot(hs.Character).CFrame * CFrame.Angles(0,math.rad(0),0)* CFrame.new(0,1.6,0.4)
 			else
@@ -5873,7 +5873,46 @@ Commands required: rocket]])
 		bangLoop:Disconnect()
 	end
     end
-		
+
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'mutebb' then
+	SoundService = game:GetService("SoundService")
+	if not notifiedRespectFiltering and SoundService.RespectFilteringEnabled then 
+			notifiedRespectFiltering = true 
+	end
+	local players = game.Players:GetPlayers()
+	for i, v in pairs(players) do
+		task.spawn(function()
+			for i, x in next, v.Character:GetDescendants() do
+				if x:IsA("Sound") and x.Playing == true then
+					x.Playing = false
+				end
+			end
+			for i, x in next, v:FindFirstChildOfClass("Backpack"):GetDescendants() do
+				if x:IsA("Sound") and x.Playing == true then
+					x.Playing = false
+				end
+			end
+		end)
+	end
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'unmutebb' then
+	SoundService = game:GetService("SoundService")
+	if not notifiedRespectFiltering and SoundService.RespectFilteringEnabled then 
+			notifiedRespectFiltering = true 
+	end
+	local players = game.Players:GetPlayers()
+	for i, v in pairs(players) do
+		task.spawn(function()
+			for i, x in next, v.Character:GetDescendants() do
+					if x:IsA("Sound") and x.Playing == false then
+						x.Playing = true
+					end
+			end
+		end)
+        end
+    end
+	
 end)
 
 function CMDPrint()
@@ -6686,7 +6725,7 @@ task.spawn(function()
                         for i,v in pairs(torso:GetChildren()) do
                                 if v:IsA("ParticleEmitter") then
                                                     v:Destroy()
-                                                    Chat("unparticles me")
+                                                    Chat("unparticle me")
                                        end
                             end
         end
@@ -6736,7 +6775,7 @@ task.spawn(function()
                         for i,v in pairs(torso:GetChildren()) do
                                 if v:IsA("Sparkles") then
                                                     v:Destroy()
-                                                    Chat("unparticles me")
+                                                    Chat("unsparkle me")
                                        end
                             end
         end
@@ -6952,7 +6991,7 @@ task.spawn(function()
                                         for i,x in pairs(torso:GetChildren()) do
                                                 if x:IsA("Sparkles") then
                                                             x:Destroy()
-                                                            Chat("unsparkles "..v.Name)
+                                                            Chat("unsparkle "..v.Name)
                                                        end
                                             end
                                 end
