@@ -5865,27 +5865,45 @@ print("fixcol - fix collisions")
 
 print("\n\n\n")
 print("fixbp - fix the baseplate")
-print("movebp - move the baseplate")
+print("movebp - move the baseplate") -- add omovebp
+
 print("fixspawn - fix the spawns")
-print("movespawn - move the spawns")
+print("movespawn - move the spawns") -- add omovespawn
+
 print("fixregen - fix the regen")
-print("moveregen - move the regen")
+print("moveregen - move the regen") -- add omoveregen
+
 print("fixpads - fix the pads")
-print("movepads - move the pads")
+print("movepads - move the pads") -- add omovepads
+
 print("fixfl - fix the floor")
-print("movefl - move the floor")
+print("movefl - move the floor") -- add omovefl
+
 print("fixobby - fix the obby")
-print("moveobby - move the obby")
+print("moveobby - move the obby") -- add omoveobby
+
 print("fixkb - fix the kill bricks")
-print("movekb - move the kill bricks")
+print("movekb - move the kill bricks") -- add omovekb
+
 print("fixobox - fix the obby box")
-print("moveobox - move the obby box")
+print("moveobox - move the obby box") -- add omoveobox
+
 print("fixadv - fix the admin dividers")
-print("moveadv - move the admin dividers")
+print("moveadv - move the admin dividers") -- add omoveadv
+
 print("fixhouse - fix the house")
-print("movehouse - move the house")
+print("movehouse - move the house") -- add omovehouse
+
 print("fixbb - fix the building bricks")
-print("movebb - move the building bricks")
+print("movebb - move the building bricks") -- add omovebb
+
+print("\n\n\n")
+print("2fixbp - fix the baseplate alt")
+print("2fixpads - fix the pads alt")
+print("2fixreg - fix the regen alt")
+
+print("cagespawn - jail at spawn")
+print("spawnkill - kill brick at spawn")
 	
 print("\n\n\n")
 print("antichat - crash everyone else by spamming a m command full of emojis")
@@ -5963,7 +5981,7 @@ print("\n\n\n")
 print("--- INFORMATION ---")
 print("KohlsLite, since 2023. Created by ScriptingProgrammer/ts2021")
 print("For help, please contact me on Discord at ts2021x")
-print("The version you are using is v"..getgenv().klversion..". This build was created on 26th April 2024 Build")
+print("The version you are using is v"..getgenv().klversion..". This build was created on 5th May 2024 Build")
 print("Better than scv1 and scv2 - approved by Tech!")
 
 print("\n\n\n")
