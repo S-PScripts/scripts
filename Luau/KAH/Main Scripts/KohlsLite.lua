@@ -4192,6 +4192,16 @@ Commands required: rocket]])
 	 Remind("Modified your jumppower!")
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'minzoom' then
+         game.Players.LocalPlayer.CameraMinZoomDistance = tonumber(string.sub(msg:lower(), #prefix + 9))
+	 Remind("Modified your minimum zoom!")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'maxzoom' then
+         game.Players.LocalPlayer.CameraMaxZoomDistance = tonumber(string.sub(msg:lower(), #prefix + 9))
+	 Remind("Modified your maximum zoom!")
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'hlth' then
          game.Players.LocalPlayer.Character.Humanoid.Health = tonumber(string.sub(msg:lower(), #prefix + 6))
 	 Remind("Modified your health!")
