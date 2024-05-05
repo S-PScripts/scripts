@@ -3647,10 +3647,12 @@ Commands required: rocket]])
 
    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'autoafk' then
         autoafk = true
+	Remind("Auto afk is now enabled.")
    end
 
    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'unautoafk' then
         autoafk = false
+	Remind("Auto afk is now disabled.")
    end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'alladmin' then
@@ -3660,18 +3662,22 @@ Commands required: rocket]])
 
     if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'nok' then
                 NOK()
+		Remind("You will no longer die to the obby!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'2nok' then
                 NOK2()
+		Remind("You will no longer die to the obby!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'tnok' then
                 TNOK("true")
+		Remind("You will no longer die to the obby!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'untnok' then
                 TNOK("false")
+		Remind("You can die to the obby again!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'getping' then
@@ -3679,33 +3685,39 @@ Commands required: rocket]])
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'autogb' then
-                 autogb = true
+                autogb = true
+		Remind("Auto gearban is enabled. People get gearbanned when they join this server")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'unautogb' then
-                 autogb = false
+                autogb = false
+		Remind("Auto gearban is now disabled.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'qpunish' then -- idea from zercon
                 	local trolled = string.sub(msg:lower(), #prefix + 9)
                         Chat("punish " .. trolled)
                         Regen()
+			Remind("Quick punished the player")
     end   
 
-    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'spunish' then -- 
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'spunish' then -- ii's admin
                 	local trolled = string.sub(msg:lower(), #prefix + 9)
                         Chat("speed "..trolled.." inf")
+			Remind("Sped the player to infinity!")
     end   
 
-    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'gpunish' then -- 
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'gpunish' then -- ii's admin
                 	local trolled = string.sub(msg:lower(), #prefix + 9)
                         Chat("setgrav "..trolled.." -9e9")
+			Remind("Setgraved player to the heavens!")
     end   
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'ungearban' then
                 local plrg = string.sub(msg:lower(), #prefix + 11)
                 if plrg == "" or plrg == "me" then
-                         game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, true)
+                        game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, true)
+			Remind("Ungearbanned yourself.")
                 else 
                         Ungearban(plrg)
                 end
@@ -3719,7 +3731,7 @@ Commands required: rocket]])
                         xplr = cplr
                         Gearban()
                  else
-                               Remind('Cannot find player with the name: '..dasplayer)
+                        Remind('Cannot find player with the name: '..dasplayer)
                  end
     end
 
@@ -3730,7 +3742,7 @@ Commands required: rocket]])
                         railer = player
                         Rail()
                  else
-                               Remind('Cannot find player with the name: '..dasplayer)
+                        Remind('Cannot find player with the name: '..dasplayer)
                  end
     end
 
@@ -3742,7 +3754,7 @@ Commands required: rocket]])
                         lman = cplr
                         Lemon()
                  else
-                               Remind('Cannot find player with the name: '..dasplayer)
+                        Remind('Cannot find player with the name: '..dasplayer)
                  end
     end
 
@@ -3754,7 +3766,7 @@ Commands required: rocket]])
                         laman = cplr
                         Laser()
                  else
-                               Remind('Cannot find player with the name: '..dasplayer)
+                        Remind('Cannot find player with the name: '..dasplayer)
                  end
     end
 
@@ -3765,7 +3777,7 @@ Commands required: rocket]])
                         surrer = player
                         Surround("sur")
                  else
-                               Remind('Cannot find player with the name: '..dasplayer)
+                        Remind('Cannot find player with the name: '..dasplayer)
                  end
     end
 
@@ -9125,14 +9137,14 @@ function Lemon()
         repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("YellowSnowball")
         local tool = game.Players.LocalPlayer.Backpack:FindFirstChild("YellowSnowball")
         tool.Parent = game.Players.LocalPlayer.Character
-         Chat("music 132323614")
-            task.wait(0.6)
-            Speak("I'M THE MAN WHO'S GONNA BURN YOUR HOUSE DOWN!")
-            task.wait(2.9)
-            Speak("WITH THE LEMONS!")
-            task.wait(0.6)
-            Chat("explode me")
-            task.wait(0.7)
+        Chat("music 132323614")
+        task.wait(0.6)
+        Speak("I'M THE MAN WHO'S GONNA BURN YOUR HOUSE DOWN!")
+        task.wait(2.9)
+	Speak("WITH THE LEMONS!")
+        task.wait(0.6)
+        Chat("explode me")
+        task.wait(0.7)
         Chat("music nan")
 end
 
