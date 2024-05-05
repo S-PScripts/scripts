@@ -32,7 +32,7 @@ getgenv().kohlsexecuted = true -- don't touch!
 
 getgenv().deprefix = "." -- This can be of any length
 
-getgenv().klversion = "1.5 INFDEV" -- The version of KohlsLite, of course.
+getgenv().klversion = "1.52" -- The version of KohlsLite, of course.
 
 local function Chat(msg)
       game.Players:Chat(msg)
@@ -3845,17 +3845,23 @@ Commands required: rocket]])
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'rcannon' then
 		rcannon("def")
-		Remind "Debug message"
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'wrcannon' then
 		rcannon("wide")
-		Remind "Debug message"
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'uncannon' then
+    	        Connections.cannoning:Disconnect()
+
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'astrike' then
 		ASTRIKE()
-		Remind "Debug message"
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'unastrike' then
+		Connections.airstrike:Disconnect()
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'skcraze' then
@@ -3980,6 +3986,10 @@ Commands required: rocket]])
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'rfgun' then
 	bullets = tonumber(string.sub(msg:lower(), #prefix + 7))
 	RFGUN(bullets)
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'unrfgun' then
+	Connections.rapidfiregun:Disconnect()
     end
 
    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'sjail' then
@@ -9740,6 +9750,11 @@ Loops.alog = false
 Loops.platform = false
 Loops.dncycle = false
 
+Connections = {}
+Connections.rapidfiregun = nil
+Connections.airstrike = nil
+Connections.cannoning = nil
+
 musiclog = {}
 
 KL_FOLDER = "KohlsLite"
@@ -10092,7 +10107,6 @@ function lagify(plr, pln)
     end
 
 function RFGUN(bullets)
-		local Connections = {}
 		Connections.rapidfiregun = game:GetService("UserInputService").InputBegan:Connect(function(inputa,gp)
 			if gp then return end
 			if inputa.UserInputType == Enum.UserInputType.MouseButton1 then
@@ -10116,13 +10130,11 @@ function RFGUN(bullets)
 				end
 
 				Chat("ungear me")
-				Connections.rapidfiregun:Disconnect()
 			end
 		end)
 end
 
 function ASTRIKE()
-		local Connections = {}
 		Connections.airstrike = game:GetService("UserInputService").InputBegan:Connect(function(inputa,gp)
 			if gp then return end
 			if inputa.UserInputType == Enum.UserInputType.MouseButton1 then
@@ -10147,8 +10159,6 @@ function ASTRIKE()
 				task.wait(10)
 		
             			Chat("ungear me")
-		    		Connections.airstrike:Disconnect()
-
 			end
 		end)
 end
@@ -10174,7 +10184,6 @@ function rcannon(mode)
         Chat("invis me")
    	game.Players.LocalPlayer.Character.Humanoid.HipHeight = 8
 
-        local Connections = {}
         Connections.cannoning = game:GetService("UserInputService").InputBegan:Connect(function(inputa,gp)
    	        if gp then return end
     		if inputa.UserInputType == Enum.UserInputType.MouseButton1 then
@@ -10190,7 +10199,6 @@ function rcannon(mode)
        			end
 
     			Chat("reset me")
-    			Connections.cannoning:Disconnect()
     		end
    	end)
 end
