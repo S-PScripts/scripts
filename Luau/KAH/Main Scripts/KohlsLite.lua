@@ -5950,6 +5950,28 @@ Commands required: rocket]])
 	end
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'spin' then
+	local spinSpeed = 20
+	for i,v in pairs(getRoot(game.Players.LocalPlayer.Character):GetChildren()) do
+		if v.Name == "Spinning" then
+			v:Destroy()
+		end
+	end
+	local Spin = Instance.new("BodyAngularVelocity")
+	Spin.Name = "Spinning"
+	Spin.Parent = getRoot(game.Players.LocalPlayer.Character)
+	Spin.MaxTorque = Vector3.new(0, math.huge, 0)
+	Spin.AngularVelocity = Vector3.new(0,spinSpeed,0)
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'unspin' then
+	for i,v in pairs(getRoot(game.Players.LocalPlayer.Character):GetChildren()) do
+		if v.Name == "Spinning" then
+			v:Destroy()
+		end
+	end
+    end
+
 end)
 
 function CMDPrint()
