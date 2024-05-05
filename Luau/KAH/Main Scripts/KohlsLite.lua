@@ -5766,7 +5766,7 @@ Commands required: rocket]])
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'headsit' then
 		local dasplayer = string.sub(msg:lower(), #prefix + 9)
-        	PLAYERCHECK(mrmrmrmr)
+        	PLAYERCHECK(dasplayer)
         	if player == nil then 
 			return 
 		else
@@ -5791,7 +5791,7 @@ Commands required: rocket]])
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'carpet' then
 		local dasplayer = string.sub(msg:lower(), #prefix + 8)
-        	PLAYERCHECK(mrmrmrmr)
+        	PLAYERCHECK(dasplayer)
         	if player == nil then 
 			return 
 		else
@@ -5830,6 +5830,49 @@ Commands required: rocket]])
 			carpetAnim:Destroy()
 		end
      end
+
+    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'bang' then
+		local dasplayer = string.sub(msg:lower(), #prefix + 6)
+        	PLAYERCHECK(dasplayer)
+        	if player == nil then 
+			return 
+		else
+			banger = cplr
+		end
+		Chat(prefix.."unbang")
+		RunService = game:GetService("RunService")
+		task.wait()
+		local humanoid = game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid")
+		bangAnim = Instance.new("Animation")
+		bangAnim.AnimationId = not checkforR15(game.Players.LocalPlayer) and "rbxassetid://148840371" or "rbxassetid://5918726674"
+		bang = humanoid:LoadAnimation(bangAnim)
+		bang:Play(0.1, 1, 1)
+		bang:AdjustSpeed(3)
+		bangDied = humanoid.Died:Connect(function()
+			bang:Stop()
+			bangAnim:Destroy()
+			bangDied:Disconnect()
+			bangLoop:Disconnect()
+		end)
+
+		local bangplr = banger
+		local bangOffet = CFrame.new(0, 0, 1.1)
+		bangLoop = RunService.Stepped:Connect(function()
+			pcall(function()
+				local otherRoot = getTorso(bangplr.Character)
+				getRoot(game.Players.LocalPlayer.Character).CFrame = otherRoot.CFrame * bangOffet
+			end)
+		end)
+	end
+
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'unbang' then
+	if bangDied then
+		bangDied:Disconnect()
+		bang:Stop()
+		bangAnim:Destroy()
+		bangLoop:Disconnect()
+	end
+    end
 		
 end)
 
