@@ -5748,6 +5748,24 @@ Commands required: rocket]])
 		Remind("This command requires the r6 rig type. Do r6.")
 	end
     end
+
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'headsit' then
+		RunService = game:GetService("RunService")
+		if headSit then 
+			headSit:Disconnect() 
+		end
+		game.Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid').Sit = true
+		local headSit = nil
+		task.wait()
+		headSit = 
+		RunService.Heartbeat:Connect(function()
+			if game:GetService("Players"):FindFirstChild(hs.Name) and hs.Character ~= nil and getRoot(hs.Character) and getRoot(game.Players.LocalPlayer.Character) and game.Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid').Sit == true then
+					getRoot(game.Players.LocalPlayer.Character).CFrame = getRoot(hs.Character).CFrame * CFrame.Angles(0,math.rad(0),0)* CFrame.new(0,1.6,0.4)
+			else
+					headSit:Disconnect()
+			end
+		end)
+    end
 		
 end)
 
@@ -8815,6 +8833,12 @@ function checkforR15()
 	if game.Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid').RigType == Enum.HumanoidRigType.R15 then
 		return true
 	end
+end
+
+-- Root finder
+function getRoot(char)
+	local rootPart = char:FindFirstChild('HumanoidRootPart') or char:FindFirstChild('Torso') or char:FindFirstChild('UpperTorso')
+	return rootPart
 end
 
 -- Rig Changer it (for new commands COMING SOON!)
