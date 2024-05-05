@@ -4182,8 +4182,8 @@ Commands required: rocket]])
 		Remind("You can no longer infinitely jump!")
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 2) == prefix..'sp' then
-         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = tonumber(string.sub(msg:lower(), #prefix + 4))
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'speed' then
+         game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = tonumber(string.sub(msg:lower(), #prefix + 7))
 	 Remind("Modified your walkspeed!")
     end
 
@@ -5713,6 +5713,7 @@ Commands required: rocket]])
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'undance' then
 	danceTrack:Stop()
 	danceTrack:Destroy()   
+	Remind("Ended the dancing.")
     end  
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'spasm' then
@@ -5732,6 +5733,7 @@ Commands required: rocket]])
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'unspasm' then
 		Spasm:Stop()
 		SpasmAnim:Destroy()
+		Remind("Ended the spasm.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'headthrow' then
@@ -5893,7 +5895,7 @@ print("tnok - temp no obby kill")
 print("untnok - un temp no obby kill")
 
 print("\n\n\n")
-print("sp - set your speed without the command")
+print("speed - set your speed without the command")
 print("jp - set your jump power without the command")
 print("hlth - set your health without the command")
 print("ufly - the kah fly but without actually using the cmd!")
@@ -6425,13 +6427,17 @@ task.spawn(function()
 
      --[[   if YOUantifling == true then
 			if game.Players.LocalPlayer.Character:FindFirstChild("BFRC") then
-                                workspace:WaitForChild(game.Players.LocalPlayer.Name).Humanoid.Sit = false
+           			local player = game.Players.LocalPlayer
+                    		local humanoid = player.Character:WaitForChild("Humanoid", 1)
+                    		if humanoid and humanoid.Sit then
+                        		humanoid.Sit = false
+                        		Chat("unsit me")
+                    		end
 				game.Players.LocalPlayer.Character.Torso.AssemblyLinearVelocity = Vector3.new(0,0,0)
 				fwait()
 				game.Players.LocalPlayer.Character:FindFirstChild("BFRC"):Destroy()
 				game.Players.LocalPlayer.Character.Torso.AssemblyLinearVelocity = Vector3.new(0,0,0)
 	                end
-                    end
         end]]
 
         if YOUantifire == true then
