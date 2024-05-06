@@ -6011,13 +6011,15 @@ Commands required: rocket]])
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'unview' then
 	StopFreecam()
-	for i,v in pairs(workspace:GetDescendants()) do
-		if v.Name:lower() == getstring(1):lower() and v:IsA("BasePart") then
-			wait(0.1)
-			workspace.CurrentCamera.CameraSubject = v
-		end
+	if viewing ~= nil then
+		viewing = nil
+		Chat('No longer viewing the player.')
 	end
-	Remind("No longer viewing the player.")
+	if viewDied then
+		viewDied:Disconnect()
+		viewChanged:Disconnect()
+	end
+	workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character
     end
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'spin' then
