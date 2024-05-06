@@ -9716,8 +9716,16 @@ end
 
 -- WELCOME/LEAVE MSG
 function onPlayerAdded(player)
-    task.wait(0)
+     task.wait(0)
      PLRSTART(player)
+
+     if autogpcheck == true then
+          gcplr = player
+          gcplrn = player.Name
+          checkforpersons()
+          checkforperm()
+    end
+
     if welcomemsg == true and (player.Name ~= "ScriptingProgrammer" and player.Name ~= "me_123eq") then
         if table.find(whitelist, player.Name) then
          	Chat("h \n\n\n [KohlsLite]: Welcome to the server, " .. player.Name .. ". You are whitelisted from serverlocks! \n\n\n")
@@ -9731,13 +9739,6 @@ function onPlayerAdded(player)
         print(player.Name.." joined the server.")
         Remind(player.Name.." joined the server.")
     end 
-
-    if autogpcheck == true then
-          gcplr = player
-          gcplrn = player.Name
-          checkforpersons()
-          checkforperm()
-    end
 
         if player.Name == "9jn" or player.Name == "9gn" then
                         antiraygun = true
@@ -9864,7 +9865,6 @@ task.spawn(function()
                 end
         end
 end)
-
 
 -- AUTOAFK
 local UserInputService = game:GetService("UserInputService")
