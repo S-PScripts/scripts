@@ -3352,9 +3352,14 @@ Commands required: rocket]])
 		Loops.platform = false  
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unplatform' then
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'float' then
+		Remind("Adding the platform...")
+		float()
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'unfloat' then
 		Remind("Removing the platform...")
-		Loops.platform = false  
+		unfloat()
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'icemap' then
@@ -4250,13 +4255,12 @@ Commands required: rocket]])
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'noclip' then
-	 Chat(prefix.."platform")
-         WalkThru("on")
+	 noclip()
 	 Remind("Noclip is now on!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'clip' then
-         WalkThru("off")
+         clip()
 	 Remind("Noclip is now off!")
     end
 
@@ -8960,20 +8964,25 @@ function LocalObby(mode)
         end
 end
 
-function WalkThru(mode)
-        if mode == "on" then
-                    for _, child in pairs(game.Workspace:GetDescendants()) do
-                                if child:IsA("BasePart") and child.CanCollide == true and child.Name ~= "KL_PLATFORM" then
-                                        child.CanCollide = false
-                                end
-                    end
-        else 
-                    for _, child in pairs(game.Workspace:GetDescendants()) do
-                                if child:IsA("BasePart") and child.CanCollide == false then
-                                        child.CanCollide = true
-                                end
-                    end
-        end
+local Noclipping = nil
+
+function noclip()
+	local function NoclipLoop()
+		if Clip == false and game.Players.LocalPlayer.Character ~= nil then
+			for _, child in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+				if child:IsA("BasePart") and child.CanCollide == true and child.Name ~= floatName then
+					child.CanCollide = false
+				end
+			end
+		end
+	end
+	Noclipping = RunService.Stepped:Connect(NoclipLoop)
+end
+
+function clip()
+	if Noclipping then
+		Noclipping:Disconnect()
+	end
 end
 
 -- KAH fly
@@ -9316,7 +9325,7 @@ function fling()
 			child.CustomPhysicalProperties = PhysicalProperties.new(math.huge, 0.3, 0.5)
 		end
 	end
-	Chat(prefix..'noclip')
+	Chat(prefix..'float')
 	wait(.1)
 	local bambam = Instance.new("BodyAngularVelocity")
 	bambam.Name = randomString()
@@ -9346,7 +9355,7 @@ function fling()
 end
 
 function unfling()
-	Chat(prefix..'clip')
+	Chat(prefix..'unfloat')
 	if flingDied then
 		flingDied:Disconnect()
 	end
@@ -9373,7 +9382,7 @@ function isNumber(str)
 	end
 end
 
--- camera crap (messy ik) -- 
+-- camera crap (messy I know) -- 
 RunService = game:GetService("RunService")
 UserInputService = game:GetService("UserInputService")
 ContextActionService = game:GetService("ContextActionService")
@@ -10486,6 +10495,95 @@ function Platform() -- based off pr script
     workspace.Terrain:FindFirstChild("KL_PLATFORM"):Destroy()
 end
 
+Floating = false
+floatName = randomString()
+KLMOUSE = game.Players.LocalPlayer:GetMouse()
+
+function float()
+	Floating = true
+	local pchar = game.Players.LocalPlayer.Character
+	if pchar and not pchar:FindFirstChild(floatName) then
+		task.spawn(function()
+			local Float = Instance.new('Part')
+			Float.Name = floatName
+			Float.Parent = pchar
+			Float.Transparency = 1
+			Float.Size = Vector3.new(2,0.2,1.5)
+			Float.Anchored = true
+			local FloatValue = -3.1
+			Float.CFrame = getRoot(pchar).CFrame * CFrame.new(0,FloatValue,0)
+			Remind('Float Enabled (Q = down & E = up)')
+			
+			qUp = KLMOUSE.KeyUp:Connect(function(KEY)
+				if KEY == 'q' then
+					FloatValue = FloatValue + 0.5
+				end
+			end)
+			
+			eUp = KLMOUSE.KeyUp:Connect(function(KEY)
+				if KEY == 'e' then
+					FloatValue = FloatValue - 0.5
+				end
+			end)
+			
+			qDown = KLMOUSE.KeyDown:Connect(function(KEY)
+				if KEY == 'q' then
+					FloatValue = FloatValue - 0.5
+				end
+			end)
+			
+			eDown = KLMOUSE.KeyDown:Connect(function(KEY)
+				if KEY == 'e' then
+					FloatValue = FloatValue + 0.5
+				end
+			end)
+			
+			floatDied = game.Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid').Died:Connect(function()
+				FloatingFunc:Disconnect()
+				Float:Destroy()
+				qUp:Disconnect()
+				eUp:Disconnect()
+				qDown:Disconnect()
+				eDown:Disconnect()
+				floatDied:Disconnect()
+			end)
+			
+			local function FloatPadLoop()
+				if pchar:FindFirstChild(floatName) and getRoot(pchar) then
+					Float.CFrame = getRoot(pchar).CFrame * CFrame.new(0,FloatValue,0)
+				else
+					FloatingFunc:Disconnect()
+					Float:Destroy()
+					qUp:Disconnect()
+					eUp:Disconnect()
+					qDown:Disconnect()
+					eDown:Disconnect()
+					floatDied:Disconnect()
+				end
+			end	
+			
+			FloatingFunc = RunService.Heartbeat:Connect(FloatPadLoop)
+		end)
+	end
+end
+
+function unfloat()
+	Floating = false
+	local pchar = game.Players.LocalPlayer.Character
+	Remind('Float Disabled')
+	if pchar:FindFirstChild(floatName) then
+		pchar:FindFirstChild(floatName):Destroy()
+	end
+	if floatDied then
+		FloatingFunc:Disconnect()
+		qUp:Disconnect()
+		eUp:Disconnect()
+		qDown:Disconnect()
+		eDown:Disconnect()
+		floatDied:Disconnect()
+	end
+end
+
 -- By iidk!
 function SpHammer()
         Remind("From ii's stupid admin!")
@@ -10512,27 +10610,27 @@ function SpHammer()
 
         function HCMDS()
 
-print("- Main -")
-print("hcmds - print the commands")
-print("hmode - set the mode")
+		print("- Main -")
+		print("hcmds - print the commands")
+		print("hmode - set the mode")
 
-print("- Mode -")
-print("kill - used by default")
-print("anchor - freezes the player")
-print("unanchor - unfreezes the player")
-print("nil - punishes player")
-print("nan - sets size to nan")
-print("smack - smacks the player (unequip hammer right after hitting someone with this enabled)")
-print("spin - spins the player and plays music")
-print("smite - paints player black and explodes them")
-print("fling - flings the player")
-print("label - gives them a random name")
-print("furry - rawr")
-print("fem - maid outfit")
-print("color - paints the player a random color")
-print("duck - quack quack")
+		print("- Mode -")
+		print("kill - used by default")
+		print("anchor - freezes the player")
+		print("unanchor - unfreezes the player")
+		print("nil - punishes player")
+		print("nan - sets size to nan")
+		print("smack - smacks the player (unequip hammer right after hitting someone with this enabled)")
+		print("spin - spins the player and plays music")
+		print("smite - paints player black and explodes them")
+		print("fling - flings the player")
+		print("label - gives them a random name")
+		print("furry - rawr")
+		print("fem - maid outfit")
+		print("color - paints the player a random color")
+		print("duck - quack quack")
 
-print("- Script by iiDk, ported for KohlsLite. -")
+		print("- Script by iiDk, ported for KohlsLite. -")
 
         end
         
