@@ -6872,6 +6872,12 @@ task.spawn(function()
             if not game.Players.LocalPlayer.Character:FindFirstChild("Seizure") and game.Players.LocalPlayer.Character.Humanoid:GetState().Name == "PlatformStanding" then
                 Chat("unfly me")
                 Chat("clip me")
+ 		if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character.Torso then 
+                        game.Players.LocalPlayer.Character.Torso.Anchored = false 
+                end
+                if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character.Humanoid then 
+                        game.Players.LocalPlayer.Character.Humanoid.PlatformStand = false 
+                end
             end
         end
 
@@ -6881,7 +6887,7 @@ task.spawn(function()
                 if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character.Torso then 
                         game.Players.LocalPlayer.Character.Torso.Anchored = false 
                 end
-                    if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character.Humanoid then 
+                if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character.Humanoid then 
                         game.Players.LocalPlayer.Character.Humanoid.PlatformStand = false 
                 end
                 Chat("clip me")
