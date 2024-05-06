@@ -6069,7 +6069,7 @@ Commands required: rocket]])
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'reanim' then
-		game.Players.LocalPlayer.Character.Animate.Disabled = true
+		game.Players.LocalPlayer.Character.Animate.Disabled = false
 		Remind("Added animations!")
     end
 
