@@ -6090,6 +6090,10 @@ Commands required: rocket]])
 		Remind("Added animations!")
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'sit' then
+		game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").Sit = true
+		Remind("Now sitting!")
+    end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'animsp' then
 		local args = string.split(msg, " ")
