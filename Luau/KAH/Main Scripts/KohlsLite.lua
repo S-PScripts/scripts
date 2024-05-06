@@ -6162,6 +6162,33 @@ Commands required: rocket]])
 		Remind("Modified animation speed!")
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'delvelo' then
+		for i,v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+			if v:IsA("BodyVelocity") or v:IsA("BodyGyro") or v:IsA("RocketPropulsion") or v:IsA("BodyThrust") or v:IsA("BodyAngularVelocity") or v:IsA("AngularVelocity") or v:IsA("BodyForce") or v:IsA("VectorForce") or v:IsA("LineForce") then
+				v:Destroy()
+			end
+		end
+		Remind("Deleted velocities in your character.")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'bvelo' then
+		local bas = false
+		V3 = Vector3.new(0, 0, 0)
+		delay(1, function()
+			bas = true
+		end)
+		while not bas do
+			for _, v in ipairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+				if v:IsA("BasePart") then
+					v.Velocity = V3
+					v.RotVelocity = V3
+				end
+			end
+			wait()
+		end
+		Remind("Set velocity in your character to 0.")
+    end
+
 end)
 
 function CMDPrint()
