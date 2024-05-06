@@ -5,7 +5,7 @@
 █████╔╝ ██║   ██║███████║██║     ███████╗██║     ██║   ██║   █████╗  
 ██╔═██╗ ██║   ██║██╔══██║██║     ╚════██║██║     ██║   ██║   ██╔══╝  
 ██║  ██╗╚██████╔╝██║  ██║███████╗███████║███████╗██║   ██║   ███████╗
-╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝╚═╝   ╚═╝   ╚══════╝ v1.5 ]]
+╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝╚═╝   ╚═╝   ╚══════╝ v1.56 ]]
 
 -- This free, open-source script is for the Roblox game Kohls Admin House (KAH)
 -- You can play KAH here: https://www.roblox.com/games/112420803/Kohls-Admin-House-NBC-Updated
@@ -35,7 +35,7 @@ getgenv().kohlsexecuted = true -- don't touch!
 
 getgenv().deprefix = "." -- This can be of any length
 
-getgenv().klversion = "1.55.1" -- The version of KohlsLite, of course.
+getgenv().klversion = "1.56" -- The version of KohlsLite, of course.
 
 local function Chat(msg)
       game.Players:Chat(msg)
@@ -6061,6 +6061,16 @@ Commands required: rocket]])
 		Remind("Disabled swimming!")
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'fling' then
+		fling()
+		Remind("Enabled flinging!")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'unfling' then
+		unfling()
+		Remind("Disabled flinging!")
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'stopanims' then
 		local Char = game.Players.LocalPlayer.Character
 		local Hum = Char:FindFirstChildOfClass("Humanoid") or Char:FindFirstChildOfClass("AnimationController")
@@ -9265,8 +9275,74 @@ function unswim()
 	end
 end
 
-fcRunning = false
+function randomString()
+	local length = math.random(10,20)
+	local array = {}
+	for i = 1, length do
+		array[i] = string.char(math.random(32, 126))
+	end
+	return table.concat(array)
+end
 
+flinging = false
+function fling()
+	flinging = false
+	for _, child in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+		if child:IsA("BasePart") then
+			child.CustomPhysicalProperties = PhysicalProperties.new(math.huge, 0.3, 0.5)
+		end
+	end
+	Chat(prefix..'noclip')
+	wait(.1)
+	local bambam = Instance.new("BodyAngularVelocity")
+	bambam.Name = randomString()
+	bambam.Parent = getRoot(game.Players.LocalPlayer.Character)
+	bambam.AngularVelocity = Vector3.new(0,99999,0)
+	bambam.MaxTorque = Vector3.new(0,math.huge,0)
+	bambam.P = math.huge
+	local Char = game.Players.LocalPlayer.Character:GetChildren()
+	for i, v in next, Char do
+		if v:IsA("BasePart") then
+			v.CanCollide = false
+			v.Massless = true
+			v.Velocity = Vector3.new(0, 0, 0)
+		end
+	end
+	flinging = true
+	local function flingDiedF()
+		Chat(prefix..'unfling')
+	end
+	flingDied = game.Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid').Died:Connect(flingDiedF)
+	repeat
+		bambam.AngularVelocity = Vector3.new(0,99999,0)
+		wait(.2)
+		bambam.AngularVelocity = Vector3.new(0,0,0)
+		wait(.1)
+	until flinging == false
+end
+
+function unfling()
+	Chat(prefix..'clip')
+	if flingDied then
+		flingDied:Disconnect()
+	end
+	flinging = false
+	wait(.1)
+	local speakerChar = game.Players.LocalPlayer.Character
+	if not speakerChar or not getRoot(speakerChar) then return end
+	for i,v in pairs(getRoot(speakerChar):GetChildren()) do
+		if v.ClassName == 'BodyAngularVelocity' then
+			v:Destroy()
+		end
+	end
+	for _, child in pairs(speakerChar:GetDescendants()) do
+		if child.ClassName == "Part" or child.ClassName == "MeshPart" then
+			child.CustomPhysicalProperties = PhysicalProperties.new(0.7, 0.3, 0.5)
+		end
+	end
+end
+
+fcRunning = false
 function StopFreecam()
 	if not fcRunning then 
 		return
