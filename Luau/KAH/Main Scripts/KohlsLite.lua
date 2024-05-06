@@ -35,7 +35,7 @@ getgenv().kohlsexecuted = true -- don't touch!
 
 getgenv().deprefix = "." -- This can be of any length
 
-getgenv().klversion = "1.55" -- The version of KohlsLite, of course.
+getgenv().klversion = "1.55.1" -- The version of KohlsLite, of course.
 
 local function Chat(msg)
       game.Players:Chat(msg)
@@ -6009,7 +6009,7 @@ Commands required: rocket]])
 		viewChanged = workspace.CurrentCamera:GetPropertyChangedSignal("CameraSubject"):Connect(viewChangedFunc)
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'unview' then
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'unview' then
 	StopFreecam()
 	for i,v in pairs(workspace:GetDescendants()) do
 		if v.Name:lower() == getstring(1):lower() and v:IsA("BasePart") then
