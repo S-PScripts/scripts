@@ -6013,7 +6013,7 @@ Commands required: rocket]])
 	StopFreecam()
 	if viewing ~= nil then
 		viewing = nil
-		Chat('No longer viewing the player.')
+		Remind('No longer viewing the player.')
 	end
 	if viewDied then
 		viewDied:Disconnect()
@@ -6023,7 +6023,12 @@ Commands required: rocket]])
     end
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'spin' then
-	local spinSpeed = 20
+	local args = string.split(msg, " ")
+        if #args == 2 then
+                        spinSpeed = tonumber(args[2])
+	else
+			spinSpeed = 20
+        end
 	for i,v in pairs(getRoot(game.Players.LocalPlayer.Character):GetChildren()) do
 		if v.Name == "Spinning" then
 			v:Destroy()
