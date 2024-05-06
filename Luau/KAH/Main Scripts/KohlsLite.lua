@@ -6129,6 +6129,16 @@ Commands required: rocket]])
 		Remind("Now sitting!")
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'trip' then
+	if game.Players.LocalPlayer and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid") and getRoot(game.Players.LocalPlayer.Character) then
+		local hum = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+		local root = getRoot(game.Players.LocalPlayer.Character)
+		hum:ChangeState(0)
+		root.Velocity = root.CFrame.LookVector * 30
+		Remind("Tripped you ;)")
+	end
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'animsp' then
 		local args = string.split(msg, " ")
                 if #args == 2 then
