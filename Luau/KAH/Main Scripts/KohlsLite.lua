@@ -5832,7 +5832,7 @@ Commands required: rocket]])
 		local dasplayer = string.sub(msg:lower(), #prefix + 8)
         	PLAYERCHECK(dasplayer)
         	if player == nil then 
-			return 
+			return Remind("Fail: User not found!")
 		else
 			caplr = cplr
 		end
@@ -5886,7 +5886,7 @@ Commands required: rocket]])
 		local dasplayer = args[2]
         	PLAYERCHECK(dasplayer)
         	if player == nil then 
-			return 
+			return Remind("Fail: User not found!")
 		else
 			banger = cplr
 		end
@@ -5981,7 +5981,7 @@ Commands required: rocket]])
 		local dasplayer = string.sub(msg:lower(), #prefix + 6)
         	PLAYERCHECK(dasplayer)
         	if player == nil then 
-			return 
+			return Remind("Fail: User not found!")
 		else
 			brokeboi = cplr
 		end
