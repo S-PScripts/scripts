@@ -63,6 +63,8 @@ editedspeed = true
 editedjumpis = 50
 editedjump = true
 
+bgrange = 128
+
 local notifiedRespectFiltering = false
 
 Stats = {}
@@ -1414,9 +1416,13 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
             task.wait(0.25)
 	    bom.Remote:FireServer("PlaySong", tonumber(myplay))
 	    function rng() 
-                	return math.random(-128, 128)
+                	return math.random(-bgrange, bgrange)
             end
             bom.GripPos = Vector3.new(rng(), 1, rng())
+      end
+
+      if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'bgrange' then
+		bgrange = tonumber(string.sub(msg:lower(), #prefix + 9))
       end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'lgmusic' then
