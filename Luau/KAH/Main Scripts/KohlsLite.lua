@@ -3718,6 +3718,16 @@ Commands required: rocket]])
 	Remind("Auto afk is now disabled.")
    end
 
+   if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'antilag' then
+        antilag = true
+	Remind("Anti Lag is now enabled.")
+   end
+
+   if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'unantilag' then
+        antilag = false
+	Remind("Anti Lag is now disabled.")
+   end
+
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'alladmin' then
        alladmin = true
        Chat("h \n\n\n [KohlsLite]: Everyone has been given admin! Chat any command. \n\n\n")
@@ -5741,7 +5751,6 @@ Commands required: rocket]])
         Remind("Auto god is off!")
     end      
 
-
     if string.sub(msg:lower(), 1, #prefix + 2) == prefix..'r6' then
         ChangeRig("R6")
     end
@@ -6093,6 +6102,7 @@ Commands required: rocket]])
 		if isNumber(FCspeed) then
 			NAV_KEYBOARD_SPEED = Vector3.new(FCspeed, FCspeed, FCspeed)
 		end    
+		Remind("Changed freecam speed")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'stopanims' then
@@ -6987,6 +6997,11 @@ task.spawn(function()
         if YOUantiseizure == true then
             if game.Players.LocalPlayer.Character:FindFirstChild("Seizure") then
                 Chat("unseizure me")
+		game.Players.LocalPlayer.Character.Torso.AssemblyLinearVelocity = Vector3.new(0,0,0)
+		fwait()
+		game.Players.LocalPlayer.Character:FindFirstChild("Seizure"):Destroy()
+		game.Players.LocalPlayer.Character.Torso.AssemblyLinearVelocity = Vector3.new(0,0,0)
+		game.Players.LocalPlayer.Character.Humanoid:ChangeState("GettingUp")
             end
         end
 
@@ -8083,6 +8098,21 @@ v.Chatted:Connect(function(msg)
 
 end
 
+local items = {"Smoke","ForceField","Explosion","Fire","Sparkles"}
+workspace.DescendantAdded:Connect(function(ch)
+	if antilag then
+		local c = false
+		for i,v in pairs(items) do
+			if ch:IsA(v) then
+				c = true
+			end
+		end
+		if c then
+			fwait()
+			ch:Destroy()
+		end
+	end
+end)
 
 -- Backpack checker
 function CheckBackpack()
@@ -8091,7 +8121,6 @@ function CheckBackpack()
                 print(Tool.Name)
         end
 end
-
 
 -- LOOPGRAB 1 (broken)
 task.spawn(function()
