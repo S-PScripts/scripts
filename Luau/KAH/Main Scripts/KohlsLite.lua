@@ -9475,40 +9475,6 @@ workspace:GetPropertyChangedSignal("CurrentCamera"):Connect(function()
 	end
 end)
 
-function StartFreecam(pos)
-	if fcRunning then
-		StopFreecam()
-	end
-
-	local cameraCFrame = workspace.CurrentCamera.CFrame
-	if pos then
-		cameraCFrame = pos
-	end
-
-	cameraRot = Vector2.new()
-	cameraPos = cameraCFrame.p
-	cameraFov = workspace.CurrentCamera.FieldOfView
-
-	velSpring:Reset(Vector3.new())
-	panSpring:Reset(Vector2.new())
-
-	PlayerState.Push()
-	RunService:BindToRenderStep("Freecam", Enum.RenderPriority.Camera.Value, StepFreecam)
-	Input.StartCapture()
-	fcRunning = true
-end
-
-fcRunning = false
-function StopFreecam()
-	if not fcRunning then 
-		return
-	end
-	RunService:UnbindFromRenderStep("Freecam")
-	PlayerState.Pop()
-	workspace.Camera.FieldOfView = 70
-	fcRunning = false
-end
-
 function GetFocusDistance(cameraFrame)
 	local znear = 0.1
 	local viewport = workspace.CurrentCamera.ViewportSize
@@ -9733,6 +9699,40 @@ local PlayerState = {} do
 		UserInputService.MouseBehavior = mouseBehavior
 		mouseBehavior = nil
 	end
+end
+
+fcRunning = false
+function StartFreecam(pos)
+	if fcRunning then
+		StopFreecam()
+	end
+
+	local cameraCFrame = workspace.CurrentCamera.CFrame
+	if pos then
+		cameraCFrame = pos
+	end
+
+	cameraRot = Vector2.new()
+	cameraPos = cameraCFrame.p
+	cameraFov = workspace.CurrentCamera.FieldOfView
+
+	velSpring:Reset(Vector3.new())
+	panSpring:Reset(Vector2.new())
+
+	PlayerState.Push()
+	RunService:BindToRenderStep("Freecam", Enum.RenderPriority.Camera.Value, StepFreecam)
+	Input.StartCapture()
+	fcRunning = true
+end
+
+function StopFreecam()
+	if not fcRunning then 
+		return
+	end
+	RunService:UnbindFromRenderStep("Freecam")
+	PlayerState.Pop()
+	workspace.Camera.FieldOfView = 70
+	fcRunning = false
 end
 
 -- GOTO REGEN
