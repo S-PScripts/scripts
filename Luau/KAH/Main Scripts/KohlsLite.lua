@@ -35,7 +35,7 @@ getgenv().kohlsexecuted = true -- don't touch!
 
 getgenv().deprefix = "." -- This can be of any length
 
-getgenv().klversion = "1.56 dev" -- The version of KohlsLite, of course.
+getgenv().klversion = "1.56 dev beta1" -- The version of KohlsLite, of course.
 
 local function Chat(msg)
       game.Players:Chat(msg)
@@ -104,6 +104,7 @@ local whitelist = {}
 
 -- Perm Whitelist
 local pwl = {
+--[[
     "me_123eq",
     "me_crashking",
     "ScriptingProgrammer",
@@ -135,10 +136,12 @@ local pwl = {
     "me_capybara",
     "E4_DQ",
     "vgcrash"
+--]]
 }
 
 -- Players you cannot kick
 local nokick = {
+--[[
     "me_123eq",
     "me_crashking",
     "ScriptingProgrammer",
@@ -168,10 +171,12 @@ local nokick = {
     "Anka_707587",
     "DionteIsCute",
     "me_capybara"
+--]]
 }
 
 -- Players with special perms
 local specialperms = {
+--[[
     "me_123eq",
     "me_crashking",
     "ScriptingProgrammer",
@@ -182,6 +187,7 @@ local specialperms = {
     "EternitHD",
     "Milderous",
     "DionteIsCute"
+--]]
 }
 
 -- New users get blacklisted (prevent crashers)
@@ -194,6 +200,7 @@ local GWhitelisted = {}
 
 -- Perm Gear Whitelist
 local pgwl = {
+--[[
     "me_123eq",
     "me_crashking",
     "ScriptingProgrammer",
@@ -223,6 +230,7 @@ local pgwl = {
     "D_ionte",
     "DionteIsCute",
     "vgcrash"
+--]]
 }
 
 -- Serverlock
@@ -258,121 +266,122 @@ local musicplay
 -- Thanks to Dizzy for this idea of writing my musiclist (also I used ChatGPT to update it so cry!)
 -- All the music ids I've saved
 local musictable = {
-    ["1"] = { id = "9048375035", name = "All dropping 8 beats" },
-    ["2"] = { id = "6680495507", name = "Robbery" },
-    ["3"] = { id = "6529070845", name = "Brace Yourself" },
-    ["4"] = { id = "6917155909", name = "They trying to be cray" },
-    ["5"] = { id = "6913550990", name = "TLT FNAF 2" },
-    ["6"] = { id = "6847929757", name = "LONER" },
-    ["7"] = { id = "1839029458", name = "Exotico Speedo" },
-    ["8"] = { id = "35930009", name = "Monster Mash" },
-    ["9"] = { id = "6772846771", name = "TOT!" },
-    ["10"] = { id = "11808880515", name = "women song" },
-    ["11"] = { id = "6681840651", name = "What?!" },
-    ["12"] = { id = "1841647093", name = "Life in an Elevator" },
-    ["13"] = { id = "1837070127", name = "Prima Bossa" },
-    ["14"] = { id = "6806140478", name = "Night Lights" },
-    ["15"] = { id = "6703926669", name = "Freaks" },
-    ["16"] = { id = "2042581436", name = "annoying citizen" },
-    ["17"] = { id = "6872126938", name = "Young vacations" },
-    ["18"] = { id = "6695430066", name = "nuts" },
-    ["19"] = { id = "5216738441", name = "big obama the real g" },
-    ["20"] = { id = "9038620433", name = "Out Of My Head" },
-    ["21"] = { id = "6819593773", name = "ISVVC - Project Junt" },
-    ["22"] = { id = "8147012902", name = "gigachad loop" },
-    ["23"] = { id = "6893776529", name = "Plasdu & 1006x3 - Kroxxxxroadxx" },
-    ["24"] = { id = "6788646778", name = "Hella Sketches" },
-    ["25"] = { id = "9124780123", name = "Miss the rage Loop (Sparo Loop)" },
-    ["26"] = { id = "6897686359", name = "fizz" },
-    ["27"] = { id = "142376088", name = "Raining Tacos" },
-    ["28"] = { id = "1846368080", name = "Stadium Rave (A)" },
-    ["29"] = { id = "1840511219", name = "Funky Fanfare" },
-    ["30"] = { id = "1839404854", name = "Rock In" },
-    ["31"] = { id = "6674211522", name = "Loud music fail" },
-    ["32"] = { id = "6984999899", name = "AAAAAAAAAAAAAAAAAAAAA" },
-    ["33"] = { id = "1838097718", name = "Royal Dedication" },
-    ["34"] = { id = "9038845849", name = "dubstep" },
-    ["35"] = { id = "1843622301", name = "Mumbai Moon" },
-    ["36"] = { id = "14145620056", name = "The Final Phonk" },
-    ["37"] = { id = "13530437708", name = "Phonk Vol 2 - The Final Phonk" },
-    ["38"] = { id = "14145627857", name = "Catch My Drift" },
-    ["39"] = { id = "14145624031", name = "Phonk Vol. 1" },
-    ["40"] = { id = "13530438299", name = "stop posting about baller" },
-    ["41"] = { id = "6845637094", name = "Legends Juice" },
-    ["42"] = { id = "6770303644", name = "Minecraft Chest" },
-    ["43"] = { id = "6783714255", name = "Brooklyn blood bop" },
-    ["44"] = { id = "1838028467", name = "VIP Me" },
-    ["45"] = { id = "1848354536", name = "James Clarke - Relaxed Scene" }, -- chill back (alt name before i found the actual original music)
-    ["46"] = { id = "45819151", name = "sad depressing music 4am" },
-    ["47"] = { id = "6828176320", name = "Painted black" },
-    ["48"] = { id = "5410084188", name = "WRLD - Hang Up" },
-    ["49"] = { id = "6911766512", name = "Cyber Chainsaw" },
-    ["50"] = { id = "7612400047", name = "Unknown" },
-    ["51"] = { id = "16190783444", name = "Dubidubidu (Techno Remix)" }, -- chipi chipi chapa chapa (alt name before i found clipply)
-    ["52"] = { id = "16190782786", name = "Lil Kuudere X sukoyomi" },
-    ["53"] = { id = "6844230235", name = "WHAT THE HELL" },
-    ["54"] = { id = "15689451063", name = "Interworld - Metamorphosis" },
-    ["55"] = { id = "15689455422", name = "kirkiimad - i love (slow+reverb version)" },
-    ["56"] = { id = "6937042327", name = "Stunning" },
-    ["57"] = { id = "1841668624", name = "Have a Lazy Day a" },
-    ["58"] = { id = "1848350335", name = "Desert Sands" },
-    ["59"] = { id = "6805032026", name = "KILL BILL (Fast)" },
-    ["60"] = { id = "1837853076", name = "SEE YOU IN HELL!" },
-    ["61"] = { id = "5410085763", name = "TOKYO MACHINE - PLAY!"},
-    ["62"] = { id = "7014573768", name = "pew sfx"},
-    ["63"] = { id = "1838635121", name = "Sad End"},
-    ["64"] = { id = "6841685130", name = "ButtonPress_53"},
-    ["65"] = { id = "1839817591", name = "Animation Opening"},
-    ["66"] = { id = "1837879082", name = "Paradise Falls"},
-    ["67"] = { id = "1837392641", name = "Cannibal Collection"},
-    ["68"] = { id = "6901063458", name = "Rihanna - SOS"},
-    ["69"] = { id = "16662831858", name = "WahRA - Idk Remix"},
-    ["70"] = { id = "7764369437", name = "BEEP"},
-    ["71"] = { id = "1845458027", name = "Smooth Nylons"},
-    ["72"] = { id = "9047105533", name = "No Smoking"},
-    ["73"] = { id = "1846808350", name = "Get Up And Boogie"},
-    ["74"] = { id = "14366981962", name = "Diss na Hagi Łagi"},
-    ["75"] = { id = "11265157079", name = "Advance Slayer"},
-    ["76"] = { id = "11265140685", name = "Untitled"},
-    ["77"] = { id = "11265166921", name = "Pierniki"},
-    ["78"] = { id = "11265137944", name = "Slayers Hatred"},
-    ["79"] = { id = "11265148479", name = "Amogus"},
-    ["80"] = { id = "11265145737", name = "Blaze You"},
-    ["81"] = { id = "11265173310", name = "Biszkopty"},
-    ["82"] = { id = "11265164947", name = "Chipsy"},
-    ["83"] = { id = "11496561844", name = "Fresh New Age"},
-    ["84"] = { id = "14884822656", name = "CyPhrix - StartUpSequence.cprx"},
-    ["85"] = { id = "14884819670", name = "CyPhrix - Wobble"},
-    ["86"] = { id = "14884823796", name = "XRAY"},
-    ["87"] = { id = "14884823178", name = "Three Dimensions"},
-    ["88"] = { id = "14884817162", name = "Angel Hour"},
-    ["89"] = { id = "14884823527", name = "Outcome"},
-    ["90"] = { id = "14366982317", name = "GTA"},
-    ["91"] = { id = "15689442195", name = "CEO"},
-    ["92"] = { id = "15689441772", name = "HELLFIRE" },
-    ["93"] = { id = "15689451512", name = "Nothing Bad Is Going to Happen" },
-    ["94"] = { id = "15689446882", name = "EXISTANCE"},
-    ["95"] = { id = "16190782511", name = "uzipack"},
-    ["96"] = { id = "9043887091", name = "Lo-fi Chill A"},
-    ["97"] = { id = "1837768517", name = "Bossa Me (a)"},
-    ["98"] = { id = "9039445224", name = "8 Bitty Kitty - Underscore"},
-    ["99"] = { id = "9046863579", name = "City Lights - Roblox"},
-    ["100"] = { id = "15689457918", name = "nMisaki - Dream Girl (sped up)"},
-    ["101"] = { id = "1845742414", name = "Appetizer"},
-    ["102"] = { id = "6889574376", name = "Rascal!"},
-    ["103"] = { id = "7029024726", name = "Throttle - Bloom"},
-    ["104"] = { id = "1840612595", name = "A New Renaissance"},  
-    ["105"] = { id = "1836054144", name = "Upbeat Dude"},
-    ["106"] = { id = "1837275138", name = "Never Enough"},
-    ["107"] = { id = "1839917800", name = "Unknown"},
-    ["108"] = { id = "1840221593", name = "Fit For Life (A)"},
-    ["109"] = { id = "9041863801", name = "Unknown"},
-    ["110"] = { id = "1836711447", name = "Just Like Me"},
-    ["111"] = { id = "1845070869", name = "Eye Open"},
-    ["112"] = { id = "1847863129", name = "Tech Synth A"},
-    ["113"] = { id = "1845073388", name = "Need For Speed"},
-    ["114"] = { id = "1845092143", name = "Super Nova"},
-    ["115"] = { id = "1840006904", name = "Tricky (a)"}
+	-- note from basket ~ how the fuck do you mess up songs bruv you have to type ".gmusic2" not ".gmusic 2" so i added a makeshift fix
+    [" 1"] = { id = "9048375035", name = "All dropping 8 beats" },
+    [" 2"] = { id = "6680495507", name = "Robbery" },
+    [" 3"] = { id = "6529070845", name = "Brace Yourself" },
+    [" 4"] = { id = "6917155909", name = "They trying to be cray" },
+    [" 5"] = { id = "6913550990", name = "TLT FNAF 2" },
+    [" 6"] = { id = "6847929757", name = "LONER" },
+    [" 7"] = { id = "1839029458", name = "Exotico Speedo" },
+    [" 8"] = { id = "35930009", name = "Monster Mash" },
+    [" 9"] = { id = "6772846771", name = "TOT!" },
+    [" 10"] = { id = "11808880515", name = "women song" },
+    [" 11"] = { id = "6681840651", name = "What?!" },
+    [" 12"] = { id = "1841647093", name = "Life in an Elevator" },
+    [" 13"] = { id = "1837070127", name = "Prima Bossa" },
+    [" 14"] = { id = "6806140478", name = "Night Lights" },
+    [" 15"] = { id = "6703926669", name = "Freaks" },
+    [" 16"] = { id = "2042581436", name = "annoying citizen" },
+    [" 17"] = { id = "6872126938", name = "Young vacations" },
+    [" 18"] = { id = "6695430066", name = "nuts" },
+    [" 19"] = { id = "5216738441", name = "big obama the real g" },
+    [" 20"] = { id = "9038620433", name = "Out Of My Head" },
+    [" 21"] = { id = "6819593773", name = "ISVVC - Project Junt" },
+    [" 22"] = { id = "8147012902", name = "gigachad loop" },
+    [" 23"] = { id = "6893776529", name = "Plasdu & 1006x3 - Kroxxxxroadxx" },
+    [" 24"] = { id = "6788646778", name = "Hella Sketches" },
+    [" 25"] = { id = "9124780123", name = "Miss the rage Loop (Sparo Loop)" },
+    [" 26"] = { id = "6897686359", name = "fizz" },
+    [" 27"] = { id = "142376088", name = "Raining Tacos" },
+    [" 28"] = { id = "1846368080", name = "Stadium Rave (A)" },
+    [" 29"] = { id = "1840511219", name = "Funky Fanfare" },
+    [" 30"] = { id = "1839404854", name = "Rock In" },
+    [" 31"] = { id = "6674211522", name = "Loud music fail" },
+    [" 32"] = { id = "6984999899", name = "AAAAAAAAAAAAAAAAAAAAA" },
+    [" 33"] = { id = "1838097718", name = "Royal Dedication" },
+    [" 34"] = { id = "9038845849", name = "dubstep" },
+    [" 35"] = { id = "1843622301", name = "Mumbai Moon" },
+    [" 36"] = { id = "14145620056", name = "The Final Phonk" },
+    [" 37"] = { id = "13530437708", name = "Phonk Vol 2 - The Final Phonk" },
+    [" 38"] = { id = "14145627857", name = "Catch My Drift" },
+    [" 39"] = { id = "14145624031", name = "Phonk Vol. 1" },
+    [" 40"] = { id = "13530438299", name = "stop posting about baller" },
+    [" 41"] = { id = "6845637094", name = "Legends Juice" },
+    [" 42"] = { id = "6770303644", name = "Minecraft Chest" },
+    [" 43"] = { id = "6783714255", name = "Brooklyn blood bop" },
+    [" 44"] = { id = "1838028467", name = "VIP Me" },
+    [" 45"] = { id = "1848354536", name = "James Clarke - Relaxed Scene" }, -- chill back (alt name before i found the actual original music)
+    [" 46"] = { id = "45819151", name = "sad depressing music 4am" },
+    [" 47"] = { id = "6828176320", name = "Painted black" },
+    [" 48"] = { id = "5410084188", name = "WRLD - Hang Up" },
+    [" 49"] = { id = "6911766512", name = "Cyber Chainsaw" },
+    [" 50"] = { id = "7612400047", name = "Unknown" },
+    [" 51"] = { id = "16190783444", name = "Dubidubidu (Techno Remix)" }, -- chipi chipi chapa chapa (alt name before i found clipply)
+    [" 52"] = { id = "16190782786", name = "Lil Kuudere X sukoyomi" },
+    [" 53"] = { id = "6844230235", name = "WHAT THE HELL" },
+    [" 54"] = { id = "15689451063", name = "Interworld - Metamorphosis" },
+    [" 55"] = { id = "15689455422", name = "kirkiimad - i love (slow+reverb version)" },
+    [" 56"] = { id = "6937042327", name = "Stunning" },
+    [" 57"] = { id = "1841668624", name = "Have a Lazy Day a" },
+    [" 58"] = { id = "1848350335", name = "Desert Sands" },
+    [" 59"] = { id = "6805032026", name = "KILL BILL (Fast)" },
+    [" 60"] = { id = "1837853076", name = "SEE YOU IN HELL!" },
+    [" 61"] = { id = "5410085763", name = "TOKYO MACHINE - PLAY!"},
+    [" 62"] = { id = "7014573768", name = "pew sfx"},
+    [" 63"] = { id = "1838635121", name = "Sad End"},
+    [" 64"] = { id = "6841685130", name = "ButtonPress_53"},
+    [" 65"] = { id = "1839817591", name = "Animation Opening"},
+    [" 66"] = { id = "1837879082", name = "Paradise Falls"},
+    [" 67"] = { id = "1837392641", name = "Cannibal Collection"},
+    [" 68"] = { id = "6901063458", name = "Rihanna - SOS"},
+    [" 69"] = { id = "16662831858", name = "WahRA - Idk Remix"},
+    [" 70"] = { id = "7764369437", name = "BEEP"},
+    [" 71"] = { id = "1845458027", name = "Smooth Nylons"},
+    [" 72"] = { id = "9047105533", name = "No Smoking"},
+    [" 73"] = { id = "1846808350", name = "Get Up And Boogie"},
+    [" 74"] = { id = "14366981962", name = "Diss na Hagi Łagi"},
+    [" 75"] = { id = "11265157079", name = "Advance Slayer"},
+    [" 76"] = { id = "11265140685", name = "Untitled"},
+    [" 77"] = { id = "11265166921", name = "Pierniki"},
+    [" 78"] = { id = "11265137944", name = "Slayers Hatred"},
+    [" 79"] = { id = "11265148479", name = "Amogus"},
+    [" 80"] = { id = "11265145737", name = "Blaze You"},
+    [" 81"] = { id = "11265173310", name = "Biszkopty"},
+    [" 82"] = { id = "11265164947", name = "Chipsy"},
+    [" 83"] = { id = "11496561844", name = "Fresh New Age"},
+    [" 84"] = { id = "14884822656", name = "CyPhrix - StartUpSequence.cprx"},
+    [" 85"] = { id = "14884819670", name = "CyPhrix - Wobble"},
+    [" 86"] = { id = "14884823796", name = "XRAY"},
+    [" 87"] = { id = "14884823178", name = "Three Dimensions"},
+    [" 88"] = { id = "14884817162", name = "Angel Hour"},
+    [" 89"] = { id = "14884823527", name = "Outcome"},
+    [" 90"] = { id = "14366982317", name = "GTA"},
+    [" 91"] = { id = "15689442195", name = "CEO"},
+    [" 92"] = { id = "15689441772", name = "HELLFIRE" },
+    [" 93"] = { id = "15689451512", name = "Nothing Bad Is Going to Happen" },
+    [" 94"] = { id = "15689446882", name = "EXISTANCE"},
+    [" 95"] = { id = "16190782511", name = "uzipack"},
+    [" 96"] = { id = "9043887091", name = "Lo-fi Chill A"},
+    [" 97"] = { id = "1837768517", name = "Bossa Me (a)"},
+    [" 98"] = { id = "9039445224", name = "8 Bitty Kitty - Underscore"},
+    [" 99"] = { id = "9046863579", name = "City Lights - Roblox"},
+    [" 100"] = { id = "15689457918", name = "nMisaki - Dream Girl (sped up)"},
+    [" 101"] = { id = "1845742414", name = "Appetizer"},
+    [" 102"] = { id = "6889574376", name = "Rascal!"},
+    [" 103"] = { id = "7029024726", name = "Throttle - Bloom"},
+    [" 104"] = { id = "1840612595", name = "A New Renaissance"},  
+    [" 105"] = { id = "1836054144", name = "Upbeat Dude"},
+    [" 106"] = { id = "1837275138", name = "Never Enough"},
+    [" 107"] = { id = "1839917800", name = "Unknown"},
+    [" 108"] = { id = "1840221593", name = "Fit For Life (A)"},
+    [" 109"] = { id = "9041863801", name = "Unknown"},
+    [" 110"] = { id = "1836711447", name = "Just Like Me"},
+    [" 111"] = { id = "1845070869", name = "Eye Open"},
+    [" 112"] = { id = "1847863129", name = "Tech Synth A"},
+    [" 113"] = { id = "1845073388", name = "Need For Speed"},
+    [" 114"] = { id = "1845092143", name = "Super Nova"},
+    [" 115"] = { id = "1840006904", name = "Tricky (a)"}
 }
 
 local gearlist = {
