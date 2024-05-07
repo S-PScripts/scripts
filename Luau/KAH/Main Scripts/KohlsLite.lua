@@ -10912,6 +10912,7 @@ task.spawn(function()
 					end
 				end
 			end
+			-- can't get audio from boomboxes but just use iy audio logger lol	
 		end
 	end
 end)
