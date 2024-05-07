@@ -257,6 +257,8 @@ local musicplay
 
 -- Thanks to Dizzy for this idea of writing my musiclist (also I used ChatGPT to update it so cry!)
 -- All the music ids I've saved
+-- PLEASE NOTE THAT "GMUSIC1" ETC. IS INTENTIONAL. THE MISSING SPACE BETWEEN GMUSIC AND 1 IS INTENTIONAL.
+
 local musictable = {
     ["1"] = { id = "9048375035", name = "All dropping 8 beats" },
     ["2"] = { id = "6680495507", name = "Robbery" },
