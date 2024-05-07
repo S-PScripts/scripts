@@ -35,7 +35,7 @@ getgenv().kohlsexecuted = true -- don't touch!
 
 getgenv().deprefix = "." -- This can be of any length
 
-getgenv().klversion = "1.56" -- The version of KohlsLite, of course.
+getgenv().klversion = "1.56 dev" -- The version of KohlsLite, of course.
 
 local function Chat(msg)
       game.Players:Chat(msg)
@@ -9475,53 +9475,6 @@ workspace:GetPropertyChangedSignal("CurrentCamera"):Connect(function()
 	end
 end)
 
-function GetFocusDistance(cameraFrame)
-	local znear = 0.1
-	local viewport = workspace.CurrentCamera.ViewportSize
-	local projy = 2*math.tan(cameraFov/2)
-	local projx = viewport.x/viewport.y*projy
-	local fx = cameraFrame.rightVector
-	local fy = cameraFrame.upVector
-	local fz = cameraFrame.lookVector
-
-	local minVect = Vector3.new()
-	local minDist = 512
-
-	for x = 0, 1, 0.5 do
-		for y = 0, 1, 0.5 do
-			local cx = (x - 0.5)*projx
-			local cy = (y - 0.5)*projy
-			local offset = fx*cx - fy*cy + fz
-			local origin = cameraFrame.p + offset*znear
-			local _, hit = workspace:FindPartOnRay(Ray.new(origin, offset.unit*minDist))
-			local dist = (hit - origin).magnitude
-			if minDist > dist then
-				minDist = dist
-				minVect = offset.unit
-			end
-		end
-	end
-
-	return fz:Dot(minVect)*minDist
-end
-
-function StepFreecam(dt)
-	local vel = velSpring:Update(dt, Input.Vel(dt))
-	local pan = panSpring:Update(dt, Input.Pan(dt))
-
-	local zoomFactor = math.sqrt(math.tan(math.rad(70/2))/math.tan(math.rad(cameraFov/2)))
-
-	cameraRot = cameraRot + pan*Vector2.new(0.75, 1)*8*(dt/zoomFactor)
-	cameraRot = Vector2.new(math.clamp(cameraRot.x, -math.rad(90), math.rad(90)), cameraRot.y%(2*math.pi))
-
-	local cameraCFrame = CFrame.new(cameraPos)*CFrame.fromOrientation(cameraRot.x, cameraRot.y, 0)*CFrame.new(vel*Vector3.new(1, 1, 1)*64*dt)
-	cameraPos = cameraCFrame.p
-
-	workspace.CurrentCamera.CFrame = cameraCFrame
-	workspace.CurrentCamera.Focus = cameraCFrame*CFrame.new(0, 0, -GetFocusDistance(cameraCFrame))
-	workspace.CurrentCamera.FieldOfView = cameraFov
-end
-
 Spring = {} do
 	Spring.__index = Spring
 
@@ -9699,6 +9652,53 @@ local PlayerState = {} do
 		UserInputService.MouseBehavior = mouseBehavior
 		mouseBehavior = nil
 	end
+end
+
+function GetFocusDistance(cameraFrame)
+	local znear = 0.1
+	local viewport = workspace.CurrentCamera.ViewportSize
+	local projy = 2*math.tan(cameraFov/2)
+	local projx = viewport.x/viewport.y*projy
+	local fx = cameraFrame.rightVector
+	local fy = cameraFrame.upVector
+	local fz = cameraFrame.lookVector
+
+	local minVect = Vector3.new()
+	local minDist = 512
+
+	for x = 0, 1, 0.5 do
+		for y = 0, 1, 0.5 do
+			local cx = (x - 0.5)*projx
+			local cy = (y - 0.5)*projy
+			local offset = fx*cx - fy*cy + fz
+			local origin = cameraFrame.p + offset*znear
+			local _, hit = workspace:FindPartOnRay(Ray.new(origin, offset.unit*minDist))
+			local dist = (hit - origin).magnitude
+			if minDist > dist then
+				minDist = dist
+				minVect = offset.unit
+			end
+		end
+	end
+
+	return fz:Dot(minVect)*minDist
+end
+
+function StepFreecam(dt)
+	local vel = velSpring:Update(dt, Input.Vel(dt))
+	local pan = panSpring:Update(dt, Input.Pan(dt))
+
+	local zoomFactor = math.sqrt(math.tan(math.rad(70/2))/math.tan(math.rad(cameraFov/2)))
+
+	cameraRot = cameraRot + pan*Vector2.new(0.75, 1)*8*(dt/zoomFactor)
+	cameraRot = Vector2.new(math.clamp(cameraRot.x, -math.rad(90), math.rad(90)), cameraRot.y%(2*math.pi))
+
+	local cameraCFrame = CFrame.new(cameraPos)*CFrame.fromOrientation(cameraRot.x, cameraRot.y, 0)*CFrame.new(vel*Vector3.new(1, 1, 1)*64*dt)
+	cameraPos = cameraCFrame.p
+
+	workspace.CurrentCamera.CFrame = cameraCFrame
+	workspace.CurrentCamera.Focus = cameraCFrame*CFrame.new(0, 0, -GetFocusDistance(cameraCFrame))
+	workspace.CurrentCamera.FieldOfView = cameraFov
 end
 
 fcRunning = false
