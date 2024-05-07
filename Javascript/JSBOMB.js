@@ -1,6 +1,6 @@
 // i don't care what you do with this anymore
 
-// scratch javascript remix bomb made by dzje, not me (TS2021)
+// scratch javascript remix bomb made by derv, not me (TS2021)
 // execute the code in console
 
 var e = 1 // id of starting project
