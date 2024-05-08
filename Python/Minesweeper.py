@@ -1,4 +1,6 @@
-# by my friend lmfao
+# Minesweeper.py
+# This is by my friend xd
+# This is broken too
 
 import turtle #imports turtle module
 import random
