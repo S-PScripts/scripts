@@ -196,7 +196,7 @@ local GWhitelisted = {}
 
 -- Perm Gear Whitelist
 local pgwl = {
-    "me_123eq",
+  "me_123eq",
     "me_crashking",
     "ScriptingProgrammer",
     "t_echr",
@@ -215,6 +215,7 @@ local pgwl = {
     "clydekash",
     "t_echl",
     "Ih0temyIife",
+    "D_ionte",
     "SZCVAK",
     "TheRealestOnHere",
     "Altsarecooleh",
@@ -222,8 +223,9 @@ local pgwl = {
     "Me_ChurchOfSat4n",
     "Milderous",
     "Anka_707587",
-    "D_ionte",
     "DionteIsCute",
+    "me_capybara",
+    "E4_DQ",
     "vgcrash"
 }
 
