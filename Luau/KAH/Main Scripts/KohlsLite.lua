@@ -8480,10 +8480,12 @@ function VFix()
     for i,v in pairs(game:GetService("Workspace").Terrain._Game.Workspace:GetDescendants()) do
         if v:IsA("BasePart") then
             v.Velocity = Vector3.new(0,0,0)
+	    v.RotVelocity = Vector3.new(0, 0, 0)
         end
     end
-    workspace.Terrain._Game.Workspace.Baseplate.AssemblyLinearVelocity = Vector3.new(0, 0, 0)
-    game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0, 0, 0)
+    workspace.Terrain._Game.Workspace.Baseplate.Velocity = Vector3.new(0,0,0)
+    workspace.Terrain._Game.Workspace.Baseplate.RotVelocity = Vector3.new(0,0,0) 
+--game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0, 0, 0)
 end
 
 function ColFix()
