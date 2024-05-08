@@ -7126,10 +7126,20 @@ task.spawn(function()
 
         if YOUantisetgrav == true then
                 if game.Players.LocalPlayer.Character:FindFirstChild("Torso") then
-                        if game.Players.LocalPlayer.Character.Torso:FindFirstChildOfClass("BodyForce") then
-                                        game.Players.LocalPlayer.Character.Torso:FindFirstChildOfClass("BodyForce"):Destroy()
-                                        Chat("respawn me")
-                        end
+			lproot = game.Players.LocalPlayer.Character.HumanoidRootPart
+			for i,v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+				if v:IsA("BodyForce") then
+						v:Destroy()
+						v.Force = Vector3.new(0, 0, 0)
+					        lproot.Velocity = Vector3.new(0, 0, 0)
+
+				end
+				
+				if v:IsA("BodyPosition") then
+						v:Destroy()
+					        lproot.Velocity = Vector3.new(0, 0, 0)
+				end
+			end
                 end
         end
 
