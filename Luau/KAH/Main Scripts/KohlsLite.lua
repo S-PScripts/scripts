@@ -5189,6 +5189,16 @@ Commands required: rocket]])
         Remind("Turned this anti off for you!")
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'antitp' then
+        antitp = true
+        Remind("Turned this anti on for you!")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'unantitp' then
+        antitp = false
+        Remind("Turned this anti off for you!")
+    end
+
   if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antivoid' then
         YOUantivoid = true
         Remind("Turned this anti on for you!")
@@ -7449,6 +7459,30 @@ game:GetService("RunService").RenderStepped:Connect(function()
                            end
             end
      end 
+end)
+
+-- anti tp 
+game:GetService("RunService").RenderStepped:Connect(function()
+        task.wait(0)
+	if antitp then
+		local lplr = game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait()
+		local hrp = lplr:WaitForChild("HumanoidRootPart")
+
+		if pos1 == nil then
+			pos1 = hrp.CFrame
+			pos2 = hrp.CFrame
+		end
+
+		local distance = (Vector3.new(pos1.x, pos1.y, pos1.z) - Vector3.new(pos2.x, pos2.y, pos2.z)).Magnitude
+		if math.floor(distance) > 8 then
+			hrp.CFrame = CFrame.new(Vector3.new(pos1.x, pos1.y, pos1.z))
+			pos1 = hrp.CFrame
+			pos2 = hrp.CFrame
+		else
+			pos1 = pos2
+			pos2 = hrp.CFrame
+		end
+	end
 end)
 
 -- ANTIS FOR CRASHING ATTACHING GEARBANNING AND HAVING A GEAR
