@@ -2749,7 +2749,6 @@ Commands required: rocket]])
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'glitch' then -- noobsploit
 		local dosd = string.sub(msg:lower(), #prefix + 8)
 		Chat("gear me 71037101")
-		task.wait(1)
  		repeat task.wait() until game.Players.LocalPlayer.Backpack:FindFirstChild("DaggerOfShatteredDimensions")
         	dagg = game.Players.LocalPlayer.Backpack:FindFirstChild("DaggerOfShatteredDimensions")
         	task.wait()
@@ -2761,7 +2760,60 @@ Commands required: rocket]])
 		task.wait(2)
 		Chat("reset me")
     end
+		
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'headrise' then -- jotunnheim
+		local hrise = string.sub(msg:lower(), #prefix + 10)	
+		Chat("size " .. hrise .. " .3")
+                Chat("bighead " .. hrise);task.wait()
+                Chat("size " .. hrise .. " 10");task.wait()
+                Chat("thaw " .. hrise);task.wait()
+                Chat("unsize " .. hrise)
 
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'headroot' then -- jotunnheim
+		local hroot = string.sub(msg:lower(), #prefix + 10)	
+		Chat("size " .. hroot .. " 10");task.wait()
+                Chat("freeze " .. hroot);task.wait()
+                Chat("bighead " .. hroot);task.wait()
+                Chat("size " .. hroot .. " .3");task.wait()
+                Chat("thaw " .. hroot);task.wait()
+                Chat("unsize " .. hroot)
+    end
+		
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'skybox' then -- jotunnheim
+		local skbox = string.sub(msg:lower(), #prefix + 8)	
+		Chat("size " .. skbox .. " .3")
+                Chat("freeze " .. skbox)
+                Chat("size " .. skbox .. " 10")
+                Chat("goldify " .. skbox)
+                Chat("clone " .. skbox)
+                Chat("reset " .. skbox)
+    end
+
+   if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'amputate' then -- jotunnheim
+		local amp = string.sub(msg:lower(), #prefix + 10)	
+		Chat("size " .. amp .. " 10")
+                task.wait(.3)
+                Chat("freeze " .. amp)
+                task.wait(.3)
+                Chat("trip " .. amp)
+                task.wait(.3)
+                Chat("unsize " .. amp)
+                task.wait(.3)
+                Chat("paint " .. amp .. " red")
+    end
+		
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'icetower' then -- jotunnheim
+		local icet = string.sub(msg:lower(), #prefix + 10)
+		for i = 1, 30 do
+                    Chat("size " .. icet .. " .6")
+                    Chat("seizure " .. icet)
+                    Chat("freeze " .. icet)
+                    Chat("unsize " .. icet)
+                end
+    end
+				
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'coconut' then -- noobsploit
 		local coco = string.sub(msg:lower(), #prefix + 9)
 		Chat("char "..coco.." 5")
