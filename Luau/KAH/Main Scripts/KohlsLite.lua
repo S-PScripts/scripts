@@ -181,7 +181,9 @@ local specialperms = {
     "D_ionte",
     "EternitHD",
     "Milderous",
-    "DionteIsCute"
+    "DionteIsCute",
+    "Dekryptionite",
+    "3cxos"
 }
 
 -- New users get blacklisted (prevent crashers)
