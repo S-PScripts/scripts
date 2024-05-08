@@ -1694,14 +1694,14 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                     Chat("fix")
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'sclr' then
+    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'sclr' then -- super clr fix everything (ffix does everything to yourself)
                 Chat("fix")
                 Chat("clr")
                 Chat("removeclones")
                 Chat("removejails")
 		Chat(prefix.."fixpaint")
 		Chat("reload all")
-		Chat("Cleaned the server")
+		Remind("Cleaned the server.") 
     end
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'volm' then -- rap e
@@ -1881,7 +1881,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          end
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'song' then
+    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'song' then -- bit buggy if you stop the music but keep the playlist open
              local args = string.split(msg, " ")
              if #args == 2 then
                 local shazam = args[2]
@@ -1931,14 +1931,14 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         end
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'gchar' then
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'gchar' then -- tech added this command to scv3 var :)
         local args = string.split(msg, " ")
         local target = args[2]
         local specialid = table.concat(args, " ", 3)
         local charpos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
         local circus = game.Players:GetUserIdFromNameAsync(specialid)
         Chat("char " .. target .. " " .. circus);task.wait(0.5)
-        if target == "me" then
+        if target == "me" then -- it tps you back to your old position if you state that you're the person to have the char done
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = charpos
         end
     end
@@ -10907,17 +10907,17 @@ task.spawn(function()
                                 	nmusicid = musicid:match("id=(%d+)")
 					table.insert(musiclog, musicid)
 					if writefile and readfile then -- thanks dizzy
-	    					local cd = os.date("%Y-%m-%d %H:%M:%S")
-    						local logdsc = "Audio was detected at: [ ".. cd .. " ] \n The music id was: [ " .. nmusicid .. " ] \n The music file was : [ ".. musicid .." ]\n"
-   						local file = "KohlsLite/AudioLogger.txt"
-    						local text = ""
+	    					local cd = os.date("%Y-%m-%d %H:%M:%S") -- current date
+    						local logdsc = "Audio was detected at: [".. cd .. "] \n The music id was: [" .. nmusicid .. "] \n The music file was: [".. musicid .."]\n" -- alog text
+   						local file = "KohlsLite/AudioLogger.txt" -- file name
+    						local text = "" 
 	
-    						if isfile(file) then
+    						if isfile(file) then -- if the kl alog file already exists, it will make the text variable have the alog text
         						text = readfile(file)
     						end
 	
-    						text = text .. logdsc
-   					 	writefile(file, text)
+    						text = text .. logdsc -- adds the new alog text to the text variable. 
+   					 	writefile(file, text) -- write the text variable to the kl alog file
 					end
 				end
 			end
@@ -12199,4 +12199,7 @@ if table.find(unexecuteables, game.Players.LocalPlayer.Name) then
                 task.wait(2.5); while true do end
 end
 
--- Created with ❤️ -- s_p xxx
+-- Created with care by s_p :)
+
+-- ideas: add more lists to kl, add the vis to here ? building as well i don't have that yet
+-- dm me at ts2021x on discord if you have your own ideas
