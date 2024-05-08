@@ -6338,14 +6338,17 @@ print("untnok - un temp no obby kill")
 
 print("\n\n\n")
 print("speed - set your speed without the command")
+print("editsp - perm-speed")
+print("uneditsp - un perm-speed")
 print("jp - set your jump power without the command")
+print("editjp - perm-jumppower")
+print("uneditjp - un perm-jumppower")
 print("hlth - set your health without the command")
 print("ufly - the kah fly but without actually using the cmd!")
 
 print("\n\n\n")
 print("gear (plr) (name) - just a shortcut if you don't know gear ids")
 print("char (plr) (name) - just a shortcut if you don't know char ids")
-print("boombox - shortcut for gear plr boombox")
 
 print("\n\n\n")
 print("rejoin - rejoin the server you're in")
@@ -6359,7 +6362,7 @@ print("unnames - stop spam naming a player, naming currently breaks your cam")
 
 print("\n\n\n")
 print("announce - announce a message without your username in the h")
-print("cannounce - announce a message with the sender being someone in the server [troll]")
+print("cannounce (plr) (msg) - announce a message with the sender being someone in the server [troll]")
 
 print("\n\n\n")
 print("pinglogs - ping you when someone uses logs")
