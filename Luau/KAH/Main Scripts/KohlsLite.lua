@@ -31,6 +31,25 @@ if getgenv().kohlsexecuted then
         Remind("You've already executed KohlsLite!") 
 end
 
+if game.PlaceId ~= 112420803 and game.PlaceId ~= 115670532  then 
+	local response = Instance.new("BindableFunction")
+	function response.OnInvoke(answer)
+		if answer == "Yes" then
+		    	game:GetService("TeleportService"):Teleport(112420803, game:GetService("Players").LocalPlayer)
+		end
+	end
+	game:GetService("StarterGui"):SetCore("SendNotification", {
+			Title = "KohlsLite UX",
+			Text = "You are not in the right game. Would you like to serverhop?",
+			Duration = math.huge,
+			Callback = response,
+			Button1 = "Yes",
+			Button2 = "No"
+	})
+	return
+end
+
+	
 getgenv().kohlsexecuted = true -- don't touch!
 
 getgenv().deprefix = "." -- This can be of any length
