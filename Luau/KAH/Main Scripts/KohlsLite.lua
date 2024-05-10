@@ -2195,6 +2195,14 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                 ColFix()
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'ivmove' then
+			yeahthemover("yeahhh")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'omove' then
+			yeahthemover("naa")
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'moveregen' then
                 if movestatus == true then 
                         return 
