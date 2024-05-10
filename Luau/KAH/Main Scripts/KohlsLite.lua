@@ -40,7 +40,7 @@ if game.PlaceId ~= 112420803 and game.PlaceId ~= 115670532  then
 	end
 	game:GetService("StarterGui"):SetCore("SendNotification", {
 			Title = "KohlsLite UX",
-			Text = "You are not in the right game. Would you like to serverhop?",
+			Text = "You are not in Kohls Admin House. Would you like to join KAH [NBC]?",
 			Duration = math.huge,
 			Callback = response,
 			Button1 = "Yes",
