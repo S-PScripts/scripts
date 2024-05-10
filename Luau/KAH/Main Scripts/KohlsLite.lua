@@ -4452,8 +4452,13 @@ Commands required: rocket]])
    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'bpfixv' then
 	local target = workspace.Terrain["_Game"].Workspace.Baseplate
 	movepart(target)  
-	repeat task.wait() until mready == true ; task.wait(0.33)
-	Chat("skydive me");task.wait(0.33);Chat("unskydive me");task.wait(0.33);Chat("respawn me")
+	repeat task.wait() until mready == true 
+	task.wait(0.5)
+	Chat("skydive me")
+	task.wait(0.75)
+	Chat("unskydive me")
+	task.wait(0.75)
+	Chat("respawn me")
 	Remind("If this didn't work, it might be that you didn't fix YOUR own velo yet! Do fixvelo then try again.")
      end
 
@@ -4461,9 +4466,16 @@ Commands required: rocket]])
 	Remind("Flipping...")
 	local target = workspace.Terrain["_Game"].Workspace.Baseplate
 	movepart(target)  
-	repeat task.wait() until mready == true ; task.wait(0.5)
-	Chat("skydive me");task.wait(0.75);Chat("unskydive me");task.wait(0.75);Chat("trip me");task.wait(0.75);Chat("respawn me")
-	Remind("Flipped the baseplate")
+	repeat task.wait() until mready == true
+	task.wait(0.5)
+	Chat("skydive me")
+	task.wait(0.75)
+	Chat("unskydive me")
+	task.wait(0.75)
+	Chat("trip me")
+	task.wait(0.75)
+	Chat("respawn me")
+	Remind("Flipped the baseplate!")
      end
 
      if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'fakebp' then
@@ -4473,7 +4485,7 @@ Commands required: rocket]])
                             PStore.Name = "PhantomStorage"
                             PStore.Parent = gamefolder
                 end
-                local Storage = gamefolder["PhantomStorage"] -- PhantomStorage folder
+                local Storage = gamefolder["PhantomStorage"] -- Phantom Storage folder
                 local Phantom_Baseplate = Instance.new("Part")
                 Phantom_Baseplate.BrickColor = BrickColor.new("Bright green")
                 Phantom_Baseplate.Material = Enum.Material.Plastic
@@ -11937,6 +11949,79 @@ function moveObject(target,movepos)
         end
 end
 
+-- part mover tool :O
+function yeahthemover(iloveminors)
+	local btool = Instance.new("Tool", game.Players.LocalPlayer.Backpack)
+  	local SelectionBox = Instance.new("SelectionBox", game.Workspace)
+  	local thebtool = Instance.new("Part")
+ 	thebtool.Parent = btool
+ 	thebtool.Name = ("Handle")
+ 	thebtool.CanCollide = false
+ 	thebtool.Anchored = false
+
+	SelectionBox.Name = "SelectBox"
+  	SelectionBox.LineThickness = 0.05
+	SelectionBox.Adornee = nil
+        SelectionBox.Color3 = Color3.fromRGB(0,0,255)
+	SelectionBox.Visible = false
+        btool.Name = "Delete Tool"
+        btool.RequiresHandle = false
+        local iseq = false
+        local Mouse = game.Players.LocalPlayer:GetMouse()
+  
+  	btool.Equipped:connect(function()
+   		iseq = true
+   		SelectionBox.Visible = true
+   		SelectionBox.Adornee = nil
+  	end)
+  
+  	btool.Unequipped:connect(function()
+ 	  	iseq = false
+ 	 	SelectionBox.Visible = false
+ 		SelectionBox.Adornee = nil
+  	end)
+
+	btool.Activated:connect(function()
+  		if iseq then
+    			btool.Parent = game.Chat
+	
+   			local explode = Instance.new('Explosion')
+   			explode.BlastRadius = 0
+   			explode.Position = Mouse.Target.Position
+   			explode.Parent = game.Workspace
+		
+   			local prevcfarchive = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+			local target = Mouse.Target
+
+			if iloveminors == "naa" then
+				movepart(target)
+		        	repeat task.wait() until mready == true
+		
+				for i = 1, 5 do
+					Chat("skydive me")
+				end
+				task.wait(0.1)
+				Chat("respawn me")
+				task.wait(0.25)
+			else 
+				print'i sneezed whilst writing this llne of text, cool amirite'
+				moveobject(target, 1)
+				task.wait(1.75)
+			end
+		
+			game.Chat["Delete Tool"].Parent = game.Players.LocalPlayer.Backpack
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = prevcfarchive
+		
+			spawn(function()
+    				task.wait(3)
+    				if game.Chat:FindFirstChild("Delete Tool") then
+        				game.Chat["Delete Tool"]:Destroy()
+    				end
+			end)
+		end
+	end)
+end
+
 -- attach v1 for fixing baseplate --
 function movepart(target)
 	repeat wait() until game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")
@@ -11962,6 +12047,7 @@ function movepart(target)
 	end)
 
 	task.wait(0.25)
+        repeat wait() until game.Players.LocalPlayer.Character.Torso:FindFirstChild("Weld")
 	rmoving = false;mready = true
 
 end
