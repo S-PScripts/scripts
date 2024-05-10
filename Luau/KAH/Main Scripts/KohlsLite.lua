@@ -5,7 +5,7 @@
 █████╔╝ ██║   ██║███████║██║     ███████╗██║     ██║   ██║   █████╗  
 ██╔═██╗ ██║   ██║██╔══██║██║     ╚════██║██║     ██║   ██║   ██╔══╝  
 ██║  ██╗╚██████╔╝██║  ██║███████╗███████║███████╗██║   ██║   ███████╗
-╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝╚═╝   ╚═╝   ╚══════╝ v1.56 ]]
+╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝╚═╝   ╚═╝   ╚══════╝ v1.57 ]]
 
 -- This free, open-source script is for the Roblox game Kohls Admin House (KAH)
 -- You can play KAH here: https://www.roblox.com/games/112420803/Kohls-Admin-House-NBC-Updated
@@ -54,7 +54,7 @@ getgenv().kohlsexecuted = true -- don't touch!
 
 getgenv().deprefix = "." -- This can be of any length
 
-getgenv().klversion = "1.56 dev" -- The version of KohlsLite, of course.
+getgenv().klversion = "1.57" -- The version of KohlsLite, of course.
 
 local function Chat(msg)
       game.Players:Chat(msg)
