@@ -39,7 +39,7 @@ if game.PlaceId ~= 112420803 and game.PlaceId ~= 115670532  then
 		end
 	end
 	game:GetService("StarterGui"):SetCore("SendNotification", {
-			Title = "KohlsLite UX",
+			Title = "KohlsLite Manager",
 			Text = "You are not in Kohls Admin House. Would you like to join KAH [NBC]?",
 			Duration = math.huge,
 			Callback = response,
@@ -7925,7 +7925,7 @@ function PtSH()
 		end
 	end
 	game:GetService("StarterGui"):SetCore("SendNotification", {
-			Title = "KohlsLite",
+			Title = "KohlsLite Manager",
 			Text = "This server is crashed. Would you like to serverhop?",
 			Duration = math.huge,
 			Callback = response,
