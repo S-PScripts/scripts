@@ -2759,6 +2759,21 @@ Commands required: rocket]])
                 Remind("You should be attached to the player!")
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'ncontrol' then -- really funny ngl (cmdpi)
+        	local dasplayer = string.sub(msg:lower(), #prefix + 10)
+                PLAYERCHECK(dasplayer)
+                if player ~= nil then
+			Chat('size me nan')
+			Chat('invis me')
+			Chat('stun ' .. player)
+			Mover:Attach(cplr.Character.Torso)
+            		Chat('size me nan')
+                        Remind("Attaching to "..player)
+                else                        
+                        Remind('Cannot find player with the name: '..dasplayer)
+                end
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'iceblock' then -- pr script
                 local theblock = string.sub(msg:lower(), #prefix + 10)
                 if theblock == "me" then
@@ -7482,6 +7497,63 @@ Speak("⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻�
 Speak("⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻")
 end
 
+local Mover = {}
+
+Mover.Attached = {Value = false}
+Mover.Finished = {Value = false}
+
+Mover.Moving = false
+Mover.PosSet = false
+
+function Mover:CleanUp()
+    Mover.Attached.Value = false
+    Mover.PosSet = false
+    Mover.FPosSet = false
+    Mover.Moving = false
+    Mover.Finished.Value = false
+    workspace.Gravity, workspace.FallenPartsDestroyHeight = 198.2, -500
+
+    for _,v in pairs(workspace:GetDescendants()) do
+        if v:IsA("BasePart") and v.Name ~= "Rocket" then
+            v.CanCollide = true   
+        end
+    end
+end
+
+function Mover:Attach(object, moveToPos)
+    if game.Players.LocalPlayer.Character and object then
+        local Root = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
+        while Root do
+            wait()
+            if Root.Parent.Torso:FindFirstChild("Weld") or Root.Parent.Torso:FindFirstChild("Snap") then
+                local Weld = Root.Parent.Torso:FindFirstChild("Weld") or Root.Parent.Torso:FindFirstChild("Snap")
+                if Weld.Part0 and Weld.Part1 then
+                    local Part0 = Weld.Part0
+                    local Part1 = Weld.Part1
+                    if Part1 ~= object then
+                        Chat('reset me')
+                        Remind("Attached to wrong part.")
+                        Mover:CleanUp()
+                        break
+                    elseif Part1 == object then
+                        Mover.Attached.Value = true
+                        break
+                    end
+                end
+            end
+            Root.CFrame = object.CFrame * CFrame.new(-1*(object.Size.X/2)-(Root.Size.X/2),0,0)
+            Chat("unpunish me me me")
+        end
+    end
+end
+
+function Mover:pingWait()
+    if (game.Players.LocalPlayer:GetNetworkPing() * 2000) <= 60 then
+        wait(.25)
+    else
+        wait((game.Players.LocalPlayer:GetNetworkPing() * 2000) / 533.3333333)
+    end
+end
 
 -- IP LEAK REAL :O :O :O
 function IPBOOM()
