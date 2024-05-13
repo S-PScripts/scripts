@@ -6531,16 +6531,13 @@ print("movehouse - move the house") -- add omovehouse
 print("\n\n\n")
 print("fixbb - fix the building bricks")
 print("movebb - move the building bricks") -- add omovebb
-
 print("\n\n\n")
 print("2fixbp - fix the baseplate alt")
 print("2fixpads - fix the pads alt")
 print("2fixreg - fix the regen alt")
-
 print("\n\n\n")
 print("cagespawn - jail at spawn")
 print("spawnkill - kill brick at spawn")
-	
 print("\n\n\n")
 print("antichat - crash everyone else by spamming a m command full of emojis")
 print("unantichat - stop trying to crash players with emojis.")
@@ -6548,81 +6545,66 @@ print("mkick - crash players with emojis using pm.")
 print("unmkick - stop trying to crash players with emojis.")
 print("rkick - crash someone using the rocket.")
 print("unrkick - stop trying to crash people using the rocket.")
-	
 print("\n\n\n")
 print("rail - rail a player")
 print("skcraze - start a frenzy of skateboards!")
 print("unskcraze - stop the frenzy")
 print("slag - lag a player with skateboards")
-
 print("\n\n\n")
 print("weld (player) (mode) - weld to a player - options are right/left arm, torso and hold")
 print("nweld - better weld for the hold mode")
 print("dummy - create a test dummy")
-
 print("\n\n\n")
 print("ungearme - ungear yourself... Right???")
 print("rpaintui - remove paint UI")
 print("byp (text) - bypass message as h (by tech)")
 print("nbyp (text) - bypass message as h (by me)")
-
 print("\n\n\n")
 print("isc - check if the server crashed")
 print("getping - say your ping")
-
 print("\n\n\n")
 print("acton (name) (times) - activate a gear a set amount of times from the saved list")
-		
 print("\n\n\n")
 print("theme (num) - themes!")
 print("gear (plr) (name) - give a player a gear from the saved list")
 print("char (plr) (name) - change a player's character from the saved list")
 print("gear (plr) (name) - give a player a gear - put a keyword as the name (PaintBucket for example) and gears will be searched in Roblox's catalogue with the name")
 print("char (plr) (name) - change a player's character to the user specified")
-
 print("\n\n\n")
 print("song - start a playlist of songs. Just enter a keyword (for example, lofi or phonk) and songs with the name will be searched in Roblox's audio library")
 print("ssong - skip a song in the playlist")
 print("esong - end the playlist")
-
 print("\n\n\n")
 print("surround - surround a player with planes")
 print("nuke - nuke a player with planes")
 print("rnuke (amount) (range) - nuke the map with planes")
-
 print("\n\n\n")
 print("jnuke - nuke the map with the RocketJumper gear")
 print("jnuke (player) - nuke a player with the RocketJumper")
 print("astrike - nuke an area with the RocketJumper by using your mouse!")
-
 print("\n\n\n")
 print("dnuke (amount) (range) - nuke the map with the conjuror's fist")
 print("dnuke (player) - nuke a player with the conjuror's fist")
-
 print("\n\n\n")
 print("rfgun (bullets) - rapid fire gun!")
 print("rcannon - rail cannon")
 print("wrcannon - wide rail cannon")
-
 print("\n\n\n")
 print("laser - laser and punish someone at the same time. they cannot respawn and are stuck in limbo")
 print("hfreeze - laser someone but stop them from fully getting lasered. they get stuck with a laser outline")
 print("tattach - attach to a player to control them!")
-
 print("\n\n\n")
 print("--- ANTI INFORMATION ---")
 print("There are also many other antis!")
 print("For antis relating to the player, do (antiname) me/others/all")
 print("To turn off the antis, do un(antiname) me/others/all")
 print("If it's to the game itself, just do (antiname).")
-
 print("\n\n\n")
 print("--- INFORMATION ---")
 print("KohlsLite, since 2023. Created by ScriptingProgrammer/ts2021")
 print("For help, please contact me on Discord at ts2021x")
 print("The version you are using is v"..getgenv().klversion..". This build was created on 5th May 2024 Build")
 print("Better than scv1 and scv2 - approved by Tech!")
-
 print("\n\n\n")
 print("--- CREDITS ---")
 print("Tech and other admins of SC with Shortcut v1, v2 and v3 [var] (and some ideas)")
@@ -6630,7 +6612,6 @@ print("atprog with his PR Script")
 print("iiDk's with ii's stupid admin as PR Script is based off it")
 print("Gojo [SimpleKAH] for gears and char ids")
 print("Dizzy [ROUTE] for music ids hahaha I'm a muskid")
-
 print("\n\n\n")
 print("--- ADDITIONAL INFO ---")
 print("1a. This script has some stuff missing and some stuff broken but it's not really finished. There's many stuff I'm still adding.")
