@@ -6301,47 +6301,38 @@ end)
 function CMDPrint()
 print("---Command list for KohlsLite---")
 print("Warning! This is NOT a full list so contact me for any other commands!")
-
 print("\n\n\n")
 print("perm - loopgrab a random pad (touch interest)")
 print("perm2 - loopgrab a random pad (collisions)")
-
 print("\n\n\n")
 print("unperm - stop loopgrabing a pad(perm)")
 print("unperm2 - stop loopgrabing a pad (perm2)")
-
 print("\n\n\n")
 print("loopgrab - loopgrab all the pads (touch interest)")
 print("loopgrab2 - loopgrab all the pads (touch interest)")
-
 print("\n\n\n")
 print("unloopgrab - stop loopgrabing all the pads")
 print("2unloopgrab - stop loopgrab all the pads")
-
 print("\n\n\n")
 print("fastpads - quickly tp to all the pads")
 print("regen - regenerate the admin pads")
 print("sregen - like padreinforcements but players can't have ANY admin pads")
 print("unsregen -  turn it off")
-
 print("\n\n\n")
 print("padban - stop a user from using the admin pads")
 print("unpadban - allow user to use admin pads again")
 print("padreinf - stop users from taking more than 2 admin pads")
 print("unpadreinf - allow users to take more than 2 admin pads again")
-
 print("\n\n\n")
 print("wl - whitelist a player from serverlocks")
 print("bl - blacklist a player (serverlock to certain players)")
 print("gearwl - whitelist a user to use gears with antigear/anticrash etc. on")
 print("admin - give a user free admin that can be used off yours")
-
 print("\n\n\n")
 print("unwl - unwhitelist a player from serverlocks")
 print("unbl - unblacklist a player")
 print("ungearwl - unwhitelist a user to use gears with antigear/anticrash etc. on")
 print("unadmin - remove a user's free admin")
-
 print("\n\n\n")
 print("listwl - print all whitelisted players")
 print("listbl - print all blacklisted players")
@@ -6350,26 +6341,21 @@ print("adminlist - print all admined players")
 print("musiclist - print all the saved musics")
 print("permusers - users that use perm")
 print("personsusers - users that use persons")
-
 print("\n\n\n")
 print("slock - serverlock a server")
 print("unslock - serverlock a server")
 print("newplrslock - automatically blacklist a new user (acc age under 21 days)")
 print("unnewplrslock - stop automatic blacklist for new users (acc age under 21 days)")
 print("plrnewlen - set the account age minimum for users")
-
 print("\n\n\n")
 print("alladmin - give everyone's free admin")
 print("unalladmin - remove everyone's free admin")
-
 print("\n\n\n")
 print("ipboom - who's ip address is that?")
-
 print("\n\n\n")
 print("sspawn - save your position")
 print("gsspawn - go to saved position")
 print("cpos - print your current position")
-
 print("\n\n\n")
 print("prefix - set the prefix")
 print("ping - say your ping")
@@ -6378,69 +6364,55 @@ print("iy - execute iy")
 print("adv - advertise this script (pls do this you are nice if you do this :D)")
 print("cadv - advertise the kah community server (pls do this you are nice if you do this :D)")
 print("frespawn - force respawn if punished")
-
 print("\n\n\n")
 print("welmsg - welcome people to the server (and leave msg too)")
 print("unwelmsg - no more welcome and leave msg")
-
 print("\n\n\n")
 print("autoafk - names you as afk when you're afk")
 print("unautoafk - stops naming you as afk when you're afk")
-
 print("\n\n\n")
 print("nocam/breakcam - break the camera with the AR")
 print("fixcam - fix the camera (client side)")
 print("wbcam/wfcam - break/fix the camera with the blizzard wand")
 print("bpfixv - fix baseplate velocity serverside")
-
 print("\n\n\n")
 print("goto - alt to tp me plr")
 print("cgoto - goto without admin")
 print("bring - alt to tp plr me")
-
 print("\n\n\n")
 print("biglogs - make the logs bigger!")
 print("chatz - chat a string of - causing the previous messages to vanish")
-
 print("\n\n\n")
 print("qattach - quickly attach to something with unpunish")
-
 print("\n\n\n")
 print("house - teleport to the house")
 print("spawn - teleport to spawn")
-
 print("\n\n\n")
 print("infjump - infinite jump")
 print("uninfjump - stop infinite jump")
-
 print("\n\n\n")
 print("checkperm - check player for perm")
 print("checkpersons - check player for persons")
 print("checkgps - check player for both")
 print("checkbp - check a player's backpack")
-
 print("\n\n\n")
 print("spamt - start spamming something")
 print("unspamt - stop spamming")
 print("spamw/spamw - the spam wait")
 print("spamoff - stop spamming (temp)")
 print("spamon - start spamming again")
-
 print("\n\n\n")
 print("fixpaint - fix the paint")
 print("pmap/paintmap - paint the map a colour")
 print("messpaint - what do you think?")
-
 print("\n\n\n")
 print("icemap - make the map ice - WARNING: THIS COMMAND MIGHT CRASH YOU")
 print("stonemap/rockmap - make the map stone")
-
 print("\n\n\n")
 print("nok - no obby kill")
 print("2nok - no obby kill")
 print("tnok - temp no obby kill")
 print("untnok - un temp no obby kill")
-
 print("\n\n\n")
 print("speed - set your speed without the command")
 print("editsp - perm-speed")
@@ -6450,39 +6422,31 @@ print("editjp - perm-jumppower")
 print("uneditjp - un perm-jumppower")
 print("hlth - set your health without the command")
 print("ufly - the kah fly but without actually using the cmd!")
-
 print("\n\n\n")
 print("gear (plr) (name) - just a shortcut if you don't know gear ids")
 print("char (plr) (name) - just a shortcut if you don't know char ids")
-
 print("\n\n\n")
 print("rejoin - rejoin the server you're in")
 print("shop - switch to a different server")
-
 print("\n\n\n")
 print("lagged - slow a player down with the car gear")
 print("unlagged - stop slowing a player down with the car gear")
 print("names - spam name a player, naming currently breaks your cam")
 print("unnames - stop spam naming a player, naming currently breaks your cam")
-
 print("\n\n\n")
 print("announce - announce a message without your username in the h")
 print("cannounce (plr) (msg) - announce a message with the sender being someone in the server [troll]")
-
 print("\n\n\n")
 print("pinglogs - ping you when someone uses logs")
 print("antilogs - spams logs when someone tries using it")
 print("pingcsystem - ping you when someone uses /c system (or /w)")
 print("logspam - spam the logs")
-
 print("\n\n\n")
 print("gearban - stop a user from using gears with the portable justice")
 print("ungearban - woah, what might this be? also you can ungearban yourself too xd")
-
 print("\n\n\n")
 print("supercmd - spam text a set amount of times")
 print("supert - times the spam should happen (anything above 128 exceeds the rate limit)")
-
 print("\n\n\n")
 print("pmu - your music only, if someone tries to change or stop it changes back")
 print("unpmu - not your music only anymore")
@@ -6490,7 +6454,6 @@ print("offmusic - turn the perm music off temporarily")
 print("onmusic - turn perm music on")
 print("antimusic - stop music from playing")
 print("unantimusic - lets people use music again")
-
 print("\n\n\n")
 print("remusic - restart the current music")
 print("volm - set the volume of the music")
@@ -6498,30 +6461,25 @@ print("cvol - print the current volume of music")
 print("musicid - print the current music id")
 print("timepos - set the time position")
 print("timeis - print the current time position")
-
 print("\n\n\n")
 print("pausem - pause the music")
 print("playm - play the music")
 print("stopm - stop the music")
 print("startm - start the music")
-
 print("\n\n\n")
 print("gmusic(num) - play saved music")
 print("rgmusic - play a random saved music")
 print("nmusic - play the next saved music")
 print("pmusic - play the previous saved music")
-
 print("\n\n\n")
 print("mboombox (musicid) - play a music on your boombox at a random place away from you")
 print("pboombox (musicid) - play a music on your boombox without inserting it into the box :)")
-
 print("\n\n\n")
 print("vgcrash - crash with the vg")
 print("dcrash - crash with clone and dog commands") 
 print("fcrash - crash with clone and freeze commands")
 print("pcrash - crash with the osas")
 print("[PERSONS REQUIRED] scrash - crash with the shield, rocket and clone commands")
-
 print("\n\n\n")
 print("anticrash - anti-crash with vg or osas")
 print("2anticrash - anti-crash with vg or osas")
@@ -6535,44 +6493,42 @@ print("antiattach2 - stop users from using the Ivory Periastron [exploiter]")
 print("antit - stop yourself from using gears")
 print("antikick - stop yourself from using hotpotato, bluebucket and the car gear")
 print("antitrip - anti trip mine")
-
 print("\n\n\n")
 print("ffix - fix your gravity and collision if it breaks when trying to move/fix stuff!")
 print("fixgrav - fix gravity")
 print("fixvelo - fix velocity")
 print("fixcol - fix collisions")
-
 print("\n\n\n")
 print("fixbp - fix the baseplate")
 print("movebp - move the baseplate") -- add omovebp
-
+print("\n\n\n")
 print("fixspawn - fix the spawns")
 print("movespawn - move the spawns") -- add omovespawn
-
+print("\n\n\n")
 print("fixregen - fix the regen")
 print("moveregen - move the regen") -- add omoveregen
-
+print("\n\n\n")
 print("fixpads - fix the pads")
 print("movepads - move the pads") -- add omovepads
-
+print("\n\n\n")
 print("fixfl - fix the floor")
 print("movefl - move the floor") -- add omovefl
-
+print("\n\n\n")
 print("fixobby - fix the obby")
 print("moveobby - move the obby") -- add omoveobby
-
+print("\n\n\n")
 print("fixkb - fix the kill bricks")
 print("movekb - move the kill bricks") -- add omovekb
-
+print("\n\n\n")
 print("fixobox - fix the obby box")
 print("moveobox - move the obby box") -- add omoveobox
-
+print("\n\n\n")
 print("fixadv - fix the admin dividers")
 print("moveadv - move the admin dividers") -- add omoveadv
-
+print("\n\n\n")
 print("fixhouse - fix the house")
 print("movehouse - move the house") -- add omovehouse
-
+print("\n\n\n")
 print("fixbb - fix the building bricks")
 print("movebb - move the building bricks") -- add omovebb
 
@@ -6581,6 +6537,7 @@ print("2fixbp - fix the baseplate alt")
 print("2fixpads - fix the pads alt")
 print("2fixreg - fix the regen alt")
 
+print("\n\n\n")
 print("cagespawn - jail at spawn")
 print("spawnkill - kill brick at spawn")
 	
@@ -6633,13 +6590,16 @@ print("surround - surround a player with planes")
 print("nuke - nuke a player with planes")
 print("rnuke (amount) (range) - nuke the map with planes")
 
+print("\n\n\n")
 print("jnuke - nuke the map with the RocketJumper gear")
 print("jnuke (player) - nuke a player with the RocketJumper")
 print("astrike - nuke an area with the RocketJumper by using your mouse!")
 
+print("\n\n\n")
 print("dnuke (amount) (range) - nuke the map with the conjuror's fist")
 print("dnuke (player) - nuke a player with the conjuror's fist")
 
+print("\n\n\n")
 print("rfgun (bullets) - rapid fire gun!")
 print("rcannon - rail cannon")
 print("wrcannon - wide rail cannon")
