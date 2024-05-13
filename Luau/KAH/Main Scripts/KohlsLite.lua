@@ -15,8 +15,7 @@
 -- Please do not "skid" off this code by changing the name and removing the dev section. It makes me annoyed!
 -- You can make your own script instead of skidding and you can take stuff from here if necessary.
 
--- NEW IMPORTANT NOTE: THIS SCRIPT IS GOING TO BE MORE LIKE A HYBRID OF INFINITE YIELD AND KAH SCRIPTS NOW! --
--- THIS IS SO IT CAN COMPETE WITH PROTON ADMIN (FOR SOME FEATURES NOT ALL OF THEM!!!) --
+-- Don't go abusing like crazy with this script. I made this free/open-source and don't want idiots doing stuff that make me make this paid/obfuscated.
 
 local function Remind(msg)
         game.StarterGui:SetCore("SendNotification", {
@@ -12100,7 +12099,7 @@ print("Your rank is: " .. Stats.rank)
 local unexecuteables = {"aliihsan12345Bloxy","XxSmurfXxSmurfXx","kjnjsknsdgkgnfgkjknf"}
 if table.find(unexecuteables, game.Players.LocalPlayer.Name) then
                 pcall(function() -- thanks tech
-                        game.Players.LocalPlayer:Kick("[KohlsLite]: Oh dear, you're blacklisted from my script! How did you do that? DM me on ts2021x to appeal.") 
+                        game.Players.LocalPlayer:Kick("[KohlsLite]: Oh dear, you're blacklisted from my script! How did you do that? DM me on ts2021x to appeal. (also don't edit this script or you're rejected)") 
                 end)
                 task.wait(2.5); while true do end
 end
