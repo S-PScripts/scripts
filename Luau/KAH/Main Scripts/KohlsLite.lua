@@ -17,6 +17,7 @@
 
 -- Don't go abusing like crazy with this script. I made this free/open-source and don't want idiots doing stuff that make me make this paid/obfuscated.
 
+-- Notifications
 local function Remind(msg)
         game.StarterGui:SetCore("SendNotification", {
                 Title = "KohlsLite",
@@ -25,11 +26,13 @@ local function Remind(msg)
         })
 end;
 
+-- Check if KohlsLite is already executed
 if getgenv().kohlsexecuted then 
         return 
         Remind("You've already executed KohlsLite!") 
 end
 
+-- Place checker
 if game.PlaceId ~= 112420803 and game.PlaceId ~= 115670532  then 
 	local response = Instance.new("BindableFunction")
 	function response.OnInvoke(answer)
@@ -48,45 +51,56 @@ if game.PlaceId ~= 112420803 and game.PlaceId ~= 115670532  then
 	return
 end
 
-	
-getgenv().kohlsexecuted = true -- don't touch!
+-- Don't touch this!
+getgenv().kohlsexecuted = true
 
-getgenv().deprefix = "." -- This can be of any length
+-- The prefix you are using for KohlsLite. This can be of any length.
+getgenv().deprefix = "." 
 
-getgenv().klversion = "1.57" -- The version of KohlsLite, of course.
+-- The version of KohlsLite
+getgenv().klversion = "1.57"
 
+-- Chat function
 local function Chat(msg)
       game.Players:Chat(msg)
 end
 
+-- Speak function
 local function Speak(msg)
     game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(msg, "All")
 end
 
+-- Prefix cheker
 if getgenv().theprefix then
 	prefix = getgenv().theprefix
 else
 	prefix = getgenv().deprefix
 end
 
-local defaults = {".antirocket me", ".tnok", ".antimsg me"} -- you don't need to change these
+-- Defaults (you can change these)
+local defaults = {".antirocket me", ".tnok", ".antimsg me"}
 
+-- Misc variables (ignore these)
 local bending -- ignore
 local ratelj -- ignore
 local eincrash -- ignore
 
+local notifiedRespectFiltering = false
+
+-- Perm spoofer (speed)
 editedspeedis = 16
 editedspeed = true
 
+-- Perm spoofer (jumppower)
 editedjumpis = 50
 editedjump = true
 
+-- Boombox range
 bgrange = 128
 
-local notifiedRespectFiltering = false
-
+-- Stats when loading
 Stats = {}
-Stats.starttime = os.clock() -- ignore
+Stats.starttime = os.clock()
 
 -- Start up scripts
 local function startupScripts()
@@ -399,6 +413,7 @@ local musictable = {
     ["115"] = { id = "1840006904", name = "Tricky (a)"}
 }
 
+-- Saved gears
 local gearlist = {
     ["boombox"] = { gearid = "212641536" },
     ["vg"] = { gearid = "94794847" },
@@ -425,6 +440,7 @@ local gearlist = {
     ["rideables"] = { gearid = {"304719869", "2568114215", "158069143", "185422295", "346687565", "553939167", "820013867", "387285940", "163348575", "206799274", "928805891", "124127383", "125013849", "2445089071", "253519495"} }
 }
 
+-- Saved turns
 local turnlist = {
     ["furry"] = {name = {"char [args2] 18", "paint [args2] Institutional white", "hat [args2] 10563319994", "hat [args2] 12578728695", "shirt [args2] 10571467676", "pants [args2] 10571468508"}},
     ["female"] = {name = {"char [args2] 31342830", "removehats [args2]", "paint [args2] Institutional white", "hat [args2] 7141674388", "hat [args2] 7033871971", "shirt [args2] 5933990311", "pants [args2] 7219538593"}},
@@ -433,7 +449,8 @@ local turnlist = {
     ["thief"] = {name = {"unhat [args2]", "trail [args2] black", "paint [args2] black", "hat [args2] 20642008", "hat [args2] 4855031321", "hat [args2] 4904891637", "shirt [args2] 4656776376", "pants [args2] 129459077", "hat [args2] 4531231804"}}
 
 }
-	
+
+-- Arg changer for turn
 local function replaceArgs2(name, args2)
     return string.gsub(name, "%[args2%]", args2)
 end
@@ -874,6 +891,7 @@ local antigb = true
 local antipaint = false
 local antiattach2 = false
 
+-- Antis (workspace)
 local antiflash = false
 local antidisco = false
 local antifogend = false
@@ -890,6 +908,7 @@ local PingLogs = false -- it's caps lol
 local PingCsystem = true
 local AntiLogs = false
 
+-- Noob detector and welcome/leave message
 local noobdetect = true
 local welcomemsg = true
 
