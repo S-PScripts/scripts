@@ -3862,6 +3862,22 @@ Commands required: rocket]])
 	Remind("Anti Lag is now disabled.")
    end
 
+   if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'capfps' then
+	local sfc = tonumber(string.sub(msg:lower(), #prefix + 8))
+	if setfpscap and type(setfpscap) == "function" then
+		local num = sfc or 1e6
+		if num == 'none' then
+			return setfpscap(1e6)
+		elseif num > 0 then
+			return setfpscap(num)
+		else
+			return Remind("Please provide a number above 0 or 'none'.")
+		end
+	else
+		return Remind("Sorry, your exploit does not support fps changing (setfpscap)")
+	end
+   end
+
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'alladmin' then
        alladmin = true
        Chat("h \n\n\n [KohlsLite]: Everyone has been given admin! Chat any command. \n\n\n")
@@ -4214,11 +4230,29 @@ Commands required: rocket]])
                  PLAYERCHECK(dasplayer)
                  if player ~= nil then
                         myageis = cplr.AccountAge
-                        print(myageis)
-                        Speak(player.."'s age is "..myageis.." days!")
+			print("Age of player: "..myageis)
+                        Remind("Age of player: "..myageis)
+                        -- Speak(player.."'s age is "..myageis.." days!")
                         Chat("h \n\n\n [KohlsLite]: "..player.."'s account age is "..myageis.." days! \n\n\n")
                  else
-                               Remind('Cannot find player with the name: '..dasplayer)
+                        Remind('Cannot find player with the name: '..dasplayer)
+                 end
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'jdate' then
+                 local dasplayer = string.sub(msg:lower(), #prefix + 7)
+                 PLAYERCHECK(dasplayer)
+                 if player ~= nil then
+                        local dates = {}
+			local user = game:HttpGet("https://users.roblox.com/v1/users/"..cplr.UserId)
+			local json = game.HttpService:JSONDecode(user)
+			local date = json["created"]:sub(1,10)
+			local splitDates = string.split(date,"-")
+			table.insert(dates,cplr.Name.." joined: "..splitDates[2].."/"..splitDates[3].."/"..splitDates[1])
+			print('Join Date (Month/Day/Year)'.. table.concat(dates, ',\n'))
+			Remind('Join Date (Month/Day/Year)'.. table.concat(dates, ',\n'))
+                 else
+                        Remind('Cannot find player with the name: '..dasplayer)
                  end
     end
 
@@ -4424,6 +4458,22 @@ Commands required: rocket]])
 		workspace.Gravity = tonumber(string.sub(msg:lower(), #prefix + 6))
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'unlockws' then
+	for i,v in pairs(workspace:GetDescendants()) do
+		if v:IsA("BasePart") then
+			v.Locked = false
+		end
+	end
+    end
+		
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'lockws' then
+	for i,v in pairs(workspace:GetDescendants()) do
+		if v:IsA("BasePart") then
+			v.Locked = true
+		end
+	end
+    end
+		
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'noclip' then
 	 noclip()
 	 Remind("Noclip is now on!")
@@ -6256,6 +6306,14 @@ Commands required: rocket]])
 		Remind("Disabled swimming!")
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'tswim' then
+	if swimming then
+		Chat(prefix..'unswim')
+	else
+		Chat(prefix..'swim')
+	end
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'fling' then
 		fling()
 		Remind("Enabled flinging!")
@@ -6453,6 +6511,50 @@ Commands required: rocket]])
 			sFLY() 
 		else 
 			mobilefly(game.Players.LocalPlayer) 
+		end
+	end
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'weaken' then
+	local args = string.split(msg, " ")
+	for _, child in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+		if child.ClassName == "Part" then
+			if args[2] then
+				child.CustomPhysicalProperties = PhysicalProperties.new(-args[1], 0.3, 0.5)
+			else
+				child.CustomPhysicalProperties = PhysicalProperties.new(0, 0.3, 0.5)
+			end
+		end
+	end
+    end
+		
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'unweaken' then
+	local args = string.split(msg, " ")
+	for _, child in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+		if child.ClassName == "Part" then
+			child.CustomPhysicalProperties = PhysicalProperties.new(0.7, 0.3, 0.5)
+		end
+	end
+    end
+		
+    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'strengthen' then
+	local args = string.split(msg, " ")
+	for _, child in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+		if child.ClassName == "Part" then
+			if args[2] then
+				child.CustomPhysicalProperties = PhysicalProperties.new(args[1], 0.3, 0.5)
+			else
+				child.CustomPhysicalProperties = PhysicalProperties.new(100, 0.3, 0.5)
+			end
+		end
+	end
+    end
+			
+    if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'unstrengthen' then
+	local args = string.split(msg, " ")
+	for _, child in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+		if child.ClassName == "Part" then
+			child.CustomPhysicalProperties = PhysicalProperties.new(0.7, 0.3, 0.5)
 		end
 	end
     end
