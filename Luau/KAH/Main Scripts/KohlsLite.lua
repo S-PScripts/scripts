@@ -4338,6 +4338,22 @@ Commands required: rocket]])
         SERVERHOP()
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'iyshop' then
+	Remind("Serverhopping... (IY)")
+	IYServerhop()
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'scshop' then
+        Remind("Serverhopping... (Shortcut Version)")
+        SCSERVERHOP(false, nil)
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'rshop' then
+	rwj = tonumber(string.sub(msg:lower(), #prefix + 7))
+        Remind("Serverhopping with your given player in server amount...")
+        SCSERVERHOP(true, rwj)
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'infjump' then
                 INFJUMP = true
 		Remind("You can infinitely jump!")
@@ -7709,12 +7725,19 @@ function SERVERHOP()
 end
 
 -- Serverhop (shortcut v1 version)
-function SCSERVERHOP()
+function SCSERVERHOP(randommobile, number)
 	local x = {}
 	for _, v in ipairs(game:GetService("HttpService"):JSONDecode(game:HttpGetAsync("https://games.roblox.com/v1/games/" .. game.PlaceId .. "/servers/Public?sortOrder=Asc&limit=100")).data) do
-		if type(v) == "table" and v.maxPlayers > v.playing and v.id ~= game.JobId then
-			x[#x + 1] = v.id
-			amount = v.playing
+		if randommobile == true then
+			if type(v) == "table" and v.playing == number and v.id ~= game.JobId then
+				x[#x + 1] = v.id
+				amount = number
+			end
+		else 
+			if type(v) == "table" and v.maxPlayers > v.playing and v.id ~= game.JobId then
+				x[#x + 1] = v.id
+				amount = v.playing
+			end
 		end
 	end
 		
