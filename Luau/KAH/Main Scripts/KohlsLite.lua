@@ -4853,8 +4853,17 @@ Commands required: rocket]])
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'fixvoid' then
-                workspace.FallenPartsDestroyHeight = -10001
+                workspace.FallenPartsDestroyHeight = -500
 		Remind("Void returned.")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'cvoid' then
+	        local args = string.split(msg, " ")
+		local dh = args[2] or -500
+		if isNumber(dh) then
+			workspace.FallenPartsDestroyHeight = dh
+		end		
+		Remind("Void changed.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'pinglogs' then
