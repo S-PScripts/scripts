@@ -12219,7 +12219,11 @@ if table.find(unexecuteables, game.Players.LocalPlayer.Name) then
                 task.wait(2.5); while true do end
 end
 
--- Created with care by s_p :)
-
--- ideas: add more lists to kl, add the vis to here ? building as well i don't have that yet
--- dm me at ts2021x on discord if you have your own ideas
+--[[
+Ideas;
+-> Fly (mobile/pc) [iy]
+-> CFly [iy]
+-> Visualiser and drawer to kohlslite
+-> part builder
+-> object mover (cmd pi version)
+]]
