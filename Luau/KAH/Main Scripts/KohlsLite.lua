@@ -6003,7 +6003,7 @@ Commands required: rocket]])
 				end)
 			end)
 
-			Remind("You're a carget for the player!")
+			Remind("You're a carpet for the player!")
 		else
 			Remind("This command requires the r6 rig type. Do r6.")
 		end
@@ -6015,7 +6015,7 @@ Commands required: rocket]])
 			carpetDied:Disconnect()
 			carpet:Stop()
 			carpetAnim:Destroy()
-			Remind("You're no longer a carget for the player!")
+			Remind("You're no longer a carpet for the player!")
 		end
      end
 
