@@ -2765,7 +2765,7 @@ Commands required: rocket]])
 			Chat('size me nan')
 			Chat('invis me')
 			Chat('stun ' .. player)
-	 		Mover:pingWait()
+	 		Mover:pingWait() -- bugged, idk why
 			Mover:Attach(cplr.Character.Torso)
             		Chat('size me nan')
                         Remind("Attaching to "..player)
@@ -7520,6 +7520,14 @@ function Mover:CleanUp()
     end
 end
 
+function Mover:pingWait()
+    if (game.Players.LocalPlayer:GetNetworkPing() * 2000) <= 60 then
+        wait(.25)
+    else
+        wait((game.Players.LocalPlayer:GetNetworkPing() * 2000) / 533.3333333)
+    end
+end
+
 function Mover:Attach(object, moveToPos)
     if game.Players.LocalPlayer.Character and object then
         local Root = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart")
@@ -7544,14 +7552,6 @@ function Mover:Attach(object, moveToPos)
             Root.CFrame = object.CFrame * CFrame.new(-1*(object.Size.X/2)-(Root.Size.X/2),0,0)
             Chat("unpunish me me me")
         end
-    end
-end
-
-function Mover:pingWait()
-    if (game.Players.LocalPlayer:GetNetworkPing() * 2000) <= 60 then
-        wait(.25)
-    else
-        wait((game.Players.LocalPlayer:GetNetworkPing() * 2000) / 533.3333333)
     end
 end
 
