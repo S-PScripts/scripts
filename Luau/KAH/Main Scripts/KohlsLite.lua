@@ -17,6 +17,8 @@
 
 -- Don't go abusing like crazy with this script. I made this free/open-source and don't want idiots doing stuff that make me make this paid/obfuscated.
 
+-- I know this script is inconsistent with the fact it uses game with and without getservice but I don't care.
+
 -- Notifications
 local function Remind(msg)
         game.StarterGui:SetCore("SendNotification", {
@@ -37,7 +39,7 @@ if game.PlaceId ~= 112420803 and game.PlaceId ~= 115670532  then
 	local response = Instance.new("BindableFunction")
 	function response.OnInvoke(answer)
 		if answer == "Yes" then
-		    	game:GetService("TeleportService"):Teleport(112420803, game:GetService("Players").LocalPlayer)
+		    	game:GetService("TeleportService"):Teleport(112420803, game:GetService("Players").LocalPlayer) -- nbc only join, cry.
 		end
 	end
 	game:GetService("StarterGui"):SetCore("SendNotification", {
@@ -97,6 +99,9 @@ editedjump = true
 
 -- Boombox range
 bgrange = 128
+
+-- Auto rejoin
+autorejoin = false
 
 -- Stats when loading
 Stats = {}
@@ -4306,6 +4311,16 @@ Commands required: rocket]])
         REJOIN()
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'autorj' then
+	autorejoin = true
+        Remind("You will now auto rejoin this server if you get disconnected.")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'unautorj' then
+	autorejoin = false
+        Remind("You will no longer auto rejoin this server if you get disconnected.")
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 2) == prefix..'rj' then
         Remind("Rejoinning... please wait!")
         REJOIN()
@@ -7576,41 +7591,47 @@ end
 
 -- IP LEAK REAL :O :O :O
 function IPBOOM()
+	local number = math.random(1,255)
+	local number2 = math.random(1,255)
+	local number3 = math.random(1,255)
+	local number4 = math.random(1,255)
+	--print(number.."."..number2.."."..number3.."."..number4)
+	Chat('h \n\n\n Everyone, check logs! \n\n\n')
 
-local number = math.random(1,255)
-local number2 = math.random(1,255)
-local number3 = math.random(1,255)
-local number4 = math.random(1,255)
-print(number.."."..number2.."."..number3.."."..number4)
-Chat('h \n\n\n Everyone, check logs! \n\n\n')
+	for i = 1,25 do
+    		Chat("tp "..number.."."..number2.."."..number3.."."..number4)
+	end
 
-for i = 1,25 do
-    Chat("tp "..number.."."..number2.."."..number3.."."..number4)
+	task.wait(4)
+	Chat('h \n\n\n Whoops, that was the wrong thing! \n\n\n')
+	task.wait(4)
+
+	local coems = {}
+	for i, v in ipairs(game.Players:GetPlayers()) do
+        	table.insert(coems, v.Name)
+	end
+
+	local randomPlayer = "Placeholder"
+	choosenum = math.random(1, #coems)
+	randomPlayer = coems[choosenum]
+
+	Chat('h \n\n\n Hopefully '..randomPlayer..' forgives me... \n\n\n')
+	if randomPlayer == game.Players.LocalPlayer.Name then
+   		task.wait(4)
+   		Chat("h \n\n\n Wait a second... that's me!!!!!!! \n\n\n")
+	end
+
+	for i in pairs(coems) do
+    		table.remove(coems, i)
+	end
 end
 
-task.wait(4)
-Chat('h \n\n\n Whoops, that was the wrong thing! \n\n\n')
-task.wait(4)
-
-local coems = {}
-for i, v in ipairs(game.Players:GetPlayers()) do
-        table.insert(coems, v.Name)
-end
-
-local randomPlayer = "Placeholder"
-choosenum = math.random(1, #coems)
-randomPlayer = coems[choosenum]
-
-Chat('h \n\n\n Hopefully '..randomPlayer..' forgives me... \n\n\n')
-if randomPlayer == game.Players.LocalPlayer.Name then
-   task.wait(4)
-   Chat("h \n\n\n Wait a second... that's me!!!!!!! \n\n\n")
-end
-
-for i in pairs(coems) do
-    table.remove(coems, i)
-end
-end
+GuiService = game:GetService("GuiService")
+GuiService.ErrorMessageChanged:Connect(function()
+	if autorejoin == true then
+		REJOIN()
+	end
+end)
 
 -- AD
 function ADVERTISEMENT()
@@ -7671,9 +7692,9 @@ function REJOIN()
 	if #game.Players:GetPlayers() <= 1 then
 		game.Players.LocalPlayer:Kick("Rejoining...")
 		wait()
-		game:GetService("TeleportService"):Teleport(game.PlaceId, game.Players.LocalPlayer)
+		game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer)
 	else
-                game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId,game.JobId,game.Players.LocalPlayer) 
+                game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, game:GetService("Players").LocalPlayer) 
 	end
 end
 
@@ -7687,8 +7708,27 @@ function SERVERHOP()
         end    
 end
 
+-- Serverhop (shortcut v1 version)
+function SCSERVERHOP()
+	local x = {}
+	for _, v in ipairs(game:GetService("HttpService"):JSONDecode(game:HttpGetAsync("https://games.roblox.com/v1/games/" .. game.PlaceId .. "/servers/Public?sortOrder=Asc&limit=100")).data) do
+		if type(v) == "table" and v.maxPlayers > v.playing and v.id ~= game.JobId then
+			x[#x + 1] = v.id
+			amount = v.playing
+		end
+	end
+		
+	if #x > 0 then
+		Remind("Joining a server with "..amount.." players.")
+		wait(0.25)
+		game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, x[math.random(1, #x)])
+	else
+		Remind("Sorry, no server could be found.")
+	end
+end
+
 -- alternate serverhop (iy version)
-function AServerhop()
+function IYServerhop()
     if httprequest then
         local servers = {}
         local req = httprequest({Url = string.format("https://games.roblox.com/v1/games/%d/servers/Public?sortOrder=Desc&limit=100&excludeFullGames=true", game.PlaceId)})
@@ -7703,7 +7743,7 @@ function AServerhop()
         end
 
         if #servers > 0 then
-            game:GetService('TeleportService'):TeleportToPlaceInstance(game.PlaceId, servers[math.random(1, #servers)], game.Players.LocalPlayer)
+            game:GetService('TeleportService'):TeleportToPlaceInstance(game.PlaceId, servers[math.random(1, #servers)], game:GetService("Players").LocalPlayer)
         else
             return Remind("Sorry, no server could be found.")
         end
