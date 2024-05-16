@@ -12636,8 +12636,6 @@ end
 
 --[[
 Ideas;
--> Fly (mobile/pc) [iy]
--> CFly [iy]
 -> Visualiser and drawer to kohlslite
 -> part builder
 -> object mover (cmd pi version)
