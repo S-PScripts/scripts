@@ -2749,7 +2749,35 @@ Commands required: rocket]])
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'skick' then 
-	Remind("ERROR: This kick was removed by request of Digitality.")
+		local dasplayer = string.sub(msg:lower(), #prefix + 7)
+                PLAYERCHECK(dasplayer)
+	
+                if player ~= nil and not table.find(nokick, player) then
+                        Remind("Kicking "..player)
+                elseif table.find(nokick, player) then
+                        return Remind("Sorry, this player cannot be kicked!")
+                else                        
+                        return Remind('Cannot find player with the name: '..dasplayer)
+                end
+	
+		Chat("blind "..player)
+		Chat("speed "..player.." 0")
+		local kicked = false
+		task.wait()
+		game:GetService("Players").LocalPlayer.Character:PivotTo(GetPlayer(target).Character:GetPivot())
+		task.wait(.3)
+		for _, v in game:GetService("Players").LocalPlayer:FindFirstChildOfClass("Backpack"):GetChildren() do
+			if v.Name == "BitePlant" then 
+				v.Parent = game:GetService("Players").LocalPlayer.Character
+				task.wait(0)
+				v:Activate() 
+			end
+		end 
+		Chat("punish me")
+		task.wait(.5)
+		Chat("unpunish me")
+		kicked = true
+	-- Remind("ERROR: This kick was removed by request of Digitality.")
 	-- Removed by request of Digitality --
     end
 
