@@ -17,7 +17,7 @@ var cookies = `` // scratch browser cookies (don't edit)
 // Code
 jsbomb = async function() {
 
-fetch("https://api.scratch.mit.edu/proxy/projects/"+e+"/share", {
+    fetch("https://api.scratch.mit.edu/proxy/projects/" + e + "/share", {
 
         "credentials": "include",
 
@@ -37,7 +37,7 @@ fetch("https://api.scratch.mit.edu/proxy/projects/"+e+"/share", {
 
             "Sec-Fetch-Site": "same-site",
 
-            "cookie":cookies
+            "cookie": cookies
 
         },
 
@@ -49,7 +49,7 @@ fetch("https://api.scratch.mit.edu/proxy/projects/"+e+"/share", {
 
     });
 
-e = await fetch("https://projects.scratch.mit.edu/?is_remix=1&original_id=" + e +"&title=Scratch%20Project", {
+    e = await fetch("https://projects.scratch.mit.edu/?is_remix=1&original_id=" + e + "&title=Scratch%20Project", {
 
         "credentials": "include",
 
@@ -67,7 +67,7 @@ e = await fetch("https://projects.scratch.mit.edu/?is_remix=1&original_id=" + e 
 
             "Sec-Fetch-Site": "same-site",
 
-            "cookie":cookies
+            "cookie": cookies
 
         },
 
@@ -87,13 +87,13 @@ e = await fetch("https://projects.scratch.mit.edu/?is_remix=1&original_id=" + e 
 
     e = e["content-name"];
 
-h=h+1
+    h = h + 1
 
-console.log(h-1); // this logs the project's remix number to your console
+    console.log(h - 1); // this logs the project's remix number to your console
 
-console.log(e) // this logs the project's id to your console
+    console.log(e) // this logs the project's id to your console
 
-jsbomb();
+    jsbomb();
 
 }
 
