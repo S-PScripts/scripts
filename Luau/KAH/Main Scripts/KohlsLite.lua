@@ -12657,4 +12657,9 @@ Ideas;
 -> Visualiser and drawer to kohlslite
 -> part builder
 -> object mover (cmd pi version)
+-> literally nothin else i think
+-> oh yeah i forgot... fix the antifling
+-> but i can't do that for a while cuz no PC
+-> maybe during summer i hope
+-> and fix pingwait idk why it doesn't work :(
 ]]
