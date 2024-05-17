@@ -926,6 +926,15 @@ local welcomemsg = true
 -- local permpassid = 66254 or 64354 -> NBC, BC
 -- local personpassid = 35748 or 37127 --> NBC, BC
 
+-- Mover 
+Mover = {}
+
+Mover.Attached = {Value = false}
+Mover.Finished = {Value = false}
+
+Mover.Moving = false
+Mover.PosSet = false
+
 print("- Information -")
 print("Thank you for using KohlsLite. The version you are using is v"..getgenv().klversion..". This script was created by S_P.")
 Remind("Thank you for using KohlsLite. The version you are using is v"..getgenv().klversion..". This script was created by S_P.")
@@ -3034,8 +3043,8 @@ Commands required: rocket]])
 		Remind("Turned player into a taxi???")
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'blender' then -- kohlsnoob
-	        local daddyhelpmee = string.sub(msg:lower(), #prefix + 9)
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'smoothie' then -- kohlsnoob
+	        local daddyhelpmee = string.sub(msg:lower(), #prefix + 10)
 		Chat("jail "..daddyhelpmee)
 		Chat("stun "..daddyhelpmee)
 		Chat("spin "..daddyhelpmee)
@@ -7782,14 +7791,6 @@ Speak("⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻�
 Speak("⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻")
 Speak("⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻⸻")
 end
-
-local Mover = {}
-
-Mover.Attached = {Value = false}
-Mover.Finished = {Value = false}
-
-Mover.Moving = false
-Mover.PosSet = false
 
 function Mover:CleanUp()
     Mover.Attached.Value = false
