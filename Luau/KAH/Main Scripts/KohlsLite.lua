@@ -7164,12 +7164,16 @@ task.spawn(function()
 						v:Destroy()
 						v.Force = Vector3.new(0, 0, 0)
 					        lproot.Velocity = Vector3.new(0, 0, 0)
+						Chat("setgrav me 0")
+						Chat("unskydive me")
 
 				end
 				
 				if v:IsA("BodyPosition") then
 						v:Destroy()
 					        lproot.Velocity = Vector3.new(0, 0, 0)
+						Chat("setgrav me 0")
+						Chat("unskydive me")
 				end
 			end
                 end
