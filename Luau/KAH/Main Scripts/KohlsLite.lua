@@ -4383,7 +4383,12 @@ Commands required: rocket]])
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'rejoin' then
-        Remind("Rejoinning... please wait!")
+        Remind("Rejoinning... please wait.")
+        REJOIN()
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 2) == prefix..'rj' then
+        Remind("Rejoinning... please wait.")
         REJOIN()
     end
 
@@ -4397,9 +4402,14 @@ Commands required: rocket]])
         Remind("You will no longer auto rejoin this server if you get disconnected.")
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 2) == prefix..'rj' then
-        Remind("Rejoinning... please wait!")
-        REJOIN()
+    if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'prj' then
+		Remind("Rejoinning... please wait.")
+                game:GetService("TeleportService"):TeleportToPrivateServer(game.PlaceId, game.PrivateServerId, game:GetService("Players").LocalPlayer)
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'prejoin' then
+		Remind("Rejoinning... please wait.")
+                game:GetService("TeleportService"):TeleportToPrivateServer(game.PlaceId, game.PrivateServerId, game:GetService("Players").LocalPlayer)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'shop' then
@@ -6969,14 +6979,14 @@ task.spawn(function()
             end
         end
 
-        if autoff == true then
+        if autoff == true or tempautoff == true then
             if not game.Players.LocalPlayer.Character:FindFirstChild("ForceField") then
                 Chat("ff me")
                 task.wait(0.1)
             end
         end
 
-        if autogod == true then
+        if autogod == true or tempautogod == true then
             if tostring(game.Players.LocalPlayer.Character.Humanoid.MaxHealth) ~= "inf" then
                     Chat("god me")
                 game.Players.LocalPlayer.Character.Humanoid.MaxHealth = math.huge
@@ -8721,7 +8731,9 @@ task.spawn(function()
         end
 
         if ccolours == true then
-                        Chat("fogend 0")
+			if game.Lighting.FogEnd ~= 0 then
+            					Chat("fogend 0")
+        		end
                         Chat("fogcolor " ..tostring(math.random(0, 255)) .." " .. tostring(math.random(0, 255)) .. " " .. tostring(math.random(0, 255)))
         end
    end
@@ -10351,6 +10363,12 @@ UserInputService.WindowFocusReleased:Connect(function()
                     Chat("name me ["..game.Players.LocalPlayer.Name.."]: AFK")
                     Chat("ff me")
                     Chat("god me")
+		    if autoff == false then
+		    	tempautoff = true
+		    end
+		    if autogod == false then
+		    	tempautogod = true
+		    end
             end
 end)
 
@@ -10358,6 +10376,8 @@ UserInputService.WindowFocused:Connect(function()
         task.wait(0)
             if autoafk == true then
                 Chat("reset me")
+		tempautoff = false
+		tempautogod = false
                 Chat("unff me")
                 Chat("ungod me")
             end
