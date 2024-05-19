@@ -838,29 +838,74 @@ local Admin_Folder = Game_Folder.Admin
 
 -- Themes
 local themecode = {
-    {name = "dark blue", code = "time 4,outdoorambient 000 000 11"},
-    {name = "old trip", code = "fogend 100,fogcolor 250 0 500"},
-    {name = "shanty night", code = "time 19,outdoorambient 250 100 250"},
-    {name = "purple glaze", code = "time -,fogend 600,fogcolor 300 0 800"},
-    {name = "yellow mist", code = "time -,fogend 25,fogcolor 255 255 51"},
-    {name = "dark depths", code = "time 0,fogcolor 0 0 0,fogend 25"},
-    {name = "nice sky", code = "fogend 75,fogcolor 0 155 255"},
-    {name = "bright pink", code = "time -,fogend 46,fogcolor 250 83 255"},
-    {name = "acid proximity", code = "time -,fogend 1000,fogcolor 37 355 55"},
-    {name = "sapphire evening", code = "fogcolor 100 0 255,fogend 1000,time 6,outdoorambient 0 0 0,brightness 0.5,ambient 125 0 255"},
-    {name = "sunrise rtx", code = "fix,time 7,fogend 2000,outdoorambient 0.3 0.3 0.3"},
-    {name = "sunrise", code = "fix,time 7.15,colorshifttop 600 400 0,colorshiftbottom 600 400 0"},
-    {name = "true black", code = "time 0,fogcolor 0 0 0,fogend 0"},
-    {name = "sunset", code = "fix,time 17.4,colorshifttop 600 400 0,colorshiftbottom 600 400 0"},
-    {name = "ice", code = "fix,time 17.4,fogcolor -100 -400 -600,fogend 500,colorshifttop 0 255 255,colorshiftbottom 0 255 255"},
-    {name = "blood", code = "fix,fogcolor 255 0 0,fogend 150,ambient 255 0 0,colorshifttop 255 0 0,colorshiftbottom 255 0 0"},
-    {name = "aesthetic", code = "fix,time 15,fogend 500,fogcolor -400 -191 -139,outdoorambient 191 143 95,colorshifttop 255 191 139"},
-    {name = "heaven", code = "fix,time 14,fogend 200,fogcolor -300 -300 -300,outdoorambient -400 -400 -400,ambient -400 -400 -400"},
-    {name = "hell", code = "fix,time 0,outdoorambient -600 0 0,ambient -600 0 0,fogcolor -600 0 0,fogend 500,colorshiftbottom -600 0 0,colorshifttop -600 0 0,brightness 2"},
-    {name = "shadowy town", code = "fix,fogend 70,fogcolor 0 0 0,brightness 0"},
-    {name = "noir swamp", code = "fix,time 100,outdoorambient 0 0 099,brightness 0"},
-    {name = "snow", code = "fix,time 17.4,colorshifttop 255 255 255,colorshiftbottom 255 255 255"},
-    {name = "blue sky", code = "ambient 0 0 256,colorshifttop 0 0 256,fogcolor 0 0 256,fogend 50"}
+    {name = "dark blue", -- 1
+	code = "time 4,outdoorambient 000 000 11"},
+	
+    {name = "old trip", -- 2
+	code = "fogend 100,fogcolor 250 0 500"},
+	
+    {name = "shanty night", -- 3
+	code = "time 19,outdoorambient 250 100 250"},
+	
+    {name = "purple glaze", -- 4
+	code = "time -,fogend 600,fogcolor 300 0 800"},
+	
+    {name = "yellow mist", -- 5
+	code = "time -,fogend 25,fogcolor 255 255 51"},
+	
+    {name = "dark depths", -- 6
+	code = "time 0,fogcolor 0 0 0,fogend 25"},
+	
+    {name = "nice sky", -- 7
+	code = "fogend 75,fogcolor 0 155 255"},
+	
+    {name = "bright pink", -- 8
+	code = "time -,fogend 46,fogcolor 250 83 255"},
+	
+    {name = "acid proximity", -- 9
+	code = "time -,fogend 1000,fogcolor 37 355 55"},
+	
+    {name = "sapphire evening", -- 10
+	code = "fogcolor 100 0 255,fogend 1000,time 6,outdoorambient 0 0 0,brightness 0.5,ambient 125 0 255"},
+	
+    {name = "sunrise rtx", -- 11
+	code = "fix,time 7,fogend 2000,outdoorambient 0.3 0.3 0.3"},
+	
+    {name = "sunrise", -- 12
+	code = "fix,time 7.15,colorshifttop 600 400 0,colorshiftbottom 600 400 0"},
+	
+    {name = "true black", -- 13
+	code = "time 0,fogcolor 0 0 0,fogend 0"},
+	
+    {name = "sunset", -- 14
+	code = "fix,time 17.4,colorshifttop 600 400 0,colorshiftbottom 600 400 0"},
+	
+    {name = "ice", -- 15
+	code = "fix,time 17.4,fogcolor -100 -400 -600,fogend 500,colorshifttop 0 255 255,colorshiftbottom 0 255 255"},
+	
+    {name = "blood", -- 16
+	code = "fix,fogcolor 255 0 0,fogend 150,ambient 255 0 0,colorshifttop 255 0 0,colorshiftbottom 255 0 0"},
+	
+    {name = "aesthetic", -- 17
+	code = "fix,time 15,fogend 500,fogcolor -400 -191 -139,outdoorambient 191 143 95,colorshifttop 255 191 139"},
+	
+    {name = "heaven", -- 18
+	code = "fix,time 14,fogend 200,fogcolor -300 -300 -300,outdoorambient -400 -400 -400,ambient -400 -400 -400"},
+	
+    {name = "hell", -- 19
+	code = "fix,time 0,outdoorambient -600 0 0,ambient -600 0 0,fogcolor -600 0 0,fogend 500,colorshiftbottom -600 0 0,colorshifttop -600 0 0,brightness 2"},
+	
+    {name = "shadowy town", -- 20
+	code = "fix,fogend 70,fogcolor 0 0 0,brightness 0"},
+	
+    {name = "noir swamp", -- 21
+	code = "fix,time 100,outdoorambient 0 0 099,brightness 0"},
+	
+    {name = "snow", -- 22
+	code = "fix,time 17.4,colorshifttop 255 255 255,colorshiftbottom 255 255 255"},
+	
+    {name = "blue sky", -- 23
+	code = "ambient 0 0 256,colorshifttop 0 0 256,fogcolor 0 0 256,fogend 50"}
 }
 
 -- Keybinds
@@ -1639,32 +1684,32 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                     print(charname .. " - IDS: " .. charlist[charname].charid)
          end
     end
-
+-- SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND --
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'pausem' then
        for i,v in pairs(game:GetService("Workspace").Terrain["_Game"].Folder:GetDescendants()) do
                   if v:IsA("Sound") and v.Playing then
                            v.Playing = false
                     end
        end
-       Remind("Paused sounds")
+       Remind("Paused the music!")
     end
-
+		
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'playm' then
               for i,v in pairs(game:GetService("Workspace").Terrain["_Game"].Folder:GetDescendants()) do
                     if v:IsA("Sound") and not v.Playing then
                            v.Playing = true
                   end
               end
-	      Remind("Playing sounds")
+	      Remind("Playing the music!")
     end
-
+-- SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND --
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'stopm' then
         for i, v in pairs(game:GetService("Workspace").Terrain["_Game"].Folder:GetDescendants()) do
                 if v:IsA("Sound") then
                     v:Stop()
                 end
         end   
-	Remind("Stopped sounds")
+	Remind("Stopped the music!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'startm' then
@@ -1673,9 +1718,27 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                     v:Play()
                 end
         end   
-        Remind("Starting sounds")
+        Remind("Started the music!")
+    end
+-- SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND --
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'stops' then
+        for i, v in pairs(game:GetDescendants()) do
+                if v:IsA("Sound") then
+                    v:Stop()
+                end
+        end   
+	Remind("Stopped sounds!")
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'starts' then
+        for i, v in pairs(game:GetDescendants()) do
+                if v:IsA("Sound") then
+                    v:Play()
+                end
+        end   
+        Remind("Started sounds!")
+    end
+-- MOVING ON MOVING ON MOVING ON MOVING ON MOVING ON MOVING ON MOVING ON MOVING ON MOVING ON MOVING ON MOVING ON --
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'deiv' then -- ported from simplekah
 			gjdelock = false
                         Chat("h \n\n\n [KohlsLite]: Domain Expansion: Infinity Void \n\n\n")
@@ -8520,12 +8583,12 @@ task.spawn(function()
 
     if antimusic == true then
                   for i,v in pairs(workspace:GetDescendants()) do
-                            if v:IsA("Sound") then 
+                        if v:IsA("Sound") then 
                                 if v.Playing then 
                                         v:Stop() 
                                 end 
                         end
-                         end
+                  end
     end
 
     if audiotroll == true then
