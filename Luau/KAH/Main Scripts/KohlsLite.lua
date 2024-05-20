@@ -176,7 +176,8 @@ local pwl = {
     "DionteIsCute",
     "me_capybara",
     "E4_DQ",
-    "vgcrash"
+    "vgcrash",
+    "s_pisafurry"
 }
 
 -- Players you cannot kick
@@ -189,27 +190,30 @@ local nokick = {
     "witnessfox22",
     "IceStuds",
     "atprog",
+    "dawninja21",
+    "Dawninja21alt",
     "Di33le2",
+    "darkmadeboy",
     "Dekryptionite",
     "3cxos",
     "hudhejeir",
     "BIGpe7niss7",
     "clydekash",
     "t_echl",
+    "Ih0temyIife",
+    "D_ionte",
     "SZCVAK",
     "TheRealestOnHere",
     "Altsarecooleh",
     "idonthacklol101ns",
-    "dawninja21",
-    "Dawninja21alt",
-    "GAMMINGBUDD_REAL",
-    "Artyuiiiiti",
-    "D_ionte",
-    "EternitHD",
+    "Me_ChurchOfSat4n",
     "Milderous",
     "Anka_707587",
     "DionteIsCute",
-    "me_capybara"
+    "me_capybara",
+    "E4_DQ",
+    "vgcrash",
+    "s_pisafurry"
 }
 
 -- Players with special perms
@@ -226,7 +230,9 @@ local specialperms = {
     "DionteIsCute",
     "Dekryptionite",
     "atprog",
-    "3cxos"
+    "3cxos",
+    "Di33le2",
+    "s_pisafurry"
 }
 
 -- New users get blacklisted (prevent crashers)
