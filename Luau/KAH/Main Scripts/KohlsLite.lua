@@ -232,7 +232,8 @@ local specialperms = {
     "atprog",
     "3cxos",
     "Di33le2",
-    "s_pisafurry"
+    "s_pisafurry",
+    "Palamode"
 }
 
 -- New users get blacklisted (prevent crashers)
