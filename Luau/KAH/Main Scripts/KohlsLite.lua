@@ -233,7 +233,8 @@ local specialperms = {
     "3cxos",
     "Di33le2",
     "s_pisafurry",
-    "Palamode"
+    "Palamode",
+    "kevin3050ti"
 }
 
 -- New users get blacklisted (prevent crashers)
@@ -2833,6 +2834,8 @@ Commands required: rocket]])
                 PLAYERCHECK(dasplayer)
 	
                 if player ~= nil and not table.find(nokick, player) then
+			kickin = cplr
+			kickinplr = player
                         Remind("Kicking "..player)
                 elseif table.find(nokick, player) then
                         return Remind("Sorry, this player cannot be kicked!")
@@ -2840,15 +2843,14 @@ Commands required: rocket]])
                         return Remind('Cannot find player with the name: '..dasplayer)
                 end
 	
-		Chat("blind "..player)
-		Chat("speed "..player.." 0")
-		local kicked = false
+		Chat("speed "..kickinplr.." 0")
 		task.wait()
-		game:GetService("Players").LocalPlayer.Character:PivotTo(GetPlayer(target).Character:GetPivot())
+		game.Players.LocalPlayer.Character:PivotTo(kickin.Character:GetPivot())
 		task.wait(.3)
-		for _, v in game:GetService("Players").LocalPlayer:FindFirstChildOfClass("Backpack"):GetChildren() do
+                local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
+                for _, v in ipairs(Backpack:GetChildren()) do
 			if v.Name == "BitePlant" then 
-				v.Parent = game:GetService("Players").LocalPlayer.Character
+				v.Parent = game.Players.LocalPlayer.Character
 				task.wait(0)
 				v:Activate() 
 			end
@@ -2856,9 +2858,6 @@ Commands required: rocket]])
 		Chat("punish me")
 		task.wait(.5)
 		Chat("unpunish me")
-		kicked = true
-	-- Remind("ERROR: This kick was removed by request of Digitality.")
-	-- Removed by request of Digitality --
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'welmsg' then
