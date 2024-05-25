@@ -7,6 +7,14 @@ ____ ___ __  __ ____  _     _____ _  __    _    _   _
 
 ]]
 
+function simplewl()
+if lp.Name = "Ih0temylife" then
+print("Whitelisted")
+else
+lp:Kick("Not Ur Day Lil Bro💀💀💀")
+end
+
+
 local prefix = "."
 local periastronlist = {"108158379", "80661504", "233520257", "73829193", "69499437", "139577901", "2544549379", "120307951", "99119240", "93136802", "80597060", "159229806", "77443461"}
 
