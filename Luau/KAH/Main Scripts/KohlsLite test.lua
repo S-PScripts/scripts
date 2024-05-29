@@ -1,31 +1,31 @@
--- test with ii's command thing, probably changing
+-- scv2 new :D
 
-local commandlist = {}
+local connections = {}
 
-function runcmd(param1, specargs)
-    for i, v in pairs(commandlist) do
-        if prefix .. v[1] == param1 and running then
-            if #specargs > #v[2] - 1 then
-                pcall(function()
-                        local s, f = pcall(v[3](specargs))
-                        if not s then
-                            if consoleOn then
-                                print(f)
-                            end
-                        end
-                end)
-                return
-            else
-                local lister = prefix .. v[1] .. " "
-                for i, d in pairs(v[2]) do
-                    lister = lister .. d .. " "
+getgenv().klprefix2 = "."
+local admin = {klprefix2 = klprefix2, version = "v2"}
+local commands = {}
+local descriptions = {}
+
+function addcommand(cmdName, cmdDescription, cmdFunction)
+    commands[cmdName] = cmdName
+    descriptions[cmdName] = cmdDescription
+    connections[#connections + 1] = 
+            game.Players.LocalPlayer.Chatted:Connect(function(msg)
+                msg = msg:lower()
+                args = msg:split(" ")
+                if args[1] == admin.klprefix2 .. cmdName then
+                    cmdFunction()
+                elseif args[1] == "/e" and args[2] == admin.klprefix2 .. cmdName then
+                    args[2] = args[3]
+                    cmdFunction()
                 end
-                GUI:Remind("KohlsLite v2", "The command you have recently sent is not properly formatted. The correct format is: " ..lister)
-            end
-        end
-    end
+        end)
 end
 
-function addcmd(name,args,func)
-    table.insert(commandlist,{name,args,func})
+addcommand("credits",
+"print out the credits for kohlslite v2",
+function()
 end
+)
+
