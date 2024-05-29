@@ -29,3 +29,7 @@ function()
 end
 )
 
+for i, v in pairs(commands) do
+        sjiknx = v.. " - ".. descriptions[v]
+        print(sjiknx)
+end
