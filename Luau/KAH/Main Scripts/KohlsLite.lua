@@ -38,6 +38,15 @@ if getgenv().kohlsexecuted then
         Remind("You've already executed KohlsLite!") 
 end
 
+-- Loader
+if not game:IsLoaded() then
+    local notLoaded = Instance.new("Message")
+    notLoaded.Parent = game:GetService("CoreGui")
+    notLoaded.Text = "KohlsLite is waiting for the game to load"
+    game.Loaded:Wait()
+    notLoaded:Destroy()
+end
+
 -- Place checker
 if game.PlaceId ~= 112420803 and game.PlaceId ~= 115670532  then 
 	local response = Instance.new("BindableFunction")
