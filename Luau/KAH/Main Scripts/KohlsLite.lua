@@ -1,3 +1,5 @@
+-- i'm busy with my life so don't expect frequent updates anymore
+
 --[[
 
  █████   ████          █████      ████          █████        ███   █████            
