@@ -1,0 +1,107 @@
+// The game - Unit 1, Stage 1, Lesson 5.
+
+// Allow shapes to be drawn off the sides of the canvas.
+'render invisible';
+
+// Declare a new Circle object named a.
+var a = new Circle();
+// Position the coordinates of the circle.
+a.x = 100;
+a.y = 100;
+// Set the radius of the circle.
+a.radius = 30;
+// Give the circle a fill color.
+a.fill = 'blue';
+
+// Declare and position a new Circle named b.
+var b = new Circle(150, 150);
+// Set the radius of the circle.
+b.radius = 30;
+// Give the circle a green fill color.
+b.fill = 'green';
+
+// Declare, position, set the radius and the fill of a new Circle object named dot.
+var dot = new Circle(250, 250, 15, 'red');
+
+// Declare a new Line object to connect the two circles.
+var tether = new Line();
+
+// Declare and position a new Line object named display.
+var display = new Text(50, 50);
+// Set the text to draw on the canvas.
+display.text = 'Your score: ';
+// This game object controls the game.
+var game = {
+   // This property will determine how much the tethered circle will swing.
+   swing: 40,
+   // How much should we slow the swing each frame?
+   airResistance: 0.98,
+   // How fast should the swinging circle move left and right?
+   xSpeed: 0,
+   // How fast should the swinging circle move up and down?
+   ySpeed: 0,
+   // Keep track of how many times the player has hit the dot.
+   score: 0,
+   // Close the game object.
+};
+
+// The animate function runs the code inside of it 30 times every second.
+function animate() {
+   // Reset the background each frame of the animate function.
+   background();
+
+   // Update the score text to display on the canvas.
+   display.text = 'Your score: ' + game.score;
+
+   // Update the position of the circle named a.
+   a.x = mouse.x;
+   a.y = mouse.y;
+
+   // Adjust the speed of the green circle so it moves towards the blue circle.
+   // Each frame, this equation finds the distance between the two circles, then divides by the value of game.swing.
+   // It then uses the result to adjust the value of the x and y speed.
+   // The farther away the green circle is from the blue, the faster it comes back, like a rubber band!
+   game.xSpeed += (a.x - b.x) / game.swing;
+   game.ySpeed += (a.y - b.y) / game.swing;
+
+   // Slow Circle b down just a bit, otherwise it goes too fast.
+   game.xSpeed *= game.airResistance;
+   game.ySpeed *= game.airResistance;
+
+   // Move b according to the current x and y speed.
+   b.x += game.xSpeed;
+   b.y += game.ySpeed;
+
+   // Update the first set of coordinates of the line named tether.
+   tether.x1 = a.x;
+   tether.y1 = a.y;
+   // Update the second set of coordinates of the line named tether.
+   tether.x2 = b.x;
+   tether.y2 = b.y;
+   // Find out if the green circle is touching the red dot.
+
+   var hit = collide(b, dot);
+   // Check if the green circle is touching the red dot.
+   if (hit == true) {
+      // It is. Change the coordinates of the dot.
+      dot.x = random(0, canvas.width);
+      dot.y = random(0, canvas.height);
+      // Add one to the total score.
+      game.score += 1;
+      // Close the if statement.
+   }
+
+   // Draw circle a.
+   a.draw();
+   // Draw the circle named b.
+   b.draw();
+   // Draw the circle named dot.
+   dot.draw();
+   // Draw the text named display on the canvas.
+   display.draw();
+   // Draw the tether on the canvas.
+   tether.draw();
+
+   // Close the animate function.
+}
+// Lesson is complete and correct.
