@@ -1,6 +1,4 @@
--- might discontinue this and start kl v2 since the message handler looks TERRIBLE
-
--- i'm busy with my life so don't expect frequent updates anymore
+-- KohlsLite v2 is being developed, this script will not be updated that much (sorry for no part builder/good vis and not fixing ncontrol) --
 
 --[[
 
@@ -11,7 +9,7 @@
  ░███░░███   ░███ ░███ ░███ ░███  ░███ ░░█████  ░███        ░███   ░███    ░███████ 
  ░███ ░░███  ░███ ░███ ░███ ░███  ░███  ░░░░███ ░███      █ ░███   ░███ ███░███░░░  
  █████ ░░████░░██████  ████ █████ █████ ██████  ███████████ █████  ░░█████ ░░██████ 
-░░░░░   ░░░░  ░░░░░░  ░░░░ ░░░░░ ░░░░░ ░░░░░░  ░░░░░░░░░░░ ░░░░░    ░░░░░   ░░░░░░   v1.57 ]]
+░░░░░   ░░░░  ░░░░░░  ░░░░ ░░░░░ ░░░░░ ░░░░░░  ░░░░░░░░░░░ ░░░░░    ░░░░░   ░░░░░░   v1.58 ]]
 
 -- This free, open-source script is for the Roblox game Kohls Admin House (KAH)
 -- You can play KAH here: https://www.roblox.com/games/112420803/Kohls-Admin-House-NBC-Updated
@@ -75,7 +73,7 @@ getgenv().kohlsexecuted = true
 getgenv().deprefix = "." 
 
 -- The version of KohlsLite
-getgenv().klversion = "1.57"
+getgenv().klversion = "1.58"
 
 -- Chat function
 local function Chat(msg)
