@@ -1,3 +1,5 @@
+-- might discontinue this and start kl v2 since the message handler looks TERRIBLE
+
 -- i'm busy with my life so don't expect frequent updates anymore
 
 --[[
