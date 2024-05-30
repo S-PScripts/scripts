@@ -33,6 +33,7 @@ local creditables = {}
 local creddesc = {}
 
 -- Command adder --
+-- From Shortcut v2 NEW (https://github.com/Tech-187/Lua-scripts/blob/main/Shortcut__v2_src2.lua)
 function addcommand(cmdName, cmdDescription, cmdFunction)
     commands[cmdName] = cmdName
     descriptions[cmdName] = cmdDescription
@@ -97,7 +98,7 @@ function()
 end)
 
 -- Command list --
-addcommand("cmds",
+addcommand("cmds", -- not sure why in scv2 new it doesn't use the system that was created!
 "print out the commands for KohlsLite",
 function()
         for i, v in pairs(commands) do
