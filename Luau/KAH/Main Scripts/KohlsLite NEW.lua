@@ -15,7 +15,40 @@
 -- Setup --
 getgenv().klprefix2 = "."
 getgenv().klversion2 = "v0.00 Alpha"
+
+-- Chat function
+local function chat(msg)
+	game:GetService("Players"):Chat(msg)
+end
+
+-- Remind function
+local function notify(text, num)
+	if num == nil then
+		num = 1
+	end
+	game:GetService("StarterGui"):SetCore("SendNotification",
+	{
+		Title = "KohlsLite",
+		Text = text
+		Duration = num
+	}
+	)
+end
+
+-- Execution check
+getgenv().executed2 = false
+
+if getgenv().kohlsexecuted then 
+        return notify("KohlsLite is already executed.")
+end
+
+-- Localplayer variables
 local lplr = game:GetService("Players").LocalPlayer
+
+-- Anti logger
+local antilog = ("0"):rep(40)
+
+-- Gamepass checker
 local function gamepassCheck(id)
 	local hasPerm = false
 	local hasPersons = false
@@ -27,23 +60,11 @@ local function gamepassCheck(id)
 	end
 	return {hasPerm, hasPersons}
 end
-local antilog = ("0"):rep(40)
 
-local function chat(m)
-	game:GetService("Players"):Chat(m)
-end
-local function notify(text)
-	game:GetService("StarterGui"):SetCore("SendNotification",
-	{
-		Title = "KohlsLite",
-		Text = text
-	}
-	)
-end
-
+-- Variables for the gamepass checker
 local gamepassData = gamepassCheck(lplr.UserId)
 local hasPerm = gamepassData[1]
-local hasPerson = gamepassData[2]
+local hasPersons = gamepassData[2]
 
 -- Connections --
 local connections = {}
@@ -150,29 +171,24 @@ addcommand(
 	"vgcrash",
 	"crashes the server with vampire gear",
 	function()
+		
 		if game.FindFirstChild(game.Lighting, lplr.Name) then
-			if hasPerm or hasPerson then
-				--i was lazy to copy silcrash from my script so yes
+			if hasPerm or hasPersons then
+				Chat("respawn me")
 			end
 		end
-		chat("noclip others fuck")
-		chat("freeze others fuck")
-		pcall(function()
-			fireclickdetector(workspace.Terrain._Game.Admin.Regen.ClickDetector, 0)
-			chat("iyc firecd")
-		end)
-		chat("blind others fuck")
-		chat("punish others fuck")
+		
+		Chat("blind others")
+		chat("speed others 0")
+		chat("freeze others")
+		
 		chat("gear me "..antilog.."94794847")
-		game.WaitForChild(lplr.Backpack, "VampireVanquisher")
-		lplr.Backpack.VampireVanquisher.Parent = lplr.Character
-		lplr.Character.VampireVanquisher:Activate()
+		repeat task.wait() until lplr.Backpack:WaitForChild("VampireVanquisher")
+      		local vg = lplr.Backpack:FindFirstChild("VampireVanquisher")
+      		vg.Parent = lplr.Character
+
 		for i = 1, 12 do
 			chat("unsize me me me")
-		end
-		while true do
-			chat("unsize me me me")
-			task.wait()
 		end
 	end
 )
