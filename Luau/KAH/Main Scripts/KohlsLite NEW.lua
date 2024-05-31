@@ -20,6 +20,7 @@ local anticrash = true -- anti gear crash (this will not detect silcrash, etc)
 
 -- Setup --
 getgenv().klversion2 = "v0.00 Alpha"
+local connections = {}
 
 -- Chat function
 local function chat(msg)
@@ -85,8 +86,6 @@ local gamepassData = gamepassCheck()
 local hasPerm = gamepassData[1]
 local hasPersons = gamepassData[2]
 
--- Connections --
-local connections = {}
 
 -- Variables for Chatted --
 local admin = {klprefix2 = klprefix2, klversion2 = klversion2}
