@@ -211,6 +211,10 @@ addcredit("DarkSpecies",
 "creating Radiation Hub - being a collaborator for KohlsLite"
 )
 
+addcredit("trollfacenan",
+"adding stuff to KohlsLite (i edited some of it though)"
+)
+
 
 addcredit("You!",
 "using my script and spreading it around. Thank you!"
@@ -339,6 +343,13 @@ addcommand("dcrash",
 
 addcommand("dogcrash",
 	"crashes the server with dog and clone spam",
+	function()
+		chat(klprefix2.."dcrash")
+	end
+)
+
+addcommand("silcrash",
+	"silently crash the server (dog crash)",
 	function()
 		chat(klprefix2.."dcrash")
 	end
