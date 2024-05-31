@@ -52,7 +52,7 @@ local gearantilog = ("0"):rep(40)
 local charantilog = ("0"):rep(40)
 
 -- Gamepass checker
-local function gamepassCheck(id)
+local function gamepassCheck()
 	local hasPerm = false
 	local hasPersons = false
 	
@@ -141,9 +141,10 @@ addcredit("Dizzy",
 "creating Route - music ids that I stole with an audio logger haha"
 )
 
-addcredit("Darkspecies",
-"creating Radiation Hub - being a collaborator for kohlslite."
+addcredit("DarkSpecies",
+"creating Radiation Hub - being a collaborator for KohlsLite"
 )
+
 
 addcredit("You!",
 "using my script and spreading it around. Thank you!"
