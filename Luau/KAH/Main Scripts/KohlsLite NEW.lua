@@ -57,7 +57,7 @@ local gearantilog = ("0"):rep(40)
 local charantilog = ("0"):rep(40)
 
 -- Gamepass checker
-local function gamepassCheck(id)
+local function gamepassCheck()
 	local hasPerm = false
 	local hasPersons = false
 	
@@ -123,9 +123,6 @@ end
 
 -- Antis --
 local crashTools = {"VampireVanquisher", "OrinthianSwordAndShield", "SeedPlant", "Emerald Knights of the Seventh Sanctum Sword and Shield"}
-
--- Connections --
-local connections = {}
 connections[#connections + 1] = game:GetService("RunService").RenderStepped:Connect(function()
 	if antilag then
 		for i, v in lplr.PlayerGui:GetChildren() do
@@ -170,10 +167,14 @@ connections[#connections + 1] = game:GetService("RunService").RenderStepped:Conn
 		for i, v in crashTools do
 			if workspace:FindFirstChild(v, true) or game.Players:FindFirstChild(v, true) then
 				chat("ungear all fuck")
+			 	chat("clr fuck")
 			end
 		end
 	end
 end)
+
+-- Connections --
+local connections = {}
 
 -- Credits --
 addcredit("ScriptingProgrammer (Roblox) / ts2021x (Discord)/ S-PScripts (GitHub)",
