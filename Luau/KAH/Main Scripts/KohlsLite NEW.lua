@@ -14,12 +14,14 @@
 
 -- Settings --
 getgenv().klprefix2 = "."
-getgenv().klversion2 = "v0.00 Alpha"
 
--- Antis --
-local antigear = false
-local anticrash = true
+-- Antis (settings) --
+local antigear = false -- No one except you can use gears with this on
+local anticrash = true -- No one except you can crash the servers (gears only)
 local nobadtools = false
+
+-- Version (don't change) --
+getgenv().klversion2 = "v0.00 Alpha"
 
 -- Chat function
 local function chat(msg)
@@ -52,7 +54,7 @@ local lplr = game:GetService("Players").LocalPlayer
 
 -- Anti logs
 local antilog = ("0"):rep(40)
-local musicantilog = ("0"):rep(40)
+local musicantilog = ("0"):rep(40) -- 
 local gearantilog = ("0"):rep(40)
 local charantilog = ("0"):rep(40)
 
@@ -438,5 +440,49 @@ addcommand("shop",
 	"switch to a different server",
 	function()
       		chat(klprefix2.."shop")
+	end
+)
+
+addcommand("anticrash",
+	"toggle anti crash (gears only)",
+	function()
+		if anticrash then
+      			anticrash = false
+		else
+			anticrash = true
+		end
+		notify("Anti crash is now set to "..anticrash)
+	end
+)
+
+addcommand("unanticrash",
+	"turn off anti crash",
+	function()
+		if anticrash then
+      			anticrash = false
+		end
+		notify("Anti crash is now set to false.")
+	end
+)
+
+addcommand("antigear",
+	"toggle anti gear",
+	function()
+		if antigear then
+      			antigear = false
+		else
+			antigear = true
+		end
+		notify("Anti gear is now set to "..antigear)
+	end
+)
+
+addcommand("unantigear",
+	"turn off anti gear",
+	function()
+		if antigear then
+      			antigear = false
+		end
+		notify("Anti gear is now set to false.")
 	end
 )
