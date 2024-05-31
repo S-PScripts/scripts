@@ -12,9 +12,14 @@
 
 -- Don't go abusing like crazy with this script. I made this free/open-source and don't want idiots doing stuff that make me make this paid/obfuscated.
 
--- Setup --
+-- Settings --
 getgenv().klprefix2 = "."
 getgenv().klversion2 = "v0.00 Alpha"
+
+-- Antis --
+local antigear = false
+local anticrash = true
+local nobadtools = false
 
 -- Chat function
 local function chat(msg)
@@ -80,9 +85,6 @@ local gamepassData = gamepassCheck()
 local hasPerm = gamepassData[1]
 local hasPersons = gamepassData[2]
 
--- Connections --
-local connections = {}
-
 -- Variables for Chatted --
 local admin = {klprefix2 = klprefix2, klversion2 = klversion2}
 local commands = {}
@@ -91,6 +93,64 @@ local descriptions = {}
 -- Variables for credits --
 local creditables = {}
 local creddesc = {}
+
+local crashTools = {
+	"VampireVanquisher", 
+	"OrinthianSwordAndShield", 
+	"BitePlant", 
+	"Emerald Knights of the Seventh Sanctum Sword and Shield"
+}
+
+local badTools = {
+}
+
+-- Connections --
+local connections = {}
+
+connections[#connections + 1] = 
+	game:GetService("RunService").RenderStepped:Connect(function()
+		
+		if antigear then
+			for i, v in game.Players:GetPlayers() do
+				if v.Name ~= lplr.Name and v.Backpack:FindFirstChildOfClass("Tool") then
+					chat("ungear "..v.Name)
+					chat("punish "..v.Name)
+					chat("clr")
+				end
+
+				if v.Name ~= lplr.Name and v.Character and v.Character:FindFirstChildOfClass("Tool") then
+					chat("ungear "..v.Name)
+					chat("punish "..v.Name)
+					chat("clr")
+				end
+			end
+		end
+		
+		if anticrash then
+			for i, tool in crashTools do
+				for i, v in game.Players:GetPlayers() do
+					if v.Name ~= lplr.Name and v.Backpack:FindFirstChild(tool) then
+						chat("ungear "..v.Name)
+						chat("punish "..v.Name)
+			 			chat("clr")
+					end
+					
+					if v.Name ~= lplr.Name and v.Character and v.Character:FindFirstChild(tool) then
+						chat("ungear "..v.Name)
+						chat("punish "..v.Name)
+			 			chat("clr")
+					end
+				end
+
+				if workspace:FindFirstChild(tool) then
+					chat("ungear others")
+					chat("punish others")
+					chat("clr")
+					chat("unpunish others")
+				end
+			end
+		end
+	end)
 
 -- Command adder --
 -- From Shortcut v2 NEW (https://github.com/Tech-187/Lua-scripts/blob/main/Shortcut__v2_src2.lua)
@@ -197,6 +257,10 @@ addcommand("vgcrash",
 				chat("respawn me")
 			end
 		end
+
+		if hasPerm or hasPersons then
+			chat(klprefix2.."regen")
+		end
 		
 		chat("blind others")
 		chat("speed others 0")
@@ -210,7 +274,11 @@ addcommand("vgcrash",
 		task.wait(0.2)
 		vg:Activate()
 
-		for i = 1, 12 do
+		chat("blind others")
+		chat("speed others 0")
+		chat("freeze others")
+
+		for i = 1, 100 do
 			chat("unsize me me me")
 		end
 	end
@@ -223,6 +291,10 @@ addcommand("vgcrash2",
 			if hasPerm or hasPersons then
 				chat("respawn me")
 			end
+		end
+
+		if hasPerm or hasPersons then
+			chat(klprefix2.."regen")
 		end
 		
 		chat("blind others")
@@ -238,7 +310,12 @@ addcommand("vgcrash2",
       		repeat task.wait() until lplr.Character.VampireVanquisher:FindFirstChild("Remote")
      	 	lplr.Character.VampireVanquisher.Remote:FireServer(Enum.KeyCode.Q)
 
-		for i = 1, 12 do
+		chat("blind others")
+		chat("speed others 0")
+		chat("freeze others")
+
+		
+		for i = 1, 100 do
 			chat("unsize me me me")
 		end
 	end
