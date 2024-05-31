@@ -121,7 +121,7 @@ function addcredit(cName, cDescription)
 end
 
 -- Antis --
-local crashTools = {"VampireVanquisher", "OrinthianSwordAndShield", "SeedPlant", "Emerald Knights of the Seventh Sanctum Sword and Shield"}
+local crashTools = {"VampireVanquisher", "OrinthianSwordAndShield", "BitePlant", "Emerald Knights of the Seventh Sanctum Sword and Shield"}
 connections[#connections + 1] = game:GetService("RunService").RenderStepped:Connect(function()
 	if antilag then
 		for i, v in lplr.PlayerGui:GetChildren() do
