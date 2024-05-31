@@ -18,6 +18,36 @@ getgenv().klversion2 = "v0.00 Alpha"
 
 -- Connections --
 local connections = {}
+local lplr = game:GetService("Players").LocalPlayer
+local function gamepassCheck(id)
+	local hasPerm = false
+	local hasPersons = false
+	if game.MarketplaceService:UserOwnsGamePassAsync(id, 66254) or game.MarketplaceService:UserOwnsGamePassAsync(id, 64354) then
+		hasPerm = true
+	end
+	if game.MarketplaceService:UserOwnsGamePassAsync(id, 35748) or game.MarketplaceService:UserOwnsGamePassAsync(id, 37127) then
+		hasPersons = true
+	end
+	return {hasPerm, hasPersons}
+end
+local antilog = ("0"):rep(40)
+
+local function chat(m)
+	game:GetService("Players"):Chat(m)
+end
+local function notify(text)
+	game:GetService("StarterGui"):SetCore("SendNotification",
+	{
+		Title = "KohlsLite",
+		Text = text
+	}
+	)
+end
+
+local gamepassData = gamepassCheck(lplr.UserId)
+local hasPerm = gamepassData[1]
+local hasPerson = gamepassData[2]
+
 
 -- Variables for Chatted --
 local admin = {klprefix2 = klprefix2, klversion2 = klversion2}
@@ -117,3 +147,33 @@ function()
 end)
 
 -- Commands ---
+addcommand(
+	"vgcrash",
+	"crashes the server with vampire gear",
+	function()
+		if game.FindFirstChild(game.Lighting, lplr.Name) then
+			if hasPerm or hasPerson then
+				--i was lazy to copy silcrash from my script so yes
+			end
+		end
+		chat("noclip others fuck")
+		chat("freeze others fuck")
+		pcall(function()
+			fireclickdetector(workspace.Terrain._Game.Admin.Regen.ClickDetector, 0)
+			chat("iyc firecd")
+		end)
+		chat("blind others fuck")
+		chat("punish others fuck")
+		chat("gear me "..antilog.."94794847")
+		game.WaitForChild(lplr.Backpack, "VampireVanquisher")
+		lplr.Backpack.VampireVanquisher.Parent = lplr.Character
+		lplr.Character.VampireVanquisher:Activate()
+		for i = 1, 12 do
+			chat("unsize me me me")
+		end
+		while true do
+			chat("unsize me me me")
+			task.wait()
+		end
+	end
+)
