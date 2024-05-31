@@ -370,6 +370,23 @@ addcommand("dcrash",
 	end
 )
 
+addcommand("dcrash2",
+	"crashes the server with dog and clone spam",
+	function()
+		if hasPerm or hasPersons then
+			chat(klprefix2.."regen")
+		end
+		
+		for i = 1, 50 do
+			chat("clone all all all")
+		end
+
+		for i = 1, 50 do
+			chat("dog all all all")
+		end
+	end
+)
+
 addcommand("dogcrash",
 	"crashes the server with dog and clone spam",
 	function()
