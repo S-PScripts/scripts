@@ -141,6 +141,10 @@ addcredit("Dizzy",
 "creating Route - music ids that I stole with an audio logger haha"
 )
 
+addcredit("Darkspecies",
+"creating Radiation Hub - being a collaborator for kohlslite."
+)
+
 addcredit("You!",
 "using my script and spreading it around. Thank you!"
 )
