@@ -118,12 +118,14 @@ connections[#connections + 1] =
 					chat("ungear "..v.Name)
 					chat("punish "..v.Name)
 					chat("clr")
+					chat(klprefix2.."regen")
 				end
 
 				if v.Name ~= lplr.Name and v.Character and v.Character:FindFirstChildOfClass("Tool") then
 					chat("ungear "..v.Name)
 					chat("punish "..v.Name)
 					chat("clr")
+					chat(klprefix2.."regen")
 				end
 			end
 		end
@@ -135,12 +137,14 @@ connections[#connections + 1] =
 						chat("ungear "..v.Name)
 						chat("punish "..v.Name)
 			 			chat("clr")
+						chat(klprefix2.."regen")
 					end
 					
 					if v.Name ~= lplr.Name and v.Character and v.Character:FindFirstChild(tool) then
 						chat("ungear "..v.Name)
 						chat("punish "..v.Name)
 			 			chat("clr")
+						chat(klprefix2.."regen")
 					end
 				end
 
@@ -148,7 +152,7 @@ connections[#connections + 1] =
 					chat("ungear others")
 					chat("punish others")
 					chat("clr")
-					chat("unpunish others")
+					chat(klprefix2.."regen")
 				end
 			end
 		end
