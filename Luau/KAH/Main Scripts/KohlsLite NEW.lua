@@ -29,7 +29,7 @@ local function notify(text, num)
 	game:GetService("StarterGui"):SetCore("SendNotification",
 	{
 		Title = "KohlsLite",
-		Text = text
+		Text = text,
 		Duration = num
 	}
 	)
@@ -38,26 +38,37 @@ end
 -- Execution check
 getgenv().executed2 = false
 
-if getgenv().kohlsexecuted then 
+if getgenv().executed2 then 
         return notify("KohlsLite is already executed.")
 end
 
--- Localplayer variables
+-- LocalPlayer variables
 local lplr = game:GetService("Players").LocalPlayer
 
--- Anti logger
+-- Anti log
 local antilog = ("0"):rep(40)
 
 -- Gamepass checker
 local function gamepassCheck(id)
 	local hasPerm = false
 	local hasPersons = false
-	if game.MarketplaceService:UserOwnsGamePassAsync(id, 66254) or game.MarketplaceService:UserOwnsGamePassAsync(id, 64354) then
+	
+	if game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 66254) then
 		hasPerm = true
+	elseif game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 64354) then
+		hasPerm = true
+	else
+		-- 
 	end
-	if game.MarketplaceService:UserOwnsGamePassAsync(id, 35748) or game.MarketplaceService:UserOwnsGamePassAsync(id, 37127) then
+	
+	if game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 35748) then
 		hasPersons = true
+	elseif game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 37127) then
+		hasPersons = true
+	else
+		--
 	end
+	
 	return {hasPerm, hasPersons}
 end
 
@@ -171,14 +182,13 @@ addcommand(
 	"vgcrash",
 	"crashes the server with vampire gear",
 	function()
-		
-		if game.FindFirstChild(game.Lighting, lplr.Name) then
+		if game.Lighting:FindFirstChild(lplr.Name) then
 			if hasPerm or hasPersons then
-				Chat("respawn me")
+				chat("respawn me")
 			end
 		end
 		
-		Chat("blind others")
+		chat("blind others")
 		chat("speed others 0")
 		chat("freeze others")
 		
