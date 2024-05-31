@@ -334,6 +334,10 @@ addcommand("vgcrash2",
 addcommand("dcrash",
 	"crashes the server with dog and clone spam",
 	function()
+		if hasPerm or hasPersons then
+			chat(klprefix2.."regen")
+		end
+		
 		for i = 1, 100 do
 			chat("dog all all all")
 			chat("clone all all all")
@@ -358,6 +362,10 @@ addcommand("silcrash",
 addcommand("fcrash",
 	"crashes the server with freeze and clone spam",
 	function()
+		if hasPerm or hasPersons then
+			chat(klprefix2.."regen")
+		end
+		
 		for i = 1, 100 do
 			chat("freeze all all all")
 			chat("clone all all all")
@@ -434,8 +442,13 @@ addcommand("regen",
 	"regenerate the admin pads",
 	function()
       		 if fireclickdetector then
-                     	fireclickdetector(game:GetService("Workspace").Terrain["_Game"].Admin.Regen.ClickDetector, 0)
-       		 end
+			if game:GetService("Workspace").Terrain["_Game"].Admin.Regen then
+                     		fireclickdetector(game:GetService("Workspace").Terrain["_Game"].Admin.Regen.ClickDetector, 0)
+			else
+				notify("The regen pad is not loaded - please find it first.")
+		 else
+			notify("Bad executor - fireclickdetector is not supported to run regen.")
+		 end
 	end
 )
 
