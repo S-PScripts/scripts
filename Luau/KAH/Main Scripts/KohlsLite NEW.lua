@@ -20,7 +20,7 @@ getgenv().klversion2 = "v0.00 Alpha"
 local connections = {}
 
 -- Variables for Chatted --
-local admin = {klprefix2 = klprefix2, klversion = "v2"}
+local admin = {klprefix2 = klprefix2, klversion2 = klversion2}
 local commands = {}
 local descriptions = {}
 
@@ -113,7 +113,7 @@ function()
       print("\n\n\n")
       print("You are using KohlsLite by ScriptingProgrammer/ts2021x/S-PScripts. This script has been maintained since 2023.")
       print("For help, please contact me on Discord at ts2021x.")
-      print("The version you are using is v"..getgenv().klversion2..".")
+      print("The version you are using is "..admin.klversion2..".")
 end)
 
 -- Commands ---
