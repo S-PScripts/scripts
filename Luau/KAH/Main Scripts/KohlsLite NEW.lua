@@ -12,8 +12,13 @@
 
 -- Don't go abusing like crazy with this script. I made this free/open-source and don't want idiots doing stuff that make me make this paid/obfuscated.
 
+-- Settings (edit these to your liking)
+getgenv().klprefix2 = "." -- prefix
+local antigear = false
+local antilag = true -- removes any messages that are >= 32 symbols & anti dog/rocket crash
+local anticrash = true -- anti gear crash (this will not detect silcrash, etc)
+
 -- Setup --
-getgenv().klprefix2 = "."
 getgenv().klversion2 = "v0.00 Alpha"
 
 -- Chat function
@@ -47,7 +52,7 @@ local lplr = game:GetService("Players").LocalPlayer
 
 -- Anti logs
 local antilog = ("0"):rep(40)
-local musicantilog = ("0"):rep(40)
+local musicantilog = ("0"):rep(40) -- ???
 local gearantilog = ("0"):rep(40)
 local charantilog = ("0"):rep(40)
 
@@ -115,6 +120,60 @@ function addcredit(cName, cDescription)
     creditables[cName] = cName
     creddesc[cName] = cDescription
 end
+
+-- Antis --
+local crashTools = {"VampireVanquisher", "OrinthianSwordAndShield", "SeedPlant", "Emerald Knights of the Seventh Sanctum Sword and Shield"}
+
+-- Connections --
+local connections = {}
+connections[#connections + 1] = game:GetService("RunService").RenderStepped:Connect(function()
+	if antilag then
+		for i, v in lplr.PlayerGui:GetChildren() do
+			if game.IsA(v, "Message") then
+				if v.Text:len() >= 32 -- Text is too long lol 
+				then
+					v.Text = "Removed by Anti-Lag"
+					v:Destroy()
+				end
+			end
+			if v.Name == "MessageGUI" then
+				v:Destroy()
+			end
+		end
+		if lplr.Character and game.FindFirstChild(lplr.Character, "Addon", true) then
+			pcall(function()
+				repeat
+					chat("undog me									all")
+					chat("reload me									all")
+					task.wait()
+				until not game.FindFirstChild(lplr.Character, "Addon", true)
+			end)
+		end
+		for i, v in game:GetService("Players"):GetPlayers() do
+			if v.Character then
+				if v.Character:FindFirstChild("Rocket") then
+					v.Character.Rocket.CanCollide = false
+					task.wait(.5)
+					v.Character.Rocket:Destroy()
+				end
+			end
+		end	
+	end
+	if antigear then
+		for i, v in game.Players:GetPlayers() do
+			if v.Name ~= lplr.Name and v.Backpack:FindFirstChildOfClass("Tool") or v.Name ~= lplr.Name and v.Character and v.Character:FindFirstChildOfClass("Tool") then
+				chat(`ungear {v.Name} fuck`)
+			end
+		end
+	end
+	if anticrash then
+		for i, v in crashTools do
+			if workspace:FindFirstChild(v, true) or game.Players:FindFirstChild(v, true) then
+				chat("ungear all fuck")
+			end
+		end
+	end
+end)
 
 -- Credits --
 addcredit("ScriptingProgrammer (Roblox) / ts2021x (Discord)/ S-PScripts (GitHub)",
@@ -194,7 +253,7 @@ addcommand(
 	function()
 		if game.Lighting:FindFirstChild(lplr.Name) then
 			if hasPerm or hasPersons then
-				chat("respawn me")
+				chat(`{klprefix2}silcrash`)
 			end
 		end
 		
@@ -210,5 +269,48 @@ addcommand(
 		for i = 1, 12 do
 			chat("unsize me me me")
 		end
+	end
+)
+
+addcommand(
+	"silcrash",
+	"crashes the server without the use of any gears",
+	function()
+		for i = 1, 52 do
+			chat("dog all all all")
+		end
+		for i = 1, 51 do
+			chat("clone all all all")
+		end
+		while task.wait() do
+			chat("clone all all all")
+		end
+	end
+)
+
+addcommand(
+	"antigear",
+	"toggles antigear",
+	function()
+		antigear = not antigear
+		notify(`{antigear and "enabled" or "disabled"} antigear`)
+	end
+)
+
+addcommand(
+	"antilag",
+	"toggles antilag",
+	function()
+		antilag = not antilag
+		notify(`{antilag and "enabled" or "disabled"} antilag`)
+	end
+)
+
+addcommand(
+	"anticrash",
+	"toggles anticrash",
+	function()
+		anticrash = not anticrash
+		notify(`{anticrash and "enabled" or "disabled"} anticrash`)
 	end
 )
