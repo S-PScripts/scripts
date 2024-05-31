@@ -20,6 +20,8 @@ local antigear = false -- No one except you can use gears with this on
 local anticrash = true -- No one except you can crash the servers (gears only)
 local nobadtools = false -- Custom blacklist for gears
 
+local antilag = false -- stop lag from effects
+
 -- Version (don't change) --
 getgenv().klversion2 = "v0.00 Alpha"
 
@@ -111,7 +113,6 @@ local connections = {}
 
 connections[#connections + 1] = 
 	game:GetService("RunService").RenderStepped:Connect(function()
-		
 		if antigear then
 			for i, v in game.Players:GetPlayers() do
 				if v.Name ~= lplr.Name and v.Backpack:FindFirstChildOfClass("Tool") then
@@ -154,6 +155,30 @@ connections[#connections + 1] =
 					chat("clr")
 					chat(klprefix2.."regen")
 				end
+			end
+		end
+	end)
+
+local items = {
+	"Smoke",
+	"ForceField",
+	"Explosion",
+	"Fire",
+	"Sparkles"
+}
+
+connections[#connections + 1] = 
+	workspace.DescendantAdded:Connect(function(ch)
+		if antilag then
+			local c = false
+			for i,v in pairs(items) do
+				if ch:IsA(v) then
+					c = true
+				end
+			end
+			if c then
+				fwait()
+				ch:Destroy()
 			end
 		end
 	end)
