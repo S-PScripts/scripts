@@ -12,10 +12,6 @@
 
 -- Don't go abusing like crazy with this script. I made this free/open-source and don't want idiots doing stuff that make me make this paid/obfuscated.
 
--- CODE --
-
--- Variables --
-
 -- Setup --
 getgenv().klprefix2 = "."
 getgenv().klversion2 = "v0.00 Alpha"
@@ -84,8 +80,6 @@ addcredit("Dizzy",
 addcredit("You!",
 "using my script and spreading it around. Thank you!"
 )
-
--- LISTS --
 
 -- Credit list -- 
 addcommand("credits",
