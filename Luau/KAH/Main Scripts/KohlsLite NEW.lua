@@ -45,8 +45,11 @@ end
 -- LocalPlayer variables
 local lplr = game:GetService("Players").LocalPlayer
 
--- Anti log
+-- Anti logs
 local antilog = ("0"):rep(40)
+local musicantilog = ("0"):rep(40)
+local gearantilog = ("0"):rep(40)
+local charantilog = ("0"):rep(40)
 
 -- Gamepass checker
 local function gamepassCheck(id)
