@@ -539,3 +539,25 @@ addcommand("unantigear",
 		notify("Anti gear is now set to false.")
 	end
 )
+
+addcommand("antilag",
+	"toggle anti lag",
+	function()
+		if antilag then
+      			antilag = false
+		else
+			antilag = true
+		end
+		notify("Anti gear is now set to "..antilag)
+	end
+)
+
+addcommand("unantilag",
+	"turn off anti lag",
+	function()
+		if antilag then
+      			antilag = false
+		end
+		notify("Anti lag is now set to false.")
+	end
+)
