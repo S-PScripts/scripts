@@ -18,7 +18,7 @@ getgenv().klprefix2 = "."
 -- Antis (settings) --
 local antigear = false -- No one except you can use gears with this on
 local anticrash = true -- No one except you can crash the servers (gears only)
-local nobadtools = false
+local nobadtools = false -- Custom blacklist for gears
 
 -- Version (don't change) --
 getgenv().klversion2 = "v0.00 Alpha"
