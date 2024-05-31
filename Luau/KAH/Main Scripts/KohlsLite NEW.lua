@@ -1,5 +1,5 @@
--- KohlsLite v2
--- This is a rewrite of the Chatted function as well as some other things
+-- KohlsLite v2 --
+-- This is a rewrite of the Chatted function as well as some other things --
 
 -- INFORMATION ABOUT MY SCRIPT --
 
@@ -82,7 +82,7 @@ addcredit("Dizzy",
 )
 
 addcredit("You!",
-"using my script and spreading it around :D"
+"using my script and spreading it around. Thank you!"
 )
 
 -- LISTS --
@@ -91,6 +91,8 @@ addcredit("You!",
 addcommand("credits",
 "print out the credits for KohlsLite",
 function()
+        print("Credits:")
+        print("\n\n\n")
         for i, v in pairs(creditables) do
             dupe = v.. " - ".. creddesc[v]
             print(dupe)
@@ -101,8 +103,23 @@ end)
 addcommand("cmds", -- not sure why in scv2 new it doesn't use the system that was created!
 "print out the commands for KohlsLite",
 function()
+        print("Commands:")
+        print("\n\n\n")
         for i, v in pairs(commands) do
             dupe = v.. " - ".. descriptions[v]
             print(dupe)
         end
 end)
+
+-- Information --
+addcommand("help", 
+"print out information about KohlsLite",
+function()
+      print("Information:")
+      print("\n\n\n")
+      print("You are using KohlsLite by ScriptingProgrammer/ts2021x/S-PScripts. This script has been maintained since 2023.")
+      print("For help, please contact me on Discord at ts2021x.")
+      print("The version you are using is v"..getgenv().klversion2..".")
+end)
+
+-- Commands ---
