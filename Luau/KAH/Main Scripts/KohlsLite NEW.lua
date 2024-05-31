@@ -190,7 +190,34 @@ addcommand("help",
 
 -- Commands ---
 addcommand("vgcrash",
-	"crashes the server with vampire gear",
+	"crashes the server with the vampire vanquisher",
+	function()
+		if game.Lighting:FindFirstChild(lplr.Name) then
+			if hasPerm or hasPersons then
+				chat("respawn me")
+			end
+		end
+		
+		chat("blind others")
+		chat("speed others 0")
+		chat("freeze others")
+		
+		chat("gear me "..antilog.."94794847")
+		repeat task.wait() until lplr.Backpack:WaitForChild("VampireVanquisher")
+      		local vg = lplr.Backpack:FindFirstChild("VampireVanquisher")
+      		vg.Parent = lplr.Character
+		
+		task.wait(0.2)
+		vg:Activate()
+
+		for i = 1, 12 do
+			chat("unsize me me me")
+		end
+	end
+)
+
+addcommand("vgcrash2",
+	"crashes the server with the vampire vanquisher",
 	function()
 		if game.Lighting:FindFirstChild(lplr.Name) then
 			if hasPerm or hasPersons then
@@ -207,8 +234,132 @@ addcommand("vgcrash",
       		local vg = lplr.Backpack:FindFirstChild("VampireVanquisher")
       		vg.Parent = lplr.Character
 
+		repeat task.wait() until not lplr.Character.VampireVanquisher:FindFirstChild("Coffin")
+      		repeat task.wait() until lplr.Character.VampireVanquisher:FindFirstChild("Remote")
+     	 	lplr.Character.VampireVanquisher.Remote:FireServer(Enum.KeyCode.Q)
+
 		for i = 1, 12 do
 			chat("unsize me me me")
 		end
+	end
+)
+
+addcommand("dcrash",
+	"crashes the server with dog and clone spam",
+	function()
+		for i = 1, 100 do
+			chat("dog all all all")
+			chat("clone all all all")
+		end
+	end
+)
+
+addcommand("dogcrash",
+	"crashes the server with dog and clone spam",
+	function()
+		chat(klprefix2.."dcrash")
+	end
+)
+
+addcommand("fcrash",
+	"crashes the server with freeze and clone spam",
+	function()
+		for i = 1, 100 do
+			chat("freeze all all all")
+			chat("clone all all all")
+		end
+	end
+)
+
+addcommand("freezecrash",
+	"crashes the server with freeze and clone spam",
+	function()
+		chat(klprefix2.."fcrash")
+	end
+)
+
+addcommand("shieldcrash",
+	"crashes the server with shield, rocket and clone spam",
+	function()
+		if hasPersons then
+			for i = 1, 100 do
+				chat("shield/all/all/all")
+          			chat("rocket/all/all/all")
+         			chat("clone all all all")
+			end
+		else
+			notify("You need to Persons to use this command, sorry!")
+		end
+	end
+)
+
+addcommand("logspam",
+	"spam logs with text",
+	function()
+		     chat("reset KohlsLite on top - 2024")
+	end
+)
+
+addcommand("house",
+	"teleport to the house",
+	function()
+		     lplr.Character.HumanoidRootPart.CFrame = CFrame.new(-31.0896435, 8.22999477, 70.522644, -0.999961913, 4.495271e-08, -0.0087288795, 4.55292621e-08, 1, -6.58523618e-08, 0.0087288795, -6.62472743e-08, -0.999961913)
+	end
+)
+
+addcommand("spawn",
+	"teleport to spawn",
+	function()
+                     lplr.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(-29, 3.70000005, -25.5900116))
+	end
+)
+
+addcommand("breakcam",
+	"break everyone's camera",
+	function()
+      		chat("gear me 4842207161")
+      		repeat task.wait() until lplr.Backpack:FindFirstChild("AR")
+      		local cambrek = lplr.Backpack:FindFirstChild("AR")
+      		cambrek.Parent = lplr.Character
+		
+      		task.wait(0.2)
+      		cambrek:Activate()
+		
+      		notify("The camera is now broken into shiftlock - you won't see the effect until you rejoin.")
+	end
+)
+
+addcommand("nocam",
+	"break everyone's camera",
+	function()
+      		chat(klprefix2.."nocam")
+	end
+)
+
+addcommand("regen",
+	"regenerate the admin pads",
+	function()
+      		 if fireclickdetector then
+                     	fireclickdetector(game:GetService("Workspace").Terrain["_Game"].Admin.Regen.ClickDetector, 0)
+       		 end
+	end
+)
+
+addcommand("serverhop",
+	"switch to a different server",
+	function()
+      		local Servers = game.HttpService:JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/"..game.PlaceId.."/servers/Public?sortOrder=Asc&limit=100"))
+        	for i,v in pairs(Servers.data) do
+        		if v.playing ~= v.maxPlayers then
+                     		game:GetService('TeleportService'):TeleportToPlaceInstance(game.PlaceId, v.id)
+            		end
+        	end    
+	end
+)
+
+addcommand("shop",
+	"switch to a different server",
+	function()
+      		chat(klprefix2.."shop")
 	end
 )
