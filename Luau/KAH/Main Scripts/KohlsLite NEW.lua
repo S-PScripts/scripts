@@ -578,3 +578,10 @@ addcommand("unantilag",
 		notify("Anti lag is now set to false.")
 	end
 )
+
+addcommand("klv1",
+"KohlsLite V1.",
+function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/Main%20Scripts/KohlsLite.lua"))()
+end
+)
