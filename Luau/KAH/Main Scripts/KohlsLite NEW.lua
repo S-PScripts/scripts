@@ -376,13 +376,13 @@ addcommand("dcrash2",
 		if hasPerm or hasPersons then
 			chat(klprefix2.."regen")
 		end
-		
-		for i = 1, 50 do
-			chat("clone all all all")
-		end
 
 		for i = 1, 50 do
 			chat("dog all all all")
+		end
+		
+		for i = 1, 50 do
+			chat("clone all all all")
 		end
 	end
 )
