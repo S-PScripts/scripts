@@ -15,9 +15,6 @@
 -- Setup --
 getgenv().klprefix2 = "."
 getgenv().klversion2 = "v0.00 Alpha"
-
--- Connections --
-local connections = {}
 local lplr = game:GetService("Players").LocalPlayer
 local function gamepassCheck(id)
 	local hasPerm = false
@@ -48,6 +45,8 @@ local gamepassData = gamepassCheck(lplr.UserId)
 local hasPerm = gamepassData[1]
 local hasPerson = gamepassData[2]
 
+-- Connections --
+local connections = {}
 
 -- Variables for Chatted --
 local admin = {klprefix2 = klprefix2, klversion2 = klversion2}
