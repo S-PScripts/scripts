@@ -18,12 +18,12 @@ local antilag = false -- stop lag from effects
 getgenv().klversion2 = "v0.00 Alpha"
 
 -- Chat function
-local function chat(msg)
+local function Chat(msg)
 	game:GetService("Players"):Chat(msg)
 end
 
 -- Remind function
-local function notify(text, num)
+local function Remind(text, num)
 	if num == nil then
 		num = 1
 	end
@@ -40,7 +40,7 @@ end
 getgenv().executed2 = false
 
 if getgenv().executed2 then 
-	return notify("KohlsECO is already executed.")
+	return Remind("KohlsECO is already executed.")
 end
 
 -- LocalPlayer variables
@@ -138,17 +138,17 @@ connections[#connections + 1] =
         if antigear then
             for i, v in game.Players:GetPlayers() do
                 if v.Name ~= lplr.Name and v.Backpack:FindFirstChildOfClass("Tool") then
-                    chat("ungear " .. v.Name)
-                    chat("punish " .. v.Name)
-                    chat("clr")
-                    chat(klprefix2 .. "regen")
+                    Chat("ungear " .. v.Name)
+                    Chat("punish " .. v.Name)
+                    Chat("clr")
+                    Chat(klprefix2 .. "regen")
                 end
 
                 if v.Name ~= lplr.Name and v.Character and v.Character:FindFirstChildOfClass("Tool") then
-                    chat("ungear " .. v.Name)
-                    chat("punish " .. v.Name)
-                    chat("clr")
-                    chat(klprefix2 .. "regen")
+                    Chat("ungear " .. v.Name)
+                    Chat("punish " .. v.Name)
+                    Chat("clr")
+                    Chat(klprefix2 .. "regen")
                 end
             end
         end
@@ -157,25 +157,25 @@ connections[#connections + 1] =
             for i, tool in crashTools do
                 for i, v in game.Players:GetPlayers() do
                     if v.Name ~= lplr.Name and v.Backpack:FindFirstChild(tool) then
-                        chat("ungear " .. v.Name)
-                        chat("punish " .. v.Name)
-                        chat("clr")
-                        chat(klprefix2 .. "regen")
+                        Chat("ungear " .. v.Name)
+                        Chat("punish " .. v.Name)
+                        Chat("clr")
+                        Chat(klprefix2 .. "regen")
                     end
 
                     if v.Name ~= lplr.Name and v.Character and v.Character:FindFirstChild(tool) then
-                        chat("ungear " .. v.Name)
-                        chat("punish " .. v.Name)
-                        chat("clr")
-                        chat(klprefix2 .. "regen")
+                        Chat("ungear " .. v.Name)
+                        Chat("punish " .. v.Name)
+                        Chat("clr")
+                        Chat(klprefix2 .. "regen")
                     end
                 end
 
                 if workspace:FindFirstChild(tool) then
-                    chat("ungear others")
-                    chat("punish others")
-                    chat("clr")
-                    chat(klprefix2 .. "regen")
+                    Chat("ungear others")
+                    Chat("punish others")
+                    Chat("clr")
+                    Chat(klprefix2 .. "regen")
                 end
             end
         end
@@ -329,19 +329,19 @@ addcommand({
 	funct = function()
 		if game.Lighting:FindFirstChild(lplr.Name) then
 			if hasPerm or hasPersons then
-				chat("respawn me")
+				Chat("respawn me")
 			end
 		end
 
 		if hasPerm or hasPersons then
-			chat(klprefix2.."regen")
+			Chat(klprefix2.."regen")
 		end
 
-		chat("blind others")
-		chat("speed others 0")
-		chat("freeze others")
+		Chat("blind others")
+		Chat("speed others 0")
+		Chat("freeze others")
 
-		chat("gear me "..antilog.."94794847")
+		Chat("gear me "..antilog.."94794847")
 		repeat task.wait() until lplr.Backpack:WaitForChild("VampireVanquisher")
 		local vg = lplr.Backpack:FindFirstChild("VampireVanquisher")
 		vg.Parent = lplr.Character
@@ -349,12 +349,12 @@ addcommand({
 		task.wait(0.2)
 		vg:Activate()
 
-		chat("blind others")
-		chat("speed others 0")
-		chat("freeze others")
+		Chat("blind others")
+		Chat("speed others 0")
+		Chat("freeze others")
 
 		for i = 1, 100 do
-			chat("unsize me me me")
+			Chat("unsize me me me")
 		end
 	end
 })
@@ -366,19 +366,19 @@ addcommand({
 	funct = function()
 		if game.Lighting:FindFirstChild(lplr.Name) then
 			if hasPerm or hasPersons then
-				chat("respawn me")
+				Chat("respawn me")
 			end
 		end
 
 		if hasPerm or hasPersons then
-			chat(klprefix2.."regen")
+			Chat(klprefix2.."regen")
 		end
 
-		chat("blind others")
-		chat("speed others 0")
-		chat("freeze others")
+		Chat("blind others")
+		Chat("speed others 0")
+		Chat("freeze others")
 
-		chat("gear me "..antilog.."94794847")
+		Chat("gear me "..antilog.."94794847")
 		repeat task.wait() until lplr.Backpack:WaitForChild("VampireVanquisher")
 		local vg = lplr.Backpack:FindFirstChild("VampireVanquisher")
 		vg.Parent = lplr.Character
@@ -387,12 +387,12 @@ addcommand({
 		repeat task.wait() until lplr.Character.VampireVanquisher:FindFirstChild("Remote")
 		lplr.Character.VampireVanquisher.Remote:FireServer(Enum.KeyCode.Q)
 
-		chat("blind others")
-		chat("speed others 0")
-		chat("freeze others")
+		Chat("blind others")
+		Chat("speed others 0")
+		Chat("freeze others")
 
 		for i = 1, 100 do
-			chat("unsize me me me")
+			Chat("unsize me me me")
 		end
 	end
 })
@@ -403,12 +403,12 @@ addcommand({
 	description = "crashes the server with dog and clone spam",
 	funct = function()
 		if hasPerm or hasPersons then
-			chat(klprefix2.."regen")
+			Chat(klprefix2.."regen")
 		end
 
 		for i = 1, 100 do
-			chat("dog all all all")
-			chat("clone all all all")
+			Chat("dog all all all")
+			Chat("clone all all all")
 		end
 	end
 })
@@ -419,15 +419,15 @@ addcommand({
 	description = "crashes the server with dog and clone spam",
 	funct = function()
 		if hasPerm or hasPersons then
-			chat(klprefix2.."regen")
+			Chat(klprefix2.."regen")
 		end
 
 		for i = 1, 50 do
-			chat("dog all all all")
+			Chat("dog all all all")
 		end
 
 		for i = 1, 50 do
-			chat("clone all all all")
+			Chat("clone all all all")
 		end
 	end
 })
@@ -438,12 +438,12 @@ addcommand({
 	description = "crashes the server with freeze and clone spam",
 	funct = function()
 		if hasPerm or hasPersons then
-			chat(klprefix2.."regen")
+			Chat(klprefix2.."regen")
 		end
 
 		for i = 1, 100 do
-			chat("freeze all all all")
-			chat("clone all all all")
+			Chat("freeze all all all")
+			Chat("clone all all all")
 		end
 	end
 })
@@ -455,12 +455,12 @@ addcommand({
 	funct = function()
 		if hasPersons then
 			for i = 1, 100 do
-				chat("shield/all/all/all")
-				chat("rocket/all/all/all")
-				chat("clone all all all")
+				Chat("shield/all/all/all")
+				Chat("rocket/all/all/all")
+				Chat("clone all all all")
 			end
 		else
-			notify("You need to Persons to use this command, sorry!")
+			Remind("You need to Persons to use this command, sorry!")
 		end
 	end
 })
@@ -471,7 +471,7 @@ addcommand({
 	description = "spam logs with text",
 	funct = function()
 		for i = 1, 100 do
-			chat("reset KohlsECO on top - 2024")
+			Chat("reset KohlsECO on top - 2024")
 		end
 	end
 })
@@ -499,7 +499,7 @@ addcommand({
 	aliases = {"nocam"},
 	description = "break everyone's camera",
 	funct = function()
-		chat("gear me 4842207161")
+		Chat("gear me 4842207161")
 		repeat task.wait() until lplr.Backpack:FindFirstChild("AR")
 		local cambrek = lplr.Backpack:FindFirstChild("AR")
 		cambrek.Parent = lplr.Character
@@ -507,7 +507,7 @@ addcommand({
 		task.wait(0.2)
 		cambrek:Activate()
 
-		notify("The camera is now broken into shiftlock - you won't see the effect until you rejoin.")
+		Remind("The camera is now broken into shiftlock - you won't see the effect until you rejoin.")
 	end
 })
 
@@ -521,10 +521,10 @@ addcommand({
 			if workspace.Terrain["_Game"].Admin:FindFirstChild("Regen") then
 				fireclickdetector(workspace.Terrain["_Game"].Admin.Regen.ClickDetector, 0)
 			else
-				notify("The regen pad is not loaded - please find it first.")
+				Remind("The regen pad is not loaded - please find it first.")
 			end	
 		else
-			notify("Cannot regen; Your exploit does not support the fireclickdetector function.")
+			Remind("Cannot regen; Your exploit does not support the fireclickdetector function.")
 		end
 	end
 })
@@ -553,7 +553,7 @@ addcommand({
 		else
 			anticrash = true
 		end
-		notify("Anti crash is now set to "..anticrash)
+		Remind("Anti crash is now set to "..anticrash)
 	end
 })
 
@@ -565,7 +565,7 @@ addcommand({
 		if anticrash then
 			anticrash = false
 		end
-		notify("Anti crash is now set to false.")
+		Remind("Anti crash is now set to false.")
 	end
 })
 
@@ -579,7 +579,7 @@ addcommand({
 		else
 			antigear = true
 		end
-		notify("Anti gear is now set to "..antigear)
+		Remind("Anti gear is now set to "..antigear)
 	end
 })
 
@@ -591,7 +591,7 @@ addcommand({
 		if antigear then
 			antigear = false
 		end
-		notify("Anti gear is now set to false.")
+		Remind("Anti gear is now set to false.")
 	end
 })
 
@@ -605,7 +605,7 @@ addcommand({
 		else
 			antilag = true
 		end
-		notify("Anti gear is now set to "..antilag)
+		Remind("Anti gear is now set to "..antilag)
 	end
 })
 
@@ -617,7 +617,7 @@ addcommand({
 		if antilag then
 			antilag = false
 		end
-		notify("Anti lag is now set to false.")
+		Remind("Anti lag is now set to false.")
 	end
 })
 
@@ -627,5 +627,386 @@ addcommand({
 	description = "Open the legacy version of KohlsLite. This is still maintained!",
 	funct = function()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/Main%20Scripts/KohlsLite.lua"))()
+	end
+})
+
+addcommand({
+	name = "tank",
+	aliases = {"wartank"},
+	description = "turn someone into a tank",
+	funct = function()
+		local tankeng = args[2]
+		Chat("removelimbs "..tankeng)
+		task.wait(0.5)
+		Chat("dog "..tankeng)
+		task.wait(0.5)
+		Chat("creeper "..tankeng)
+                Remind("Turned the player into a tank!")
+	end
+})
+
+addcommand({
+	name = "cube",
+	aliases = {"square"},
+	description = "turn someone into a cube",
+	funct = function()
+       		local imacube = args[2]
+                Chat("unpackage "..imacube)
+                for i = 1,15 do
+                        task.wait()
+                        Chat("size " .. imacube .. " .3")
+                    end
+                Chat("paint " .. imacube .. " white")
+                Chat("bighead " .. imacube)
+                Chat("unsize " .. imacube)
+                Chat("removelimbs " .. imacube)
+                Chat("size " .. imacube .. " 2.5")
+                Chat("shiny " .. imacube)
+                Remind("Turned the player into a cube!")
+	end
+})
+
+addcommand({
+	name = "ufo",
+	aliases = {"flyingobject"},
+	description = "turn someone into a ufo",
+	funct = function()
+		local ufo = args[2]
+		for i = 1, 7 do
+			Chat("size "..ufo.." 0.3")
+		end
+		Chat("unsize "..ufo)
+		Chat("size "..ufo.." 4")
+		Chat("paint "..ufo.." brown")
+		task.wait(0.25)
+		Chat("removelimbs "..ufo)
+		Chat("dog "..ufo)
+		Chat("rainbowify "..ufo)
+		Chat("spin "..ufo)
+                Remind("Turned the player into a UFO!")
+	end
+})
+
+addcommand({
+	name = "rat",
+	aliases = {"yuckify"},
+	description = "turn someone into a rat",
+	funct = function()
+     		local eww = args[2]
+		Chat("char "..eww.." 6")
+		task.wait(1)
+		Chat("hat "..eww.." 6203125039")
+		Chat("size "..eww.." 0.8")
+		Chat("speed "..eww.." 26")
+		Remind("Turned the player into a rat!")
+	end
+})
+
+addcommand({
+	name = "titan",
+	aliases = {"onepiece"},
+	description = "turn someone into a titan",
+	funct = function()
+     		local thatanime = args[2]
+		Chat("char "..thatanime.." 4")
+		task.wait(1.2)
+		Chat("skydive "..thatanime)
+		Chat("paint "..thatanime.." red")
+		Chat("size "..thatanime.." 5")
+		Chat("speed "..thatanime.." 24")
+		Chat("pants "..thatanime.." 1187508947")
+		Remind("Turned the player into a titan!")
+	end
+})
+
+addcommand({
+	name = "speaker",
+	aliases = {},
+	description = "turn someone into a speaker",
+	funct = function()
+     		local spek = args[2]
+		Chat("char "..spek.." 1702851506")
+		task.wait(1.2)
+		Chat("skydive "..spek)
+		task.wait(.35)
+		Chat("size "..spek.." 0.3")
+		Chat("size "..spek.." 0.3")
+		Chat("creeper "..spek)
+		Chat("paint "..spek.." black")
+		Chat("size "..spek.." 10")
+		Chat("size "..spek.." 5")
+		Chat("speed "..spek.." 32")
+		task.wait(.35)
+		Chat("paint "..spek.." black")
+		Remind("Turned the player into a speaker!")
+	end
+})
+
+addcommand({
+	name = "taxi",
+	aliases = {"rider"},
+	description = "turn someone into a taxi",
+	funct = function()
+     		local taxi = args[2]
+		Chat("dog "..taxi)
+		Chat("paint "..taxi.." gold")
+		Chat("speed "..taxi.." 100")
+		Chat("trail "..taxi.." gold")
+		Chat("god "..taxi)
+		Chat("unhat "..taxi)
+		Remind("Turned the player into a taxi!")
+	end
+})
+
+addcommand({
+	name = "smoothie",
+	aliases = {"blender"},
+	description = "blender someone up",
+	funct = function()
+     		local ahhno = args[2]
+		Chat("jail "..ahhno)
+		Chat("stun "..ahhno)
+		Chat("spin "..ahhno)
+		Chat("fire "..ahhno)
+		Remind("Blendered the player!")
+	end
+})
+
+addcommand({
+	name = "tnt",
+	aliases = {"creeper","explosion"},
+	description = "turn someone into a creeper",
+	funct = function()
+     		local tnt = args[2]
+		Chat("removepants "..tnt)
+		Chat("removeshirt "..tnt)
+		Chat("paint "..player.." red")
+		task.wait(1)
+		Chat("bonfire "..tnt)
+		task.wait(2)
+		Chat("explode "..tnt)
+		Remind("Exploded the player like a creeper!")
+	end
+})
+
+addcommand({
+	name = "headfloat",
+	aliases = {"floathead"},
+	description = "make someone's head float!",
+	funct = function()
+		local hf = args[2]
+		Chat("size "..hf.." 0.5")
+		task.wait(0.25)
+		Chat("bighead "..hf)
+		task.wait(0.25)
+		Chat("unsize "..hf)
+	        Remind("Made the player's head float!")
+	end
+})
+
+addcommand({
+	name = "coconut",
+	aliases = {"coco"},
+	description = "turn a player into a coconut!",
+	funct = function()
+		local coco = args[2]
+		Chat("char "..coco.." 5")
+		task.wait(1.2)
+		Chat("paint "..coco.." brown")
+		for i = 1, 5 do
+			Chat("size "..coco.." .3")
+		end
+		Chat("unsize "..coco)
+		Chat("size "..coco.." 2")
+		task.wait(0.3)
+		Chat("paint "..coco.." brown")
+	        Remind("Turned the player into a coconut!")
+	end
+})
+
+addcommand({
+	name = "icetower",
+	aliases = {"itower"},
+	description = "create a ice tower with a player!",
+	funct = function()
+		local icet = args[2]
+		for i = 1, 30 do
+                    Chat("size " .. icet .. " .6")
+                    Chat("seizure " .. icet)
+                    Chat("freeze " .. icet)
+                    Chat("unsize " .. icet)
+                end
+		Remind("Turned the player into an ice tower!")
+	end
+})
+
+addcommand({
+	name = "amputate",
+	aliases = {"cutup","cutoff"},
+	description = "amputate a player",
+	funct = function()
+		local amp = args[2]	
+		Chat("size " .. amp .. " 10")
+                task.wait(.3)
+                Chat("freeze " .. amp)
+                task.wait(.3)
+                Chat("trip " .. amp)
+                task.wait(.3)
+                Chat("unsize " .. amp)
+                task.wait(.3)
+                Chat("paint " .. amp .. " red")
+		Remind("Amputated the player!")
+	end
+})
+
+addcommand({
+	name = "skybox",
+	aliases = {},
+	description = "skybox a player",
+	funct = function()
+		local skbox = args[2]
+		Chat("size " .. skbox .. " .3")
+                Chat("freeze " .. skbox)
+                Chat("size " .. skbox .. " 10")
+                Chat("goldify " .. skbox)
+                Chat("clone " .. skbox)
+                Chat("reset " .. skbox)
+		Remind("Skyboxed the player!")
+	end
+})
+
+addcommand({
+	name = "headroot",
+	aliases = {"roothead"},
+	description = "headroot a player",
+	funct = function()
+		local hroot = args[2]
+		Chat("size " .. hroot .. " 10")
+		task.wait()
+                Chat("freeze " .. hroot)
+		task.wait()
+                Chat("bighead " .. hroot)
+		task.wait()
+                Chat("size " .. hroot .. " .3")
+		task.wait()
+                Chat("thaw " .. hroot)
+		task.wait()
+                Chat("unsize " .. hroot)
+		Remind("Headrooted the player!")
+	end
+})
+
+addcommand({
+	name = "headrise",
+	aliases = {"risehead"},
+	description = "headrise a player",
+	funct = function()
+		local hrise = args[2]
+		Chat("size " .. hrise .. " .3")
+		task.wait()
+                Chat("bighead " .. hrise)
+		task.wait()
+                Chat("size " .. hrise .. " 10")
+		task.wait()
+                Chat("thaw " .. hrise)
+		task.wait()
+                Chat("unsize " .. hrise)
+		Remind("Headrised the player!")
+	end
+})
+
+addcommand({
+	name = "glitch",
+	aliases = {"glitchify"},
+	description = "glitch a player with the dagger of shattered dimensions",
+	funct = function()
+		local dosd = args[2]
+		Chat("gear me 71037101")
+ 		repeat task.wait() until lplr.Backpack:FindFirstChild("DaggerOfShatteredDimensions")
+        	dagg = lplr.Backpack:FindFirstChild("DaggerOfShatteredDimensions")
+        	task.wait()
+        	dagg.Parent = lplr.Character
+		task.wait()
+		Chat("god "..dosd)
+		Chat("tp "..dosd.." me")
+		game:GetService("VirtualInputManager"):SendKeyEvent(true,Enum.KeyCode.Q,false,game)
+		task.wait(2)
+		Chat("reset me")
+		Remind("Glitched the player!")
+	end
+})
+
+
+addcommand({
+	name = "iceblock",
+	aliases = {"blockice"},
+	description = "create an iceblock with a player",
+	funct = function()
+		local theblock = args[2]
+                if theblock == "me" or theblock == "" then
+                        lplr.Character.HumanoidRootPart.CFrame = lplr.Character.HumanoidRootPart.CFrame * CFrame.new(0,-40,0)
+                end
+                task.wait(0.25)
+                Chat("invisible "..theblock)
+		task.wait()
+                Chat("freeze "..theblock)
+		task.wait()
+                Chat("size "..theblock.." 10")
+		task.wait()
+                Chat("clone "..theblock)
+		task.wait()
+                Chat("respawn "..theblock)
+		Remind("Created a big ice block with the player!")
+	end
+})
+
+addcommand({
+	name = "qpunish",
+	aliases = {"quickpunish"},
+	description = "punish a player then regen",
+	funct = function()
+		local trolled = args[2]
+                Chat("punish " ..trolled)
+                Regen()
+		Remind("Quick punished the player")
+	end
+})
+
+addcommand({
+	name = "spunish",
+	aliases = {"speedpunish"},
+	description = "speed a player to infinity then regen",
+	funct = function()
+		local trolled = args[2]
+                Chat("speed " ..trolled.. " inf")
+                Regen()
+		Remind("Speed punished the player")
+	end
+})
+
+addcommand({
+	name = "gpunish",
+	aliases = {"gravpunish","setgravpunish"},
+	description = "setgrav a player to -9e9 then regen",
+	funct = function()
+		local trolled = args[2]
+                Chat("setgrav " ..trolled.. " -9e9")
+                Regen()
+		Remind("Setgrav punished the player")
+	end
+})
+
+addcommand({
+	name = "ungearban",
+	aliases = {"ungb"},
+	description = "ungearban a player (including yourself)",
+	funct = function()
+		local plrg = args[2]
+                if plrg == "" or plrg == "me" then
+                        game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, true)
+			Remind("Ungearbanned yourself.")
+                else 
+                        --
+                end
 	end
 })
