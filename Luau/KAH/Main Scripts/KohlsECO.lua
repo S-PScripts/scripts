@@ -1,7 +1,7 @@
--- KohlsLite ECO --
+-- KohlsECO / KohlsLite v2 --
 
 -- Notes: --
--- This is a user friendly version of KohlsLite v1 that aims to make it easier to edit
+-- This is a user friendly version of KohlsLite that aims to make it easier to edit
 -- This won't have as many features but I'll add as many as possible.
 
 -- Settings --
@@ -29,7 +29,7 @@ local function notify(text, num)
 	end
 	game:GetService("StarterGui"):SetCore("SendNotification",
 	{
-		Title = "KohlsLite",
+		Title = "KohlsECO",
 		Text = text,
 		Duration = num
 	}
@@ -40,7 +40,7 @@ end
 getgenv().executed2 = false
 
 if getgenv().executed2 then 
-	return notify("KohlsLite is already executed.")
+	return notify("KohlsECO is already executed.")
 end
 
 -- LocalPlayer variables
@@ -241,7 +241,7 @@ end
 
 -- Credits --
 addcredit("ScriptingProgrammer (Roblox) / ts2021x (Discord)/ S-PScripts (GitHub)",
-	"created KohlsLite"
+	"created KohlsLite and KohlsECO (KohlsLite v2)"
 )
 
 addcredit("Tech/t_echr/techq and other admins of Shortcut",
@@ -249,7 +249,7 @@ addcredit("Tech/t_echr/techq and other admins of Shortcut",
 )
 
 addcredit("trollfacenan",
-	"adding stuff to KohlsLite (i edited some of it though)"
+	"adding stuff to KohlsECO (i edited some of it though)"
 )
 
 addcredit("iiDK",
@@ -280,7 +280,7 @@ addcredit("You!",
 addcommand({
 	name = "credits",
 	aliases = {},
-	description = "print out the credits for KohlsLite",
+	description = "print out the credits for KohlsECO",
 	funct = function()
 		print("Credits:")
 		print("\n\n\n")
@@ -296,7 +296,7 @@ addcommand({
 addcommand({
 	name = "cmds", -- not sure why in scv2 new it doesn't use the system that was created!
 	aliases = {"commands"},
-	description = "print out the commands for KohlsLite",
+	description = "print out the commands for KohlsECO",
 	funct = function()
 		print("Commands:")
 		print("\n\n\n")
@@ -311,11 +311,11 @@ addcommand({
 addcommand({
 	name = "help", 
 	aliases = {},
-	description = "print out information about KohlsLite",
+	description = "print out information about KohlsECO",
 	funct = function()
 		print("Information:")
 		print("\n\n\n")
-		print("You are using KohlsLite by ScriptingProgrammer/ts2021x/S-PScripts. This script has been maintained since 2023.")
+		print("You are using KohlsECO (KohlsLite v2) by ScriptingProgrammer/ts2021x/S-PScripts. This script has been maintained since 2023.")
 		print("For help, please contact me on Discord at ts2021x.")
 		print("The version you are using is "..admin.klversion2..".")
 	end
@@ -471,7 +471,7 @@ addcommand({
 	description = "spam logs with text",
 	funct = function()
 		for i = 1, 100 do
-			chat("reset KohlsLite on top - 2024")
+			chat("reset KohlsECO on top - 2024")
 		end
 	end
 })
