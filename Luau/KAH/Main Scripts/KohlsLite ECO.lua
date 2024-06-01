@@ -284,7 +284,19 @@ addcommand("credits",
 	end
 )
 
+
 -- Command list --
+
+-- EXAMPLE COMMAND --
+--[[ addcommand("helloworld", -- command name
+	"prints hello world", -- description for the command
+	{"hw","hiworld"}, -- aliases for helloworld. for 1 do {"hw"}, for 0 do {},
+	function() -- function
+		print("hello world")
+	end
+)
+]]
+
 addcommand("cmds", -- not sure why in scv2 new it doesn't use the system that was created!
 	"print out the commands for KohlsLite",
 	{},
