@@ -137,53 +137,54 @@ local gearlist = {     ---- Gear List Excert afrom KlV1/KohlsLite Version 1.
 -- Connections --
 local connections = {}
 
-connections[#connections + 1] = 
-	game:GetService("RunService").RenderStepped:Connect(function()
-		if antigear then
-		for i, v in game.Players:GetPlayers() do
-			if v.Name ~= lplr.Name and v.Backpack:FindFirstChildOfClass("Tool") then
-				chat("ungear "..v.Name)
-				chat("punish "..v.Name)
-				chat("clr")
-				chat(klprefix2.."regen")
-			end
+connections[#connections + 1] =
+    game:GetService("RunService").RenderStepped:Connect(function()
+        if antigear then
+            for i, v in game.Players:GetPlayers() do
+                if v.Name ~= lplr.Name and v.Backpack:FindFirstChildOfClass("Tool") then
+                    chat("ungear " .. v.Name)
+                    chat("punish " .. v.Name)
+                    chat("clr")
+                    chat(klprefix2 .. "regen")
+                end
 
-			if v.Name ~= lplr.Name and v.Character and v.Character:FindFirstChildOfClass("Tool") then
-				chat("ungear "..v.Name)
-				chat("punish "..v.Name)
-				chat("clr")
-				chat(klprefix2.."regen")
-			end
-		end
-	end
+                if v.Name ~= lplr.Name and v.Character and v.Character:FindFirstChildOfClass("Tool") then
+                    chat("ungear " .. v.Name)
+                    chat("punish " .. v.Name)
+                    chat("clr")
+                    chat(klprefix2 .. "regen")
+                end
+            end
+        end
 
-		if anticrash then
-		for i, tool in crashTools do
-			for i, v in game.Players:GetPlayers() do
-				if v.Name ~= lplr.Name and v.Backpack:FindFirstChild(tool) then
-					chat("ungear "..v.Name)
-					chat("punish "..v.Name)
-					chat("clr")
-					chat(klprefix2.."regen")
-				end
+        if anticrash then
+            for i, tool in crashTools do
+                for i, v in game.Players:GetPlayers() do
+                    if v.Name ~= lplr.Name and v.Backpack:FindFirstChild(tool) then
+                        chat("ungear " .. v.Name)
+                        chat("punish " .. v.Name)
+                        chat("clr")
+                        chat(klprefix2 .. "regen")
+                    end
 
-				if v.Name ~= lplr.Name and v.Character and v.Character:FindFirstChild(tool) then
-					chat("ungear "..v.Name)
-					chat("punish "..v.Name)
-					chat("clr")
-					chat(klprefix2.."regen")
-				end
-			end
+                    if v.Name ~= lplr.Name and v.Character and v.Character:FindFirstChild(tool) then
+                        chat("ungear " .. v.Name)
+                        chat("punish " .. v.Name)
+                        chat("clr")
+                        chat(klprefix2 .. "regen")
+                    end
+                end
 
-			if workspace:FindFirstChild(tool) then
-				chat("ungear others")
-				chat("punish others")
-				chat("clr")
-				chat(klprefix2.."regen")
-			end
-		end
-	end
-	end)
+                if workspace:FindFirstChild(tool) then
+                    chat("ungear others")
+                    chat("punish others")
+                    chat("clr")
+                    chat(klprefix2 .. "regen")
+                end
+            end
+        end
+    end)
+
 
 local items = {
 	"Smoke",
