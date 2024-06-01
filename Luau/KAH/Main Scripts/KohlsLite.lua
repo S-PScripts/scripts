@@ -22,7 +22,7 @@
 -- Notifications
 local function Remind(msg)
         game.StarterGui:SetCore("SendNotification", {
-                Title = "KohlsLite",
+                Title = "KohlsLite v1 (OLD)",
                 Text = msg,
                 Duration = 1
         })
