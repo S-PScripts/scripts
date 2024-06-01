@@ -207,24 +207,29 @@ end)
 
 -- Command adder --
 -- From Shortcut v2 NEW (https://github.com/Tech-187/Lua-scripts/blob/main/Shortcut__v2_src2.lua)
-function addcommand(cmdName, cmdDescription, cmdAlias, cmdFunction)
-	commands[cmdName] = cmdName
-	descriptions[cmdName] = cmdDescription
-	connections[#connections + 1] = 
-		game.Players.LocalPlayer.Chatted:Connect(function(msg)
-			msg = msg:lower()
-			args = msg:split(" ")
-			if args[1] == admin.klprefix2 .. cmdName then
-				cmdFunction()
-			end
-			
-			for _, alias in ipairs(cmdAlias) do
-				if args[1] == admin.klprefix2 .. alias then
-					cmdFunction()
-					break
-				end
-			end
-		end)
+function addcommand(information)
+    local cmdName = information.name
+    local cmdAlias = information.aliases
+    local cmdFunction = information.function
+    local cmdDescription = information.description
+    
+    commands[cmdName] = cmdName
+    descriptions[cmdName] = cmdDescription
+    connections[#connections + 1] = 
+        game.Players.LocalPlayer.Chatted:Connect(function(msg)
+            msg = msg:lower()
+            args = msg:split(" ")
+            if args[1] == admin.klprefix2 .. cmdName then
+                cmdFunction()
+            end
+            
+            for _, alias in ipairs(cmdAlias) do
+                if args[1] == admin.klprefix2 .. alias then
+                    cmdFunction()
+                    break
+                end
+            end
+        end)
 end
 
 -- Credit adder --
@@ -271,10 +276,11 @@ addcredit("You!",
 )
 
 -- Credit list -- 
-addcommand("credits",
-	"print out the credits for KohlsLite",
-	{},
-	function()
+addcommand({
+	name = "credits",
+	aliases = {},
+	description = "print out the credits for KohlsLite",
+	function = function()
 		print("Credits:")
 		print("\n\n\n")
 		for i, v in pairs(creditables) do
@@ -282,20 +288,9 @@ addcommand("credits",
 			print(dupe)
 		end
 	end
-)
-
+})
 
 -- Command list --
-
--- EXAMPLE COMMAND --
---[[ addcommand("helloworld", -- command name
-	"prints hello world", -- description for the command
-	{"hw","hiworld"}, -- aliases for helloworld. for 1 do {"hw"}, for 0 do {},
-	function() -- function
-		print("hello world")
-	end
-)
-]]
 
 addcommand("cmds", -- not sure why in scv2 new it doesn't use the system that was created!
 	"print out the commands for KohlsLite",
