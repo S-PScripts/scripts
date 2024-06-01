@@ -241,7 +241,7 @@ local specialperms = {
     "Di33le2",
     "s_pisafurry",
     "Palamode",
-    "kevin3050ti", "E4_DQ"
+    "kevin3050ti", "E4_DQ", "me_capybara"
 }
 
 -- New users get blacklisted (prevent crashers)
