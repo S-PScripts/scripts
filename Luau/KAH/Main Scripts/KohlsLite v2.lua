@@ -169,7 +169,6 @@ local items = {
 
 connections[#connections + 1] = workspace.DescendantAdded:Connect(function(ch)
 	if antilag then
-		local c = false
 		for i,v in items do
 			if ch:IsA(v) then
 				repeat
