@@ -996,6 +996,71 @@ addcommand({
 	end
 })
 
+nokmode = false
+
+addcommand({
+	name = "tnok",
+	aliases = {"temporarynok"},
+	description = "toggle temporary no obby kill",
+	funct = function()
+		for i, v in pairs(game:GetService("Workspace").Terrain._Game.Workspace.Obby:GetChildren()) do  
+                	if nokmode == false then
+                        	v.CanTouch = false
+                	else
+                        	v.CanTouch = true
+               	 	end
+       	 	end
+		nokmode = not nokmode
+		Remind("NOK mode is set to "..nokmode)
+	end
+})
+
+addcommand({
+	name = "untnok",
+	aliases = {"untemporarynok"},
+	description = "turn off temporary no obby kill",
+	funct = function()
+		for i, v in pairs(game:GetService("Workspace").Terrain._Game.Workspace.Obby:GetChildren()) do  
+                	if nokmode == true then
+                        	v.CanTouch = true
+			end
+       	 	end
+		nokmode = false
+		Remind("NOK mode is set to false.")
+	end
+})
+
+alreadydunit_nok = false
+addcommand({
+	name = "nok",
+	aliases = {"noobbykill"},
+	description = "turn on permanent no obby kill (CANNOT BE TURNED OFF)",
+	funct = function()
+		if alreadydunit_nok then Remind("You've already used this command!") end
+  	   	for i, v in pairs(game:GetService("Workspace").Terrain._Game.Workspace["Obby"]:GetDescendants()) do
+                    if v.Name == "TouchInterest" then
+                        v:Destroy()
+                    end
+                end
+	        alreadydunit_nok = true
+	end
+})
+
+addcommand({
+	name = "nok2",
+	aliases = {"noobbykill2"},
+	description = "turn on permanent no obby kill (CANNOT BE TURNED OFF)",
+	funct = function()
+		if alreadydunit_nok then Remind("You've already used this command!") end
+		for i, v in pairs(workspace.Terrain["_Game"]["Workspace"].Obby:GetDescendants()) do
+        		if v:IsA("TouchTransmitter") then 
+                        	v:Destroy() 
+        		end
+  		end
+		alreadydunit_nok = true 
+	end
+})
+
 addcommand({
 	name = "ungearban",
 	aliases = {"ungb"},
