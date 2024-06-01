@@ -217,11 +217,8 @@ function addcommand(cmdName, cmdDescription, cmdFunction)
 			msg = msg:lower()
 			args = msg:split(" ")
 			if args[1] == admin.klprefix2 .. cmdName then
-			cmdFunction()
-		elseif args[1] == "/e" and args[2] == admin.klprefix2 .. cmdName then
-			args[2] = args[3]
-			cmdFunction()
-		end
+				cmdFunction()
+			end
 		end)
 end
 
