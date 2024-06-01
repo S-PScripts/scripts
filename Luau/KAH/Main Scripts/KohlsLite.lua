@@ -1,3 +1,11 @@
+-- this isn't even a good script looooool
+
+
+
+
+
+
+
 -- KohlsLite v2 is being developed, this script will not be updated that much (sorry for no part builder/good vis and not fixing ncontrol) --
 
 --[[
@@ -12764,3 +12772,7 @@ Ideas;
 -> maybe during summer i hope
 -> and fix pingwait idk why it doesn't work :(
 ]]
+-- na idc about this now
+-- jk
+-- uh
+--------af0aijfjoi
