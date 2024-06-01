@@ -36,7 +36,7 @@ local function notify(text, num)
 		num = 1
 	end
 	game:GetService("StarterGui"):SetCore("SendNotification",
-	{
+	z{
 		Title = "KohlsLite",
 		Text = text,
 		Duration = num
@@ -55,10 +55,10 @@ end
 local lplr = game:GetService("Players").LocalPlayer
 
 -- Anti logs
-local antilog = ("0"):rep(40)
-local musicantilog = ("0"):rep(40) -- 
-local gearantilog = ("0"):rep(40)
-local charantilog = ("0"):rep(40)
+local antilog = ("0"):rep(40) -- Auto spam logs when people try looking
+local musicantilog = ("0"):rep(40) -- music 0000000000000000000000000 (music)
+local gearantilog = ("0"):rep(40) -- gear plr 00000000000000000000000 (gear)
+local charantilog = ("0"):rep(40) -- char plr 00000000000000000000000 (char)
 
 -- Gamepass checker
 local function gamepassCheck()
@@ -349,7 +349,6 @@ addcommand("vgcrash2",
 		chat("speed others 0")
 		chat("freeze others")
 
-		
 		for i = 1, 100 do
 			chat("unsize me me me")
 		end
