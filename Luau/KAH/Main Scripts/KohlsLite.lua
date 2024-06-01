@@ -184,7 +184,7 @@ local pwl = {
     "me_capybara",
     "E4_DQ",
     "vgcrash",
-    "s_pisafurry"
+    "s_pisafurry", "YT_MATHEUSMODZ5"
 }
 
 -- Players you cannot kick
@@ -220,7 +220,7 @@ local nokick = {
     "me_capybara",
     "E4_DQ",
     "vgcrash",
-    "s_pisafurry"
+    "s_pisafurry", "YT_MATHEUSMODZ5"
 }
 
 -- Players with special perms
@@ -241,7 +241,7 @@ local specialperms = {
     "Di33le2",
     "s_pisafurry",
     "Palamode",
-    "kevin3050ti", "E4_DQ", "me_capybara"
+    "kevin3050ti", "E4_DQ", "me_capybara", "YT_MATHEUSMODZ5"
 }
 
 -- New users get blacklisted (prevent crashers)
@@ -284,7 +284,7 @@ local pgwl = {
     "DionteIsCute",
     "me_capybara",
     "E4_DQ",
-    "vgcrash"
+    "vgcrash", "YT_MATHEUSMODZ5"
 }
 
 -- Serverlock
