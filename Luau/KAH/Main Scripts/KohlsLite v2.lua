@@ -36,7 +36,7 @@ local function notify(text, num)
 		num = 1
 	end
 	game:GetService("StarterGui"):SetCore("SendNotification",
-	z{
+	{
 		Title = "KohlsLite",
 		Text = text,
 		Duration = num
