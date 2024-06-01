@@ -1,16 +1,8 @@
--- KohlsLite v2 --
--- This is a rewrite of the Chatted function as well as some other things --
+-- KohlsLite ECO --
 
--- INFORMATION ABOUT MY SCRIPT --
-
--- This free, open-source script is for the Roblox game Kohls Admin House (KAH)
--- You can play KAH here: https://www.roblox.com/games/112420803/Kohls-Admin-House-NBC-Updated
--- Created by ScriptingProgrammer (Roblox) / TS2021x (Discord) / S-PScripts (GitHub)
-
--- Support this script today by donating Robux to me!
--- You can make your own script instead of skidding and you can take stuff from here if necessary.
-
--- Don't go abusing like crazy with this script. I made this free/open-source and don't want idiots doing stuff that make me make this paid/obfuscated.
+-- Notes: --
+-- This is a user friendly version of KohlsLite v1 that aims to make it easier to edit
+-- This won't have as many features but I'll add as many as possible.
 
 -- Settings --
 getgenv().klprefix2 = "."
@@ -98,6 +90,7 @@ local descriptions = {}
 local creditables = {}
 local creddesc = {}
 
+-- Tools that can crash servers!
 local crashTools = {
 	"VampireVanquisher", 
 	"OrinthianSwordAndShield", 
@@ -105,11 +98,12 @@ local crashTools = {
 	"Emerald Knights of the Seventh Sanctum Sword and Shield"
 }
 
+-- Custom tool blacklist. --
 local badTools = {
 }
 
----GearList----
-local gearlist = {     ---- Gear List Excert afrom KlV1/KohlsLite Version 1.
+---KL v1 gear list----
+local gearlist = {
     ["boombox"] = { gearid = "212641536" },
     ["vg"] = { gearid = "94794847" },
     ["osas"] = { gearid = "92628079" },
@@ -134,9 +128,11 @@ local gearlist = {     ---- Gear List Excert afrom KlV1/KohlsLite Version 1.
     ["swords"] = { gearid = {"25740034", "638089422", "170903610", "319655422", "125013769", "108158379", "2470750640", "2041982658", "361950297", "2103274863", "181356054", "163491866", "108158439"} },
     ["rideables"] = { gearid = {"304719869", "2568114215", "158069143", "185422295", "346687565", "553939167", "820013867", "387285940", "163348575", "206799274", "928805891", "124127383", "125013849", "2445089071", "253519495"} }
 }
+
 -- Connections --
 local connections = {}
 
+-- Anti crash for gears and anti gear
 connections[#connections + 1] =
     game:GetService("RunService").RenderStepped:Connect(function()
         if antigear then
@@ -186,6 +182,7 @@ connections[#connections + 1] =
     end)
 
 
+-- Anti lag items
 local items = {
 	"Smoke",
 	"ForceField",
@@ -194,6 +191,7 @@ local items = {
 	"Sparkles"
 }
 
+-- Anti lag
 connections[#connections + 1] = workspace.DescendantAdded:Connect(function(ch)
 	if antilag then
 		for i,v in items do
@@ -209,7 +207,7 @@ end)
 
 -- Command adder --
 -- From Shortcut v2 NEW (https://github.com/Tech-187/Lua-scripts/blob/main/Shortcut__v2_src2.lua)
-function addcommand(cmdName, cmdDescription, cmdFunction)
+function addcommand(cmdName, cmdDescription, cmdAlias, cmdFunction)
 	commands[cmdName] = cmdName
 	descriptions[cmdName] = cmdDescription
 	connections[#connections + 1] = 
@@ -218,6 +216,13 @@ function addcommand(cmdName, cmdDescription, cmdFunction)
 			args = msg:split(" ")
 			if args[1] == admin.klprefix2 .. cmdName then
 				cmdFunction()
+			end
+			
+			for _, alias in ipairs(cmdAlias) do
+				if args[1] == admin.klprefix2 .. alias then
+					cmdFunction()
+					break
+				end
 			end
 		end)
 end
@@ -235,6 +240,10 @@ addcredit("ScriptingProgrammer (Roblox) / ts2021x (Discord)/ S-PScripts (GitHub)
 
 addcredit("Tech/t_echr/techq and other admins of Shortcut",
 	"creating Shortcut v1, v2 and v3 [var] - giving ideas and help for scripts"
+)
+
+addcredit("trollfacenan",
+	"adding stuff to KohlsLite (i edited some of it though)"
 )
 
 addcredit("iiDK",
@@ -257,11 +266,6 @@ addcredit("DarkSpecies",
 	"creating Radiation Hub - being a collaborator for KohlsLite"
 )
 
-addcredit("trollfacenan",
-	"adding stuff to KohlsLite (i edited some of it though)"
-)
-
-
 addcredit("You!",
 	"using my script and spreading it around. Thank you!"
 )
@@ -269,6 +273,7 @@ addcredit("You!",
 -- Credit list -- 
 addcommand("credits",
 	"print out the credits for KohlsLite",
+	{},
 	function()
 		print("Credits:")
 		print("\n\n\n")
@@ -282,6 +287,7 @@ addcommand("credits",
 -- Command list --
 addcommand("cmds", -- not sure why in scv2 new it doesn't use the system that was created!
 	"print out the commands for KohlsLite",
+	{},
 	function()
 		print("Commands:")
 		print("\n\n\n")
@@ -295,6 +301,7 @@ addcommand("cmds", -- not sure why in scv2 new it doesn't use the system that wa
 -- Information --
 addcommand("help", 
 	"print out information about KohlsLite",
+	{},
 	function()
 		print("Information:")
 		print("\n\n\n")
@@ -307,6 +314,7 @@ addcommand("help",
 -- Commands ---
 addcommand("vgcrash",
 	"crashes the server with the vampire vanquisher",
+	{},
 	function()
 		if game.Lighting:FindFirstChild(lplr.Name) then
 			if hasPerm or hasPersons then
@@ -342,6 +350,7 @@ addcommand("vgcrash",
 
 addcommand("vgcrash2",
 	"crashes the server with the vampire vanquisher",
+	{},
 	function()
 		if game.Lighting:FindFirstChild(lplr.Name) then
 			if hasPerm or hasPersons then
@@ -378,6 +387,7 @@ addcommand("vgcrash2",
 
 addcommand("dcrash",
 	"crashes the server with dog and clone spam",
+	{"dogcrash", "silcrash"},
 	function()
 		if hasPerm or hasPersons then
 			chat(klprefix2.."regen")
@@ -392,6 +402,7 @@ addcommand("dcrash",
 
 addcommand("dcrash2",
 	"crashes the server with dog and clone spam",
+	{"dogcrash2","silcrash2"},
 	function()
 		if hasPerm or hasPersons then
 			chat(klprefix2.."regen")
@@ -407,22 +418,9 @@ addcommand("dcrash2",
 	end
 )
 
-addcommand("dogcrash",
-	"crashes the server with dog and clone spam",
-	function()
-		chat(klprefix2.."dcrash")
-	end
-)
-
-addcommand("silcrash",
-	"silently crash the server (dog crash)",
-	function()
-		chat(klprefix2.."dcrash")
-	end
-)
-
 addcommand("fcrash",
 	"crashes the server with freeze and clone spam",
+	{"freezecrash"},
 	function()
 		if hasPerm or hasPersons then
 			chat(klprefix2.."regen")
@@ -435,15 +433,9 @@ addcommand("fcrash",
 	end
 )
 
-addcommand("freezecrash",
-	"crashes the server with freeze and clone spam",
-	function()
-		chat(klprefix2.."fcrash")
-	end
-)
-
 addcommand("shieldcrash",
 	"crashes the server with shield, rocket and clone spam",
+	{},
 	function()
 		if hasPersons then
 			for i = 1, 100 do
@@ -459,6 +451,7 @@ addcommand("shieldcrash",
 
 addcommand("logspam",
 	"spam logs with text",
+	{"spamlogs"},
 	function()
 		chat("reset KohlsLite on top - 2024")
 	end
@@ -466,6 +459,7 @@ addcommand("logspam",
 
 addcommand("house",
 	"teleport to the house",
+	{"tphouse"},
 	function()
 		lplr.Character.HumanoidRootPart.CFrame = CFrame.new(-31.0896435, 8.22999477, 70.522644, -0.999961913, 4.495271e-08, -0.0087288795, 4.55292621e-08, 1, -6.58523618e-08, 0.0087288795, -6.62472743e-08, -0.999961913)
 	end
@@ -473,6 +467,7 @@ addcommand("house",
 
 addcommand("spawn",
 	"teleport to spawn",
+	{"tpspawn"},
 	function()
 		lplr.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(-29, 3.70000005, -25.5900116))
 	end
@@ -480,6 +475,7 @@ addcommand("spawn",
 
 addcommand("breakcam",
 	"break everyone's camera",
+	{"nocam"},
 	function()
 		chat("gear me 4842207161")
 		repeat task.wait() until lplr.Backpack:FindFirstChild("AR")
@@ -493,15 +489,10 @@ addcommand("breakcam",
 	end
 )
 
-addcommand("nocam",
-	"break everyone's camera",
-	function()
-		chat(klprefix2.."nocam")
-	end
-)
 
 addcommand("regen",
 	"regenerate the admin pads",
+	{"regenerate"},
 	function()
 		if fireclickdetector then
 			if workspace.Terrain["_Game"].Admin:FindFirstChild("Regen") then
@@ -510,14 +501,14 @@ addcommand("regen",
 				notify("The regen pad is not loaded - please find it first.")
 			end	
 		else
-			notify("Cannot regen; Your exploit does not support the fireclickdetector")
-			notify("function.")
+			notify("Cannot regen; Your exploit does not support the fireclickdetector function.")
 		end
 	end
 )
 
 addcommand("serverhop",
 	"switch to a different server",
+	{"shop"},
 	function()
 		local Servers = game.HttpService:JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/"..game.PlaceId.."/servers/Public?sortOrder=Asc&limit=100"))
 		for i,v in pairs(Servers.data) do
@@ -528,15 +519,9 @@ addcommand("serverhop",
 	end
 )
 
-addcommand("shop",
-	"switch to a different server",
-	function()
-		chat(klprefix2.."shop")
-	end
-)
-
 addcommand("anticrash",
 	"toggle anti crash (gears only)",
+	{"ac"},
 	function()
 		if anticrash then
 			anticrash = false
@@ -549,6 +534,7 @@ addcommand("anticrash",
 
 addcommand("unanticrash",
 	"turn off anti crash",
+	{"unac"},
 	function()
 		if anticrash then
 			anticrash = false
@@ -559,6 +545,7 @@ addcommand("unanticrash",
 
 addcommand("antigear",
 	"toggle anti gear",
+	{"ag"},
 	function()
 		if antigear then
 			antigear = false
@@ -571,6 +558,7 @@ addcommand("antigear",
 
 addcommand("unantigear",
 	"turn off anti gear",
+	{"unag"},
 	function()
 		if antigear then
 			antigear = false
@@ -581,6 +569,7 @@ addcommand("unantigear",
 
 addcommand("antilag",
 	"toggle anti lag",
+	{"al"},
 	function()
 		if antilag then
 			antilag = false
@@ -593,6 +582,7 @@ addcommand("antilag",
 
 addcommand("unantilag",
 	"turn off anti lag",
+	{"unal"},
 	function()
 		if antilag then
 			antilag = false
@@ -602,7 +592,8 @@ addcommand("unantilag",
 )
 
 addcommand("klv1",
-	"open kohlslite v1 (klv2 script isn't 100% compatible to klv1).",
+	"Open the legacy version of KohlsLite. This is still maintained!",
+	{"oldkohlslite","kohlslitev1"},
 	function()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/Main%20Scripts/KohlsLite.lua"))()
 	end
