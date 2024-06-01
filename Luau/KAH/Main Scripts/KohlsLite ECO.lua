@@ -210,11 +210,12 @@ end)
 function addcommand(information)
     local cmdName = information.name
     local cmdAlias = information.aliases
-    local cmdFunction = information.function
+    local cmdFunction = information.funct
     local cmdDescription = information.description
     
     commands[cmdName] = cmdName
     descriptions[cmdName] = cmdDescription
+
     connections[#connections + 1] = 
         game.Players.LocalPlayer.Chatted:Connect(function(msg)
             msg = msg:lower()
@@ -280,7 +281,7 @@ addcommand({
 	name = "credits",
 	aliases = {},
 	description = "print out the credits for KohlsLite",
-	function = function()
+	funct = function()
 		print("Credits:")
 		print("\n\n\n")
 		for i, v in pairs(creditables) do
@@ -292,10 +293,11 @@ addcommand({
 
 -- Command list --
 
-addcommand("cmds", -- not sure why in scv2 new it doesn't use the system that was created!
-	"print out the commands for KohlsLite",
-	{},
-	function()
+addcommand({
+	name = "cmds", -- not sure why in scv2 new it doesn't use the system that was created!
+	aliases = {"commands"},
+	description = "print out the commands for KohlsLite",
+	funct = function()
 		print("Commands:")
 		print("\n\n\n")
 		for i, v in pairs(commands) do
@@ -303,26 +305,28 @@ addcommand("cmds", -- not sure why in scv2 new it doesn't use the system that wa
 			print(dupe)
 		end
 	end
-)
+})
 
 -- Information --
-addcommand("help", 
-	"print out information about KohlsLite",
-	{},
-	function()
+addcommand({
+	name = "help", 
+	aliases = {},
+	description = "print out information about KohlsLite",
+	funct = function()
 		print("Information:")
 		print("\n\n\n")
 		print("You are using KohlsLite by ScriptingProgrammer/ts2021x/S-PScripts. This script has been maintained since 2023.")
 		print("For help, please contact me on Discord at ts2021x.")
 		print("The version you are using is "..admin.klversion2..".")
 	end
-)
+})
 
 -- Commands ---
-addcommand("vgcrash",
-	"crashes the server with the vampire vanquisher",
-	{},
-	function()
+addcommand({
+	name = "vgcrash",
+	aliases = {"vampirecrash"},
+	description = "crashes the server with the vampire vanquisher",
+	funct = function()
 		if game.Lighting:FindFirstChild(lplr.Name) then
 			if hasPerm or hasPersons then
 				chat("respawn me")
@@ -353,12 +357,13 @@ addcommand("vgcrash",
 			chat("unsize me me me")
 		end
 	end
-)
+})
 
-addcommand("vgcrash2",
-	"crashes the server with the vampire vanquisher",
-	{},
-	function()
+addcommand({
+	name = "vgcrash2",
+	aliases = {"vampirecrash2"},
+	description = "crashes the server with the vampire vanquisher",
+	funct = function()
 		if game.Lighting:FindFirstChild(lplr.Name) then
 			if hasPerm or hasPersons then
 				chat("respawn me")
@@ -390,12 +395,13 @@ addcommand("vgcrash2",
 			chat("unsize me me me")
 		end
 	end
-)
+})
 
-addcommand("dcrash",
-	"crashes the server with dog and clone spam",
-	{"dogcrash", "silcrash"},
-	function()
+addcommand({
+	name = "crash",
+	aliases = {"dogcrash", "silcrash"},
+	description = "crashes the server with dog and clone spam",
+	funct = function()
 		if hasPerm or hasPersons then
 			chat(klprefix2.."regen")
 		end
@@ -405,12 +411,13 @@ addcommand("dcrash",
 			chat("clone all all all")
 		end
 	end
-)
+})
 
-addcommand("dcrash2",
-	"crashes the server with dog and clone spam",
-	{"dogcrash2","silcrash2"},
-	function()
+addcommand({
+	name = "dcrash2",
+	aliases = {"dogcrash2","silcrash2"},
+	description = "crashes the server with dog and clone spam",
+	funct = function()
 		if hasPerm or hasPersons then
 			chat(klprefix2.."regen")
 		end
@@ -423,12 +430,13 @@ addcommand("dcrash2",
 			chat("clone all all all")
 		end
 	end
-)
+})
 
-addcommand("fcrash",
-	"crashes the server with freeze and clone spam",
-	{"freezecrash"},
-	function()
+addcommand({
+	name = "fcrash",
+	aliases = {"freezecrash"},
+	description = "crashes the server with freeze and clone spam",
+	funct = function()
 		if hasPerm or hasPersons then
 			chat(klprefix2.."regen")
 		end
@@ -438,12 +446,13 @@ addcommand("fcrash",
 			chat("clone all all all")
 		end
 	end
-)
+})
 
-addcommand("shieldcrash",
-	"crashes the server with shield, rocket and clone spam",
-	{},
-	function()
+addcommand({
+	name = "shieldcrash",
+	aliases = {},
+	description = "crashes the server with shield, rocket and clone spam",
+	funct = function()
 		if hasPersons then
 			for i = 1, 100 do
 				chat("shield/all/all/all")
@@ -454,36 +463,42 @@ addcommand("shieldcrash",
 			notify("You need to Persons to use this command, sorry!")
 		end
 	end
-)
+})
 
-addcommand("logspam",
-	"spam logs with text",
-	{"spamlogs"},
-	function()
-		chat("reset KohlsLite on top - 2024")
+addcommand({
+	name = "logspam",
+	aliases = {"spamlogs","floodlogs","logflood"},
+	description = "spam logs with text",
+	funct = function()
+		for i = 1, 100 do
+			chat("reset KohlsLite on top - 2024")
+		end
 	end
-)
+})
 
-addcommand("house",
-	"teleport to the house",
-	{"tphouse"},
-	function()
+addcommand({
+	name = "house",
+	aliases = {"tphouse"},
+	description = "teleport to the house",
+	funct = function()
 		lplr.Character.HumanoidRootPart.CFrame = CFrame.new(-31.0896435, 8.22999477, 70.522644, -0.999961913, 4.495271e-08, -0.0087288795, 4.55292621e-08, 1, -6.58523618e-08, 0.0087288795, -6.62472743e-08, -0.999961913)
 	end
-)
+})
 
-addcommand("spawn",
-	"teleport to spawn",
-	{"tpspawn"},
-	function()
+addcommand({
+	name = "spawn",
+	aliases = {"tpspawn"},
+	description = "teleport to spawn",
+	funct = function()
 		lplr.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(-29, 3.70000005, -25.5900116))
 	end
-)
+})
 
-addcommand("breakcam",
-	"break everyone's camera",
-	{"nocam"},
-	function()
+addcommand({
+	name = "breakcam",
+	aliases = {"nocam"},
+	description = "break everyone's camera",
+	funct = function()
 		chat("gear me 4842207161")
 		repeat task.wait() until lplr.Backpack:FindFirstChild("AR")
 		local cambrek = lplr.Backpack:FindFirstChild("AR")
@@ -494,13 +509,14 @@ addcommand("breakcam",
 
 		notify("The camera is now broken into shiftlock - you won't see the effect until you rejoin.")
 	end
-)
+})
 
 
-addcommand("regen",
-	"regenerate the admin pads",
-	{"regenerate"},
-	function()
+addcommand({
+	name = "regen",
+	aliases = {"regenerate"},
+	description = "regenerate the admin pads",
+	funct = function()
 		if fireclickdetector then
 			if workspace.Terrain["_Game"].Admin:FindFirstChild("Regen") then
 				fireclickdetector(workspace.Terrain["_Game"].Admin.Regen.ClickDetector, 0)
@@ -511,12 +527,13 @@ addcommand("regen",
 			notify("Cannot regen; Your exploit does not support the fireclickdetector function.")
 		end
 	end
-)
+})
 
-addcommand("serverhop",
-	"switch to a different server",
-	{"shop"},
-	function()
+addcommand({
+	name = "serverhop",
+	aliases = {"shop","switchserver"},
+	description = "switch to a different server",
+	funct = function()
 		local Servers = game.HttpService:JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/"..game.PlaceId.."/servers/Public?sortOrder=Asc&limit=100"))
 		for i,v in pairs(Servers.data) do
 			if v.playing ~= v.maxPlayers then
@@ -524,12 +541,13 @@ addcommand("serverhop",
 			end
 		end    
 	end
-)
+})
 
-addcommand("anticrash",
-	"toggle anti crash (gears only)",
-	{"ac"},
-	function()
+addcommand({
+	name = "anticrash",
+	aliases = {"ac","antivg"},
+	description = "toggle anti crash (gears only)",
+	funct = function()
 		if anticrash then
 			anticrash = false
 		else
@@ -537,23 +555,25 @@ addcommand("anticrash",
 		end
 		notify("Anti crash is now set to "..anticrash)
 	end
-)
+})
 
-addcommand("unanticrash",
-	"turn off anti crash",
-	{"unac"},
-	function()
+addcommand({
+	name = "unanticrash",
+	aliases = {"unac","unantivg"},
+	description = "turn off anti crash",
+	funct = function()
 		if anticrash then
 			anticrash = false
 		end
 		notify("Anti crash is now set to false.")
 	end
-)
+})
 
-addcommand("antigear",
-	"toggle anti gear",
-	{"ag"},
-	function()
+addcommand({
+	name = "antigear",
+	aliases = {"ag"},
+	description = "toggle anti gear",
+	funct = function()
 		if antigear then
 			antigear = false
 		else
@@ -561,23 +581,25 @@ addcommand("antigear",
 		end
 		notify("Anti gear is now set to "..antigear)
 	end
-)
+})
 
-addcommand("unantigear",
-	"turn off anti gear",
-	{"unag"},
-	function()
+addcommand({
+	name = "unantigear",
+	aliases = {"unag"},
+	description = "turn off anti gear",
+	funct = function()
 		if antigear then
 			antigear = false
 		end
 		notify("Anti gear is now set to false.")
 	end
-)
+})
 
-addcommand("antilag",
-	"toggle anti lag",
-	{"al"},
-	function()
+addcommand({
+	name = "antilag",
+	aliases = {"al"},
+	description = "toggle anti lag",
+	funct = function()
 		if antilag then
 			antilag = false
 		else
@@ -585,23 +607,25 @@ addcommand("antilag",
 		end
 		notify("Anti gear is now set to "..antilag)
 	end
-)
+})
 
-addcommand("unantilag",
-	"turn off anti lag",
-	{"unal"},
-	function()
+addcommand({
+	name = "unantilag",
+	aliases = {"unal"},
+	description = "turn off anti lag",
+	funct = function()
 		if antilag then
 			antilag = false
 		end
 		notify("Anti lag is now set to false.")
 	end
-)
+})
 
-addcommand("klv1",
-	"Open the legacy version of KohlsLite. This is still maintained!",
-	{"oldkohlslite","kohlslitev1"},
-	function()
+addcommand({
+	name = "klv1",
+	aliases = {"oldkohlslite","kohlslitev1"},
+	description = "Open the legacy version of KohlsLite. This is still maintained!",
+	funct = function()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/Main%20Scripts/KohlsLite.lua"))()
 	end
-)
+})
