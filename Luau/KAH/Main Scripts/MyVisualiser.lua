@@ -1,3 +1,10 @@
+-- kozy you retard go ask quiving about his horrible vis
+
+
+
+
+
+
 -- My Visualiser.lua --
 -- yes this is quiving's will be changed at some point yk h --
 
