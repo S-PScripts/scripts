@@ -89,7 +89,7 @@ else
 end
 
 -- Defaults (you can change these)
-local defaults = {".antirocket me", ".tnok", ".antimsg me"}
+local defaults = {".antirocket me", ".tnok"} --".antimsg me"
 
 -- Misc variables (ignore these)
 local bending -- ignore
