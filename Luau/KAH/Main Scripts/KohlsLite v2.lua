@@ -48,7 +48,7 @@ end
 getgenv().executed2 = false
 
 if getgenv().executed2 then 
-        return notify("KohlsLite is already executed.")
+	return notify("KohlsLite is already executed.")
 end
 
 -- LocalPlayer variables
@@ -64,7 +64,7 @@ local charantilog = ("0"):rep(40) -- char plr 00000000000000000000000 (char)
 local function gamepassCheck()
 	local hasPerm = false
 	local hasPersons = false
-	
+
 	if game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 66254) then
 		hasPerm = true
 	elseif game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 64354) then
@@ -72,7 +72,7 @@ local function gamepassCheck()
 	else
 		-- 
 	end
-	
+
 	if game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 35748) then
 		hasPersons = true
 	elseif game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 37127) then
@@ -80,7 +80,7 @@ local function gamepassCheck()
 	else
 		--
 	end
-	
+
 	return {hasPerm, hasPersons}
 end
 
@@ -114,49 +114,49 @@ local connections = {}
 connections[#connections + 1] = 
 	game:GetService("RunService").RenderStepped:Connect(function()
 		if antigear then
-			for i, v in game.Players:GetPlayers() do
-				if v.Name ~= lplr.Name and v.Backpack:FindFirstChildOfClass("Tool") then
-					chat("ungear "..v.Name)
-					chat("punish "..v.Name)
-					chat("clr")
-					chat(klprefix2.."regen")
-				end
+		for i, v in game.Players:GetPlayers() do
+			if v.Name ~= lplr.Name and v.Backpack:FindFirstChildOfClass("Tool") then
+				chat("ungear "..v.Name)
+				chat("punish "..v.Name)
+				chat("clr")
+				chat(klprefix2.."regen")
+			end
 
-				if v.Name ~= lplr.Name and v.Character and v.Character:FindFirstChildOfClass("Tool") then
-					chat("ungear "..v.Name)
-					chat("punish "..v.Name)
-					chat("clr")
-					chat(klprefix2.."regen")
-				end
+			if v.Name ~= lplr.Name and v.Character and v.Character:FindFirstChildOfClass("Tool") then
+				chat("ungear "..v.Name)
+				chat("punish "..v.Name)
+				chat("clr")
+				chat(klprefix2.."regen")
 			end
 		end
-		
+	end
+
 		if anticrash then
-			for i, tool in crashTools do
-				for i, v in game.Players:GetPlayers() do
-					if v.Name ~= lplr.Name and v.Backpack:FindFirstChild(tool) then
-						chat("ungear "..v.Name)
-						chat("punish "..v.Name)
-			 			chat("clr")
-						chat(klprefix2.."regen")
-					end
-					
-					if v.Name ~= lplr.Name and v.Character and v.Character:FindFirstChild(tool) then
-						chat("ungear "..v.Name)
-						chat("punish "..v.Name)
-			 			chat("clr")
-						chat(klprefix2.."regen")
-					end
+		for i, tool in crashTools do
+			for i, v in game.Players:GetPlayers() do
+				if v.Name ~= lplr.Name and v.Backpack:FindFirstChild(tool) then
+					chat("ungear "..v.Name)
+					chat("punish "..v.Name)
+					chat("clr")
+					chat(klprefix2.."regen")
 				end
 
-				if workspace:FindFirstChild(tool) then
-					chat("ungear others")
-					chat("punish others")
+				if v.Name ~= lplr.Name and v.Character and v.Character:FindFirstChild(tool) then
+					chat("ungear "..v.Name)
+					chat("punish "..v.Name)
 					chat("clr")
 					chat(klprefix2.."regen")
 				end
 			end
+
+			if workspace:FindFirstChild(tool) then
+				chat("ungear others")
+				chat("punish others")
+				chat("clr")
+				chat(klprefix2.."regen")
+			end
 		end
+	end
 	end)
 
 local items = {
@@ -167,94 +167,92 @@ local items = {
 	"Sparkles"
 }
 
-connections[#connections + 1] = 
-	workspace.DescendantAdded:Connect(function(ch)
-		if antilag then
-			local c = false
-			for i,v in pairs(items) do
-				if ch:IsA(v) then
-					c = true
-				end
-			end
-			if c then
-				fwait()
-				ch:Destroy()
+connections[#connections + 1] = workspace.DescendantAdded:Connect(function(ch)
+	if antilag then
+		local c = false
+		for i,v in items do
+			if ch:IsA(v) then
+				repeat
+					ch:Destroy()
+					game:GetService("RunService").RenderStepped:Wait()
+				until not ch
 			end
 		end
-	end)
+	end
+end)
 
 -- Command adder --
 -- From Shortcut v2 NEW (https://github.com/Tech-187/Lua-scripts/blob/main/Shortcut__v2_src2.lua)
 function addcommand(cmdName, cmdDescription, cmdFunction)
-    commands[cmdName] = cmdName
-    descriptions[cmdName] = cmdDescription
-    connections[#connections + 1] = 
-            game.Players.LocalPlayer.Chatted:Connect(function(msg)
-                msg = msg:lower()
-                args = msg:split(" ")
-                if args[1] == admin.klprefix2 .. cmdName then
-                    cmdFunction()
-                elseif args[1] == "/e" and args[2] == admin.klprefix2 .. cmdName then
-                    args[2] = args[3]
-                    cmdFunction()
-                end
-        end)
+	commands[cmdName] = cmdName
+	descriptions[cmdName] = cmdDescription
+	connections[#connections + 1] = 
+		game.Players.LocalPlayer.Chatted:Connect(function(msg)
+			msg = msg:lower()
+			args = msg:split(" ")
+			if args[1] == admin.klprefix2 .. cmdName then
+			cmdFunction()
+		elseif args[1] == "/e" and args[2] == admin.klprefix2 .. cmdName then
+			args[2] = args[3]
+			cmdFunction()
+		end
+		end)
 end
 
 -- Credit adder --
 function addcredit(cName, cDescription)
-    creditables[cName] = cName
-    creddesc[cName] = cDescription
+	creditables[cName] = cName
+	creddesc[cName] = cDescription
 end
 
 -- Credits --
 addcredit("ScriptingProgrammer (Roblox) / ts2021x (Discord)/ S-PScripts (GitHub)",
-"created KohlsLite"
+	"created KohlsLite"
 )
 
 addcredit("Tech/t_echr/techq and other admins of Shortcut",
-"creating Shortcut v1, v2 and v3 [var] - giving ideas and help for scripts"
+	"creating Shortcut v1, v2 and v3 [var] - giving ideas and help for scripts"
 )
 
 addcredit("iiDK",
-"creating ii's Stupid Admin - help for scripts"
+	"creating ii's Stupid Admin - help for scripts"
 )
 
 addcredit("atprog",
-"creating PR Script - being a collaborator for KohlsLite"
+	"creating PR Script - being a collaborator for KohlsLite"
 )
 
 addcredit("Gojo",
-"creating SimpleKAH - gear and char ids"
+	"creating SimpleKAH - gear and char ids"
 )
 
 addcredit("Dizzy",
-"creating Route - music ids that I stole with an audio logger haha"
+	"creating Route - music ids that I stole with an audio logger haha"
 )
 
 addcredit("DarkSpecies",
-"creating Radiation Hub - being a collaborator for KohlsLite"
+	"creating Radiation Hub - being a collaborator for KohlsLite"
 )
 
 addcredit("trollfacenan",
-"adding stuff to KohlsLite (i edited some of it though)"
+	"adding stuff to KohlsLite (i edited some of it though)"
 )
 
 
 addcredit("You!",
-"using my script and spreading it around. Thank you!"
+	"using my script and spreading it around. Thank you!"
 )
 
 -- Credit list -- 
 addcommand("credits",
 	"print out the credits for KohlsLite",
 	function()
-        	print("Credits:")
-        	print("\n\n\n")
-        	for i, v in pairs(creditables) do
-            		dupe = v.. " - ".. creddesc[v]
-            		print(dupe)
-        	end
+		print("Credits:")
+		print("\n\n\n")
+		for i, v in pairs(creditables) do
+			dupe = v.. " - ".. creddesc[v]
+			print(dupe)
+		end
 	end
 )
 
@@ -262,12 +260,12 @@ addcommand("credits",
 addcommand("cmds", -- not sure why in scv2 new it doesn't use the system that was created!
 	"print out the commands for KohlsLite",
 	function()
-        	print("Commands:")
-        	print("\n\n\n")
-        	for i, v in pairs(commands) do
-            		dupe = v.. " - ".. descriptions[v]
-            		print(dupe)
-        	end
+		print("Commands:")
+		print("\n\n\n")
+		for i, v in pairs(commands) do
+			dupe = v.. " - ".. descriptions[v]
+			print(dupe)
+		end
 	end
 )
 
@@ -275,11 +273,11 @@ addcommand("cmds", -- not sure why in scv2 new it doesn't use the system that wa
 addcommand("help", 
 	"print out information about KohlsLite",
 	function()
-      		print("Information:")
-      		print("\n\n\n")
-      		print("You are using KohlsLite by ScriptingProgrammer/ts2021x/S-PScripts. This script has been maintained since 2023.")
-      		print("For help, please contact me on Discord at ts2021x.")
-      		print("The version you are using is "..admin.klversion2..".")
+		print("Information:")
+		print("\n\n\n")
+		print("You are using KohlsLite by ScriptingProgrammer/ts2021x/S-PScripts. This script has been maintained since 2023.")
+		print("For help, please contact me on Discord at ts2021x.")
+		print("The version you are using is "..admin.klversion2..".")
 	end
 )
 
@@ -296,16 +294,16 @@ addcommand("vgcrash",
 		if hasPerm or hasPersons then
 			chat(klprefix2.."regen")
 		end
-		
+
 		chat("blind others")
 		chat("speed others 0")
 		chat("freeze others")
-		
+
 		chat("gear me "..antilog.."94794847")
 		repeat task.wait() until lplr.Backpack:WaitForChild("VampireVanquisher")
-      		local vg = lplr.Backpack:FindFirstChild("VampireVanquisher")
-      		vg.Parent = lplr.Character
-		
+		local vg = lplr.Backpack:FindFirstChild("VampireVanquisher")
+		vg.Parent = lplr.Character
+
 		task.wait(0.2)
 		vg:Activate()
 
@@ -331,19 +329,19 @@ addcommand("vgcrash2",
 		if hasPerm or hasPersons then
 			chat(klprefix2.."regen")
 		end
-		
+
 		chat("blind others")
 		chat("speed others 0")
 		chat("freeze others")
-		
+
 		chat("gear me "..antilog.."94794847")
 		repeat task.wait() until lplr.Backpack:WaitForChild("VampireVanquisher")
-      		local vg = lplr.Backpack:FindFirstChild("VampireVanquisher")
-      		vg.Parent = lplr.Character
+		local vg = lplr.Backpack:FindFirstChild("VampireVanquisher")
+		vg.Parent = lplr.Character
 
 		repeat task.wait() until not lplr.Character.VampireVanquisher:FindFirstChild("Coffin")
-      		repeat task.wait() until lplr.Character.VampireVanquisher:FindFirstChild("Remote")
-     	 	lplr.Character.VampireVanquisher.Remote:FireServer(Enum.KeyCode.Q)
+		repeat task.wait() until lplr.Character.VampireVanquisher:FindFirstChild("Remote")
+		lplr.Character.VampireVanquisher.Remote:FireServer(Enum.KeyCode.Q)
 
 		chat("blind others")
 		chat("speed others 0")
@@ -361,7 +359,7 @@ addcommand("dcrash",
 		if hasPerm or hasPersons then
 			chat(klprefix2.."regen")
 		end
-		
+
 		for i = 1, 100 do
 			chat("dog all all all")
 			chat("clone all all all")
@@ -379,7 +377,7 @@ addcommand("dcrash2",
 		for i = 1, 50 do
 			chat("dog all all all")
 		end
-		
+
 		for i = 1, 50 do
 			chat("clone all all all")
 		end
@@ -406,7 +404,7 @@ addcommand("fcrash",
 		if hasPerm or hasPersons then
 			chat(klprefix2.."regen")
 		end
-		
+
 		for i = 1, 100 do
 			chat("freeze all all all")
 			chat("clone all all all")
@@ -427,8 +425,8 @@ addcommand("shieldcrash",
 		if hasPersons then
 			for i = 1, 100 do
 				chat("shield/all/all/all")
-          			chat("rocket/all/all/all")
-         			chat("clone all all all")
+				chat("rocket/all/all/all")
+				chat("clone all all all")
 			end
 		else
 			notify("You need to Persons to use this command, sorry!")
@@ -439,76 +437,78 @@ addcommand("shieldcrash",
 addcommand("logspam",
 	"spam logs with text",
 	function()
-		     chat("reset KohlsLite on top - 2024")
+		chat("reset KohlsLite on top - 2024")
 	end
 )
 
 addcommand("house",
 	"teleport to the house",
 	function()
-		     lplr.Character.HumanoidRootPart.CFrame = CFrame.new(-31.0896435, 8.22999477, 70.522644, -0.999961913, 4.495271e-08, -0.0087288795, 4.55292621e-08, 1, -6.58523618e-08, 0.0087288795, -6.62472743e-08, -0.999961913)
+		lplr.Character.HumanoidRootPart.CFrame = CFrame.new(-31.0896435, 8.22999477, 70.522644, -0.999961913, 4.495271e-08, -0.0087288795, 4.55292621e-08, 1, -6.58523618e-08, 0.0087288795, -6.62472743e-08, -0.999961913)
 	end
 )
 
 addcommand("spawn",
 	"teleport to spawn",
 	function()
-                     lplr.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(-29, 3.70000005, -25.5900116))
+		lplr.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(-29, 3.70000005, -25.5900116))
 	end
 )
 
 addcommand("breakcam",
 	"break everyone's camera",
 	function()
-      		chat("gear me 4842207161")
-      		repeat task.wait() until lplr.Backpack:FindFirstChild("AR")
-      		local cambrek = lplr.Backpack:FindFirstChild("AR")
-      		cambrek.Parent = lplr.Character
-		
-      		task.wait(0.2)
-      		cambrek:Activate()
-		
-      		notify("The camera is now broken into shiftlock - you won't see the effect until you rejoin.")
+		chat("gear me 4842207161")
+		repeat task.wait() until lplr.Backpack:FindFirstChild("AR")
+		local cambrek = lplr.Backpack:FindFirstChild("AR")
+		cambrek.Parent = lplr.Character
+
+		task.wait(0.2)
+		cambrek:Activate()
+
+		notify("The camera is now broken into shiftlock - you won't see the effect until you rejoin.")
 	end
 )
 
 addcommand("nocam",
 	"break everyone's camera",
 	function()
-      		chat(klprefix2.."nocam")
+		chat(klprefix2.."nocam")
 	end
 )
 
 addcommand("regen",
 	"regenerate the admin pads",
 	function()
-      		 if fireclickdetector then
-			if game:GetService("Workspace").Terrain["_Game"].Admin.Regen then
-                     		fireclickdetector(game:GetService("Workspace").Terrain["_Game"].Admin.Regen.ClickDetector, 0)
+		if fireclickdetector then
+			if workspace.Terrain["_Game"].Admin:FindFirstChild("Regen") then
+				fireclickdetector(workspace.Terrain["_Game"].Admin.Regen.ClickDetector, 0)
 			else
 				notify("The regen pad is not loaded - please find it first.")
-		 else
-			notify("Bad executor - fireclickdetector is not supported to run regen.")
-		 end
+			end	
+		else
+			notify("Cannot regen; Your exploit does not support the fireclickdetector")
+			notify("function.")
+		end
 	end
 )
 
 addcommand("serverhop",
 	"switch to a different server",
 	function()
-      		local Servers = game.HttpService:JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/"..game.PlaceId.."/servers/Public?sortOrder=Asc&limit=100"))
-        	for i,v in pairs(Servers.data) do
-        		if v.playing ~= v.maxPlayers then
-                     		game:GetService('TeleportService'):TeleportToPlaceInstance(game.PlaceId, v.id)
-            		end
-        	end    
+		local Servers = game.HttpService:JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/"..game.PlaceId.."/servers/Public?sortOrder=Asc&limit=100"))
+		for i,v in pairs(Servers.data) do
+			if v.playing ~= v.maxPlayers then
+				game:GetService('TeleportService'):TeleportToPlaceInstance(game.PlaceId, v.id)
+			end
+		end    
 	end
 )
 
 addcommand("shop",
 	"switch to a different server",
 	function()
-      		chat(klprefix2.."shop")
+		chat(klprefix2.."shop")
 	end
 )
 
@@ -516,7 +516,7 @@ addcommand("anticrash",
 	"toggle anti crash (gears only)",
 	function()
 		if anticrash then
-      			anticrash = false
+			anticrash = false
 		else
 			anticrash = true
 		end
@@ -528,7 +528,7 @@ addcommand("unanticrash",
 	"turn off anti crash",
 	function()
 		if anticrash then
-      			anticrash = false
+			anticrash = false
 		end
 		notify("Anti crash is now set to false.")
 	end
@@ -538,7 +538,7 @@ addcommand("antigear",
 	"toggle anti gear",
 	function()
 		if antigear then
-      			antigear = false
+			antigear = false
 		else
 			antigear = true
 		end
@@ -550,7 +550,7 @@ addcommand("unantigear",
 	"turn off anti gear",
 	function()
 		if antigear then
-      			antigear = false
+			antigear = false
 		end
 		notify("Anti gear is now set to false.")
 	end
@@ -560,7 +560,7 @@ addcommand("antilag",
 	"toggle anti lag",
 	function()
 		if antilag then
-      			antilag = false
+			antilag = false
 		else
 			antilag = true
 		end
@@ -572,7 +572,7 @@ addcommand("unantilag",
 	"turn off anti lag",
 	function()
 		if antilag then
-      			antilag = false
+			antilag = false
 		end
 		notify("Anti lag is now set to false.")
 	end
