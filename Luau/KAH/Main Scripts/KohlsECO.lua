@@ -1,3 +1,5 @@
+-- btw bumanoid i don't use ticks (`)
+
 -- KohlsECO / KohlsLite v2 --
 
 -- Notes: --
@@ -1189,10 +1191,29 @@ addcommand({
 
 slockenabled = false
 
+special = {}
+special.blacklisted = {}
+special.whitelisted = {}
+special.gearwhitelisted = {}
+special.protectedfromkick = {}
+special.specialperms = {}
+
 connections[#connections + 1] =
 	game:GetService("RunService").RenderStepped:Connect(function()
-		if slockenabled == true then
-			for i, v in game.Players:GetPlayers() do 
+		for i, v in game.Players:GetPlayers() do 
+			if slockenabled == true then
+				if v.Name ~= lplr.Name then
+					if not game.Lighting:FindFirstChild(v.Name) then
+                                        	Chat('punish '..v.Name)
+                                         	Chat('blind '..v.Name)   
+                                        	Chat('skydive '..v.Name)        
+					end
+				end
+			end
+		end
+		
+		for i, v in game.Players:GetPlayers() do 
+			if table.find(special.blacklisted, v.Name) then
 				if not game.Lighting:FindFirstChild(v.Name) then
                                          Chat('punish '..v.Name)
                                          Chat('blind '..v.Name)   
