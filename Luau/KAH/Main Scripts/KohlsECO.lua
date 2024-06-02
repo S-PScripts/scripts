@@ -205,6 +205,15 @@ connections[#connections + 1] = workspace.DescendantAdded:Connect(function(ch)
 	end
 end)
 
+-- Player finder
+local function getPlayer(p)
+	for i, v in game.Players:GetPlayers() do
+		if v.Name:lower():sub(1, p:len()) == p:lower() or v.DisplayName:lower():sub(1, p:len()) == p:lower() then
+			return v
+		end
+	end
+end
+
 -- Command adder --
 -- From Shortcut v2 NEW (https://github.com/Tech-187/Lua-scripts/blob/main/Shortcut__v2_src2.lua)
 function addcommand(information)
@@ -1071,19 +1080,30 @@ addcommand({
 			game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, true)
 			Remind("Ungearbanned yourself.")
 		else 
-			--
+			getPlayer(plrg)
+			if not getPlayer(plrg) then
+				Remind("Invalid player!")
+				return
+			end
+		 	Chat("ungear me")
+        		Chat("tp "..plrg.." me")
+        		Chat("speed "..plrg.." 0")
+        		task.wait(0.5)
+        		Chat('gear me 71037101')
+        		repeat task.wait() until lplr.Backpack:FindFirstChild("DaggerOfShatteredDimensions")
+        		ungear = lplr.Backpack:FindFirstChild("DaggerOfShatteredDimensions")
+        		task.wait()
+        		ungear.Parent = lplr.Character
+        		task.wait(0.5)
+        		lplr.Character.DaggerOfShatteredDimensions.Remote:FireServer(Enum.KeyCode.Q)
+        		task.wait(0.5)
+        		Chat("ungear me")
+        		Chat("speed "..plrg.." 16")
 		end
 	end
 })
 
 local rkicking = false
-local function getPlayer(p)
-	for i, v in game.Players:GetPlayers() do
-		if v.Name:lower():sub(1, p:len()) == p:lower() or v.DisplayName:lower():sub(1, p:len()) == p:lower() then
-			return v
-		end
-	end
-end
 
 addcommand({
 	name = "rocketkick",
