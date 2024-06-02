@@ -1460,7 +1460,7 @@ addcommand({
 	aliases = {"actall","usetools","usegears"},
 	description = "activate all the tools in your inventory",
 	funct= function()
-		local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
+		local Backpack = lplr:FindFirstChildOfClass("Backpack")
                 for _, v in ipairs(Backpack:GetChildren()) do
                             v.Parent = lplr.Character
                              v:Activate()
