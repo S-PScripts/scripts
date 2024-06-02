@@ -113,7 +113,7 @@ local badTools = {
 }
 
 ---KL v1 gear list----
-local gearlist = {
+local gearlist = {    --- Imported By Darkspecies
 	["boombox"] = { gearid = "212641536" },
 	["vg"] = { gearid = "94794847" },
 	["osas"] = { gearid = "92628079" },
