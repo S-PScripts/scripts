@@ -1170,9 +1170,9 @@ addcommand({
 				Remind("Invalid player!")
 				return
 		end
-		Chat("ff " ..railer)
-        	Chat("god " ..railer)
-        	Chat("spin " ..railer)
+		Chat("ff " ..railer.Name)
+        	Chat("god " ..railer.Name)
+        	Chat("spin " ..railer.Name)
 	        for i = 1, 100 do
 			Chat("gear me 79446473")
 		end
@@ -1182,9 +1182,9 @@ addcommand({
                 	x:WaitForChild("Click"):FireServer(workspace[railer].Torso.Position)
         	end
         	task.wait(2)
-        	Chat("ungod " .. railer)
-        	Chat("unspin " .. railer)
-        	Chat("unff " .. railer)
+        	Chat("ungod " .. railer.Name)
+        	Chat("unspin " .. railer.Name)
+        	Chat("unff " .. railer.Name)
         	Chat("ungear me")
 	end
 })
@@ -1257,3 +1257,18 @@ addcommand({
 			Remind("The server has been unlocked.")
 	end
 })
+
+addcommand({
+	name = "blacklist",
+	aliases = {"bl"},
+	description = "blacklist a player from the server",
+	funct = function()
+		local plrg = args[2]
+		if not getPlayer(plrg) then
+			Remind("Invalid player!")
+			return
+		end
+		local bling = getPlayer(plrg)
+		if table.find(blacklist, bling.Name)
+			end
+		})
