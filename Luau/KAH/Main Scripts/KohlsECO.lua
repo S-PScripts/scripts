@@ -1191,7 +1191,7 @@ addcommand({
 		end
         	local Backpack = lplr:FindFirstChildOfClass("Backpack")
         	for _, x in ipairs(Backpack:GetChildren()) do
-                	x.Parent = game.Players.LocalPlayer.Character
+                	x.Parent = lplr.Character
                 	x:WaitForChild("Click"):FireServer(workspace[railer].Torso.Position)
         	end
         	task.wait(2)
@@ -1439,5 +1439,67 @@ addcommand({
 		else
 			Remind(plr.Name.." was never gear whitelisted!")
 		end
+	end
+})
+
+addcommand({
+	name = "equipall",
+	aliases = {"equiptools","equipgears"},
+	description = "equip all the tools in your inventory",
+	funct= function()
+		local Backpack = lplr:FindFirstChildOfClass("Backpack")
+                for _, v in ipairs(Backpack:GetChildren()) do
+                            v.Parent = lplr.Character
+                end
+		Remind("Equipped all items in your inventory!")
+	end
+})
+
+addcommand({
+	name = "activateall",
+	aliases = {"actall","usetools","usegears"},
+	description = "activate all the tools in your inventory",
+	funct= function()
+		local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
+                for _, v in ipairs(Backpack:GetChildren()) do
+                            v.Parent = lplr.Character
+                             v:Activate()
+                end
+		Remind("Activated all items in your inventory!")
+	end
+})
+
+addcommand({
+	name = "inventoryall",
+	aliases = {"invall","invtools","invgears"},
+	description = "put all the tools you're equipping in your inventory",
+	funct= function()
+		local Backpack = lplr:FindFirstChildOfClass("Backpack")
+                local Character = lplr.Character
+                for _, v in ipairs(Character:GetChildren()) do
+                         if v:IsA("Tool") then
+                                    v.Parent = Backpack
+                         end
+                end
+		Remind("Unequipped all items back into your inventory!")
+	end
+})
+
+addcommand({
+	name = "dropall",
+	aliases = {"droptools","dropgears"},
+	description = "drop all the tools you're equipping",
+	funct= function()
+		local Backpack = lplr:FindFirstChildOfClass("Backpack")
+                local Character = lplr.Character
+                for _, v in ipairs(Character:GetChildren()) do
+                         if v:IsA("Tool") then
+                                    v.Parent = Backpack
+                         end                
+                end
+                for _, v in ipairs(Backpack:GetChildren()) do
+                            v.Parent = workspace
+                end
+		Remind("Dropped all items in your inventory!")
 	end
 })
