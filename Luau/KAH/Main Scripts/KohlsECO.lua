@@ -104,29 +104,29 @@ local badTools = {
 
 ---KL v1 gear list----
 local gearlist = {
-    ["boombox"] = { gearid = "212641536" },
-    ["vg"] = { gearid = "94794847" },
-    ["osas"] = { gearid = "92628079" },
-    ["gb"] = { gearid = "82357101" },
-    ["bhbomb"] = { gearid = "28277486" },
-    ["tictac"] = { gearid = "16924676" },
-    ["pgun"] = { gearid = "34870758" },
-    ["camfixer"] = { gearid = "79736563" },
-    ["painter"] = { gearid = "18474459" },
-    ["telemon"] = { gearid = "93136746" },
-    ["trapmine"] = { gearid = "11999247" },
-    ["timegears"] = { gearid = "77443461" },
-    ["admslayer"] = { gearid = { "268586231", "1103011681"} },
-    ["kp"] = { gearid = {"583030187, 68539623"} },
-    ["icebreaker"] = { gearid = {"87361662", "66896601"} },
-    ["periastrons"] = { gearid = {"108158379", "80661504", "233520257", "73829193", "69499437", "139577901", "2544549379", "120307951", "99119240", "93136802", "80597060", "159229806", "77443461"} },
-    ["melees"] = { gearid = {"121946387", "12187348", "170897263", "427947884", "306971294", "306971294", "11999235", "28275809", "10758456", "243790334", "14719505", "13207169", "11956382", "10469910", "124472052", "20721924"} },
-    ["guns"] = { gearid = {"243007180", "116693764", "212296936", "168143042", "467138029", "42845609", "130113146", "26017478", "26014536", "9360722592", "18268645"} },
-    ["fungears"] = { gearid = {"111876831", "90718686", "283755431", "139578061", "90718686", "212641536", "392057539", "323477973", "78730532", "47597835", "212641536", "88143093", "73265108", "115377964", "98411393" } },
-    ["explosives"] = { gearid = {"88885539", "88885524", "73888479", "110337853", "101110605", "29957963", "503955938", "243788010", "88146497"} },
-    ["destructives"] = { gearid = {"125013830", "225921650", "60357972", "108158379"} },
-    ["swords"] = { gearid = {"25740034", "638089422", "170903610", "319655422", "125013769", "108158379", "2470750640", "2041982658", "361950297", "2103274863", "181356054", "163491866", "108158439"} },
-    ["rideables"] = { gearid = {"304719869", "2568114215", "158069143", "185422295", "346687565", "553939167", "820013867", "387285940", "163348575", "206799274", "928805891", "124127383", "125013849", "2445089071", "253519495"} }
+	["boombox"] = { gearid = "212641536" },
+	["vg"] = { gearid = "94794847" },
+	["osas"] = { gearid = "92628079" },
+	["gb"] = { gearid = "82357101" },
+	["bhbomb"] = { gearid = "28277486" },
+	["tictac"] = { gearid = "16924676" },
+	["pgun"] = { gearid = "34870758" },
+	["camfixer"] = { gearid = "79736563" },
+	["painter"] = { gearid = "18474459" },
+	["telemon"] = { gearid = "93136746" },
+	["trapmine"] = { gearid = "11999247" },
+	["timegears"] = { gearid = "77443461" },
+	["admslayer"] = { gearid = { "268586231", "1103011681"} },
+	["kp"] = { gearid = {"583030187, 68539623"} },
+	["icebreaker"] = { gearid = {"87361662", "66896601"} },
+	["periastrons"] = { gearid = {"108158379", "80661504", "233520257", "73829193", "69499437", "139577901", "2544549379", "120307951", "99119240", "93136802", "80597060", "159229806", "77443461"} },
+	["melees"] = { gearid = {"121946387", "12187348", "170897263", "427947884", "306971294", "306971294", "11999235", "28275809", "10758456", "243790334", "14719505", "13207169", "11956382", "10469910", "124472052", "20721924"} },
+	["guns"] = { gearid = {"243007180", "116693764", "212296936", "168143042", "467138029", "42845609", "130113146", "26017478", "26014536", "9360722592", "18268645"} },
+	["fungears"] = { gearid = {"111876831", "90718686", "283755431", "139578061", "90718686", "212641536", "392057539", "323477973", "78730532", "47597835", "212641536", "88143093", "73265108", "115377964", "98411393" } },
+	["explosives"] = { gearid = {"88885539", "88885524", "73888479", "110337853", "101110605", "29957963", "503955938", "243788010", "88146497"} },
+	["destructives"] = { gearid = {"125013830", "225921650", "60357972", "108158379"} },
+	["swords"] = { gearid = {"25740034", "638089422", "170903610", "319655422", "125013769", "108158379", "2470750640", "2041982658", "361950297", "2103274863", "181356054", "163491866", "108158439"} },
+	["rideables"] = { gearid = {"304719869", "2568114215", "158069143", "185422295", "346687565", "553939167", "820013867", "387285940", "163348575", "206799274", "928805891", "124127383", "125013849", "2445089071", "253519495"} }
 }
 
 -- Connections --
@@ -134,52 +134,52 @@ local connections = {}
 
 -- Anti crash for gears and anti gear
 connections[#connections + 1] =
-    game:GetService("RunService").RenderStepped:Connect(function()
-        if antigear then
-            for i, v in game.Players:GetPlayers() do
-                if v.Name ~= lplr.Name and v.Backpack:FindFirstChildOfClass("Tool") then
-                    Chat("ungear " .. v.Name)
-                    Chat("punish " .. v.Name)
-                    Chat("clr")
-                    Chat(klprefix2 .. "regen")
-                end
+	game:GetService("RunService").RenderStepped:Connect(function()
+		if antigear then
+		for i, v in game.Players:GetPlayers() do
+			if v.Name ~= lplr.Name and v.Backpack:FindFirstChildOfClass("Tool") then
+				Chat("ungear " .. v.Name)
+				Chat("punish " .. v.Name)
+				Chat("clr")
+				Chat(klprefix2 .. "regen")
+			end
 
-                if v.Name ~= lplr.Name and v.Character and v.Character:FindFirstChildOfClass("Tool") then
-                    Chat("ungear " .. v.Name)
-                    Chat("punish " .. v.Name)
-                    Chat("clr")
-                    Chat(klprefix2 .. "regen")
-                end
-            end
-        end
+			if v.Name ~= lplr.Name and v.Character and v.Character:FindFirstChildOfClass("Tool") then
+				Chat("ungear " .. v.Name)
+				Chat("punish " .. v.Name)
+				Chat("clr")
+				Chat(klprefix2 .. "regen")
+			end
+		end
+	end
 
-        if anticrash then
-            for i, tool in crashTools do
-                for i, v in game.Players:GetPlayers() do
-                    if v.Name ~= lplr.Name and v.Backpack:FindFirstChild(tool) then
-                        Chat("ungear " .. v.Name)
-                        Chat("punish " .. v.Name)
-                        Chat("clr")
-                        Chat(klprefix2 .. "regen")
-                    end
+		if anticrash then
+		for i, tool in crashTools do
+			for i, v in game.Players:GetPlayers() do
+				if v.Name ~= lplr.Name and v.Backpack:FindFirstChild(tool) then
+					Chat("ungear " .. v.Name)
+					Chat("punish " .. v.Name)
+					Chat("clr")
+					Chat(klprefix2 .. "regen")
+				end
 
-                    if v.Name ~= lplr.Name and v.Character and v.Character:FindFirstChild(tool) then
-                        Chat("ungear " .. v.Name)
-                        Chat("punish " .. v.Name)
-                        Chat("clr")
-                        Chat(klprefix2 .. "regen")
-                    end
-                end
+				if v.Name ~= lplr.Name and v.Character and v.Character:FindFirstChild(tool) then
+					Chat("ungear " .. v.Name)
+					Chat("punish " .. v.Name)
+					Chat("clr")
+					Chat(klprefix2 .. "regen")
+				end
+			end
 
-                if workspace:FindFirstChild(tool) then
-                    Chat("ungear others")
-                    Chat("punish others")
-                    Chat("clr")
-                    Chat(klprefix2 .. "regen")
-                end
-            end
-        end
-    end)
+			if workspace:FindFirstChild(tool) then
+				Chat("ungear others")
+				Chat("punish others")
+				Chat("clr")
+				Chat(klprefix2 .. "regen")
+			end
+		end
+	end
+	end)
 
 
 -- Anti lag items
@@ -208,29 +208,29 @@ end)
 -- Command adder --
 -- From Shortcut v2 NEW (https://github.com/Tech-187/Lua-scripts/blob/main/Shortcut__v2_src2.lua)
 function addcommand(information)
-    local cmdName = information.name
-    local cmdAlias = information.aliases
-    local cmdFunction = information.funct
-    local cmdDescription = information.description
-    
-    commands[cmdName] = cmdName
-    descriptions[cmdName] = cmdDescription
+	local cmdName = information.name
+	local cmdAlias = information.aliases
+	local cmdFunction = information.funct
+	local cmdDescription = information.description
 
-    connections[#connections + 1] = 
-        game.Players.LocalPlayer.Chatted:Connect(function(msg)
-            msg = msg:lower()
-            args = msg:split(" ")
-            if args[1] == admin.klprefix2 .. cmdName then
-                cmdFunction()
-            end
-            
-            for _, alias in ipairs(cmdAlias) do
-                if args[1] == admin.klprefix2 .. alias then
-                    cmdFunction()
-                    break
-                end
-            end
-        end)
+	commands[cmdName] = cmdName
+	descriptions[cmdName] = cmdDescription
+
+	connections[#connections + 1] = 
+		game.Players.LocalPlayer.Chatted:Connect(function(msg)
+			msg = msg:lower()
+			args = msg:split(" ")
+			if args[1] == admin.klprefix2 .. cmdName then
+			cmdFunction()
+		end
+
+			for _, alias in ipairs(cmdAlias) do
+			if args[1] == admin.klprefix2 .. alias then
+				cmdFunction()
+				break
+			end
+		end
+		end)
 end
 
 -- Credit adder --
@@ -471,7 +471,7 @@ addcommand({
 	description = "spam logs with text",
 	funct = function()
 		for i = 1, 100 do
-			Chat("reset KohlsECO on top - 2024")
+			Chat("reset KohlsECO .on .top - .2024") -- the dots won't make people that have their username start on those words reset
 		end
 	end
 })
@@ -641,7 +641,7 @@ addcommand({
 		Chat("dog "..tankeng)
 		task.wait(0.5)
 		Chat("creeper "..tankeng)
-                Remind("Turned the player into a tank!")
+		Remind("Turned the player into a tank!")
 	end
 })
 
@@ -650,19 +650,19 @@ addcommand({
 	aliases = {"square"},
 	description = "turn someone into a cube",
 	funct = function()
-       		local imacube = args[2]
-                Chat("unpackage "..imacube)
-                for i = 1,15 do
-                        task.wait()
-                        Chat("size " .. imacube .. " .3")
-                    end
-                Chat("paint " .. imacube .. " white")
-                Chat("bighead " .. imacube)
-                Chat("unsize " .. imacube)
-                Chat("removelimbs " .. imacube)
-                Chat("size " .. imacube .. " 2.5")
-                Chat("shiny " .. imacube)
-                Remind("Turned the player into a cube!")
+		local imacube = args[2]
+		Chat("unpackage "..imacube)
+		for i = 1,15 do
+			task.wait()
+			Chat("size " .. imacube .. " .3")
+		end
+		Chat("paint " .. imacube .. " white")
+		Chat("bighead " .. imacube)
+		Chat("unsize " .. imacube)
+		Chat("removelimbs " .. imacube)
+		Chat("size " .. imacube .. " 2.5")
+		Chat("shiny " .. imacube)
+		Remind("Turned the player into a cube!")
 	end
 })
 
@@ -683,7 +683,7 @@ addcommand({
 		Chat("dog "..ufo)
 		Chat("rainbowify "..ufo)
 		Chat("spin "..ufo)
-                Remind("Turned the player into a UFO!")
+		Remind("Turned the player into a UFO!")
 	end
 })
 
@@ -692,7 +692,7 @@ addcommand({
 	aliases = {"yuckify"},
 	description = "turn someone into a rat",
 	funct = function()
-     		local eww = args[2]
+		local eww = args[2]
 		Chat("char "..eww.." 6")
 		task.wait(1)
 		Chat("hat "..eww.." 6203125039")
@@ -707,7 +707,7 @@ addcommand({
 	aliases = {"onepiece"},
 	description = "turn someone into a titan",
 	funct = function()
-     		local thatanime = args[2]
+		local thatanime = args[2]
 		Chat("char "..thatanime.." 4")
 		task.wait(1.2)
 		Chat("skydive "..thatanime)
@@ -724,7 +724,7 @@ addcommand({
 	aliases = {},
 	description = "turn someone into a speaker",
 	funct = function()
-     		local spek = args[2]
+		local spek = args[2]
 		Chat("char "..spek.." 1702851506")
 		task.wait(1.2)
 		Chat("skydive "..spek)
@@ -747,7 +747,7 @@ addcommand({
 	aliases = {"rider"},
 	description = "turn someone into a taxi",
 	funct = function()
-     		local taxi = args[2]
+		local taxi = args[2]
 		Chat("dog "..taxi)
 		Chat("paint "..taxi.." gold")
 		Chat("speed "..taxi.." 100")
@@ -763,7 +763,7 @@ addcommand({
 	aliases = {"blender"},
 	description = "blender someone up",
 	funct = function()
-     		local ahhno = args[2]
+		local ahhno = args[2]
 		Chat("jail "..ahhno)
 		Chat("stun "..ahhno)
 		Chat("spin "..ahhno)
@@ -777,7 +777,7 @@ addcommand({
 	aliases = {"creeper","explosion"},
 	description = "turn someone into a creeper",
 	funct = function()
-     		local tnt = args[2]
+		local tnt = args[2]
 		Chat("removepants "..tnt)
 		Chat("removeshirt "..tnt)
 		Chat("paint "..player.." red")
@@ -800,7 +800,7 @@ addcommand({
 		Chat("bighead "..hf)
 		task.wait(0.25)
 		Chat("unsize "..hf)
-	        Remind("Made the player's head float!")
+		Remind("Made the player's head float!")
 	end
 })
 
@@ -820,7 +820,7 @@ addcommand({
 		Chat("size "..coco.." 2")
 		task.wait(0.3)
 		Chat("paint "..coco.." brown")
-	        Remind("Turned the player into a coconut!")
+		Remind("Turned the player into a coconut!")
 	end
 })
 
@@ -831,11 +831,11 @@ addcommand({
 	funct = function()
 		local icet = args[2]
 		for i = 1, 30 do
-                    Chat("size " .. icet .. " .6")
-                    Chat("seizure " .. icet)
-                    Chat("freeze " .. icet)
-                    Chat("unsize " .. icet)
-                end
+			Chat("size " .. icet .. " .6")
+			Chat("seizure " .. icet)
+			Chat("freeze " .. icet)
+			Chat("unsize " .. icet)
+		end
 		Remind("Turned the player into an ice tower!")
 	end
 })
@@ -847,14 +847,14 @@ addcommand({
 	funct = function()
 		local amp = args[2]	
 		Chat("size " .. amp .. " 10")
-                task.wait(.3)
-                Chat("freeze " .. amp)
-                task.wait(.3)
-                Chat("trip " .. amp)
-                task.wait(.3)
-                Chat("unsize " .. amp)
-                task.wait(.3)
-                Chat("paint " .. amp .. " red")
+		task.wait(.3)
+		Chat("freeze " .. amp)
+		task.wait(.3)
+		Chat("trip " .. amp)
+		task.wait(.3)
+		Chat("unsize " .. amp)
+		task.wait(.3)
+		Chat("paint " .. amp .. " red")
 		Remind("Amputated the player!")
 	end
 })
@@ -866,11 +866,11 @@ addcommand({
 	funct = function()
 		local skbox = args[2]
 		Chat("size " .. skbox .. " .3")
-                Chat("freeze " .. skbox)
-                Chat("size " .. skbox .. " 10")
-                Chat("goldify " .. skbox)
-                Chat("clone " .. skbox)
-                Chat("reset " .. skbox)
+		Chat("freeze " .. skbox)
+		Chat("size " .. skbox .. " 10")
+		Chat("goldify " .. skbox)
+		Chat("clone " .. skbox)
+		Chat("reset " .. skbox)
 		Remind("Skyboxed the player!")
 	end
 })
@@ -883,15 +883,15 @@ addcommand({
 		local hroot = args[2]
 		Chat("size " .. hroot .. " 10")
 		task.wait()
-                Chat("freeze " .. hroot)
+		Chat("freeze " .. hroot)
 		task.wait()
-                Chat("bighead " .. hroot)
+		Chat("bighead " .. hroot)
 		task.wait()
-                Chat("size " .. hroot .. " .3")
+		Chat("size " .. hroot .. " .3")
 		task.wait()
-                Chat("thaw " .. hroot)
+		Chat("thaw " .. hroot)
 		task.wait()
-                Chat("unsize " .. hroot)
+		Chat("unsize " .. hroot)
 		Remind("Headrooted the player!")
 	end
 })
@@ -904,13 +904,13 @@ addcommand({
 		local hrise = args[2]
 		Chat("size " .. hrise .. " .3")
 		task.wait()
-                Chat("bighead " .. hrise)
+		Chat("bighead " .. hrise)
 		task.wait()
-                Chat("size " .. hrise .. " 10")
+		Chat("size " .. hrise .. " 10")
 		task.wait()
-                Chat("thaw " .. hrise)
+		Chat("thaw " .. hrise)
 		task.wait()
-                Chat("unsize " .. hrise)
+		Chat("unsize " .. hrise)
 		Remind("Headrised the player!")
 	end
 })
@@ -922,10 +922,10 @@ addcommand({
 	funct = function()
 		local dosd = args[2]
 		Chat("gear me 71037101")
- 		repeat task.wait() until lplr.Backpack:FindFirstChild("DaggerOfShatteredDimensions")
-        	dagg = lplr.Backpack:FindFirstChild("DaggerOfShatteredDimensions")
-        	task.wait()
-        	dagg.Parent = lplr.Character
+		repeat task.wait() until lplr.Backpack:FindFirstChild("DaggerOfShatteredDimensions")
+		dagg = lplr.Backpack:FindFirstChild("DaggerOfShatteredDimensions")
+		task.wait()
+		dagg.Parent = lplr.Character
 		task.wait()
 		Chat("god "..dosd)
 		Chat("tp "..dosd.." me")
@@ -943,19 +943,19 @@ addcommand({
 	description = "create an iceblock with a player",
 	funct = function()
 		local theblock = args[2]
-                if theblock == "me" or theblock == "" then
-                        lplr.Character.HumanoidRootPart.CFrame = lplr.Character.HumanoidRootPart.CFrame * CFrame.new(0,-40,0)
-                end
-                task.wait(0.25)
-                Chat("invisible "..theblock)
+		if theblock == "me" or theblock == "" then
+			lplr.Character.HumanoidRootPart.CFrame = lplr.Character.HumanoidRootPart.CFrame * CFrame.new(0,-40,0)
+		end
+		task.wait(0.25)
+		Chat("invisible "..theblock)
 		task.wait()
-                Chat("freeze "..theblock)
+		Chat("freeze "..theblock)
 		task.wait()
-                Chat("size "..theblock.." 10")
+		Chat("size "..theblock.." 10")
 		task.wait()
-                Chat("clone "..theblock)
+		Chat("clone "..theblock)
 		task.wait()
-                Chat("respawn "..theblock)
+		Chat("respawn "..theblock)
 		Remind("Created a big ice block with the player!")
 	end
 })
@@ -966,8 +966,8 @@ addcommand({
 	description = "punish a player then regen",
 	funct = function()
 		local trolled = args[2]
-                Chat("punish " ..trolled)
-                Regen()
+		Chat("punish " ..trolled)
+		Regen()
 		Remind("Quick punished the player")
 	end
 })
@@ -978,8 +978,8 @@ addcommand({
 	description = "speed a player to infinity then regen",
 	funct = function()
 		local trolled = args[2]
-                Chat("speed " ..trolled.. " inf")
-                Regen()
+		Chat("speed " ..trolled.. " inf")
+		Regen()
 		Remind("Speed punished the player")
 	end
 })
@@ -990,8 +990,8 @@ addcommand({
 	description = "setgrav a player to -9e9 then regen",
 	funct = function()
 		local trolled = args[2]
-                Chat("setgrav " ..trolled.. " -9e9")
-                Regen()
+		Chat("setgrav " ..trolled.. " -9e9")
+		Regen()
 		Remind("Setgrav punished the player")
 	end
 })
@@ -1004,12 +1004,12 @@ addcommand({
 	description = "toggle temporary no obby kill",
 	funct = function()
 		for i, v in pairs(game:GetService("Workspace").Terrain._Game.Workspace.Obby:GetChildren()) do  
-                	if nokmode == false then
-                        	v.CanTouch = false
-                	else
-                        	v.CanTouch = true
-               	 	end
-       	 	end
+			if nokmode == false then
+				v.CanTouch = false
+			else
+				v.CanTouch = true
+			end
+		end
 		nokmode = not nokmode
 		Remind("NOK mode is set to "..nokmode)
 	end
@@ -1021,10 +1021,10 @@ addcommand({
 	description = "turn off temporary no obby kill",
 	funct = function()
 		for i, v in pairs(game:GetService("Workspace").Terrain._Game.Workspace.Obby:GetChildren()) do  
-                	if nokmode == true then
-                        	v.CanTouch = true
+			if nokmode == true then
+				v.CanTouch = true
 			end
-       	 	end
+		end
 		nokmode = false
 		Remind("NOK mode is set to false.")
 	end
@@ -1037,12 +1037,12 @@ addcommand({
 	description = "turn on permanent no obby kill (CANNOT BE TURNED OFF)",
 	funct = function()
 		if alreadydunit_nok then Remind("You've already used this command!") end
-  	   	for i, v in pairs(game:GetService("Workspace").Terrain._Game.Workspace["Obby"]:GetDescendants()) do
-                    if v.Name == "TouchInterest" then
-                        v:Destroy()
-                    end
-                end
-	        alreadydunit_nok = true
+		for i, v in pairs(game:GetService("Workspace").Terrain._Game.Workspace["Obby"]:GetDescendants()) do
+			if v.Name == "TouchInterest" then
+				v:Destroy()
+			end
+		end
+		alreadydunit_nok = true
 	end
 })
 
@@ -1053,10 +1053,10 @@ addcommand({
 	funct = function()
 		if alreadydunit_nok then Remind("You've already used this command!") end
 		for i, v in pairs(workspace.Terrain["_Game"]["Workspace"].Obby:GetDescendants()) do
-        		if v:IsA("TouchTransmitter") then 
-                        	v:Destroy() 
-        		end
-  		end
+			if v:IsA("TouchTransmitter") then 
+				v:Destroy() 
+			end
+		end
 		alreadydunit_nok = true 
 	end
 })
@@ -1067,11 +1067,56 @@ addcommand({
 	description = "ungearban a player (including yourself)",
 	funct = function()
 		local plrg = args[2]
-                if plrg == "" or plrg == "me" then
-                        game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, true)
+		if plrg == "" or plrg == "me" then
+			game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, true)
 			Remind("Ungearbanned yourself.")
-                else 
-                        --
-                end
+		else 
+			--
+		end
+	end
+})
+
+local spamming = false
+local function getPlayer(p): Player
+	for i, v in game.Players:GetPlayers() do
+		if v.Name:lower():sub(1, p:len()) == p:lower() or v.DisplayName:lower():sub(1, p:len()) == p:lower() then
+			return v
+		end
+	end
+end
+addcommand({
+	name = "rocketkick",
+	aliases = {"rkick"},
+	description = "crashes a player (person299)",
+	funct = function()
+		local plrg = args[2]
+		if not getPlayer(plrg) then
+			Remind("Invalid player")
+			return
+		end
+		Chat(`jail/{plrg}`)
+		for i = 1, 128 do
+			Chat(`rocket/{plrg} me {plrg} me`)
+		end
+		task.wait(.49)
+		spamming = true
+		local p = getPlayer(plrg)
+		repeat
+			Chat("rocket/all all all")
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = p.Character.HumanoidRootPart.CFrame * CFrame.Angles(0,math.rad(180),0)*CFrame.new(0,0,-2)
+			if lplr.Character:FindFirstChild("Rocket") then
+				lplr.Character.Rocket.CanCollide = false
+				task.delay(.5, function()
+					lplr.Character.Rocket:Destroy()
+				end)
+			end
+			if p.Character:FindFirstChild("Rocket") then
+				p.Character.Rocket.CanCollide = false
+				task.delay(.5, function()
+					p.Character.Rocket:Destroy()
+				end)
+			end
+			task.wait()
+		until not spamming or not getPlayer(plrg)
 	end
 })
