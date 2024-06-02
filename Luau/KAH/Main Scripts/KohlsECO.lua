@@ -1084,6 +1084,7 @@ local function getPlayer(p): Player
 		end
 	end
 end
+
 addcommand({
 	name = "rocketkick",
 	aliases = {"rkick"},
@@ -1095,16 +1096,16 @@ addcommand({
 				Remind("Invalid player")
 				return
 			end
-			Chat(`jail/{plrg}`)
+			Chat("jail/{plrg}")
 			for i = 1, 128 do
-				Chat(`rocket/{plrg} me {plrg} me`)
+				Chat("rocket/{plrg} me {plrg} me")
 			end
 			task.wait(.49)
 			spamming = true
 			local p = getPlayer(plrg)
 			repeat
 				Chat("rocket/all all all")
-				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = p.Character.HumanoidRootPart.CFrame * CFrame.Angles(0,math.rad(180),0)*CFrame.new(0,0,-2)
+				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = p.Character.HumanoidRootPart.CFrame * CFrame.Angles(0,math.rad(180),0)* CFrame.new(0,0,-2)
 				if lplr.Character:FindFirstChild("Rocket") then
 					lplr.Character.Rocket.CanCollide = false
 					task.delay(.5, function()
