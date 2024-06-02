@@ -1380,3 +1380,23 @@ addcommand({
 		end
 	end
 })
+
+addcommand({
+	name = "ungearblacklist",
+	aliases = {"ungearbl","untoolblacklist","untoolbl"},
+	description = "unblacklist a player from using gears",
+	funct = function()
+		local plrg = args[2]
+		if not getPlayer(plrg) then
+			Remind("Invalid player!")
+			return
+		end
+		local plr = getPlayer(plrg)
+		if table.find(special.gearblacklist, plr.Name) then
+			table.remove(special.gearblacklist, table.find(special.gearblacklist, plr.Name))
+			Remind(plr.Name.." has been ungearblacklisted.")
+		else
+			Remind(plr.Name.." was never gear blacklisted!")
+		end
+	end
+})
