@@ -22,6 +22,7 @@ getgenv().klversion2 = "v0.00 Alpha"
 -- Chat function
 local function Chat(msg)
 	game:GetService("Players"):Chat(msg)
+     -- game.Players:Chat(msg)
 end
 
 -- Remind function
@@ -47,6 +48,7 @@ end
 
 -- LocalPlayer variables
 local lplr = game:GetService("Players").LocalPlayer
+-- local lplr2 = game.Players.LocalPlayer
 
 -- Anti logs
 local antilog = ("0"):rep(40) -- Auto spam logs when people try looking
@@ -59,17 +61,17 @@ local function gamepassCheck()
 	local hasPerm = false
 	local hasPersons = false
 
-	if game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 66254) then
+	if game:GetService("MarketplaceService"):UserOwnsGamePassAsync(lplr.UserId, 66254) then
 		hasPerm = true
-	elseif game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 64354) then
+	elseif game:GetService("MarketplaceService"):UserOwnsGamePassAsync(lplr.UserId, 64354) then
 		hasPerm = true
 	else
 		-- 
 	end
 
-	if game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 35748) then
+	if game:GetService("MarketplaceService"):UserOwnsGamePassAsync(lplr.UserId, 35748) then
 		hasPersons = true
-	elseif game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 37127) then
+	elseif game:GetService("MarketplaceService"):UserOwnsGamePassAsync(lplr.UserId, 37127) then
 		hasPersons = true
 	else
 		--
