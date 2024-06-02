@@ -1096,9 +1096,9 @@ addcommand({
 				Remind("Invalid player")
 				return
 			end
-			Chat("jail/{plrg}")
+			Chat(`jail/{plrg}`)
 			for i = 1, 128 do
-				Chat("rocket/{plrg} me {plrg} me")
+				Chat(`rocket/{plrg} me {plrg} me`)
 			end
 			task.wait(.49)
 			spamming = true
