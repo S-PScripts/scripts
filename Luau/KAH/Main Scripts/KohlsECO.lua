@@ -136,49 +136,49 @@ local connections = {}
 connections[#connections + 1] =
 	game:GetService("RunService").RenderStepped:Connect(function()
 		if antigear then
-		for i, v in game.Players:GetPlayers() do
-			if v.Name ~= lplr.Name and v.Backpack:FindFirstChildOfClass("Tool") then
-				Chat("ungear " .. v.Name)
-				Chat("punish " .. v.Name)
-				Chat("clr")
-				Chat(klprefix2 .. "regen")
-			end
+			for i, v in game.Players:GetPlayers() do
+				if v.Name ~= lplr.Name and v.Backpack:FindFirstChildOfClass("Tool") then
+					Chat("ungear " .. v.Name)
+					Chat("punish " .. v.Name)
+					Chat("clr")
+					Chat(klprefix2 .. "regen")
+				end
 
-			if v.Name ~= lplr.Name and v.Character and v.Character:FindFirstChildOfClass("Tool") then
-				Chat("ungear " .. v.Name)
-				Chat("punish " .. v.Name)
-				Chat("clr")
-				Chat(klprefix2 .. "regen")
+				if v.Name ~= lplr.Name and v.Character and v.Character:FindFirstChildOfClass("Tool") then
+					Chat("ungear " .. v.Name)
+					Chat("punish " .. v.Name)
+					Chat("clr")
+					Chat(klprefix2 .. "regen")
+				end
 			end
 		end
-	end
 
 		if anticrash then
-		for i, tool in crashTools do
-			for i, v in game.Players:GetPlayers() do
-				if v.Name ~= lplr.Name and v.Backpack:FindFirstChild(tool) then
-					Chat("ungear " .. v.Name)
-					Chat("punish " .. v.Name)
+			for i, tool in crashTools do
+				for i, v in game.Players:GetPlayers() do
+					if v.Name ~= lplr.Name and v.Backpack:FindFirstChild(tool) then
+						Chat("ungear " .. v.Name)
+						Chat("punish " .. v.Name)
+						Chat("clr")
+						Chat(klprefix2 .. "regen")
+					end
+
+					if v.Name ~= lplr.Name and v.Character and v.Character:FindFirstChild(tool) then
+						Chat("ungear " .. v.Name)
+						Chat("punish " .. v.Name)
+						Chat("clr")
+						Chat(klprefix2 .. "regen")
+					end
+				end
+
+				if workspace:FindFirstChild(tool) then
+					Chat("ungear others")
+					Chat("punish others")
 					Chat("clr")
 					Chat(klprefix2 .. "regen")
 				end
-
-				if v.Name ~= lplr.Name and v.Character and v.Character:FindFirstChild(tool) then
-					Chat("ungear " .. v.Name)
-					Chat("punish " .. v.Name)
-					Chat("clr")
-					Chat(klprefix2 .. "regen")
-				end
-			end
-
-			if workspace:FindFirstChild(tool) then
-				Chat("ungear others")
-				Chat("punish others")
-				Chat("clr")
-				Chat(klprefix2 .. "regen")
 			end
 		end
-	end
 	end)
 
 
@@ -192,18 +192,19 @@ local items = {
 }
 
 -- Anti lag
-connections[#connections + 1] = workspace.DescendantAdded:Connect(function(ch)
-	if antilag then
-		for i,v in items do
-			if ch:IsA(v) then
-				repeat
-					ch:Destroy()
-					game:GetService("RunService").RenderStepped:Wait()
-				until not ch
+connections[#connections + 1] = 
+	workspace.DescendantAdded:Connect(function(ch)
+		if antilag then
+			for i,v in items do
+				if ch:IsA(v) then
+					repeat
+						ch:Destroy()
+						game:GetService("RunService").RenderStepped:Wait()
+					until not ch
+				end
 			end
 		end
-	end
-end)
+	end)
 
 -- Player finder
 local function getPlayer(p)
@@ -1184,4 +1185,43 @@ addcommand({
         	Chat("unff " .. railer)
         	Chat("ungear me")
 	end
-	})
+})
+
+slockenabled = false
+
+connections[#connections + 1] =
+	game:GetService("RunService").RenderStepped:Connect(function()
+		if slockenabled == true then
+			for i, v in game.Players:GetPlayers() do 
+				if not game.Lighting:FindFirstChild(v.Name) then
+                                         Chat('punish '..v.Name)
+                                         Chat('blind '..v.Name)   
+                                         Chat('skydive '..v.Name)        
+				end
+			end
+		end
+	end)
+		
+addcommand({
+	name = "slock",
+	aliases = {"serverlock"},
+	description = "toggle the serverlock",
+	funct = function()
+		if slockenabled then
+			slockenabled = false
+		else
+			slockenabled = true
+		end
+		Remind("The server " .. (slockenabled and "is now locked." or "has been unlocked."))
+	end
+})
+
+addcommand({
+	name = "unslock",
+	aliases = {"unserverlock"},
+	description = "unlock the server",
+	funct = function()
+			slockenabled = false
+			Remind("The server has been unlocked.")
+	end
+})
