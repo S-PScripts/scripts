@@ -137,39 +137,53 @@ local connections = {}
 -- Anti crash for gears and anti gear
 connections[#connections + 1] =
 	game:GetService("RunService").RenderStepped:Connect(function()
-		if antigear then
-			for i, v in game.Players:GetPlayers() do
-				if v.Name ~= lplr.Name and v.Backpack:FindFirstChildOfClass("Tool") then
-					Chat("ungear " .. v.Name)
-					Chat("punish " .. v.Name)
-					Chat("clr")
-					Chat(klprefix2 .. "regen")
+	
+		for i, v in game.Players:GetPlayers() do
+				if v.Name ~= lplr.Name and not table.find(special.gearwhitelisted, v.Name) then
+					if v.Backpack:FindFirstChildOfClass("Tool") then
+						if antigear or table.find(special.gearblacklisted, v.Name) then
+							Chat("ungear " .. v.Name)
+							Chat("punish " .. v.Name)
+							Chat("clr")
+							Chat(klprefix2 .. "regen")
+						end
+					end
 				end
 
-				if v.Name ~= lplr.Name and v.Character and v.Character:FindFirstChildOfClass("Tool") then
-					Chat("ungear " .. v.Name)
-					Chat("punish " .. v.Name)
-					Chat("clr")
-					Chat(klprefix2 .. "regen")
+				if v.Name ~= lplr.Name and not table.find(special.gearwhitelisted, v.Name) then
+					if v.Character and v.Character:FindFirstChildOfClass("Tool") then
+						if antigear or table.find(special.gearblacklisted, v.Name) then
+							Chat("ungear " .. v.Name)
+							Chat("punish " .. v.Name)
+							Chat("clr")
+							Chat(klprefix2 .. "regen")
+						end
+					end
 				end
-			end
 		end
 
-		if anticrash then
-			for i, tool in crashTools do
+		for i, tool in crashTools do
 				for i, v in game.Players:GetPlayers() do
-					if v.Name ~= lplr.Name and v.Backpack:FindFirstChild(tool) then
-						Chat("ungear " .. v.Name)
-						Chat("punish " .. v.Name)
-						Chat("clr")
-						Chat(klprefix2 .. "regen")
+					if v.Name ~= lplr.Name and not table.find(special.gearwhitelisted, v.Name) then
+						if v.Backpack:FindFirstChild(tool) then
+							if anticrash or table.find(special.gearblacklisted, v.Name) then
+								Chat("ungear " .. v.Name)
+								Chat("punish " .. v.Name)
+								Chat("clr")
+								Chat(klprefix2 .. "regen")
+							end
+						end
 					end
 
-					if v.Name ~= lplr.Name and v.Character and v.Character:FindFirstChild(tool) then
-						Chat("ungear " .. v.Name)
-						Chat("punish " .. v.Name)
-						Chat("clr")
-						Chat(klprefix2 .. "regen")
+					if v.Name ~= lplr.Name and not table.find(special.gearwhitelisted, v.Name) then
+						if v.Character and v.Character:FindFirstChild(tool) then
+							if antigear or table.find(special.gearblacklisted, v.Name) then
+								Chat("ungear " .. v.Name)
+								Chat("punish " .. v.Name)
+								Chat("clr")
+								Chat(klprefix2 .. "regen")
+							end
+						end
 					end
 				end
 
@@ -179,7 +193,6 @@ connections[#connections + 1] =
 					Chat("clr")
 					Chat(klprefix2 .. "regen")
 				end
-			end
 		end
 	end)
 
@@ -1194,13 +1207,16 @@ slockenabled = false
 special = {}
 
 -- People blacklisted from the server
-special.blacklisted = {"SlenderMan990921"}
+special.blacklisted = {}
 
 -- People whitelisted from getting serverlocked
 special.whitelisted = {"ScriptingProgrammer"}
 
 -- People whitelisted from antigear/anticrash
 special.gearwhitelisted = {"ScriptingProgrammer"}
+
+-- People blacklisted from using gears
+special.gearblacklisted = {}
 
 --[[ dev ]] --
 -- People who cannot be kicked
@@ -1253,8 +1269,8 @@ addcommand({
 	aliases = {"unserverlock"},
 	description = "unlock the server",
 	funct = function()
-			slockenabled = false
-			Remind("The server has been unlocked.")
+		slockenabled = false
+		Remind("The server has been unlocked.")
 	end
 })
 
@@ -1268,7 +1284,99 @@ addcommand({
 			Remind("Invalid player!")
 			return
 		end
-		local bling = getPlayer(plrg)
-		if table.find(blacklist, bling.Name)
-			end
-		})
+		local plr = getPlayer(plrg)
+		if table.find(special.blacklist, plr.Name) then
+			Remind(plr.Name.." is already blacklisted!")
+		elseif table.find(special.whitelist, plr.Name) then
+			Remind(plr.Name.." is whitelisted! Unwhitelist then first.")
+		else
+			table.insert(special.blacklist, plr.Name)
+			Remind(plr.Name.." has been blacklisted.")
+		end
+	end
+})
+
+addcommand({
+	name = "unblacklist",
+	aliases = {"unbl"},
+	description = "unblacklist a player from the server",
+	funct = function()
+		local plrg = args[2]
+		if not getPlayer(plrg) then
+			Remind("Invalid player!")
+			return
+		end
+		local plr = getPlayer(plrg)
+		if table.find(special.blacklist, plr.Name) then
+			table.remove(special.blacklist, table.find(special.blacklist, plr.Name))
+			Remind(plr.Name.." has been unblacklisted.")
+		else
+			Remind(plr.Name.." was never blacklisted!")
+		end
+	end
+})
+
+addcommand({
+	name = "whitelist",
+	aliases = {"wl"},
+	description = "whitelist a player so they don't get affected by serverlocks",
+	funct = function()
+		local plrg = args[2]
+		if not getPlayer(plrg) then
+			Remind("Invalid player!")
+			return
+		end
+		local plr = getPlayer(plrg)
+		if table.find(special.whitelist, plr.Name) then
+			Remind(plr.Name.." is already whitelisted!")
+		elseif table.find(special.blacklist, plr.Name) then
+			Remind(plr.Name.." is blacklisted! Unblacklist then first.")
+		else
+			table.insert(special.whitelist, plr.Name)
+			Remind(plr.Name.." has been whitelisted.")
+		end
+	end
+})
+
+addcommand({
+	name = "unwhitelist",
+	aliases = {"unwl"},
+	description = "unwhitelist a player so they get affected by serverlocks",
+	funct = function()
+		local plrg = args[2]
+		if not getPlayer(plrg) then
+			Remind("Invalid player!")
+			return
+		end
+		local plr = getPlayer(plrg)
+		if table.find(special.whitelist, plr.Name) then
+			table.remove(special.whitelist, table.find(special.whitelist, plr.Name))
+			Remind(plr.Name.." has been unwhitelisted.")
+		else
+			Remind(plr.Name.." was never whitelisted!")
+		end
+	end
+})
+
+
+addcommand({
+	name = "gearblacklist",
+	aliases = {"gearbl","toolblacklist","toolbl"},
+	description = "blacklist a player from using gears",
+	funct = function()
+		local plrg = args[2]
+		if not getPlayer(plrg) then
+			Remind("Invalid player!")
+			return
+		end
+		local plr = getPlayer(plrg)
+		if table.find(special.gearblacklist, plr.Name) then
+			Remind(plr.Name.." is already gear blacklisted!")
+		elseif table.find(special.gearwhitelisted, plr.Name) then
+			Remind(plr.Name.." is gear whitelisted! Unwhitelist then first.")
+		else
+			table.insert(special.gearblacklist, plr.Name)
+			Remind(plr.Name.." has been gear blacklisted.")
+		end
+	end
+})
