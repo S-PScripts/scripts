@@ -1192,17 +1192,28 @@ addcommand({
 slockenabled = false
 
 special = {}
-special.blacklisted = {}
-special.whitelisted = {}
-special.gearwhitelisted = {}
-special.protectedfromkick = {}
-special.specialperms = {}
+
+-- People blacklisted from the server
+special.blacklisted = {"SlenderMan990921"}
+
+-- People whitelisted from getting serverlocked
+special.whitelisted = {"ScriptingProgrammer"}
+
+-- People whitelisted from antigear/anticrash
+special.gearwhitelisted = {"ScriptingProgrammer"}
+
+--[[ dev ]] --
+-- People who cannot be kicked
+special.protectedfromkick = {"ScriptingProgrammer"}
+
+-- People with special perms
+special.specialperms = {"ScriptingProgrammer"}
 
 connections[#connections + 1] =
 	game:GetService("RunService").RenderStepped:Connect(function()
 		for i, v in game.Players:GetPlayers() do 
 			if slockenabled == true then
-				if v.Name ~= lplr.Name then
+				if v.Name ~= lplr.Name and not table.find(special.whitelisted) then
 					if not game.Lighting:FindFirstChild(v.Name) then
                                         	Chat('punish '..v.Name)
                                          	Chat('blind '..v.Name)   
