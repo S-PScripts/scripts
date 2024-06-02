@@ -1155,3 +1155,33 @@ addcommand({
 		end
 	end
 })
+
+addcommand({
+	name = "rail",
+	aliases = {},
+	description = "rail a player",
+	funct = function()
+		local plr = args[2]
+		local railer = getPlayer(plr)	
+		if not getPlayer(plr) then
+				Remind("Invalid player!")
+				return
+		end
+		Chat("ff " ..railer)
+        	Chat("god " ..railer)
+        	Chat("spin " ..railer)
+	        for i = 1, 100 do
+			Chat("gear me 79446473")
+		end
+        	local Backpack = lplr:FindFirstChildOfClass("Backpack")
+        	for _, x in ipairs(Backpack:GetChildren()) do
+                	x.Parent = game.Players.LocalPlayer.Character
+                	x:WaitForChild("Click"):FireServer(workspace[railer].Torso.Position)
+        	end
+        	task.wait(2)
+        	Chat("ungod " .. railer)
+        	Chat("unspin " .. railer)
+        	Chat("unff " .. railer)
+        	Chat("ungear me")
+	end
+	})
