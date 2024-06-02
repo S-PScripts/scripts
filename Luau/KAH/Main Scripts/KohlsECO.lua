@@ -654,7 +654,7 @@ addcommand({
 	end
 })
 
-addcommand({
+addcommand({   --- Imported by klv1
 	name = "klv1",
 	aliases = {"oldkohlslite","kohlslitev1"},
 	description = "Open the legacy version of KohlsLite. This is still maintained!",
