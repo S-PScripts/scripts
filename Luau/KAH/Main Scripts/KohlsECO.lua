@@ -1089,34 +1089,38 @@ addcommand({
 	aliases = {"rkick"},
 	description = "crashes a player (person299)",
 	funct = function()
-		local plrg = args[2]
-		if not getPlayer(plrg) then
-			Remind("Invalid player")
-			return
-		end
-		Chat(`jail/{plrg}`)
-		for i = 1, 128 do
-			Chat(`rocket/{plrg} me {plrg} me`)
-		end
-		task.wait(.49)
-		spamming = true
-		local p = getPlayer(plrg)
-		repeat
-			Chat("rocket/all all all")
-			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = p.Character.HumanoidRootPart.CFrame * CFrame.Angles(0,math.rad(180),0)*CFrame.new(0,0,-2)
-			if lplr.Character:FindFirstChild("Rocket") then
-				lplr.Character.Rocket.CanCollide = false
-				task.delay(.5, function()
-					lplr.Character.Rocket:Destroy()
-				end)
+		if hasPersons then
+			local plrg = args[2]
+			if not getPlayer(plrg) then
+				Remind("Invalid player")
+				return
 			end
-			if p.Character:FindFirstChild("Rocket") then
-				p.Character.Rocket.CanCollide = false
-				task.delay(.5, function()
-					p.Character.Rocket:Destroy()
-				end)
+			Chat(`jail/{plrg}`)
+			for i = 1, 128 do
+				Chat(`rocket/{plrg} me {plrg} me`)
 			end
-			task.wait()
-		until not spamming or not getPlayer(plrg)
+			task.wait(.49)
+			spamming = true
+			local p = getPlayer(plrg)
+			repeat
+				Chat("rocket/all all all")
+				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = p.Character.HumanoidRootPart.CFrame * CFrame.Angles(0,math.rad(180),0)*CFrame.new(0,0,-2)
+				if lplr.Character:FindFirstChild("Rocket") then
+					lplr.Character.Rocket.CanCollide = false
+					task.delay(.5, function()
+						lplr.Character.Rocket:Destroy()
+					end)
+				end
+				if p.Character:FindFirstChild("Rocket") then
+					p.Character.Rocket.CanCollide = false
+					task.delay(.5, function()
+						p.Character.Rocket:Destroy()
+					end)
+				end
+				task.wait()
+			until not spamming or not getPlayer(plrg)
+		else
+			return Remind("Person299 is required to use this command")
+		end
 	end
 })
