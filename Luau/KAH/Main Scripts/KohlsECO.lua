@@ -1076,8 +1076,8 @@ addcommand({
 	end
 })
 
-local spamming = false
-local function getPlayer(p): Player
+local rkicking = false
+local function getPlayer(p)
 	for i, v in game.Players:GetPlayers() do
 		if v.Name:lower():sub(1, p:len()) == p:lower() or v.DisplayName:lower():sub(1, p:len()) == p:lower() then
 			return v
@@ -1088,40 +1088,50 @@ end
 addcommand({
 	name = "rocketkick",
 	aliases = {"rkick"},
-	description = "crashes a player (person299)",
+	description = "attempt to crash a player with rockets (person299)",
 	funct = function()
 		if hasPersons then
 			local plrg = args[2]
 			if not getPlayer(plrg) then
-				Remind("Invalid player")
+				Remind("Invalid player!")
 				return
 			end
-			Chat(`jail/{plrg}`)
+			Chat("jail/"..plrg)
 			for i = 1, 128 do
-				Chat(`rocket/{plrg} me {plrg} me`)
+				Chat("rocket/"..plrg.." me "..plrg.." me")
 			end
 			task.wait(.49)
-			spamming = true
+			rkicking = true
 			local p = getPlayer(plrg)
 			repeat
-				Chat("rocket/all all all")
-				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = p.Character.HumanoidRootPart.CFrame * CFrame.Angles(0,math.rad(180),0)* CFrame.new(0,0,-2)
+				Chat("rocket/"..plrg.." me "..plrg.." me")
+				lplr.Character.HumanoidRootPart.CFrame = p.Character.HumanoidRootPart.CFrame * CFrame.Angles(0,math.rad(180),0) * CFrame.new(0,0,-2)
 				if lplr.Character:FindFirstChild("Rocket") then
 					lplr.Character.Rocket.CanCollide = false
-					task.delay(.5, function()
-						lplr.Character.Rocket:Destroy()
-					end)
+					task.wait(0.5)
+					lplr.Character.Rocket:Destroy()
 				end
 				if p.Character:FindFirstChild("Rocket") then
 					p.Character.Rocket.CanCollide = false
-					task.delay(.5, function()
-						p.Character.Rocket:Destroy()
-					end)
+					task.wait(0.5)
+					p.Character.Rocket:Destroy()
 				end
 				task.wait()
-			until not spamming or not getPlayer(plrg)
+			until not rkicking or not getPlayer(plrg)
 		else
 			return Remind("Person299 is required to use this command")
+		end
+	end
+})
+
+addcommand({
+	name = "unrocketkick",
+	aliases = {"unrkick"},
+	description = "stop crashing a player with rockets (person299)",
+	funct = function()
+		if rkicking then
+			rkicking = false
+			Remind("Stopped rocket kicking player")
 		end
 	end
 })
