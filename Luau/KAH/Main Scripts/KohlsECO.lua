@@ -1095,6 +1095,34 @@ addcommand({
 })
 
 addcommand({
+	name = "gearban",
+	aliases = {"gearbl","toolban","toobl"},
+	description = "ban a player from using gears (PORTABLE JUSTICE)",
+	funct = function()
+		local plrg = args[2]
+		if not getPlayer(plrg) then
+			Remind("Invalid player!")
+			return
+		end
+		local plr = getPlayer(plrg)
+		Chat("gear me 82357101")
+        	Chat("unff me "..plr.Name)
+        	Chat("speed " ..plr.Name.. " 0")
+           	local pos = lplr.Character.HumanoidRootPart.CFrame
+        	lplr.Character.HumanoidRootPart.CFrame = plr.Character.HumanoidRootPart.CFrame
+        	local cappy = plr.Character
+        	repeat task.wait() until lplr.Backpack:WaitForChild("PortableJustice")
+        	local tool = lplr.Backpack:FindFirstChild("PortableJustice")
+        	tool.Parent = lplr.Character
+        	tool.MouseClick:FireServer(cappy)
+        	task.wait(1)                         
+ 	        tool:Destroy()
+   	        lplr.Character.HumanoidRootPart.CFrame = pos
+      	        Chat("ungear me")
+	end
+})
+
+addcommand({
 	name = "ungearban",
 	aliases = {"ungb"},
 	description = "ungearban a player (including yourself)",
