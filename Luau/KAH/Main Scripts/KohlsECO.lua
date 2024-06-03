@@ -54,6 +54,7 @@ end
 
 -- LocalPlayer variables
 local lplr = game:GetService("Players").LocalPlayer
+local lp = game:GetService("Players").LocalPlayer
 -- local lplr2 = game.Players.LocalPlayer
 
 -- Anti logs
@@ -1539,3 +1540,334 @@ addcommand({
 		Remind("Dropped all items in your inventory!")
 	end
 })
+
+-- ANTIS --
+antis = {
+    antiblind = true,
+    antivoid = false,
+    antiskydive = false,
+    antigrayscale = false,
+    antiaddon = false,
+    anticlone = false,
+    antidog = false,
+    antifire = false,
+    antifreeze = false,
+    antifly = false,
+    antinoclip = false,
+    antiff = false,
+    antiglow = false,
+    antihealthchange = false,
+    antijail = false,
+    antikill = true,
+    antimessage = false,
+    antiname = false,
+    antichar = false,
+    antiparticles = false,
+    antipunish = true,
+    antirocket = true,
+    antisit = false,
+    antiseizure = false,
+    antismoke = false,
+    antisparkles = false,
+    antispeed = false,
+    antispin = false,
+    antistun = false,
+    antisetgrav = false,
+    antiswag = false
+}
+
+connections[#connections + 1] =
+    game:GetService("RunService").RenderStepped:Connect(function()
+		
+        if antis.antiblind == true then
+            for i, v in pairs(lp.PlayerGui:GetDescendants()) do
+                if v.Name == "EFFECTGUIBLIND" then
+                    v:Destroy()
+                end
+            end
+        end
+
+        if antis.antivoid == true then
+            if lp.Character --[[ and lp.Character.HumanoidRootPart]] then
+                if lp.Character.HumanoidRootPart.Position.Y < -7 then
+                    lp.Character.HumanoidRootPart.CFrame = 
+					CFrame.new(lp.Character.HumanoidRootPart.Position.X,5,lp.Character.HumanoidRootPart.Position.Z)
+                    lp.Character.HumanoidRootPart.Velocity = 
+					Vector3.new(lp.Character.HumanoidRootPart.Velocity.X,0,lp.Character.HumanoidRootPart.Velocity.Z)
+                end
+            end
+        end
+
+        if antis.antiskydive == true then
+            if lp.Character --[[ and lp.Character.HumanoidRootPart]] then
+                if lp.Character.HumanoidRootPart.Position.Y > 256 then
+                    lp.Character.HumanoidRootPart.CFrame =
+                        CFrame.new(lp.Character.HumanoidRootPart.Position.X,5,lp.Character.HumanoidRootPart.Position.Z)
+                    lp.Character.HumanoidRootPart.Velocity =
+                        Vector3.new(lp.Character.HumanoidRootPart.Velocity.X,0,lp.Character.HumanoidRootPart.Velocity.Z)
+                end
+            end
+        end
+
+        if antis.antigrayscale == true then
+            if game.Workspace.CurrentCamera:FindFirstChild("GrayScale") then
+                game.Workspace.CurrentCamera:FindFirstChild("GrayScale"):Destroy()
+            end
+        end
+
+        if antis.antiaddon == true then
+            if lp.Character:FindFirstChild("Addon") then
+                lp.Character:FindFirstChild("Addon"):Destroy()
+                Chat("reset me")
+            end
+        end
+
+        if antis.anticlone == true then
+            if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild(lp.Name) then
+                Chat("unclone me")
+            end
+        end
+
+        if antis.antidog == true then
+            for i, v in pairs(lp.Character:GetDescendants()) do
+                if v:IsA("Seat") then
+                    Chat("undog me")
+                end
+            end
+        end
+
+        if antis.antifire == true then
+            if lp.Character:FindFirstChild("Torso") then
+                if lp.Character.Torso:FindFirstChild("Fire") then
+                    lp.Character.Torso:FindFirstChild("Fire"):Destroy()
+                    Chat("unfire me")
+                end
+            end
+        end
+
+        if antis.antifreeze == true then
+            if lp.Character:FindFirstChild("ice") then
+                Chat("thaw me")
+            end
+        end
+
+        if antis.antifly == true then
+            if not lp.Character:FindFirstChild("Seizure") and lp.Character.Humanoid:GetState().Name == "PlatformStanding" then
+                Chat("unfly me")
+                Chat("clip me")
+                if lp.Character and lp.Character.Torso then
+                    lp.Character.Torso.Anchored = false
+                end
+                if lp.Character and lp.Character.Humanoid then
+                    lp.Character.Humanoid.PlatformStand = false
+                end
+            end
+        end
+
+        if antis.antinoclip == true then
+            if lp.PlayerGui:FindFirstChild("NoClip") then
+                lp.PlayerGui:FindFirstChild("NoClip"):Destroy()
+                if lp.Character and lp.Character.Torso then
+                    lp.Character.Torso.Anchored = false
+                end
+                if lp.Character and lp.Character.Humanoid then
+                    lp.Character.Humanoid.PlatformStand = false
+                end
+                Chat("clip me")
+            end
+        end
+
+        if antis.antiff == true then
+            if lp.Character:FindFirstChild("ForceField") then
+                lp.Character:FindFirstChild("ForceField"):Destroy()
+                Chat("unff me")
+            end
+        end
+
+        if antis.antiff == true then
+            local torso = lp.Character:WaitForChild("Torso", 1)
+            for i, v in pairs(torso:GetChildren()) do
+                if v:IsA("PointLight") then
+                    v:Destroy()
+                    Chat("unglow me")
+                end
+            end
+        end
+
+        if antis.antihealthchange == true then
+            if lp.Character.Humanoid and lp.Character.Humanoid.Health ~= 100 then
+                Chat("health me 100")
+            end
+        end
+
+        if antis.antijail == true then
+            if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild(lp.Name .. "'s jail")
+             then
+                Chat("unjail me")
+            end
+        end
+
+        if antis.antijump == true then
+            if lp.Character.Humanoid and lp.Character.Humanoid.JumpPower ~= 50 then
+                lp.Character.Humanoid.JumpPower = 50
+            end
+        end
+
+        if antis.antikill == true then
+            if lp.Character.Humanoid and lp.Character.Humanoid.Health == 0 then
+                Chat("reset me")
+            end
+        end
+
+        if antis.antimsg == true then
+            for i, v in pairs(lp.PlayerGui:GetDescendants()) do
+                if v.Name == "MessageGUI" or v.Name == "Message" or v.Name == "HintGUI" or v.Name == "Ice" then
+                    v:Destroy()
+                end
+            end
+            for i, v in pairs(game.Workspace.Terrain["_Game"].Folder:GetDescendants()) do
+                if v.Name == "Message" then
+                    v:Destroy()
+                end
+            end
+        end
+
+        if antis.antiname == true then
+            if lp and lp.Character:FindFirstChildOfClass("Model") then
+                Chat("unname me")
+            end
+        end
+
+        if antis.antichar == true then
+            if lp.UserId ~= lp.CharacterAppearanceId then
+                Chat("unchar me")
+            end
+        end
+
+        if antis.antiparticles == true then
+            local torso = lp.Character:WaitForChild("Torso", 1)
+            for i, v in pairs(torso:GetChildren()) do
+                if v:IsA("ParticleEmitter") then
+                    v:Destroy()
+                    Chat("unparticle me")
+                end
+            end
+        end
+
+        if antis.antipunish == true then
+            if game.Lighting:FindFirstChild(lp.Name) then
+                Chat("unpunish me")
+            end
+        end
+
+        if antis.antirocket == true then
+            for i, v in pairs(lp.Character:GetChildren()) do
+                if v.Name == "Rocket" then
+                    lp.Character.Rocket.CanCollide = false
+                    task.wait(0.5)
+                    v:Destroy()
+                end
+            end
+        end
+
+        if antis.antisit == true then
+            local player = lp
+            if player.Character then
+                local humanoid = player.Character:WaitForChild("Humanoid", 1)
+                if humanoid and humanoid.Sit then
+                    humanoid.Sit = false
+                    Chat("unsit me")
+                end
+            end
+        end
+
+        if antis.antiseizure == true then
+            if lp.Character:FindFirstChild("Seizure") then
+                Chat("unseizure me")
+                lp.Character.Torso.AssemblyLinearVelocity = Vector3.new(0, 0, 0)
+                fwait()
+                lp.Character:FindFirstChild("Seizure"):Destroy()
+                lp.Character.Torso.AssemblyLinearVelocity = Vector3.new(0, 0, 0)
+                lp.Character.Humanoid:ChangeState("GettingUp")
+            end
+        end
+
+        if antis.antismoke == true then
+            if lp.Character:FindFirstChild("Torso") then
+                if lp.Character.Torso:FindFirstChild("Smoke") then
+                    lp.Character.Torso:FindFirstChild("Smoke"):Destroy()
+                    Chat("unsmoke me")
+                end
+            end
+        end
+
+        if antis.antisparkles == true then
+            local torso = lp.Character:WaitForChild("Torso", 1)
+            for i, v in pairs(torso:GetChildren()) do
+                if v:IsA("Sparkles") then
+                    v:Destroy()
+                    Chat("unsparkle me")
+                end
+            end
+        end
+
+        if antis.antispeed == true then
+            if lp.Character.Humanoid and lp.Character.Humanoid.WalkSpeed ~= 16 then
+                lp.Character.Humanoid.WalkSpeed = 16
+            end
+        end
+
+        if antis.antispin == true then
+            if lp.Character:FindFirstChild("Torso") then
+                if lp.Character.Torso:FindFirstChild("SPINNER") then
+                    lp.Character.Torso:FindFirstChild("SPINNER"):Destroy()
+                    Chat("unspin me")
+                end
+            end
+        end
+
+        if antis.antistun == true then
+            local player = lp
+            if player.Character then
+                local humanoid = player.Character:WaitForChild("Humanoid", 1)
+                if humanoid and humanoid.PlatformStand then
+                    humanoid.PlatformStand = false
+                    Chat("unstun me")
+                end
+            end
+        end
+
+        if antis.antisetgrav == true then
+            if lp.Character:FindFirstChild("Torso") then
+                lproot = lp.Character.HumanoidRootPart
+                for i, v in pairs(lp.Character:GetDescendants()) do
+                    if v:IsA("BodyForce") then
+                        v:Destroy()
+                        v.Force = Vector3.new(0, 0, 0)
+                        lproot.Velocity = Vector3.new(0, 0, 0)
+                        lp.Character.HumanoidRootPart.CFrame =
+                        	CFrame.new(lp.Character.HumanoidRootPart.Position.X,5,lp.Character.HumanoidRootPart.Position.Z)
+                    	lp.Character.HumanoidRootPart.Velocity =
+                        	Vector3.new(lp.Character.HumanoidRootPart.Velocity.X,0,lp.Character.HumanoidRootPart.Velocity.Z)
+                    end
+
+                    if v:IsA("BodyPosition") then
+                        v:Destroy()
+                        lproot.Velocity = Vector3.new(0, 0, 0)
+			lp.Character.HumanoidRootPart.CFrame =
+                        	CFrame.new(lp.Character.HumanoidRootPart.Position.X,5,lp.Character.HumanoidRootPart.Position.Z)
+                    	lp.Character.HumanoidRootPart.Velocity =
+                        	Vector3.new(lp.Character.HumanoidRootPart.Velocity.X,0,lp.Character.HumanoidRootPart.Velocity.Z)
+                    end
+                end
+            end
+        end
+
+        if antis.antiswag == true then
+            if lp.Character:FindFirstChild("EpicCape") then
+                lp.Character:FindFirstChild("EpicCape"):Destroy()
+                Chat("normal me")
+            end
+        end
+    end)
+
