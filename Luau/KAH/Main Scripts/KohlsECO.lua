@@ -1542,39 +1542,6 @@ addcommand({
 })
 
 -- ANTIS --
-antis = {
-    antiblind = true,
-    antivoid = false,
-    antiskydive = false,
-    antigrayscale = false,
-    antiaddon = false,
-    anticlone = false,
-    antidog = false,
-    antifire = false,
-    antifreeze = false,
-    antifly = false,
-    antinoclip = false,
-    antiff = false,
-    antiglow = false,
-    antihealthchange = false,
-    antijail = false,
-    antikill = true,
-    antimessage = false,
-    antiname = false,
-    antichar = false,
-    antiparticles = false,
-    antipunish = true,
-    antirocket = true,
-    antisit = false,
-    antiseizure = false,
-    antismoke = false,
-    antisparkles = false,
-    antispeed = false,
-    antispin = false,
-    antistun = false,
-    antisetgrav = false,
-    antiswag = false
-}
 
 connections[#connections + 1] =
     game:GetService("RunService").RenderStepped:Connect(function()
@@ -1871,3 +1838,192 @@ connections[#connections + 1] =
         end
     end)
 
+
+antis = {
+    antiblind = false,
+    antivoid = false,
+    antiskydive = false,
+    antigrayscale = false,
+    antiaddon = false,
+    anticlone = false,
+    antidog = false,
+    antifire = false,
+    antifreeze = false,
+    antifly = false,
+    antinoclip = false,
+    antiff = false,
+    antiglow = false,
+    antihealthchange = false,
+    antijail = false,
+    antikill = false,
+    antimessage = false,
+    antiname = false,
+    antichar = false,
+    antiparticles = false,
+    antipunish = false,
+    antirocket = false,
+    antisit = false,
+    antiseizure = false,
+    antismoke = false,
+    antisparkles = false,
+    antispeed = false,
+    antispin = false,
+    antistun = false,
+    antisetgrav = false,
+    antiswag = false
+}
+
+antisall = {
+    antiblind = false,
+    antivoid = false,
+    antiskydive = false,
+    antigrayscale = false,
+    antiaddon = false,
+    anticlone = false,
+    antidog = false,
+    antifire = false,
+    antifreeze = false,
+    antifly = false,
+    antinoclip = false,
+    antiff = false,
+    antiglow = false,
+    antihealthchange = false,
+    antijail = false,
+    antikill = false,
+    antimessage = false,
+    antiname = false,
+    antichar = false,
+    antiparticles = false,
+    antipunish = false,
+    antirocket = false,
+    antisit = false,
+    antiseizure = false,
+    antismoke = false,
+    antisparkles = false,
+    antispeed = false,
+    antispin = false,
+    antistun = false,
+    antisetgrav = false,
+    antiswag = false
+}
+
+antiplrs = {
+    antiblind = {},
+    antivoid = {},
+    antiskydive = {},
+    antigrayscale = {},
+    antiaddon = {},
+    anticlone = {},
+    antidog = {},
+    antifire = {},
+    antifreeze = {},
+    antifly = {},
+    antinoclip = {},
+    antiff = {},
+    antiglow = {},
+    antihealthchange = {},
+    antijail = {},
+    antikill = {},
+    antimessage = {},
+    antiname = {},
+    antichar = {},
+    antiparticles = {},
+    antipunish = {},
+    antirocket = {},
+    antisit = {},
+    antiseizure = {},
+    antismoke = {},
+    antisparkles = {},
+    antispeed = {},
+    antispin = {},
+    antistun = {},
+    antisetgrav = {},
+    antiswag = {}
+}
+
+-- handler for antis (messy ik)
+local function handleantis_toggle(antiname, target)
+    local key = "anti" .. antiname:lower()
+    
+    if target == "me" or target == "" then
+        antis[key] = not antis[key]
+        Remind(antiname .. " for you is now set to " .. tostring(antis[key]))
+    elseif target == "all" then
+        antis[key] = not antis[key]
+        antisall[key] = antis[key]
+        Remind(antiname .. " for you and others is now set to " .. tostring(antis[key]))
+    elseif target == "others" then
+        antisall[key] = not antisall[key]
+        Remind(antiname .. " for others is now set to " .. tostring(antisall[key]))
+    else
+        local player = getPlayer(target)
+        if player then
+            local playername = player.Name
+            if antiplrs[key][playername] == nil then
+                antiplrs[key][playername] = false
+            end
+            antiplrs[key][playername] = not antiplrs[key][playername]
+            Remind(antiname .. " for " .. playername .. " is now set to " .. tostring(antiplrs[key][playername]))
+        else
+            Remind("Sorry, this player is not in the server!")
+        end
+    end
+end
+
+local function handleantis_off(antiname, target)
+        local key = "anti" .. antiname
+	
+ 	if target == "me" or target == "" then
+                antis[key] = false
+                Remind(antiname .. " for you is now set to false.")
+        elseif target == "all" then
+                antis[key] = false
+                antisall[key] = false
+                Remind(antiname .. " for you and others is now set to false.")
+        elseif target == "others" then
+                antisall[key] = false
+                Remind(antiname .. " for others is now set to false.")
+        else
+                local player = getPlayer(target)
+                if player then
+                    local playername = player.Name
+                    antiplrs[key][playername] = false
+                    Remind(antiname .. " for " .. playername .. " is now set to false.")
+                else
+                    Remind("Sorry, this player is not in the server!")
+                end
+	end
+end
+
+local function createanticommands(antiname)
+    addcommand({
+        name = "anti"..antiname,
+        aliases = {},
+        description = "toggle anti" .. antiname,
+        funct = function(args)
+            local target = args and args[2] or ""
+            handleantis_toggle(antiname, target)
+        end
+    })
+
+    addcommand({
+        name = "un" .. antiname,
+        aliases = {},
+        description = "turn off anti" .. antiname,
+        funct = function(args)
+            local target = args and args[2] or ""
+            handleantis_off(antiname, target)
+        end
+    })
+end
+
+local antifeatures = {
+    "blind", "void", "skydive", "grayscale", "addon", "clone", "dog", "fire",
+    "freeze", "fly", "noclip", "ff", "glow", "healthchange", "jail", "kill",
+    "message", "name", "char", "particles", "punish", "rocket", "sit", "seizure",
+    "smoke", "sparkles", "speed", "spin", "stun", "setgrav", "swag"
+}
+
+for _, klgenantis in ipairs(antiFeatures) do
+    createanticommands(klgenantis)
+end
