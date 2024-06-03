@@ -2024,6 +2024,6 @@ local antifeatures = {
     "smoke", "sparkles", "speed", "spin", "stun", "setgrav", "swag"
 }
 
-for _, klgenantis in ipairs(antiFeatures) do
+for _, klgenantis in ipairs(antifeatures) do
     createanticommands(klgenantis)
 end
