@@ -241,6 +241,7 @@ end
 
 -- Command adder --
 -- From Shortcut v2 NEW (https://github.com/Tech-187/Lua-scripts/blob/main/Shortcut__v2_src2.lua)
+local debounce = tick()
 function addcommand(information)
 	local cmdName = information.name
 	local cmdAlias = information.aliases
@@ -252,6 +253,7 @@ function addcommand(information)
 
 	connections[#connections + 1] = 
 		game.Players.LocalPlayer.Chatted:Connect(function(msg)
+			if 0.5 > tick() - debounce then return else debounce = tick() end
 			msg = msg:lower()
 			args = msg:split(" ")
 			if args[1] == admin.klprefix2 .. cmdName then
