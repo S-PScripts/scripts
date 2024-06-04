@@ -184,7 +184,7 @@ local pwl = {
     "me_capybara",
     "E4_DQ",
     "vgcrash",
-    "s_pisafurry", "YT_MATHEUSMODZ5"
+    "s_pisafurry", "YT_MATHEUSMODZ5", "kevin3050ti"
 }
 
 -- Players you cannot kick
@@ -284,7 +284,7 @@ local pgwl = {
     "DionteIsCute",
     "me_capybara",
     "E4_DQ",
-    "vgcrash", "YT_MATHEUSMODZ5"
+    "vgcrash", "YT_MATHEUSMODZ5", "kevin3050ti"
 }
 
 -- Serverlock
