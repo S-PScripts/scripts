@@ -184,7 +184,10 @@ local pwl = {
     "me_capybara",
     "E4_DQ",
     "vgcrash",
-    "s_pisafurry", "YT_MATHEUSMODZ5", "kevin3050ti"
+    "s_pisafurry", "YT_MATHEUSMODZ5", "kevin3050ti",
+    "grimAuxiliatri"
+    "ikbx",
+    "undertaker629"
 }
 
 -- Players you cannot kick
