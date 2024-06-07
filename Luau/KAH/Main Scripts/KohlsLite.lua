@@ -185,7 +185,7 @@ local pwl = {
     "E4_DQ",
     "vgcrash",
     "s_pisafurry", "YT_MATHEUSMODZ5", "kevin3050ti",
-    "grimAuxiliatri"
+    "grimAuxiliatri",
     "ikbx",
     "undertaker629"
 }
