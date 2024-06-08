@@ -1249,20 +1249,20 @@ special = {}
 special.blacklisted = {}
 
 -- People whitelisted from getting serverlocked
-special.whitelisted = {"ScriptingProgrammer"}
+special.whitelisted = {"ScriptingProgrammer", "kevin3050ti"}
 
 -- People whitelisted from antigear/anticrash
-special.gearwhitelisted = {"ScriptingProgrammer"}
+special.gearwhitelisted = {"ScriptingProgrammer", "kevin3050ti"}
 
 -- People blacklisted from using gears
 special.gearbanned = {}
 
 --[[ dev ]] --
 -- People who cannot be kicked
-special.protectedfromkick = {"ScriptingProgrammer"}
+special.protectedfromkick = {"ScriptingProgrammer", "kevin3050ti"}
 
 -- People with special perms
-special.specialperms = {"ScriptingProgrammer"}
+special.specialperms = {"ScriptingProgrammer", "kevin3050ti"}
 
 connections[#connections + 1] =
 	game:GetService("RunService").RenderStepped:Connect(function()
@@ -1324,7 +1324,9 @@ addcommand({
 			return
 		end
 		local plr = getPlayer(plrg)
-		if table.find(special.blacklist, plr.Name) then
+		if table.find(special.protectedfromkick, plr.Name) then
+			Remind(plr.Name.." can't be kicked!")
+		elseif table.find(special.blacklist, plr.Name) then
 			Remind(plr.Name.." is already blacklisted!")
 		elseif table.find(special.whitelist, plr.Name) then
 			Remind(plr.Name.." is whitelisted! Unwhitelist then first.")
