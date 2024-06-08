@@ -1,3 +1,5 @@
+-- This script is currently dormant since I'm busy with other things - ts
+
 --[[
  █████   ████          █████      ████          ██████████   █████████     ███████   
 ░░███   ███░          ░░███      ░░███         ░░███░░░░░█  ███░░░░░███  ███░░░░░███ 
@@ -2028,6 +2030,6 @@ local antifeatures = {
     "smoke", "sparkles", "speed", "spin", "stun", "setgrav", "swag"
 }
 
-for _, klgenantis in ipairs(antifeatures) do
-    createanticommands(klgenantis)
+for _, klantis in ipairs(antifeatures) do
+    createanticommands(klantis)
 end
