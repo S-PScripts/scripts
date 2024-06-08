@@ -1034,7 +1034,10 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
            CMDPrint()
            Remind("Check your console by running /console!")
         end
-
+	if msg:sub(1, prefix:len() + 5) == prefix.."newkl" then
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/Main%20Scripts/KohlsECO.lua"))()
+		Remind("Loaded KohlsLite v2 aka KohlsECO")
+		end		
             if string.sub(msg:lower(), 1, #prefix + 2) == prefix..'iy' then -- the classic
                    GExecute("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source")
 		   Remind("Executed Infinite Yield (IY).")
@@ -6699,6 +6702,7 @@ end)
 
 function CMDPrint()
 	GExecute("https://gist.githubusercontent.com/S-PScripts/86b332526c70fe7c9585bddd3e58101c/raw/7f3bb1759ab1e1d4a5178390796f6852f2304369/KL%2520CMD%2520LIST.lua")
+	print("newkl - loads KohlsLite v2 aka KohlsECO")
 end
 
 -- CHECK FOR PERM
