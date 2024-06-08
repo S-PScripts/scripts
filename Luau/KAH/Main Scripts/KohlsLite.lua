@@ -184,8 +184,10 @@ local pwl = {
     "me_capybara",
     "E4_DQ",
     "vgcrash",
-    "s_pisafurry", "YT_MATHEUSMODZ5", "kevin3050ti",
-    "grimAuxiliatr",
+    "s_pisafurry", 
+    "YT_MATHEUSMODZ5",
+    "kevin3050ti",
+    "grimAuxiliatrix",
     "ikbx",
     "undertaker629"
 }
@@ -244,7 +246,10 @@ local specialperms = {
     "Di33le2",
     "s_pisafurry",
     "Palamode",
-    "kevin3050ti", "E4_DQ", "me_capybara", "YT_MATHEUSMODZ5"
+    "kevin3050ti", 
+    "E4_DQ",
+    "me_capybara", 
+    "YT_MATHEUSMODZ5"
 }
 
 -- New users get blacklisted (prevent crashers)
@@ -287,7 +292,9 @@ local pgwl = {
     "DionteIsCute",
     "me_capybara",
     "E4_DQ",
-    "vgcrash", "YT_MATHEUSMODZ5", "kevin3050ti"
+    "vgcrash",
+    "YT_MATHEUSMODZ5",
+    "kevin3050ti"
 }
 
 -- Serverlock
@@ -3093,10 +3100,9 @@ Commands required: rocket]])
 		Chat("size "..spek.." 10")
 		Chat("size "..spek.." 5")
 		Chat("speed "..spek.." 32")
-		task.wait(5)
+		task.wait(0.5)
 		Chat("paint "..spek.." black")
-		Chat("paint"..spek.." black")
-		Remind("SPEAKER SPEAKER SPEAKER SPEAKER SPEAKER SPEAKER SPEAKER SPEAKER SPEAKER SPEAKER")
+		Remind("SPEAKER YAAAA")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'dogrock' then -- noobsploit/shazam
