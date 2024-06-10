@@ -1,4 +1,4 @@
-# These are full scripts for Kohl's Admin House!
+# These are full scripts for Kohls Admin House!
 
 # Games
 https://www.roblox.com/games/112420803/Kohls-Admin-House-NBC-Updated <br>
