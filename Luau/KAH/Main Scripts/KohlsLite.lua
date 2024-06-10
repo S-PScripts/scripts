@@ -166,7 +166,10 @@ local pwl = {
     "Di33le2",
     "darkmadeboy",
     "Dekryptionite",
+    "Redstoneboy2008",
+    "decryptionites",
     "3cxos",
+    "ripcxo",
     "hudhejeir",
     "BIGpe7niss7",
     "clydekash",
@@ -184,12 +187,11 @@ local pwl = {
     "me_capybara",
     "E4_DQ",
     "vgcrash",
-    "s_pisafurry", 
-    "YT_MATHEUSMODZ5",
-    "kevin3050ti",
+    "s_pisafurry", "YT_MATHEUSMODZ5", "kevin3050ti",
     "grimAuxiliatrix",
     "ikbx",
-    "undertaker629"
+    "undertaker629",
+    "Eggkid7"
 }
 
 -- Players you cannot kick
@@ -207,7 +209,10 @@ local nokick = {
     "Di33le2",
     "darkmadeboy",
     "Dekryptionite",
+    "Redstoneboy2008",
+    "decryptionites",
     "3cxos",
+    "ripcxo",
     "hudhejeir",
     "BIGpe7niss7",
     "clydekash",
@@ -225,6 +230,10 @@ local nokick = {
     "me_capybara",
     "E4_DQ",
     "vgcrash",
+    "grimAuxiliatrix",
+    "ikbx",
+    "undertaker629",
+    "Eggkid7",
     "s_pisafurry", "YT_MATHEUSMODZ5"
 }
 
@@ -235,21 +244,25 @@ local specialperms = {
     "ScriptingProgrammer",
     "t_echr",
     "3cxos",
+    "ripcxo",
     "t_echl",
     "D_ionte",
     "EternitHD",
     "Milderous",
     "DionteIsCute",
     "Dekryptionite",
+    "Redstoneboy2008",
+    "decryptionites",
     "atprog",
     "3cxos",
     "Di33le2",
     "s_pisafurry",
     "Palamode",
-    "kevin3050ti", 
-    "E4_DQ",
-    "me_capybara", 
-    "YT_MATHEUSMODZ5"
+    "grimAuxiliatrix",
+    "ikbx",
+    "undertaker629",
+    "Eggkid7",
+    "kevin3050ti", "E4_DQ", "me_capybara", "YT_MATHEUSMODZ5"
 }
 
 -- New users get blacklisted (prevent crashers)
@@ -292,9 +305,7 @@ local pgwl = {
     "DionteIsCute",
     "me_capybara",
     "E4_DQ",
-    "vgcrash",
-    "YT_MATHEUSMODZ5",
-    "kevin3050ti"
+    "vgcrash", "YT_MATHEUSMODZ5", "kevin3050ti"
 }
 
 -- Serverlock
@@ -1041,10 +1052,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
            CMDPrint()
            Remind("Check your console by running /console!")
         end
-	if msg:sub(1, prefix:len() + 5) == prefix.."newkl" then
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/Main%20Scripts/KohlsECO.lua"))()
-		Remind("Loaded KohlsLite v2 aka KohlsECO")
-		end		
+
             if string.sub(msg:lower(), 1, #prefix + 2) == prefix..'iy' then -- the classic
                    GExecute("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source")
 		   Remind("Executed Infinite Yield (IY).")
@@ -3100,9 +3108,10 @@ Commands required: rocket]])
 		Chat("size "..spek.." 10")
 		Chat("size "..spek.." 5")
 		Chat("speed "..spek.." 32")
-		task.wait(0.5)
+		task.wait(5)
 		Chat("paint "..spek.." black")
-		Remind("SPEAKER YAAAA")
+		Chat("paint"..spek.." black")
+		Remind("SPEAKER SPEAKER SPEAKER SPEAKER SPEAKER SPEAKER SPEAKER SPEAKER SPEAKER SPEAKER")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'dogrock' then -- noobsploit/shazam
@@ -6708,7 +6717,6 @@ end)
 
 function CMDPrint()
 	GExecute("https://gist.githubusercontent.com/S-PScripts/86b332526c70fe7c9585bddd3e58101c/raw/7f3bb1759ab1e1d4a5178390796f6852f2304369/KL%2520CMD%2520LIST.lua")
-	print("newkl - loads KohlsLite v2 aka KohlsECO")
 end
 
 -- CHECK FOR PERM
