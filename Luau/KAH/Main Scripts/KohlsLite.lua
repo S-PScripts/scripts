@@ -294,7 +294,10 @@ local pgwl = {
     "Di33le2",
     "darkmadeboy",
     "Dekryptionite",
+    "Redstoneboy2008",
+    "decryptionites",
     "3cxos",
+    "ripcxo",
     "hudhejeir",
     "BIGpe7niss7",
     "clydekash",
@@ -311,9 +314,14 @@ local pgwl = {
     "DionteIsCute",
     "me_capybara",
     "E4_DQ",
-    "vgcrash", 
+    "vgcrash",
+    "s_pisafurry",
     "YT_MATHEUSMODZ5", 
-    "kevin3050ti"
+    "kevin3050ti",
+    "grimAuxiliatrix",
+    "ikbx",
+    "undertaker629",
+    "Eggkid7"
 }
 
 -- Serverlock
