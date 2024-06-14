@@ -247,7 +247,9 @@ local specialperms = {
     "me_123eq",
     "me_crashking",
     "ScriptingProgrammer",
-    "s_pisafurry"
+    "s_pisafurry",
+    "dawninja21",
+    "dawninja21alt"
 }
 
 -- New users get blacklisted (prevent crashers)
