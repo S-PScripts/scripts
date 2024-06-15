@@ -1,3 +1,4 @@
+-- This script is not discontinued but is currently dormant. Ncontrol and antifling will be added during summer holidays
 -- KohlsLite v2 is being developed, this script will not be updated that much (sorry for no part builder/good vis and not fixing ncontrol) --
 
 --[[
@@ -24,7 +25,7 @@
 -- Notifications
 local function Remind(msg)
         game.StarterGui:SetCore("SendNotification", {
-                Title = "KohlsLite v1 (OLD)",
+                Title = "KohlsLite v1",
                 Text = msg,
                 Duration = 1
         })
