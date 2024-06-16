@@ -72,7 +72,7 @@ getgenv().kohlsexecuted = true
 getgenv().deprefix = "." 
 
 -- The version of KohlsLite
-getgenv().klversion = "1.58"
+getgenv().klversion = "1.6"
 
 -- Chat function
 local function Chat(msg)
@@ -973,13 +973,15 @@ local loopgrab = false
 local loopgrab2 = false
 
 -- Antis
-local anticrash = true
+local anticrash = false
 local anticrash2 = false
 local antigear = false
 local antigear2 = false
 local antigb = true
 local antipaint = false
 local antiattach2 = false
+
+local emranticrash = true
 
 -- Antis (workspace)
 local antiflash = false
@@ -1020,7 +1022,7 @@ Remind("Thank you for using KohlsLite. The version you are using is v"..getgenv(
 print("Say .kcmds to list some of the commands. DM me at ts2021x for help.")
 Remind("Say .kcmds to list some of the commands. DM me at ts2021x for help.")
 
---Chat("h \n\n\n Executed! Version: "..getgenv().klversion.." \n\n\n") -- i finally changed it xd
+Chat("h \n\n\n KohlsLite! Version: "..getgenv().klversion.." \n\n\n") -- i finally changed it xd
 
 print("\n\n\n")
 print("- Perm check -")
@@ -7547,6 +7549,14 @@ game:GetService("RunService").RenderStepped:Connect(function()
                                 Chat("ungear "..v.Name)
                                 Chat("punish "..v.Name)
                                 Chat("h \n\n\n Sorry, "..v.Name.. ", you cannot use the Vampire Vanquisher due to anti crash (2). \n\n\n")
+                               end
+                    end
+
+		    if v.Backpack:FindFirstChild("VampireVanquisher") or v.Character:FindFirstChild("VampireVanquisher") then
+                               if v ~= game.Players.LocalPlayer and emranticrash == true and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name)) then
+                                	Chat("ungear others")
+                                	-- Chat("punish others")
+                                	Chat("h \n\n\n Sorry, a user tried to crash the server. \n\n\n")
                                end
                     end
 
