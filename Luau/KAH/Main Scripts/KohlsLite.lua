@@ -248,6 +248,7 @@ local specialperms = {
     "me_123eq",
     "me_crashking",
     "ScriptingProgrammer",
+    "atprog",
     "s_pisafurry",
     "dawninja21",
     "dawninja21alt"
