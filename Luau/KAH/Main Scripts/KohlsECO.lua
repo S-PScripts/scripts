@@ -1,3 +1,7 @@
+-- discontinued, basically
+-- kohlslite will get a large overhaul where i give every command the descriptions and fix many commands
+-- during summer break idfk
+
 -- This script is currently dormant since I'm busy with other things - ts
 
 --[[
