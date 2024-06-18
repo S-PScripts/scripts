@@ -1,5 +1,5 @@
 -- This script is not discontinued but is currently dormant. Ncontrol and antifling will be added during summer holidays
--- KohlsLite v2 is being developed, this script will not be updated that much (sorry for no part builder/good vis and not fixing ncontrol) --
+-- This script will not be updated that much (sorry for no part builder/good vis and not fixing ncontrol) --
 
 --[[
  _  _____  _   _ _     ____  _     ___ _____ _____ 
