@@ -196,7 +196,8 @@ local pwl = {
     "grimAuxiliatrix",
     "ikbx",
     "undertaker629",
-    "Eggkid7"
+    "Eggkid7",
+    "4g8h"
 }
 
 -- Players you cannot kick
@@ -240,7 +241,8 @@ local nokick = {
     "undertaker629",
     "Eggkid7",
     "s_pisafurry", 
-    "YT_MATHEUSMODZ5"
+    "YT_MATHEUSMODZ5",
+    "4g8h"
 }
 
 -- Players with special perms [collaborators of KL]
@@ -251,7 +253,9 @@ local specialperms = {
     "atprog",
     "s_pisafurry",
     "dawninja21",
-    "dawninja21alt"
+    "dawninja21alt",
+    "D_ionte",
+    "4g8h"
 }
 
 -- atprog spexialpermz
@@ -314,7 +318,8 @@ local pgwl = {
     "grimAuxiliatrix",
     "ikbx",
     "undertaker629",
-    "Eggkid7"
+    "Eggkid7",
+    "4g8h"
 }
 
 -- Serverlock
