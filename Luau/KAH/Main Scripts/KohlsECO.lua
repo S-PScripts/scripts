@@ -193,7 +193,7 @@ connections[#connections + 1] =
 
 					if v.Name ~= lplr.Name and not table.find(special.gearwhitelisted, v.Name) then
 						if v.Character and v.Character:FindFirstChild(tool) then
-							if antigear or table.find(special.gearbanned, v.Name) then
+							if anticrash or table.find(special.gearbanned, v.Name) then
 								Chat("ungear " .. v.Name)
 								Chat("punish " .. v.Name)
 								Chat("clr")
