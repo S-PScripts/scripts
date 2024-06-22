@@ -1697,7 +1697,7 @@ connections[#connections + 1] =
             end
         end
 
-        if antis.antimsg == true then
+        if antis.antimessage == true then
             for i, v in pairs(lp.PlayerGui:GetDescendants()) do
                 if v.Name == "MessageGUI" or v.Name == "Message" or v.Name == "HintGUI" or v.Name == "Ice" then
                     v:Destroy()
