@@ -2,19 +2,21 @@
 -- This script will not be updated that much (sorry for no part builder/good vis and not fixing ncontrol) --
 
 --[[
- _  _____  _   _ _     ____  _     ___ _____ _____ 
-| |/ / _ \| | | | |   / ___|| |   |_ _|_   _| ____|
-| ' / | | | |_| | |   \___ \| |    | |  | | |  _|  
-| . \ |_| |  _  | |___ ___) | |___ | |  | | | |___ 
-|_|\_\___/|_| |_|_____|____/|_____|___| |_| |_____| v1.64 ]]
+░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░       ░▒▓███████▓▒░▒▓█▓▒░      ░▒▓█▓▒░▒▓████████▓▒░▒▓████████▓▒░ 
+░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓█▓▒░        
+░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓█▓▒░        
+░▒▓███████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░▒▓█▓▒░       ░▒▓██████▓▒░░▒▓█▓▒░      ░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓██████▓▒░   
+░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░             ░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓█▓▒░        
+░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░             ░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓█▓▒░        
+░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░▒▓███████▓▒░░▒▓████████▓▒░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓████████▓▒░ v1.64 ]]
 
 -- This free, open-source script is for the Roblox game Kohls Admin House (KAH)
 -- You can play KAH here: https://www.roblox.com/games/112420803/Kohls-Admin-House-NBC-Updated
--- Created by ScriptingProgrammer (Roblox) / TS2021x (Discord) / S-PScripts (GitHub)
+-- Created by ScriptingProgrammer (Roblox) / ts2021x (Discord) / S-PScripts (GitHub)
 
--- There are no watermarks anymore in this script and there are no longer backdoors for anyone except me ;)
+-- There are no more watermarks in this script.
 
--- Support this script today by donating Robux to me (especially since this script has limited advertising now)
+-- Support this script today by donating Robux to me on Roblox (especially since this script has limited advertising now)
 -- Please do not "skid" off this code by removing the dev section. It makes me annoyed!
 -- You can make your own script instead of skidding and you can take stuff from here if necessary.
 
@@ -12650,13 +12652,11 @@ if table.find(unexecuteables, game.Players.LocalPlayer.Name) then
 end
 
 --[[
-Ideas;
+Things to add/fix. Feel free to fix these and send the code and I'll credit you
 -> Visualiser and drawer to kohlslite
 -> part builder
 -> object mover (cmd pi version)
--> literally nothin else i think
--> oh yeah i forgot... fix the antifling
--> but i can't do that for a while cuz no PC
--> maybe during summer i hope
--> and fix pingwait idk why it doesn't work :(
+-> fix the antifling
+-> fix ncontrol
+-> i will finish during summer break (next month, july)
 ]]
