@@ -4913,6 +4913,16 @@ Commands required: rocket]])
 	Remind("Anti crash is now disabled.")
     end
 
+   if string.sub(msg:lower(), 1, #prefix + 14) == prefix..'emranticrash' then
+        emranticrash = true
+	Remind("EMR Anti crash is now enabled.")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 16) == prefix..'unemranticrash' then
+        emranticrash = false
+	Remind("EMR Anti crash is now disabled.")
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'antigs' then -- what is this??
         YOUantigs = true
 	Remind("Enabled this anti!")
@@ -7657,6 +7667,10 @@ game:GetService("RunService").RenderStepped:Connect(function()
 		end
 	end
 end)
+
+-- this code is ass and unoptimised
+-- i'll merge it with the anticrash2 at some point
+
 
 -- ANTIS FOR CRASHING ATTACHING GEARBANNING AND HAVING A GEAR
 local crashTools = {"OrinthianSwordAndShield", "VampireVanquisher","Emerald Knights of the Seventh Sanctum Sword and Shield"}
