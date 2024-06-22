@@ -6,7 +6,7 @@
 | |/ / _ \| | | | |   / ___|| |   |_ _|_   _| ____|
 | ' / | | | |_| | |   \___ \| |    | |  | | |  _|  
 | . \ |_| |  _  | |___ ___) | |___ | |  | | | |___ 
-|_|\_\___/|_| |_|_____|____/|_____|___| |_| |_____| v1.6 ]]
+|_|\_\___/|_| |_|_____|____/|_____|___| |_| |_____| v1.64 ]]
 
 -- This free, open-source script is for the Roblox game Kohls Admin House (KAH)
 -- You can play KAH here: https://www.roblox.com/games/112420803/Kohls-Admin-House-NBC-Updated
@@ -41,7 +41,7 @@ end
 if not game:IsLoaded() then
     local notLoaded = Instance.new("Message")
     notLoaded.Parent = game:GetService("CoreGui")
-    notLoaded.Text = "KohlsLite is waiting for the game to load"
+    notLoaded.Text = "KohlsLite is waiting for the game to load..."
     game.Loaded:Wait()
     notLoaded:Destroy()
 end
@@ -72,7 +72,7 @@ getgenv().kohlsexecuted = true
 getgenv().deprefix = "." 
 
 -- The version of KohlsLite
-getgenv().klversion = "1.6"
+getgenv().klversion = "1.64"
 
 -- Chat function
 local function Chat(msg)
@@ -84,7 +84,7 @@ local function Speak(msg)
     game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(msg, "All")
 end
 
--- Prefix cheker
+-- Prefix checker
 if getgenv().theprefix then
 	prefix = getgenv().theprefix
 else
@@ -92,7 +92,8 @@ else
 end
 
 -- Defaults (you can change these)
-local defaults = {".antirocket me", ".tnok"} --".antimsg me"
+local defaults = {".antirocket me", ".tnok", ".iy"} --".antimsg me"
+-- When executing IY after KohlsLite, KL breaks. I'll fix the handler when i get time
 
 -- Misc variables (ignore these)
 local bending -- ignore
@@ -966,7 +967,7 @@ local flykeybind = "f" -- fly keybind
 
 -- Auto things when people join
 local autogpcheck = true -- automatically check for player's gamepasses
-local autogb = false
+local autogb = false -- auto gear ban
 
 -- Clicking
 local clickexplode = false -- yeah
@@ -990,9 +991,7 @@ local loopgrab2 = false
 
 -- Antis
 local anticrash = false
-local anticrash2 = false
 local antigear = false
-local antigear2 = false
 local antigb = true
 local antipaint = false
 local antiattach2 = false
@@ -1037,7 +1036,7 @@ Remind("Thank you for using KohlsLite. The version you are using is v"..getgenv(
 print("Say .kcmds to list some of the commands. DM me at ts2021x for help.")
 Remind("Say .kcmds to list some of the commands. DM me at ts2021x for help.")
 
-Chat("h \n\n\n KohlsLite! Version: "..getgenv().klversion.." \n\n\n") -- i finally changed it xd
+Chat("h \n\n\n KohlsLite executed! Version: "..getgenv().klversion.." \n\n\n")
 
 print("\n\n\n")
 print("- Perm check -")
@@ -4843,7 +4842,7 @@ Commands required: rocket]])
 	Remind("EMR Anti crash is now disabled.")
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'antigs' then -- what is this??
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'antigs' then -- what is this?
         antis.antigrayscale = true
 	Remind("Enabled this anti!")
     end
@@ -4851,17 +4850,7 @@ Commands required: rocket]])
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'unantigs' then 
         antis.antigrayscale = false
 	Remind("Disabled this anti!")
-    end
-		
-    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'2anticrash' then
-        anticrash2 = true
-	Remind("Anti crash 2 is now enabled.")
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'2unanticrash' then
-        anticrash2 = false
-	Remind("Anti crash 2 is now disabled.")
-    end
+    end	   
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antipaint' then
         antipaint = true
@@ -4881,16 +4870,6 @@ Commands required: rocket]])
     if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unantigear' then
         antigear = false
 	Remind("Anti gear is now disabled.")
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'2antigear' then
-        antigear2 = true
-	Remind("Anti gear 2 is now enabled.")
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'2unantigear' then
-        antigear2 = false
-	Remind("Anti gear 2 is now disabled.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'antigb' then
@@ -5003,12 +4982,12 @@ Commands required: rocket]])
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antiblind' then
-        YOUantiblind = true
+        antis.antiblind = true
 	Remind("Turned this anti on for you!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantiblind' then
-        YOUantiblind = false
+        antis.antiblind = false
 	Remind("Turned this anti off for you!")
     end
 
@@ -5653,22 +5632,6 @@ Commands required: rocket]])
         end             
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antikick' then
-                antikick2 = true
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unantikick' then
-                antikick2 = false
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'antit' then
-                antitoolm = true
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'unantit' then
-                antitoolm = false
-    end
-
     if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'unantirocket' then
          local args = string.split(msg, " ")
         if args[2] == "me" then
@@ -5684,6 +5647,22 @@ Commands required: rocket]])
         else
                 Remind("Invalid argument: Must be me, others, or all")
         end             
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antikick' then
+                antikick2 = true
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unantikick' then
+                antikick2 = false
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'antit' then
+                antitoolm = true
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'unantit' then
+                antitoolm = false
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'antisit' then
@@ -6069,22 +6048,22 @@ Commands required: rocket]])
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'autoff' then
-        autoff = true
+        autos.autoff = true
         Remind("Auto ff is on!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'unautoff' then
-        autoff = false
+        autos.autoff = false
         Remind("Auto ff is off!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'autogod' then
-        autogod = true
+        autos.autogod = true
         Remind("Auto god is on!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'unautogod' then
-        autogod = false
+        autos.autogod = false
         Remind("Auto god is off!")
     end      
 
@@ -6972,12 +6951,34 @@ antis = {
     antiswag = false
 }
 
+autos = {
+	autoff = false,
+	autogod = false,
+	tempautoff = false,
+	tempautogod = false
+}
+
 local connections = {}
 local lp = game.Players.LocalPlayer
 
 connections[#connections + 1] =
     game:GetService("RunService").RenderStepped:Connect(function()
-		
+
+  	if autos.autoff == true or autos.tempautoff == true then
+            if not lp.Character:FindFirstChild("ForceField") then
+                Chat("ff me")
+                task.wait(0.1)
+            end
+        end
+
+        if autos.autogod == true or autos.tempautogod == true then
+            if tostring(lp.Character.Humanoid.MaxHealth) ~= "inf" then
+                    Chat("god me")
+                    lp.Character.Humanoid.MaxHealth = math.huge
+                    lp.Character.Humanoid.Health = 9e9            
+            end
+        end
+
         if antis.antiblind == true then
             for i, v in pairs(lp.PlayerGui:GetDescendants()) do
                 if v.Name == "EFFECTGUIBLIND" then
@@ -7528,23 +7529,33 @@ game:GetService("RunService").RenderStepped:Connect(function()
 				for i, v in game.Players:GetPlayers() do
 					if v.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name))then
 						if v.Backpack:FindFirstChild(tool) then
-							if anticrash then
+							if emranticrash then
+								Chat("ungear others")
+								Chat("punish others")
+								Chat("clr")
+								Chat(prefix .. "regen")
+							elseif anticrash then
 								Chat("ungear " .. v.Name)
 								Chat("punish " .. v.Name)
 								Chat("clr")
 								Chat(prefix .. "regen")
-							end
+							else end
 						end
 					end
 
 					if v.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name))then
 						if v.Character and v.Character:FindFirstChild(tool) then
-							if anticrash then
+							if emranticrash then
+								Chat("ungear others")
+								Chat("punish others")
+								Chat("clr")
+								Chat(prefix .. "regen")
+							elseif anticrash then
 								Chat("ungear " .. v.Name)
 								Chat("punish " .. v.Name)
 								Chat("clr")
 								Chat(prefix .. "regen")
-							end
+							else end
 						end
 					end
 				end
@@ -10330,11 +10341,11 @@ UserInputService.WindowFocusReleased:Connect(function()
                     Chat("name me ["..game.Players.LocalPlayer.Name.."]: AFK")
                     Chat("ff me")
                     Chat("god me")
-		    if autoff == false then
-		    	tempautoff = true
+		    if autos.autoff == false then
+		    	autos.tempautoff = true
 		    end
-		    if autogod == false then
-		    	tempautogod = true
+		    if autos.autogod == false then
+		    	autos.tempautogod = true
 		    end
             end
 end)
@@ -10343,8 +10354,8 @@ UserInputService.WindowFocused:Connect(function()
         task.wait(0)
             if autoafk == true then
                 Chat("reset me")
-		tempautoff = false
-		tempautogod = false
+		autos.tempautoff = false
+		autos.tempautogod = false
                 Chat("unff me")
                 Chat("ungod me")
             end
