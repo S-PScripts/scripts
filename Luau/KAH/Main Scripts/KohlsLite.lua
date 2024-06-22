@@ -94,7 +94,7 @@ else
 end
 
 -- Defaults (you can change these)
-local defaults = {".antirocket me", ".tnok", ".iy"} --".antimsg me"
+local defaults = {".antirocket me", ".tnok"} --".antimsg me"
 -- When executing IY after KohlsLite, KL breaks. I'll fix the handler when i get time
 
 -- Misc variables (ignore these)
