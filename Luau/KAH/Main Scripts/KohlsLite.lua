@@ -2793,8 +2793,10 @@ Commands required: rocket]])
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'unrkick' then
-                srkick = false
-                Remind("Stopped rocket kicking "..player)
+		if rkicking then
+			rkicking = false
+			Remind("Stopped rocket kicking player")
+		end
 		Chat("unrocket/all/all/all")
 		Chat("respawn me "..player)
 		Chat("removejails")
@@ -8313,21 +8315,30 @@ v.Chatted:Connect(function(msg)
 
 end
 
-local items = {"Smoke","ForceField","Explosion","Fire","Sparkles"}
-workspace.DescendantAdded:Connect(function(ch)
-	if antilag then
-		local c = false
-		for i,v in pairs(items) do
-			if ch:IsA(v) then
-				c = true
+
+-- Anti lag items
+local items = {
+	"Smoke",
+	"ForceField",
+	"Explosion",
+	"Fire",
+	"Sparkles"
+}
+
+-- Anti lag
+connections[#connections + 1] = 
+	workspace.DescendantAdded:Connect(function(ch)
+		if antilag then
+			for i,v in items do
+				if ch:IsA(v) then
+					repeat
+						ch:Destroy()
+						game:GetService("RunService").RenderStepped:Wait()
+					until not ch
+				end
 			end
 		end
-		if c then
-			fwait()
-			ch:Destroy()
-		end
-	end
-end)
+	end)
 
 -- Backpack checker
 function CheckBackpack()
@@ -8651,52 +8662,31 @@ function SCrash()
       PtSH()
 end
 
+rkicking = false
 -- rocket kick
-function rkickplr(rkicker,rkicks)
-Chat("respawn "..rkicks)
-Chat("setgrav "..rkicks.. " 3500")
-Chat("jail/".. rkicks)
-task.spawn(function() 
-	while true do 
-		task.wait(0)
-
-                if not game.Players.LocalPlayer.Character then 
-                        repeat task.wait(0) until game.Players.LocalPlayer.Character 
-                end
-
-                if not rkicker.Character then 
-                        if rkicker then
-                                repeat task.wait(0) until rkicker.Character or not rkicker or srkick == false
-				if not rkicker then 
-					srkick = false 
+function rkickplr(rkicker,rkicks) -- v, v.name
+			Chat("jail/"..rkicker)
+			for i = 1, 128 do
+				Chat("rocket/"..rkicker.." me "..rkicker.." me")
+			end
+			task.wait(.49)
+			rkicking = true
+			local p = rkicks
+			repeat
+				Chat("rocket/"..rkicker.." me "..rkicker.." me")
+				game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = p.Character.HumanoidRootPart.CFrame * CFrame.Angles(0,math.rad(180),0) * CFrame.new(0,0,-2)
+				if game.Players.LocalPlayer.Character:FindFirstChild("Rocket") then
+					game.Players.LocalPlayer.Character.Rocket.CanCollide = false
+					task.wait(0.5)
+					game.Players.LocalPlayer.Character.Rocket:Destroy()
 				end
-                        else 
-                                srkick = false
-                        end
-                end
-
-                for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
-               		if v.Name == "Rocket" then
-                                v.CanCollide = false 
-              		end
-                end
-
-                for i,v in pairs(rkicker.Character:GetChildren()) do
-                        if v.Name == "Rocket" then 
-                                v.CanCollide = false 
-                        end
-                end
-
-		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = rkicker.Character.HumanoidRootPart.CFrame * CFrame.Angles(0,math.rad(180),0)*CFrame.new(0,0,-2)
-
-                for i = 1,100 do
-                          Chat("rocket/"..rkicks.."/"..rkicks.."/"..rkicks)
-                          Chat("rocket/me/me/me")
-			  if srkick == false then break end
-			  if not rkicker then break end
-                end
-	end
-end)
+				if p.Character:FindFirstChild("Rocket") then
+					p.Character.Rocket.CanCollide = false
+					task.wait(0.5)
+					p.Character.Rocket:Destroy()
+				end
+				task.wait()
+			until not rkicking or not p
 end
 
 -- FOG DANCING
