@@ -1,4 +1,4 @@
--- If your name is "Knocks", KYS 1000 times (in Roblox)
+-- If your name is "Knocks", KYS 1000 times (in Roblox). Suck your arse.
 
 -- This script is not discontinued but is currently dormant. Ncontrol and antifling will be added during summer holidays --
 -- This script will not be updated that much (sorry for no part builder/good vis and not fixing ncontrol) --
@@ -19,8 +19,8 @@
 -- There are no more watermarks in this script.
 
 -- Support this script today by donating Robux to me on Roblox (especially since this script has limited advertising now)
--- Please do not "skid" off this code by removing the dev section. It makes me annoyed!
--- You can make your own script instead of skidding and you can take stuff from here if necessary.
+-- Please do not edit off this code by removing the dev section. It makes me annoyed!
+-- You can make your own script instead and you can take stuff from here if necessary.
 
 -- Don't go abusing like crazy with this script. I made this free/open-source and don't want idiots doing stuff that make me make this paid/obfuscated.
 
@@ -11904,7 +11904,7 @@ end
 local Player = game.Players.LocalPlayer
 local PlayerService = game:GetService("Players")
 
--- // attach v2 - credit to cmd y \\ --
+-- // attach v2 - Credits go to quiving's CMD-Y! \\ --
 function moveobject(part, o)
                 if movestatus == false then
                         movestatus = true
