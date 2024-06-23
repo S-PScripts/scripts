@@ -1,4 +1,16 @@
 -- If your name is "Knocks", KYS 1000 times (in Roblox). Suck your arse.
+-- This was built from the ground up. KohlsLite is NOT a fork of any other scripts. 
+-- KohlsLite is like a mixture of all the popular scripts such as:
+  -- > CMD (v1)
+  -- > CMD Y
+  -- > CMD v3
+  -- > Shortcut v1
+  -- > Shortcut v2
+  -- > Shortcut v3
+  -- > Shortcut v3 VAR
+  -- > ii's Stupid Admin
+  -- > KohlsNoob
+-- Some of the code here are from other creators (and I credited) but quite a lot is my own and also some commands can't really be changed codewise that much
 
 -- This script is not discontinued but is currently dormant. Ncontrol and antifling will be added during summer holidays --
 -- This script will not be updated that much (sorry for no part builder/good vis and not fixing ncontrol) --
@@ -8866,7 +8878,8 @@ end
 function AnnounceWM()
       Chat("h \n\n\n "..sus..": "..whatsapp.. " \n\n\n")
 end
-                       
+
+-- cmd v3 code 
 function dkick(dk, dkicked)
 	    local ota = #workspace:FindFirstChild(dkicked):GetChildren()
             Chat('skydive ' .. dkicked)
