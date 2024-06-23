@@ -93,9 +93,11 @@ else
 	prefix = getgenv().deprefix
 end
 
+-- IY Auto Executor (Sorry if this is annoying but there's a bug in the lines for the prefix checker above which causes my script to break if IY is loaded after KL that I can't debug as of now
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+
 -- Defaults (you can change these)
 local defaults = {".antirocket me", ".tnok"} --".antimsg me"
--- When executing IY after KohlsLite, KL breaks. I'll fix the handler when i get time
 
 -- Misc variables (ignore these)
 local bending -- ignore
@@ -104,7 +106,7 @@ local eincrash -- ignore
 
 local notifiedRespectFiltering = false
 
--- ANTIFLING?!?!??!!?!??!?!?!?!
+-- anti fling
 loadstring(game:HttpGet("https://raw.githubusercontent.com/trollfacenan/random-kah-scripts/main/AntiFling.lua"))()
 
 -- Perm spoofer (speed)
