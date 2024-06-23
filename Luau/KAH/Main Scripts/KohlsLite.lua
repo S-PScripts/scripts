@@ -1,4 +1,6 @@
--- This script is not discontinued but is currently dormant. Ncontrol and antifling will be added during summer holidays
+-- If your name is "Knocks", KYS 1000 times (in Roblox)
+
+-- This script is not discontinued but is currently dormant. Ncontrol and antifling will be added during summer holidays --
 -- This script will not be updated that much (sorry for no part builder/good vis and not fixing ncontrol) --
 
 --[[
