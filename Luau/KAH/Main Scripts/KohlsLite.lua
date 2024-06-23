@@ -104,6 +104,9 @@ local eincrash -- ignore
 
 local notifiedRespectFiltering = false
 
+-- ANTIFLING?!?!??!!?!??!?!?!?!
+loadstring(game:HttpGet("https://raw.githubusercontent.com/trollfacenan/random-kah-scripts/main/AntiFling.lua"))()
+
 -- Perm spoofer (speed)
 editedspeedis = 16
 editedspeed = true
@@ -4904,6 +4907,16 @@ Commands required: rocket]])
     if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'unantiattach' then
         antiattach = false
 	Remind("Anti attach is now disabled.")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'antifling' then
+        shared.antifling = true
+	Remind("Anti fling is now enabled.")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'unantiattach' then
+        shared.antifling = false
+	Remind("Anti fling is now disabled.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'noblt' then
