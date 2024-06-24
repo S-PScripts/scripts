@@ -2821,7 +2821,7 @@ Commands required: rocket]])
 		Chat("removejails")
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'skick' then 
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'bkick' then 
 		local dasplayer = string.sub(msg:lower(), #prefix + 7)
                 PLAYERCHECK(dasplayer)
 	
@@ -2850,6 +2850,45 @@ Commands required: rocket]])
 		Chat("punish me")
 		task.wait(.5)
 		Chat("unpunish me")
+    end
+
+   if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'meshkick' then  -- mesh kick haha
+		local dasplayer = string.sub(msg:lower(), #prefix + 10)
+                PLAYERCHECK(dasplayer)
+	
+                if player ~= nil and not table.find(nokick, player) then
+			kickin = cplr
+			kickinplr = player
+                        Remind("Kicking "..player)
+                elseif table.find(nokick, player) then
+                        return Remind("Sorry, this player cannot be kicked!")
+                else                        
+                        return Remind('Cannot find player with the name: '..dasplayer)
+                end
+	
+		game.Players:Chat("respawn "..kickinplr)
+		task.wait(.25)
+ 		Chat("tp me  "..kickinplr)
+		task.wait(0.4)
+	        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = kickin.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,5) * CFrame.Angles(0,math.rad(180),0)
+
+		for i = 1, 10 do
+			if game.Players:FindFirstChild(kickinplr) then
+				for i = 1, 103 do
+   					 game.Players:Chat("hat me 1810126502")
+					 wait(.5)
+   					 game.Players:Chat("clone me")
+				end
+			end
+		end
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antimesh' then 
+		antimesh = true
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unantimesh' then 
+		antimesh = false
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'welmsg' then
@@ -6060,7 +6099,7 @@ Commands required: rocket]])
 		Remind("No longer kicking "..acplr)
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'bkick' then
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'lkick' then
                    acplr = string.sub(msg:lower(), #prefix + 7)
                    PLAYERCHECK(acplr)
                    if player ~= nil and not table.find(nokick, player) then
@@ -6074,7 +6113,7 @@ Commands required: rocket]])
                   end
    end
 
-    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'unbkick' then
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'unlkick' then
                 antichatplr = false
                 Chat("reset "..acplr)
 		Remind("No longer kicking "..acplr)
@@ -6981,7 +7020,8 @@ antis = {
     antispin = false,
     antistun = false,
     antisetgrav = false,
-    antiswag = false
+    antiswag = false,
+    antimesh = true
 }
 
 autos = {
@@ -6996,7 +7036,8 @@ local lp = game.Players.LocalPlayer
 
 connections[#connections + 1] =
     game:GetService("RunService").RenderStepped:Connect(function()
-
+	task.wait()
+	
   	if autos.autoff == true or autos.tempautoff == true then
             if not lp.Character:FindFirstChild("ForceField") then
                 Chat("ff me")
@@ -7303,6 +7344,20 @@ connections[#connections + 1] =
             end
         end
     end)
+
+connections[#connections + 1] =
+    game:GetService("RunService").RenderStepped:Connect(function()
+	task.wait()
+	if antis.antimesh then
+        	for i,v in pairs(workspace:GetDescendants()) do
+            		if v:IsA("Accessory") then
+                		if tostring(v.AccessoryType) == "Enum.AccessoryType.Unknown" then
+                    			v:Destroy()
+                		end
+            		end
+        	end
+	end
+end)
 
 -- ANTIS FOR EVERYONE
 task.spawn(function()
