@@ -12,7 +12,7 @@
   -- > KohlsNoob
 -- Some of the code here are from other creators (and I credited) but quite a lot is my own and also some commands can't really be changed codewise that much
 
--- This script is not discontinued but is currently dormant. Ncontrol and antifling will be added during summer holidays --
+-- This script is not discontinued but is currently dormant. Ncontrol will be added during summer holidays --
 -- This script will not be updated that much (sorry for no part builder/good vis and not fixing ncontrol) --
 
 --[[
