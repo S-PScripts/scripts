@@ -7351,7 +7351,7 @@ connections[#connections + 1] =
 	if antis.antimesh then
         	for i,v in pairs(workspace:GetDescendants()) do
             		if v:IsA("Accessory") then
-                		if tostring(v.AccessoryType) == "Enum.AccessoryType.Unknown" then
+                		if tostring(v.AccessoryType) == "Enum.AccessoryType.Unknown" then -- it's the knocks!
                     			v:Destroy()
                 		end
             		end
