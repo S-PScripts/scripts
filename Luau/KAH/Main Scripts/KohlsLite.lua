@@ -81,6 +81,9 @@ if game.PlaceId ~= 112420803 and game.PlaceId ~= 115670532  then
 	return
 end
 
+-- IY Auto Executor (Sorry if this is annoying but there's a bug in the lines for the prefix checker above which causes my script to break if IY is loaded after KL that I can't debug as of now
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+
 -- Don't touch this!
 getgenv().kohlsexecuted = true
 
@@ -106,9 +109,6 @@ if getgenv().theprefix then
 else
 	prefix = getgenv().deprefix
 end
-
--- IY Auto Executor (Sorry if this is annoying but there's a bug in the lines for the prefix checker above which causes my script to break if IY is loaded after KL that I can't debug as of now
-loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 
 -- Defaults (you can change these)
 local defaults = {".antirocket me", ".tnok"} --".antimsg me"
