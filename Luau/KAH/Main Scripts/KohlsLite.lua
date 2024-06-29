@@ -6298,8 +6298,8 @@ Commands required: rocket]])
         	PLAYERCHECK(dasplayer)
         	if player == nil then 
 			return Remind("Fail: User not found!")
-		elseif player == "ScriptingProgrammer" or player = atprog then
-			Remind("You Can't Bang Developers!")
+		elseif player == "ScriptingProgrammer" or player == "atprog" then
+			Remind("You can't bang developers!")
 		else
 			banger = cplr
 		end
