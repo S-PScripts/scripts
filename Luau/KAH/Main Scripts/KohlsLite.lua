@@ -8,6 +8,7 @@
   -- > Shortcut v2
   -- > Shortcut v3
   -- > Shortcut v3 VAR
+  -- > PR Script
   -- > ii's Stupid Admin
   -- > KohlsNoob
 -- Some of the code here are from other creators (and I credited) but quite a lot is my own and also some commands can't really be changed codewise that much
