@@ -5070,6 +5070,8 @@ Commands required: rocket]])
 	Remind("Turned this anti off for you!")
     end
 
+
+-- !! DURING THE SUMMER HOLIDAYS, I WILL TRY TO FIX THE ANTI SYSTEM TO IT CAN BE INDIVIDUAL PLAYERS FOR EVERYTHING. ALSO, I WILL FIX THE VARIABLE NAMES !! --
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antiaddon' then
         local args = string.split(msg, " ")
         if args[2] == "me" then
@@ -5079,7 +5081,7 @@ Commands required: rocket]])
                 ALLantiaddon = true
                 Remind("Turned this anti on for others!")
         elseif args[2] == "all" then
-                YOUantiaddon = true
+                YOUantiaddon = true -- SH!T I FORGOT TO CHANGE THESE
                 ALLantiaddon = true
                 Remind("Turned this anti on for everyone!")
         else
@@ -6146,6 +6148,7 @@ Commands required: rocket]])
         Remind("Auto god is off!")
     end      
 
+-- From here, my script becomes infinite yield because of Proton... --
     if string.sub(msg:lower(), 1, #prefix + 2) == prefix..'r6' then
         ChangeRig("R6")
     end
@@ -6295,6 +6298,8 @@ Commands required: rocket]])
         	PLAYERCHECK(dasplayer)
         	if player == nil then 
 			return Remind("Fail: User not found!")
+		elseif player == "ScriptingProgrammer" then
+			game.Players.LocalPlayer:Kick("no")
 		else
 			banger = cplr
 		end
@@ -6330,7 +6335,7 @@ Commands required: rocket]])
 				getRoot(game.Players.LocalPlayer.Character).CFrame = otherRoot.CFrame * bangOffet
 			end)
 		end)
-		Remind("You're banging the player! uwu owo")
+		Remind("You're banging the player!")
 	end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'unbang' then
@@ -6339,11 +6344,11 @@ Commands required: rocket]])
 		bang:Stop()
 		bangAnim:Destroy()
 		bangLoop:Disconnect()
-		Remind("You're no longer banging the player! uwu owo")
+		Remind("You're no longer banging the player!")
 	end
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'mutebb' then
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'mutebb' then -- yes this isn't a loop, i'm lazy
 	SoundService = game:GetService("SoundService")
 	if not notifiedRespectFiltering and SoundService.RespectFilteringEnabled then 
 			notifiedRespectFiltering = true 
@@ -6447,7 +6452,7 @@ Commands required: rocket]])
 	Spin.Parent = getRoot(game.Players.LocalPlayer.Character)
 	Spin.MaxTorque = Vector3.new(0, math.huge, 0)
 	Spin.AngularVelocity = Vector3.new(0,spinSpeed,0)
-	Remind("Spinning without admin! Cool amirite?")
+	Remind("Spinning without admin! Cool, right?")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'unspin' then
@@ -6489,10 +6494,12 @@ Commands required: rocket]])
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'freecam' then
 		StartFreecam()
+		Remind("Starting up the free cam.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'unfreecam' then
 		StopFreecam()
+		Remind("Stopping the free cam.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'fcspeed' then
@@ -6505,7 +6512,7 @@ Commands required: rocket]])
 		if isNumber(FCspeed) then
 			NAV_KEYBOARD_SPEED = Vector3.new(FCspeed, FCspeed, FCspeed)
 		end    
-		Remind("Changed freecam speed")
+		Remind("Changed the free cam speed.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'stopanims' then
@@ -6529,7 +6536,12 @@ Commands required: rocket]])
 
     if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'sit' then
 		game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").Sit = true
-		Remind("Now sitting!")
+		Remind("You are now sitting! To stop sitting, jump! What, you think I would make an unsit command? noob!")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'unsit' then
+		game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").Sit = false
+		Remind("You found the secret command, unsit! I did indeed make it. Were you too lazy to jump, or were you so stupid you didn't know how to?")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'trip' then
@@ -6538,7 +6550,7 @@ Commands required: rocket]])
 		local root = getRoot(game.Players.LocalPlayer.Character)
 		hum:ChangeState(0)
 		root.Velocity = root.CFrame.LookVector * 30
-		Remind("Tripped you ;)")
+		Remind("You've been tripped without admin! Cool, right?")
 	end
     end
 
@@ -9509,7 +9521,7 @@ end
 SkipEvent = Instance.new("BindableEvent")
 StopEvent = Instance.new("BindableEvent")
 
-function Playlist(shazam)
+function Playlist(shazam) -- cmd v3
         local Params = Instance.new("AudioSearchParams")
         Params.SearchKeyword = shazam
         Params.AudioSubType = Enum.AudioSubType.Music
@@ -9583,7 +9595,7 @@ function getTorso(x)
 	return x:FindFirstChild("Torso") or x:FindFirstChild("UpperTorso") or x:FindFirstChild("LowerTorso") or x:FindFirstChild("HumanoidRootPart")
 end
 
--- Rig Changer it (for new commands COMING SOON!)
+-- Rig Changer
 function ChangeRig(rig)
 	AvatarEditorService = game:GetService("AvatarEditorService")
 	local humanoid = game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid")
@@ -10266,7 +10278,7 @@ function EmCrash()
       PtSH()
 end
 
-function PCrash() -- with this crash make sure to click manually
+function PCrash() -- buggy
 	for i = 1, 2 do
               Chat("gear me 00000000000000092628079")
               repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("OrinthianSwordAndShield")
@@ -10313,8 +10325,8 @@ function onPlayerAdded(player)
         end
 
     if (player.Name == "ScriptingProgrammer" or player.Name == "me_123eq") and player.Name ~= game.Players.LocalPlayer then
-         Chat("h \n\n\n SkiddingProgrammer [OWNER OF KL] joined the server! \n\n\n")
-         print("SkiddingProgrammer [OWNER OF KL] joined the server!")
+         Chat("h \n\n\n SkiddingProgrammer [OWNER OF KohlsLite] joined the server! \n\n\n")
+         print("SkiddingProgrammer [OWNER OF KohlsLite] joined the server!")
     end
 
     if (player.Name == "atprog" or player.Name == "IceStuds") and player.Name ~= game.Players.LocalPlayer then
@@ -10506,8 +10518,8 @@ task.spawn(function()
      end
 end)
 
--- FASTPADS
-function FastPads() -- if no touchinterest or idk
+-- FAST PADS (don't know why you'd need this)
+function FastPads()
                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-36.7649803, 5.42999983, 94.3430023, 0, 0, -1, 0, 1, 0, 1, 0, 0)
                wait(0.01)
                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-24.764967, 5.42999983, 94.3430023, 0, 0, -1, 0, 1, 0, 1, 0, 0)
