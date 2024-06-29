@@ -2861,27 +2861,30 @@ Commands required: rocket]])
 			kickin = cplr
 			kickinplr = player
                         Remind("Kicking "..player)
+			meshkick(kickin, kickinplr)
                 elseif table.find(nokick, player) then
                         return Remind("Sorry, this player cannot be kicked!")
                 else                        
                         return Remind('Cannot find player with the name: '..dasplayer)
                 end
 	
-		game.Players:Chat("respawn "..kickinplr)
-		task.wait(.25)
- 		Chat("tp me  "..kickinplr)
-		task.wait(0.4)
-	        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = kickin.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,5) * CFrame.Angles(0,math.rad(180),0)
+    end
 
-		for i = 1, 10 do
-			if game.Players:FindFirstChild(kickinplr) then
-				for i = 1, 103 do
-   					 game.Players:Chat("hat me 1810126502")
-					 wait(.5)
-   					 game.Players:Chat("clone me")
-				end
-			end
-		end
+ if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'hatkick' then  -- mesh kick haha
+		local dasplayer = string.sub(msg:lower(), #prefix + 9)
+                PLAYERCHECK(dasplayer)
+	
+                if player ~= nil and not table.find(nokick, player) then
+			kickin = cplr
+			kickinplr = player
+                        Remind("Kicking "..player)
+			meshkick(kickin, kickinplr)
+                elseif table.find(nokick, player) then
+                        return Remind("Sorry, this player cannot be kicked!")
+                else                        
+                        return Remind('Cannot find player with the name: '..dasplayer)
+                end
+	
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antimesh' then 
@@ -2889,6 +2892,14 @@ Commands required: rocket]])
     end
 
     if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unantimesh' then 
+		antimesh = false
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'antihat' then 
+		antimesh = true
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'unantihat' then 
 		antimesh = false
     end
 
@@ -8967,6 +8978,24 @@ function dkick(dk, dkicked)
             end
 end
 
+function meshkick(kickin, kickinplr)
+		Chat("respawn "..kickinplr)
+		task.wait(.25)
+ 		Chat("tp me  "..kickinplr)
+		task.wait(0.4)
+	        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = kickin.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,5) * CFrame.Angles(0,math.rad(180),0)
+
+		for i = 1, 10 do
+			if game.Players:FindFirstChild(kickinplr) then
+				for i = 1, 103 do
+   					 Chat("hat me 1810126502")
+					 wait(.5)
+   					 Chat("clone me")
+				end
+			end
+		end
+end
+
 function slag(tplr, tpln)
             local stop = false
 
@@ -12732,7 +12761,6 @@ Things to add/fix. Feel free to fix these and send the code and I'll credit you
 -> Visualiser and drawer to kohlslite
 -> part builder
 -> object mover (cmd pi version)
--> fix the antifling
 -> fix ncontrol
 -> i will finish during summer break (next month, july)
 ]]
