@@ -6298,8 +6298,8 @@ Commands required: rocket]])
         	PLAYERCHECK(dasplayer)
         	if player == nil then 
 			return Remind("Fail: User not found!")
-		elseif player == "ScriptingProgrammer" then
-			game.Players.LocalPlayer:Kick("no")
+		elseif player == "ScriptingProgrammer" or player = atprog then
+			Remind("You Can't Bang Developers!")
 		else
 			banger = cplr
 		end
