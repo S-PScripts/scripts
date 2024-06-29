@@ -1,3 +1,12 @@
+--[[
+░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░       ░▒▓███████▓▒░▒▓█▓▒░      ░▒▓█▓▒░▒▓████████▓▒░▒▓████████▓▒░ 
+░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓█▓▒░        
+░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓█▓▒░        
+░▒▓███████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░▒▓█▓▒░       ░▒▓██████▓▒░░▒▓█▓▒░      ░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓██████▓▒░   
+░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░             ░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓█▓▒░        
+░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░             ░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓█▓▒░        
+░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░▒▓███████▓▒░░▒▓████████▓▒░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓████████▓▒░ v1.64 ]]
+
 -- If your name is "Knocks", KYS 1000 times (in Roblox). Suck your arse.
 -- This was built from the ground up. KohlsLite is NOT a fork of any other scripts. 
 -- KohlsLite is like a mixture of all the scripts that already exist in KAH such as:
@@ -11,19 +20,12 @@
   -- > PR Script
   -- > ii's Stupid Admin
   -- > KohlsNoob
+  -- > Noobsploit
+  -- > Jotunnheim
+  -- > Shazam
 -- Some of the code here are from other creators (and I credited) but quite a lot is my own and also some commands can't really be changed codewise that much
 
--- This script is not discontinued but is currently dormant. Ncontrol will be added during summer holidays --
--- This script will not be updated that much (sorry for no part builder/good vis and not fixing ncontrol) --
-
---[[
-░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░       ░▒▓███████▓▒░▒▓█▓▒░      ░▒▓█▓▒░▒▓████████▓▒░▒▓████████▓▒░ 
-░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓█▓▒░        
-░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓█▓▒░        
-░▒▓███████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░▒▓█▓▒░       ░▒▓██████▓▒░░▒▓█▓▒░      ░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓██████▓▒░   
-░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░             ░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓█▓▒░        
-░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░             ░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓█▓▒░        
-░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░▒▓███████▓▒░░▒▓████████▓▒░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓████████▓▒░ v1.64 ]]
+-- This script is not discontinued but is currently dormant. Ncontrol will be added during the summer holidays
 
 -- This free, open-source script is for the Roblox game Kohls Admin House (KAH)
 -- You can play KAH here: https://www.roblox.com/games/112420803/Kohls-Admin-House-NBC-Updated
@@ -1102,39 +1104,21 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
         if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'cmdpi' then -- well, you need that visualiser, do you?
                 GExecute("https://raw.githubusercontent.com/quivings/KAH/main/CMD%20v3.lua")
-		Remind("Executed CMD PI/V3. CMD PI/V3 doesn't work for mobile executors by the way")
+		Remind("Executed CMD PI/V3. Created by quiving. CMD PI/V3 doesn't work for mobile executors by the way.")
         end
 
         if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'prsc' then -- PR Script ~ atprog
                 GExecute("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/People's%20Scripts/PR_Script.txt")
-		Remind("Executed PR Script.")
+		Remind("Executed PR Script. Created by atprog.")
         end
 
         if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'cmdy' then -- you don't need this for attaching anymore ;)
                 GExecute("https://raw.githubusercontent.com/quivings/KAH/main/CMD-Y%20(v1.56).lua")
-		Remind("Executed CMD Y/V2.")
+		Remind("Executed CMD Y/V2. Created by quiving.")
         end
 
-       --[[ if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'myvis' then
-                if haspersons == true then
-                        Remind("The prefix is -")
-                        GExecute("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/Main%20Scripts/MyVisualiser.lua")
-                else 
-                        Remind("Sorry, you need persons for this command!")
-                end
-        end  ]]
-
-    --[[    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'mydraw' then
-                if haspersons == true then
-                        Remind("The prefix is -")
-                        GExecute("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/Main%20Scripts/MyVisualiser.lua")
-                else 
-                        Remind("Sorry, you need persons for this command!")
-                end
-        end]]
-
         if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'tricky' then -- CREDITS TO TECH
-                Remind("This might not work if it's already been executed. Sorry!")
+                Remind("This might not work if it's already been executed. Sorry! Created by Tech")
                 if haspersons == true then
                         GExecute("https://raw.githubusercontent.com/Tech-187/Music-lyrics-on-time/main/Tricky%20lyrics.lua")
                 else
@@ -1143,7 +1127,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         end
 
         if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'ilove' then -- CREDITS TO TECH
-                Remind("This might not work if it's already been executed. Sorry!")
+                Remind("This might not work if it's already been executed. Sorry! Created by Tech")
                 if haspersons == true then
                         GExecute("https://raw.githubusercontent.com/Tech-187/Music-lyrics-on-time/main/I%20loveee.lua")
                 else
@@ -2822,8 +2806,9 @@ Commands required: rocket]])
 		Chat("removejails")
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'bkick' then 
-		local dasplayer = string.sub(msg:lower(), #prefix + 7)
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'seedkick' then 
+		Remind("This kick was found by Digitality.") 
+		local dasplayer = string.sub(msg:lower(), #prefix + 10)
                 PLAYERCHECK(dasplayer)
 	
                 if player ~= nil and not table.find(nokick, player) then
@@ -2905,17 +2890,17 @@ Commands required: rocket]])
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'welmsg' then
         welcomemsg = true
-	Remind("The welcome/leaving message has been enabled :)")
+	Remind("The welcome/leaving message has been enabled.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'unwelmsg' then
         welcomemsg = false
-	Remind("The welcome/leaving message has been disabled :(")
+	Remind("The welcome/leaving message has been disabled.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'clickexplode' then
         clickexplode = true
-	Remind("Click a player for them to KABOOM!")
+	Remind("Click a player and they'll explode!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 14) == prefix..'unclickexplode' then
@@ -2937,6 +2922,7 @@ Commands required: rocket]])
                 Remind("You should be attached to the player!")
     end
 
+		-- broken command
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'ncontrol' then -- really funny ngl (cmdpi)
         	local dasplayer = string.sub(msg:lower(), #prefix + 10)
                 PLAYERCHECK(dasplayer)
@@ -2944,7 +2930,7 @@ Commands required: rocket]])
 			Chat('size me nan')
 			Chat('invis me')
 			Chat('stun ' .. player)
-	 		Mover:pingWait() -- bugged, idk why
+	 		Mover:pingWait() 
 			Mover:Attach(cplr.Character.Torso)
             		Chat('size me nan')
                         Remind("Attaching to "..player)
@@ -12758,9 +12744,10 @@ end
 
 --[[
 Things to add/fix. Feel free to fix these and send the code and I'll credit you
--> Visualiser and drawer to kohlslite
--> part builder
--> object mover (cmd pi version)
--> fix ncontrol
--> i will finish during summer break (next month, july)
+-> Visualiser and drawer
+-> Boombox visualiser
+-> Part builder
+-> Object mover (cmd pi version)
+-> Fix ncontrol
+-> I will hopefully be able to add/fix these during summer break (next month, mid-July)
 ]]
