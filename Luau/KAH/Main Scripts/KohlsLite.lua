@@ -4300,32 +4300,41 @@ Commands required: rocket]])
 				Potion(getnumber)
 				Remind("Action: Potion")
 			elseif act == "tripmine" or act == "trip" then
-		                 MineTrip(getnumber)
-				 Remind("Action: Tripmine")
+				MineTrip(getnumber)
+				Remind("Action: Tripmine")
 			elseif act == "spike" then
-                		 Spike(getnumber)
-		 		 Remind("Action: Spike")
+                		Spike(getnumber)
+		 		Remind("Action: Spike")
 			elseif act == "cannon" then
-		                 Cannon(getnumber)
-				 Remind("Action: Cannon")
+		                Cannon(getnumber)
+				Remind("Action: Cannon")
 			elseif act == "zombie" then
-				 Zombie(getnumber)
-				 Remind("Action: Zombie")
+				Zombie(getnumber)
+				Remind("Action: Zombie")
 			elseif act == "alpaca" then
-				 Alpaca(getnumber)
-				 Remind("Action: Alpaca")
+				Alpaca(getnumber)
+				Remind("Action: Alpaca")
 			elseif act == "piano" or act == "mozart" then
-		                 Piano(getnumber)
-				 Remind("Action: Piano")
+		                Piano(getnumber)
+				Remind("Action: Piano")
 			elseif act == "bdrop" or act == "bassdrop" then
-		                 Bassdrop(getnumber)
-				 Remind("Action: Bassdrop")
+		                Bassdrop(getnumber)
+				Remind("Action: Bassdrop")
 			elseif act == "cstory" or act == "coolstory" then
-		                 Coolstory(getnumber)
-				 Remind("Action: Coolstory")
+		                Coolstory(getnumber)
+				Remind("Action: Coolstory")
 			elseif act == "banana" then
-		                 Banana(getnumber)
-				 Remind("Action: Banana")
+		                Banana(getnumber)
+				Remind("Action: Banana")
+			elseif act == "tguitar" or act == "tankguitar" then
+				TankGuitar(getnumber)
+				Remind("Action: Tank Guitar")
+			elseif act == "sfriend" or act == "skelefriend" or act == "skele" then
+				SkeleFriend(getnumber)
+				Remind("Action: Skele Friend")
+			elseif act == "spray" or act == "nozzle" then
+				Spray(getnumber)
+				Remind("Action: Spray")
 			else
 				Remind("Invalid action!")
 			end
@@ -11983,6 +11992,51 @@ function Banana(getnum)
                             v:Activate()
         end
 end
+
+function TankGuitar(getnum)
+	Chat("ungear me");task.wait(0.5)
+        for i = 1, tonumber(getnum) do
+                Chat("gear me 47871615");task.wait(0.01)
+        end
+     --   local oldchild = #workspace:GetChildren()
+        repeat task.wait() until #game.Players.LocalPlayer.Backpack:GetChildren() >= tonumber(getnum) 
+        local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
+        for _, v in ipairs(Backpack:GetChildren()) do
+                            v.Parent = game.Players.LocalPlayer.Character
+                            task.wait(0.01)
+                            v:Activate()
+        end
+end
+
+function SkeleFriend(getnum)
+	Chat("ungear me");task.wait(0.5)
+        for i = 1, tonumber(getnum) do
+                Chat("gear me 63253701");task.wait(0.01)
+        end
+     --   local oldchild = #workspace:GetChildren()
+        repeat task.wait() until #game.Players.LocalPlayer.Backpack:GetChildren() >= tonumber(getnum) 
+        local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
+        for _, v in ipairs(Backpack:GetChildren()) do
+                            v.Parent = game.Players.LocalPlayer.Character
+                            task.wait(0.01)
+                            v:Activate()
+        end
+end
+
+function Spray(getnum)
+	Chat("ungear me");task.wait(0.5)
+        for i = 1, tonumber(getnum) do
+                Chat("gear me 273795078");task.wait(0.01)
+        end
+     --   local oldchild = #workspace:GetChildren()
+        repeat task.wait() until #game.Players.LocalPlayer.Backpack:GetChildren() >= tonumber(getnum) 
+        local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
+        for _, v in ipairs(Backpack:GetChildren()) do
+                            v.Parent = game.Players.LocalPlayer.Character
+                            task.wait(0.01)
+                            v:Activate()
+        end
+end 
 
 --// ATTACHING STUFF \\ --
 local Player = game.Players.LocalPlayer
