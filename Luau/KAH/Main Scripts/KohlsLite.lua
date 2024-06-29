@@ -8844,7 +8844,7 @@ task.spawn(function()
                 for i, v in ipairs(game.Players:GetPlayers()) do
                         if table.find(byecam, v.Name) then
                                 if v and not v.Character:FindFirstChildOfClass("Model") then
-                                         Chat("name ".. v.Name .." [BROKE]")
+                                         Chat("name ".. v.Name .." [BROKE]") -- pointless now but i'm not removing it
                                 end
                         end
                         if table.find(carcar, v.Name) then
