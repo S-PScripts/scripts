@@ -290,6 +290,7 @@ local atprogperms = {
     "decryptionites",
     "ripcxo",
     "grimAuxiliatrix",
+    "jjjuuikjjikkju",
     "undertaker629"
 }
 
