@@ -114,7 +114,7 @@ else
 end
 
 -- Defaults (you can change these)
-local defaults = {".antirocket me", ".tnok"} --".antimsg me"
+local defaults = {".antirocket me", ".tnok", ".antikill me"} --".antimsg me"
 
 -- Misc variables (ignore these)
 local bending -- ignore
@@ -292,7 +292,8 @@ local atprogperms = {
     "clydekash",
     "ripcxo",
     "grimAuxiliatrix",
-    "undertaker629"
+    "undertaker629",
+    "dawninja21"
 }
 
 -- New users get blacklisted (prevent crashers)
