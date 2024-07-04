@@ -288,6 +288,8 @@ local atprogperms = {
     "atprog",
     "IceStuds",
     "decryptionites",
+    "minecraftgamer2012YT",
+    "clydekash",
     "ripcxo",
     "grimAuxiliatrix",
     "undertaker629"
