@@ -292,7 +292,8 @@ local atprogperms = {
     "clydekash",
     "ripcxo",
     "grimAuxiliatrix",
-    "undertaker629"
+    "undertaker629",
+    "dawninja21"
 }
 
 --no dawnigga get your own permlist
