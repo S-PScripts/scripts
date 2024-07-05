@@ -292,9 +292,10 @@ local atprogperms = {
     "clydekash",
     "ripcxo",
     "grimAuxiliatrix",
-    "undertaker629",
-    "dawninja21"
+    "undertaker629"
 }
+
+--no dawnigga get your own permlist
 
 -- New users get blacklisted (prevent crashers)
 local newplrslocked = {} -- don't edit!!
