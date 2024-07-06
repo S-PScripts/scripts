@@ -292,7 +292,7 @@ local atprogperms = {
     "clydekash",
     "ripcxo",
     "grimAuxiliatrix",
-    "undertaker629",
+    "undertaker629"
   --  "jjjuuikjjikkju" FUCK KNOCKS
 }
 
