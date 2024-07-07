@@ -9,7 +9,7 @@
 
 -- If your name is "Knocks", KYS 1000 times (in Roblox). Suck your arse.
 -- This was built from the ground up. KohlsLite is NOT a fork of any other scripts. 
--- KohlsLite is like a mixture of all the scripts that already exist in KAH such as:
+-- KohlsLite is LIKE a mixture of all the scripts that already exist in KAH such as:
   -- > CMD (v1)
   -- > CMD Y
   -- > CMD v3
