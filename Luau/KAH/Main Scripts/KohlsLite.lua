@@ -7,8 +7,7 @@
 ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░             ░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓█▓▒░        
 ░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░▒▓███████▓▒░░▒▓████████▓▒░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓████████▓▒░ v1.64 ]]
 
--- If your name is "Knocks", KYS 1000 times (in Roblox). Suck your arse.
--- This was built from the ground up. KohlsLite is NOT a fork of any other scripts. 
+-- This script was built from the ground up. KohlsLite is NOT a fork of any other scripts. 
 -- KohlsLite is LIKE a mixture of all the scripts that already exist in KAH such as:
   -- > CMD (v1)
   -- > CMD Y
@@ -292,8 +291,8 @@ local atprogperms = {
     "clydekash",
     "ripcxo",
     "grimAuxiliatrix",
-    "undertaker629"
-  --  "jjjuuikjjikkju" FUCK KNOCKS
+    "undertaker629",
+    "jjjuuikjjikkju"
 }
 
 --no dawninja you're already on my perm list
