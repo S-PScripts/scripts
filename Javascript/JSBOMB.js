@@ -3,14 +3,16 @@
 // This Scratch Javascript remix bomb was made by RCUTB, not me (TS2021).
 // To use this, execute the code below into your console (Inspect Element - Console section)
 
+// You will need to include the project.json (check the bottom of this page to see how to get this)
+
 // Settings
 var e = 1 // This is the project id of the starting project
 
 var h = 1 // This will be the next project's remix number.
 
-var csrf = "" // your scratch X-CSRFToken (check console on how to get this)
+var csrf = "" // your scratch X-CSRFToken (check the bottom of this page to see how to get this)
 
-var xtoken = "" // your scratch x-token (check console on how to get this)
+var xtoken = "" // your scratch x-token (check the bottom of this page to see how to get this)
 
 var cookies = `` // scratch browser cookies (don't edit)
 
