@@ -9016,9 +9016,10 @@ function meshkick(kickin, kickinplr)
 			if game.Players:FindFirstChild(kickinplr) then
 				for i = 1, 103 do
    					 Chat("hat me 1810126502")
-					 wait(.5)
+					 task.wait(.5)
    					 Chat("clone me")
 				end
+				task.wait(.3)
 			end
 		end
 end
