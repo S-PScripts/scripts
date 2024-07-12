@@ -8646,17 +8646,17 @@ task.spawn(function()
                         end
     end
 
-    if mymusiconly == true then
+    if mymusiconly == true then -- ii's admin since mine had a small bug and was also messy
             local soundlock = tonumber(mymusiconlyid)
             local origsound = soundlock
             soundlock = "http://www.roblox.com/asset/?id="..tostring(soundlock)
             local lastUpdateTime = tick()
         local music = workspace.Terrain["_Game"].Folder:FindFirstChild("Sound")
         if gottenmode == 1 then
-                    gwawg = tonumber(music.TimePosition)
+                    denumba = tonumber(music.TimePosition)
                 print(music.TimePosition)
         else 
-                gwawg = 0
+                denumba = 0
         end
             repeat 
                 task.wait(0.1)
@@ -8664,20 +8664,20 @@ task.spawn(function()
                 local elapsedTime = currentTime - lastUpdateTime 
                 lastUpdateTime = currentTime 
 
-                        gwawg = gwawg + elapsedTime 
+                        denumba = denumba + elapsedTime 
 
                 if workspace.Terrain["_Game"].Folder:FindFirstChild("Sound") and musicoff == false then
                             local music = workspace.Terrain["_Game"].Folder:FindFirstChild("Sound")
                             if music.IsLoaded and music.SoundId == soundlock then
-                                -- print(music.TimePosition);print(gwawg)
-                                if gwawg > music.TimeLength then 
-                                            gwawg = 0 
+                                -- print(music.TimePosition);print(denumba)
+                                if denumba > music.TimeLength then 
+                                            denumba = 0 
                                 end 
 
-                                if math.abs(music.TimePosition - gwawg) > 0.5 then
-                                            if gwawg < music.TimePosition - 1 or gwawg > music.TimePosition + 1 then
-                                                       print(music.TimePosition) ; print(gwawg)
-                                                       music.TimePosition = gwawg ; Remind("Fixed the time position!")
+                                if math.abs(music.TimePosition - denumba) > 0.5 then
+                                            if denumba < music.TimePosition - 1 or denumba > music.TimePosition + 1 then
+                                                       print(music.TimePosition) ; print(denumba)
+                                                       music.TimePosition = denumba ; Remind("Fixed the time position!")
                                            end
                                 end
                             end
