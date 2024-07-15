@@ -12304,6 +12304,7 @@ end
 
 -- // Attaching v3 - credits to ii admin and pr admin \\ -- 
 -- // Not a replacement to the cmd y, just used for certain things \\ --
+-- // sux \\ --
 local lp = game.Players.LocalPlayer
 
 function moveObject(target,movepos)
