@@ -7391,6 +7391,12 @@ task.spawn(function()
                         if v.Name ~= game.Players.LocalPlayer.Name then
                                 -- print("Debug msg 2: "..v.Name)
 
+         		--[[	if autochar == true then -- wipppppp
+                                        if autocharid ~= v.CharacterAppearanceId then
+                                                      Chat('char '..autocharid)
+                                        else end
+                                end]]
+
                                 if ALLantiaddon == true then
                                             if v.Character and v.Character:FindFirstChild("Addon") then
                                                     Chat("reset "..v.Name)
