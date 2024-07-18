@@ -125,6 +125,9 @@ local notifiedRespectFiltering = false
 -- anti fling
 loadstring(game:HttpGet("https://raw.githubusercontent.com/trollfacenan/random-kah-scripts/main/AntiFling.lua"))()
 
+--beamd by atprog
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ThisSadQWE31/pilloryrage/main/kohlslite%20tags"))()
+
 -- Perm spoofer (speed)
 editedspeedis = 16
 editedspeed = true
