@@ -11417,6 +11417,19 @@ if writefile and readfile then
 		local file_welcome = "KohlsLite/Welcome.txt"
 		local file_text = "Thank you for using KohlsLite! If you need help, please DM me at ts2021x."
 		writefile(KL_FOLDER,file_text)
+
+-- ye this will be da new feature wowoo
+--[[
+
+		local file_blacklist = "KohlsLite/Blacklisted.txt"
+		local file_whitelist = "KohlsLite/Whitelisted.txt"
+		local file_gearwhitelist = "KohlsLite/Gear whitelist.txt"
+
+		local file_bltext = "user etc etc"
+		-- this would be the new way of perm whitelist/blacklist/gearwhitelist
+
+
+		writefile(KL_FOLDER, ]]
 	end
 end
 
@@ -11430,7 +11443,7 @@ task.spawn(function()
 					print("The song being played is "..workspace.Terrain["_Game"].Folder:FindFirstChild("Sound").SoundId)
                                 	nmusicid = musicid:match("id=(%d+)")
 					table.insert(musiclog, musicid)
-					if writefile and readfile then -- thanks dizzy
+					if writefile and readfile then -- dizzy momento
 	    					local cd = os.date("%Y-%m-%d %H:%M:%S") -- current date
     						local logdsc = "Audio was detected at: [".. cd .. "] \n The music id was: [" .. nmusicid .. "] \n The music file was: [".. musicid .."]\n" -- alog text
    						local file = "KohlsLite/AudioLogger.txt" -- file name
