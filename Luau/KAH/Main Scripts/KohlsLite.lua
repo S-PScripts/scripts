@@ -4986,12 +4986,12 @@ Commands required: rocket]])
 	Remind("Anti attach is now disabled.")
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'antifling' then
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antifling' then
         shared.antifling = true
 	Remind("Anti fling is now enabled.")
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'unantiattach' then
+    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantifling' then
         shared.antifling = false
 	Remind("Anti fling is now disabled.")
     end
