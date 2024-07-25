@@ -6163,14 +6163,14 @@ Commands required: rocket]])
         Remind("Auto god is off!")
     end      
 
-    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'autochar' then
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'autochar' then
 	local args = string.split(msg, " ")
         autochar = true
 	autocharid = args[2] -- lazy
         Remind("Auto char is on!")
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'unautogod' then
+    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unautochar' then
         autochar = false
         Remind("Auto char is off!")
     end    
