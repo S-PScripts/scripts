@@ -12860,7 +12860,7 @@ Stats.rank = rankcheck(Stats.username)
 print("Your rank is: " .. Stats.rank)
 
 -- KohlsLite Blacklist --
-local unexecuteables = {"aliihsan12345Bloxy","XxSmurfXxSmurfXx","kjnjsknsdgkgnfgkjknf"}
+local unexecuteables = {"aliihsan12345Bloxy","XxSmurfXxSmurfXx","kjnjsknsdgkgnfgkjknf", "YT_MATHEUSMODZ5"}
 if table.find(unexecuteables, game.Players.LocalPlayer.Name) then
                 pcall(function() -- thanks tech
                         game.Players.LocalPlayer:Kick("[KohlsLite]: Oh dear, you're blacklisted from my script! How did you do that? DM me on ts2021x to appeal. (also don't edit this script or you're rejected)") 
