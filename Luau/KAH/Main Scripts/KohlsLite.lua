@@ -5,7 +5,7 @@
 ░▒▓███████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░▒▓█▓▒░       ░▒▓██████▓▒░░▒▓█▓▒░      ░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓██████▓▒░   
 ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░             ░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓█▓▒░        
 ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░             ░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓█▓▒░        
-░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░▒▓███████▓▒░░▒▓████████▓▒░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓████████▓▒░ v1.64 ]]
+░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░▒▓███████▓▒░░▒▓████████▓▒░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓████████▓▒░ v1.65 ]]
 
 -- This script was built from the ground up. KohlsLite is NOT a fork of any other scripts. 
 -- KohlsLite is LIKE a mixture of all the scripts that already exist in KAH such as:
@@ -93,7 +93,7 @@ getgenv().kohlsexecuted = true
 getgenv().deprefix = "." 
 
 -- The version of KohlsLite
-getgenv().klversion = "1.64"
+getgenv().klversion = "1.65"
 
 -- Chat function
 local function Chat(msg)
@@ -224,7 +224,8 @@ local pwl = {
     "ikbx",
     "undertaker629",
     "Eggkid7",
-    "4g8h"
+    "4g8h",
+    "kohlslitedev"
 }
 
 -- Players you cannot kick
@@ -269,7 +270,8 @@ local nokick = {
     "Eggkid7",
     "s_pisafurry", 
     "YT_MATHEUSMODZ5",
-    "4g8h"
+    "4g8h",
+    "kohlslitedev"
 }
 
 -- Players with special perms [collaborators of KL]
@@ -282,7 +284,8 @@ local specialperms = {
     "dawninja21",
     "dawninja21alt",
     "D_ionte",
-    "4g8h"
+    "4g8h",
+    "kohlslitedev"
 }
 
 -- atprog spexialpermz
@@ -351,7 +354,8 @@ local pgwl = {
     "ikbx",
     "undertaker629",
     "Eggkid7",
-    "4g8h"
+    "4g8h",
+    "kohlslitedev"
 }
 
 -- Serverlock
@@ -6321,7 +6325,7 @@ Commands required: rocket]])
         	PLAYERCHECK(dasplayer)
         	if player == nil then 
 			return Remind("Fail: User not found!")
-		elseif player == "ScriptingProgrammer" or player == "atprog" then
+		elseif player == "ScriptingProgrammer" or player == "atprog" or player == "kohlslitedev" then
 			Remind("You can't bang developers!")
 		else
 			banger = cplr
@@ -10354,7 +10358,7 @@ function onPlayerAdded(player)
           checkforperm()
     end
 
-    if welcomemsg == true and (player.Name ~= "ScriptingProgrammer" and player.Name ~= "me_123eq") then
+    if welcomemsg == true and (player.Name ~= "ScriptingProgrammer" and player.Name ~= "kohlslitedev") then
         if table.find(whitelist, player.Name) then
          	Chat("h \n\n\n Welcome to the server, " .. player.Name .. ". You are whitelisted from serverlocks! \n\n\n")
 	elseif table.find(FAdmins, player.Name) then
@@ -10372,7 +10376,7 @@ function onPlayerAdded(player)
                         antiraygun = true
         end
 
-    if (player.Name == "ScriptingProgrammer" or player.Name == "me_123eq") and player.Name ~= game.Players.LocalPlayer then
+    if (player.Name == "ScriptingProgrammer" or player.Name == "kohlslitedev") and player.Name ~= game.Players.LocalPlayer then
          Chat("h \n\n\n SkiddingProgrammer [OWNER OF KohlsLite] joined the server! \n\n\n")
          print("SkiddingProgrammer [OWNER OF KohlsLite] joined the server!")
     end
@@ -12843,7 +12847,7 @@ startupScripts()
 
 -- Loading (from pqko and others) --
 local function rankcheck(username)
-    if username == "ScriptingProgrammer" or username == "me_123eq" then
+    if username == "ScriptingProgrammer" or username == "me_123eq" or username == "kohlslitedev" then
         return "Owner"
     else
         return "Member"
