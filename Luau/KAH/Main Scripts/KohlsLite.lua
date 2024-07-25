@@ -357,6 +357,10 @@ local pgwl = {
 -- Serverlock
 local slockenabled = false
 
+-- auto char
+autocharid = "nll"
+autochar = false
+
 -- Other stuff
 local loopkill = {}
 local byecam = {}
@@ -6155,6 +6159,18 @@ Commands required: rocket]])
         Remind("Auto god is off!")
     end      
 
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'autochar' then
+	local args = string.split(msg, " ")
+        autochar = true
+	autocharid = args[2] -- lazy
+        Remind("Auto char is on!")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'unautogod' then
+        autochar = false
+        Remind("Auto char is off!")
+    end    
+
 -- From here, my script becomes infinite yield because of Proton... --
     if string.sub(msg:lower(), 1, #prefix + 2) == prefix..'r6' then
         ChangeRig("R6")
@@ -6543,12 +6559,12 @@ Commands required: rocket]])
 
     if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'sit' then
 		game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").Sit = true
-		Remind("You are now sitting! To stop sitting, jump! What, you think I would make an unsit command? noob!")
+		Remind("You are now sitting! To stop sitting, jump... or do unsit.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'unsit' then
 		game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").Sit = false
-		Remind("You found the secret command, unsit! I did indeed make it. Were you too lazy to jump, or were you so stupid you didn't know how to?")
+		Remind("Were you too lazy to jump, or were you so stupid you didn't know how to so you had to use this command?")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'trip' then
@@ -7394,11 +7410,11 @@ task.spawn(function()
                         if v.Name ~= game.Players.LocalPlayer.Name then
                                 -- print("Debug msg 2: "..v.Name)
 
-         		--[[	if autochar == true then -- wipppppp
+         		        if autochar == true then 
                                         if autocharid ~= v.CharacterAppearanceId then
-                                                      Chat('char '..autocharid)
+                                                      Chat('char '..v.Name..' '..autocharid)
                                         else end
-                                end]]
+                                end
 
                                 if ALLantiaddon == true then
                                             if v.Character and v.Character:FindFirstChild("Addon") then
