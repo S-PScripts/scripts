@@ -7406,7 +7406,7 @@ connections[#connections + 1] =
 	if antis.antimesh then
         	for i,v in pairs(workspace:GetDescendants()) do
             		if v:IsA("Accessory") then
-                		if tostring(v.AccessoryType) == "Enum.AccessoryType.Unknown" then -- it's the knocks!
+                		if tostring(v.AccessoryType) == "Enum.AccessoryType.Unknown" then -- he knocks
                     			v:Destroy()
                 		end
             		end
@@ -7415,13 +7415,11 @@ connections[#connections + 1] =
 end)
 
 -- ANTIS FOR EVERYONE
-task.spawn(function()
-        while true do
-                task.wait()
+connections[#connections + 1] =
+    game:GetService("RunService").RenderStepped:Connect(function()
+		task.wait()
                 for i, v in ipairs(game.Players:GetPlayers()) do
-                --        print("Debug msg 1")
                         if v.Name ~= game.Players.LocalPlayer.Name then
-                                -- print("Debug msg 2: "..v.Name)
 
          		        if autochar == true then 
                                         if autocharid ~= v.CharacterAppearanceId then
@@ -7634,7 +7632,6 @@ task.spawn(function()
 
                         end                
                 end
-        end
 end)
 
 -- Antis (tool related)
