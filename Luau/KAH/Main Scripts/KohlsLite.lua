@@ -5100,7 +5100,7 @@ Commands required: rocket]])
                 ALLantiaddon = true
                 Remind("Turned this anti on for others!")
         elseif args[2] == "all" then
-                YOUantiaddon = true -- SH!T I FORGOT TO CHANGE THESE
+                antis.antiaddon = true -- SH!T I FORGOT TO CHANGE THESE
                 ALLantiaddon = true
                 Remind("Turned this anti on for everyone!")
         else
@@ -5117,7 +5117,7 @@ Commands required: rocket]])
                 ALLantiaddon = false
                 Remind("Turned this anti off for others!")
         elseif args[2] == "all" then
-                YOUantiaddon = false
+                antis.antiaddon = false
                 ALLantiaddon = false
                 Remind("Turned this anti off for everyone!")
         else
@@ -5134,7 +5134,7 @@ Commands required: rocket]])
                 ALLanticlone = true
                 Remind("Turned this anti on for others!")
         elseif args[2] == "all" then
-                YOUanticlone = true
+                antis.anticlone = true
                 ALLanticlone = true
                 Remind("Turned this anti on for everyone!")
         else
@@ -5151,7 +5151,7 @@ Commands required: rocket]])
                 ALLanticlone = false
                 Remind("Turned this anti off for others!")
         elseif args[2] == "all" then
-                YOUanticlone = false
+                antis.anticlone = false
                 ALLanticlone = false
                 Remind("Turned this anti off for everyone!")
         else
@@ -5168,7 +5168,7 @@ Commands required: rocket]])
                 ALLantidog = true
                 Remind("Turned this anti on for others!")
         elseif args[2] == "all" then
-                YOUantidog = true
+                antis.antidog = true
                 ALLantidog = true
                 Remind("Turned this anti on for everyone!")
         else
@@ -5185,7 +5185,7 @@ Commands required: rocket]])
                 ALLantidog = false
                 Remind("Turned this anti off for others!")
         elseif args[2] == "all" then
-                YOUantidog = false
+                antis.antidog = false
                 ALLantidog = false
                 Remind("Turned this anti off for everyone!")
         else
@@ -5202,7 +5202,7 @@ Commands required: rocket]])
                 ALLantifire = true
                 Remind("Turned this anti on for others!")
         elseif args[2] == "all" then
-                YOUantifire = true
+                antis.antifire = true
                 ALLantifire = true
                 Remind("Turned this anti on for everyone!")
         else
@@ -5219,7 +5219,7 @@ Commands required: rocket]])
                 ALLantifire = false
                 Remind("Turned this anti off for others!")
         elseif args[2] == "all" then
-                YOUantifire = false
+                antis.antifire = false
                 ALLantifire = false
                 Remind("Turned this anti off for everyone!")
         else
@@ -5230,13 +5230,13 @@ Commands required: rocket]])
     if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'antifreeze' then
         local args = string.split(msg, " ")
         if args[2] == "me" then
-                antis.antifeeze = true
+                antis.antifreeze = true
                 Remind("Turned this anti on for you!")
         elseif args[2] == "others" then
                 ALLantifreeze = true
                 Remind("Turned this anti on for others!")
         elseif args[2] == "all" then
-                YOUantifreeze = true
+                antis.antifreeze = true
                 ALLantifreeze = true
                 Remind("Turned this anti on for everyone!")
         else
@@ -5253,7 +5253,7 @@ Commands required: rocket]])
                 ALLantifreeze = false
                 Remind("Turned this anti off for others!")
         elseif args[2] == "all" then
-                YOUantifreeze = false
+                antis.antifreeze = false
                 ALLantifreeze = false
                 Remind("Turned this anti off for everyone!")
         else
@@ -5270,7 +5270,7 @@ Commands required: rocket]])
                 ALLantiff = true
                 Remind("Turned this anti on for others!")
         elseif args[2] == "all" then
-                YOUantiff = true
+                antis.antiff = true
                 ALLantiff = true
                 Remind("Turned this anti on for everyone!")
         else
@@ -5287,7 +5287,7 @@ Commands required: rocket]])
                 ALLantiff = false
                 Remind("Turned this anti off for others!")
         elseif args[2] == "all" then
-                YOUantiff = false
+                antis.antiff = false
                 ALLantiff = false
                 Remind("Turned this anti off for everyone!")
         else
@@ -5304,7 +5304,7 @@ Commands required: rocket]])
                 ALLantiglow = true
                 Remind("Turned this anti on for others!")
         elseif args[2] == "all" then
-                YOUantiglow = true
+                antis.antiglow = true
                 ALLantiglow = true
                 Remind("Turned this anti on for everyone!")
         else
@@ -5321,7 +5321,7 @@ Commands required: rocket]])
                 ALLantiglow = false
                 Remind("Turned this anti off for others!")
         elseif args[2] == "all" then
-                YOUantiglow = false
+                antis.antiglow = false
                 ALLantiglow = false
                 Remind("Turned this anti off for everyone!")
         else
@@ -5338,7 +5338,7 @@ Commands required: rocket]])
                 ALLantihealthc = true
                 Remind("Turned this anti on for others!")
         elseif args[2] == "all" then
-                YOUantihealthc = true
+                antis.antihealthchange = true
                 ALLantihealthc = true
                 Remind("Turned this anti on for everyone!")
         else
@@ -5355,7 +5355,7 @@ Commands required: rocket]])
                 ALLantihealthc = false
                 Remind("Turned this anti off for others!")
         elseif args[2] == "all" then
-                YOUantihealthc = false
+                antis.antihealthchange = false
                 ALLantihealthc = false
                 Remind("Turned this anti off for everyone!")
         else
@@ -5372,7 +5372,7 @@ Commands required: rocket]])
                 ALLantijail = true
                 Remind("Turned this anti on for others!")
         elseif args[2] == "all" then
-                YOUantijail = true
+                antis.antijail = true
                 ALLantijail = true
                 Remind("Turned this anti on for everyone!")
         else
@@ -5389,7 +5389,7 @@ Commands required: rocket]])
                 ALLantijail = false
                 Remind("Turned this anti off for others!")
         elseif args[2] == "all" then
-                YOUantijail = false
+                antis.antijail = false
                 ALLantijail = false
                 Remind("Turned this anti off for everyone!")
         else
@@ -5406,7 +5406,7 @@ Commands required: rocket]])
                 ALLantijump = true
                 Remind("Turned this anti on for others!")
         elseif args[2] == "all" then
-                YOUantijump = true
+                antis.antijump = true
                 ALLantijump = true
                 Remind("Turned this anti on for everyone!")
         else
@@ -5423,7 +5423,7 @@ Commands required: rocket]])
                 ALLantijump = false
                 Remind("Turned this anti off for others!")
         elseif args[2] == "all" then
-                YOUantijump = false
+                antis.antijump = false
                 ALLantijump = false
                 Remind("Turned this anti off for everyone!")
         else
@@ -5441,7 +5441,7 @@ Commands required: rocket]])
                 	ALLantikill = true
                 	Remind("Turned this anti on for others!")
         	elseif args[2] == "all" then
-               		YOUantikill = true
+               		antis.antikill = true
                 	ALLantikill = true
                 	Remind("Turned this anti on for everyone!")
         	else
@@ -5473,7 +5473,7 @@ Commands required: rocket]])
                 	ALLantikill = false
                 	Remind("Turned this anti off for others!")
         	elseif args[2] == "all" then
-               		YOUantikill = false
+               		antis.antikill = false
                 	ALLantikill = false
                 	Remind("Turned this anti off for everyone!")
         	else
@@ -5504,7 +5504,7 @@ Commands required: rocket]])
                 ALLantifly = true
                 Remind("Turned this anti on for others!")
         elseif args[2] == "all" then
-                YOUantifly = true
+                antis.antifly = true
                 ALLantifly = true
                 Remind("Turned this anti on for everyone!")
         else
@@ -5521,7 +5521,7 @@ Commands required: rocket]])
                 ALLantifly = false
                 Remind("Turned this anti off for others!")
         elseif args[2] == "all" then
-                YOUantifly = false
+                antis.antifly = false
                 ALLantifly = false
                 Remind("Turned this anti off for everyone!")
         else
@@ -5548,7 +5548,7 @@ Commands required: rocket]])
                 ALLantichar = true
                 Remind("Turned this anti on for others!")
         elseif args[2] == "all" then
-                YOUantichar = true
+                antis.antichar = true
                 ALLantichar = true
                 Remind("Turned this anti on for everyone!")
         else
@@ -5565,7 +5565,7 @@ Commands required: rocket]])
                 ALLantichar = false
                 Remind("Turned this anti off for others!")
         elseif args[2] == "all" then
-                YOUantichar = false
+                antis.antichar = false
                 ALLantichar = false
                 Remind("Turned this anti off for everyone!")
         else
@@ -5622,7 +5622,7 @@ Commands required: rocket]])
                 ALLantiname = true
                 Remind("Turned this anti on for others!")
         elseif args[2] == "all" then
-                YOUantiname = true
+                antis.antiname = true
                 ALLantiname = true
                 Remind("Turned this anti on for everyone!")
         else
@@ -5639,7 +5639,7 @@ Commands required: rocket]])
                 ALLantiname = false
                 Remind("Turned this anti off for others!")
         elseif args[2] == "all" then
-                YOUantiname = false
+                antis.antiname = false
                 ALLantiname = false
                 Remind("Turned this anti off for everyone!")
         else
@@ -5656,7 +5656,7 @@ Commands required: rocket]])
                 ALLantiparticles = true
                 Remind("Turned this anti on for others!")
         elseif args[2] == "all" then
-                YOUantiparticles = true
+                antis.antiparticles = true
                 ALLantiparticles = true
                 Remind("Turned this anti on for everyone!")
         else
@@ -5673,7 +5673,7 @@ Commands required: rocket]])
                 ALLantiparticles = false
                 Remind("Turned this anti off for others!")
         elseif args[2] == "all" then
-                YOUantiparticles = false
+                antis.antiparticles = false
                 ALLantiparticles = false
                 Remind("Turned this anti off for everyone!")
         else
@@ -5690,7 +5690,7 @@ Commands required: rocket]])
                 ALLantipunish = true
                 Remind("Turned this anti on for others!")
         elseif args[2] == "all" then
-                YOUantipunish = true
+                antis.antipunish = true
                 ALLantipunish = true
                 Remind("Turned this anti on for everyone!")
         else
@@ -5707,7 +5707,7 @@ Commands required: rocket]])
                 ALLantipunish = false
                 Remind("Turned this anti off for others!")
         elseif args[2] == "all" then
-                YOUantipunish = false
+                antis.antipunish = false
                 ALLantipunish = false
                 Remind("Turned this anti off for everyone!")
         else
@@ -5724,7 +5724,7 @@ Commands required: rocket]])
                 ALLantirocket = true
                 Remind("Turned this anti on for others!")
         elseif args[2] == "all" then
-                YOUantirocket = true
+                antis.antirocket = true
                 ALLantirocket = true
                 Remind("Turned this anti on for everyone!")
         else
@@ -5741,7 +5741,7 @@ Commands required: rocket]])
                 ALLantirocket = false
                 Remind("Turned this anti off for others!")
         elseif args[2] == "all" then
-                YOUantirocket = false
+                antis.antirocket = false
                 ALLantirocket = false
                 Remind("Turned this anti off for everyone!")
         else
@@ -5774,7 +5774,7 @@ Commands required: rocket]])
                 ALLantisit = true
                 Remind("Turned this anti on for others!")
         elseif args[2] == "all" then
-                YOUantisit = true
+                antis.antisit = true
                 ALLantisit = true
                 Remind("Turned this anti on for everyone!")
         else
@@ -5791,7 +5791,7 @@ Commands required: rocket]])
                 ALLantisit = false
                 Remind("Turned this anti off for others!")
         elseif args[2] == "all" then
-                YOUantisit = false
+                antis.antisit = false
                 ALLantisit = false
                 Remind("Turned this anti off for everyone!")
         else
@@ -5808,7 +5808,7 @@ Commands required: rocket]])
                 ALLantiseizure = true
                 Remind("Turned this anti on for others!")
         elseif args[2] == "all" then
-                YOUantiseizure = true
+                antis.antiseizure = true
                 ALLantiseizure = true
                 Remind("Turned this anti on for everyone!")
         else
@@ -5825,7 +5825,7 @@ Commands required: rocket]])
                 ALLantiseizure = false
                 Remind("Turned this anti off for others!")
         elseif args[2] == "all" then
-                YOUantiseizure = false
+                antis.antiseizure = false
                 ALLantiseizure = false
                 Remind("Turned this anti off for everyone!")
         else
@@ -5842,7 +5842,7 @@ Commands required: rocket]])
                 ALLantismoke = true
                 Remind("Turned this anti on for others!")
         elseif args[2] == "all" then
-                YOUantismoke = true
+                antis.antismoke = true
                 ALLantismoke = true
                 Remind("Turned this anti on for everyone!")
         else
@@ -5859,7 +5859,7 @@ Commands required: rocket]])
                 ALLantismoke = false
                 Remind("Turned this anti off for others!")
         elseif args[2] == "all" then
-                YOUantismoke = false
+                antis.antismoke = false
                 ALLantismoke = false
                 Remind("Turned this anti off for everyone!")
         else
@@ -5876,7 +5876,7 @@ Commands required: rocket]])
                 ALLantisparkles = true
                 Remind("Turned this anti on for others!")
         elseif args[2] == "all" then
-                YOUantisparkles = true
+                 antis.antisparkles = true
                 ALLantisparkles = true
                 Remind("Turned this anti on for everyone!")
         else
@@ -5894,7 +5894,7 @@ Commands required: rocket]])
                 ALLantisparkles = false
                 Remind("Turned this anti off for others!")
         elseif args[2] == "all" then
-                YOUantisparkles = false
+                antis.antisparkles = false
                 ALLantisparkles = false
                 Remind("Turned this anti off for everyone!")
         else
@@ -5911,7 +5911,7 @@ Commands required: rocket]])
                 ALLantispeed = true
                 Remind("Turned this anti on for others!")
         elseif args[2] == "all" then
-                YOUantispeed = true
+                antis.antispeed = true
                 ALLantispeed = true
                 Remind("Turned this anti on for everyone!")
         else
@@ -5928,7 +5928,7 @@ Commands required: rocket]])
                 ALLantispeed = false
                 Remind("Turned this anti off for others!")
         elseif args[2] == "all" then
-                YOUantispeed = false
+                antis.antispeed = false
                 ALLantispeed = false
                 Remind("Turned this anti off for everyone!")
         else
@@ -5945,7 +5945,7 @@ Commands required: rocket]])
                 ALLantispin = true
                 Remind("Turned this anti on for others!")
         elseif args[2] == "all" then
-                YOUantispin = true
+                antis.antispin = true
                 ALLantispin = true
                 Remind("Turned this anti on for everyone!")
         else
@@ -5962,7 +5962,7 @@ Commands required: rocket]])
                 ALLantispin = false
                 Remind("Turned this anti off for others!")
         elseif args[2] == "all" then
-                YOUantispin = false
+                antis.antispin = false
                 ALLantispin = false
                 Remind("Turned this anti off for everyone!")
         else
@@ -5979,7 +5979,7 @@ Commands required: rocket]])
                 ALLantistun = true
                 Remind("Turned this anti on for others!")
         elseif args[2] == "all" then
-                YOUantistun = true
+                antis.antistun = true
                 ALLantistun = true
                 Remind("Turned this anti on for everyone!")
         else
@@ -5996,7 +5996,7 @@ Commands required: rocket]])
                 ALLantistun = false
                 Remind("Turned this anti off for others!")
         elseif args[2] == "all" then
-                YOUantistun = false
+                antis.antistun = false
                 ALLantistun = false
                 Remind("Turned this anti off for everyone!")
         else
@@ -6013,7 +6013,7 @@ Commands required: rocket]])
                 ALLantisetgrav = true
                 Remind("Turned this anti on for others!")
         elseif args[2] == "all" then
-                YOUantisetgrav = true
+                antis.antisetgrav = true
                 ALLantisetgrav = true
                 Remind("Turned this anti on for everyone!")
         else
@@ -6030,7 +6030,7 @@ Commands required: rocket]])
                 ALLantisetgrav = false
                 Remind("Turned this anti off for others!")
         elseif args[2] == "all" then
-                YOUantisetgrav = false
+                antis.antisetgrav = false
                 ALLantisetgrav = false
                 Remind("Turned this anti off for everyone!")
         else
@@ -6047,7 +6047,7 @@ Commands required: rocket]])
                 ALLantiswag = true
                 Remind("Turned this anti on for others!")
         elseif args[2] == "all" then
-                YOUantiswag = true
+                antis.antiswag = true
                 ALLantiswag = true
                 Remind("Turned this anti on for everyone!")
         else
@@ -6064,7 +6064,7 @@ Commands required: rocket]])
                 ALLantiswag = false
                 Remind("Turned this anti off for others!")
         elseif args[2] == "all" then
-                YOUantiswag = false
+                antis.antiswag = false
                 ALLantiswag = false
                 Remind("Turned this anti off for everyone!")
         else
