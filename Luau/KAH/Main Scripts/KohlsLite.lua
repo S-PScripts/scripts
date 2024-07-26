@@ -5100,7 +5100,7 @@ Commands required: rocket]])
                 ALLantiaddon = true
                 Remind("Turned this anti on for others!")
         elseif args[2] == "all" then
-                antis.antiaddon = true -- SH!T I FORGOT TO CHANGE THESE
+                antis.antiaddon = true
                 ALLantiaddon = true
                 Remind("Turned this anti on for everyone!")
         else
