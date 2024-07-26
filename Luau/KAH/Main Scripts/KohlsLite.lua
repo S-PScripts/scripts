@@ -10551,6 +10551,15 @@ UserInputService.WindowFocused:Connect(function()
             end
 end)
 
+-- Anti-AFK
+local vplr = game:GetService("Players")
+local virtualUser = game:GetService("VirtualUser")
+
+vplr.LocalPlayer.Idled:Connect(function()
+        virtualUser:CaptureController()
+        virtualUser:ClickButton2(Vector2.new())
+end)
+
 -- CLICK
 local mouse = game.Players.LocalPlayer:GetMouse()
 mouse.Button1Down:Connect(function()
