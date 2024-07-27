@@ -540,11 +540,60 @@ local gearlist = {
 
 -- Saved turns
 local turnlist = {
-    ["furry"] = {name = {"char [args2] 18", "paint [args2] Institutional white", "hat [args2] 10563319994", "hat [args2] 12578728695", "shirt [args2] 10571467676", "pants [args2] 10571468508"}},
-    ["female"] = {name = {"char [args2] 31342830", "removehats [args2]", "paint [args2] Institutional white", "hat [args2] 7141674388", "hat [args2] 7033871971", "shirt [args2] 5933990311", "pants [args2] 7219538593"}},
-    ["cop"] = {name = {"unhat [args2]", "shirt [args2] 3759924160", "hat [args2] 7310970599", "face [args2] 86487700", "pants [args2] 6214369602"}},
-    ["hacker"] = {name = {"unhat [args2]", "hat [args2] 4995698441", "shirt [args2] 4800661980", "pants [args2] 3149138619", "hat [args2] 4995698441", "trail [args2] green", "paint [args2] black"}},
-    ["thief"] = {name = {"unhat [args2]", "trail [args2] black", "paint [args2] black", "hat [args2] 20642008", "hat [args2] 4855031321", "hat [args2] 4904891637", "shirt [args2] 4656776376", "pants [args2] 129459077", "hat [args2] 4531231804"}}
+    ["furry"] = 
+	{name = {
+		"char [args2] 18", 
+		"paint [args2] Institutional white", 
+		"hat [args2] 10563319994", 
+		"hat [args2] 12578728695", 
+		"shirt [args2] 10571467676", 
+		"pants [args2] 10571468508"
+		}
+	},
+    ["female"] = 
+	{name = {
+		"char [args2] 31342830", 
+		"removehats [args2]", 
+		"paint [args2] Institutional white", 
+		"hat [args2] 7141674388", 
+		"hat [args2] 7033871971", 
+		"shirt [args2] 5933990311", 
+		"pants [args2] 7219538593"
+		}
+	},
+    ["cop"] = 
+	{name = {
+		"unhat [args2]", 
+		"shirt [args2] 3759924160", 
+		"hat [args2] 7310970599", 
+		"face [args2] 86487700", 
+		"pants [args2] 6214369602"
+		}
+	},
+    ["hacker"] = 
+	{name = {
+		"unhat [args2]", 
+		"hat [args2] 4995698441", 
+		"shirt [args2] 4800661980", 
+		"pants [args2] 3149138619", 
+		"hat [args2] 4995698441", 
+		"trail [args2] green", 
+		"paint [args2] black"
+		}
+	},
+    ["thief"] = 
+	{name = {
+		"unhat [args2]", 
+		"trail [args2] black", 
+		"paint [args2] black", 
+		"hat [args2] 20642008", 
+		"hat [args2] 4855031321", 
+		"hat [args2] 4904891637", 
+		"shirt [args2] 4656776376", 
+		"pants [args2] 129459077", 
+		"hat [args2] 4531231804"
+		}
+	}
 
 }
 
