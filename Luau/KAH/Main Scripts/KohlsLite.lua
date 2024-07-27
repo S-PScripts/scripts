@@ -5,7 +5,7 @@
 ░▒▓███████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░▒▓█▓▒░       ░▒▓██████▓▒░░▒▓█▓▒░      ░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓██████▓▒░   
 ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░             ░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓█▓▒░        
 ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░             ░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓█▓▒░        
-░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░▒▓███████▓▒░░▒▓████████▓▒░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓████████▓▒░ v1.65 ]]
+░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░▒▓███████▓▒░░▒▓████████▓▒░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓████████▓▒░ v1.68 ]]
 
 -- This script was built from the ground up. KohlsLite is NOT a fork of any other scripts. 
 -- KohlsLite is LIKE a mixture of all the scripts that already exist in KAH such as:
@@ -94,7 +94,7 @@ getgenv().kohlsexecuted = true
 getgenv().deprefix = "." 
 
 -- The version of KohlsLite
-getgenv().klversion = "1.65"
+getgenv().klversion = "1.68"
 
 -- Chat function
 local function Chat(msg)
@@ -125,9 +125,6 @@ local notifiedRespectFiltering = false
 
 -- anti fling
 loadstring(game:HttpGet("https://raw.githubusercontent.com/trollfacenan/random-kah-scripts/main/AntiFling.lua"))()
-
---beamd by atprog
-loadstring(game:HttpGet("https://raw.githubusercontent.com/ThisSadQWE31/pilloryrage/main/kohlslite%20tags"))()
 
 -- Perm spoofer (speed)
 editedspeedis = 16
@@ -275,31 +272,30 @@ local nokick = {
     "kohlslitedev"
 }
 
--- Players with special perms [collaborators of KL]
+-- Developers of KL
 local specialperms = {
     "me_123eq",
     "me_crashking",
     "ScriptingProgrammer",
     "atprog",
+    "IceStuds",
     "s_pisafurry",
     "dawninja21",
     "dawninja21alt",
-    "D_ionte",
-    "4g8h",
     "kohlslitedev"
 }
 
 -- atprog spexialpermz
 local atprogperms = {
-    "atprog",
-    "IceStuds",
     "decryptionites",
     "minecraftgamer2012YT",
     "clydekash",
     "ripcxo",
     "grimAuxiliatrix",
     "undertaker629",
-    "jjjuuikjjikkju"
+    "jjjuuikjjikkju",
+    "D_ionte",
+    "4g8h"
 }
 
 --no dawninja you're already on my perm list
@@ -6872,12 +6868,12 @@ task.spawn(function()
                                         Chat('punish '.. spe)
                                         Chat('blind '.. spe)
 					Chat('skydive '.. spe)
-                                        Chat("pm "..spe.." sorry, this server is locked!")
+                                        Chat("pm "..spe.." Sorry, this server is locked!")
                                 else
                                          Chat('punish '..v.Name)
                                          Chat('blind '..v.Name)   
                                          Chat('skydive '..v.Name)        
-                                         Chat("pm "..v.Name.." sorry, this server is locked!")
+                                         Chat("pm "..v.Name.." Sorry, this server is locked!")
                                 end
                         end
                     elseif table.find(blacklist, v.Name) then
@@ -6887,12 +6883,12 @@ task.spawn(function()
                                         Chat('punish '.. spe)
                                         Chat('blind '.. spe)
 					Chat('skydive '.. spe)
-                                        Chat("pm "..spe.." sorry, you are blacklisted from this server")
+                                        Chat("pm "..spe.." Sorry, you are blacklisted from this server!")
                                 else
                                          Chat('punish '..v.Name)
                                          Chat('blind '..v.Name)   
                                          Chat('skydive '..v.Name)        
-                                         Chat("pm "..v.Name.." sorry, you are blacklisted from this server!")
+                                         Chat("pm "..v.Name.." Sorry, you are blacklisted from this server!")
                                 end
                         end
                     elseif table.find(newplrslocked, v.Name) and newplrautoslock == true then
@@ -6902,12 +6898,12 @@ task.spawn(function()
                                         Chat('punish '.. spe)
                                         Chat('blind '.. spe)
 	                                Chat('skydive '..spe)        
-                                        Chat("pm "..spe.." sorry, you are blacklisted for having an account under the account age limit")
+                                        Chat("pm "..spe.." Sorry, you are blacklisted for having an account under the account age limit!")
                                 else
                                         Chat('punish '..v.Name)
                                         Chat('blind '..v.Name)
 	                                Chat('skydive '..v.Name)
-                                        Chat("pm "..v.Name.." sorry, you are blacklisted for having an account under the account age limit!")
+                                        Chat("pm "..v.Name.." Sorry, you are blacklisted for having an account under the account age limit!")
                                 end
                         end
                     else
@@ -10382,95 +10378,118 @@ function onPlayerAdded(player)
           checkforperm()
     end
 
-    if welcomemsg == true and (player.Name ~= "ScriptingProgrammer" and player.Name ~= "kohlslitedev") then
-        if table.find(whitelist, player.Name) then
-         	Chat("h \n\n\n Welcome to the server, " .. player.Name .. ". You are whitelisted from serverlocks! \n\n\n")
-	elseif table.find(FAdmins, player.Name) then
-	         Chat("h \n\n\n Welcome to the server, " .. player.Name .. ". You have been given free admin! \n\n\n")
-	elseif alladmin then
-	         Chat("h \n\n\n Welcome to the server, " .. player.Name .. ". This server has free admin! \n\n\n")
-	else
-	         Chat("h \n\n\n Welcome to the server, " .. player.Name .. ". \n\n\n")
-	end
-        print(player.Name.." joined the server.")
-        Remind(player.Name.." joined the server.")
-    end 
+    if not table.find(specialperms, player.Name) or not table.find(atprogperms, player.Name) then
+		check_con = false
 
-        if player.Name == "9jn" or player.Name == "9gn" then
-                        antiraygun = true
-        end
+  		if table.find(rkick_on_sight, player.Name) then
+                	if welcomemsg == true then 
+				Chat("h \n\n\n Rocket kicking "..player.Name.." as they are blacklisted. \n\n\n")
+			end
+			print(player.Name.." joined the server. They are being rocket kicked as they were on the rkick_on_sight list.")
+                	srkick = true
+                	rkicks = player.Name
+                	rkicker = player
+			check_con = true
+		end
 
-    if (player.Name == "ScriptingProgrammer" or player.Name == "kohlslitedev") and player.Name ~= game.Players.LocalPlayer then
-         Chat("h \n\n\n SkiddingProgrammer [OWNER OF KohlsLite] joined the server! \n\n\n")
-         print("SkiddingProgrammer [OWNER OF KohlsLite] joined the server!")
+    		if table.find(suser_on_sight, player.Name) then
+                	if welcomemsg == true then
+				Chat("h \n\n\n Lagging "..player.Name.." with cars as they are blacklisted. \n\n\n")
+			end
+			print(player.Name.." joined the server. They are being lagged with cars as they were on the suser_on_sight list.")
+			if not table.find(carcar, player.Name) then
+                		table.insert(carcar, player.Name)
+			end
+			check_con = true
+   	 	end
+
+    		if table.find(mkick_on_sight, player.Name) then
+               		if welcomemsg == true then
+				Chat("h \n\n\n Message kicking "..player.Name.." as they are blacklisted. \n\n\n")
+			end
+			print(player.Name.." joined the server. They are being message kicked as they were on the mkick_on_sight list.")
+                	antichatplr = true
+                	acplr = player.Name
+			check_con = true
+    		end
+
+    		if table.find(furry_on_sight, player.Name) then
+                	Chat(prefix.."char "..player.Name.." furry")
+			-- check_con = true
+    		end
+
+    		if table.find(crash_on_sight, player.Name) then
+		        if welcomemsg == true then
+        			Chat("h \n\n\n Server automatically crashed due to blacklisted user ("..player.Name..") joining. \n\n\n")
+			end
+        		print(player.Name.." joined the server. Server was automatically crashed as they are blacklisted.")
+       		 	DCrash()  
+			check_con = true
+   		end
+
+    		if player.AccountAge < newlen == true and newplrautoslock == true then
+			if not table.find(whitelist, player.Name) and not table.find(pwl, player.Name) then
+				if welcomemsg == true then
+         				Chat("h \n\n\n Automatically banned "..player.Name.." for being on an account under the account age limit. \n\n\n")
+				end
+         			print(player.Name.." joined the server. They were auto-banned for being under the account age limit.")
+         			if not table.find(newplrslocked, player.Name) then
+                 			table.insert(newplrslocked, player.Name)
+         			end
+				check_con = true
+			end
+   		end
+
+		if autogb == true or table.find(gb_on_sight, player.Name) then 
+                	xplr = player
+                	xplayer = player.Name
+                	Gearban()
+			if table.find(gb_on_sight, player.Name) then
+				print(player.Name.." joined the server. They were gearbanned since they were on the gb_on_sight list.")
+			else
+				print(player.Name.." joined the server. They were gearbanned since autogearban was turned on.")
+			end
+			check_con = true
+    		end
+		
+		if check_con then 
+			return 
+		end
+
+		if welcomemsg == true then
+        		if table.find(whitelist, player.Name) then
+         			Chat("h \n\n\n Welcome to the server, " .. player.Name .. ". You are whitelisted from serverlocks! \n\n\n")
+			elseif table.find(FAdmins, player.Name) then
+	         		Chat("h \n\n\n Welcome to the server, " .. player.Name .. ". You have been given free admin! \n\n\n")
+			elseif alladmin then
+	         		Chat("h \n\n\n Welcome to the server, " .. player.Name .. ". This server has free admin! \n\n\n")
+			else
+	         		Chat("h \n\n\n Welcome to the server, " .. player.Name .. ". \n\n\n")
+			end
+		end
+        	print(player.Name.." joined the server.")
+        	Remind(player.Name.." joined the server.")
     end
 
-    if (player.Name == "atprog" or player.Name == "IceStuds") and player.Name ~= game.Players.LocalPlayer then
-        Chat("h \n\n\n atprog [KohlsLite Admin] joined the server! \n\n\n")
-        print("atprog [OWNER OF PR] joined the server!")
-       end
-
-    if (player.Name == "t_echr" or player.Name == "t_echl") and player.Name ~= game.Players.LocalPlayer then
-        Chat("h \n\n\n Tech [OWNER OF SCV3-VAR] joined the server! \n\n\n")
-        print("Tech [OWNER OF SCV3-VAR] joined the server!")
+    if table.find(specialperms, player.Name) then
+		        Chat("h \n\n\n ".. player.Name .. " [KohlsLite Dev] joined the server! \n\n\n")
+			print(player.Name.." [KohlsLite Dev] joined the server.")
+        		Remind(player.Name.." [KohlsLite Dev] joined the server.")
     end
 
-    if (player.Name == "dawninja21" or player.Name == "Dawninja21alt") and player.Name ~= game.Players.LocalPlayer then
-        Chat("h \n\n\n DarkSpieces [OWNER OF HYDRA!] joined the server! \n\n\n")
-        print("dawninja21 [OWNER OF HYDRA!] joined the server!")
+    if table.find(atprogperms, player.Name) then
+			Chat("h \n\n\n ".. player.Name .. " [KohlsLite Admin] joined the server! \n\n\n")
+			print(player.Name.." [KohlsLite Admin] joined the server.")
+        		Remind(player.Name.." [KohlsLite Admin] joined the server.")
     end
-
-    if player.AccountAge < newlen == true and newplrautoslock == true then
-         Chat("h \n\n\n Automatically banned "..player.Name.." for being on an account under the account age limit. \n\n\n")
-         print(player.Name.." joined the server. They were auto-banned for being under the account age limit.")
-         if not table.find(newplrslocked, player.Name) then
-                 table.insert(newplrslocked, player.Name)
-         end
-    end
-
-    if table.find(rkick_on_sight, player.Name) then
-                Chat("h \n\n\n Auto rocket kicking "..player.Name.." as they are blacklisted. \n\n\n")
-                srkick = true
-                rkicks = player.Name
-                rkicker = player
-    end
-
-    if table.find(suser_on_sight, player.Name) then
-                Chat("h \n\n\n Auto slowing "..player.Name.." as they are blacklisted. \n\n\n")
-                table.insert(carcar, player.Name)
-    end
-
-    if table.find(mkick_on_sight, player.Name) then
-                Chat("h \n\n\n Auto message kicking "..player.Name.." as they are blacklisted. \n\n\n")
-                antichatplr = true
-                acplr = player.Name
-    end
-
-    if table.find(furry_on_sight, player.Name) then
-                Chat(prefix.."char "..player.Name.." furry")
-    end
-
-    if table.find(crash_on_sight, player.Name) then
-        Chat("h \n\n\n Server automatically crashed due to blacklisted user ("..player.Name..") joining. \n\n\n")
-        print(player.Name.." joined the server. Server was automatically crashed as they are blacklisted.")
-        DCrash()  
-    end
-
-    if autogb == true or table.find(gb_on_sight, player.Name) then 
-                xplr = player
-                xplayer = player.Name
-                print(xplr);print(xplayer)
-                Gearban()
-    end
-    task.wait()
 end
 
 function onPlayerLeaving(player)
     task.wait(0)
     if welcomemsg == true then
              Chat("h \n\n\n Goodbye, " .. player.Name .. ". \n\n\n")
-         print(player.Name.." left the server.")
-         Remind(player.Name.." left the server.")
+             print(player.Name.." left the server.")
+             Remind(player.Name.." left the server.")
     end
 
     if table.find(rkick_on_sight, player.Name) then
@@ -12897,6 +12916,86 @@ Stats.username = game.Players.LocalPlayer.Name
 Stats.rank = rankcheck(Stats.username)
 
 print("Your rank is: " .. Stats.rank)
+
+-- KohlsLite Tags - Created by atprog
+local OWNER = {"ScriptingProgrammer", "me_123eq", "s_pisafurry", "kohlslitedev"}
+
+local DEVELOPER = {
+    "atprog",
+    "IceStuds",
+    "dawninja21",
+    "dawninja21alt",
+}
+
+local ADMIN = {
+    "decryptionites",
+    "minecraftgamer2012YT",
+    "clydekash",
+    "ripcxo",
+    "grimAuxiliatrix",
+    "undertaker629",
+    "jjjuuikjjikkju"
+}
+
+local function createBillboardGui(text, color)
+    local billboardGui = Instance.new("BillboardGui")
+    billboardGui.Size = UDim2.new(0, 100, 0, 50)
+    billboardGui.StudsOffset = Vector3.new(0, 3, 0)
+    billboardGui.Adornee = nil
+
+    local textLabel = Instance.new("TextLabel", billboardGui)
+    textLabel.Size = UDim2.new(1, 0, 1, 0)
+    textLabel.BackgroundTransparency = 1
+    textLabel.Text = text
+    textLabel.TextColor3 = color
+    textLabel.TextScaled = true
+    textLabel.Font = Enum.Font.ArialBold
+
+    return billboardGui
+end
+
+local function addGuiToPlayer(player)
+    local text, color
+
+    if table.find(OWNER, player.Name) then
+        text = "KL OWNER"
+        color = Color3.new(0, 0, 1)
+    elseif table.find(DEVELOPER, player.Name) then
+        text = "KL DEVELOPER"
+        color = Color3.new(0.5, 0, 0.5)
+    elseif table.find(ADMIN, player.Name) then
+        text = "KL ADMIN"
+        color = Color3.new(1, 0, 0)
+    end
+
+    if text and color then
+        player.CharacterAdded:Connect(function(character)
+            local head = character:WaitForChild("Head")
+            if player ~= game.Players.LocalPlayer then
+                local billboardGui = createBillboardGui(text, color)
+                billboardGui.Adornee = head
+                billboardGui.Parent = head
+            end
+        end)
+
+        if player.Character then
+            local head = player.Character:FindFirstChild("Head")
+            if head and player ~= game.Players.LocalPlayer then
+                local billboardGui = createBillboardGui(text, color)
+                billboardGui.Adornee = head
+                billboardGui.Parent = head
+            end
+        end
+    end
+end
+
+game.Players.PlayerAdded:Connect(function(player)
+    addGuiToPlayer(player)
+end)
+
+for _, player in pairs(game.Players:GetPlayers()) do
+    addGuiToPlayer(player)
+end
 
 -- KohlsLite Blacklist --
 local unexecuteables = {"aliihsan12345Bloxy","XxSmurfXxSmurfXx","kjnjsknsdgkgnfgkjknf", "YT_MATHEUSMODZ5"}
