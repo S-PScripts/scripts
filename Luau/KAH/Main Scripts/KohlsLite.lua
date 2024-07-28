@@ -287,6 +287,8 @@ local specialperms = {
 
 -- atprog spexialpermz
 local atprogperms = {
+    "atprog",
+    "IceStuds",
     "decryptionites",
     "minecraftgamer2012YT",
     "clydekash",
