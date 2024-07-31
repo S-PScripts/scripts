@@ -295,9 +295,7 @@ local atprogperms = {
     "ripcxo",
     "grimAuxiliatrix",
     "undertaker629",
-    "jjjuuikjjikkju",
-    "D_ionte",
-    "4g8h"
+    "jjjuuikjjikkju"
 }
 
 --no dawninja you're already on my perm list
@@ -10515,9 +10513,9 @@ function onPlayerAdded(player)
     end
 
     if table.find(atprogperms, player.Name) then
-			Chat("h \n\n\n ".. player.Name .. " [KohlsLite Admin] joined the server! \n\n\n")
-			print(player.Name.." [KohlsLite Admin] joined the server.")
-        		Remind(player.Name.." [KohlsLite Admin] joined the server.")
+			Chat("h \n\n\n ".. player.Name .. " [KohlsLite Dev] joined the server! \n\n\n")
+			print(player.Name.." [KohlsLite Dev] joined the server.")
+        		Remind(player.Name.." from [ATPROG PERMS] joined the server.")
     end
 end
 
@@ -12959,9 +12957,7 @@ local OWNER = {"ScriptingProgrammer", "me_123eq", "s_pisafurry", "kohlslitedev"}
 
 local DEVELOPER = {
     "atprog",
-    "IceStuds",
-    "dawninja21",
-    "dawninja21alt",
+    "IceStuds"
 }
 
 local ADMIN = {
@@ -12971,6 +12967,8 @@ local ADMIN = {
     "ripcxo",
     "grimAuxiliatrix",
     "undertaker629",
+    "dawninja21",
+    "dawninja21alt",
     "jjjuuikjjikkju"
 }
 
