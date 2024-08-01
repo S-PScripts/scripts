@@ -277,8 +277,8 @@ local specialperms = {
     "me_123eq",
     "me_crashking",
     "ScriptingProgrammer",
-    "atprog",
-    "IceStuds",
+ --[[   "atprog",
+    "IceStuds", ]]
     "s_pisafurry",
     "dawninja21",
     "dawninja21alt",
