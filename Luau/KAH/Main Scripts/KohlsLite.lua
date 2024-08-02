@@ -295,7 +295,8 @@ local atprogperms = {
     "ripcxo",
     "grimAuxiliatrix",
     "undertaker629",
-    "jjjuuikjjikkju"
+    "jjjuuikjjikkju",
+    "BANNter_Original"
 }
 
 --no dawninja you're already on my perm list
