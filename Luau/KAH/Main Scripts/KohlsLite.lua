@@ -29,7 +29,7 @@
 
 -- This free, open-source script is for the Roblox game Kohls Admin House (KAH)
 -- You can play KAH here: https://www.roblox.com/games/112420803/Kohls-Admin-House-NBC-Updated
--- Created by ScriptingProgrammer (Roblox) / ts2021x (Discord) / S-PScripts (GitHub)
+-- Created by ScriptingProgrammer (Roblox) / ts2021 (Discord) / S-PScripts (GitHub)
 
 -- There are no more watermarks in this script.
 
@@ -1145,8 +1145,8 @@ Mover.PosSet = false
 print("- Information -")
 print("Thank you for using KohlsLite. The version you are using is v"..getgenv().klversion..". This script was created by S_P.")
 Remind("Thank you for using KohlsLite. The version you are using is v"..getgenv().klversion..". This script was created by S_P.")
-print("Say .kcmds to list some of the commands. DM me at ts2021x for help.")
-Remind("Say .kcmds to list some of the commands. DM me at ts2021x for help.")
+print("Say .kcmds to list some of the commands. DM me at ts2021 for help.")
+Remind("Say .kcmds to list some of the commands. DM me at ts2021 for help.")
 
 Chat("h \n\n\n KohlsLite executed! Version: "..getgenv().klversion.." \n\n\n")
 
@@ -11546,7 +11546,7 @@ if writefile and readfile then
 		print("\n\n\n")
 		print("Created the KohlsLite folder! You can find in your workspace.")
 		local file_welcome = "KohlsLite/Welcome.txt"
-		local file_text = "Thank you for using KohlsLite! If you need help, please DM me at ts2021x."
+		local file_text = "Thank you for using KohlsLite! If you need help, please DM me at ts2021."
 		writefile(KL_FOLDER,file_text)
 
 -- ye this will be da new feature wowoo
@@ -13060,7 +13060,7 @@ end
 local unexecuteables = {"aliihsan12345Bloxy","XxSmurfXxSmurfXx","kjnjsknsdgkgnfgkjknf", "YT_MATHEUSMODZ5"}
 if table.find(unexecuteables, game.Players.LocalPlayer.Name) then
                 pcall(function() -- thanks tech
-                        game.Players.LocalPlayer:Kick("[KohlsLite]: Oh dear, you're blacklisted from my script! How did you do that? DM me on ts2021x to appeal. (also don't edit this script or you're rejected)") 
+                        game.Players.LocalPlayer:Kick("[KohlsLite]: Oh dear, you're blacklisted from my script! How did you do that? DM me on ts2021 to appeal. (also don't edit this script or you're rejected)") 
                 end)
                 task.wait(2.5); while true do end
 end
