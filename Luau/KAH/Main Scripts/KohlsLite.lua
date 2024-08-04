@@ -210,8 +210,8 @@ local pwl = {
     "t_echr",
     "BANNter_Original",
     "witnessfox22",
-    "IceStuds",
-    "atprog",
+  --  "IceStuds",
+   -- "atprog",
     "dawninja21",
     "Dawninja21alt",
     "Di33le2",
@@ -257,8 +257,8 @@ local nokick = {
     "t_echr",
     "BANNter_Original",
     "witnessfox22",
-    "IceStuds",
-    "atprog",
+  --  "IceStuds",
+  --  "atprog",
     "dawninja21",
     "Dawninja21alt",
     "Di33le2",
@@ -310,8 +310,8 @@ local specialperms = {
 
 -- atprog spexialpermz
 local atprogperms = {
-    "atprog",
-    "IceStuds",
+  --  "atprog",
+  --  "IceStuds",
     "decryptionites",
     "minecraftgamer2012YT",
     "clydekash",
@@ -340,8 +340,8 @@ local pgwl = {
     "t_echr",
     "BANNter_Original",
     "witnessfox22",
-    "IceStuds",
-    "atprog",
+  --  "IceStuds",
+   -- "atprog",
     "dawninja21",
     "Dawninja21alt",
     "Di33le2",
@@ -12980,8 +12980,8 @@ print("Your rank is: " .. Stats.rank)
 local OWNER = {"ScriptingProgrammer", "me_123eq", "s_pisafurry", "kohlslitedev"}
 
 local DEVELOPER = {
-    "atprog",
-    "IceStuds"
+  --  "atprog",
+ --   "IceStuds"
 }
 
 local ADMIN = {
