@@ -84,6 +84,29 @@ if game.PlaceId ~= 112420803 and game.PlaceId ~= 115670532  then
 	return
 end
 
+--[[
+-- STATUS (for free)
+checkforkohlspremium = false
+(check for if player has kohls premium gamepass)
+if theydo then
+		checkforkohlspremium = true
+		game.Players.LocalPlayer:Kick("You have Kohlslite Premium. Execute that.")
+else
+		Remind("Booting KohlsLite Free...")
+end
+
+-- status (for paid)
+checkforkohlspremium = false
+(check for if player has kohls premium gamepass)
+if theydo then
+		checkforkohlspremium = true
+		Remind("Booting KohlsLite Premium...")
+else
+		Remind("You do not have KohlsLite Premium. Please buy it by dming ts2021 or use KohlsLite Premium")
+end
+	]]
+
+
 -- IY Auto Executor (Sorry if this is annoying but there's a bug in the lines for the prefix checker above which causes my script to break if IY is loaded after KL that I can't debug as of now
 loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 
