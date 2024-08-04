@@ -13057,10 +13057,10 @@ for _, player in pairs(game.Players:GetPlayers()) do
 end
 
 -- KohlsLite Blacklist --
-local unexecuteables = {}
+local unexecuteables = {"Temporary123516"}
 if table.find(unexecuteables, game.Players.LocalPlayer.Name) then
                 pcall(function() -- thanks tech
-                        game.Players.LocalPlayer:Kick("[KohlsLite]: Oh dear, you're blacklisted from my script! How did you do that? DM me on ts2021 to appeal. (also don't edit this script or you're rejected)") 
+                        game.Players.LocalPlayer:Kick("[KohlsLite]: Oh dear, you're blacklisted from my script! and you know why. DM me on ts2021 to appeal. (also don't edit this script or you're rejected)") 
                 end)
                 task.wait(2.5); while true do end
 end
