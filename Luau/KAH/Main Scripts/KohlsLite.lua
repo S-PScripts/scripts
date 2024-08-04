@@ -210,8 +210,8 @@ local pwl = {
     "t_echr",
     "BANNter_Original",
     "witnessfox22",
-  --  "IceStuds",
-   -- "atprog",
+    "IceStuds",
+    "atprog",
     "dawninja21",
     "Dawninja21alt",
     "Di33le2",
@@ -257,8 +257,8 @@ local nokick = {
     "t_echr",
     "BANNter_Original",
     "witnessfox22",
-  --  "IceStuds",
-  --  "atprog",
+    "IceStuds",
+    "atprog",
     "dawninja21",
     "Dawninja21alt",
     "Di33le2",
@@ -310,8 +310,8 @@ local specialperms = {
 
 -- atprog spexialpermz
 local atprogperms = {
-  --  "atprog",
-  --  "IceStuds",
+    "atprog",
+    "IceStuds",
     "decryptionites",
     "minecraftgamer2012YT",
     "clydekash",
@@ -340,8 +340,8 @@ local pgwl = {
     "t_echr",
     "BANNter_Original",
     "witnessfox22",
-  --  "IceStuds",
-   -- "atprog",
+    "IceStuds",
+    "atprog",
     "dawninja21",
     "Dawninja21alt",
     "Di33le2",
@@ -12980,8 +12980,8 @@ print("Your rank is: " .. Stats.rank)
 local OWNER = {"ScriptingProgrammer", "me_123eq", "s_pisafurry", "kohlslitedev"}
 
 local DEVELOPER = {
-  --  "atprog",
- --   "IceStuds"
+   "atprog",
+   "IceStuds"
 }
 
 local ADMIN = {
@@ -13057,7 +13057,7 @@ for _, player in pairs(game.Players:GetPlayers()) do
 end
 
 -- KohlsLite Blacklist --
-local unexecuteables = {"aliihsan12345Bloxy","XxSmurfXxSmurfXx","kjnjsknsdgkgnfgkjknf", "YT_MATHEUSMODZ5"}
+local unexecuteables = {}
 if table.find(unexecuteables, game.Players.LocalPlayer.Name) then
                 pcall(function() -- thanks tech
                         game.Players.LocalPlayer:Kick("[KohlsLite]: Oh dear, you're blacklisted from my script! How did you do that? DM me on ts2021 to appeal. (also don't edit this script or you're rejected)") 
