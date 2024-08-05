@@ -6237,16 +6237,44 @@ Commands required: rocket]])
     end      
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'autochar' then
-	local args = string.split(msg, " ")
-        autochar = true
-	autocharid = args[2] -- lazy
-        Remind("Auto char is on!")
+  	local args = string.split(msg, " ")
+        if args[2] == "me" then
+                autocharme = true
+		oname = args[3]
+		autocharid = game.Players:GetUserIdFromNameAsync(oname)
+                Remind("Auto char is on for you!")
+        elseif args[2] == "others" then
+                autocharall = true
+		oname = args[3]
+		autocharid = game.Players:GetUserIdFromNameAsync(oname)
+                Remind("Auto char is on for others!")
+        elseif args[2] == "all" then
+                autocharme = true
+                autocharall = true
+		oname = args[3]
+		autocharid = game.Players:GetUserIdFromNameAsync(oname)
+                Remind("Auto char is on for everyone!")
+        else
+                Remind("Invalid argument: Must be me, others, or all")
+        end       
     end
 
     if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unautochar' then
-        autochar = false
-        Remind("Auto char is off!")
-    end    
+  	local args = string.split(msg, " ")
+        if args[2] == "me" then
+                autocharme = false
+                Remind("Auto char is off for you!")
+        elseif args[2] == "others" then
+                autocharall = false
+                Remind("Auto char is off for others!")
+        elseif args[2] == "all" then
+                autocharme = false
+                autocharall = false
+                Remind("Auto char is off for everyone!")
+        else
+                Remind("Invalid argument: Must be me, others, or all")
+        end       
+    end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'blyat' then
                 thesecretvariable = false
@@ -7177,6 +7205,12 @@ connections[#connections + 1] =
             end
         end
 
+	if autocharme == true then 
+                if autocharid ~= game.Players.LocalPlayer.CharacterAppearanceId then
+                                                      Chat('char me '..autocharid)
+                else end
+        end
+
         if antis.antiblind == true then
             for i, v in pairs(lp.PlayerGui:GetDescendants()) do
                 if v.Name == "EFFECTGUIBLIND" then
@@ -7490,7 +7524,7 @@ connections[#connections + 1] =
                 for i, v in ipairs(game.Players:GetPlayers()) do
                         if v.Name ~= game.Players.LocalPlayer.Name then
 
-         		        if autochar == true then 
+         		        if autocharall == true then 
                                         if autocharid ~= v.CharacterAppearanceId then
                                                       Chat('char '..v.Name..' '..autocharid)
                                         else end
