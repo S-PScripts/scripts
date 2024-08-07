@@ -246,7 +246,8 @@ local pwl = {
     "undertaker629",
     "Eggkid7",
     "4g8h",
-    "kohlslitedev"
+    "kohlslitedev",
+    "Palamode"
 }
 
 -- Players you cannot kick
@@ -292,7 +293,8 @@ local nokick = {
     "s_pisafurry", 
     "YT_MATHEUSMODZ5",
     "4g8h",
-    "kohlslitedev"
+    "kohlslitedev",
+    "Palamode"
 }
 
 -- Developers of KL
@@ -319,15 +321,9 @@ local atprogperms = {
     "grimAuxiliatrix",
     "undertaker629",
     "jjjuuikjjikkju",
-    "BANNter_Original"
+    "BANNter_Original",
+    "Palamode"
 }
-
---no dawninja you're already on my perm list
-
--- New users get blacklisted (prevent crashers)
-local newplrslocked = {} -- don't edit!!
-local newplrautoslock = true -- if new players under 21 days join they get blacklisted
-local newlen = 21 -- control what is considered as a new account
 
 -- Users that can use blacklisted gears (or gears when antigear is on)
 local GWhitelisted = {}
@@ -376,8 +372,13 @@ local pgwl = {
     "undertaker629",
     "Eggkid7",
     "4g8h",
-    "kohlslitedev"
+    "kohlslitedev",
+    "Palamode"
 }
+-- New users get blacklisted (prevent crashers)
+local newplrslocked = {} -- don't edit!!
+local newplrautoslock = true -- if new players under 21 days join they get blacklisted
+local newlen = 21 -- control what is considered as a new account
 
 -- Serverlock
 local slockenabled = false
