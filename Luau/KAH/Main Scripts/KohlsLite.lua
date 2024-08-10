@@ -247,7 +247,8 @@ local pwl = {
     "Eggkid7",
     "4g8h",
     "kohlslitedev",
-    "Palamode"
+    "Palamode",
+    "whatveidone"
 }
 
 -- Players you cannot kick
@@ -294,7 +295,8 @@ local nokick = {
     "YT_MATHEUSMODZ5",
     "4g8h",
     "kohlslitedev",
-    "Palamode"
+    "Palamode",
+    "whatveidone"
 }
 
 -- Developers of KL
@@ -372,7 +374,8 @@ local pgwl = {
     "Eggkid7",
     "4g8h",
     "kohlslitedev",
-    "Palamode"
+    "Palamode",
+    "whatveidone"
 }
 -- New users get blacklisted (prevent crashers)
 local newplrslocked = {} -- don't edit!!
