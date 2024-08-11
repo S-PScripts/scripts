@@ -117,7 +117,7 @@ getgenv().kohlsexecuted = true
 getgenv().deprefix = "." 
 
 -- The version of KohlsLite
-getgenv().klversion = "who actually cares about the version number?"
+getgenv().klversion = "hi guys"
 
 -- Chat function
 local function Chat(msg)
@@ -1215,8 +1215,8 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                 end
         end
 
-	if string.sub(msg:lower(), 1,  7) == prefix..'?sneban' then
-	       local snebanned = string.sub(msg:lower(), #prefix + 9)
+	if string.sub(msg:lower(), 1, 7) == prefix..'?sneban' then
+	       local snebanned = string.sub(msg:lower(), 9)
                Speak("You have been SNEBANNED!!!")
 	       task.wait(1)
 	       Chat("punish "..snebanned)
