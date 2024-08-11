@@ -129,11 +129,13 @@ local function Speak(msg)
     game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(msg, "All")
 end
 
+local prefix 
+
 -- Prefix checker
 if getgenv().theprefix then
-	local prefix = getgenv().theprefix
+	prefix = getgenv().theprefix
 else
-	local prefix = getgenv().deprefix
+	prefix = getgenv().deprefix
 end
 
 -- Defaults (you can change these)
