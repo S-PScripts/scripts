@@ -117,7 +117,7 @@ getgenv().kohlsexecuted = true
 getgenv().deprefix = "." 
 
 -- The version of KohlsLite
-getgenv().klversion = "hi guys"
+getgenv().klversion = "calcium plus"
 
 -- Chat function
 local function Chat(msg)
@@ -1213,14 +1213,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                 else 
                         Remind("Sorry, you need persons for this command!")
                 end
-        end
-
-	if string.sub(msg:lower(), 1, 7) == prefix..'?sneban' then
-	       local snebanned = string.sub(msg:lower(), 9)
-               Speak("You have been SNEBANNED!!!")
-	       task.wait(1)
-	       Chat("punish "..snebanned)
-	       Chat("blind "..snebanned)
         end
 		
         if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'cmdpi' then -- well, you need that visualiser, do you?
@@ -4020,6 +4012,10 @@ Commands required: rocket]])
 
     if string.sub(msg:lower(), 1, 7) == 'cprefix' then
         Remind("Your current prefix is "..prefix)
+    end
+
+    if string.sub(msg:lower(), 1, 6) == 'sneban' then
+           Speak("I'm gonna say the s word. You are a filthy snekkur ngl")
     end
 
    if string.sub(msg:lower(), 1, #prefix + 4) == prefix.."pmap" then
