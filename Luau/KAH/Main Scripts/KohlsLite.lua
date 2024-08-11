@@ -117,7 +117,7 @@ getgenv().kohlsexecuted = true
 getgenv().deprefix = "." 
 
 -- The version of KohlsLite
-getgenv().klversion = "1.7"
+getgenv().klversion = "who actually cares about the version number?"
 
 -- Chat function
 local function Chat(msg)
@@ -1196,6 +1196,33 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		   Remind("Executed Infinite Yield (IY).")
         end
 
+		-- quiving
+	if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'myvis' then
+                if haspersons == true then
+                        Remind("The prefix is -")
+                        GExecute("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/Main%20Scripts/MyVisualiser.lua")
+                else 
+                        Remind("Sorry, you need persons for this command!")
+                end
+        end 
+
+        if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'mydraw' then
+                if haspersons == true then
+                        Remind("The prefix is -")
+                        GExecute("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/Main%20Scripts/MyVisualiser.lua")
+                else 
+                        Remind("Sorry, you need persons for this command!")
+                end
+        end
+
+	if string.sub(msg:lower(), 1,  7) == prefix..'?sneban' then
+	       local snebanned = string.sub(msg:lower(), #prefix + 9)
+               Speak("You have been SNEBANNED!!!")
+	       task.wait(1)
+	       Chat("punish "..snebanned)
+	       Chat("blind "..snebanned)
+        end
+		
         if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'cmdpi' then -- well, you need that visualiser, do you?
                 GExecute("https://raw.githubusercontent.com/quivings/KAH/main/CMD%20v3.lua")
 		Remind("Executed CMD PI/V3. Created by quiving. CMD PI/V3 doesn't work for mobile executors by the way.")
