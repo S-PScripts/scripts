@@ -314,7 +314,7 @@ local specialperms = {
     "kohlslitedev"
 }
 
--- atprog spexialpermz
+-- atprog spexialpermz (Perms for non-developers)
 local atprogperms = {
     "atprog",
     "IceStuds",
@@ -325,7 +325,8 @@ local atprogperms = {
     "grimAuxiliatrix",
     "undertaker629",
     "jjjuuikjjikkju",
-    "BANNter_Original"
+    "BANNter_Original",
+    "Palamode"
 }
 
 -- Users that can use blacklisted gears (or gears when antigear is on)
