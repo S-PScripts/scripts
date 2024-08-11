@@ -8319,6 +8319,11 @@ v.Chatted:Connect(function(msg)
                         Chat("h \n\n\n "..v.Name..", btools do not exist anymore! \n\n\n")
                 end
 
+		if (string.sub(msg:lower(), 0, 3) == "f3x" or string.sub(msg:lower(), 0, 4) == ":f3x" or string.sub(msg:lower(), 0, 4) == ";f3x") and v.Name ~= game.Players.LocalPlayer.Name then
+                        print(v.Name..' thought f3x existed.')
+                        Chat("h \n\n\n "..v.Name..", f3x do not exist! \n\n\n")
+                end
+		
                 if (string.sub(msg:lower(), 0, 3) == "sit" or string.sub(msg:lower(), 0, 4) == ":sit") and v.Name ~= game.Players.LocalPlayer.Name then
                    if antiattach then
                      Chat("reload "..v.Name)
