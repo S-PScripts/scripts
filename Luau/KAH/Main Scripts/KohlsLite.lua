@@ -212,8 +212,8 @@ local pwl = {
     "witnessfox22",
     "IceStuds",
     "atprog",
-    "dawninja21",
-    "Dawninja21alt",
+  --  "dawninja21",
+  --  "Dawninja21alt",
     "Di33le2",
     "darkmadeboy",
     "Dekryptionite",
@@ -261,8 +261,8 @@ local nokick = {
     "witnessfox22",
     "IceStuds",
     "atprog",
-    "dawninja21",
-    "Dawninja21alt",
+  --  "dawninja21",
+ --   "Dawninja21alt",
     "Di33le2",
     "darkmadeboy",
     "Dekryptionite",
@@ -307,8 +307,8 @@ local specialperms = {
  --[[   "atprog",
     "IceStuds", ]]
     "s_pisafurry",
-    "dawninja21",
-    "dawninja21alt",
+   -- "dawninja21",
+  --  "dawninja21alt",
     "kohlslitedev"
 }
 
@@ -339,8 +339,8 @@ local pgwl = {
     "witnessfox22",
     "IceStuds",
     "atprog",
-    "dawninja21",
-    "Dawninja21alt",
+   -- "dawninja21",
+ --   "Dawninja21alt",
     "Di33le2",
     "darkmadeboy",
     "Dekryptionite",
@@ -13028,8 +13028,8 @@ local ADMIN = {
     "ripcxo",
     "grimAuxiliatrix",
     "undertaker629",
-    "dawninja21",
-    "dawninja21alt",
+   -- "dawninja21",
+  --  "dawninja21alt",
     "jjjuuikjjikkju"
 }
 
