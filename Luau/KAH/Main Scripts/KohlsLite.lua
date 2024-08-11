@@ -108,7 +108,7 @@ end
 
 
 -- IY Auto Executor (Sorry if this is annoying but there's a bug in the lines for the prefix checker above which causes my script to break if IY is loaded after KL that I can't debug as of now
-loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+--loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 
 -- Don't touch this!
 getgenv().kohlsexecuted = true
@@ -131,9 +131,9 @@ end
 
 -- Prefix checker
 if getgenv().theprefix then
-	prefix = getgenv().theprefix
+	local prefix = getgenv().theprefix
 else
-	prefix = getgenv().deprefix
+	local prefix = getgenv().deprefix
 end
 
 -- Defaults (you can change these)
