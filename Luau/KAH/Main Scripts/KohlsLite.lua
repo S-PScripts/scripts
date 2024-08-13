@@ -198,7 +198,8 @@ local blacklist = {
     "cihanahmet1670",
     "Fu14r",
     "bbgurrrrl",
-    "He4rt_4"
+    "He4rt_4",
+    "aliihsan12345Bloxy"
 }
 
 -- Users not affected by serverlock
