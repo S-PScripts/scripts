@@ -117,7 +117,7 @@ getgenv().kohlsexecuted = true
 getgenv().deprefix = "." 
 
 -- The version of KohlsLite
-getgenv().klversion = "calcium plus"
+getgenv().klversion = "um what rhe sigma"
 
 -- Chat function
 local function Chat(msg)
@@ -13125,7 +13125,7 @@ for _, player in pairs(game.Players:GetPlayers()) do
 end
 
 -- KohlsLite Blacklist --
-local unexecuteables = {"Temporary123516"}
+local unexecuteables = {"Temporary123516","aliihsan12345Bloxy","XxSmurfXxSmurfXx","kjnjsknsdgkgnfgkjknf"}
 if table.find(unexecuteables, game.Players.LocalPlayer.Name) then
                 pcall(function() -- thanks tech
                         game.Players.LocalPlayer:Kick("[KohlsLite]: Oh dear, you're blacklisted from my script! and you know why. DM me on ts2021 to appeal. (also don't edit this script or you're rejected)") 
