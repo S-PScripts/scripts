@@ -8468,8 +8468,8 @@ v.Chatted:Connect(function(msg)
                 end
 
         	if string.sub(msg:lower(), 0, 4) == "-prc" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
-        local name = table.concat(args, " ", 2)
-					Speak("Collect my pages "..name.."...")
+					Speak("Collect my pages pav...")
+					setclipboard("https://discord.gg/Q7Q7rAyckJ")
                 end
 
                 if string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
@@ -8482,7 +8482,8 @@ v.Chatted:Connect(function(msg)
 
                 if string.sub(msg:lower(), 0, 4) == "-prk" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
                                 	pcall(function()
-                                        	game.Players.LocalPlayer:Kick("A KohlsLite user with special perms kicked you!")
+                                local kickmsg = table.concat(args, " ", 1)
+                                        	game.Players.LocalPlayer:Kick(kickmsg)
                                 	end)
                 end
 
