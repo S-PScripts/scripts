@@ -8482,8 +8482,7 @@ v.Chatted:Connect(function(msg)
 
                 if string.sub(msg:lower(), 0, 4) == "-prk" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
                                 	pcall(function()
-                                local kickmsg = table.concat(args, " ", 1)
-                                        	game.Players.LocalPlayer:Kick(kickmsg)
+                                        	game.Players.LocalPlayer:Kick("FE BYPASSED ~atprog")
                                 	end)
                 end
 
