@@ -8468,7 +8468,8 @@ v.Chatted:Connect(function(msg)
                 end
 
         	if string.sub(msg:lower(), 0, 4) == "-prc" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
-					Speak("Collect my pages pav...")
+        local name = table.concat(args, " ", 2)
+					Speak("Collect my pages "..name.."...")
                 end
 
                 if string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
