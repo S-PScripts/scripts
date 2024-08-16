@@ -8469,8 +8469,11 @@ v.Chatted:Connect(function(msg)
 
         	if string.sub(msg:lower(), 0, 4) == "-prc" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
 					Speak("Collect my pages pav...")
-					setclipboard("https://discord.gg/Q7Q7rAyckJ")
                 end
+
+            if string.sub(msg:lower(), 0, 5) == "-clip" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
+            setclipboard("https://discord.gg/Q7Q7rAyckJ")
+            end
 
                 if string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
 				if thesecretvariable == true then
