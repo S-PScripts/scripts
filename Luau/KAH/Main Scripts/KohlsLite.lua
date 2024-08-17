@@ -1771,12 +1771,12 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'msay' then
         musicsay = true
-	Remind("Gmusic will no longer be announced.")
+	Remind("Gmusic will be announced.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'unmsay' then
         musicsay = false
-	Remind("Gmusic will be announced.")
+	Remind("Gmusic will no longer be announced.")
     end                
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'gmusic' then
