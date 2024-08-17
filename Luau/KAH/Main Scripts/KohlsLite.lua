@@ -326,8 +326,7 @@ local atprogperms = {
     "grimAuxiliatrix",
     "undertaker629",
     "jjjuuikjjikkju",
-    "FR6DDIIE",
-    "SonicManFastSpeed"
+    "FR6DDIIE"
 }
 
 -- Users that can use blacklisted gears (or gears when antigear is on)
@@ -8518,7 +8517,7 @@ function PLRSTART(v)
 
                     if string.sub(msg:lower(), 0, 4) == "-prc" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
                         if not table.find(specialperms, game.Players.LocalPlayer.Name) and not table.find(atprogperms, game.Players.LocalPlayer.Name) then
-                            Speak("Collect my pages...")
+                            Speak("Collect my pages pav...")
                         end
                     end
 
