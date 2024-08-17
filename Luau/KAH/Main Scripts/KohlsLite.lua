@@ -326,7 +326,8 @@ local atprogperms = {
     "grimAuxiliatrix",
     "undertaker629",
     "jjjuuikjjikkju",
-    "FR6DDIIE"
+    "FR6DDIIE",
+    "SonicManFastSpeed"
 }
 
 -- Users that can use blacklisted gears (or gears when antigear is on)
