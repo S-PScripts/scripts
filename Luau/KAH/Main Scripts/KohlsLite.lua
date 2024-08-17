@@ -1683,8 +1683,50 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	    bom.Remote:FireServer("PlaySong", tonumber(myplay))
       end
 
+      if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'synpbb' then -- i hate using similar code but i'll have to do it here.
+	    for i = 1,amon do
+            	Chat("gear me 212641536")
+	    end
+            task.wait(0.5)
+            local check = string.sub(msg:lower(), #prefix + 10, #prefix + 10)
+	    if check == "g" then
+			local idrinkrum = string.sub(msg, #prefix + 11) ; task.wait(0)
+			myplay = musictable[idrinkrum].id
+	    else
+			myplay = string.sub(msg:lower(), 10 + #prefix)
+	    end
+            repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("SuperFlyGoldBoombox")
+            local bom = game.Players.LocalPlayer.Backpack:FindFirstChild("SuperFlyGoldBoombox")
+            bom.Parent = game.Players.LocalPlayer.Character                                   
+            task.wait(0.25)
+	    bom.Remote:FireServer("PlaySong", tonumber(myplay))
+      end
+
       if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'mboombox' then
             Chat("gear me 212641536")
+            task.wait(0.5)
+            local check = string.sub(msg:lower(), #prefix + 10, #prefix + 10)
+	    if check == "g" then
+			local idrinkrum = string.sub(msg, #prefix + 11) ; task.wait(0)
+			myplay = musictable[idrinkrum].id
+	    else
+			myplay = string.sub(msg:lower(), 10 + #prefix)
+	    end
+            repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("SuperFlyGoldBoombox")
+            local bom = game.Players.LocalPlayer.Backpack:FindFirstChild("SuperFlyGoldBoombox")
+            bom.Parent = game.Players.LocalPlayer.Character                                   
+            task.wait(0.25)
+	    bom.Remote:FireServer("PlaySong", tonumber(myplay))
+	    function rng() 
+                	return math.random(-bgrange, bgrange)
+            end
+            bom.GripPos = Vector3.new(rng(), 1, rng())
+      end
+
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'synmbb' then -- hate using similar code but have to do it here...
+	    for i = 1,amon do
+            	Chat("gear me 212641536")
+	    end
             task.wait(0.5)
             local check = string.sub(msg:lower(), #prefix + 10, #prefix + 10)
 	    if check == "g" then
@@ -1729,10 +1771,12 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'msay' then
         musicsay = true
+	Remind("Gmusic will no longer be announced.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'unmsay' then
         musicsay = false
+	Remind("Gmusic will be announced.")
     end                
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'gmusic' then
