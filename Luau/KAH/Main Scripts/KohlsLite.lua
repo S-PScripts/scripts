@@ -117,7 +117,7 @@ getgenv().kohlsexecuted = true
 getgenv().deprefix = "." 
 
 -- The version of KohlsLite
-getgenv().klversion = "knocks is the best"
+getgenv().klversion = "no pc edited buy"
 
 -- Chat function
 local function Chat(msg)
@@ -1726,9 +1726,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'synmbb' then -- hate using similar code but have to do it here...
 	    for i = 1,amon do
             	Chat("gear me 212641536")
-	    end
-            task.wait(0.5)
-            local check = string.sub(msg:lower(), #prefix + 8, #prefix + 8)
+	    local check = string.sub(msg:lower(), #prefix + 8, #prefix + 8)
 	    if check == "g" then
 			local idrinkrum = string.sub(msg, #prefix + 9) ; task.wait(0)
 			myplay = musictable[idrinkrum].id
@@ -1744,6 +1742,24 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                 	return math.random(-bgrange, bgrange)
             end
             bom.GripPos = Vector3.new(rng(), 1, rng())
+	    end
+       --[[     task.wait(0.5)
+            local check = string.sub(msg:lower(), #prefix + 8, #prefix + 8)
+	    if check == "g" then
+			local idrinkrum = string.sub(msg, #prefix + 9) ; task.wait(0)
+			myplay = musictable[idrinkrum].id
+	    else
+			myplay = string.sub(msg:lower(), 8 + #prefix)
+	    end
+            repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("SuperFlyGoldBoombox")
+            local bom = game.Players.LocalPlayer.Backpack:FindFirstChild("SuperFlyGoldBoombox")
+            bom.Parent = game.Players.LocalPlayer.Character                                   
+            task.wait(0.25)
+	    bom.Remote:FireServer("PlaySong", tonumber(myplay))
+	    function rng() 
+                	return math.random(-bgrange, bgrange)
+            end
+            bom.GripPos = Vector3.new(rng(), 1, rng()) ]]
       end
 
       if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'bgrange' then
