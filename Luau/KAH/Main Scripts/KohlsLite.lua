@@ -1688,12 +1688,12 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
             	Chat("gear me 212641536")
 	    end
             task.wait(0.5)
-            local check = string.sub(msg:lower(), #prefix + 10, #prefix + 10)
+            local check = string.sub(msg:lower(), #prefix + 8, #prefix + 8)
 	    if check == "g" then
-			local idrinkrum = string.sub(msg, #prefix + 11) ; task.wait(0)
+			local idrinkrum = string.sub(msg, #prefix + 9) ; task.wait(0)
 			myplay = musictable[idrinkrum].id
 	    else
-			myplay = string.sub(msg:lower(), 10 + #prefix)
+			myplay = string.sub(msg:lower(), 8 + #prefix)
 	    end
             repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("SuperFlyGoldBoombox")
             local bom = game.Players.LocalPlayer.Backpack:FindFirstChild("SuperFlyGoldBoombox")
@@ -1728,12 +1728,12 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
             	Chat("gear me 212641536")
 	    end
             task.wait(0.5)
-            local check = string.sub(msg:lower(), #prefix + 10, #prefix + 10)
+            local check = string.sub(msg:lower(), #prefix + 8, #prefix + 8)
 	    if check == "g" then
-			local idrinkrum = string.sub(msg, #prefix + 11) ; task.wait(0)
+			local idrinkrum = string.sub(msg, #prefix + 9) ; task.wait(0)
 			myplay = musictable[idrinkrum].id
 	    else
-			myplay = string.sub(msg:lower(), 10 + #prefix)
+			myplay = string.sub(msg:lower(), 8 + #prefix)
 	    end
             repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("SuperFlyGoldBoombox")
             local bom = game.Players.LocalPlayer.Backpack:FindFirstChild("SuperFlyGoldBoombox")
