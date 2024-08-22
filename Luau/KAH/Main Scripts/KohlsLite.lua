@@ -5,7 +5,7 @@
 ░▒▓███████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░▒▓█▓▒░       ░▒▓██████▓▒░░▒▓█▓▒░      ░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓██████▓▒░   
 ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░             ░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓█▓▒░        
 ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░             ░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓█▓▒░        
-░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░▒▓███████▓▒░░▒▓████████▓▒░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓████████▓▒░ v1.68 ]]
+░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░▒▓███████▓▒░░▒▓████████▓▒░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓████████▓▒░ v1.7 ]]
 
 -- This script was built from the ground up. KohlsLite is NOT a fork of any other scripts. 
 -- KohlsLite is LIKE a mixture of all the scripts that already exist in KAH such as:
@@ -25,7 +25,7 @@
 
 -- Some of the code here are from other creators (and I credited) but quite a lot is my own and also some commands can't really be changed codewise that much
 
--- This script is not discontinued but is currently dormant. Ncontrol will be added during the summer holidays
+-- This script is not discontinued but is currently dormant.
 
 -- This free, open-source script is for the Roblox game Kohls Admin House (KAH)
 -- You can play KAH here: https://www.roblox.com/games/112420803/Kohls-Admin-House-NBC-Updated
@@ -84,6 +84,7 @@ if game.PlaceId ~= 112420803 and game.PlaceId ~= 115670532  then
 	return
 end
 
+-- concept (unused)
 --[[
 -- STATUS (for free)
 checkforkohlspremium = false
@@ -116,7 +117,7 @@ getgenv().kohlsexecuted = true
 getgenv().deprefix = "." 
 
 -- The version of KohlsLite
-getgenv().klversion = "no pc edited buy"
+getgenv().klversion = "1.7"
 
 -- Chat function
 local function Chat(msg)
@@ -408,7 +409,7 @@ crash_on_sight = {"aliihsan12345Bloxy"} -- crash server when player joins
 mkick_on_sight = {"He4rt_4","hellokitty2kute"} -- kick player with pm spam when they join ONLY WORKS WITH ONE PLAYER
 suser_on_sight = {} -- slow a user when they join with car gear ONLY WORKS WITH ONE PLAYER
 furry_on_sight = {"jhjssikeksms"} -- nine jay n
-gb_on_sight = {}
+gb_on_sight = {} -- gearban upon a user joining
 
 -- Variables for moving
 local movestatus = false
@@ -418,9 +419,10 @@ Pads = Admin:WaitForChild("Pads"):GetChildren()
 
 local musicplay
 
--- Thanks to Dizzy for this idea of writing my musiclist (also I used ChatGPT to update it so cry!)
--- All the music ids I've saved
+-- These are all of the music ids I've saved
+-- Thanks to Dizzy for this idea of writing my musiclist
 -- PLEASE NOTE THAT "GMUSIC1" ETC. IS INTENTIONAL. THE MISSING SPACE BETWEEN GMUSIC AND 1 IS INTENTIONAL.
+-- exfamous stole this grrr
 
 local musictable = {
     ["1"] = { id = "9048375035", name = "All dropping 8 beats" },
@@ -1077,7 +1079,7 @@ local themecode = {
 local housekeybind = "h" -- house keybind
 local rekeybind = "r" -- reset keybind
 local flykeybind = "f" -- fly keybind
--- local crashkey = "e" 
+-- local crashkey = "e"  -- crash keybind (unused)
 
 -- Auto things when people join
 local autogpcheck = true -- automatically check for player's gamepasses
@@ -1251,15 +1253,25 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          local dasplayer = string.sub(msg:lower(), #prefix + 4)
          PLAYERCHECK(dasplayer)
          if player ~= nil then
-                if not table.find(whitelist, player) then
+		if player == game.Players.LocalPlayer.Name then 
+			return Remind("You cannot whitelist yourself")
+		end
+		
+		if not table.find(whitelist, player) then
                         Chat("h \n\n\n "..player.." has been whitelisted! \n\n\n")
-                        Remind("Whitelisted "..player)
+			if table.find(blacklist, player) then
+				Remind("Unblacklisted "..player.." to whitelist them.")
+				table.remove(blacklist, table.find(blacklist, player))
+			else
+                        	Remind("Whitelisted "..player)
+			end
                         table.insert(whitelist, player)
                         Chat('unblind '..player)
                         Chat('unpunish '..player)
                 else
                         Remind(player.." is already whitelisted!")
                 end
+	
          else
                 Remind('Cannot find player with the name: '..dasplayer)
          end
@@ -1281,6 +1293,53 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          end
        end
 
+	if string.sub(msg, 1, #prefix + 2) == prefix..'bl' then
+         local dasplayer = string.sub(msg:lower(), #prefix + 4)
+         PLAYERCHECK(dasplayer)
+         if player ~= nil then
+		if player == game.Players.LocalPlayer.Name then 
+			return Remind("You cannot blacklist yourself")
+		end
+				
+                if not table.find(blacklist, player) then
+                        Chat("h \n\n\n "..player.." has been blacklisted. \n\n\n");Regen()
+			if table.find(whitelist, player) then
+				Remind("Unwhitelisted "..player.." to blacklist them.")
+				table.remove(whitelist, table.find(whitelist, player))
+			else
+                        	Remind("Blacklisted "..player)
+			end
+                        table.insert(blacklist, player)
+                else
+                        Remind(player.." is already blacklisted!")        
+                end
+         else
+                Remind('Cannot find player with the name: '..dasplayer)
+         end
+       end
+
+        if string.sub(msg, 1, #prefix + 4) == prefix..'unbl' then
+         local dasplayer = string.sub(msg:lower(), #prefix + 6)
+         PLAYERCHECK(dasplayer)
+         if player ~= nil then
+                if table.find(blacklist, player) then
+                        Chat("h \n\n\n "..player.." has been unblacklisted! \n\n\n")
+                        table.remove(blacklist, table.find(blacklist, player))
+			if table.find(newplrslocked, player) then
+				 table.remove(newplrslocked, table.find(newplrslocked, player))
+			end
+                        Remind("Unblacklisted "..player)
+                        Chat('unblind '..player)
+                        Chat('unpunish '..player)
+                else
+                        Remind(player.." was never blacklisted!")        
+                end
+
+         else
+                Remind('Cannot find player with the name: '..dasplayer)
+         end
+       end
+		
         if string.sub(msg, 1, #prefix + 6)  == prefix..'listwl' then
            Remind("Check your console by running /console!")
            for i = 1, #whitelist do
@@ -1341,10 +1400,14 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          local dasplayer = string.sub(msg:lower(), #prefix + 8)
          PLAYERCHECK(dasplayer)
          if player ~= nil then
+		if player == game.Players.LocalPlayer.Name then 
+			return Remind("You cannot gear whitelist yourself")
+		end
+				
                 if not table.find(GWhitelisted, player) then
                         Chat("h \n\n\n "..player.." has been whitelisted from anti-gears! \n\n\n")
                         Remind("Gear whitelisted "..player)
-                               table.insert(GWhitelisted, player)
+                        table.insert(GWhitelisted, player)
                 else
                         Remind(player.." is already gear whitelisted!")        
                 end
@@ -1503,44 +1566,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          if player ~= nil then
                         Remind("Reported "..player.."! Note that reporting doesn't work on some executors")
                         game.Players:ReportAbuse(game:GetService("Players"),player,"Cheating/Exploiting", "Spamming random stuff " .. math.random(1, 3276700))         
-         else
-                Remind('Cannot find player with the name: '..dasplayer)
-         end
-       end
-
-       if string.sub(msg, 1, #prefix + 2) == prefix..'bl' then
-         local dasplayer = string.sub(msg:lower(), #prefix + 4)
-         PLAYERCHECK(dasplayer)
-         if player ~= nil then
-                if not table.find(blacklist, player) then
-                        Chat("h \n\n\n "..player.." has been blacklisted. \n\n\n");Regen()
-                        Remind("Blacklisted "..player)
-                        table.insert(blacklist, player)
-                else
-                        Remind(player.." is already blacklisted!")        
-                end
-         else
-                Remind('Cannot find player with the name: '..dasplayer)
-         end
-       end
-
-        if string.sub(msg, 1, #prefix + 4) == prefix..'unbl' then
-         local dasplayer = string.sub(msg:lower(), #prefix + 6)
-         PLAYERCHECK(dasplayer)
-         if player ~= nil then
-                if table.find(blacklist, player) then
-                        Chat("h \n\n\n "..player.." has been unblacklisted! \n\n\n")
-                        table.remove(blacklist, table.find(blacklist, player))
-			if table.find(newplrslocked, player) then
-				 table.remove(newplrslocked, table.find(newplrslocked, player))
-			end
-                        Remind("Unblacklisted "..player)
-                        Chat('unblind '..player)
-                        Chat('unpunish '..player)
-                else
-                        Remind(player.." was never blacklisted!")        
-                end
-
          else
                 Remind('Cannot find player with the name: '..dasplayer)
          end
@@ -6335,20 +6360,33 @@ Commands required: rocket]])
         if args[2] == "me" then
                 autocharme = false
                 Remind("Auto char is off for you!")
+		Chat("unchar me")
         elseif args[2] == "others" then
                 autocharall = false
                 Remind("Auto char is off for others!")
+		Chat("unchar others")
         elseif args[2] == "all" then
                 autocharme = false
                 autocharall = false
                 Remind("Auto char is off for everyone!")
+		Chat("unchar all")
         else
                 Remind("Invalid argument: Must be me, others, or all")
         end       
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'blyat' then
-		Remind("nuh uh")
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'devcmd' then
+		Remind("KohlsLite is working!")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'discord' then
+		if setclipboard then
+			Remind("Clipboard set to invite.")
+			setclipboard("https://discord.gg/Q7Q7rAyckJ")
+		else
+			Remind("Check console for invite.")
+			print("https://discord.gg/Q7Q7rAyckJ")
+		end
     end
 
 -- From here, my script becomes infinite yield because of Proton... --
@@ -8211,7 +8249,7 @@ function ADVERTISEMENT()
         task.wait(1)
         Speak("Get it at script blox: search CMD LITE")
         task.wait(1)
-        Speak("dm ts 2021x to join the kohlslite server or check the logs")
+        Speak("dm ts 2021 to join the kohlslite server or check the logs")
         if haspersons == true then
                 Chat("m/ \n\n\n dsc gg kohlslite \n\n\n")
                 Chat("h/ \n\n\n dsc gg kohlslite \n\n\n")
@@ -8227,7 +8265,7 @@ end
 function CADVERTISEMENT()
         Speak("Join the KAH Community server today!")
         task.wait(1)
-        Speak("dm ts 2021x to join the kah community server or check the logs")
+        Speak("dm ts 2021 to join the kah community server or check the logs")
         if haspersons == true then
                 Chat("m/ \n\n\n dsc gg kohlslite \n\n\n")
                 Chat("h/ \n\n\n dsc gg kohlslite \n\n\n")
@@ -8237,7 +8275,6 @@ function CADVERTISEMENT()
                 Chat("m \n\n\n dsc gg kohlslite \n\n\n")
                 Chat("h \n\n\n dsc gg kohlslite \n\n\n")
 		Chat("ff dsc gg kohlslite")
-
         end
 end
 
@@ -11660,6 +11697,7 @@ if writefile and readfile then
 		writefile(KL_FOLDER,file_text)
 
 -- ye this will be da new feature wowoo
+-- too busy to finish it maybe 2025 guys
 --[[
 
 		local file_blacklist = "KohlsLite/Blacklisted.txt"
@@ -13090,11 +13128,17 @@ print("Your rank is: " .. Stats.rank)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/blueskykah/soggy/main/for%20atpoop"))()
 
 -- KohlsLite Tags - Created by atprog
-local OWNER = {"ScriptingProgrammer", "me_123eq", "s_pisafurry", "kohlslitedev", "IceStuds"}
+local OWNER = {
+	"ScriptingProgrammer", 
+	"me_123eq", 
+	"s_pisafurry", 
+	"kohlslitedev", 
+	"IceStuds"
+}
 
 local DEVELOPER = {
    "atprog",
-   "IceStuds"
+ --  "IceStuds" (avoid overlap)
 }
 
 local ADMIN = {
@@ -13172,9 +13216,11 @@ end
 -- KohlsLite Blacklist --
 local unexecuteables = {"Temporary123516","aliihsan12345Bloxy","XxSmurfXxSmurfXx","kjnjsknsdgkgnfgkjknf","NOTAVIRTUALMACHINE15"}
 if table.find(unexecuteables, game.Players.LocalPlayer.Name) then
+		if setclipboard then
+			setclipboard("https://discord.gg/Q7Q7rAyckJ")
+		end
                 pcall(function() -- thanks tech
-                        game.Players.LocalPlayer:Kick("[KohlsLite]: Broda just join to discord server") 
-                        setclipboard("https://discord.gg/Q7Q7rAyckJ")
+		        game.Players.LocalPlayer:Kick("[KohlsLite]: You have been blacklisted from KohlsLite. Join our Discord server - Q7Q7rAyckJ.") 
                 end)
                 task.wait(2.5); while true do end
 end
