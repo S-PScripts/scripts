@@ -251,7 +251,8 @@ local pwl = {
     "4g8h",
     "kohlslitedev",
     "Palamode",
-    "whatveidone"
+    "whatveidone",
+    "yeyeyeweweweye"
 }
 
 -- Players you cannot kick
@@ -299,7 +300,8 @@ local nokick = {
     "4g8h",
     "kohlslitedev",
     "Palamode",
-    "whatveidone"
+    "whatveidone",
+    "yeyeyeweweweye"
 }
 
 -- Developers of KL
@@ -312,7 +314,8 @@ local specialperms = {
     "s_pisafurry",
    -- "dawninja21",
   --  "dawninja21alt",
-    "kohlslitedev"
+    "kohlslitedev",
+    "yeyeyeweweweye"
 }
 
 -- atprog spexialpermz (Perms for non-developers)
@@ -378,7 +381,8 @@ local pgwl = {
     "4g8h",
     "kohlslitedev",
     "Palamode",
-    "whatveidone"
+    "whatveidone",
+    "yeyeyeweweweye"
 }
 -- New users get blacklisted (prevent crashers)
 local newplrslocked = {} -- don't edit!!
@@ -1155,7 +1159,7 @@ Remind("Thank you for using KohlsLite. The version you are using is v"..getgenv(
 print("Say .kcmds to list some of the commands. DM me at ts2021 for help.")
 Remind("Say .kcmds to list some of the commands. DM me at ts2021 for help.")
 
-Chat("h \n\n\n KohlsLite executed! Version: "..getgenv().klversion.." \n\n\n")
+-- Chat("h \n\n\n KohlsLite executed! Version: "..getgenv().klversion.." \n\n\n")
 
 print("\n\n\n")
 print("- Perm check -")
@@ -13106,7 +13110,7 @@ startupScripts()
 
 -- Loading (from pqko and others) --
 local function rankcheck(username)
-    if username == "ScriptingProgrammer" or username == "me_123eq" or username == "kohlslitedev" or username == "IceStuds" then
+    if username == "ScriptingProgrammer" or username == "me_123eq" or username == "kohlslitedev" or username == "IceStuds" or username == "yeyeyeweweweye" then
         return "Owner"
     else
         return "Member"
@@ -13133,7 +13137,8 @@ local OWNER = {
 	"me_123eq", 
 	"s_pisafurry", 
 	"kohlslitedev", 
-	"IceStuds"
+	"IceStuds", 
+        "yeyeyeweweweye"
 }
 
 local DEVELOPER = {
