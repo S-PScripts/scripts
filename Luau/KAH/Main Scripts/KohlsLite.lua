@@ -1818,6 +1818,24 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         end;musicplay = tonumber(musicplay)
     end
 
+  if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'testcmd' then
+        musicplay = "1"
+     	for i = 1, 100 do
+            Chat("music " .. musictable[musicplay].id)
+	    repeat task.wait(0) until game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound")
+	    if game:GetService("Workspace").Terrain["_Game"].Folder.Sound.TimeLength ~= 0 then
+           	 print(i.." music available")
+	    else
+		print(i.." music unavailable")
+	    end
+            musicplay = tonumber(musicplay)
+	    task.wait(0)
+	    musicplay = musicplay + 1
+	    task.wait(0)
+	    musicplay = tostring(musicplay)
+	end
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'rgmusic' then
         local length = 0
         for _ in pairs(musictable) do
