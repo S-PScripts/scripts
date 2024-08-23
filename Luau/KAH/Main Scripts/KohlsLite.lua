@@ -1825,10 +1825,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	    repeat task.wait(0) until game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound")
 	    task.wait(0)
 	    if game:GetService("Workspace").Terrain["_Game"].Folder.Sound.TimeLength ~= 0 then
-           	print(i.." music available " .. musictable[musicplay].name .. game:GetService("Workspace").Terrain["_Game"].Folder.Sound.TimeLength)
+           	print(i.." - Music available " .. musictable[musicplay].name .. game:GetService("Workspace").Terrain["_Game"].Folder.Sound.TimeLength)
 	    else
-		print(i.." music unavailable " .. musictable[musicplay].name .. game:GetService("Workspace").Terrain["_Game"].Folder.Sound.TimeLength)
+		print(i.." - Music unavailable " .. musictable[musicplay].name .. game:GetService("Workspace").Terrain["_Game"].Folder.Sound.TimeLength)
 	    end
+	    task.wait(0)
             musicplay = tonumber(musicplay)
 	    task.wait(0)
 	    musicplay = musicplay + 1
