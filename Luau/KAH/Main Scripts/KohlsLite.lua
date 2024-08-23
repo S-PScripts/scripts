@@ -117,7 +117,7 @@ getgenv().kohlsexecuted = true
 getgenv().deprefix = "." 
 
 -- The version of KohlsLite
-getgenv().klversion = "1.7"
+getgenv().klversion = "1.71 redat."
 
 -- Chat function
 local function Chat(msg)
@@ -1824,9 +1824,9 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
             Chat("music " .. musictable[musicplay].id)
 	    repeat task.wait(0) until game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound")
 	    if game:GetService("Workspace").Terrain["_Game"].Folder.Sound.TimeLength ~= 0 then
-           	 print(i.." music available")
+           	 print(i.." music available" .. musictable[musicplay].name)
 	    else
-		print(i.." music unavailable")
+		print(i.." music unavailable" .. musictable[musicplay].name)
 	    end
             musicplay = tonumber(musicplay)
 	    task.wait(0)
