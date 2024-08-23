@@ -117,7 +117,7 @@ getgenv().kohlsexecuted = true
 getgenv().deprefix = "." 
 
 -- The version of KohlsLite
-getgenv().klversion = "1.71 I'm sobbin."
+getgenv().klversion = "1.71 gtp"
 
 -- Chat function
 local function Chat(msg)
@@ -1818,38 +1818,28 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         end;musicplay = tonumber(musicplay)
     end
 
+		-- let's see if chatgpt can fix this!
   if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'testcmd' then
-        musicplay = "1"
-     	for i = 1, 100 do
-	    bigmanjohn = false
-				
-            Chat("music " .. musictable[musicplay].id)
+        local SoundService = game:GetService("SoundService")
 
-	print("play music")
-	    repeat task.wait(0) until game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound")
-
-	print("found music")
-	    task.wait(0)
-				
-	    if game:GetService("Workspace").Terrain["_Game"].Folder.Sound.TimeLength ~= 0 then
-           	print(i.." - This song is available - " .. musictable[musicplay].name .. " - " .. game:GetService("Workspace").Terrain["_Game"].Folder.Sound.TimeLength)
-		bigmanjohn = true
-	    else
-		print(i.." - This song is unavailable - " .. musictable[musicplay].name .. " - " .. game:GetService("Workspace").Terrain["_Game"].Folder.Sound.TimeLength)
-		bigmanjohn = true
-	    end
-				
-	    repeat task.wait(0) until bigmanjohn 
-
-	print("continue")
-	    task.wait(0)
-            musicplay = tonumber(musicplay)
-	    task.wait(0)
-	    musicplay = musicplay + 1
-	    task.wait(0)
-	    musicplay = tostring(musicplay)
-	    task.wait(0)
+	local function checkMusicIDs(musicTable)
+    		for key, music in pairs(musicTable) do
+        		local sound = Instance.new("Sound")
+        		sound.SoundId = "rbxassetid://" .. music.id
+        
+        		sound.Loaded:Wait()
+        
+        		if sound.TimeLength > 0 then
+            			print(music.name .. " (ID: " .. music.id .. ") is valid with duration: " .. sound.TimeLength .. " seconds.")
+        		else
+            			print(music.name .. " (ID: " .. music.id .. ") is invalid or has zero duration.")
+        		end
+        
+        		sound:Destroy()
+    		end
 	end
+
+	checkMusicIDs(musictable)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'rgmusic' then
