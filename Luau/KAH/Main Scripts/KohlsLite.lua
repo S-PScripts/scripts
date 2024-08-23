@@ -1832,14 +1832,20 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         		local lsound = Instance.new("Sound", workspace.Terrain["_Game"].Folder)
         		lsound.SoundId = "rbxassetid://" .. music.id
         
-        		-- Wait for the sound to load
-        		lsound.Loaded:Wait()
-        
-        		if lsound.TimeLength > 0 then
-            			print(music.name .. " (ID: " .. music.id .. ") is valid with duration: " .. lsound.TimeLength .. " seconds.")
-        		else
-            			print(music.name .. " (ID: " .. music.id .. ") is invalid or has zero duration.")
-        		end
+        		local success, err = pcall(function()
+            			lsound.Loaded:Wait() 
+        		end)
+
+
+			if success then
+        			if lsound.TimeLength > 0 then
+            				print(music.name .. " (ID: " .. music.id .. ") is valid with duration: " .. lsound.TimeLength .. " seconds.")
+        			else
+            				print(music.name .. " (ID: " .. music.id .. ") is invalid or has zero duration.")
+        			end
+			else
+				print(music.name .. " (ID: " .. music.id .. ") failed to load: " .. err)
+			end
         
         		lsound:Destroy() -- Clean up the sound instance
     		end
