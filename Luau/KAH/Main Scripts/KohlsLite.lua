@@ -117,7 +117,7 @@ getgenv().kohlsexecuted = true
 getgenv().deprefix = "." 
 
 -- The version of KohlsLite
-getgenv().klversion = "1.71 plswork hahah."
+getgenv().klversion = "1.71 sobb."
 
 -- Chat function
 local function Chat(msg)
@@ -1821,14 +1821,22 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
   if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'testcmd' then
         musicplay = "1"
      	for i = 1, 100 do
+	    bigmanjohn = false
+				
             Chat("music " .. musictable[musicplay].id)
 	    repeat task.wait(0) until game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound")
 	    task.wait(0)
+				
 	    if game:GetService("Workspace").Terrain["_Game"].Folder.Sound.TimeLength ~= 0 then
            	print(i.." - This song is available - " .. musictable[musicplay].name .. " - " .. game:GetService("Workspace").Terrain["_Game"].Folder.Sound.TimeLength)
+		bigmanjohn = true
 	    else
 		print(i.." - This song is unavailable - " .. musictable[musicplay].name .. " - " .. game:GetService("Workspace").Terrain["_Game"].Folder.Sound.TimeLength)
+		bigmanjohn = true
 	    end
+				
+	    repeat task.wait(0) until bigmanjohn 
+				
 	    task.wait(0)
             musicplay = tonumber(musicplay)
 	    task.wait(0)
@@ -1836,6 +1844,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	    task.wait(0)
 	    musicplay = tostring(musicplay)
 	    task.wait(0)
+				
 	    Chat("music")
             repeat task.wait(0) until not game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound")
 	    task.wait(0)
