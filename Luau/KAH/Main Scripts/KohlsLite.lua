@@ -1821,7 +1821,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		-- let's see if chatgpt can fix this!
   if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'testcmd' then
 
-	print("iso 3")
+	print("iso number4")
 
 	local function checkMusicIDs(musicTable)
 
@@ -1835,7 +1835,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         		local success, err = pcall(function()
             			lsound.Loaded:Wait() 
         		end)
-
 
 			if success then
         			if lsound.TimeLength > 0 then
