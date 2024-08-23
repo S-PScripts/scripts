@@ -1821,11 +1821,15 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		-- let's see if chatgpt can fix this!
   if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'testcmd' then
 
-	print("iso i 2")
+	print("iso 3")
 
 	local function checkMusicIDs(musicTable)
+
+		print("test")
     		for key, music in pairs(musicTable) do
-        		local lsound = Instance.new("Sound")
+
+			print("brag")
+        		local lsound = Instance.new("Sound", workspace.Terrain["_Game"].Folder)
         		lsound.SoundId = "rbxassetid://" .. music.id
         
         		-- Wait for the sound to load
