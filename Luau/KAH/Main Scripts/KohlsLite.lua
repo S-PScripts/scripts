@@ -1821,20 +1821,21 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		-- let's see if chatgpt can fix this!
   if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'testcmd' then
 
-	print("if this the biden so theya")
-        local SoundService = game:GetService("SoundService")
+	print("iso i foa")
+      --  local SoundService = game:GetService("SoundService")
 
 	local function checkMusicIDs(musicTable)
-    		for key, music in ipairs(musicTable) do -- hehe
+    		for key, music in ipairs(musicTable) do 
 
 			print(key)
         		lsound = Instance.new("Sound", workspace.Terrain["_Game"].Folder)
         		lsound.Name = "localsound"
         		lsound.SoundId = "rbxassetid://"..music.id
-        		lsound:Play()        
 
 			lsound.Loaded:Wait()
-					
+        		lsound:Play()        
+
+			task.wait(0)
         		if lsound.TimeLength > 0 then
             			print(music.name .. " (ID: " .. music.id .. ") is valid with duration: " .. lsound.TimeLength .. " seconds.")
         		else
