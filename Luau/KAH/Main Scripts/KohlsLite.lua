@@ -117,7 +117,7 @@ getgenv().kohlsexecuted = true
 getgenv().deprefix = "." 
 
 -- The version of KohlsLite
-getgenv().klversion = "1.71 sobb."
+getgenv().klversion = "1.71 I'm sobbin."
 
 -- Chat function
 local function Chat(msg)
@@ -1824,7 +1824,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	    bigmanjohn = false
 				
             Chat("music " .. musictable[musicplay].id)
+
+	print("play music")
 	    repeat task.wait(0) until game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound")
+
+	print("found music")
 	    task.wait(0)
 				
 	    if game:GetService("Workspace").Terrain["_Game"].Folder.Sound.TimeLength ~= 0 then
@@ -1836,17 +1840,14 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	    end
 				
 	    repeat task.wait(0) until bigmanjohn 
-				
+
+	print("continue")
 	    task.wait(0)
             musicplay = tonumber(musicplay)
 	    task.wait(0)
 	    musicplay = musicplay + 1
 	    task.wait(0)
 	    musicplay = tostring(musicplay)
-	    task.wait(0)
-				
-	    Chat("music")
-            repeat task.wait(0) until not game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild("Sound")
 	    task.wait(0)
 	end
     end
