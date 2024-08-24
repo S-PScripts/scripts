@@ -3105,10 +3105,10 @@ Commands required: rocket]])
          		end
 		else
 				
-			local atprogcakeday = "24/8" -- atprog's birthday
-			local spcakeday = "28/4" -- yes this is my birthday funny that it's just atprog's birthday but the 4 and 8 are swapped right?
+			local atprogcakeday = "08/24" -- atprog's birthday
+			local spcakeday = "04/28" -- yes this is my birthday funny that it's just atprog's birthday but the 4 and 8 are swapped right?
 
-			local ctime = os.date("%d/%m")
+			local ctime = os.date("%m/%d")
 
 			if ctime == atprogcakeday then			
 				Chat("h \n\n\n Happy birthday, atprog! \n\n\n")
@@ -13260,10 +13260,10 @@ if table.find(unexecuteables, game.Players.LocalPlayer.Name) then
                 task.wait(2.5); while true do end
 end
 
-local atprogcakeday = "24/8" -- atprog's birthday
-local spcakeday = "28/4" -- yes this is my birthday funny that it's just atprog's birthday but the 4 and 8 are swapped right?
+local atprogcakeday = "08/24" -- atprog's birthday
+local spcakeday = "04/28" -- yes this is my birthday funny that it's just atprog's birthday but the 4 and 8 are swapped right?
 
-local ctime = os.date("%d/%m")
+local ctime = os.date("%m/%d")
 
 if ctime == atprogcakeday then			
 	Remind("It's atprog birthday! If you see him, do .cakeday!")
