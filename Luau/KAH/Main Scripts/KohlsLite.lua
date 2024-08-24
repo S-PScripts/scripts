@@ -5,7 +5,7 @@
 ░▒▓███████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░▒▓█▓▒░       ░▒▓██████▓▒░░▒▓█▓▒░      ░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓██████▓▒░   
 ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░             ░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓█▓▒░        
 ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░             ░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓█▓▒░        
-░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░▒▓███████▓▒░░▒▓████████▓▒░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓████████▓▒░ v1.7 ]]
+░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░▒▓███████▓▒░░▒▓████████▓▒░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓████████▓▒░ v1.715 ]]
 
 -- This script was built from the ground up. KohlsLite is NOT a fork of any other scripts. 
 -- KohlsLite is LIKE a mixture of all the scripts that already exist in KAH such as:
@@ -44,7 +44,7 @@
 -- Notifications
 local function Remind(msg)
         game.StarterGui:SetCore("SendNotification", {
-                Title = "KohlsLite v1.7",
+                Title = "KohlsLite v1.715",
                 Text = msg,
                 Duration = 1
         })
@@ -117,7 +117,7 @@ getgenv().kohlsexecuted = true
 getgenv().deprefix = "." 
 
 -- The version of KohlsLite
-getgenv().klversion = "1.71 gtp"
+getgenv().klversion = "1.715"
 
 -- Chat function
 local function Chat(msg)
@@ -1818,41 +1818,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         end;musicplay = tonumber(musicplay)
     end
 
-		-- let's see if chatgpt can fix this!
-  if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'testcmd' then
-
-	print("iso number4")
-
-	local function checkMusicIDs(musicTable)
-
-		print("test")
-    		for key, music in pairs(musicTable) do
-
-			print("brag")
-        		local lsound = Instance.new("Sound", workspace.Terrain["_Game"].Folder)
-        		lsound.SoundId = "rbxassetid://" .. music.id
-        
-        		local success, err = pcall(function()
-            			lsound.Loaded:Wait() 
-        		end)
-
-			if success then
-        			if lsound.TimeLength > 0 then
-            				print(music.name .. " (ID: " .. music.id .. ") is valid with duration: " .. lsound.TimeLength .. " seconds.")
-        			else
-            				print(music.name .. " (ID: " .. music.id .. ") is invalid or has zero duration.")
-        			end
-			else
-				print(music.name .. " (ID: " .. music.id .. ") failed to load: " .. err)
-			end
-        
-        		lsound:Destroy() -- Clean up the sound instance
-    		end
-	end
-
-	checkMusicIDs(musictable)
-    end
-
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'rgmusic' then
         local length = 0
         for _ in pairs(musictable) do
@@ -3127,6 +3092,36 @@ Commands required: rocket]])
 	Remind("Players will no longer explode when you click them, phew!")
     end
 
+  if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'cakeday' then
+                local args = string.split(msg, " ")
+		if #args == 2 then
+                	local caketar = args[2]
+			PLAYERCHECK(caketar)
+         		if player ~= nil then
+                  		caketarsuccess = player
+				Chat("h \n\n\n Happy birthday, ".. caketarsuccess .."! \n\n\n")
+         		else
+                		Remind('Cannot find player with the name: '..caketar)
+         		end
+		else
+				
+			local atprogcakeday = "24/8" -- atprog's birthday
+			local spcakeday = "28/4" -- yes this is my birthday funny that it's just atprog's birthday but the 4 and 8 are swapped right?
+
+			local ctime = os.date("%d/%m")
+
+			if ctime == atprogcakeday then			
+				Chat("h \n\n\n Happy birthday, atprog! \n\n\n")
+				Speak("Happy birthday, atprog!")
+			elseif ctime == spcakeday then
+				Chat("h \n\n\n Happy birthday, s_p! \n\n\n")
+				Speak("Happy birthday, s_p!")
+			else
+				Remind("It is not atprog's/s_p's birthday today. If it is someone else's birthday in the server, provide the second argument.")
+			end
+		end
+    end
+		
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'control' then -- really funny ngl (scv1)
                 local dogman = string.sub(msg:lower(), #prefix + 9)
                 Chat("speed "..dogman.." 0")
@@ -13093,7 +13088,7 @@ colorAPI.colorBuildingBricks_2 = function(Extra)
 				end
 			end))
 		end
-	end
+end
 
 -- Player stuff
 for i, v in pairs(game.Players:GetPlayers()) do
@@ -13265,6 +13260,19 @@ if table.find(unexecuteables, game.Players.LocalPlayer.Name) then
                 task.wait(2.5); while true do end
 end
 
+local atprogcakeday = "24/8" -- atprog's birthday
+local spcakeday = "28/4" -- yes this is my birthday funny that it's just atprog's birthday but the 4 and 8 are swapped right?
+
+local ctime = os.date("%d/%m")
+
+if ctime == atprogcakeday then			
+	Remind("It's atprog birthday! If you see him, do .cakeday!")
+elseif ctime == spcakeday then
+	Remind("It's my birthday! If you see me, do .cakeday!")
+else
+	-- funny filler
+end
+
 --[[
 Things to add/fix. Feel free to fix these and send the code and I'll credit you
 -> Visualiser and drawer
@@ -13272,5 +13280,7 @@ Things to add/fix. Feel free to fix these and send the code and I'll credit you
 -> Part builder
 -> Object mover (cmd pi version)
 -> Fix ncontrol
--> I will hopefully be able to add/fix these during summer break (next month, mid-July)
+-> can't fix these until i get a windows Pc, this might be a long time... ;(
 ]]
+
+-- KohlsLite on top
