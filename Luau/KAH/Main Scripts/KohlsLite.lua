@@ -1809,6 +1809,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end                
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'gmusic' then
+	Remind("Roblox recently moderated a LOT of music ids, please wait until I remove the broken ids.")
         musicplay = string.sub(msg, #prefix + 7)
         if musicsay == true then
            Chat("h \n\n\n Playing music: ".. musictable[musicplay].name ..". \n\n\n")
