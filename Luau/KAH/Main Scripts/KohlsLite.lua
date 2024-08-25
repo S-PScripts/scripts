@@ -7896,7 +7896,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
         task.wait(0)
 
 		for i, v in game.Players:GetPlayers() do
-				if v.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name))then
+				if v.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name)) then
 					if v.Backpack:FindFirstChildOfClass("Tool") then
 						if antigear then
 							Chat("ungear " .. v.Name)
@@ -7907,7 +7907,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
 					end
 				end
 
-				if v.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name))then
+				if v.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name)) then
 					if v.Character and v.Character:FindFirstChildOfClass("Tool") then
 						if antigear then
 							Chat("ungear " .. v.Name)
@@ -7921,7 +7921,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
 
 		for i, tool in crashTools do
 				for i, v in game.Players:GetPlayers() do
-					if v.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name))then
+					if v.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name)) then
 						if v.Backpack:FindFirstChild(tool) then
 							if emranticrash then
 								Chat("ungear others")
@@ -7937,7 +7937,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
 						end
 					end
 
-					if v.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name))then
+					if v.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name)) then
 						if v.Character and v.Character:FindFirstChild(tool) then
 							if emranticrash then
 								Chat("ungear others")
@@ -7964,7 +7964,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
 
 		for i, tool in attachTools do
 				for i, v in game.Players:GetPlayers() do
-					if v.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name))then
+					if v.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name)) then
 						if v.Backpack:FindFirstChild(tool) then
 							if antiattach2 then
 								Chat("ungear " .. v.Name)
@@ -7975,7 +7975,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
 						end
 					end
 
-					if v.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name))then
+					if v.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name)) then
 						if v.Character and v.Character:FindFirstChild(tool) then
 							if antiattach2 then
 								Chat("ungear " .. v.Name)
@@ -7997,7 +7997,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
 
 		for i, tool in nogearTools do
 				for i, v in game.Players:GetPlayers() do
-					if v.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name))then
+					if v.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name)) then
 						if v.Backpack:FindFirstChild(tool) then
 							if antigb then
 								Chat("ungear " .. v.Name)
@@ -8008,7 +8008,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
 						end
 					end
 
-					if v.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name))then
+					if v.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name)) then
 						if v.Character and v.Character:FindFirstChild(tool) then
 							if antigb then
 								Chat("ungear " .. v.Name)
@@ -8030,7 +8030,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
 
 		for i, tool in colourTools do
 				for i, v in game.Players:GetPlayers() do
-					if v.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name))then
+					if v.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name)) then
 						if v.Backpack:FindFirstChild(tool) then
 							if antipaint then
 								Chat("ungear " .. v.Name)
@@ -8041,7 +8041,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
 						end
 					end
 
-					if v.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name))then
+					if v.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name)) then
 						if v.Character and v.Character:FindFirstChild(tool) then
 							if antipaint then
 								Chat("ungear " .. v.Name)
@@ -8063,7 +8063,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
 
 		for i, tool in miscTools do
 				for i, v in game.Players:GetPlayers() do
-					if v.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name))then
+					if v.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name)) then
 						if v.Backpack:FindFirstChild(tool) then
 							if noblt then
 								Chat("ungear " .. v.Name)
@@ -8074,7 +8074,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
 						end
 					end
 
-					if v.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name))then
+					if v.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name)) then
 						if v.Character and v.Character:FindFirstChild(tool) then
 							if noblt then
 								Chat("ungear " .. v.Name)
@@ -8096,7 +8096,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
 
 		for i, tool in ninejntools do
 				for i, v in game.Players:GetPlayers() do
-					if v.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name))then
+					if v.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name)) then
 						if v.Backpack:FindFirstChild(tool) then
 							if antiraygun then
 								Chat("ungear " .. v.Name)
@@ -8107,7 +8107,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
 						end
 					end
 
-					if v.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name))then
+					if v.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name)) then
 						if v.Character and v.Character:FindFirstChild(tool) then
 							if antiraygun then
 								Chat("ungear " .. v.Name)
@@ -8137,7 +8137,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
 						end
 					end
 
-					if v.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name))then
+					if v.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name)) then
 						if v.Character and v.Character:FindFirstChild(tool) then
 							if antikick2 then
 								tool:Destroy()
