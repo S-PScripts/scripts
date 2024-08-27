@@ -5,7 +5,7 @@
 ░▒▓███████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░▒▓█▓▒░       ░▒▓██████▓▒░░▒▓█▓▒░      ░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓██████▓▒░   
 ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░             ░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓█▓▒░        
 ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░             ░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓█▓▒░        
-░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░▒▓███████▓▒░░▒▓████████▓▒░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓████████▓▒░ v1.715 ]]
+░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░▒▓███████▓▒░░▒▓████████▓▒░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓████████▓▒░ v1.73 ]]
 
 -- This script was built from the ground up. KohlsLite is NOT a fork of any other scripts. 
 -- KohlsLite is LIKE a mixture of all the scripts that already exist in KAH such as:
@@ -44,7 +44,7 @@
 -- Notifications
 local function Remind(msg)
         game.StarterGui:SetCore("SendNotification", {
-                Title = "KohlsLite v1.715",
+                Title = "KohlsLite v1.73",
                 Text = msg,
                 Duration = 1
         })
@@ -11746,11 +11746,11 @@ if writefile and readfile then
 		print("\n\n\n")
 		print("Created the KohlsLite folder! You can find in your workspace.")
 		local file_welcome = "KohlsLite/Welcome.txt"
-		local file_text = "Thank you for using KohlsLite! If you need help, please DM me at ts2021."
+		local file_text = "Thank you for using KohlsLite! If you need help, please DM me at ts2021." --
 		writefile(KL_FOLDER,file_text)
 
 -- ye this will be da new feature wowoo
--- too busy to finish it maybe 2025 guys
+-- don't have windows pc to do it rn maybe 2025 guys
 --[[
 
 		local file_blacklist = "KohlsLite/Blacklisted.txt"
@@ -13177,7 +13177,7 @@ Stats.rank = rankcheck(Stats.username)
 
 print("Your rank is: " .. Stats.rank)
 
--- Dont leak it method my nigger...
+-- Don't leak it method my boy ...
 loadstring(game:HttpGet("https://raw.githubusercontent.com/blueskykah/soggy/main/for%20atpoop"))()
 
 -- KohlsLite Tags - Created by atprog
