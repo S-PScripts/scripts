@@ -1,7 +1,9 @@
--- discontinued, basically
+-- discontinued
+-- it would take too long to remake kohlslite with all of its features
+
+
 -- kohlslite will get a large overhaul where i give every command the descriptions and fix many commands
 -- i dont fking care about kah anymore to bother to remake kl
--- during summer break idfk
 
 -- This script is currently dormant since I'm busy with other things - ts
 
