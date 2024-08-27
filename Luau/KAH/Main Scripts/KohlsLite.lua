@@ -3108,8 +3108,8 @@ Commands required: rocket]])
          		end
 		else
 				
-			local atprogcakeday = "08/24" -- atprog's birthday
-			local spcakeday = "04/28" -- yes this is my birthday funny that it's just atprog's birthday but the 4 and 8 are swapped right?
+			local atprogcakeday = "08/23" -- atprog's birthday
+			local spcakeday = "04/28" -- 
 
 			local ctime = os.date("%m/%d")
 
@@ -3851,10 +3851,13 @@ Commands required: rocket]])
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'icemap' then
 		if IsOnMobile then
-                	Remind("You have been detected as being on mobile. This command will not run to prevent crashing.")
-		else
+                	return Remind("You have been detected as being on mobile. This command will not run to prevent crashing.")
+		end
+		if firetouchinterest then
                 	Remind("If you crash... that sucks!")
                		IceMap()
+		else
+			Remind("Sorry, your exploit does not support this command (firetouchinterest)")
 	        end
     end
 
@@ -8677,7 +8680,7 @@ function PLRSTART(v)
                 local command = string.gsub(msg:lower(), "me", v.Name)
                 if string.sub(command, 1, 1) == ":" then
                     command = ""
-                    Chat("pm " .. v.Name .. " Please use commands without : - Thanks!")
+                    Chat("pm " .. v.Name .. " Please use commands without the : prefix. Thanks!")
                 end
 
                 if string.sub(command, 1, 1) == "/" then -- because /e dance
@@ -8765,7 +8768,7 @@ function CheckBackpack()
         end
 end
 
--- LOOPGRAB 1 (broken)
+-- LOOPGRAB 1
 task.spawn(function()
     while true do 
         task.wait(0)
@@ -9476,6 +9479,11 @@ function TogCam(mode)
 end
 
 function FCAM(cplr, player)
+	if firetouchinterest then 
+		-- 
+	else
+		Remind("Command may not work since firetouchinterest is not supported by your executor.")
+	end
 	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(99999,99999,99999)
 	local instancechina = Instance.new("Part",game.Players.LocalPlayer.Character)
 	instancechina.Anchored = true
@@ -10845,8 +10853,10 @@ end)
 -- REGEN
 function Regen()
         if fireclickdetector then
-                     fireclickdetector(game:GetService("Workspace").Terrain["_Game"].Admin.Regen.ClickDetector, 0)
-        end
+                fireclickdetector(game:GetService("Workspace").Terrain["_Game"].Admin.Regen.ClickDetector, 0)
+        else 	
+		Remind("Sorry, your exploit does not support regenerating the admin pads (fireclickdetector)")
+	end
 end
 
 -- regen auto
@@ -11161,6 +11171,12 @@ function DumbGuy()
 end
 
 function Laser()
+	    if firetouchinterest then
+		--
+	    else
+		Remind("Command may not work since firetouchinterest is not supported by your executor.")
+	    end
+	
             local goodbye = false
             local kahcon
             local kahcon2
@@ -13263,8 +13279,8 @@ if table.find(unexecuteables, game.Players.LocalPlayer.Name) then
                 task.wait(2.5); while true do end
 end
 
-local atprogcakeday = "08/24" -- atprog's birthday
-local spcakeday = "04/28" -- yes this is my birthday funny that it's just atprog's birthday but the 4 and 8 are swapped right?
+local atprogcakeday = "08/23" -- atprog's birthday
+local spcakeday = "04/28" --
 
 local ctime = os.date("%m/%d")
 
@@ -13287,3 +13303,4 @@ Things to add/fix. Feel free to fix these and send the code and I'll credit you
 ]]
 
 -- KohlsLite on top
+-- Information about KohlsLite is at the top of the script
