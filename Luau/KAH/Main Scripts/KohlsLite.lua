@@ -7024,7 +7024,7 @@ function PLAYERCHECK(plr)
       if string.sub(v.Name:lower(), 1, #plr) == plr:lower() then
           player = v.Name
           cplr = v
-          Remind("[debug]: Found "..player)
+          Remind("[Debug]: Found "..player) -- i have no idea how i never capitalised this
       end
   end
 end
