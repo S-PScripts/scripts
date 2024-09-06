@@ -1,6 +1,3 @@
--- my last edit on my old school chromebook o7
--- 9/21 - 4/9/24
-
 --[[
 ░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░       ░▒▓███████▓▒░▒▓█▓▒░      ░▒▓█▓▒░▒▓████████▓▒░▒▓████████▓▒░ 
 ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓█▓▒░        
@@ -86,29 +83,6 @@ if game.PlaceId ~= 112420803 and game.PlaceId ~= 115670532  then
 	})
 	return
 end
-
--- concept (unused)
---[[
--- STATUS (for free)
-checkforkohlspremium = false
-(check for if player has kohls premium gamepass)
-if theydo then
-		checkforkohlspremium = true
-		game.Players.LocalPlayer:Kick("You have Kohlslite Premium. Execute that.")
-else
-		Remind("Booting KohlsLite Free...")
-end
-
--- status (for paid)
-checkforkohlspremium = false
-(check for if player has kohls premium gamepass)
-if theydo then
-		checkforkohlspremium = true
-		Remind("Booting KohlsLite Premium...")
-else
-		Remind("You do not have KohlsLite Premium. Please buy it by dming ts2021 or use KohlsLite Premium")
-end
-	]]
 
 -- IY Auto Executor (Sorry if this is annoying but there's a bug in the lines for the prefix checker above which causes my script to break if IY is loaded after KL that I can't debug as of now
 --loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
@@ -997,6 +971,9 @@ local ogcframes = {
 
 -- Auto blacklisting for stuff
 local autoblvgc = true -- retards kept gearing everyone so here's a quick fix
+
+-- Skip anti crash warning
+local skipwarncrash = true
 
 -- Anti logs
 local antimlog = false -- for music
@@ -2929,33 +2906,141 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'vgcrash' then
-        VGCrash()
-	Remind("VG Crashed the server.")
+	if skipwarncrash then -- idea from sinx
+		VGCrash()
+		Remind("VG Crashed the server.")
+	else
+		local response = Instance.new("BindableFunction")
+		function response.OnInvoke(answer)
+			if answer == "Yes" then
+		    		VGCrash()
+				Remind("VG Crashed the server.")
+			end
+		end
+		game:GetService("StarterGui"):SetCore("SendNotification", {
+			Title = "KohlsLite Manager",
+			Text = "Are you sure about this?",
+			Duration = math.huge,
+			Callback = response,
+			Button1 = "Yes",
+			Button2 = "No"
+		})
+	end
     end
 
    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'cocrash' then
-        CoCrash()
-	Remind("VG Crashed (2) the server.")
+	if skipwarncrash then -- idea from sinx
+		CoCrash()
+		Remind("VG Crashed (2) the server.")
+	else
+		local response = Instance.new("BindableFunction")
+		function response.OnInvoke(answer)
+			if answer == "Yes" then
+		    		CoCrash()
+				Remind("VG Crashed (2) the server.")
+			end
+		end
+		game:GetService("StarterGui"):SetCore("SendNotification", {
+			Title = "KohlsLite Manager",
+			Text = "Are you sure about this?",
+			Duration = math.huge,
+			Callback = response,
+			Button1 = "Yes",
+			Button2 = "No"
+		})
+	end
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'emcrash' then
-        EmCrash()
-	Remind("Emerald Crashed the server.")
+	if skipwarncrash then -- idea from sinx
+		EmCrash()
+		Remind("Emerald Crashed the server.")
+	else
+		local response = Instance.new("BindableFunction")
+		function response.OnInvoke(answer)
+			if answer == "Yes" then
+		    		EmCrash()
+				Remind("Emerald Crashed the server.")
+			end
+		end
+		game:GetService("StarterGui"):SetCore("SendNotification", {
+			Title = "KohlsLite Manager",
+			Text = "Are you sure about this?",
+			Duration = math.huge,
+			Callback = response,
+			Button1 = "Yes",
+			Button2 = "No"
+		})
+	end
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'pcrash' then
-        PCrash()  
-	Remind("Orinthian Crashed the server.")
+	if skipwarncrash then -- idea from sinx
+		PCrash()
+		Remind("Orinthian Crashed the server.")
+	else
+		local response = Instance.new("BindableFunction")
+		function response.OnInvoke(answer)
+			if answer == "Yes" then
+		    		PCrash()
+				Remind("Orinthian Crashed the server.")
+			end
+		end
+		game:GetService("StarterGui"):SetCore("SendNotification", {
+			Title = "KohlsLite Manager",
+			Text = "Are you sure about this?",
+			Duration = math.huge,
+			Callback = response,
+			Button1 = "Yes",
+			Button2 = "No"
+		})
+	end
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'fcrash' then
-        FCrash()
-	Remind("Freeze Crashed the server.")
+	if skipwarncrash then -- idea from sinx
+		FCrash()
+		Remind("Freeeze Crashed the server.")
+	else
+		local response = Instance.new("BindableFunction")
+		function response.OnInvoke(answer)
+			if answer == "Yes" then
+		    		FCrash()
+				Remind("Freeze Crashed the server.")
+			end
+		end
+		game:GetService("StarterGui"):SetCore("SendNotification", {
+			Title = "KohlsLite Manager",
+			Text = "Are you sure about this?",
+			Duration = math.huge,
+			Callback = response,
+			Button1 = "Yes",
+			Button2 = "No"
+		})
+	end
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'dcrash' then
-       DCrash()
-	Remind("Dog Crashed the server.")
+	if skipwarncrash then -- idea from sinx
+		DCrash()
+		Remind("Dog Crashed the server.")
+	else
+		local response = Instance.new("BindableFunction")
+		function response.OnInvoke(answer)
+			if answer == "Yes" then
+		    		DCrash()
+				Remind("Dog Crashed the server.")
+			end
+		end
+		game:GetService("StarterGui"):SetCore("SendNotification", {
+			Title = "KohlsLite Manager",
+			Text = "Are you sure about this?",
+			Duration = math.huge,
+			Callback = response,
+			Button1 = "Yes",
+			Button2 = "No"
+		})
+	end
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'scrash' then -- not a silent crash!
