@@ -1714,25 +1714,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	    bom.Remote:FireServer("PlaySong", tonumber(myplay))
       end
 
-      if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'synpbb' then -- i hate using similar code but i'll have to do it here.
-	    for i = 1,amon do
-            	Chat("gear me 212641536")
-	    end
-            task.wait(0.5)
-            local check = string.sub(msg:lower(), #prefix + 8, #prefix + 8)
-	    if check == "g" then
-			local idrinkrum = string.sub(msg, #prefix + 9) ; task.wait(0)
-			myplay = musictable[idrinkrum].id
-	    else
-			myplay = string.sub(msg:lower(), 8 + #prefix)
-	    end
-            repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("SuperFlyGoldBoombox")
-            local bom = game.Players.LocalPlayer.Backpack:FindFirstChild("SuperFlyGoldBoombox")
-            bom.Parent = game.Players.LocalPlayer.Character                                   
-            task.wait(0.25)
-	    bom.Remote:FireServer("PlaySong", tonumber(myplay))
-      end
-
       if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'mboombox' then
             Chat("gear me 212641536")
             task.wait(0.5)
@@ -1742,28 +1723,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 			myplay = musictable[idrinkrum].id
 	    else
 			myplay = string.sub(msg:lower(), 10 + #prefix)
-	    end
-            repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("SuperFlyGoldBoombox")
-            local bom = game.Players.LocalPlayer.Backpack:FindFirstChild("SuperFlyGoldBoombox")
-            bom.Parent = game.Players.LocalPlayer.Character                                   
-            task.wait(0.25)
-	    bom.Remote:FireServer("PlaySong", tonumber(myplay))
-	    function rng() 
-                	return math.random(-bgrange, bgrange)
-            end
-            bom.GripPos = Vector3.new(rng(), 1, rng())
-      end
-
-    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'synmbb' then -- hate using similar code but have to do it here...
-	    for i = 1,amon do
-            	Chat("gear me 212641536")
-	    end
-	    local check = string.sub(msg:lower(), #prefix + 8, #prefix + 8)
-	    if check == "g" then
-			local idrinkrum = string.sub(msg, #prefix + 9) ; task.wait(0)
-			myplay = musictable[idrinkrum].id
-	    else
-			myplay = string.sub(msg:lower(), 8 + #prefix)
 	    end
             repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("SuperFlyGoldBoombox")
             local bom = game.Players.LocalPlayer.Backpack:FindFirstChild("SuperFlyGoldBoombox")
@@ -1789,14 +1748,16 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         lsound = Instance.new("Sound", workspace.Terrain["_Game"].Folder)
         lsound.Name = "localsound"
         lsound.SoundId = "rbxassetid://"..musictable[ieatkids].id
-        lsound:Play()        
+        lsound:Play()
+	Remind("Local gmusic playing.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'unlgmusic' then
               if workspace.Terrain["_Game"].Folder:FindFirstChild("localsound") then
                         lsound:Stop()
                         lsound:Destroy()
-        end
+			Remind("Local gmusic ended.")
+              end
     end
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'msay' then
@@ -2021,6 +1982,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                         Chat("fix")
                         Chat("reload all")
                         gjdelock = "stop"
+			Remind("Turned off DEIV.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'tropics' then  -- ported from simplekah
@@ -2256,15 +2218,18 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
              if #args == 2 then
                 local shazam = args[2]
                 Playlist(shazam)
+		Remind("Playlist starting.")
          end
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'ssong' then
                 SkipEvent:Fire()
+		Remind("Skipped song.")
     end
                 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'esong' then
                 StopEvent:Fire()
+		Remind("Ended playlist.")
     end
                 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'ggear' then
@@ -4094,19 +4059,22 @@ Commands required: rocket]])
     end
 
     if string.sub(msg, 1, #prefix + 8) == prefix..'padreinf' then
-       Chat("h \n\n\n Pad reinforcements are on. \n\n\n")
-       padreinforcements = true
+        Chat("h \n\n\n Pad reinforcements are on. \n\n\n")
+        padreinforcements = true
+	Remind("Pad reinforcements are on.")
     end
 
     if string.sub(msg, 1, #prefix + 10) == prefix..'unpadreinf' then
-       Chat("h \n\n\n Pad reinforcements are off! \n\n\n")
-       padreinforcements = false
+        Chat("h \n\n\n Pad reinforcements are off! \n\n\n")
+        padreinforcements = false
+	Remind("Pad reinforcements are off.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'qattach' then
         Chat("sit me down");task.wait(1)
         Chat("punish me");task.wait(1)
         Chat("unpunish me")
+	Remind("Quick attach is done.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'biglogs' then
@@ -4121,7 +4089,7 @@ Commands required: rocket]])
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'regen' then
         Regen()
-	Remind("Reset the admin pads")
+	Remind("Reset the admin pads.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'house' then
@@ -4130,7 +4098,7 @@ Commands required: rocket]])
     end
 
     if string.sub(msg:lower(), 1, 3)  == ',re' then
-        Chat("reset me")
+        Chat("reset me"); Remind("Reset you.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'hhouse' then
@@ -5088,7 +5056,7 @@ Commands required: rocket]])
      end
 
      if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'obpfixv' then
-                Remind("You need to be positioned by a wall!")
+                Remind("You need to be positioned by a wall! If you aren't, rerun this command after 5 seconds.")
                 Chat("sit me down");task.wait(1)
                 Chat("punish me");task.wait(1)
                 Chat("unpunish me");task.wait(1)
@@ -5254,6 +5222,7 @@ Commands required: rocket]])
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'fixpaint' then
         FixPaint()
+	Remind("Fixing paint...")
      end
 
    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'anticrash' then
@@ -6448,8 +6417,6 @@ Commands required: rocket]])
         Chat("reset "..acplr)
 	Remind("No longer kicking "..acplr)
     end
-
-   -- temp removed
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'pkick' then
                    acplr = string.sub(msg:lower(), #prefix + 7)
