@@ -1591,6 +1591,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
        end
 
        if string.sub(msg, 1, #prefix + 10) == prefix..'fcheckperm' then -- cool amirite
+	  Remind("Wait 5 seconds then check logs...")
           Chat("reset all")
           Regen()
           task.wait(1)
