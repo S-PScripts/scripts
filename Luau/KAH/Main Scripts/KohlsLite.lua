@@ -1263,6 +1263,12 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          end
        end
 
+       if string.sub(msg, 1, #prefix + 9)  == prefix..'whitelist' then
+		local dasplayer = string.sub(msg:lower(), #prefix + 11)
+		Chat(prefix.."wl "..dasplayer)
+		-- Remind("ERROR: Use 'wl' instead of 'whitelist'!") -- woz gonna be lazy
+       end
+
        if string.sub(msg, 1, #prefix + 4) == prefix..'unwl' then
          local dasplayer = string.sub(msg:lower(), #prefix + 6)
          PLAYERCHECK(dasplayer)
@@ -1278,6 +1284,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                 Remind('Cannot find player with the name: '..dasplayer)
          end
        end
+
+	if string.sub(msg, 1, #prefix + 11)  == prefix..'unwhitelist' then
+		local dasplayer = string.sub(msg:lower(), #prefix + 13)
+		Chat(prefix.."unwl "..dasplayer)
+	end
 
 	if string.sub(msg, 1, #prefix + 2) == prefix..'bl' then
          local dasplayer = string.sub(msg:lower(), #prefix + 4)
@@ -1304,6 +1315,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          end
        end
 
+	if string.sub(msg, 1, #prefix + 9)  == prefix..'blacklist' then
+		local dasplayer = string.sub(msg:lower(), #prefix + 11)
+		Chat(prefix.."bl "..dasplayer)
+	end
+		
         if string.sub(msg, 1, #prefix + 4) == prefix..'unbl' then
          local dasplayer = string.sub(msg:lower(), #prefix + 6)
          PLAYERCHECK(dasplayer)
@@ -1324,7 +1340,12 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          else
                 Remind('Cannot find player with the name: '..dasplayer)
          end
-       end
+        end
+
+        if string.sub(msg, 1, #prefix + 11)  == prefix..'unblacklist' then
+		local dasplayer = string.sub(msg:lower(), #prefix + 13)
+		Chat(prefix.."unbl "..dasplayer)
+        end
 		
         if string.sub(msg, 1, #prefix + 6)  == prefix..'listwl' then
            Remind("Check your console by running /console!")
@@ -3048,11 +3069,39 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 Remind([[Sorry, you don't have Person's to perform this command!
 Commands required: shield]])
         else
-        	SCrash()
-		Remind("Shield Crashed the server.")
+		if skipwarncrash then -- idea from sinx
+			SCrash()
+			Remind("Shield Crashed the server.")
+		else
+			local response = Instance.new("BindableFunction")
+			function response.OnInvoke(answer)
+				if answer == "Yes" then
+		    			SCrash()
+					Remind("Shield Crashed the server.")
+				end
+			end
+			game:GetService("StarterGui"):SetCore("SendNotification", {
+				Title = "KohlsLite Manager",
+				Text = "Are you sure about this?",
+				Duration = math.huge,
+				Callback = response,
+				Button1 = "Yes",
+				Button2 = "No"
+			})
+		end
         end
     end
 
+   if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'swc' then
+			skipwarncrash = true
+			Remind("Warning for crashing disabled.")
+   end
+
+   if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'unswc' then
+			skipwarncrash = false
+			Remind("A warning will now appear whenever you want to crash.")
+   end
+		
    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'rkick' then
         if haspersons == false then
 Remind([[Sorry, you don't have Person's to perform this command!
@@ -3525,7 +3574,7 @@ Commands required: rocket]])
                 Remind("The player should now be a bed!")
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'kitten' then -- nak3d would get tagged
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'kitten' then -- nak3d would get tagged, inspired by simplekah
                 local meow = string.sub(msg:lower(), #prefix + 8)
                 PLAYERCHECK(meow)
                 if player ~= nil then
@@ -3542,15 +3591,15 @@ Commands required: rocket]])
    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'smack' then -- pr
                 local person = string.sub(msg:lower(), #prefix + 7)
                 Chat("music 5886215922")
-                    Chat("speed "..person.." 0")
-                    Chat("tp "..person.." me")
+                Chat("speed "..person.." 0")
+                Chat("tp "..person.." me")
                 task.wait(0.8)
                 Speak("SMACK!")
-                    Chat("/e point")
-                    Chat("fling "..person)
+                Chat("/e point")
+                Chat("fling "..person)
                 task.wait(1.45)
                 Chat("explode "..person)
-                    Chat("music nan")
+                Chat("music nan")
     end
 
    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'dumb' then -- pr
@@ -3797,7 +3846,8 @@ Commands required: rocket]])
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'ipboom' then
-       IPBOOM()
+        IPBOOM()
+	Remind("when the sus?!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'logspam' then
@@ -3836,6 +3886,7 @@ Commands required: rocket]])
 
    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'chatz' then
         ChatFudge()
+	Remind("Crapping on the chat filter.")
    end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'spamw' then
@@ -3871,6 +3922,7 @@ Commands required: rocket]])
                                 Chat("gear me 16969792")                                        
                                 Chat("gear me 73089190")
                 end
+		Remind("Client btools given.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'ecrash' then
@@ -3880,21 +3932,21 @@ Commands required: rocket]])
             Chat("h \n\n\n dsc gg kohlslite \n\n\n");Chat(prefix.."gmusic100")
 	    Chat(prefix.."byp dsc gg kohlslite")
             Chat("fogcolor 0 0 0");Chat("time 0");Chat("fogend 0");Chat("paint all black")
-            task.wait(0.75)
+            task.wait(0.75); skipwarncrash = true
             DCrash()        
     end
   
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'dicrash' then
 	    musicsay = false -- na ts2021 forgot this jit tripping - from ts2021
             Chat(prefix.."gchar all D_ionte");Chat(prefix.."gmusic62");Chat("h \n\n\n all praise dionte \n\n\n");Chat("name all D_ionte is our hero")
-	    task.wait(1.5)
+	    task.wait(1.5); skipwarncrash = true
 	    DCrash()
     end
   
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'fredcrash' then
 		musicsay = false 
 		Chat(prefix.."gchar all FR6DDiie");Chat(prefix.."gmusic41");Chat("h \n\n\n all praise fred \n\n\n");Chat("name all FRED IS OUR HERO!") 
-		task.wait(1.5)
+		task.wait(1.5); skipwarncrash = true
 		DCrash()
 		
     end
@@ -10763,7 +10815,7 @@ function onPlayerAdded(player)
         			Chat("h \n\n\n Server automatically crashed due to blacklisted user ("..player.Name..") joining. \n\n\n")
 			end
         		print(player.Name.." joined the server. Server was automatically crashed as they are blacklisted.")
-       		 	DCrash()  
+       		 	DCrash();skipwarncrash = true
 			check_con = true
    		end
 
