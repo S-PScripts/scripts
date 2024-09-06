@@ -7,8 +7,11 @@
 ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░             ░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓█▓▒░        
 ░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░▒▓███████▓▒░░▒▓████████▓▒░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓████████▓▒░ v1.73 ]]
 
--- This script was built from the ground up. KohlsLite is NOT a fork of any other scripts. 
--- KohlsLite is LIKE a mixture of all the scripts that already exist in KAH such as:
+--[[
+
+This script was built from the ground up. KohlsLite is NOT a fork of any other scripts. 
+
+KohlsLite is LIKE a mixture of all the scripts that already exist in KAH such as:
   -- > CMD (v1)
   -- > CMD Y
   -- > CMD v3
@@ -23,23 +26,26 @@
   -- > Jotunnheim
   -- > Shazam
 
--- Some of the code here are from other creators (and I credited) but quite a lot is my own and also some commands can't really be changed codewise that much
+Some of the code here is from other creators (and I credited) but quite a lot is my own and also some commands can't be changed code-wise that much.
 
--- This script is not discontinued but is currently dormant.
+This script has not been discontinued but is currently dormant.
 
--- This free, open-source script is for the Roblox game Kohls Admin House (KAH)
--- You can play KAH here: https://www.roblox.com/games/112420803/Kohls-Admin-House-NBC-Updated
--- Created by ScriptingProgrammer (Roblox) / ts2021 (Discord) / S-PScripts (GitHub)
+This free, open-source script is for the Roblox game Kohls Admin House (KAH).
+You can play KAH here: https://www.roblox.com/games/112420803/Kohls-Admin-House-NBC-Updated
+This script was created by ScriptingProgrammer (Roblox) / ts2021 (Discord) / S-PScripts (GitHub).
 
--- There are no more watermarks in this script.
+There are no more watermarks in this script. This script does have back doors (dev section) due to idiots abusing like crazy using this script.
 
--- Support this script today by donating Robux to me on Roblox (especially since this script has limited advertising now)
--- Please do not edit off this code by removing the dev section. It makes me annoyed!
--- You can make your own script instead and you can take stuff from here if necessary.
+Support this script today by donating Robux to me on Roblox (especially since this script has limited advertising now).
 
--- Don't go abusing like crazy with this script. I made this free/open-source and don't want idiots doing stuff that make me make this paid/obfuscated.
+Please do not edit this script by simply removing the dev section and then proceeding to abuse in KAH. It makes me annoyed!
+You can make your own script instead and you can take stuff from here if necessary.
 
--- I know this script is inconsistent with the fact it uses game with and without getservice but I don't care.
+Please don't go abusing like crazy using this script. I made this free/open-source and don't want idiots doing stuff that forces me to make this paid/obfuscated.
+
+I know this script is inconsistent with the fact it uses Game with and without GetService but I don't care.
+
+]]
 
 -- Notifications
 local function Remind(msg)
