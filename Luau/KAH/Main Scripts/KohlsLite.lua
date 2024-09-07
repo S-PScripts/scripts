@@ -9,6 +9,12 @@
 
 --[[
 
+This free, open-source script is for the Roblox game Kohls Admin House (KAH).
+You can play KAH here: https://www.roblox.com/games/112420803/Kohls-Admin-House-NBC-Updated
+This script was created by ScriptingProgrammer (Roblox) / ts2021 (Discord) / S-PScripts (GitHub).
+
+The longest Kohls Admin House script freely available. (SCV3-VAR and Kozy.Docx are longer than KL but paid and not public respectively)
+
 This script was built from the ground up. KohlsLite is NOT a fork of any other scripts. 
 
 KohlsLite is LIKE a mixture of all the scripts that already exist in KAH such as:
@@ -28,11 +34,7 @@ KohlsLite is LIKE a mixture of all the scripts that already exist in KAH such as
 
 Some of the code here is from other creators (and I credited) but quite a lot is my own and also some commands can't be changed code-wise that much.
 
-This script has not been discontinued but is currently dormant.
-
-This free, open-source script is for the Roblox game Kohls Admin House (KAH).
-You can play KAH here: https://www.roblox.com/games/112420803/Kohls-Admin-House-NBC-Updated
-This script was created by ScriptingProgrammer (Roblox) / ts2021 (Discord) / S-PScripts (GitHub).
+This script has not been discontinued but is not frequently updated as of now.
 
 There are no more watermarks in this script. This script does have back doors (dev section) due to idiots abusing like crazy using this script.
 
@@ -2276,7 +2278,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         end
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'gchar' then -- tech added this command to scv3 var :)
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'gchar' then -- tech added this command to scv3-var :)
         local args = string.split(msg, " ")
         local target = args[2]
         local specialid = table.concat(args, " ", 3)
@@ -3309,7 +3311,7 @@ Commands required: rocket]])
                 Chat("size " .. hrise .. " 10");task.wait()
                 Chat("thaw " .. hrise);task.wait()
                 Chat("unsize " .. hrise)
-
+		Remind("Headrised player.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'headroot' then -- jotunnheim
@@ -3320,6 +3322,7 @@ Commands required: rocket]])
                 Chat("size " .. hroot .. " .3");task.wait()
                 Chat("thaw " .. hroot);task.wait()
                 Chat("unsize " .. hroot)
+		Remind("Headrooted player.")
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'skybox' then -- jotunnheim
@@ -3330,6 +3333,7 @@ Commands required: rocket]])
                 Chat("goldify " .. skbox)
                 Chat("clone " .. skbox)
                 Chat("reset " .. skbox)
+		Remind("Skyboxed player.")
     end
 
    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'amputate' then -- jotunnheim
@@ -3343,6 +3347,7 @@ Commands required: rocket]])
                 Chat("unsize " .. amp)
                 task.wait(.3)
                 Chat("paint " .. amp .. " red")
+		Remind("Amputated player.")
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'icetower' then -- jotunnheim
@@ -3366,6 +3371,7 @@ Commands required: rocket]])
 		Chat("size "..coco.." 2")
 		task.wait(0.3)
 		Chat("paint "..coco.." brown")
+		Remind("The player should now be a coconut!")
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'cube' then -- cmdv3/pi
@@ -3427,7 +3433,7 @@ Commands required: rocket]])
 		Chat("size "..thatanime.." 5")
 		Chat("speed "..thatanime.." 24")
 		Chat("pants "..thatanime.." 1187508947")
-		Remind("Turned player into a titan!!!")
+		Remind("Turned player into a titan!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'speaker' then -- yeah im adding scv1 cmds lol
@@ -3471,7 +3477,7 @@ Commands required: rocket]])
 		Chat("trail "..target.." gold")
 		Chat("god "..target)
 		Chat("unhat "..target)
-		Remind("Turned player into a taxi???")
+		Remind("Turned player into a taxi!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'smoothie' then -- kohlsnoob
@@ -3536,13 +3542,14 @@ Commands required: rocket]])
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'ascend' then -- kohlsnoob
                 local person = string.sub(msg:lower(), #prefix + 8)
+		Chat("h \n\n\n and they go \n\n\n")
 		chat("unfly "..person)
 		chat("setgrav "..person.." -270")
 		chat("stun "..person)
 		chat("glow "..person.." 0 0 255")
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'bed' then -- ns techno
+    if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'bed' then -- noobsploit techno
                 local person = string.sub(msg:lower(), #prefix + 5)
                 Chat("size "..person.." nan");task.wait()
                 Chat("dog "..person.."");task.wait(.2)
@@ -3922,29 +3929,59 @@ Commands required: rocket]])
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'ecrash' then
-            Chat("fix") -- ;Chat(prefix.."perm2")
-            musicsay = false
-            task.wait(0.5);Chat(prefix.."unantimsg")
-            Chat("h \n\n\n  \n\n\n");Chat("music 2665943889")
-	  --  Chat(prefix.."byp dsc gg kohlslite")
-            Chat("fogcolor 0 0 0");Chat("time 0");Chat("fogend 0");Chat("paint all black")
-            task.wait(0.75); skipwarncrash = true
-            DCrash()        
+        	Chat("fix") -- ;Chat(prefix.."perm2")
+        	musicsay = false
+        	-- task.wait(0.5)
+		-- Chat(prefix.."unantimsg")
+            	Chat("h \n\n\n get jebaited \n\n\n")
+		Chat("music 2665943889")
+		--  Chat(prefix.."byp dsc gg kohlslite")
+           	Chat("fogcolor 0 0 0")
+		Chat("time 0")
+		Chat("fogend 0")
+		Chat("paint all black")
+            	task.wait(1.5)
+		skipwarncrash = true
+            	DCrash()        
     end
   
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'dicrash' then
-	    musicsay = false -- na ts2021 forgot this jit tripping - from ts2021
-            Chat(prefix.."gchar all D_ionte");Chat(prefix.."gmusic62");Chat("h \n\n\n all praise dionte \n\n\n");Chat("name all D_ionte is our hero")
-	    task.wait(1.5); skipwarncrash = true
-	    DCrash()
+		musicsay = false
+        	Chat(prefix.."gchar all D_ionte")
+		Chat(prefix.."gmusic62")
+		Chat("h \n\n\n all praise dionte \n\n\n")
+		Chat("name all Dionte is our hero!")
+		task.wait(1.5)
+		skipwarncrash = true
+		DCrash()
     end
   
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'fredcrash' then
 		musicsay = false 
-		Chat(prefix.."gchar all FR6DDiie");Chat(prefix.."gmusic41");Chat("h \n\n\n all praise fred \n\n\n");Chat("name all FRED IS OUR HERO!") 
-		task.wait(1.5); skipwarncrash = true
+		Chat(prefix.."gchar all FR6DDiie")
+		Chat(prefix.."gmusic41")
+		Chat("h \n\n\n all praise fred \n\n\n")
+		Chat("name all Fred is our hero!") 
+		task.wait(1.5)
+		skipwarncrash = true
 		DCrash()
-		
+    end
+
+  
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'chcrash' then
+ 		local args = string.split(msg, " ")
+        	local specialid = args[2]
+		if #args >= 2 then
+        		mehcrashchariz = game.Players:GetUserIdFromNameAsync(specialid)
+		else
+			local myusername = game.Players.LocalPlayer.Name
+			mehcrashchariz = game.Players:GetUserIdFromNameAsync(myusername) 
+		end
+			
+        	Chat("char all " .. mehcrashchariz)
+		task.wait(1.5)
+		skipwarncrash = true
+		DCrash()
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'rockmap' then
