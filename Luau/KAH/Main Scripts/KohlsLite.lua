@@ -4267,7 +4267,7 @@ Commands required: rocket]])
 				Remind('Cannot find player with the name: '..dasplayer)
 			end		
 		else
-			Remind("Invalid amount of arguments.")
+			Remind("Invalid amount of arguments. (it should be 3)")
 		end
     end
 
@@ -4305,7 +4305,7 @@ Commands required: rocket]])
 				Remind('Cannot find player with the name: '..dasplayer)
 			end		
 		else
-			Remind("Invalid amount of arguments.")
+			Remind("Invalid amount of arguments. (it should be 2)")
 		end
     end
 
@@ -4583,7 +4583,7 @@ Commands required: rocket]])
 			amount = tonumber(args[3])
 			RNuke(amount, range)
 		else
-			Remind("Invalid amount of arguments.")
+			Remind("Invalid amount of arguments. (it should be 3)")
 		end
     end
 
@@ -4606,7 +4606,7 @@ Commands required: rocket]])
 				Remind("Player doesn't exist!")
 			end
 		else
-			Remind("Invalid amount of arguments. (it should be 3 or 4)")
+			Remind("Invalid amount of arguments. (it should be 2 or 3)")
 		end
     end
 
@@ -4627,7 +4627,7 @@ Commands required: rocket]])
                                Remind('Cannot find player with the name: '..dasplayer)
                         end
 		else
-			Remind("Invalid amount of arguments.")
+			Remind("Invalid amount of arguments. (it should be 1 or 2)")
 		end
     end
 
