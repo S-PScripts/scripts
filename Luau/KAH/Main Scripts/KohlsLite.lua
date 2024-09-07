@@ -9678,48 +9678,73 @@ end
 -- FIX CAM (client)
 function FixCam()
                 task.spawn(function()
+
                         local Player = game.Players.LocalPlayer
                         local PlayerService = game:GetService("Players")
+		
                         local lp = PlayerService.LocalPlayer
                         local UIS = game:GetService("UserInputService")
                         local CAS = game:GetService("ContextActionService")
                         local RUS = game:GetService('RunService')
+		
                         CAS:UnbindAction("ShoulderCameraSprint")
                         RUS:UnbindFromRenderStep("ShoulderCameraUpdate")
                         CAS:UnbindAction("ShoulderCameraZoom")
+		
                         while true do
                                 task.wait()
+			
                                 repeat game:GetService('RunService').Heartbeat:Wait() until game.Workspace.CurrentCamera.CameraType == Enum.CameraType.Scriptable
+			
                                 RUS:UnbindFromRenderStep("ShoulderCameraUpdate")
                                 CAS:UnbindAction("ShoulderCameraZoom")
                                 CAS:UnbindAction("ShoulderCameraSprint")
+			
                                 local WEPSYS = game:GetService("ReplicatedStorage"):FindFirstChild('WeaponsSystem')
-                                if not WEPSYS then return end
+                                if not WEPSYS then 
+					return 
+				end
+			
                                 for i,v in pairs(WEPSYS:GetDescendants()) do
                                         if v:IsA("Script") then
                                                 v.Disabled = true
                                         end
                                         v:Destroy()
                                 end
+			
                                 local CWS = lp.PlayerGui:FindFirstChild("ClientWeaponsScript")
                                 local WSG = lp.PlayerGui:FindFirstChild("WeaponsSystemGui")
                                 local CWS_2 = lp.PlayerScripts:FindFirstChild("ClientWeaponsScript")
                                 local Camera = game:GetService("Workspace"):FindFirstChild("Camera")
-                                if CWS then CWS.Disabled = true CWS:Destroy() end
-                                if WSG then WSG:Destroy() end
+			
+                                if CWS then 
+					CWS.Disabled = true
+					CWS:Destroy() 
+				end
+			
+                                if WSG then 
+					WSG:Destroy() 
+				end
+			
                                 if CWS_2 then
                                         CWS_2.Disabled = true
                                         CWS_2:Destroy()
                                 end
+			
                                 game:GetService("UserInputService").MouseBehavior = Enum.MouseBehavior.Default
+			
                                 UIS.MouseIconEnabled = true
+			
                                 PlayerService.LocalPlayer.CameraMaxZoomDistance = 400
                                 PlayerService.LocalPlayer.CameraMinZoomDistance = 0.5
                                 Camera.FieldOfView = 70
+			
                                 game.Workspace.CurrentCamera.CameraType = Enum.CameraType.Custom
                                 game.Workspace.CurrentCamera.CameraSubject = lp.Character.Humanoid
+			
                                 lp.Character.Humanoid.AutoRotate = true 
                         end
+		
                 end)
 end
 
@@ -9733,27 +9758,40 @@ end)
 
 -- NOK
 function NOK()
-  game:GetService("Workspace").Terrain["_Game"].Workspace.Obby.Jump.TouchInterest:destroy()
-  game:GetService("Workspace").Terrain["_Game"].Workspace.Obby.Jump1.TouchInterest:destroy()
-  game:GetService("Workspace").Terrain["_Game"].Workspace.Obby.Jump2.TouchInterest:destroy()
-  game:GetService("Workspace").Terrain["_Game"].Workspace.Obby.Jump3.TouchInterest:destroy()
-  game:GetService("Workspace").Terrain["_Game"].Workspace.Obby.Jump4.TouchInterest:destroy()
-  game:GetService("Workspace").Terrain["_Game"].Workspace.Obby.Jump5.TouchInterest:destroy()
-  game:GetService("Workspace").Terrain["_Game"].Workspace.Obby.Jump6.TouchInterest:destroy()
-  game:GetService("Workspace").Terrain["_Game"].Workspace.Obby.Jump7.TouchInterest:destroy()
-  game:GetService("Workspace").Terrain["_Game"].Workspace.Obby.Jump8.TouchInterest:destroy()
-  game:GetService("Workspace").Terrain["_Game"].Workspace.Obby.Jump9.TouchInterest:destroy()
-  Remind("Rejoin the server to revert!")
+	game:GetService("Workspace").Terrain["_Game"].Workspace.Obby.Jump.TouchInterest:destroy()
+	game:GetService("Workspace").Terrain["_Game"].Workspace.Obby.Jump1.TouchInterest:destroy()
+	game:GetService("Workspace").Terrain["_Game"].Workspace.Obby.Jump2.TouchInterest:destroy()
+	game:GetService("Workspace").Terrain["_Game"].Workspace.Obby.Jump3.TouchInterest:destroy()
+	game:GetService("Workspace").Terrain["_Game"].Workspace.Obby.Jump4.TouchInterest:destroy()
+	game:GetService("Workspace").Terrain["_Game"].Workspace.Obby.Jump5.TouchInterest:destroy()
+	game:GetService("Workspace").Terrain["_Game"].Workspace.Obby.Jump6.TouchInterest:destroy()
+	game:GetService("Workspace").Terrain["_Game"].Workspace.Obby.Jump7.TouchInterest:destroy()
+	game:GetService("Workspace").Terrain["_Game"].Workspace.Obby.Jump8.TouchInterest:destroy()
+	game:GetService("Workspace").Terrain["_Game"].Workspace.Obby.Jump9.TouchInterest:destroy()
+	Remind("Rejoin the server to revert!")
 end
 
 -- NOK 2
 function NOK2()
   for i,v in pairs(workspace.Terrain["_Game"]["Workspace"].Obby:GetDescendants()) do
         if v:IsA("TouchTransmitter") then 
-                        v:Destroy() 
+		v:Destroy() 
         end
   end
   Remind("Rejoin the server to revert!")
+end
+
+-- NOK 3 (idk where it went but it's back now)
+function NOK3()
+    local objs = game:GetService("Workspace").Terrain._Game.Workspace.Obby:GetChildren()
+    for i, obj in pairs(objs) do
+        coroutine.wrap(function()
+            pcall(function()
+                obj.TouchInterest:Destroy()
+            end)
+        end)()
+    end
+    Remind("Rejoin the server to revert!")
 end
 
 -- temp NOK
@@ -9773,6 +9811,7 @@ function GetPing()
    Speak("Ping is " .. RSP .. "ms.")
 end
 
+--- broken lool
 function FRespawn()
     game.Players.LocalPlayer.Character:Destroy()
 end
