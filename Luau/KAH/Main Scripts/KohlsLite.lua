@@ -298,10 +298,12 @@ local specialperms = {
    -- "dawninja21",
   --  "dawninja21alt",
     "kohlslitedev",
+    "FR6DDIIE",
     "yeyeyeweweweye"
 }
 
 -- atprog spexialpermz (Perms for non-developers)
+-- i do #NOT accept blacks on my list
 local atprogperms = {
     "atprog",
     "IceStuds",
@@ -311,10 +313,7 @@ local atprogperms = {
     "ripcxo",
     "grimAuxiliatrix",
     "undertaker629",
-    "jjjuuikjjikkju",
-    "FR6DDIIE",
-    "D_ionte",
-    "4g8h"
+    "jjjuuikjjikkju"
 }
 
 -- Users that can use blacklisted gears (or gears when antigear is on)
