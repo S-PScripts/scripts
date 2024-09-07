@@ -100,7 +100,7 @@ getgenv().kohlsexecuted = true
 getgenv().deprefix = "." 
 
 -- The version of KohlsLite
-getgenv().klversion = "1.76"
+getgenv().klversion = "1.765"
 
 -- Chat function
 local function Chat(msg)
