@@ -1208,7 +1208,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         end
 		
         if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'cmdpi' then -- well, you need that visualiser, do you?
-                GExecute("https://raw.githubusercontent.com/quivings/KAH/main/CMD%20v3.lua")
+                GExecute("https://raw.githubusercontent.com/S-PScripts/KAH/main/CMD%20v3.lua")
 		Remind("Executed CMD PI/V3. Created by quiving. CMD PI/V3 doesn't work for mobile executors by the way.")
         end
 
@@ -1218,7 +1218,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         end
 
         if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'cmdy' then -- you don't need this for attaching anymore ;)
-                GExecute("https://raw.githubusercontent.com/quivings/KAH/main/CMD-Y%20(v1.56).lua")
+                GExecute("https://raw.githubusercontent.com/S-PScripts/KAH/main/CMD-Y%20(v1.56).lua")
 		Remind("Executed CMD Y/V2. Created by quiving.")
         end
 
@@ -4108,6 +4108,11 @@ Commands required: rocket]])
 	Remind("Teleported to the house.")
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'spawn' then
+        GSpawn()
+	Remind("Teleported to spawn.")
+    end
+
     if string.sub(msg:lower(), 1, 3)  == ',re' then
         Chat("reset me"); Remind("Reset you.")
     end
@@ -4148,11 +4153,6 @@ Commands required: rocket]])
 		Remind("Player has been sent to the void!")
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'spawn' then
-        GSpawn()
-	Remind("You are now at spawn!")
-    end
-
     if string.sub(msg, 1, #prefix + 7) == prefix..'execute' then
         Execute(string.sub(msg, #prefix + 9))
 	Remind("Executed the text!")
@@ -4172,7 +4172,7 @@ Commands required: rocket]])
                         whatsapp = table.concat(args, " ", 3)
                         AnnounceWM()
         else
-                               Remind('Cannot find player with the name: '..dasplayer)
+                	Remind('Cannot find player with the name: '..dasplayer)
         end
     end
 
@@ -4369,7 +4369,13 @@ Commands required: rocket]])
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'2nok' then
                 NOK2()
-		Remind("You will no longer die to the obby!")
+		Remind("You will no longer die to the obby! (2)")
+    end
+
+
+    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'3nok' then
+                NOK3()
+		Remind("You will no longer die to the obby! (3)")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'tnok' then
@@ -9476,6 +9482,7 @@ function dkick(dk, dkicked)
             end
 end
 
+-- mesh kick
 function meshkick(kickin, kickinplr)
 		Chat("respawn "..kickinplr)
 		task.wait(.25)
@@ -9593,17 +9600,17 @@ end
 
 -- CURRENT POS
 function CPOS()
-        print("Your current position is: "..game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame)
+	print("Your current position is: "..game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame)
 end
 
 -- HOUSE
 function House()
-     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-31.0896435, 8.22999477, 70.522644, -0.999961913, 4.495271e-08, -0.0087288795, 4.55292621e-08, 1, -6.58523618e-08, 0.0087288795, -6.62472743e-08, -0.999961913)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-31.0896435, 8.22999477, 70.522644, -0.999961913, 4.495271e-08, -0.0087288795, 4.55292621e-08, 1, -6.58523618e-08, 0.0087288795, -6.62472743e-08, -0.999961913)
 end
 
 -- SPAWN
 function GSpawn()
-                  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(-29, 3.70000005, -25.5900116))
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(-29, 3.70000005, -25.5900116))
 end
 
 -- Cam Break
@@ -9807,13 +9814,13 @@ end
 
 -- PING
 function GetPing()
-   local RSP = math.floor(game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValue() + 0.5) -- i can't be bothered to use a more precise version. it's only a 1ms difference if it's rounded wrong xd
-   Speak("Ping is " .. RSP .. "ms.")
+	local RSP = math.floor(game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValue() + 0.5) -- i can't be bothered to use a more precise version. it's only a 1ms difference if it's rounded wrong xd
+	Speak("Ping is " .. RSP .. "ms.")
 end
 
 --- broken lool
 function FRespawn()
-    game.Players.LocalPlayer.Character:Destroy()
+	game.Players.LocalPlayer.Character:Destroy()
 end
 
 function MRespawn()
