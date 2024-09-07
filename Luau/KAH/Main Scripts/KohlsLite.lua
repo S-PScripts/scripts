@@ -4299,7 +4299,11 @@ Commands required: rocket]])
     end
 
     if string.sub(msg:lower(), 1, 6) == 'sneban' then
-           Speak("I'm gonna say the s word. You are a filthy snekkur ngl")
+        Speak("I'm gonna say the s word. You are a filthy snekkur ngl")
+    end
+
+    if string.sub(msg:lower(), 1, 6) == 'cmp' then
+	Speak("collect my pages...")
     end
 
    if string.sub(msg:lower(), 1, #prefix + 4) == prefix.."pmap" then
