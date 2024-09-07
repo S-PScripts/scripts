@@ -976,6 +976,8 @@ local ogcframes = {
 
 -- Auto blacklisting for stuff
 local autoblvgc = true -- retards kept gearing everyone so here's a quick fix
+-- WHOOPS I FORGOT TO READD THIS FEATURE!!
+
 
 -- Skip anti crash warning
 local skipwarncrash = true
