@@ -50,7 +50,7 @@ I know this script is inconsistent with the fact it uses Game with and without G
 -- Notifications
 local function Remind(msg)
         game.StarterGui:SetCore("SendNotification", {
-                Title = "KohlsLite v1.76",
+                Title = "KohlsLite v1.765",
                 Text = msg,
                 Duration = 1
         })
@@ -3905,8 +3905,8 @@ Commands required: rocket]])
             Chat("fix") -- ;Chat(prefix.."perm2")
             musicsay = false
             task.wait(0.5);Chat(prefix.."unantimsg")
-            Chat("h \n\n\n dsc gg kohlslite \n\n\n");Chat(prefix.."gmusic100")
-	    Chat(prefix.."byp dsc gg kohlslite")
+            Chat("h \n\n\n  \n\n\n");Chat("music 2665943889")
+	  --  Chat(prefix.."byp dsc gg kohlslite")
             Chat("fogcolor 0 0 0");Chat("time 0");Chat("fogend 0");Chat("paint all black")
             task.wait(0.75); skipwarncrash = true
             DCrash()        
