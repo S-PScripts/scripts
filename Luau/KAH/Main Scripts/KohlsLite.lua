@@ -1128,6 +1128,10 @@ local welcomemsg = true
 -- shh
 thesecretvariable = true
 
+-- loga
+local umwhatdasigma = game:HttpGet("https://pastebin.com/raw/d7eTDKbJ") -- oofkohls
+local logmode = "default"
+
 -- local permpassid = 66254 or 64354 -> NBC, BC
 -- local personpassid = 35748 or 37127 --> NBC, BC
 
@@ -1188,7 +1192,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		   Remind("Executed Infinite Yield (IY).")
         end
 
-		-- quiving
+	-- cmd v3
 	if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'myvis' then
                 if haspersons == true then
                         Remind("The prefix is -")
@@ -3831,6 +3835,22 @@ Commands required: rocket]])
        Remind("Logs have been spammed!")
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'logtrap' then -- scv1
+        LogTrap()
+	Remind("Don't do 'logs'...")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'logmode' then
+        lmode = string.sub(msg:lower(), #prefix + 9)
+	if lmode == "default" then
+		logmode = "default"
+	elseif lmode == "crack" then
+		logmode = "crack"
+	else
+		Remind("Log mode must be default or crack.")
+	end
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'tptool' then
         InitTool()
         Remind("You should have been given a TP tool now!")
@@ -4358,8 +4378,15 @@ Commands required: rocket]])
    end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'alladmin' then
-       alladmin = true
-       Chat("h \n\n\n Everyone has been given admin! Chat any command. \n\n\n")
+	alladmin = true
+	Chat("h \n\n\n Everyone has been given admin! Chat any command. \n\n\n")
+	Remind("All admin enabled.")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unalladmin' then
+	alladmin = false
+        Chat("h \n\n\n Free admin is off. \n\n\n")
+	Remind("All admin disabled.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'nok' then
@@ -4371,7 +4398,6 @@ Commands required: rocket]])
                 NOK2()
 		Remind("You will no longer die to the obby! (2)")
     end
-
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'3nok' then
                 NOK3()
@@ -5152,11 +5178,6 @@ Commands required: rocket]])
 		Remind("Breaking everyone's velocity...")
      end
 
-    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unalladmin' then
-       alladmin = false
-        Chat("h \n\n\n Free admin is off. \n\n\n")
-    end
-
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'loopgrab' then
         loopgrab = true
 	Remind("Loopgrabbing the pads!")
@@ -5218,10 +5239,11 @@ Commands required: rocket]])
         end
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'noadsky' then
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'gotosky' then
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(0,1000,0)
 		Remind("Skydived you!")
     end
+
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'ungearme' then
                 Chat("ungear me																				all	all")
 		Remind("Ungeared yourself... and everyone.")
@@ -8635,7 +8657,11 @@ function PLRSTART(v)
                             Chat("h \n\n\n " .. v.Name .. " is using logs. \n\n\n")
                         end
                         if AntiLogs then
-                            LogSpam()
+			    	if logmode == "default" then
+                            		LogSpam()
+				elseif logmode == "crack" then
+					LogTrap()
+				else end
                         end
                     end
 
@@ -9311,9 +9337,15 @@ end)
 
 -- LOG SPAM
 function LogSpam()
-      for i = 1,50 do
+      for i = 1,100 do
           Chat("reset KOHLSLITE ON BOTTOM - ts2021, 2024")
-          Chat("reset PR SCRIPT ON TOP - atprog, 2024")
+      end
+end
+
+-- Log Trap
+function LogTrap()
+      for i = 1,100 do
+          Chat("reset "..umwhatdasigma)
       end
 end
 
@@ -9610,7 +9642,7 @@ end
 
 -- SPAWN
 function GSpawn()
-	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(-29, 3.70000005, -25.5900116))
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(-29, 3.70000005, -25.5900116)) -- -41, 3.7, -15.589996337891
 end
 
 -- Cam Break
@@ -10857,6 +10889,7 @@ function onPlayerAdded(player)
 				Chat("h \n\n\n Rocket kicking "..player.Name.." as they are blacklisted. \n\n\n")
 			end
 			print(player.Name.." joined the server. They are being rocket kicked as they were on the rkick_on_sight list.")
+			Remind(player.Name.." joined the server. They are being rocket kicked as they were on the rkick_on_sight list.")
                 	srkick = true
                 	rkicks = player.Name
                 	rkicker = player
@@ -10868,6 +10901,7 @@ function onPlayerAdded(player)
 				Chat("h \n\n\n Lagging "..player.Name.." with cars as they are blacklisted. \n\n\n")
 			end
 			print(player.Name.." joined the server. They are being lagged with cars as they were on the suser_on_sight list.")
+			Remind(player.Name.." joined the server. They are being lagged with cars as they were on the suser_on_sight list.")
 			if not table.find(carcar, player.Name) then
                 		table.insert(carcar, player.Name)
 			end
@@ -10879,6 +10913,7 @@ function onPlayerAdded(player)
 				Chat("h \n\n\n Message kicking "..player.Name.." as they are blacklisted. \n\n\n")
 			end
 			print(player.Name.." joined the server. They are being message kicked as they were on the mkick_on_sight list.")
+			Remind(player.Name.." joined the server. They are being message kicked as they were on the mkick_on_sight list.")
                 	antichatplr = true
                 	acplr = player.Name
 			check_con = true
@@ -10894,6 +10929,7 @@ function onPlayerAdded(player)
         			Chat("h \n\n\n Server automatically crashed due to blacklisted user ("..player.Name..") joining. \n\n\n")
 			end
         		print(player.Name.." joined the server. Server was automatically crashed as they are blacklisted.")
+			Remind(player.Name.." joined the server. Server was automatically crashed as they are blacklisted.")
        		 	DCrash();skipwarncrash = true
 			check_con = true
    		end
@@ -10904,6 +10940,7 @@ function onPlayerAdded(player)
          				Chat("h \n\n\n Automatically banned "..player.Name.." for being on an account under the account age limit. \n\n\n")
 				end
          			print(player.Name.." joined the server. They were auto-banned for being under the account age limit.")
+				Remind(player.Name.." joined the server. They were auto-banned for being under the account age limit.")
          			if not table.find(newplrslocked, player.Name) then
                  			table.insert(newplrslocked, player.Name)
          			end
@@ -10917,8 +10954,10 @@ function onPlayerAdded(player)
                 	Gearban()
 			if table.find(gb_on_sight, player.Name) then
 				print(player.Name.." joined the server. They were gearbanned since they were on the gb_on_sight list.")
+				Remind(player.Name.." joined the server. They were gearbanned since they were on the gb_on_sight list.")
 			else
 				print(player.Name.." joined the server. They were gearbanned since autogearban was turned on.")
+				Remind(player.Name.." joined the server. They were gearbanned since autogearban was turned on.")
 			end
 			check_con = true
     		end
@@ -10937,9 +10976,9 @@ function onPlayerAdded(player)
 			else
 	         		Chat("h \n\n\n Welcome to the server, " .. player.Name .. ". \n\n\n")
 			end
+	        	print(player.Name.." joined the server.")
+        		Remind(player.Name.." joined the server.")
 		end
-        	print(player.Name.." joined the server.")
-        	Remind(player.Name.." joined the server.")
     end
 
     if table.find(specialperms, player.Name) then
@@ -10986,8 +11025,6 @@ function onPlayerLeaving(player)
     if table.find(mkick_on_sight, player.Name) then
                 antichatplr = false
     end
-
-    task.wait()
 end
 
 game.Players.PlayerAdded:Connect(onPlayerAdded)
@@ -11075,7 +11112,7 @@ function Regen()
         if fireclickdetector then
                 fireclickdetector(game:GetService("Workspace").Terrain["_Game"].Admin.Regen.ClickDetector, 0)
         else 	
-		Remind("Sorry, your exploit does not support regenerating the admin pads (fireclickdetector)")
+		-- Remind("Sorry, your exploit does not support regenerating the admin pads (fireclickdetector)")
 	end
 end
 
