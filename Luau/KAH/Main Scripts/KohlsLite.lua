@@ -303,7 +303,7 @@ local specialperms = {
 }
 
 -- atprog spexialpermz (Perms for non-developers)
--- i do #NOT accept blacks on my list
+-- i will #NOT give you perms if your BLACK irl
 local atprogperms = {
     "atprog",
     "IceStuds",
