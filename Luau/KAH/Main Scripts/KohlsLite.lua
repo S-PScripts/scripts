@@ -3858,6 +3858,26 @@ Commands required: rocket]])
 	end
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'persons' then
+		haspersons = true
+		Remind("Manually set - persons true.")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unpersons' then
+		haspersons = false
+		Remind("Manually set - persons false.")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'peadmin' then
+		hasperm = true
+		Remind("Manually set - perm true.")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'unpeadmin' then
+		hasperm = false
+		Remind("Manually set - perm false.")
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'tptool' then
         InitTool()
         Remind("You should have been given a TP tool now!")
