@@ -5,7 +5,7 @@
 ░▒▓███████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░▒▓█▓▒░       ░▒▓██████▓▒░░▒▓█▓▒░      ░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓██████▓▒░   
 ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░             ░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓█▓▒░        
 ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░             ░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓█▓▒░        
-░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░▒▓███████▓▒░░▒▓████████▓▒░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓████████▓▒░ v1.73 ]]
+░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░▒▓███████▓▒░░▒▓████████▓▒░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓████████▓▒░ v1.76 ]]
 
 --[[
 
@@ -50,7 +50,7 @@ I know this script is inconsistent with the fact it uses Game with and without G
 -- Notifications
 local function Remind(msg)
         game.StarterGui:SetCore("SendNotification", {
-                Title = "KohlsLite v1.73",
+                Title = "KohlsLite v1.76",
                 Text = msg,
                 Duration = 1
         })
@@ -100,7 +100,7 @@ getgenv().kohlsexecuted = true
 getgenv().deprefix = "." 
 
 -- The version of KohlsLite
-getgenv().klversion = "1.715"
+getgenv().klversion = "1.76"
 
 -- Chat function
 local function Chat(msg)
@@ -396,7 +396,7 @@ rkick_on_sight = {} -- rocket kick player when they join ONLY WORKS WITH ONE PLA
 crash_on_sight = {"aliihsan12345Bloxy"} -- crash server when player joins
 mkick_on_sight = {"He4rt_4","hellokitty2kute"} -- kick player with pm spam when they join ONLY WORKS WITH ONE PLAYER
 suser_on_sight = {} -- slow a user when they join with car gear ONLY WORKS WITH ONE PLAYER
-furry_on_sight = {"jhjssikeksms"} -- nine jay n
+furry_on_sight = {"jhjssikeksms"} -- 9jn
 gb_on_sight = {} -- gearban upon a user joining
 
 -- Variables for moving
@@ -976,8 +976,6 @@ local ogcframes = {
 
 -- Auto blacklisting for stuff
 local autoblvgc = true -- retards kept gearing everyone so here's a quick fix
--- WHOOPS I FORGOT TO READD THIS FEATURE!!
-
 
 -- Skip anti crash warning
 local skipwarncrash = true
@@ -3152,7 +3150,7 @@ Commands required: rocket]])
 	
     end
 
- if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'hatkick' then  -- mesh kick haha
+ if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'hatkick' then  -- hat kick haha
 		local dasplayer = string.sub(msg:lower(), #prefix + 9)
                 PLAYERCHECK(dasplayer)
 	
@@ -3171,18 +3169,23 @@ Commands required: rocket]])
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antimesh' then 
 		antimesh = true
+		Remind("Anti mesh/hat kick enabled.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unantimesh' then 
 		antimesh = false
+		Remind("Anti mesh/hat kick disabled.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'antihat' then 
 		antimesh = true
+		Remind("Anti mesh/hat kick enabled.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'unantihat' then 
 		antimesh = false
+		Remind("Anti mesh/hat kick disabled.")
+
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'welmsg' then
@@ -5413,7 +5416,7 @@ Commands required: rocket]])
     end
 
 
--- !! DURING THE SUMMER HOLIDAYS, I WILL TRY TO FIX THE ANTI SYSTEM TO IT CAN BE INDIVIDUAL PLAYERS FOR EVERYTHING. ALSO, I WILL FIX THE VARIABLE NAMES !! --
+-- !! I WILL TRY TO FIX THE ANTI SYSTEM SO IT CAN BE INDIVIDUAL PLAYERS FOR EVERYTHING. ALSO, I WILL FIX THE VARIABLE NAMES !! --
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antiaddon' then
         local args = string.split(msg, " ")
         if args[2] == "me" then
@@ -8022,6 +8025,8 @@ game:GetService("RunService").RenderStepped:Connect(function()
 							Chat("punish " .. v.Name)
 							Chat("clr")
 							Chat(prefix.."regen")
+							Remind("Anti-gear triggered by "..v.Name)
+							print("Anti-gear triggered by "..v.Name)
 						end
 					end
 				end
@@ -8033,6 +8038,8 @@ game:GetService("RunService").RenderStepped:Connect(function()
 							Chat("punish " .. v.Name)
 							Chat("clr")
 							Chat(prefix.."regen")
+							Remind("Anti-gear triggered by "..v.Name)
+							print("Anti-gear triggered by "..v.Name)
 						end
 					end
 				end
@@ -8047,11 +8054,21 @@ game:GetService("RunService").RenderStepped:Connect(function()
 								Chat("punish others")
 								Chat("clr")
 								Chat(prefix .. "regen")
+								Remind("Anti-crash triggered by "..v.Name)
+								print("Anti-crash triggered by "..v.Name)
+								if autoblvgc then
+									Chat(prefix.."slock")
+								end
 							elseif anticrash then
 								Chat("ungear " .. v.Name)
 								Chat("punish " .. v.Name)
 								Chat("clr")
 								Chat(prefix .. "regen")
+								Remind("Anti-crash triggered by "..v.Name)
+								print("Anti-crash triggered by "..v.Name)
+								if autoblvgc then
+									table.insert(blacklist, v.Name)
+								end
 							else end
 						end
 					end
@@ -8063,11 +8080,21 @@ game:GetService("RunService").RenderStepped:Connect(function()
 								Chat("punish others")
 								Chat("clr")
 								Chat(prefix .. "regen")
+								Remind("Anti-crash triggered by "..v.Name)
+								print("Anti-crash triggered by "..v.Name)
+								if autoblvgc then
+									Chat(prefix.."slock")
+								end
 							elseif anticrash then
 								Chat("ungear " .. v.Name)
 								Chat("punish " .. v.Name)
 								Chat("clr")
 								Chat(prefix .. "regen")
+								Remind("Anti-crash triggered by "..v.Name)
+								print("Anti-crash triggered by "..v.Name)
+								if autoblvgc then
+									table.insert(blacklist, v.Name)
+								end
 							else end
 						end
 					end
@@ -8078,6 +8105,8 @@ game:GetService("RunService").RenderStepped:Connect(function()
 					Chat("punish others")
 					Chat("clr")
 					Chat(prefix .. "regen")
+					Remind("Anti-crash tool found on workplace")
+					print("Anti-crash tool found on workplace")
 				end
 		end
 
@@ -8090,6 +8119,8 @@ game:GetService("RunService").RenderStepped:Connect(function()
 								Chat("punish " .. v.Name)
 								Chat("clr")
 								Chat(prefix .. "regen")
+								Remind("Anti-attach2 triggered by "..v.Name)
+								print("Anti-attach2 triggered by "..v.Name)
 							end
 						end
 					end
@@ -8101,6 +8132,8 @@ game:GetService("RunService").RenderStepped:Connect(function()
 								Chat("punish " .. v.Name)
 								Chat("clr")
 								Chat(prefix .. "regen")
+								Remind("Anti-attach2 triggered by "..v.Name)
+								print("Anti-attach2 triggered by "..v.Name)
 							end
 						end
 					end
@@ -8111,6 +8144,8 @@ game:GetService("RunService").RenderStepped:Connect(function()
 					Chat("punish others")
 					Chat("clr")
 					Chat(prefix .. "regen")
+					Remind("Anti-attach2 tool found on workplace")
+					print("Anti-attach2 tool found on workplace")
 				end
 		end
 
@@ -8123,6 +8158,8 @@ game:GetService("RunService").RenderStepped:Connect(function()
 								Chat("punish " .. v.Name)
 								Chat("clr")
 								Chat(prefix .. "regen")
+								Remind("Anti-gearban triggered by "..v.Name)
+								print("Anti-gearban triggered by "..v.Name)
 							end
 						end
 					end
@@ -8134,6 +8171,8 @@ game:GetService("RunService").RenderStepped:Connect(function()
 								Chat("punish " .. v.Name)
 								Chat("clr")
 								Chat(prefix .. "regen")
+								Remind("Anti-gearban triggered by "..v.Name)
+								print("Anti-gearban triggered by "..v.Name)
 							end
 						end
 					end
@@ -8144,6 +8183,8 @@ game:GetService("RunService").RenderStepped:Connect(function()
 					Chat("punish others")
 					Chat("clr")
 					Chat(prefix .. "regen")
+					Remind("Anti-gearban tool found on workspace")
+					print("Anti-gearban tool found on workspace")
 				end
 		end
 
@@ -8156,6 +8197,8 @@ game:GetService("RunService").RenderStepped:Connect(function()
 								Chat("punish " .. v.Name)
 								Chat("clr")
 								Chat(prefix .. "regen")
+								Remind("Anti-paint triggered by "..v.Name)
+								print("Anti-paint triggered by "..v.Name)
 							end
 						end
 					end
@@ -8167,6 +8210,8 @@ game:GetService("RunService").RenderStepped:Connect(function()
 								Chat("punish " .. v.Name)
 								Chat("clr")
 								Chat(prefix .. "regen")
+								Remind("Anti-paint triggered by "..v.Name)
+								print("Anti-paint triggered by "..v.Name)
 							end
 						end
 					end
@@ -8177,6 +8222,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
 					Chat("punish others")
 					Chat("clr")
 					Chat(prefix .. "regen")
+					Remind("Anti-paint tool found on the workspace")
 				end
 		end
 
@@ -8189,6 +8235,8 @@ game:GetService("RunService").RenderStepped:Connect(function()
 								Chat("punish " .. v.Name)
 								Chat("clr")
 								Chat(prefix .. "regen")
+								Remind("Blacklisted tool found on "..v.Name)
+								print("Blacklisted tool found on "..v.Name)
 							end
 						end
 					end
@@ -8200,6 +8248,8 @@ game:GetService("RunService").RenderStepped:Connect(function()
 								Chat("punish " .. v.Name)
 								Chat("clr")
 								Chat(prefix .. "regen")
+								Remind("Blacklisted tool found on "..v.Name)
+								print("Blacklisted tool found on "..v.Name)
 							end
 						end
 					end
@@ -8210,6 +8260,8 @@ game:GetService("RunService").RenderStepped:Connect(function()
 					Chat("punish others")
 					Chat("clr")
 					Chat(prefix .. "regen")
+					Remind("Blacklisted tool found on the workspace")
+					print("Blacklisted tool found on the workspace")
 				end
 		end
 
@@ -8222,6 +8274,8 @@ game:GetService("RunService").RenderStepped:Connect(function()
 								Chat("punish " .. v.Name)
 								Chat("clr")
 								Chat(prefix .. "regen")
+								Remind(v.Name.." used a tool 9jn doesn't like!")
+								print(v.Name.." used a tool 9jn doesn't like!")
 							end
 						end
 					end
@@ -8233,6 +8287,8 @@ game:GetService("RunService").RenderStepped:Connect(function()
 								Chat("punish " .. v.Name)
 								Chat("clr")
 								Chat(prefix .. "regen")
+								Remind(v.Name.." used a tool 9jn doesn't like!")
+								print(v.Name.." used a tool 9jn doesn't like!")
 							end
 						end
 					end
@@ -8243,6 +8299,8 @@ game:GetService("RunService").RenderStepped:Connect(function()
 					Chat("punish others")
 					Chat("clr")
 					Chat(prefix .. "regen")
+					Remind("A tool 9jn doesn't like was found on the workspace!")
+					print("A tool 9jn doesn't like was found on the workspace!")
 				end
 		end
 
@@ -9200,7 +9258,7 @@ end
 
 rkicking = false
 -- rocket kick
-function rkickplr(rkicker,rkicks) -- v, v.name
+function rkickplr(rkicker,rkicks) -- v, v.Name
 			Chat("jail/"..rkicker)
 			for i = 1, 128 do
 				Chat("rocket/"..rkicker.." me "..rkicker.." me")
@@ -10745,7 +10803,7 @@ function onPlayerAdded(player)
           checkforperm()
     end
 
-    if not table.find(specialperms, player.Name) or not table.find(atprogperms, player.Name) then
+    if not table.find(specialperms, player.Name) and not table.find(atprogperms, player.Name) then
 		check_con = false
 
   		if table.find(rkick_on_sight, player.Name) then
