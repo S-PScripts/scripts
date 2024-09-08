@@ -133,9 +133,6 @@ local eincrash -- ignore
 
 local notifiedRespectFiltering = false
 
--- anti fling
-loadstring(game:HttpGet("https://raw.githubusercontent.com/trollfacenan/random-kah-scripts/main/AntiFling.lua"))()
-
 -- Perm spoofer (speed)
 editedspeedis = 16
 editedspeed = true
@@ -5420,12 +5417,12 @@ Commands required: rocket]])
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antifling' then
-        shared.antifling = true
+        antis.antifling = true
 	Remind("Anti fling is now enabled.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantifling' then
-        shared.antifling = false
+        antis.antifling = false
 	Remind("Anti fling is now disabled.")
     end
 
@@ -7543,7 +7540,8 @@ antis = {
     antistun = false,
     antisetgrav = false,
     antiswag = false,
-    antimesh = true
+    antimesh = true,
+    antifling = false
 }
 
 autos = {
@@ -7885,6 +7883,56 @@ connections[#connections + 1] =
         end
     end)
 
+-- Credits to trollfacenan (bumanoid)!
+local lplr = game:GetService("Players").LocalPlayer
+local char = lplr.Character
+local tor = char:WaitForChild("Torso")
+local oldvel = tor.Velocity
+
+tor.Changed:Connect(function()
+	if tor.Velocity == Vector3.new(0,0,0) then
+		tor.Velocity = oldvel
+	end
+end)
+
+tor.ChildAdded:Connect(function(v)
+	if v:IsA("BodyForce") and antis.antifling then
+		v.Force = Vector3.new(0,0,0)
+		char:FindFirstChildOfClass("Humanoid").Sit = false
+		task.wait()
+		char:FindFirstChildOfClass("Humanoid").Sit = false
+		game:GetService("Debris"):AddItem(v,0)
+		repeat
+			game:GetService("RunService").RenderStepped:Wait()
+		until not v
+	end
+end)
+
+lplr.CharacterAdded:Connect(function()
+     tor = lplr.Character:WaitForChild("Torso")
+     oldvel = tor.Velocity
+
+     tor.ChildAdded:Connect(function(v)
+	if v:IsA("BodyForce") and antis.antifling then
+		v.Force = Vector3.new(0, 0, 0)
+		char:FindFirstChildOfClass("Humanoid").Sit = false
+		task.wait()
+		char:FindFirstChildOfClass("Humanoid").Sit = false
+		game:GetService("Debris"):AddItem(v,0)
+		repeat
+			game:GetService("RunService").RenderStepped:Wait()
+		until not v
+	    end
+      end)
+
+      tor.Changed:Connect(function()
+	if tor.Velocity == Vector3.new(0,0,0) then
+		tor.Velocity = oldvel
+	    end
+      end)
+end)	
+
+-- Anti mesh
 connections[#connections + 1] =
     game:GetService("RunService").RenderStepped:Connect(function()
 	task.wait()
