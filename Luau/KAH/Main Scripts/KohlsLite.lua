@@ -1128,6 +1128,9 @@ local AntiLogs = false
 local noobdetect = true
 local welcomemsg = true
 
+-- anti announcer (antigear/anticrash/antipaint/antigb/antiattach2/antiraygun...)
+local crash_an = false
+
 -- shh
 thesecretvariable = true
 
@@ -3203,6 +3206,16 @@ Commands required: rocket]])
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'unwelmsg' then
         welcomemsg = false
 	Remind("The welcome/leaving message has been disabled.")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'antian' then
+        crash_an = true
+	Remind("Antis are announced when triggered.")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'unantian' then
+        crash_an = false
+	Remind("Antis are no announced when triggered.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'clickexplode' then
@@ -7812,7 +7825,6 @@ connections[#connections + 1] =
             end
         end
 
-
 	if editedspeed == true then
             if lp.Character.Humanoid and lp.Character.Humanoid.WalkSpeed ~= editedspeedis then
                 lp.Character.Humanoid.WalkSpeed = editedspeedis
@@ -8128,6 +8140,11 @@ game:GetService("RunService").RenderStepped:Connect(function()
 							Chat("punish " .. v.Name)
 							Chat("clr")
 							Chat(prefix.."regen")
+
+							if crash_an then
+								Chat("h \n\n\n "..v.Name.." tried using a tool with anti-gear enabled. \n\n\n")
+							end
+						
 							Remind("Anti-gear triggered by "..v.Name)
 							print("Anti-gear triggered by "..v.Name)
 						end
@@ -8141,6 +8158,11 @@ game:GetService("RunService").RenderStepped:Connect(function()
 							Chat("punish " .. v.Name)
 							Chat("clr")
 							Chat(prefix.."regen")
+
+							if crash_an then
+								Chat("h \n\n\n "..v.Name.." tried using a tool with anti-gear enabled. \n\n\n")
+							end
+						
 							Remind("Anti-gear triggered by "..v.Name)
 							print("Anti-gear triggered by "..v.Name)
 						end
@@ -8157,21 +8179,35 @@ game:GetService("RunService").RenderStepped:Connect(function()
 								Chat("punish others")
 								Chat("clr")
 								Chat(prefix .. "regen")
+
+								if crash_an then
+									Chat("h \n\n\n Someone tried using a crash tool with anti-crash enabled. \n\n\n")
+								end
+							
 								Remind("Anti-crash triggered by "..v.Name)
 								print("Anti-crash triggered by "..v.Name)
+	
 								if autoblvgc then
 									Chat(prefix.."slock")
 								end
+							
 							elseif anticrash then
 								Chat("ungear " .. v.Name)
 								Chat("punish " .. v.Name)
 								Chat("clr")
 								Chat(prefix .. "regen")
+
+								if crash_an then
+									Chat("h \n\n\n "..v.Name.." tried using a crash tool with anti-crash enabled. \n\n\n")
+								end
+							
 								Remind("Anti-crash triggered by "..v.Name)
 								print("Anti-crash triggered by "..v.Name)
+	
 								if autoblvgc then
 									table.insert(blacklist, v.Name)
 								end
+							
 							else end
 						end
 					end
@@ -8183,21 +8219,35 @@ game:GetService("RunService").RenderStepped:Connect(function()
 								Chat("punish others")
 								Chat("clr")
 								Chat(prefix .. "regen")
+
+								if crash_an then
+									Chat("h \n\n\n Someone tried using a crash tool with anti-crash enabled. \n\n\n")
+								end
+							
 								Remind("Anti-crash triggered by "..v.Name)
 								print("Anti-crash triggered by "..v.Name)
+	
 								if autoblvgc then
 									Chat(prefix.."slock")
 								end
+							
 							elseif anticrash then
 								Chat("ungear " .. v.Name)
 								Chat("punish " .. v.Name)
 								Chat("clr")
 								Chat(prefix .. "regen")
+
+								if crash_an then
+									Chat("h \n\n\n "..v.Name.." tried using a crash tool with anti-crash enabled. \n\n\n")
+								end
+							
 								Remind("Anti-crash triggered by "..v.Name)
 								print("Anti-crash triggered by "..v.Name)
+							
 								if autoblvgc then
 									table.insert(blacklist, v.Name)
 								end
+							
 							else end
 						end
 					end
@@ -8208,6 +8258,11 @@ game:GetService("RunService").RenderStepped:Connect(function()
 					Chat("punish others")
 					Chat("clr")
 					Chat(prefix .. "regen")
+
+					if crash_an then
+						Chat("h \n\n\n Crash tool found on workspace with anticrash enabled. \n\n\n")
+					end
+
 					Remind("Anti-crash tool found on workplace")
 					print("Anti-crash tool found on workplace")
 				end
@@ -8222,6 +8277,11 @@ game:GetService("RunService").RenderStepped:Connect(function()
 								Chat("punish " .. v.Name)
 								Chat("clr")
 								Chat(prefix .. "regen")
+
+								if crash_an then
+									Chat("h \n\n\n "..v.Name.." tried using a attaching tool with anti-attach2 enabled. \n\n\n")
+								end
+
 								Remind("Anti-attach2 triggered by "..v.Name)
 								print("Anti-attach2 triggered by "..v.Name)
 							end
@@ -8235,6 +8295,11 @@ game:GetService("RunService").RenderStepped:Connect(function()
 								Chat("punish " .. v.Name)
 								Chat("clr")
 								Chat(prefix .. "regen")
+
+								if crash_an then
+									Chat("h \n\n\n "..v.Name.." tried using a attaching tool with anti-attach2 enabled. \n\n\n")
+								end
+
 								Remind("Anti-attach2 triggered by "..v.Name)
 								print("Anti-attach2 triggered by "..v.Name)
 							end
@@ -8247,6 +8312,11 @@ game:GetService("RunService").RenderStepped:Connect(function()
 					Chat("punish others")
 					Chat("clr")
 					Chat(prefix .. "regen")
+
+					if crash_an then
+						Chat("h \n\n\n Attach tool found on workspace with anti-attach2 enabled. \n\n\n")
+					end
+
 					Remind("Anti-attach2 tool found on workplace")
 					print("Anti-attach2 tool found on workplace")
 				end
@@ -8261,6 +8331,11 @@ game:GetService("RunService").RenderStepped:Connect(function()
 								Chat("punish " .. v.Name)
 								Chat("clr")
 								Chat(prefix .. "regen")
+
+								if crash_an then
+									Chat("h \n\n\n "..v.Name.." tried using a gearban tool with anti-gearban enabled. \n\n\n")
+								end
+
 								Remind("Anti-gearban triggered by "..v.Name)
 								print("Anti-gearban triggered by "..v.Name)
 							end
@@ -8274,6 +8349,11 @@ game:GetService("RunService").RenderStepped:Connect(function()
 								Chat("punish " .. v.Name)
 								Chat("clr")
 								Chat(prefix .. "regen")
+
+								if crash_an then
+									Chat("h \n\n\n "..v.Name.." tried using a gearban tool with anti-gearban enabled. \n\n\n")
+								end
+
 								Remind("Anti-gearban triggered by "..v.Name)
 								print("Anti-gearban triggered by "..v.Name)
 							end
@@ -8286,6 +8366,11 @@ game:GetService("RunService").RenderStepped:Connect(function()
 					Chat("punish others")
 					Chat("clr")
 					Chat(prefix .. "regen")
+
+					if crash_an then
+						Chat("h \n\n\n Gearban tool found on workspace with anti-gearban enabled. \n\n\n")
+					end
+
 					Remind("Anti-gearban tool found on workspace")
 					print("Anti-gearban tool found on workspace")
 				end
@@ -8300,6 +8385,11 @@ game:GetService("RunService").RenderStepped:Connect(function()
 								Chat("punish " .. v.Name)
 								Chat("clr")
 								Chat(prefix .. "regen")
+
+								if crash_an then
+									Chat("h \n\n\n "..v.Name.." tried using a paint tool with anti-paint enabled. \n\n\n")
+								end
+
 								Remind("Anti-paint triggered by "..v.Name)
 								print("Anti-paint triggered by "..v.Name)
 							end
@@ -8313,6 +8403,11 @@ game:GetService("RunService").RenderStepped:Connect(function()
 								Chat("punish " .. v.Name)
 								Chat("clr")
 								Chat(prefix .. "regen")
+
+								if crash_an then
+									Chat("h \n\n\n "..v.Name.." tried using a paint tool with anti-paint enabled. \n\n\n")
+								end
+
 								Remind("Anti-paint triggered by "..v.Name)
 								print("Anti-paint triggered by "..v.Name)
 							end
@@ -8325,7 +8420,13 @@ game:GetService("RunService").RenderStepped:Connect(function()
 					Chat("punish others")
 					Chat("clr")
 					Chat(prefix .. "regen")
+
+					if crash_an then
+						Chat("h \n\n\n Paint tool found on workspace with anti-paint enabled. \n\n\n")
+					end
+
 					Remind("Anti-paint tool found on the workspace")
+					print("Anti-paint tool found on the workspace")
 				end
 		end
 
@@ -8338,6 +8439,11 @@ game:GetService("RunService").RenderStepped:Connect(function()
 								Chat("punish " .. v.Name)
 								Chat("clr")
 								Chat(prefix .. "regen")
+
+								if crash_an then
+									Chat("h \n\n\n "..v.Name.." tried using a blacklisted tool. \n\n\n")
+								end
+
 								Remind("Blacklisted tool found on "..v.Name)
 								print("Blacklisted tool found on "..v.Name)
 							end
@@ -8351,6 +8457,11 @@ game:GetService("RunService").RenderStepped:Connect(function()
 								Chat("punish " .. v.Name)
 								Chat("clr")
 								Chat(prefix .. "regen")
+
+								if crash_an then
+									Chat("h \n\n\n "..v.Name.." tried using a blacklisted tool. \n\n\n")
+								end
+
 								Remind("Blacklisted tool found on "..v.Name)
 								print("Blacklisted tool found on "..v.Name)
 							end
@@ -8363,6 +8474,11 @@ game:GetService("RunService").RenderStepped:Connect(function()
 					Chat("punish others")
 					Chat("clr")
 					Chat(prefix .. "regen")
+
+					if crash_an then
+						Chat("h \n\n\n Blacklisted tool found on workspace. \n\n\n")
+					end
+
 					Remind("Blacklisted tool found on the workspace")
 					print("Blacklisted tool found on the workspace")
 				end
@@ -8377,6 +8493,11 @@ game:GetService("RunService").RenderStepped:Connect(function()
 								Chat("punish " .. v.Name)
 								Chat("clr")
 								Chat(prefix .. "regen")
+
+								if crash_an then
+									Chat("h \n\n\n "..v.Name.." tried using a tool 9jn doesn't like. \n\n\n")
+								end
+
 								Remind(v.Name.." used a tool 9jn doesn't like!")
 								print(v.Name.." used a tool 9jn doesn't like!")
 							end
@@ -8390,6 +8511,11 @@ game:GetService("RunService").RenderStepped:Connect(function()
 								Chat("punish " .. v.Name)
 								Chat("clr")
 								Chat(prefix .. "regen")
+
+								if crash_an then
+									Chat("h \n\n\n "..v.Name.." tried using a tool 9jn doesn't like. \n\n\n")
+								end
+
 								Remind(v.Name.." used a tool 9jn doesn't like!")
 								print(v.Name.." used a tool 9jn doesn't like!")
 							end
@@ -8402,6 +8528,11 @@ game:GetService("RunService").RenderStepped:Connect(function()
 					Chat("punish others")
 					Chat("clr")
 					Chat(prefix .. "regen")
+
+					if crash_an then
+						Chat("h \n\n\n A tool 9jn doesn't like was found on workspace. \n\n\n")
+					end
+
 					Remind("A tool 9jn doesn't like was found on the workspace!")
 					print("A tool 9jn doesn't like was found on the workspace!")
 				end
