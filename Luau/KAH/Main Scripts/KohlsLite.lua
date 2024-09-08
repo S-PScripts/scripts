@@ -13,8 +13,7 @@ This free, open-source script is for the Roblox game Kohls Admin House (KAH).
 You can play KAH here: https://www.roblox.com/games/112420803/Kohls-Admin-House-NBC-Updated
 This script was created by ScriptingProgrammer (Roblox) / ts2021 (Discord) / S-PScripts (GitHub).
 
-The (second) longest Kohls Admin House script freely available. (SCV3-VAR and Kozy.Docx are longer than KL but paid and not public respectively)
-latest version of jotunnheim is bigger dangit
+The longest Kohls Admin House script freely available. (SCV3-VAR and Kozy.Docx are longer than KL but paid and not public respectively)
 
 This script was built from the ground up. KohlsLite is NOT a fork of any other scripts. 
 
