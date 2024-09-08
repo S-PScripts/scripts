@@ -638,6 +638,78 @@ local charlist = {
     ["bacon"] = { charid = "2568447690" } -- 13
 }
 
+-- Themes
+local themecode = {
+    {name = "dark blue", -- 1
+	code = "time 4,outdoorambient 000 000 11"},
+
+    {name = "old trip", -- 2
+	code = "fogend 100,fogcolor 250 0 500"},
+
+    {name = "shanty night", -- 3
+	code = "time 19,outdoorambient 250 100 250"},
+
+    {name = "purple glaze", -- 4
+	code = "time -,fogend 600,fogcolor 300 0 800"},
+
+    {name = "yellow mist", -- 5
+	code = "time -,fogend 25,fogcolor 255 255 51"},
+
+    {name = "dark depths", -- 6
+	code = "time 0,fogcolor 0 0 0,fogend 25"},
+
+    {name = "nice sky", -- 7
+	code = "fogend 75,fogcolor 0 155 255"},
+
+    {name = "bright pink", -- 8
+	code = "time -,fogend 46,fogcolor 250 83 255"},
+
+    {name = "acid proximity", -- 9
+	code = "time -,fogend 1000,fogcolor 37 355 55"},
+
+    {name = "sapphire evening", -- 10
+	code = "fogcolor 100 0 255,fogend 1000,time 6,outdoorambient 0 0 0,brightness 0.5,ambient 125 0 255"},
+
+    {name = "sunrise rtx", -- 11
+	code = "fix,time 7,fogend 2000,outdoorambient 0.3 0.3 0.3"},
+
+    {name = "sunrise", -- 12
+	code = "fix,time 7.15,colorshifttop 600 400 0,colorshiftbottom 600 400 0"},
+
+    {name = "true black", -- 13
+	code = "time 0,fogcolor 0 0 0,fogend 0"},
+
+    {name = "sunset", -- 14
+	code = "fix,time 17.4,colorshifttop 600 400 0,colorshiftbottom 600 400 0"},
+
+    {name = "ice", -- 15
+	code = "fix,time 17.4,fogcolor -100 -400 -600,fogend 500,colorshifttop 0 255 255,colorshiftbottom 0 255 255"},
+
+    {name = "blood", -- 16
+	code = "fix,fogcolor 255 0 0,fogend 150,ambient 255 0 0,colorshifttop 255 0 0,colorshiftbottom 255 0 0"},
+
+    {name = "aesthetic", -- 17
+	code = "fix,time 15,fogend 500,fogcolor -400 -191 -139,outdoorambient 191 143 95,colorshifttop 255 191 139"},
+
+    {name = "heaven", -- 18
+	code = "fix,time 14,fogend 200,fogcolor -300 -300 -300,outdoorambient -400 -400 -400,ambient -400 -400 -400"},
+
+    {name = "hell", -- 19
+	code = "fix,time 0,outdoorambient -600 0 0,ambient -600 0 0,fogcolor -600 0 0,fogend 500,colorshiftbottom -600 0 0,colorshifttop -600 0 0,brightness 2"},
+
+    {name = "shadowy town", -- 20
+	code = "fix,fogend 70,fogcolor 0 0 0,brightness 0"},
+
+    {name = "noir swamp", -- 21
+	code = "fix,time 100,outdoorambient 0 0 099,brightness 0"},
+
+    {name = "snow", -- 22
+	code = "fix,time 17.4,colorshifttop 255 255 255,colorshiftbottom 255 255 255"},
+
+    {name = "blue sky", -- 23
+	code = "ambient 0 0 256,colorshifttop 0 0 256,fogcolor 0 0 256,fogend 50"}
+}
+
 -- Parts
 local ogcframes = {
                 ["SmoothBlockModel178"] = {-13.0650005, 45.4300003, 57.2430038, 1, 0, 0, 0, 1, 0, 0, 0, 1},
@@ -993,78 +1065,6 @@ local padreinforcements = false
 local Game_Folder = game:GetService("Workspace").Terrain["_Game"]
 local Workspace_Folder = Game_Folder.Workspace
 local Admin_Folder = Game_Folder.Admin
-
--- Themes
-local themecode = {
-    {name = "dark blue", -- 1
-	code = "time 4,outdoorambient 000 000 11"},
-	
-    {name = "old trip", -- 2
-	code = "fogend 100,fogcolor 250 0 500"},
-	
-    {name = "shanty night", -- 3
-	code = "time 19,outdoorambient 250 100 250"},
-	
-    {name = "purple glaze", -- 4
-	code = "time -,fogend 600,fogcolor 300 0 800"},
-	
-    {name = "yellow mist", -- 5
-	code = "time -,fogend 25,fogcolor 255 255 51"},
-	
-    {name = "dark depths", -- 6
-	code = "time 0,fogcolor 0 0 0,fogend 25"},
-	
-    {name = "nice sky", -- 7
-	code = "fogend 75,fogcolor 0 155 255"},
-	
-    {name = "bright pink", -- 8
-	code = "time -,fogend 46,fogcolor 250 83 255"},
-	
-    {name = "acid proximity", -- 9
-	code = "time -,fogend 1000,fogcolor 37 355 55"},
-	
-    {name = "sapphire evening", -- 10
-	code = "fogcolor 100 0 255,fogend 1000,time 6,outdoorambient 0 0 0,brightness 0.5,ambient 125 0 255"},
-	
-    {name = "sunrise rtx", -- 11
-	code = "fix,time 7,fogend 2000,outdoorambient 0.3 0.3 0.3"},
-	
-    {name = "sunrise", -- 12
-	code = "fix,time 7.15,colorshifttop 600 400 0,colorshiftbottom 600 400 0"},
-	
-    {name = "true black", -- 13
-	code = "time 0,fogcolor 0 0 0,fogend 0"},
-	
-    {name = "sunset", -- 14
-	code = "fix,time 17.4,colorshifttop 600 400 0,colorshiftbottom 600 400 0"},
-	
-    {name = "ice", -- 15
-	code = "fix,time 17.4,fogcolor -100 -400 -600,fogend 500,colorshifttop 0 255 255,colorshiftbottom 0 255 255"},
-	
-    {name = "blood", -- 16
-	code = "fix,fogcolor 255 0 0,fogend 150,ambient 255 0 0,colorshifttop 255 0 0,colorshiftbottom 255 0 0"},
-	
-    {name = "aesthetic", -- 17
-	code = "fix,time 15,fogend 500,fogcolor -400 -191 -139,outdoorambient 191 143 95,colorshifttop 255 191 139"},
-	
-    {name = "heaven", -- 18
-	code = "fix,time 14,fogend 200,fogcolor -300 -300 -300,outdoorambient -400 -400 -400,ambient -400 -400 -400"},
-	
-    {name = "hell", -- 19
-	code = "fix,time 0,outdoorambient -600 0 0,ambient -600 0 0,fogcolor -600 0 0,fogend 500,colorshiftbottom -600 0 0,colorshifttop -600 0 0,brightness 2"},
-	
-    {name = "shadowy town", -- 20
-	code = "fix,fogend 70,fogcolor 0 0 0,brightness 0"},
-	
-    {name = "noir swamp", -- 21
-	code = "fix,time 100,outdoorambient 0 0 099,brightness 0"},
-	
-    {name = "snow", -- 22
-	code = "fix,time 17.4,colorshifttop 255 255 255,colorshiftbottom 255 255 255"},
-	
-    {name = "blue sky", -- 23
-	code = "ambient 0 0 256,colorshifttop 0 0 256,fogcolor 0 0 256,fogend 50"}
-}
 
 -- Keybinds
 local housekeybind = "h" -- house keybind
@@ -1881,6 +1881,47 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          end
     end
 
+  if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'theme' then
+                    local themeNumber = tonumber(string.sub(msg:lower(), #prefix + 6))
+                    if themeNumber and themecode[themeNumber] then
+                        Chat("fix")
+                        local codeParts = {}
+                        for code in themecode[themeNumber].code:gmatch("[^,]+") do
+                                    table.insert(codeParts, code)
+                        end
+                            for i, v in ipairs(codeParts) do
+                                    Chat(v)
+                            end
+
+                    else
+                        Remind("Invalid theme number.")
+                    end
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'themelist' then
+                        Remind("Check your console by running /console!")
+                        for i, theme in ipairs(themecode) do
+                                    print(i .. " - " .. theme.name .. " - " .. theme.code)
+                        end
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'gear' then
+             local args = string.split(msg, " ")
+             if #args >= 3 then
+                local target = args[2]
+                local gearName = table.concat(args, " ", 3)
+                local gearIDs = gearlist[gearName].gearid 
+                if type(gearIDs) == "table" then
+                            for _, selectedGearID in ipairs(gearIDs) do
+                                Chat("gear " .. target .. " " .. selectedGearID)
+                            end
+                else
+                            Chat("gear " .. target .. " " .. gearIDs)
+                end
+         end
+    end
+
+
     if string.sub(msg, 1, #prefix + 8)  == prefix..'gearlist' then
          Remind("Check your console by running /console!")
          local sortedGearNames = {}
@@ -1897,6 +1938,16 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          end
     end
 
+   if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'char' then
+        local args = string.split(msg, " ")
+        if #args >= 3 then
+                    local target = args[2]
+                    local charName = table.concat(args, " ", 3)
+                    local china = charlist[charName].charid
+                Chat("char " .. target .. " " .. china)
+        end
+    end
+
     if string.sub(msg, 1, #prefix + 8)  == prefix..'charlist' then
          Remind("Check your console by running /console!")
          local sortedNames = {}
@@ -1908,6 +1959,23 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                     print(charname .. " - IDS: " .. charlist[charname].charid)
          end
     end
+
+   if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'turn' then
+            local args = string.split(msg, " ")
+            if #args >= 3 then
+                local turner = args[3]
+                local daturnings = turnlist[turner]
+                if daturnings then
+                            for i, code in ipairs(daturnings.name) do
+                                    code = replaceArgs2(code, args[2])
+                                    Chat(code)
+                            end
+                       else
+                            Remind("Invalid turn (char) chosen.")
+                end
+            end
+    end
+		
 -- SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND --
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'pausem' then
        for i,v in pairs(game:GetService("Workspace").Terrain["_Game"].Folder:GetDescendants()) do
@@ -2170,62 +2238,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         Goto()
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'theme' then
-                    local themeNumber = tonumber(string.sub(msg:lower(), #prefix + 6))
-                    if themeNumber and themecode[themeNumber] then
-                        Chat("fix")
-                        local codeParts = {}
-                        for code in themecode[themeNumber].code:gmatch("[^,]+") do
-                                    table.insert(codeParts, code)
-                        end
-                            for i, v in ipairs(codeParts) do
-                                    Chat(v)
-                            end
-
-                    else
-                        Remind("Invalid theme number.")
-                    end
-    end
-
-   if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'turn' then
-            local args = string.split(msg, " ")
-            if #args >= 3 then
-                local turner = args[3]
-                local daturnings = turnlist[turner]
-                if daturnings then
-                            for i, code in ipairs(daturnings.name) do
-                                    code = replaceArgs2(code, args[2])
-                                    Chat(code)
-                            end
-                       else
-                            Remind("Invalid turn (char) chosen.")
-                end
-            end
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'themelist' then
-                        Remind("Check your console by running /console!")
-                        for i, theme in ipairs(themecode) do
-                                    print(i .. " - " .. theme.name .. " - " .. theme.code)
-                        end
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'gear' then
-             local args = string.split(msg, " ")
-             if #args >= 3 then
-                local target = args[2]
-                local gearName = table.concat(args, " ", 3)
-                local gearIDs = gearlist[gearName].gearid 
-                if type(gearIDs) == "table" then
-                            for _, selectedGearID in ipairs(gearIDs) do
-                                Chat("gear " .. target .. " " .. selectedGearID)
-                            end
-                else
-                            Chat("gear " .. target .. " " .. gearIDs)
-                end
-         end
-    end
-
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'song' then -- bit buggy if you stop the music but keep the playlist open
              local args = string.split(msg, " ")
              if #args == 2 then
@@ -2266,16 +2278,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                 end
             end 
         else
-        end
-    end
-
-    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'char' then
-        local args = string.split(msg, " ")
-        if #args >= 3 then
-                    local target = args[2]
-                    local charName = table.concat(args, " ", 3)
-                    local china = charlist[charName].charid
-                Chat("char " .. target .. " " .. china)
         end
     end
 
