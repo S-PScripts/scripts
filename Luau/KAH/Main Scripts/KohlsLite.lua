@@ -640,74 +640,29 @@ local charlist = {
 
 -- Themes
 local themecode = {
-    {name = "dark blue", -- 1
-	code = "time 4,outdoorambient 000 000 11"},
-
-    {name = "old trip", -- 2
-	code = "fogend 100,fogcolor 250 0 500"},
-
-    {name = "shanty night", -- 3
-	code = "time 19,outdoorambient 250 100 250"},
-
-    {name = "purple glaze", -- 4
-	code = "time -,fogend 600,fogcolor 300 0 800"},
-
-    {name = "yellow mist", -- 5
-	code = "time -,fogend 25,fogcolor 255 255 51"},
-
-    {name = "dark depths", -- 6
-	code = "time 0,fogcolor 0 0 0,fogend 25"},
-
-    {name = "nice sky", -- 7
-	code = "fogend 75,fogcolor 0 155 255"},
-
-    {name = "bright pink", -- 8
-	code = "time -,fogend 46,fogcolor 250 83 255"},
-
-    {name = "acid proximity", -- 9
-	code = "time -,fogend 1000,fogcolor 37 355 55"},
-
-    {name = "sapphire evening", -- 10
-	code = "fogcolor 100 0 255,fogend 1000,time 6,outdoorambient 0 0 0,brightness 0.5,ambient 125 0 255"},
-
-    {name = "sunrise rtx", -- 11
-	code = "fix,time 7,fogend 2000,outdoorambient 0.3 0.3 0.3"},
-
-    {name = "sunrise", -- 12
-	code = "fix,time 7.15,colorshifttop 600 400 0,colorshiftbottom 600 400 0"},
-
-    {name = "true black", -- 13
-	code = "time 0,fogcolor 0 0 0,fogend 0"},
-
-    {name = "sunset", -- 14
-	code = "fix,time 17.4,colorshifttop 600 400 0,colorshiftbottom 600 400 0"},
-
-    {name = "ice", -- 15
-	code = "fix,time 17.4,fogcolor -100 -400 -600,fogend 500,colorshifttop 0 255 255,colorshiftbottom 0 255 255"},
-
-    {name = "blood", -- 16
-	code = "fix,fogcolor 255 0 0,fogend 150,ambient 255 0 0,colorshifttop 255 0 0,colorshiftbottom 255 0 0"},
-
-    {name = "aesthetic", -- 17
-	code = "fix,time 15,fogend 500,fogcolor -400 -191 -139,outdoorambient 191 143 95,colorshifttop 255 191 139"},
-
-    {name = "heaven", -- 18
-	code = "fix,time 14,fogend 200,fogcolor -300 -300 -300,outdoorambient -400 -400 -400,ambient -400 -400 -400"},
-
-    {name = "hell", -- 19
-	code = "fix,time 0,outdoorambient -600 0 0,ambient -600 0 0,fogcolor -600 0 0,fogend 500,colorshiftbottom -600 0 0,colorshifttop -600 0 0,brightness 2"},
-
-    {name = "shadowy town", -- 20
-	code = "fix,fogend 70,fogcolor 0 0 0,brightness 0"},
-
-    {name = "noir swamp", -- 21
-	code = "fix,time 100,outdoorambient 0 0 099,brightness 0"},
-
-    {name = "snow", -- 22
-	code = "fix,time 17.4,colorshifttop 255 255 255,colorshiftbottom 255 255 255"},
-
-    {name = "blue sky", -- 23
-	code = "ambient 0 0 256,colorshifttop 0 0 256,fogcolor 0 0 256,fogend 50"}
+    ["1"] = {name = "dark blue", code = "time 4,outdoorambient 000 000 11"},
+    ["2"] = {name = "old trip", code = "fogend 100,fogcolor 250 0 500"},
+    ["3"] = {name = "shanty night", code = "time 19,outdoorambient 250 100 250"},
+    ["4"] = {name = "purple glaze", code = "time -,fogend 600,fogcolor 300 0 800"},
+    ["5"] = {name = "yellow mist", code = "time -,fogend 25,fogcolor 255 255 51"},
+    ["6"] = {name = "dark depths", code = "time 0,fogcolor 0 0 0,fogend 25"},
+    ["7"] = {name = "nice sky", code = "fogend 75,fogcolor 0 155 255"},
+    ["8"] = {name = "bright pink", code = "time -,fogend 46,fogcolor 250 83 255"},
+    ["9"] = {name = "acid proximity", code = "time -,fogend 1000,fogcolor 37 355 55"},
+    ["10"] = {name = "sapphire evening", code = "fogcolor 100 0 255,fogend 1000,time 6,outdoorambient 0 0 0,brightness 0.5,ambient 125 0 255"},
+    ["11"] = {name = "sunrise rtx", code = "fix,time 7,fogend 2000,outdoorambient 0.3 0.3 0.3"},
+    ["12"] = {name = "sunrise", code = "fix,time 7.15,colorshifttop 600 400 0,colorshiftbottom 600 400 0"},
+    ["13"] = {name = "true black", code = "time 0,fogcolor 0 0 0,fogend 0"},
+    ["14"] = {name = "sunset", code = "fix,time 17.4,colorshifttop 600 400 0,colorshiftbottom 600 400 0"},
+    ["15"] = {name = "ice", code = "fix,time 17.4,fogcolor -100 -400 -600,fogend 500,colorshifttop 0 255 255,colorshiftbottom 0 255 255"},
+    ["16"] = {name = "blood", code = "fix,fogcolor 255 0 0,fogend 150,ambient 255 0 0,colorshifttop 255 0 0,colorshiftbottom 255 0 0"},
+    ["17"] = {name = "aesthetic", code = "fix,time 15,fogend 500,fogcolor -400 -191 -139,outdoorambient 191 143 95,colorshifttop 255 191 139"},
+    ["18"] = {name = "heaven", code = "fix,time 14,fogend 200,fogcolor -300 -300 -300,outdoorambient -400 -400 -400,ambient -400 -400 -400"},
+    ["19"] = {name = "hell", code = "fix,time 0,outdoorambient -600 0 0,ambient -600 0 0,fogcolor -600 0 0,fogend 500,colorshiftbottom -600 0 0,colorshifttop -600 0 0,brightness 2"},
+    ["20"] = {name = "shadowy town", code = "fix,fogend 70,fogcolor 0 0 0,brightness 0"},
+    ["21"] = {name = "noir swamp", code = "fix,time 100,outdoorambient 0 0 099,brightness 0"},
+    ["22"] = {name = "snow", code = "fix,time 17.4,colorshifttop 255 255 255,colorshiftbottom 255 255 255"},
+    ["23"] = {name = "blue sky", code = "ambient 0 0 256,colorshifttop 0 0 256,fogcolor 0 0 256,fogend 50"}
 }
 
 -- Parts
@@ -1881,28 +1836,38 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          end
     end
 
-  if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'theme' then
-                    local themeNumber = tonumber(string.sub(msg:lower(), #prefix + 6))
-                    if themeNumber and themecode[themeNumber] then
-                        Chat("fix")
-                        local codeParts = {}
-                        for code in themecode[themeNumber].code:gmatch("[^,]+") do
-                                    table.insert(codeParts, code)
-                        end
-                            for i, v in ipairs(codeParts) do
-                                    Chat(v)
-                            end
+  if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'theme' then		
+		local themeNumber = tonumber(string.sub(msg:lower(), #prefix + 6))
 
-                    else
-                        Remind("Invalid theme number.")
-                    end
+		if themeNumber and themecode[tostring(themeNumber)] then
+    			Chat("fix")
+    			local codeParts = {}
+    			for code in themecode[tostring(themeNumber)].code:gmatch("[^,]+") do
+        			table.insert(codeParts, code)
+    			end
+    			for _, v in ipairs(codeParts) do
+        			Chat(v)
+    			end
+		else
+    			Remind("Invalid theme number. Please enter a number between 1 and 23.")
+		end
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'themelist' then
-                        Remind("Check your console by running /console!")
-                        for i, theme in ipairs(themecode) do
-                                    print(i .. " - " .. theme.name .. " - " .. theme.code)
-                        end
+                Remind("Check your console by running /console!")
+		for key, theme in pairs(themecode) do
+    			print(key .. " - " .. theme.name .. " - " .. theme.code)
+		end
+
+		--[[ Remind("Check your console by running /console!")
+             		local length = 0
+            		for _ in pairs(themecode) do
+                		length = length + 1
+             		end
+         		for i = 1, length do
+                 		q = tostring(i)
+                  		print("theme"..i.." - "..themecode[q].name.." - "..themecode[q].code)
+         	end ]]
     end
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'gear' then
