@@ -529,7 +529,8 @@ local musictable = {
     ["112"] = { id = "1847863129", name = "Tech Synth A"},
     ["113"] = { id = "1845073388", name = "Need For Speed"},
     ["114"] = { id = "1845092143", name = "Super Nova"},
-    ["115"] = { id = "1840006904", name = "Tricky (a)"}
+    ["115"] = { id = "1840006904", name = "Tricky (a)"},
+    ["116"] = { id = "2665943889", name = "get jebaited"}
 }
 
 -- Saved gears
