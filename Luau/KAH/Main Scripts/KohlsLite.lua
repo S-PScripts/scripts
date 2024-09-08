@@ -7702,6 +7702,12 @@ connections[#connections + 1] =
             end
         end
 
+	if editedjump == true then
+            if lp.Character.Humanoid and lp.Character.Humanoid.JumpPower ~= editedjumpis then
+                lp.Character.Humanoid.JumpPower = editedjumpis
+            end
+        end
+
         if antis.antikill == true then
             if lp.Character.Humanoid and lp.Character.Humanoid.Health == 0 then
                 Chat("reset me")
@@ -7806,6 +7812,13 @@ connections[#connections + 1] =
             end
         end
 
+
+	if editedspeed == true then
+            if lp.Character.Humanoid and lp.Character.Humanoid.WalkSpeed ~= editedspeedis then
+                lp.Character.Humanoid.WalkSpeed = editedspeedis
+            end
+        end
+		
         if antis.antispin == true then
             if lp.Character:FindFirstChild("Torso") then
                 if lp.Character.Torso:FindFirstChild("SPINNER") then
