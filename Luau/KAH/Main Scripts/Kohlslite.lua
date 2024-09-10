@@ -49,6 +49,8 @@ I know this script is inconsistent with the fact it uses Game with and without G
 
 ]]
 
+-- troll
+
 -- Notifications
 local function Remind(msg)
         game.StarterGui:SetCore("SendNotification", {
