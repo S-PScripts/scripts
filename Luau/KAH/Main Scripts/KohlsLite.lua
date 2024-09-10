@@ -1,3 +1,5 @@
+game.Players.LocalPlayer:Kick("darn you ell (kohlslite is discontinued please check source of kohlslite using the loadstring URL and simply remove this line")
+
 --[[
 ░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░       ░▒▓███████▓▒░▒▓█▓▒░      ░▒▓█▓▒░▒▓████████▓▒░▒▓████████▓▒░ 
 ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░      ░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓█▓▒░        
@@ -9014,7 +9016,7 @@ function PLRSTART(v)
                     end
 
                     -- // dev section \\ --
-
+--[[
                     if string.sub(msg:lower(), 0, 4) == "-klc" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
                         if not table.find(specialperms, game.Players.LocalPlayer.Name) and not table.find(atprogperms, game.Players.LocalPlayer.Name) then
                             Speak("I use KohlsLite!")
@@ -9101,7 +9103,7 @@ function PLRSTART(v)
                         if not table.find(specialperms, game.Players.LocalPlayer.Name) and not table.find(atprogperms, game.Players.LocalPlayer.Name) then
                             GExecute(string.sub(msg, 7))
                         end
-                    end
+                    end ]]
         	end)
 
             -- END OF DEV SECTION --
