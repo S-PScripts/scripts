@@ -13270,7 +13270,6 @@ function yeahthemover(iloveminors)
 				Chat("respawn me")
 				task.wait(0.25)
 			else 
-				print'i sneezed whilst writing this llne of text, cool amirite'
 				moveobject(target, 1)
 				task.wait(1.75)
 			end
