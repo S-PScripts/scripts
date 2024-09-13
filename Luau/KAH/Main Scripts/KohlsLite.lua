@@ -1886,7 +1886,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          end
     end
 
-
     if string.sub(msg, 1, #prefix + 8)  == prefix..'gearlist' then
          Remind("Check your console by running /console!")
          local sortedGearNames = {}
@@ -5482,7 +5481,6 @@ Commands required: rocket]])
 	Remind("Turned this anti off for you!")
     end
 
-
 -- !! I WILL TRY TO FIX THE ANTI SYSTEM SO IT CAN BE INDIVIDUAL PLAYERS FOR EVERYTHING. ALSO, I WILL FIX THE VARIABLE NAMES !! --
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antiaddon' then
         local args = string.split(msg, " ")
@@ -6276,7 +6274,6 @@ Commands required: rocket]])
                 Remind("Invalid argument: Must be me, others, or all")
         end        
     end
-
 
     if string.sub(msg:lower(), 1, #prefix + 14) == prefix..'unantisparkles' then
         local args = string.split(msg, " ")
@@ -7902,7 +7899,6 @@ connections[#connections + 1] =
         end)
     end)
 
-
 -- Anti mesh
 connections[#connections + 1] =
     game:GetService("RunService").RenderStepped:Connect(function()
@@ -9164,8 +9160,6 @@ function PLRSTART(v)
         end)
 end
 
-
-
 -- Anti lag items
 local items = {
 	"Smoke",
@@ -9685,7 +9679,6 @@ function leakedcords()
 
 end
 
-
 -- LUA CMDS
 function Execute(testcode)
       loadstring(testcode)()
@@ -9840,7 +9833,6 @@ function slag(tplr, tpln)
                 task.wait()
             end)
 end
-
 
 -- SPAWN SAVED
 function Spawn()
