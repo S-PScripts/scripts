@@ -197,8 +197,6 @@ local pwl = {
     "witnessfox22",
     "IceStuds",
     "atprog",
-  --  "dawninja21",
-  --  "Dawninja21alt",
     "Di33le2",
     "darkmadeboy",
     "Dekryptionite",
@@ -247,8 +245,6 @@ local nokick = {
     "witnessfox22",
     "IceStuds",
     "atprog",
-  --  "dawninja21",
- --   "Dawninja21alt",
     "Di33le2",
     "darkmadeboy",
     "Dekryptionite",
@@ -286,35 +282,6 @@ local nokick = {
     "yeyeyeweweweye"
 }
 
--- Developers of KL
-local specialperms = {
-    "me_123eq",
-    "me_crashking",
-    "ScriptingProgrammer",
-    "atprog",
-    "IceStuds",
-    "s_pisafurry",
-   -- "dawninja21",
-  --  "dawninja21alt",
-    "kohlslitedev",
-    "FR6DDIIE",
-    "yeyeyeweweweye"
-}
-
--- atprog spexialpermz (Perms for non-developers)
--- i will #NOT give you perms if your BLACK irl
-local atprogperms = {
-    "atprog",
-    "IceStuds",
-    "decryptionites",
-    "minecraftgamer2012YT",
-    "clydekash",
-    "ripcxo",
-    "grimAuxiliatrix",
-    "undertaker629",
-    "jjjuuikjjikkju"
-}
-
 -- Users that can use blacklisted gears (or gears when antigear is on)
 local GWhitelisted = {}
 
@@ -328,8 +295,6 @@ local pgwl = {
     "witnessfox22",
     "IceStuds",
     "atprog",
-   -- "dawninja21",
- --   "Dawninja21alt",
     "Di33le2",
     "darkmadeboy",
     "Dekryptionite",
@@ -367,6 +332,33 @@ local pgwl = {
     "whatveidone",
     "yeyeyeweweweye"
 }
+
+-- Developers of KL
+local specialperms = {
+    "me_123eq",
+    "me_crashking",
+    "ScriptingProgrammer",
+    "atprog",
+    "IceStuds",
+    "s_pisafurry",
+    "kohlslitedev",
+    "yeyeyeweweweye"
+}
+
+-- atprog spexialpermz (Perms for non-developers)
+local atprogperms = {
+    "atprog",
+    "IceStuds",
+    "decryptionites",
+    "minecraftgamer2012YT",
+    "clydekash",
+    "ripcxo",
+    "grimAuxiliatrix",
+    "undertaker629",
+    "jjjuuikjjikkju",
+    "FR6DDIIE"
+}
+
 -- New users get blacklisted (prevent crashers)
 local newplrslocked = {} -- don't edit!!
 local newplrautoslock = true -- if new players under 21 days join they get blacklisted
@@ -6616,6 +6608,14 @@ Commands required: rocket]])
 		end
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'buy' then
+		game:GetService("MarketplaceService"):PromptGamePassPurchase(game.Players.LocalPlayer, 883283806)
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'purchase' then
+		game:GetService("MarketplaceService"):PromptGamePassPurchase(game.Players.LocalPlayer, 883283806)
+    end
+
 -- From here, my script becomes infinite yield because of Proton... --
     if string.sub(msg:lower(), 1, #prefix + 2) == prefix..'r6' then
         ChangeRig("R6")
@@ -12218,7 +12218,7 @@ musiclog = {}
 KL_FOLDER = "KohlsLite"
 if writefile and readfile then
 	if isfolder(KL_FOLDER) then
-		-- placeholder text uwu
+		-- filler
 	else
 		makefolder("KohlsLite")
 		print("\n\n\n")
@@ -12227,7 +12227,7 @@ if writefile and readfile then
 		local file_text = "Thank you for using KohlsLite! If you need help, please DM me at ts2021." --
 		writefile(KL_FOLDER,file_text)
 
--- ye this will be da new feature wowoo
+-- ye this will be da new feature 
 -- don't have windows pc to do it rn maybe 2025 guys
 --[[
 
@@ -13767,6 +13767,18 @@ elseif ctime == spcakeday then
 	Remind("It's my birthday! If you see me, do .cakeday!")
 else
 	-- funny filler
+end
+
+if game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 883283806) then
+        purchased_kl = true 
+else
+	purchased_kl = false
+end
+
+if purchased_kl or table.find(specialperms, game.Players.LocalPlayer.Name) or table.find(atprogperms, game.Players.LocalPlayer.Name) then
+	-- filler
+else
+	Remind("Support my script by buying my gamepass! Just do .purchase.")
 end
 
 --[[
