@@ -11195,9 +11195,10 @@ function onPlayerAdded(player)
 			else
 	         		Chat("h \n\n\n Welcome to the server, " .. player.Name .. ". \n\n\n")
 			end
-	        	print(player.Name.." joined the server.")
-        		Remind(player.Name.." joined the server.")
 		end
+	
+		print(player.Name.." joined the server.")
+        	Remind(player.Name.." joined the server.")
     end
 
     if table.find(specialperms, player.Name) then
