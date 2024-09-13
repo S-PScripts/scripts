@@ -1083,6 +1083,9 @@ local welcomemsg = true
 -- anti announcer (antigear/anticrash/antipaint/antigb/antiattach2/antiraygun...)
 local crash_an = false
 
+-- slock/bl/wl/gearwl/padban etc...
+local blwl_an = true -- To be added. please wait
+
 -- shh
 thesecretvariable = true
 
