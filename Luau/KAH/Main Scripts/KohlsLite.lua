@@ -384,6 +384,7 @@ local loopkill = {}
 local byecam = {}
 local carcar = {}
 
+-- anti kill list i didn't make it for any other antis so cryyy!
 antikill = {}
 
 -- Gamepass saving
