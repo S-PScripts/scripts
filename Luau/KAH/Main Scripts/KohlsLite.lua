@@ -4379,24 +4379,24 @@ return
 	Speak("collect my pages...")
     end
 
-   if string.sub(msg:lower(), 1, #prefix + 4) == prefix.."pmap" then
+   if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'pmap' then
 		local colourhere = string.sub(msg, #prefix + 6)
 		PaintMap(colourhere,"norm")
 		Remind("Painted the map!")
    end
 
-   if string.sub(msg:lower(), 1, #prefix + 8) == prefix.."paintmap" then
+   if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'paintmap' then
 		local colourhere = string.sub(msg, #prefix + 10)
 		PaintMap(colourhere,"norm")
 		Remind("Painted the map!")
    end
 
-  if string.sub(msg:lower(), 1, #prefix + 9) == prefix.."messpaint" then
+  if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'messpaint' then
 		PaintMap(colourhere,"random")
 		Remind("Ruined the map's paint!")
    end
 
-   if string.sub(msg:lower(), 1, #prefix + 6) == prefix.."rbgmap" then
+   if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'rbgmap' then
 		local args = string.split(msg, " ")
 		r = args[2] 
 		g = args[3]
@@ -4405,7 +4405,7 @@ return
 		Remind("Painted the map (rbg)!")
    end
 		
- if string.sub(msg:lower(), 1, #prefix + 4) == prefix.."rmap" then
+ if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'rmap' then
 		if Loops.rainbowmap == false then
 			Loops.rainbowmap = true
 			rmap()
@@ -4416,7 +4416,7 @@ return
 		end
    end
 
- if string.sub(msg:lower(), 1, #prefix + 5) == prefix.."rbase" then
+ if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'rbase' then
 		if Loops.rbase == false then
 			Loops.rbase = true
 			rbase()
@@ -4427,7 +4427,7 @@ return
 		end
    end
 
- if string.sub(msg:lower(), 1, #prefix + 4) == prefix.."rfog" then
+ if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'rfog' then
 		deran = tonumber(string.sub(msg:lower(), #prefix + 6))
 		if Loops.rfog == false then
 			Loops.rfog = true
@@ -4439,17 +4439,17 @@ return
 		end
    end
 
-   if string.sub(msg:lower(), 1, #prefix + 6) == prefix.."unrmap" then
+   if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'unrmap' then
 		Loops.rainbowmap = false
 		Remind("Run fixpaint to fix the map's colours now!")
    end
 
-   if string.sub(msg:lower(), 1, #prefix + 7) == prefix.."unrbase" then
+   if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'unrbase' then
 		Loops.rbase = false
 		Remind("Run fixpaint to fix the baseplate's colour now!")
    end
 
-   if string.sub(msg:lower(), 1, #prefix + 6) == prefix.."unrfog" then
+   if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'unrfog' then
 		Loops.rfog = false
 		Remind("Rainbow fog is now disabled")
 		Chat("fix")
