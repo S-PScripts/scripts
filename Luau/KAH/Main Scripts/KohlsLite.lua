@@ -1203,17 +1203,19 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          PLAYERCHECK(dasplayer)
          if player ~= nil then
 		if player == game.Players.LocalPlayer.Name then 
-			return Remind("You cannot whitelist yourself")
+			return Remind("You cannot whitelist yourself.")
 		end
 		
-		if not table.find(whitelist, player) then
-                        Chat("h \n\n\n "..player.." has been whitelisted! \n\n\n")
+		if not table.find(whitelist, player) then		
+			if blwl_an then
+                        	Chat("h \n\n\n "..player.." has been whitelisted! \n\n\n")
+			end	
 			if table.find(blacklist, player) then
 				Remind("Unblacklisted "..player.." to whitelist them.")
 				table.remove(blacklist, table.find(blacklist, player))
 			else
                         	Remind("Whitelisted "..player)
-			end
+			end	
                         table.insert(whitelist, player)
                         Chat('unblind '..player)
                         Chat('unpunish '..player)
@@ -1236,8 +1238,10 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          local dasplayer = string.sub(msg:lower(), #prefix + 6)
          PLAYERCHECK(dasplayer)
          if player ~= nil then
-                if table.find(whitelist, player) then
-                        Chat("h \n\n\n "..player.." has been unwhitelisted. \n\n\n")
+                if table.find(whitelist, player) then	
+			if blwl_an then
+                        	Chat("h \n\n\n "..player.." has been unwhitelisted. \n\n\n")
+			end
                         Remind("Unwhitelisted "..player)
                         table.remove(whitelist, table.find(whitelist, player))
                 else
@@ -1258,11 +1262,13 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          PLAYERCHECK(dasplayer)
          if player ~= nil then
 		if player == game.Players.LocalPlayer.Name then 
-			return Remind("You cannot blacklist yourself")
+			return Remind("You cannot blacklist yourself.")
 		end
 				
                 if not table.find(blacklist, player) then
-                        Chat("h \n\n\n "..player.." has been blacklisted. \n\n\n");Regen()
+			if blwl_an then
+                        	Chat("h \n\n\n "..player.." has been blacklisted. \n\n\n");Regen()
+			end
 			if table.find(whitelist, player) then
 				Remind("Unwhitelisted "..player.." to blacklist them.")
 				table.remove(whitelist, table.find(whitelist, player))
@@ -1288,7 +1294,9 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          PLAYERCHECK(dasplayer)
          if player ~= nil then
                 if table.find(blacklist, player) then
-                        Chat("h \n\n\n "..player.." has been unblacklisted! \n\n\n")
+			if blwl_an then
+                        	Chat("h \n\n\n "..player.." has been unblacklisted! \n\n\n")
+			end
                         table.remove(blacklist, table.find(blacklist, player))
 			if table.find(newplrslocked, player) then
 				 table.remove(newplrslocked, table.find(newplrslocked, player))
@@ -1332,7 +1340,9 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          PLAYERCHECK(dasplayer)
          if player ~= nil then
                 if not table.find(FAdmins, player) then
-                        Chat("h \n\n\n "..player.." has been given admin! \n\n\n")
+			if blwl_an then
+                        	Chat("h \n\n\n "..player.." has been given admin! \n\n\n")
+			end
                         Remind("Admined "..player)
                         table.insert(FAdmins, player)
                 else
@@ -1348,7 +1358,9 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          PLAYERCHECK(dasplayer)
          if player ~= nil then
                 if table.find(FAdmins, player) then
-                        Chat("h \n\n\n "..player.." has been removed from admin. \n\n\n")
+			if blwl_an then
+                        	Chat("h \n\n\n "..player.." has been removed from admin. \n\n\n")
+			end
                         Remind("Unadmined "..player)
                         table.remove(FAdmins, table.find(FAdmins, player))
                 else
@@ -1371,11 +1383,13 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          PLAYERCHECK(dasplayer)
          if player ~= nil then
 		if player == game.Players.LocalPlayer.Name then 
-			return Remind("You cannot gear whitelist yourself")
+			return Remind("You cannot gear whitelist yourself.")
 		end
 				
                 if not table.find(GWhitelisted, player) then
-                        Chat("h \n\n\n "..player.." has been whitelisted from anti-gears! \n\n\n")
+			if blwl_an then
+                        	Chat("h \n\n\n "..player.." has been whitelisted from anti-gears! \n\n\n")
+			end
                         Remind("Gear whitelisted "..player)
                         table.insert(GWhitelisted, player)
                 else
@@ -1391,7 +1405,9 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          PLAYERCHECK(dasplayer)
          if player ~= nil then
                 if table.find(GWhitelisted, player) then
-                        Chat("h \n\n\n "..player.." has been unwhitelisted from anti-gears. \n\n\n")
+			if blwl_an then
+                        	Chat("h \n\n\n "..player.." has been unwhitelisted from anti-gears. \n\n\n")
+			end
                         Remind("Un gear whitelisted "..player)
                         table.remove(GWhitelisted, table.find(GWhitelisted, player))
                 else
@@ -1433,13 +1449,25 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                 Chat("fix")
 		Remind("No more crazy colours, phew!")
         end
+		
+        if string.sub(msg, 1, #prefix + 6)  == prefix..'blwlan' then
+			blwl_an = true
+			Remind("Blacklist/whitelist/gearwhitelist etc announcements enabled.")
+	end
+
+        if string.sub(msg, 1, #prefix + 6)  == prefix..'unblwlan' then
+			blwl_an = true
+			Remind("Blacklist/whitelist/gearwhitelist etc announcements enabled.")
+	end
 
        if string.sub(msg, 1, #prefix + 8) == prefix..'loopkill' then
          local dasplayer = string.sub(msg:lower(), #prefix + 10)
          PLAYERCHECK(dasplayer)
          if player ~= nil then
                 if not table.find(loopkill, player) then
-                        Chat("h \n\n\n "..player.." is being loopkilled. \n\n\n")
+			if blwl_an then
+                        	Chat("h \n\n\n "..player.." is being loopkilled. \n\n\n")
+			end
                         Remind("Loopkilling "..player)
                         table.insert(loopkill, player)
                 else
@@ -1455,8 +1483,10 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          PLAYERCHECK(dasplayer)
          if player ~= nil then
                 if table.find(loopkill, player) then
-                               Chat("h \n\n\n "..player.." is no longer being loopkilled! \n\n\n")
-                        Remind("Unloopkilling "..player)
+			if blwl_an then
+                        	Chat("h \n\n\n "..player.." is no longer being loopkilled! \n\n\n")
+			end
+                        Remind("Stopped loopkilling "..player)
                         table.remove(loopkill, table.find(loopkill, player))
                 else
                         Remind(player.." was never loopkilled!")
@@ -1471,7 +1501,9 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          PLAYERCHECK(dasplayer)
          if player ~= nil then
                 if not table.find(byecam, player) then
-                        Chat("h \n\n\n "..player.."'s camera is being glitched! Boo! \n\n\n")
+			if blwl_an then
+                        	Chat("h \n\n\n "..player.."'s camera is getting spam named! \n\n\n")
+			end
                         Remind("Spam naming "..player)
                         table.insert(byecam, player)
                 else
@@ -1487,8 +1519,10 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          PLAYERCHECK(dasplayer)
          if player ~= nil then
                 if table.find(byecam, player) then
-                               Chat("h \n\n\n "..player.."'s camera is no longer being glitched! Yipee! \n\n\n")
-                        Remind("Unspam naming "..player)
+			if blwl_an then
+                        	Chat("h \n\n\n "..player.."'s camera is no longer being spam named! \n\n\n")
+			end
+                        Remind("Stopped spam naming "..player)
                         table.remove(byecam, table.find(byecam, player))
                 else
                         Remind(player.." was never spam named!")
@@ -1503,7 +1537,9 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          PLAYERCHECK(dasplayer)
          if player ~= nil then
                 if not table.find(carcar, player) then
-                        Chat("h \n\n\n "..player.." loves cars! Yummy! \n\n\n")
+			if blwl_an then
+                        	Chat("h \n\n\n "..player.." loves cars! Yummy! \n\n\n")
+			end
                         Remind("Spam car-ing "..player)
                         table.insert(carcar, player)
                 else
@@ -1519,8 +1555,10 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          PLAYERCHECK(dasplayer)
          if player ~= nil then
                 if table.find(carcar, player) then
-                               Chat("h \n\n\n "..player.."'s hates cars! Noooooo \n\n\n")
-                        Remind("Unspam car-ing "..player)
+			if blwl_an then
+                        	Chat("h \n\n\n "..player.."'s hates cars! Noooooo \n\n\n")
+			end
+                        Remind("Stopped spam car-ing "..player)
                         table.remove(carcar, table.find(carcar, player))
                 else
                         Remind(player.." was never spam carred!")
@@ -1546,7 +1584,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          PLAYERCHECK(dasplayer)
          if player ~= nil then
                 gcplr = cplr
-                  gcplrn = player
+                gcplrn = player
                 checkforperm()
          else
                 Remind('Cannot find player with the name: '..dasplayer)
@@ -1570,7 +1608,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          PLAYERCHECK(dasplayer)
          if player ~= nil then
                 gcplr = cplr
-                  gcplrn = player
+                gcplrn = player
                 checkforpersons()
          else
                 Remind('Cannot find player with the name: '..dasplayer)
@@ -1582,7 +1620,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          PLAYERCHECK(dasplayer)
          if player ~= nil then
                 gcplr = cplr
-                  gcplrn = player
+                gcplrn = player
                 checkforperm()
                 checkforpersons()
          else
@@ -1616,14 +1654,18 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
        end
 
        if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'slock' then
-        Chat("h \n\n\n Server is locked! \n\n\n");Regen()
+	if blwl_an then
+        	Chat("h \n\n\n Server is locked! \n\n\n");Regen()
+	end
         slockenabled = true
 	Remind("Turned on the serverlock!")
        end
 
        if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'unslock' then
         slockenabled = false
-        Chat("h \n\n\n Server is unlocked! \n\n\n")
+	if blwl_an then
+        	Chat("h \n\n\n Server is unlocked! \n\n\n")
+	end
         Chat('unblind all')
         Chat('unpunish all')
 	Remind("Turned off the serverlock!")
@@ -3061,6 +3103,11 @@ Commands required: rocket]])
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'unrkick' then
+		if haspersons == false then
+Remind([[Sorry, you don't have Person's to perform this command!
+Commands required: rocket]])
+return
+		end
 		if rkicking then
 			rkicking = false
 			Remind("Stopped rocket kicking player")
@@ -3485,6 +3532,11 @@ Commands required: rocket]])
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'space' then -- kohls true anti kill
+		if haspersons == false then
+Remind([[Sorry, you don't have Person's to perform this command!
+Commands required: rocket]])
+return
+		end
                 local person = string.sub(msg:lower(), #prefix + 7)
                 Chat("h \n\n\n Guys, we've finally done it! \n\n\n");task.wait(4)
                 Chat("h \n\n\n We're sending someone to space! \n\n\n");task.wait(4)
@@ -3576,6 +3628,11 @@ Commands required: rocket]])
     end
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'bend' then -- pr/cxodek script
+		if haspersons == false then
+Remind([[Sorry, you don't have Person's to perform this command!
+Commands required: rocket]])
+return
+		end
 		if bending then return 
 		else
 			bending = true
@@ -4101,7 +4158,9 @@ Commands required: rocket]])
          local dasplayer = string.sub(msg:lower(), #prefix + 8)
          PLAYERCHECK(dasplayer)
          if player ~= nil then
-                Chat("h \n\n\n "..player.." has been padbanned. \n\n\n")
+		if blwl_an then
+                	Chat("h \n\n\n "..player.." has been padbanned. \n\n\n")
+		end
                 table.insert(padbanned, player)
          else
                 Remind('Cannot find player with the name: '..dasplayer)
@@ -4112,7 +4171,9 @@ Commands required: rocket]])
          local dasplayer = string.sub(msg:lower(), #prefix + 10)
          PLAYERCHECK(dasplayer)
          if player ~= nil then
-                Chat("h \n\n\n "..player.." has been unpadbanned! \n\n\n")
+		if blwl_an then
+               		Chat("h \n\n\n "..player.." has been unpadbanned! \n\n\n")
+		end
                 table.remove(padbanned, table.find(padbanned, player))
          else
                 Remind('Cannot find player with the name: '..dasplayer)
@@ -4120,13 +4181,17 @@ Commands required: rocket]])
     end
 
     if string.sub(msg, 1, #prefix + 8) == prefix..'padreinf' then
-        Chat("h \n\n\n Pad reinforcements are on. \n\n\n")
+	if blwl_an then
+        	Chat("h \n\n\n Pad reinforcements are on. \n\n\n")
+	end
         padreinforcements = true
 	Remind("Pad reinforcements are on.")
     end
 
     if string.sub(msg, 1, #prefix + 10) == prefix..'unpadreinf' then
-        Chat("h \n\n\n Pad reinforcements are off! \n\n\n")
+	if blwl_an then
+        	Chat("h \n\n\n Pad reinforcements are off! \n\n\n")
+	end
         padreinforcements = false
 	Remind("Pad reinforcements are off.")
     end
@@ -4227,6 +4292,11 @@ Commands required: rocket]])
     end
 
     if string.sub(msg, 1, #prefix + 6) == prefix..'shlong' then
+		if haspersons == false then
+Remind([[Sorry, you don't have Person's to perform this command!
+Commands required: part]])
+return
+		end
 		local args = string.split(msg, " ")
 		if #args == 3 then
         		local dasplayer = args[2]
@@ -4244,6 +4314,26 @@ Commands required: rocket]])
 		end
     end
 
+    if string.sub(msg, 1, #prefix + 8) == prefix..'unshlong' then
+		if haspersons == false then
+Remind([[Sorry, you don't have Person's to perform this command!
+Commands required: part]])
+return
+		end
+		local args = string.split(msg, " ")
+		if #args == 2 then
+        		local dasplayer = args[2]
+			PLAYERCHECK(dasplayer)
+			if player ~= nil then
+				Loops.pp = false
+			else
+				Remind('Cannot find player with the name: '..dasplayer)
+			end		
+		else
+			Remind("Invalid amount of arguments. (it should be 2)")
+		end
+    end
+
     if string.sub(msg, 1, #prefix + 7) == prefix..'dncycle' then
 		Loops.dncycle = true
 		dncycle()
@@ -4256,6 +4346,11 @@ Commands required: rocket]])
     end
 
     if string.sub(msg, 1, #prefix + 5) == prefix..'arena' then
+		if haspersons == false then
+Remind([[Sorry, you don't have Person's to perform this command!
+Commands required: part]])
+return
+		end
 		local args = string.split(msg, " ")
 		if #args == 3 then
 				local plr1 = args[2]
@@ -4264,21 +4359,6 @@ Commands required: rocket]])
 				Remind("Building the arena")
 		else
 				Remind("Please give 3 arguments - arena (plr1) (plr2).")
-		end
-    end
-
-    if string.sub(msg, 1, #prefix + 8) == prefix..'unshlong' then
-		local args = string.split(msg, " ")
-		if #args == 2 then
-        		local dasplayer = args[2]
-			PLAYERCHECK(dasplayer)
-			if player ~= nil then
-				Loops.pp = false
-			else
-				Remind('Cannot find player with the name: '..dasplayer)
-			end		
-		else
-			Remind("Invalid amount of arguments. (it should be 2)")
 		end
     end
 
@@ -4814,6 +4894,9 @@ Commands required: rocket]])
                  local dasplayer = string.sub(msg:lower(), #prefix + 7)
 		 PLAYERCHECK(dasplayer)
                  if player ~= nil then
+			if  table.find(nokick, player) then
+                        	Remind("Sorry, this player cannot be kicked!") return
+			end          
 			dk = cplr
 			dkicked = player
 			dkickin = true
@@ -5358,12 +5441,12 @@ Commands required: rocket]])
 	Remind("Anti gearban is now disabled.")
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'antiattach2' then
+    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'2antiattach2' then
         antiattach2 = true
 	Remind("Anti ivory is now enabled.")
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 13) == prefix..'unantiattach2' then
+    if string.sub(msg:lower(), 1, #prefix + 13) == prefix..'2unantiattach' then
         antiattach2 = false
 	Remind("Anti ivory is now disabled.")
     end
@@ -9307,7 +9390,9 @@ task.spawn(function()
                         for i,pad in pairs(game:GetService("Workspace").Terrain["_Game"].Admin.Pads:GetDescendants()) do
                                 if pad.Name == player.."'s admin" then
                                         Chat("respawn "..player)
-                                        Chat("h \n\n\n Sorry, "..player..", you're banned from using the admin pads! \n\n\n")
+					if blwl_an then
+                                        	Chat("h \n\n\n Sorry, "..player..", you're banned from using the admin pads! \n\n\n")
+					end
                                         Regen()
                                 end
                         end
@@ -9323,7 +9408,9 @@ task.spawn(function()
                                 end
                                 if times >= 2 then
                                         Chat("respawn "..v.Name)
-                                        Chat("h \n\n\n The pads have been reset because "..v.Name.." tried to take them all! \n\n\n")
+					if blwl_an then
+                                        	Chat("h \n\n\n The pads have been reset because "..v.Name.." tried to take them all! \n\n\n")
+					end
                                         Regen()
                                 end
                         end
