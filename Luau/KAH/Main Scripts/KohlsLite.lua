@@ -359,7 +359,8 @@ local atprogperms = {
     "grimAuxiliatrix",
     "undertaker629",
     "jjjuuikjjikkju",
-    "FR6DDIIE"
+    "FR6DDIIE",
+    "D_ionte"
 }
 
 -- New users get blacklisted (prevent crashers)
