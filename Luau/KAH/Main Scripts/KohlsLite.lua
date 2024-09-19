@@ -5,7 +5,7 @@
 ░▒▓███████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░▒▓█▓▒░       ░▒▓██████▓▒░░▒▓█▓▒░      ░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓██████▓▒░   
 ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░             ░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓█▓▒░        
 ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░             ░▒▓█▓▒░▒▓█▓▒░      ░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓█▓▒░        
-░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░▒▓███████▓▒░░▒▓████████▓▒░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓████████▓▒░ v1.76 ]]
+░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░▒▓███████▓▒░░▒▓████████▓▒░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓████████▓▒░ v1.777 ]]
 
 --[[
 
@@ -24,13 +24,15 @@ KohlsLite is LIKE a mixture of all the scripts that already exist in KAH such as
   -- > Shortcut v1
   -- > Shortcut v2
   -- > Shortcut v3
-  -- > Shortcut v3 VAR
+  -- > Shortcut v3 VAR [don't have the source]
   -- > PR Script
   -- > ii's Stupid Admin
   -- > KohlsNoob
+  -- > KohlsCool (maybe?)
   -- > Noobsploit
   -- > Jotunnheim
   -- > Shazam
+  -- > Scripts from S-PScripts/kah-fork
 
 Some of the code here is from other creators (and I credited) but quite a lot is my own and also some commands can't be changed code-wise that much.
 
@@ -52,7 +54,7 @@ I know this script is inconsistent with the fact it uses Game with and without G
 -- Notifications
 local function Remind(msg)
         game.StarterGui:SetCore("SendNotification", {
-                Title = "KohlsLite v1.765",
+                Title = "KohlsLite v1.777",
                 Text = msg,
                 Duration = 1
         })
@@ -102,7 +104,7 @@ getgenv().kohlsexecuted = true
 getgenv().deprefix = "." 
 
 -- The version of KohlsLite
-getgenv().klversion = "1.765"
+getgenv().klversion = "1.777"
 
 -- Chat function
 local function Chat(msg)
