@@ -235,7 +235,8 @@ local pwl = {
     "Palamode",
     "whatveidone",
     "yeyeyeweweweye",
-    "siga5167"
+    "siga5167",
+    "3akakauuky"
 }
 
 -- Players you cannot kick
@@ -335,7 +336,8 @@ local pgwl = {
     "Palamode",
     "whatveidone",
     "yeyeyeweweweye",
-    "siga5167"
+    "siga5167",
+    "3akakauuky"
 }
 
 -- Developers of KL
