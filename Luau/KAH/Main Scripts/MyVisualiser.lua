@@ -1,3 +1,9 @@
+game.Players:Chat("pm me 19/09/2024: Hello. This visualizer (by quiving) is discontinued since I will add it to KL natively. Unfortunately, this may take a while. - TS")
+
+
+--[[ 
+
+
 -- My Visualiser.lua --
 -- yes this is quiving's will be changed at some point yk h --
 
@@ -358,13 +364,13 @@ function visc()
         local wave = 1
         local a = 1
 
-      --[[  RunService.Heartbeat:Connect(function()
+      RunService.Heartbeat:Connect(function()
             for _,v in pairs(vis:GetChildren()) do
                 if gethiddenproperty(v, "ReceiveAge") > 0 then
                     v.Parent = KAHInstances
                 end
             end
-        end)]]
+        end)
 
         conn = game:GetService("RunService").Heartbeat:Connect(function(dt)
             if typeof(Toggles.VisOrbiter) ~= "CFrame" and Toggles.VisOrbiter ~= LocalPlayer and (not Toggles.VisOrbiter or Toggles.VisOrbiter.Character == nil or not Toggles.VisOrbiter.Character:FindFirstChild("HumanoidRootPart")) then
@@ -577,11 +583,11 @@ function draw()
         end)
 
         Connections.Drawing["mouseMove"] = Mouse.Move:Connect(function()
-            --[[if lastMousePos then
+            if lastMousePos then
                 if (math.abs(UIS:GetMouseLocation().X - lastMousePos.X) < brushSize * 4) and (math.abs(UIS:GetMouseLocation().Y - lastMousePos.Y) < brushSize * 4) then
                     return
                 end
-            end]]
+            end
 
             lastMousePos = UIS:GetMouseLocation()
 
@@ -617,3 +623,5 @@ function draw()
             mouseDown = false
         end)
 end
+
+]]
