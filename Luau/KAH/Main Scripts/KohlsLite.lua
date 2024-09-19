@@ -36,7 +36,7 @@ KohlsLite is LIKE a mixture of all the scripts that already exist in KAH such as
 
 Some of the code here is from other creators (and I credited) but quite a lot is my own and also some commands can't be changed code-wise that much.
 
-This script has not been discontinued but is not frequently updated as of now.
+This script has not been discontinued but is not frequently updated as of now (due to me having school).
 
 There are no more watermarks in this script. This script does have back doors (dev section) due to idiots abusing like crazy using this script.
 
