@@ -6683,6 +6683,42 @@ return
         end       
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'reserver' then -- kohlsnoob and betterpersons (tech)
+	    Remind("Checking...")
+
+            pcall(function()
+                if not game:GetService("Workspace").Terrain["_Game"].Admin:FindFirstChild("Regen") then
+                    Remind("Regen was not found.")
+                end
+		
+               if not game:GetService("Workspace").Terrain["_Game"].Workspace:FindFirstChild("Baseplate") then
+                    Remind("Baseplate was not found.")
+                end
+            end)
+
+            pcall(function()
+                if not game:GetService("Workspace").Terrain._Game.Workspace["Basic House"]:FindFirstChild("SmoothBlockModel112") then
+                    Remind("House floor missing.")
+                end
+            end)
+
+            pcall(function()
+                if game:GetService("Workspace").Terrain["_Game"].Workspace.Baseplate.CFrame.Y > 1.5 then
+                    Remind("Baseplate at wrong place")
+                end
+		
+		if game:GetService("Workspace").Terrain._Game.Workspace["Basic House"].SmoothBlockModel112.CFrame.Y > 15 then
+		    Remind("House floor at wrong place.")
+		end
+            end)
+
+            pcall(function()
+                if game:GetService("Workspace").Terrain["_Game"].Workspace.Baseplate.CFrame.Y < 0 then
+                    Remind("Baseplate at wrong place.")
+                end
+            end)
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'devcmd' then
 		Remind("KohlsLite is working!")
     end
