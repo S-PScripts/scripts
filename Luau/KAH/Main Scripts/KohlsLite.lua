@@ -379,6 +379,10 @@ local slockenabled = false
 autocharid = "nll"
 autochar = false
 
+-- watermark
+watermark_kl = false
+-- watermarK_text = "KohlsLite" (unused)
+
 -- Other stuff
 local loopkill = {}
 local byecam = {}
