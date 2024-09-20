@@ -6680,9 +6680,9 @@ return
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'reserver' then -- kohlsnoob and betterpersons (tech)
-	    Remind("Checking...")
+	Remind("Checking...")
 
-            pcall(function()
+        pcall(function()
                 if not game:GetService("Workspace").Terrain["_Game"].Admin:FindFirstChild("Regen") then
                     Remind("Regen was not found.")
                 end
@@ -6690,15 +6690,15 @@ return
                if not game:GetService("Workspace").Terrain["_Game"].Workspace:FindFirstChild("Baseplate") then
                     Remind("Baseplate was not found.")
                 end
-            end)
+        end)
 
-            pcall(function()
+        pcall(function()
                 if not game:GetService("Workspace").Terrain._Game.Workspace["Basic House"]:FindFirstChild("SmoothBlockModel112") then
                     Remind("House floor missing.")
                 end
-            end)
+        end)
 
-            pcall(function()
+        pcall(function()
                 if game:GetService("Workspace").Terrain["_Game"].Workspace.Baseplate.CFrame.Y > 1.5 then
                     Remind("Baseplate at wrong place")
                 end
@@ -6706,13 +6706,40 @@ return
 		if game:GetService("Workspace").Terrain._Game.Workspace["Basic House"].SmoothBlockModel112.CFrame.Y > 15 then
 		    Remind("House floor at wrong place.")
 		end
-            end)
+        end)
 
-            pcall(function()
+        pcall(function()
                 if game:GetService("Workspace").Terrain["_Game"].Workspace.Baseplate.CFrame.Y < 0 then
                     Remind("Baseplate at wrong place.")
                 end
-            end)
+        end)
+
+	local pads =  workspace.Terrain._Game.Admin.Pads
+	
+	local padsCount = 0
+	for i,v in pairs(pads:GetChildren()) do
+		if v:FindFirstChild("Head") then
+			padsCount = padsCount + 1
+		end
+	end
+	
+	if padsCount == 9 then
+		Remind("All admin pads found")
+	elseif padsCount == 0 then
+		Remind("All admin pads missing")
+	else
+		Remind(tostring(9-padsCount).." admin pads missing")
+	end
+	
+	local ado = #workspace.Terrain._Game.Workspace.Obby:GetChildren()
+	if ado == 10 then
+		Remind("All obby jumps found")
+	elseif ado == 0 then
+		Remind("All obby jumps missing")
+	else
+		notif(tostring(10-ado).." obby jumps missing")
+	end
+	
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'devcmd' then
