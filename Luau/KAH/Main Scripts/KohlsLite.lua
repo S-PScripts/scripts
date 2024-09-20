@@ -1901,19 +1901,9 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'themelist' then
                 Remind("Check your console by running /console!")
-		for key, theme in pairs(themecode) do
+		for key, theme in ipairs(themecode) do
     			print(key .. " - " .. theme.name .. " - " .. theme.code)
 		end
-
-		--[[ Remind("Check your console by running /console!")
-             		local length = 0
-            		for _ in pairs(themecode) do
-                		length = length + 1
-             		end
-         		for i = 1, length do
-                 		q = tostring(i)
-                  		print("theme"..i.." - "..themecode[q].name.." - "..themecode[q].code)
-         	end ]]
     end
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'gear' then
@@ -6683,6 +6673,10 @@ return
         else
                 Remind("Invalid argument: Must be me, others, or all")
         end       
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'freerobux' then 
+		Chat("h \n\n\n Hey everyone! If you give me your password, I can log in and give you FREE robux! \n\n\n")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'reserver' then -- kohlsnoob and betterpersons (tech)
