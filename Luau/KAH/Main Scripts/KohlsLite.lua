@@ -1220,7 +1220,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		
 		if not table.find(whitelist, player) then		
 			if blwl_an then
-                        	Chat("h \n\n\n "..player.." has been whitelisted! \n\n\n")
+				if watermark_kl then
+                        		Chat("h \n\n\n [KohlsLite]: "..player.." has been whitelisted! \n\n\n")
+				else
+                        		Chat("h \n\n\n "..player.." has been whitelisted! \n\n\n")
+				end
 			end	
 			if table.find(blacklist, player) then
 				Remind("Unblacklisted "..player.." to whitelist them.")
@@ -1252,7 +1256,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          if player ~= nil then
                 if table.find(whitelist, player) then	
 			if blwl_an then
-                        	Chat("h \n\n\n "..player.." has been unwhitelisted. \n\n\n")
+				if watermark_kl then
+					Chat("h \n\n\n [KohlsLite]: "..player.." has been unwhitelisted. \n\n\n")
+				else
+                        		Chat("h \n\n\n "..player.." has been unwhitelisted. \n\n\n")
+				end
 			end
                         Remind("Unwhitelisted "..player)
                         table.remove(whitelist, table.find(whitelist, player))
@@ -1279,7 +1287,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 				
                 if not table.find(blacklist, player) then
 			if blwl_an then
-                        	Chat("h \n\n\n "..player.." has been blacklisted. \n\n\n");Regen()
+				if watermark_kl then
+					Chat("h \n\n\n [KohlsLite]: "..player.." has been blacklisted. \n\n\n");Regen()
+				else
+                        		Chat("h \n\n\n "..player.." has been blacklisted. \n\n\n");Regen()
+				end
 			end
 			if table.find(whitelist, player) then
 				Remind("Unwhitelisted "..player.." to blacklist them.")
@@ -1307,7 +1319,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          if player ~= nil then
                 if table.find(blacklist, player) then
 			if blwl_an then
-                        	Chat("h \n\n\n "..player.." has been unblacklisted! \n\n\n")
+				if watermark_kl then
+					Chat("h \n\n\n [KohlsLite]: "..player.." has been unblacklisted! \n\n\n")
+				else
+                        		Chat("h \n\n\n "..player.." has been unblacklisted! \n\n\n")
+				end
 			end
                         table.remove(blacklist, table.find(blacklist, player))
 			if table.find(newplrslocked, player) then
