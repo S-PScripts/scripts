@@ -5395,8 +5395,8 @@ return
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'fixpaint' then
-        FixPaint()
 	Remind("Fixing paint...")
+        FixPaint()
      end
 
    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'anticrash' then
