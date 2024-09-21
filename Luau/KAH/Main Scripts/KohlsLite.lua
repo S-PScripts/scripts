@@ -1921,7 +1921,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'themelist' then
                 Remind("Check your console by running /console!")
-		for key, theme in ipairs(themecode) do
+		for key, theme in pairs(themecode) do
     			print(key .. " - " .. theme.name .. " - " .. theme.code)
 		end
     end
