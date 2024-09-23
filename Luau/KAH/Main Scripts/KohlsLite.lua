@@ -32,6 +32,9 @@ KohlsLite is LIKE a mixture of all the scripts that already exist in KAH such as
   -- > Noobsploit
   -- > Jotunnheim
   -- > Shazam
+  -- > Route
+  -- > SimpleKAH
+  -- > XKah
   -- > Scripts from S-PScripts/kah-fork
 
 Some of the code here is from other creators (and I credited) but quite a lot is my own and also some commands can't be changed code-wise that much.
@@ -7374,8 +7377,7 @@ function bypassattemptcheck(plr)
 end
 
 function CMDPrint()
-	GExecute("https://gist.githubusercontent.com/S-PScripts/86b332526c70fe7c9585bddd3e58101c/raw/7f3bb1759ab1e1d4a5178390796f6852f2304369/KL%2520CMD%2520LIST.lua")
--- https://raw.githubusercontent.com/S-PScripts/scripts/refs/heads/main/Luau/KAH/Main%20Scripts/cmd-list.lua
+	GExecute("https://raw.githubusercontent.com/S-PScripts/scripts/refs/heads/main/Luau/KAH/Main%20Scripts/cmd-list.lua")
 end
 
 -- CHECK FOR PERM
