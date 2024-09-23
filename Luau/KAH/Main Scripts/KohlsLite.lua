@@ -6573,7 +6573,8 @@ return
                            Chat("dog "..acplr)
                            Chat("rainbowify "..acplr)
                            Chat("name "..acplr.. " \n Imagine Getting \n CRASHED!!!")
-                        antichatplr = true
+			   acplr = player
+                           antichatplr = true
                    elseif table.find(nokick, player) then
                         Remind("Sorry, this player cannot be kicked!")
                 else
