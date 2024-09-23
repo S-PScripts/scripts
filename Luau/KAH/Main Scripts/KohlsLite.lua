@@ -191,6 +191,8 @@ local whitelist = {}
 
 -- Perm Whitelist
 local pwl = {
+
+ -- yeah i know i should use user ids instead just wait for that update that will come out in 2030 --
     "me_123eq",
     "me_crashking",
     "ScriptingProgrammer",
