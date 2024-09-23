@@ -1,13 +1,15 @@
+-- CHATGPT generated python code to make me make this command list :)
+
 prefix..'kcmds'
 prefix.."newkl"
-prefix..'iy' then -- the classic
+prefix..'iy'
 prefix..'myvis'
 prefix..'mydraw'
-prefix..'cmdpi' then -- well, you need that visualiser, do you?
-prefix..'prsc' then -- PR Script ~ atprog
-prefix..'cmdy' then -- you don't need this for attaching anymore ;)
-prefix..'tricky' then -- CREDITS TO TECH
-prefix..'ilove' then -- CREDITS TO TECH
+prefix..'cmdpi'
+prefix..'prsc'
+prefix..'cmdy'
+prefix..'tricky'
+prefix..'ilove'
 prefix..'wl'
 prefix..'whitelist'
 prefix..'unwl'
@@ -25,8 +27,8 @@ prefix..'listadmins'
 prefix..'gearwl'
 prefix..'ungearwl'
 prefix..'listgearwl'
-prefix..'fogvis' then -- fonalc funny var
-prefix..'unfogvis' then -- fonalc funny var
+prefix..'fogvis'
+prefix..'unfogvis'
 prefix..'ccol'
 prefix..'unccol'
 prefix..'blwlan'
@@ -39,7 +41,7 @@ prefix..'lagged'
 prefix..'unlagged'
 prefix..'report'
 prefix..'checkperm'
-prefix..'fcheckperm' then -- cool amirite
+prefix..'fcheckperm'
 prefix..'checkpersons'
 prefix..'checkgps'
 prefix..'listbl'
@@ -63,8 +65,8 @@ prefix..'msay'
 prefix..'unmsay'
 prefix..'gmusic'
 prefix..'rgmusic'
-prefix..'nmusic' then -- if it double executes ... you
-prefix..'pmusic' then -- if it double executes ... you
+prefix..'nmusic'
+prefix..'pmusic'
 prefix..'musiclist'
 prefix..'theme'
 prefix..'themelist'
@@ -79,11 +81,11 @@ prefix..'stopm'
 prefix..'startm'
 prefix..'stops'
 prefix..'starts'
-prefix..'deiv' then -- ported from simplekah
-prefix..'undeiv' then  -- ported from simplekah
-prefix..'tropics' then  -- ported from simplekah
-prefix..'sclr' then -- super clr fix everything (ffix does everything to yourself)
-prefix..'volm' then -- rap e
+prefix..'deiv'
+prefix..'undeiv'
+prefix..'tropics'
+prefix..'sclr'
+prefix..'volm'
 prefix..'musicid'
 prefix..'cmusicid'
 prefix..'audiolog'
@@ -102,11 +104,11 @@ prefix..'pmu'
 prefix..'2pmu'
 prefix..'bring'
 prefix..'goto'
-prefix..'song' then -- bit buggy if you stop the music but keep the playlist open
+prefix..'song'
 prefix..'ssong'
 prefix..'esong'
 prefix..'ggear'
-prefix..'gchar' then -- tech added this command to scv3-var :)
+prefix..'gchar'
 prefix..'antiabuse'
 prefix..'unantiabuse'
 prefix..'bok'
@@ -147,11 +149,11 @@ prefix..'toregen'
 prefix..'rparts'
 prefix..'lrobb'
 prefix..'laobb'
-prefix..'findregen' then -- i know it sucks but perm exists lol
+prefix..'findregen'
 prefix..'nofindregen'
-prefix..'2findregen' then -- i know it sucks but perm exists lol
+prefix..'2findregen'
 prefix..'2nofindregen'
-prefix..'leakedreg' then -- i know it sucks but perm exists lol
+prefix..'leakedreg'
 prefix..'unpmu'
 prefix..'offmusic'
 prefix..'onmusic'
@@ -166,14 +168,14 @@ prefix..'emcrash'
 prefix..'pcrash'
 prefix..'fcrash'
 prefix..'dcrash'
-prefix..'scrash' then -- not a silent crash!
+prefix..'scrash'
 prefix..'swc'
 prefix..'unswc'
 prefix..'rkick'
 prefix..'unrkick'
 prefix..'seedkick'
-prefix..'meshkick' then  -- mesh kick haha
-prefix..'hatkick' then  -- hat kick haha
+prefix..'meshkick'
+prefix..'hatkick'
 prefix..'antimesh'
 prefix..'unantimesh'
 prefix..'antihat'
@@ -185,41 +187,41 @@ prefix..'unantian'
 prefix..'clickexplode'
 prefix..'unclickexplode'
 prefix..'cakeday'
-prefix..'control' then -- really funny ngl (scv1)
-prefix..'ncontrol' then -- really funny ngl (cmdpi)
-prefix..'iceblock' then -- pr script
-prefix..'glitch' then -- noobsploit
-prefix..'headrise' then -- jotunnheim
-prefix..'headroot' then -- jotunnheim
-prefix..'skybox' then -- jotunnheim
-prefix..'amputate' then -- jotunnheim
-prefix..'icetower' then -- jotunnheim
-prefix..'coconut' then -- noobsploit
-prefix..'cube' then -- cmdv3/pi
-prefix..'tank' then -- thomas the tank engine - from yt video
-prefix..'ufo' then -- ufo!!! scv1
-prefix..'rat' then -- scv1
-prefix..'titan' then -- yeah im adding scv1 cmds lol
-prefix..'speaker' then -- yeah im adding scv1 cmds lol
-prefix..'dogrock' then -- noobsploit/shazam
-prefix..'rdogrock' then -- noobsploit/shazam
-prefix..'taxi' then -- kohlsnoob
-prefix..'smoothie' then -- kohlsnoob
-prefix..'tnt' then -- sHaZam!
-prefix..'headfloat' then -- yeah im adding scv1 cmds lol
-prefix..'space' then -- kohls true anti kill
-prefix..'tripin' then -- pr
-prefix..'ascend' then -- kohlsnoob
-prefix..'bed' then -- noobsploit techno
-prefix..'kitten' then -- nak3d would get tagged, inspired by simplekah
-prefix..'smack' then -- pr
-prefix..'dumb' then -- pr
-prefix..'bend' then -- pr/cxodek script
-prefix..'ruin' then -- pr/vitalux script
-prefix..'fspin' then -- kohlsnoob
-prefix..'yeet' then -- kohlsnoob
-prefix..'creeper' then -- kohlsnoob
-prefix..'gbreak' then -- pr script
+prefix..'control'
+prefix..'ncontrol'
+prefix..'iceblock'
+prefix..'glitch'
+prefix..'headrise'
+prefix..'headroot'
+prefix..'skybox'
+prefix..'amputate'
+prefix..'icetower'
+prefix..'coconut'
+prefix..'cube'
+prefix..'tank'
+prefix..'ufo'
+prefix..'rat'
+prefix..'titan'
+prefix..'speaker'
+prefix..'dogrock'
+prefix..'rdogrock'
+prefix..'taxi'
+prefix..'smoothie'
+prefix..'tnt'
+prefix..'headfloat'
+prefix..'space'
+prefix..'tripin'
+prefix..'ascend'
+prefix..'bed'
+prefix..'kitten'
+prefix..'smack'
+prefix..'dumb'
+prefix..'bend'
+prefix..'ruin'
+prefix..'fspin'
+prefix..'yeet'
+prefix..'creeper'
+prefix..'gbreak'
 prefix..'antidisco'
 prefix..'unantidisco'
 prefix..'antiflash'
@@ -248,7 +250,7 @@ prefix..'adv'
 prefix..'cadv'
 prefix..'ipboom'
 prefix..'logspam'
-prefix..'logtrap' then -- scv1
+prefix..'logtrap'
 prefix..'logmode'
 prefix..'persons'
 prefix..'unpersons'
@@ -277,8 +279,8 @@ prefix..'noplatform'
 prefix..'float'
 prefix..'unfloat'
 prefix..'icemap'
-prefix..'byp' then -- created by tech-187, open source on his repo :)
-prefix..'nbyp' then -- my version (might work better)
+prefix..'byp'
+prefix..'nbyp'
 prefix..'sregen'
 prefix..'unsregen'
 prefix..'autogpc'
@@ -294,17 +296,16 @@ prefix..'house'
 prefix..'spawn'
 prefix..'hhouse'
 prefix..'phelp'
-prefix..'void' then -- kohlsnoob
+prefix..'void'
 prefix..'execute'
 prefix..'announce'
-prefix..'cannounce' then -- inspired by scv3-var
+prefix..'cannounce'
 prefix..'shlong'
 prefix..'unshlong'
 prefix..'dncycle'
 prefix..'undncycle'
 prefix..'arena'
 prefix..'prefix'
-'cprefix'
 prefix..'pmap'
 prefix..'paintmap'
 prefix..'messpaint'
@@ -330,9 +331,9 @@ prefix..'untnok'
 prefix..'getping'
 prefix..'autogb'
 prefix..'unautogb'
-prefix..'qpunish' then -- idea from zercon
-prefix..'spunish' then -- ii's admin
-prefix..'gpunish' then -- ii's admin
+prefix..'qpunish'
+prefix..'spunish'
+prefix..'gpunish'
 prefix..'ungearban'
 prefix..'gearban'
 prefix..'rail'
@@ -360,16 +361,16 @@ prefix..'sjail'
 prefix..'nuke'
 prefix..'age'
 prefix..'jdate'
-prefix..'dkick' then -- buggy!
-prefix..'undkick' then -- buggy!
-prefix..'slag' then -- buggy!
-prefix..'nslag' then -- buggy!
+prefix..'dkick'
+prefix..'undkick'
+prefix..'slag'
+prefix..'nslag'
 prefix..'rpaintui'
-prefix..'sspawn' then -- save spawn
-prefix..'cpos' then -- print current pos
-prefix..'gsspawn' then -- go to saved spawn
-prefix..'frespawn' then -- force respawn (broken)
-prefix..'mrespawn' then -- force respawn (broken)
+prefix..'sspawn'
+prefix..'cpos'
+prefix..'gsspawn'
+prefix..'frespawn'
+prefix..'mrespawn'
 prefix..'dummy'
 prefix..'ffix'
 prefix..'rejoin'
@@ -439,7 +440,7 @@ prefix..'anticrash'
 prefix..'unanticrash'
 prefix..'emranticrash'
 prefix..'unemranticrash'
-prefix..'antigs' then -- what is this?
+prefix..'antigs'
 prefix..'unantigs'
 prefix..'antipaint'
 prefix..'unantipaint'
@@ -492,10 +493,10 @@ prefix..'antijump'
 prefix..'unantijump'
 prefix..'antikill'
 prefix..'unantikill'
-prefix..'antifly' then -- forgot to add this to the list lmao
-prefix..'unantifly' then -- forgot to add this to the list lmao
-prefix..'antinoc' then -- yes
-prefix..'unantinoc' then -- yes
+prefix..'antifly'
+prefix..'unantifly'
+prefix..'antinoc'
+prefix..'unantinoc'
 prefix..'antichar'
 prefix..'unantichar'
 prefix..'antimsg'
@@ -538,7 +539,7 @@ prefix..'antiswag'
 prefix..'unantiswag'
 prefix..'antichat'
 prefix..'unantichat'
-prefix..'mkick' then -- haha i found it
+prefix..'mkick'
 prefix..'unmkick'
 prefix..'pkick'
 prefix..'unpkick'
@@ -551,7 +552,7 @@ prefix..'unautogod'
 prefix..'autochar'
 prefix..'unautochar'
 prefix..'freerobux'
-prefix..'reserver' then -- kohlsnoob and betterpersons (tech)
+prefix..'reserver'
 prefix..'devcmd'
 prefix..'discord'
 prefix..'buy'
@@ -568,7 +569,7 @@ prefix..'carpet'
 prefix..'uncarpet'
 prefix..'bang'
 prefix..'unbang'
-prefix..'mutebb' then -- yes this isn't a loop, i'm lazy
+prefix..'mutebb'
 prefix..'unmutebb'
 prefix..'view'
 prefix..'unview'
@@ -603,6 +604,5 @@ prefix..'weaken'
 prefix..'unweaken'
 prefix..'strengthen'
 prefix..'unstrengthen'
-prefix then -- so THEY don't use YOU!
 prefix..'hmode'
 prefix..'hcmds'
