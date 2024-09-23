@@ -243,7 +243,7 @@ local pwl = {
 
 -- Players you cannot kick
 local nokick = {
-    "me_123eq",
+  "me_123eq",
     "me_crashking",
     "ScriptingProgrammer",
     "t_echr",
@@ -275,18 +275,20 @@ local nokick = {
     "me_capybara",
     "E4_DQ",
     "vgcrash",
+    "s_pisafurry",
+    "YT_MATHEUSMODZ5", 
+    "kevin3050ti",
     "grimAuxiliatrix",
     "ikbx",
     "undertaker629",
     "Eggkid7",
-    "s_pisafurry", 
-    "YT_MATHEUSMODZ5",
     "4g8h",
     "kohlslitedev",
     "Palamode",
     "whatveidone",
     "yeyeyeweweweye",
-    "siga5167"
+    "siga5167",
+    "3akakauuky"
 }
 
 -- Users that can use blacklisted gears (or gears when antigear is on)
