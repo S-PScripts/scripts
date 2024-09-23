@@ -1,1821 +1,1826 @@
 -- thanks chadgpt for the python script ahah
 
-print(prefix..'kcmds')
+lprefix = "."
+
+print("Default prefix is .")
+print("\n")
+
+print(lprefix..'kcmds')
 print("\n")
 
-print(prefix..'newkl')
+print(lprefix..'newkl')
 print("\n")
 
-print(prefix..'iy')
+print(lprefix..'iy')
 print("\n")
 
-print(prefix..'myvis')
+print(lprefix..'myvis')
 print("\n")
 
-print(prefix..'mydraw')
+print(lprefix..'mydraw')
 print("\n")
 
-print(prefix..'cmdpi')
+print(lprefix..'cmdpi')
 print("\n")
 
-print(prefix..'prsc')
+print(lprefix..'prsc')
 print("\n")
 
-print(prefix..'cmdy')
+print(lprefix..'cmdy')
 print("\n")
 
-print(prefix..'tricky')
+print(lprefix..'tricky')
 print("\n")
 
-print(prefix..'ilove')
+print(lprefix..'ilove')
 print("\n")
 
-print(prefix..'wl')
+print(lprefix..'wl')
 print("\n")
 
-print(prefix..'whitelist')
+print(lprefix..'whitelist')
 print("\n")
 
-print(prefix..'unwl')
+print(lprefix..'unwl')
 print("\n")
 
-print(prefix..'unwhitelist')
+print(lprefix..'unwhitelist')
 print("\n")
 
-print(prefix..'bl')
+print(lprefix..'bl')
 print("\n")
 
-print(prefix..'blacklist')
+print(lprefix..'blacklist')
 print("\n")
 
-print(prefix..'unbl')
+print(lprefix..'unbl')
 print("\n")
 
-print(prefix..'unblacklist')
+print(lprefix..'unblacklist')
 print("\n")
 
-print(prefix..'listwl')
+print(lprefix..'listwl')
 print("\n")
 
-print(prefix..'antimlog')
+print(lprefix..'antimlog')
 print("\n")
 
-print(prefix..'unantimlog')
+print(lprefix..'unantimlog')
 print("\n")
 
-print(prefix..'admin')
+print(lprefix..'admin')
 print("\n")
 
-print(prefix..'unadmin')
+print(lprefix..'unadmin')
 print("\n")
 
-print(prefix..'listadmins')
+print(lprefix..'listadmins')
 print("\n")
 
-print(prefix..'gearwl')
+print(lprefix..'gearwl')
 print("\n")
 
-print(prefix..'ungearwl')
+print(lprefix..'ungearwl')
 print("\n")
 
-print(prefix..'listgearwl')
+print(lprefix..'listgearwl')
 print("\n")
 
-print(prefix..'fogvis')
+print(lprefix..'fogvis')
 print("\n")
 
-print(prefix..'unfogvis')
+print(lprefix..'unfogvis')
 print("\n")
 
-print(prefix..'ccol')
+print(lprefix..'ccol')
 print("\n")
 
-print(prefix..'unccol')
+print(lprefix..'unccol')
 print("\n")
 
-print(prefix..'blwlan')
+print(lprefix..'blwlan')
 print("\n")
 
-print(prefix..'unblwlan')
+print(lprefix..'unblwlan')
 print("\n")
 
-print(prefix..'loopkill')
+print(lprefix..'loopkill')
 print("\n")
 
-print(prefix..'unloopkill')
+print(lprefix..'unloopkill')
 print("\n")
 
-print(prefix..'names')
+print(lprefix..'names')
 print("\n")
 
-print(prefix..'unnames')
+print(lprefix..'unnames')
 print("\n")
 
-print(prefix..'lagged')
+print(lprefix..'lagged')
 print("\n")
 
-print(prefix..'unlagged')
+print(lprefix..'unlagged')
 print("\n")
 
-print(prefix..'report')
+print(lprefix..'report')
 print("\n")
 
-print(prefix..'checkperm')
+print(lprefix..'checkperm')
 print("\n")
 
-print(prefix..'fcheckperm')
+print(lprefix..'fcheckperm')
 print("\n")
 
-print(prefix..'checkpersons')
+print(lprefix..'checkpersons')
 print("\n")
 
-print(prefix..'checkgps')
+print(lprefix..'checkgps')
 print("\n")
 
-print(prefix..'listbl')
+print(lprefix..'listbl')
 print("\n")
 
-print(prefix..'permusers')
+print(lprefix..'permusers')
 print("\n")
 
-print(prefix..'personsusers')
+print(lprefix..'personsusers')
 print("\n")
 
-print(prefix..'adminjoy')
+print(lprefix..'adminjoy')
 print("\n")
 
-print(prefix..'slock')
+print(lprefix..'slock')
 print("\n")
 
-print(prefix..'unslock')
+print(lprefix..'unslock')
 print("\n")
 
-print(prefix..'newplrslock')
+print(lprefix..'newplrslock')
 print("\n")
 
-print(prefix..'unnewplrslock')
+print(lprefix..'unnewplrslock')
 print("\n")
 
-print(prefix..'autoblvgc')
+print(lprefix..'autoblvgc')
 print("\n")
 
-print(prefix..'unautoblvgc')
+print(lprefix..'unautoblvgc')
 print("\n")
 
-print(prefix..'npslist')
+print(lprefix..'npslist')
 print("\n")
 
-print(prefix..'plrnewlen')
+print(lprefix..'plrnewlen')
 print("\n")
 
-print(prefix..'pboombox')
+print(lprefix..'pboombox')
 print("\n")
 
-print(prefix..'mboombox')
+print(lprefix..'mboombox')
 print("\n")
 
-print(prefix..'bgrange')
+print(lprefix..'bgrange')
 print("\n")
 
-print(prefix..'lgmusic')
+print(lprefix..'lgmusic')
 print("\n")
 
-print(prefix..'unlgmusic')
+print(lprefix..'unlgmusic')
 print("\n")
 
-print(prefix..'msay')
+print(lprefix..'msay')
 print("\n")
 
-print(prefix..'unmsay')
+print(lprefix..'unmsay')
 print("\n")
 
-print(prefix..'gmusic')
+print(lprefix..'gmusic')
 print("\n")
 
-print(prefix..'rgmusic')
+print(lprefix..'rgmusic')
 print("\n")
 
-print(prefix..'nmusic')
+print(lprefix..'nmusic')
 print("\n")
 
-print(prefix..'pmusic')
+print(lprefix..'pmusic')
 print("\n")
 
-print(prefix..'musiclist')
+print(lprefix..'musiclist')
 print("\n")
 
-print(prefix..'theme')
+print(lprefix..'theme')
 print("\n")
 
-print(prefix..'themelist')
+print(lprefix..'themelist')
 print("\n")
 
-print(prefix..'gear')
+print(lprefix..'gear')
 print("\n")
 
-print(prefix..'gearlist')
+print(lprefix..'gearlist')
 print("\n")
 
-print(prefix..'char')
+print(lprefix..'char')
 print("\n")
 
-print(prefix..'charlist')
+print(lprefix..'charlist')
 print("\n")
 
-print(prefix..'turn')
+print(lprefix..'turn')
 print("\n")
 
-print(prefix..'pausem')
+print(lprefix..'pausem')
 print("\n")
 
-print(prefix..'playm')
+print(lprefix..'playm')
 print("\n")
 
-print(prefix..'stopm')
+print(lprefix..'stopm')
 print("\n")
 
-print(prefix..'startm')
+print(lprefix..'startm')
 print("\n")
 
-print(prefix..'stops')
+print(lprefix..'stops')
 print("\n")
 
-print(prefix..'starts')
+print(lprefix..'starts')
 print("\n")
 
-print(prefix..'deiv')
+print(lprefix..'deiv')
 print("\n")
 
-print(prefix..'undeiv')
+print(lprefix..'undeiv')
 print("\n")
 
-print(prefix..'tropics')
+print(lprefix..'tropics')
 print("\n")
 
-print(prefix..'sclr')
+print(lprefix..'sclr')
 print("\n")
 
-print(prefix..'volm')
+print(lprefix..'volm')
 print("\n")
 
-print(prefix..'musicid')
+print(lprefix..'musicid')
 print("\n")
 
-print(prefix..'cmusicid')
+print(lprefix..'cmusicid')
 print("\n")
 
-print(prefix..'audiolog')
+print(lprefix..'audiolog')
 print("\n")
 
-print(prefix..'unaudiolog')
+print(lprefix..'unaudiolog')
 print("\n")
 
-print(prefix..'cvol')
+print(lprefix..'cvol')
 print("\n")
 
-print(prefix..'timepos')
+print(lprefix..'timepos')
 print("\n")
 
-print(prefix..'timeis')
+print(lprefix..'timeis')
 print("\n")
 
-print(prefix..'timedur')
+print(lprefix..'timedur')
 print("\n")
 
-print(prefix..'timeps')
+print(lprefix..'timeps')
 print("\n")
 
-print(prefix..'timeplay')
+print(lprefix..'timeplay')
 print("\n")
 
-print(prefix..'audiolol')
+print(lprefix..'audiolol')
 print("\n")
 
-print(prefix..'unaudiolol')
+print(lprefix..'unaudiolol')
 print("\n")
 
-print(prefix..'antimusic')
+print(lprefix..'antimusic')
 print("\n")
 
-print(prefix..'unantimusic')
+print(lprefix..'unantimusic')
 print("\n")
 
-print(prefix..'pmu')
+print(lprefix..'pmu')
 print("\n")
 
-print(prefix..'2pmu')
+print(lprefix..'2pmu')
 print("\n")
 
-print(prefix..'bring')
+print(lprefix..'bring')
 print("\n")
 
-print(prefix..'goto')
+print(lprefix..'goto')
 print("\n")
 
-print(prefix..'song')
+print(lprefix..'song')
 print("\n")
 
-print(prefix..'ssong')
+print(lprefix..'ssong')
 print("\n")
 
-print(prefix..'esong')
+print(lprefix..'esong')
 print("\n")
 
-print(prefix..'ggear')
+print(lprefix..'ggear')
 print("\n")
 
-print(prefix..'gchar')
+print(lprefix..'gchar')
 print("\n")
 
-print(prefix..'antiabuse')
+print(lprefix..'antiabuse')
 print("\n")
 
-print(prefix..'unantiabuse')
+print(lprefix..'unantiabuse')
 print("\n")
 
-print(prefix..'bok')
+print(lprefix..'bok')
 print("\n")
 
-print(prefix..'cgoto')
+print(lprefix..'cgoto')
 print("\n")
 
-print(prefix..'fixbp')
+print(lprefix..'fixbp')
 print("\n")
 
-print(prefix..'movebp')
+print(lprefix..'movebp')
 print("\n")
 
-print(prefix..'spawnkill')
+print(lprefix..'spawnkill')
 print("\n")
 
-print(prefix..'cagespawn')
+print(lprefix..'cagespawn')
 print("\n")
 
-print(prefix..'2fixpads')
+print(lprefix..'2fixpads')
 print("\n")
 
-print(prefix..'2fixreg')
+print(lprefix..'2fixreg')
 print("\n")
 
-print(prefix..'2fixbp')
+print(lprefix..'2fixbp')
 print("\n")
 
-print(prefix..'fcam')
+print(lprefix..'fcam')
 print("\n")
 
-print(prefix..'fixspawn')
+print(lprefix..'fixspawn')
 print("\n")
 
-print(prefix..'movespawn')
+print(lprefix..'movespawn')
 print("\n")
 
-print(prefix..'fixregen')
+print(lprefix..'fixregen')
 print("\n")
 
-print(prefix..'ivmove')
+print(lprefix..'ivmove')
 print("\n")
 
-print(prefix..'omove')
+print(lprefix..'omove')
 print("\n")
 
-print(prefix..'moveregen')
+print(lprefix..'moveregen')
 print("\n")
 
-print(prefix..'saveregen')
+print(lprefix..'saveregen')
 print("\n")
 
-print(prefix..'cusername')
+print(lprefix..'cusername')
 print("\n")
 
-print(prefix..'fixpads')
+print(lprefix..'fixpads')
 print("\n")
 
-print(prefix..'movepads')
+print(lprefix..'movepads')
 print("\n")
 
-print(prefix..'fixfl')
+print(lprefix..'fixfl')
 print("\n")
 
-print(prefix..'movefl')
+print(lprefix..'movefl')
 print("\n")
 
-print(prefix..'fixobby')
+print(lprefix..'fixobby')
 print("\n")
 
-print(prefix..'moveobby')
+print(lprefix..'moveobby')
 print("\n")
 
-print(prefix..'fixkb')
+print(lprefix..'fixkb')
 print("\n")
 
-print(prefix..'movekb')
+print(lprefix..'movekb')
 print("\n")
 
-print(prefix..'fixobox')
+print(lprefix..'fixobox')
 print("\n")
 
-print(prefix..'moveobox')
+print(lprefix..'moveobox')
 print("\n")
 
-print(prefix..'fixadv')
+print(lprefix..'fixadv')
 print("\n")
 
-print(prefix..'moveadv')
+print(lprefix..'moveadv')
 print("\n")
 
-print(prefix..'fixhouse')
+print(lprefix..'fixhouse')
 print("\n")
 
-print(prefix..'movehouse')
+print(lprefix..'movehouse')
 print("\n")
 
-print(prefix..'fixbb')
+print(lprefix..'fixbb')
 print("\n")
 
-print(prefix..'movebb')
+print(lprefix..'movebb')
 print("\n")
 
-print(prefix..'toregen')
+print(lprefix..'toregen')
 print("\n")
 
-print(prefix..'rparts')
+print(lprefix..'rparts')
 print("\n")
 
-print(prefix..'lrobb')
+print(lprefix..'lrobb')
 print("\n")
 
-print(prefix..'laobb')
+print(lprefix..'laobb')
 print("\n")
 
-print(prefix..'findregen')
+print(lprefix..'findregen')
 print("\n")
 
-print(prefix..'nofindregen')
+print(lprefix..'nofindregen')
 print("\n")
 
-print(prefix..'2findregen')
+print(lprefix..'2findregen')
 print("\n")
 
-print(prefix..'2nofindregen')
+print(lprefix..'2nofindregen')
 print("\n")
 
-print(prefix..'leakedreg')
+print(lprefix..'leakedreg')
 print("\n")
 
-print(prefix..'unpmu')
+print(lprefix..'unpmu')
 print("\n")
 
-print(prefix..'offmusic')
+print(lprefix..'offmusic')
 print("\n")
 
-print(prefix..'onmusic')
+print(lprefix..'onmusic')
 print("\n")
 
-print(prefix..'remusic')
+print(lprefix..'remusic')
 print("\n")
 
-print(prefix..'equipall')
+print(lprefix..'equipall')
 print("\n")
 
-print(prefix..'actall')
+print(lprefix..'actall')
 print("\n")
 
-print(prefix..'invall')
+print(lprefix..'invall')
 print("\n")
 
-print(prefix..'dropall')
+print(lprefix..'dropall')
 print("\n")
 
-print(prefix..'vgcrash')
+print(lprefix..'vgcrash')
 print("\n")
 
-print(prefix..'cocrash')
+print(lprefix..'cocrash')
 print("\n")
 
-print(prefix..'emcrash')
+print(lprefix..'emcrash')
 print("\n")
 
-print(prefix..'pcrash')
+print(lprefix..'pcrash')
 print("\n")
 
-print(prefix..'fcrash')
+print(lprefix..'fcrash')
 print("\n")
 
-print(prefix..'dcrash')
+print(lprefix..'dcrash')
 print("\n")
 
-print(prefix..'scrash')
+print(lprefix..'scrash')
 print("\n")
 
-print(prefix..'swc')
+print(lprefix..'swc')
 print("\n")
 
-print(prefix..'unswc')
+print(lprefix..'unswc')
 print("\n")
 
-print(prefix..'rkick')
+print(lprefix..'rkick')
 print("\n")
 
-print(prefix..'unrkick')
+print(lprefix..'unrkick')
 print("\n")
 
-print(prefix..'seedkick')
+print(lprefix..'seedkick')
 print("\n")
 
-print(prefix..'meshkick')
+print(lprefix..'meshkick')
 print("\n")
 
-print(prefix..'hatkick')
+print(lprefix..'hatkick')
 print("\n")
 
-print(prefix..'antimesh')
+print(lprefix..'antimesh')
 print("\n")
 
-print(prefix..'unantimesh')
+print(lprefix..'unantimesh')
 print("\n")
 
-print(prefix..'antihat')
+print(lprefix..'antihat')
 print("\n")
 
-print(prefix..'unantihat')
+print(lprefix..'unantihat')
 print("\n")
 
-print(prefix..'welmsg')
+print(lprefix..'welmsg')
 print("\n")
 
-print(prefix..'unwelmsg')
+print(lprefix..'unwelmsg')
 print("\n")
 
-print(prefix..'antian')
+print(lprefix..'antian')
 print("\n")
 
-print(prefix..'unantian')
+print(lprefix..'unantian')
 print("\n")
 
-print(prefix..'clickexplode')
+print(lprefix..'clickexplode')
 print("\n")
 
-print(prefix..'unclickexplode')
+print(lprefix..'unclickexplode')
 print("\n")
 
-print(prefix..'cakeday')
+print(lprefix..'cakeday')
 print("\n")
 
-print(prefix..'control')
+print(lprefix..'control')
 print("\n")
 
-print(prefix..'ncontrol')
+print(lprefix..'ncontrol')
 print("\n")
 
-print(prefix..'iceblock')
+print(lprefix..'iceblock')
 print("\n")
 
-print(prefix..'glitch')
+print(lprefix..'glitch')
 print("\n")
 
-print(prefix..'headrise')
+print(lprefix..'headrise')
 print("\n")
 
-print(prefix..'headroot')
+print(lprefix..'headroot')
 print("\n")
 
-print(prefix..'skybox')
+print(lprefix..'skybox')
 print("\n")
 
-print(prefix..'amputate')
+print(lprefix..'amputate')
 print("\n")
 
-print(prefix..'icetower')
+print(lprefix..'icetower')
 print("\n")
 
-print(prefix..'coconut')
+print(lprefix..'coconut')
 print("\n")
 
-print(prefix..'cube')
+print(lprefix..'cube')
 print("\n")
 
-print(prefix..'tank')
+print(lprefix..'tank')
 print("\n")
 
-print(prefix..'ufo')
+print(lprefix..'ufo')
 print("\n")
 
-print(prefix..'rat')
+print(lprefix..'rat')
 print("\n")
 
-print(prefix..'titan')
+print(lprefix..'titan')
 print("\n")
 
-print(prefix..'speaker')
+print(lprefix..'speaker')
 print("\n")
 
-print(prefix..'dogrock')
+print(lprefix..'dogrock')
 print("\n")
 
-print(prefix..'rdogrock')
+print(lprefix..'rdogrock')
 print("\n")
 
-print(prefix..'taxi')
+print(lprefix..'taxi')
 print("\n")
 
-print(prefix..'smoothie')
+print(lprefix..'smoothie')
 print("\n")
 
-print(prefix..'tnt')
+print(lprefix..'tnt')
 print("\n")
 
-print(prefix..'headfloat')
+print(lprefix..'headfloat')
 print("\n")
 
-print(prefix..'space')
+print(lprefix..'space')
 print("\n")
 
-print(prefix..'tripin')
+print(lprefix..'tripin')
 print("\n")
 
-print(prefix..'ascend')
+print(lprefix..'ascend')
 print("\n")
 
-print(prefix..'bed')
+print(lprefix..'bed')
 print("\n")
 
-print(prefix..'kitten')
+print(lprefix..'kitten')
 print("\n")
 
-print(prefix..'smack')
+print(lprefix..'smack')
 print("\n")
 
-print(prefix..'dumb')
+print(lprefix..'dumb')
 print("\n")
 
-print(prefix..'bend')
+print(lprefix..'bend')
 print("\n")
 
-print(prefix..'ruin')
+print(lprefix..'ruin')
 print("\n")
 
-print(prefix..'fspin')
+print(lprefix..'fspin')
 print("\n")
 
-print(prefix..'yeet')
+print(lprefix..'yeet')
 print("\n")
 
-print(prefix..'creeper')
+print(lprefix..'creeper')
 print("\n")
 
-print(prefix..'gbreak')
+print(lprefix..'gbreak')
 print("\n")
 
-print(prefix..'antidisco')
+print(lprefix..'antidisco')
 print("\n")
 
-print(prefix..'unantidisco')
+print(lprefix..'unantidisco')
 print("\n")
 
-print(prefix..'antiflash')
+print(lprefix..'antiflash')
 print("\n")
 
-print(prefix..'unantiflash')
+print(lprefix..'unantiflash')
 print("\n")
 
-print(prefix..'antifogend')
+print(lprefix..'antifogend')
 print("\n")
 
-print(prefix..'unantifogend')
+print(lprefix..'unantifogend')
 print("\n")
 
-print(prefix..'antiilight')
+print(lprefix..'antiilight')
 print("\n")
 
-print(prefix..'unantiilight')
+print(lprefix..'unantiilight')
 print("\n")
 
-print(prefix..'antifogstart')
+print(lprefix..'antifogstart')
 print("\n")
 
-print(prefix..'unantifogstart')
+print(lprefix..'unantifogstart')
 print("\n")
 
-print(prefix..'antifogc')
+print(lprefix..'antifogc')
 print("\n")
 
-print(prefix..'unantifogc')
+print(lprefix..'unantifogc')
 print("\n")
 
-print(prefix..'antitime')
+print(lprefix..'antitime')
 print("\n")
 
-print(prefix..'unantitime')
+print(lprefix..'unantitime')
 print("\n")
 
-print(prefix..'antiamb')
+print(lprefix..'antiamb')
 print("\n")
 
-print(prefix..'unantiamb')
+print(lprefix..'unantiamb')
 print("\n")
 
-print(prefix..'antitrip')
+print(lprefix..'antitrip')
 print("\n")
 
-print(prefix..'unantitrip')
+print(lprefix..'unantitrip')
 print("\n")
 
-print(prefix..'antiegg')
+print(lprefix..'antiegg')
 print("\n")
 
-print(prefix..'unantiegg')
+print(lprefix..'unantiegg')
 print("\n")
 
-print(prefix..'antibright')
+print(lprefix..'antibright')
 print("\n")
 
-print(prefix..'unantibright')
+print(lprefix..'unantibright')
 print("\n")
 
-print(prefix..'antioutamb')
+print(lprefix..'antioutamb')
 print("\n")
 
-print(prefix..'unantioutamb')
+print(lprefix..'unantioutamb')
 print("\n")
 
-print(prefix..'adv')
+print(lprefix..'adv')
 print("\n")
 
-print(prefix..'cadv')
+print(lprefix..'cadv')
 print("\n")
 
-print(prefix..'ipboom')
+print(lprefix..'ipboom')
 print("\n")
 
-print(prefix..'logspam')
+print(lprefix..'logspam')
 print("\n")
 
-print(prefix..'logtrap')
+print(lprefix..'logtrap')
 print("\n")
 
-print(prefix..'logmode')
+print(lprefix..'logmode')
 print("\n")
 
-print(prefix..'persons')
+print(lprefix..'persons')
 print("\n")
 
-print(prefix..'unpersons')
+print(lprefix..'unpersons')
 print("\n")
 
-print(prefix..'peadmin')
+print(lprefix..'peadmin')
 print("\n")
 
-print(prefix..'unpeadmin')
+print(lprefix..'unpeadmin')
 print("\n")
 
-print(prefix..'tptool')
+print(lprefix..'tptool')
 print("\n")
 
-print(prefix..'supercmd')
+print(lprefix..'supercmd')
 print("\n")
 
-print(prefix..'supert')
+print(lprefix..'supert')
 print("\n")
 
-print(prefix..'spamt')
+print(lprefix..'spamt')
 print("\n")
 
-print(prefix..'unspamt')
+print(lprefix..'unspamt')
 print("\n")
 
-print(prefix..'chatz')
+print(lprefix..'chatz')
 print("\n")
 
-print(prefix..'spamw')
+print(lprefix..'spamw')
 print("\n")
 
-print(prefix..'spamwait')
+print(lprefix..'spamwait')
 print("\n")
 
-print(prefix..'spamoff')
+print(lprefix..'spamoff')
 print("\n")
 
-print(prefix..'spamon')
+print(lprefix..'spamon')
 print("\n")
 
-print(prefix..'cbtools')
+print(lprefix..'cbtools')
 print("\n")
 
-print(prefix..'ecrash')
+print(lprefix..'ecrash')
 print("\n")
 
-print(prefix..'dicrash')
+print(lprefix..'dicrash')
 print("\n")
 
-print(prefix..'fredcrash')
+print(lprefix..'fredcrash')
 print("\n")
 
-print(prefix..'chcrash')
+print(lprefix..'chcrash')
 print("\n")
 
-print(prefix..'rockmap')
+print(lprefix..'rockmap')
 print("\n")
 
-print(prefix..'stonemap')
+print(lprefix..'stonemap')
 print("\n")
 
-print(prefix..'hammer')
+print(lprefix..'hammer')
 print("\n")
 
-print(prefix..'platform')
+print(lprefix..'platform')
 print("\n")
 
-print(prefix..'noplatform')
+print(lprefix..'noplatform')
 print("\n")
 
-print(prefix..'float')
+print(lprefix..'float')
 print("\n")
 
-print(prefix..'unfloat')
+print(lprefix..'unfloat')
 print("\n")
 
-print(prefix..'icemap')
+print(lprefix..'icemap')
 print("\n")
 
-print(prefix..'byp')
+print(lprefix..'byp')
 print("\n")
 
-print(prefix..'nbyp')
+print(lprefix..'nbyp')
 print("\n")
 
-print(prefix..'sregen')
+print(lprefix..'sregen')
 print("\n")
 
-print(prefix..'unsregen')
+print(lprefix..'unsregen')
 print("\n")
 
-print(prefix..'autogpc')
+print(lprefix..'autogpc')
 print("\n")
 
-print(prefix..'unautogpc')
+print(lprefix..'unautogpc')
 print("\n")
 
-print(prefix..'padban')
+print(lprefix..'padban')
 print("\n")
 
-print(prefix..'unpadban')
+print(lprefix..'unpadban')
 print("\n")
 
-print(prefix..'padreinf')
+print(lprefix..'padreinf')
 print("\n")
 
-print(prefix..'unpadreinf')
+print(lprefix..'unpadreinf')
 print("\n")
 
-print(prefix..'qattach')
+print(lprefix..'qattach')
 print("\n")
 
-print(prefix..'biglogs')
+print(lprefix..'biglogs')
 print("\n")
 
-print(prefix..'regen')
+print(lprefix..'regen')
 print("\n")
 
-print(prefix..'house')
+print(lprefix..'house')
 print("\n")
 
-print(prefix..'spawn')
+print(lprefix..'spawn')
 print("\n")
 
-print(prefix..'hhouse')
+print(lprefix..'hhouse')
 print("\n")
 
-print(prefix..'phelp')
+print(lprefix..'phelp')
 print("\n")
 
-print(prefix..'void')
+print(lprefix..'void')
 print("\n")
 
-print(prefix..'execute')
+print(lprefix..'execute')
 print("\n")
 
-print(prefix..'announce')
+print(lprefix..'announce')
 print("\n")
 
-print(prefix..'cannounce')
+print(lprefix..'cannounce')
 print("\n")
 
-print(prefix..'shlong')
+print(lprefix..'shlong')
 print("\n")
 
-print(prefix..'unshlong')
+print(lprefix..'unshlong')
 print("\n")
 
-print(prefix..'dncycle')
+print(lprefix..'dncycle')
 print("\n")
 
-print(prefix..'undncycle')
+print(lprefix..'undncycle')
 print("\n")
 
-print(prefix..'arena')
+print(lprefix..'arena')
 print("\n")
 
-print(prefix..'prefix')
+print(lprefix..'lprefix')
 print("\n")
 
-print(prefix..'pmap')
+print(lprefix..'pmap')
 print("\n")
 
-print(prefix..'paintmap')
+print(lprefix..'paintmap')
 print("\n")
 
-print(prefix..'messpaint')
+print(lprefix..'messpaint')
 print("\n")
 
-print(prefix..'rbgmap')
+print(lprefix..'rbgmap')
 print("\n")
 
-print(prefix..'rmap')
+print(lprefix..'rmap')
 print("\n")
 
-print(prefix..'rbase')
+print(lprefix..'rbase')
 print("\n")
 
-print(prefix..'rfog')
+print(lprefix..'rfog')
 print("\n")
 
-print(prefix..'unrmap')
+print(lprefix..'unrmap')
 print("\n")
 
-print(prefix..'unrbase')
+print(lprefix..'unrbase')
 print("\n")
 
-print(prefix..'unrfog')
+print(lprefix..'unrfog')
 print("\n")
 
-print(prefix..'autoafk')
+print(lprefix..'autoafk')
 print("\n")
 
-print(prefix..'unautoafk')
+print(lprefix..'unautoafk')
 print("\n")
 
-print(prefix..'antilag')
+print(lprefix..'antilag')
 print("\n")
 
-print(prefix..'unantilag')
+print(lprefix..'unantilag')
 print("\n")
 
-print(prefix..'capfps')
+print(lprefix..'capfps')
 print("\n")
 
-print(prefix..'alladmin')
+print(lprefix..'alladmin')
 print("\n")
 
-print(prefix..'unalladmin')
+print(lprefix..'unalladmin')
 print("\n")
 
-print(prefix..'nok')
+print(lprefix..'nok')
 print("\n")
 
-print(prefix..'2nok')
+print(lprefix..'2nok')
 print("\n")
 
-print(prefix..'3nok')
+print(lprefix..'3nok')
 print("\n")
 
-print(prefix..'tnok')
+print(lprefix..'tnok')
 print("\n")
 
-print(prefix..'untnok')
+print(lprefix..'untnok')
 print("\n")
 
-print(prefix..'getping')
+print(lprefix..'getping')
 print("\n")
 
-print(prefix..'autogb')
+print(lprefix..'autogb')
 print("\n")
 
-print(prefix..'unautogb')
+print(lprefix..'unautogb')
 print("\n")
 
-print(prefix..'qpunish')
+print(lprefix..'qpunish')
 print("\n")
 
-print(prefix..'spunish')
+print(lprefix..'spunish')
 print("\n")
 
-print(prefix..'gpunish')
+print(lprefix..'gpunish')
 print("\n")
 
-print(prefix..'ungearban')
+print(lprefix..'ungearban')
 print("\n")
 
-print(prefix..'gearban')
+print(lprefix..'gearban')
 print("\n")
 
-print(prefix..'rail')
+print(lprefix..'rail')
 print("\n")
 
-print(prefix..'lemonman')
+print(lprefix..'lemonman')
 print("\n")
 
-print(prefix..'laser')
+print(lprefix..'laser')
 print("\n")
 
-print(prefix..'surround')
+print(lprefix..'surround')
 print("\n")
 
-print(prefix..'rnuke')
+print(lprefix..'rnuke')
 print("\n")
 
-print(prefix..'dnuke')
+print(lprefix..'dnuke')
 print("\n")
 
-print(prefix..'jnuke')
+print(lprefix..'jnuke')
 print("\n")
 
-print(prefix..'rcannon')
+print(lprefix..'rcannon')
 print("\n")
 
-print(prefix..'wrcannon')
+print(lprefix..'wrcannon')
 print("\n")
 
-print(prefix..'uncannon')
+print(lprefix..'uncannon')
 print("\n")
 
-print(prefix..'astrike')
+print(lprefix..'astrike')
 print("\n")
 
-print(prefix..'unastrike')
+print(lprefix..'unastrike')
 print("\n")
 
-print(prefix..'skcraze')
+print(lprefix..'skcraze')
 print("\n")
 
-print(prefix..'unskcraze')
+print(lprefix..'unskcraze')
 print("\n")
 
-print(prefix..'weld')
+print(lprefix..'weld')
 print("\n")
 
-print(prefix..'nweld')
+print(lprefix..'nweld')
 print("\n")
 
-print(prefix..'hfreeze')
+print(lprefix..'hfreeze')
 print("\n")
 
-print(prefix..'tattach')
+print(lprefix..'tattach')
 print("\n")
 
-print(prefix..'acton')
+print(lprefix..'acton')
 print("\n")
 
-print(prefix..'rfgun')
+print(lprefix..'rfgun')
 print("\n")
 
-print(prefix..'unrfgun')
+print(lprefix..'unrfgun')
 print("\n")
 
-print(prefix..'sjail')
+print(lprefix..'sjail')
 print("\n")
 
-print(prefix..'nuke')
+print(lprefix..'nuke')
 print("\n")
 
-print(prefix..'age')
+print(lprefix..'age')
 print("\n")
 
-print(prefix..'jdate')
+print(lprefix..'jdate')
 print("\n")
 
-print(prefix..'dkick')
+print(lprefix..'dkick')
 print("\n")
 
-print(prefix..'undkick')
+print(lprefix..'undkick')
 print("\n")
 
-print(prefix..'slag')
+print(lprefix..'slag')
 print("\n")
 
-print(prefix..'nslag')
+print(lprefix..'nslag')
 print("\n")
 
-print(prefix..'rpaintui')
+print(lprefix..'rpaintui')
 print("\n")
 
-print(prefix..'sspawn')
+print(lprefix..'sspawn')
 print("\n")
 
-print(prefix..'cpos')
+print(lprefix..'cpos')
 print("\n")
 
-print(prefix..'gsspawn')
+print(lprefix..'gsspawn')
 print("\n")
 
-print(prefix..'frespawn')
+print(lprefix..'frespawn')
 print("\n")
 
-print(prefix..'mrespawn')
+print(lprefix..'mrespawn')
 print("\n")
 
-print(prefix..'dummy')
+print(lprefix..'dummy')
 print("\n")
 
-print(prefix..'ffix')
+print(lprefix..'ffix')
 print("\n")
 
-print(prefix..'rejoin')
+print(lprefix..'rejoin')
 print("\n")
 
-print(prefix..'rj')
+print(lprefix..'rj')
 print("\n")
 
-print(prefix..'autorj')
+print(lprefix..'autorj')
 print("\n")
 
-print(prefix..'unautorj')
+print(lprefix..'unautorj')
 print("\n")
 
-print(prefix..'prj')
+print(lprefix..'prj')
 print("\n")
 
-print(prefix..'prejoin')
+print(lprefix..'prejoin')
 print("\n")
 
-print(prefix..'shop')
+print(lprefix..'shop')
 print("\n")
 
-print(prefix..'serverhop')
+print(lprefix..'serverhop')
 print("\n")
 
-print(prefix..'iyshop')
+print(lprefix..'iyshop')
 print("\n")
 
-print(prefix..'scshop')
+print(lprefix..'scshop')
 print("\n")
 
-print(prefix..'rshop')
+print(lprefix..'rshop')
 print("\n")
 
-print(prefix..'infjump')
+print(lprefix..'infjump')
 print("\n")
 
-print(prefix..'uninfjump')
+print(lprefix..'uninfjump')
 print("\n")
 
-print(prefix..'speed')
+print(lprefix..'speed')
 print("\n")
 
-print(prefix..'editsp')
+print(lprefix..'editsp')
 print("\n")
 
-print(prefix..'uneditsp')
+print(lprefix..'uneditsp')
 print("\n")
 
-print(prefix..'jp')
+print(lprefix..'jp')
 print("\n")
 
-print(prefix..'editjp')
+print(lprefix..'editjp')
 print("\n")
 
-print(prefix..'uneditjp')
+print(lprefix..'uneditjp')
 print("\n")
 
-print(prefix..'minzoom')
+print(lprefix..'minzoom')
 print("\n")
 
-print(prefix..'maxzoom')
+print(lprefix..'maxzoom')
 print("\n")
 
-print(prefix..'hlth')
+print(lprefix..'hlth')
 print("\n")
 
-print(prefix..'fov')
+print(lprefix..'fov')
 print("\n")
 
-print(prefix..'grav')
+print(lprefix..'grav')
 print("\n")
 
-print(prefix..'unlockws')
+print(lprefix..'unlockws')
 print("\n")
 
-print(prefix..'lockws')
+print(lprefix..'lockws')
 print("\n")
 
-print(prefix..'noclip')
+print(lprefix..'noclip')
 print("\n")
 
-print(prefix..'clip')
+print(lprefix..'clip')
 print("\n")
 
-print(prefix..'ufly')
+print(lprefix..'ufly')
 print("\n")
 
-print(prefix..'isc')
+print(lprefix..'isc')
 print("\n")
 
-print(prefix..'checkc')
+print(lprefix..'checkc')
 print("\n")
 
-print(prefix..'breakanims')
+print(lprefix..'breakanims')
 print("\n")
 
-print(prefix..'nocam')
+print(lprefix..'nocam')
 print("\n")
 
-print(prefix..'wbcam')
+print(lprefix..'wbcam')
 print("\n")
 
-print(prefix..'wfcam')
+print(lprefix..'wfcam')
 print("\n")
 
-print(prefix..'breakcam')
+print(lprefix..'breakcam')
 print("\n")
 
-print(prefix..'fixcam')
+print(lprefix..'fixcam')
 print("\n")
 
-print(prefix..'fixvelo')
+print(lprefix..'fixvelo')
 print("\n")
 
-print(prefix..'obpfixv')
+print(lprefix..'obpfixv')
 print("\n")
 
-print(prefix..'bpfixv')
+print(lprefix..'bpfixv')
 print("\n")
 
-print(prefix..'flipbp')
+print(lprefix..'flipbp')
 print("\n")
 
-print(prefix..'fakebp')
+print(lprefix..'fakebp')
 print("\n")
 
-print(prefix..'nofakebp')
+print(lprefix..'nofakebp')
 print("\n")
 
-print(prefix..'fixcol')
+print(lprefix..'fixcol')
 print("\n")
 
-print(prefix..'fixgrav')
+print(lprefix..'fixgrav')
 print("\n")
 
-print(prefix..'novelo')
+print(lprefix..'novelo')
 print("\n")
 
-print(prefix..'breakvelo')
+print(lprefix..'breakvelo')
 print("\n")
 
-print(prefix..'loopgrab')
+print(lprefix..'loopgrab')
 print("\n")
 
-print(prefix..'unloopgrab')
+print(lprefix..'unloopgrab')
 print("\n")
 
-print(prefix..'fastpads')
+print(lprefix..'fastpads')
 print("\n")
 
-print(prefix..'2loopgrab')
+print(lprefix..'2loopgrab')
 print("\n")
 
-print(prefix..'2unloopgrab')
+print(lprefix..'2unloopgrab')
 print("\n")
 
-print(prefix..'perm')
+print(lprefix..'perm')
 print("\n")
 
-print(prefix..'2perm')
+print(lprefix..'2perm')
 print("\n")
 
-print(prefix..'unperm')
+print(lprefix..'unperm')
 print("\n")
 
-print(prefix..'2unperm')
+print(lprefix..'2unperm')
 print("\n")
 
-print(prefix..'allpads')
+print(lprefix..'allpads')
 print("\n")
 
-print(prefix..'checkbp')
+print(lprefix..'checkbp')
 print("\n")
 
-print(prefix..'gotosky')
+print(lprefix..'gotosky')
 print("\n")
 
-print(prefix..'ungearme')
+print(lprefix..'ungearme')
 print("\n")
 
-print(prefix..'nowater')
+print(lprefix..'nowater')
 print("\n")
 
-print(prefix..'watermap')
+print(lprefix..'watermap')
 print("\n")
 
-print(prefix..'fixpaint')
+print(lprefix..'fixpaint')
 print("\n")
 
-print(prefix..'anticrash')
+print(lprefix..'anticrash')
 print("\n")
 
-print(prefix..'unanticrash')
+print(lprefix..'unanticrash')
 print("\n")
 
-print(prefix..'emranticrash')
+print(lprefix..'emranticrash')
 print("\n")
 
-print(prefix..'unemranticrash')
+print(lprefix..'unemranticrash')
 print("\n")
 
-print(prefix..'antigs')
+print(lprefix..'antigs')
 print("\n")
 
-print(prefix..'unantigs')
+print(lprefix..'unantigs')
 print("\n")
 
-print(prefix..'antipaint')
+print(lprefix..'antipaint')
 print("\n")
 
-print(prefix..'unantipaint')
+print(lprefix..'unantipaint')
 print("\n")
 
-print(prefix..'antigear')
+print(lprefix..'antigear')
 print("\n")
 
-print(prefix..'unantigear')
+print(lprefix..'unantigear')
 print("\n")
 
-print(prefix..'antigb')
+print(lprefix..'antigb')
 print("\n")
 
-print(prefix..'unantigb')
+print(lprefix..'unantigb')
 print("\n")
 
-print(prefix..'2antiattach2')
+print(lprefix..'2antiattach2')
 print("\n")
 
-print(prefix..'2unantiattach')
+print(lprefix..'2unantiattach')
 print("\n")
 
-print(prefix..'antiattach')
+print(lprefix..'antiattach')
 print("\n")
 
-print(prefix..'unantiattach')
+print(lprefix..'unantiattach')
 print("\n")
 
-print(prefix..'antifling')
+print(lprefix..'antifling')
 print("\n")
 
-print(prefix..'unantifling')
+print(lprefix..'unantifling')
 print("\n")
 
-print(prefix..'noblt')
+print(lprefix..'noblt')
 print("\n")
 
-print(prefix..'unnoblt')
+print(lprefix..'unnoblt')
 print("\n")
 
-print(prefix..'antiray')
+print(lprefix..'antiray')
 print("\n")
 
-print(prefix..'unantiray')
+print(lprefix..'unantiray')
 print("\n")
 
-print(prefix..'novoid')
+print(lprefix..'novoid')
 print("\n")
 
-print(prefix..'fixvoid')
+print(lprefix..'fixvoid')
 print("\n")
 
-print(prefix..'cvoid')
+print(lprefix..'cvoid')
 print("\n")
 
-print(prefix..'pinglogs')
+print(lprefix..'pinglogs')
 print("\n")
 
-print(prefix..'unpinglogs')
+print(lprefix..'unpinglogs')
 print("\n")
 
-print(prefix..'antilogs')
+print(lprefix..'antilogs')
 print("\n")
 
-print(prefix..'unantilogs')
+print(lprefix..'unantilogs')
 print("\n")
 
-print(prefix..'pingcsys')
+print(lprefix..'pingcsys')
 print("\n")
 
-print(prefix..'unpingcsys')
+print(lprefix..'unpingcsys')
 print("\n")
 
-print(prefix..'noobdetect')
+print(lprefix..'noobdetect')
 print("\n")
 
-print(prefix..'unnoobdetect')
+print(lprefix..'unnoobdetect')
 print("\n")
 
-print(prefix..'antiblind')
+print(lprefix..'antiblind')
 print("\n")
 
-print(prefix..'unantiblind')
+print(lprefix..'unantiblind')
 print("\n")
 
-print(prefix..'antiaddon')
+print(lprefix..'antiaddon')
 print("\n")
 
-print(prefix..'unantiaddon')
+print(lprefix..'unantiaddon')
 print("\n")
 
-print(prefix..'anticlone')
+print(lprefix..'anticlone')
 print("\n")
 
-print(prefix..'unanticlone')
+print(lprefix..'unanticlone')
 print("\n")
 
-print(prefix..'antidog')
+print(lprefix..'antidog')
 print("\n")
 
-print(prefix..'unantidog')
+print(lprefix..'unantidog')
 print("\n")
 
-print(prefix..'antifire')
+print(lprefix..'antifire')
 print("\n")
 
-print(prefix..'unantifire')
+print(lprefix..'unantifire')
 print("\n")
 
-print(prefix..'antifreeze')
+print(lprefix..'antifreeze')
 print("\n")
 
-print(prefix..'unantifreeze')
+print(lprefix..'unantifreeze')
 print("\n")
 
-print(prefix..'antiff')
+print(lprefix..'antiff')
 print("\n")
 
-print(prefix..'unantiff')
+print(lprefix..'unantiff')
 print("\n")
 
-print(prefix..'antiglow')
+print(lprefix..'antiglow')
 print("\n")
 
-print(prefix..'unantiglow')
+print(lprefix..'unantiglow')
 print("\n")
 
-print(prefix..'antihc')
+print(lprefix..'antihc')
 print("\n")
 
-print(prefix..'unantihc')
+print(lprefix..'unantihc')
 print("\n")
 
-print(prefix..'antijail')
+print(lprefix..'antijail')
 print("\n")
 
-print(prefix..'unantijail')
+print(lprefix..'unantijail')
 print("\n")
 
-print(prefix..'antijump')
+print(lprefix..'antijump')
 print("\n")
 
-print(prefix..'unantijump')
+print(lprefix..'unantijump')
 print("\n")
 
-print(prefix..'antikill')
+print(lprefix..'antikill')
 print("\n")
 
-print(prefix..'unantikill')
+print(lprefix..'unantikill')
 print("\n")
 
-print(prefix..'antifly')
+print(lprefix..'antifly')
 print("\n")
 
-print(prefix..'unantifly')
+print(lprefix..'unantifly')
 print("\n")
 
-print(prefix..'antinoc')
+print(lprefix..'antinoc')
 print("\n")
 
-print(prefix..'unantinoc')
+print(lprefix..'unantinoc')
 print("\n")
 
-print(prefix..'antichar')
+print(lprefix..'antichar')
 print("\n")
 
-print(prefix..'unantichar')
+print(lprefix..'unantichar')
 print("\n")
 
-print(prefix..'antimsg')
+print(lprefix..'antimsg')
 print("\n")
 
-print(prefix..'unantimsg')
+print(lprefix..'unantimsg')
 print("\n")
 
-print(prefix..'antitp')
+print(lprefix..'antitp')
 print("\n")
 
-print(prefix..'unantitp')
+print(lprefix..'unantitp')
 print("\n")
 
-print(prefix..'antivoid')
+print(lprefix..'antivoid')
 print("\n")
 
-print(prefix..'unantivoid')
+print(lprefix..'unantivoid')
 print("\n")
 
-print(prefix..'antisky')
+print(lprefix..'antisky')
 print("\n")
 
-print(prefix..'unantisky')
+print(lprefix..'unantisky')
 print("\n")
 
-print(prefix..'antiname')
+print(lprefix..'antiname')
 print("\n")
 
-print(prefix..'unantiname')
+print(lprefix..'unantiname')
 print("\n")
 
-print(prefix..'antiparticles')
+print(lprefix..'antiparticles')
 print("\n")
 
-print(prefix..'unantiparticles')
+print(lprefix..'unantiparticles')
 print("\n")
 
-print(prefix..'antipunish')
+print(lprefix..'antipunish')
 print("\n")
 
-print(prefix..'unantipunish')
+print(lprefix..'unantipunish')
 print("\n")
 
-print(prefix..'antirocket')
+print(lprefix..'antirocket')
 print("\n")
 
-print(prefix..'unantirocket')
+print(lprefix..'unantirocket')
 print("\n")
 
-print(prefix..'antikick')
+print(lprefix..'antikick')
 print("\n")
 
-print(prefix..'unantikick')
+print(lprefix..'unantikick')
 print("\n")
 
-print(prefix..'antit')
+print(lprefix..'antit')
 print("\n")
 
-print(prefix..'unantit')
+print(lprefix..'unantit')
 print("\n")
 
-print(prefix..'antisit')
+print(lprefix..'antisit')
 print("\n")
 
-print(prefix..'unantisit')
+print(lprefix..'unantisit')
 print("\n")
 
-print(prefix..'antiseizure')
+print(lprefix..'antiseizure')
 print("\n")
 
-print(prefix..'unantiseizure')
+print(lprefix..'unantiseizure')
 print("\n")
 
-print(prefix..'antismoke')
+print(lprefix..'antismoke')
 print("\n")
 
-print(prefix..'unantismoke')
+print(lprefix..'unantismoke')
 print("\n")
 
-print(prefix..'antisparkles')
+print(lprefix..'antisparkles')
 print("\n")
 
-print(prefix..'unantisparkles')
+print(lprefix..'unantisparkles')
 print("\n")
 
-print(prefix..'antispeed')
+print(lprefix..'antispeed')
 print("\n")
 
-print(prefix..'unantispeed')
+print(lprefix..'unantispeed')
 print("\n")
 
-print(prefix..'antispin')
+print(lprefix..'antispin')
 print("\n")
 
-print(prefix..'unantispin')
+print(lprefix..'unantispin')
 print("\n")
 
-print(prefix..'antistun')
+print(lprefix..'antistun')
 print("\n")
 
-print(prefix..'unantistun')
+print(lprefix..'unantistun')
 print("\n")
 
-print(prefix..'antistg')
+print(lprefix..'antistg')
 print("\n")
 
-print(prefix..'unantistg')
+print(lprefix..'unantistg')
 print("\n")
 
-print(prefix..'antiswag')
+print(lprefix..'antiswag')
 print("\n")
 
-print(prefix..'unantiswag')
+print(lprefix..'unantiswag')
 print("\n")
 
-print(prefix..'antichat')
+print(lprefix..'antichat')
 print("\n")
 
-print(prefix..'unantichat')
+print(lprefix..'unantichat')
 print("\n")
 
-print(prefix..'mkick')
+print(lprefix..'mkick')
 print("\n")
 
-print(prefix..'unmkick')
+print(lprefix..'unmkick')
 print("\n")
 
-print(prefix..'pkick')
+print(lprefix..'pkick')
 print("\n")
 
-print(prefix..'unpkick')
+print(lprefix..'unpkick')
 print("\n")
 
-print(prefix..'lkick')
+print(lprefix..'lkick')
 print("\n")
 
-print(prefix..'unlkick')
+print(lprefix..'unlkick')
 print("\n")
 
-print(prefix..'autoff')
+print(lprefix..'autoff')
 print("\n")
 
-print(prefix..'unautoff')
+print(lprefix..'unautoff')
 print("\n")
 
-print(prefix..'autogod')
+print(lprefix..'autogod')
 print("\n")
 
-print(prefix..'unautogod')
+print(lprefix..'unautogod')
 print("\n")
 
-print(prefix..'autochar')
+print(lprefix..'autochar')
 print("\n")
 
-print(prefix..'unautochar')
+print(lprefix..'unautochar')
 print("\n")
 
-print(prefix..'freerobux')
+print(lprefix..'freerobux')
 print("\n")
 
-print(prefix..'reserver')
+print(lprefix..'reserver')
 print("\n")
 
-print(prefix..'devcmd')
+print(lprefix..'devcmd')
 print("\n")
 
-print(prefix..'discord')
+print(lprefix..'discord')
 print("\n")
 
-print(prefix..'buy')
+print(lprefix..'buy')
 print("\n")
 
-print(prefix..'purchase')
+print(lprefix..'purchase')
 print("\n")
 
-print(prefix..'r6')
+print(lprefix..'r6')
 print("\n")
 
-print(prefix..'r15')
+print(lprefix..'r15')
 print("\n")
 
-print(prefix..'dance')
+print(lprefix..'dance')
 print("\n")
 
-print(prefix..'undance')
+print(lprefix..'undance')
 print("\n")
 
-print(prefix..'spasm')
+print(lprefix..'spasm')
 print("\n")
 
-print(prefix..'unspasm')
+print(lprefix..'unspasm')
 print("\n")
 
-print(prefix..'headthrow')
+print(lprefix..'headthrow')
 print("\n")
 
-print(prefix..'headsit')
+print(lprefix..'headsit')
 print("\n")
 
-print(prefix..'carpet')
+print(lprefix..'carpet')
 print("\n")
 
-print(prefix..'uncarpet')
+print(lprefix..'uncarpet')
 print("\n")
 
-print(prefix..'bang')
+print(lprefix..'bang')
 print("\n")
 
-print(prefix..'unbang')
+print(lprefix..'unbang')
 print("\n")
 
-print(prefix..'mutebb')
+print(lprefix..'mutebb')
 print("\n")
 
-print(prefix..'unmutebb')
+print(lprefix..'unmutebb')
 print("\n")
 
-print(prefix..'view')
+print(lprefix..'view')
 print("\n")
 
-print(prefix..'unview')
+print(lprefix..'unview')
 print("\n")
 
-print(prefix..'spin')
+print(lprefix..'spin')
 print("\n")
 
-print(prefix..'unspin')
+print(lprefix..'unspin')
 print("\n")
 
-print(prefix..'swim')
+print(lprefix..'swim')
 print("\n")
 
-print(prefix..'unswim')
+print(lprefix..'unswim')
 print("\n")
 
-print(prefix..'tswim')
+print(lprefix..'tswim')
 print("\n")
 
-print(prefix..'fling')
+print(lprefix..'fling')
 print("\n")
 
-print(prefix..'unfling')
+print(lprefix..'unfling')
 print("\n")
 
-print(prefix..'freecam')
+print(lprefix..'freecam')
 print("\n")
 
-print(prefix..'unfreecam')
+print(lprefix..'unfreecam')
 print("\n")
 
-print(prefix..'fcspeed')
+print(lprefix..'fcspeed')
 print("\n")
 
-print(prefix..'stopanims')
+print(lprefix..'stopanims')
 print("\n")
 
-print(prefix..'noanim')
+print(lprefix..'noanim')
 print("\n")
 
-print(prefix..'reanim')
+print(lprefix..'reanim')
 print("\n")
 
-print(prefix..'sit')
+print(lprefix..'sit')
 print("\n")
 
-print(prefix..'unsit')
+print(lprefix..'unsit')
 print("\n")
 
-print(prefix..'trip')
+print(lprefix..'trip')
 print("\n")
 
-print(prefix..'animsp')
+print(lprefix..'animsp')
 print("\n")
 
-print(prefix..'delvelo')
+print(lprefix..'delvelo')
 print("\n")
 
-print(prefix..'bvelo')
+print(lprefix..'bvelo')
 print("\n")
 
-print(prefix..'cfly')
+print(lprefix..'cfly')
 print("\n")
 
-print(prefix..'uncfly')
+print(lprefix..'uncfly')
 print("\n")
 
-print(prefix..'cfspeed')
+print(lprefix..'cfspeed')
 print("\n")
 
-print(prefix..'fly')
+print(lprefix..'fly')
 print("\n")
 
-print(prefix..'unfly')
+print(lprefix..'unfly')
 print("\n")
 
-print(prefix..'fspeed')
+print(lprefix..'fspeed')
 print("\n")
 
-print(prefix..'qefly')
+print(lprefix..'qefly')
 print("\n")
 
-print(prefix..'tfly')
+print(lprefix..'tfly')
 print("\n")
 
-print(prefix..'weaken')
+print(lprefix..'weaken')
 print("\n")
 
-print(prefix..'unweaken')
+print(lprefix..'unweaken')
 print("\n")
 
-print(prefix..'strengthen')
+print(lprefix..'strengthen')
 print("\n")
 
-print(prefix..'unstrengthen')
+print(lprefix..'unstrengthen')
 print("\n")
 
-print(prefix..'hmode')
+print(lprefix..'hmode')
 print("\n")
 
-print(prefix..'hcmds')
+print(lprefix..'hcmds')
 print("\n")
 
 print("--- ANTI INFORMATION ---")
