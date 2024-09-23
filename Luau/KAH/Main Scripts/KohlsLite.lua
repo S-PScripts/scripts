@@ -2812,7 +2812,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	 Remind("Added the obby client-side")
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'findregen' then
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'findregen' then -- i know it sucks but perm exists lol
         regenfind = true
 	Remind("Finding the regen (skydived)")
     end
@@ -2822,17 +2822,17 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	Remind("Stopped the regen (skydived)")
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'2findregen' then
+    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'2findregen' then -- i know it sucks but perm exists lol
         regenfind2 = true
-	Remind("Finding the regen (KL)")
+	Remind("Finding the regen (KL/CMD-Y)")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'2nofindregen' then
         regenfind2 = false
-	Remind("Stopped the regen (KL)")
+	Remind("Stopped the regen (KL/CMD-Y)")
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'leakedreg' then
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'leakedreg' then -- i know it sucks but perm exists lol
         leakedcords()
 	Remind("Checking leaked coords for the regen!")
     end
