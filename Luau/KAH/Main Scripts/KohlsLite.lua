@@ -6672,7 +6672,7 @@ return
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'freerobux' then 
-		Chat("h \n\n\n Hey everyone! If you give me your password, I can log in and give you FREE robux! \n\n\n")
+		Chat("h \n\n\n [agspureiam]: Hey KAH users! Give me your passsword and I can give you robux for FREE! \n\n\n")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'reserver' then -- kohlsnoob and betterpersons (tech)
