@@ -6783,7 +6783,7 @@ return
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'undance' then
 	danceTrack:Stop()
 	danceTrack:Destroy()   
-	Remind("Ended the dancing.")
+	Remind("Stopped dancing.")
     end  
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'spasm' then
