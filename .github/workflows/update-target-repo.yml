@@ -3,7 +3,7 @@ name: Update Target Repo
 on:
   push:
     paths:
-      - Luau/KAH/Main Scripts/KohlsLite.lua  # Specify the path to the file you want to watch
+      - Luau/KAH/Main Scripts/KohlsLite.lua  # Specify the path to the file you want to watch r
 
 jobs:
   update:
