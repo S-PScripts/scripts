@@ -4,7 +4,7 @@ on:
   push:
     paths:
       - Luau/KAH/Main Scripts/KohlsLite.lua
-  workflow_dispatch:  # Allows manual triggering of the workflow
+  workflow_dispatch:
 
 jobs:
   update:
@@ -14,13 +14,13 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: S-PScripts/scripts
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}  # Use the default GitHub token for the source repo
 
       - name: Checkout Target Repo
         uses: actions/checkout@v2
         with:
           repository: S-PScripts/kohlslite
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PAT_TOKEN }}  # Use your PAT here
           path: kohlslite
 
       - name: Copy File
@@ -30,8 +30,8 @@ jobs:
       - name: Commit and Push Changes
         run: |
           cd kohlslite
-          git config user.name "S-PScriptsBOT"
-          git config user.email "ts2021me@outlook.com"
+          git config user.name "S-PScriptsBOT"  # Set your bot name
+          git config user.email "ts2021me@outlook.com"  # Set your email
           git add source.txt
           git commit -m "Update file from scripts" || echo "No changes to commit"
           git push
