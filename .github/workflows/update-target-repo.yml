@@ -3,24 +3,33 @@ name: Update Target Repo
 on:
   push:
     paths:
-      - Luau/KAH/Main Scripts/KohlsLite.lua
-  workflow_dispatch:  # Allows manual triggering
+      - Luau/KAH/Main Scripts/KohlsLite.lua  # Specify the path to the file you want to watch
 
 jobs:
-  update-file:
+  update:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Source Repo
         uses: actions/checkout@v2
+        with:
+          repository: S-PScripts/scripts
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Copy File to Target Repo
+      - name: Checkout Target Repo
+        uses: actions/checkout@v2
+        with:
+          repository: S-PScripts/kohlslite
+          token: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Copy File
         run: |
-          cp "Luau/KAH/Main Scripts/KohlsLite.lua" ../kohlslite/source.txt
+          cp Luau/KAH/Main Scripts/KohlsLite.lua ../TargetRepo/source.txt
+          
+      - name: Commit and Push Changes
+        run: |
           cd ../kohlslite
-          git config --local user.email "ts2021me@outlook.com"  # Change email
-          git config --local user.name "S-PScripts"          # Change name
-          git add path/to/KohlsLite.lua
-          git commit -m "Update KohlsLite.lua from source repo"
-          git push origin main  # Change branch if necessary
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          git config user.name "S-PScriptsBOT"
+          git config user.email "ts2021me@outlook.com"
+          git add Luau/KAH/Main Scripts/KohlsLite.lua
+          git commit -m "Update file from scripts" || echo "No changes to commit"
+          git push
