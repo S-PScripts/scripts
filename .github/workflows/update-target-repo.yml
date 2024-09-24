@@ -1,0 +1,25 @@
+name: Update Target Repo
+
+on:
+  push:
+    paths:
+      - Luau/KAH/Main Scripts/KohlsLite.lua  # Path to the file in the source repo
+
+jobs:
+  update-file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source Repo
+        uses: actions/checkout@v2
+
+      - name: Copy File to Target Repo
+        run: |
+          cp "Luau/KAH/Main Scripts/KohlsLite.lua" ../target-repo/path/to/KohlsLite.lua
+          cd ../target-repo
+          git config --local user.email "ts2021me@outlook.com"  # Change email
+          git config --local user.name "S-PScripts"          # Change name
+          git add path/to/KohlsLite.lua
+          git commit -m "Update KohlsLite.lua from source repo"
+          git push origin main  # Change branch if necessary
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
