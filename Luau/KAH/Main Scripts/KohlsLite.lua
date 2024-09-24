@@ -13930,6 +13930,8 @@ else
 	Remind("Support my script by buying my gamepass! Just do .purchase.")
 end
 
+Remind("me when discord limits me till 26/9/24 for repling to someone saying cee pee... just like tech :p")
+
 --[[
 Things to add/fix. Feel free to fix these and send the code and I'll credit you
 -> Visualiser and drawer
@@ -13937,7 +13939,7 @@ Things to add/fix. Feel free to fix these and send the code and I'll credit you
 -> Part builder
 -> Object mover (cmd pi version)
 -> Fix ncontrol
--> can't fix these until i get a windows Pc, this might be a long time... ;(
+-> Can't fix these until I get a windows PC, this might be a long time... ;(
 ]]
 
 -- KohlsLite on top
