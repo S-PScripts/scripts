@@ -10,11 +10,12 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Source Repo
+      - name: Checkout Target Repo
         uses: actions/checkout@v2
         with:
-          repository: S-PScripts/scripts
-          token: ${{ secrets.GITHUB_TOKEN }}  # Use the default GitHub token for the source repo
+          repository: S-PScripts/kohlslite
+          token: ${{ secrets.PAT_TOKEN }}  # Use your PAT here
+          path: kohlslite
 
       - name: Checkout Target Repo
         uses: actions/checkout@v2
