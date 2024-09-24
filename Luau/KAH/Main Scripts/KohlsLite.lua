@@ -9,6 +9,8 @@
 
 --[[
 
+just testing
+
 This free, open-source script is for the Roblox game Kohls Admin House (KAH).
 You can play KAH here: https://www.roblox.com/games/112420803/Kohls-Admin-House-NBC-Updated
 This script was created by ScriptingProgrammer (Roblox) / ts2021 (Discord) / S-PScripts (GitHub).
