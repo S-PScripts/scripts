@@ -3,7 +3,8 @@ name: Update Target Repo
 on:
   push:
     paths:
-      - Luau/KAH/Main Scripts/KohlsLite.lua  # Path to the file in the source repo
+      - Luau/KAH/Main Scripts/KohlsLite.lua
+  workflow_dispatch:  # Allows manual triggering
 
 jobs:
   update-file:
