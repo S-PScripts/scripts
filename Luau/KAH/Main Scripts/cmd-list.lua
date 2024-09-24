@@ -195,6 +195,7 @@ print(lprefix..'unmsay')
 print("\n")
 
 print(lprefix..'gmusic')
+print('Make sure you do gmusic(num), not gmusic (num)')
 print("\n")
 
 print(lprefix..'rgmusic')
@@ -210,18 +211,23 @@ print(lprefix..'musiclist')
 print("\n")
 
 print(lprefix..'theme')
+print('Make sure you do theme(num), not theme (num)')
 print("\n")
 
 print(lprefix..'themelist')
 print("\n")
 
 print(lprefix..'gear')
+print('These are SAVED gears!')
+print('gear (plr) (name)')
 print("\n")
 
 print(lprefix..'gearlist')
 print("\n")
 
 print(lprefix..'char')
+print('These are SAVED chars!')
+print('char (plr) (name)')
 print("\n")
 
 print(lprefix..'charlist')
@@ -306,9 +312,12 @@ print(lprefix..'unantimusic')
 print("\n")
 
 print(lprefix..'pmu')
+print("Perm music")
+print("pmu (music id)")
 print("\n")
 
 print(lprefix..'2pmu')
+print("Perm music, sets to music playing")
 print("\n")
 
 print(lprefix..'bring')
@@ -318,18 +327,26 @@ print(lprefix..'goto')
 print("\n")
 
 print(lprefix..'song')
+print('Searches for songs and starts a playlist of them.')
+print("song (song name")
 print("\n")
 
 print(lprefix..'ssong')
+print("Skip current playing song in playlist")
 print("\n")
 
 print(lprefix..'esong')
+print("End playlist.")
 print("\n")
 
 print(lprefix..'ggear')
+print('Searches for gears.')
+print('ggear (plr) (name)')
 print("\n")
 
 print(lprefix..'gchar')
+print('Searches for user.')
+print('gchar (plr) (name)')
 print("\n")
 
 print(lprefix..'antiabuse')
@@ -342,6 +359,7 @@ print(lprefix..'bok')
 print("\n")
 
 print(lprefix..'cgoto')
+print("CFrame goto")
 print("\n")
 
 print(lprefix..'fixbp')
@@ -378,9 +396,11 @@ print(lprefix..'fixregen')
 print("\n")
 
 print(lprefix..'ivmove')
+print("gear to move stuff (ivory-style)")
 print("\n")
 
 print(lprefix..'omove')
+print("gear to move stuff (old-style)")
 print("\n")
 
 print(lprefix..'moveregen')
@@ -390,6 +410,7 @@ print(lprefix..'saveregen')
 print("\n")
 
 print(lprefix..'cusername')
+print("Copy someone's username in the server")
 print("\n")
 
 print(lprefix..'fixpads')
@@ -513,24 +534,29 @@ print(lprefix..'scrash')
 print("\n")
 
 print(lprefix..'swc')
+print("Skip warning when crashing")
 print("\n")
 
 print(lprefix..'unswc')
 print("\n")
 
 print(lprefix..'rkick')
+print("Rocket kick")
 print("\n")
 
 print(lprefix..'unrkick')
 print("\n")
 
 print(lprefix..'seedkick')
+print("Seed kick")
 print("\n")
 
 print(lprefix..'meshkick')
+print("Hat kick")
 print("\n")
 
 print(lprefix..'hatkick')
+print("Hat kick")
 print("\n")
 
 print(lprefix..'antimesh')
@@ -789,6 +815,7 @@ print(lprefix..'unspamt')
 print("\n")
 
 print(lprefix..'chatz')
+print("poop chat in server lol")
 print("\n")
 
 print(lprefix..'spamw')
@@ -804,6 +831,8 @@ print(lprefix..'spamon')
 print("\n")
 
 print(lprefix..'cbtools')
+print("client btools")
+print("cbtools (plr)")
 print("\n")
 
 print(lprefix..'ecrash')
@@ -1026,18 +1055,28 @@ print(lprefix..'surround')
 print("\n")
 
 print(lprefix..'rnuke')
+print("nuke the map with planes")
+print("rnuke (amount) (range)")
 print("\n")
 
 print(lprefix..'dnuke')
+print("nuke a player or the map with the conjuror's fist")
+print("dnuke (player)")
+print("dnuke (amount) (range)")
 print("\n")
 
 print(lprefix..'jnuke')
+print("nuke a player or the map with the RocketJumper gear")
+print("jnuke")
+print("jnuke (player)")
 print("\n")
 
 print(lprefix..'rcannon')
+print("rail cannon")
 print("\n")
 
 print(lprefix..'wrcannon')
+print("wide rail cannon")
 print("\n")
 
 print(lprefix..'uncannon')
@@ -1056,21 +1095,29 @@ print(lprefix..'unskcraze')
 print("\n")
 
 print(lprefix..'weld')
+print("weld to a player - options are right/left arm, torso and hold")
+print("weld (player) (mode)")
 print("\n")
 
 print(lprefix..'nweld')
 print("\n")
 
 print(lprefix..'hfreeze')
+print("laser someone but stop them from fully getting lasered. they get stuck with a laser outline")
 print("\n")
 
 print(lprefix..'tattach')
+print("attach to a player to control them!")
 print("\n")
 
 print(lprefix..'acton')
+print('Event [clone/raig/potion/tripmine/spike/cannon/zombie/alpaca/piano/bdrop/cstory/banana/tguitar/sfriend/spray]')
+print('acton (name) (amount)')
 print("\n")
 
 print(lprefix..'rfgun')
+print("rapid fire gun")
+print("rfgun (bullets)")
 print("\n")
 
 print(lprefix..'unrfgun')
@@ -1623,18 +1670,21 @@ print(lprefix..'unantichat')
 print("\n")
 
 print(lprefix..'mkick')
+print("Message kick")
 print("\n")
 
 print(lprefix..'unmkick')
 print("\n")
 
 print(lprefix..'pkick')
+print("Message kick with extra stuff")
 print("\n")
 
 print(lprefix..'unpkick')
 print("\n")
 
 print(lprefix..'lkick')
+print("Message kick with laser (hard to escape)")
 print("\n")
 
 print(lprefix..'unlkick')
