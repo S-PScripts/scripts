@@ -8,8 +8,7 @@
 ░▒▓█▓▒░░▒▓█▓▒░░▒▓██████▓▒░░▒▓█▓▒░░▒▓█▓▒░▒▓████████▓▒░▒▓███████▓▒░░▒▓████████▓▒░▒▓█▓▒░  ░▒▓█▓▒░   ░▒▓████████▓▒░ v1.777 ]]
 
 --[[
-
-just testing
+https://kohlslite.pages.dev/source.txt
 
 This free, open-source script is for the Roblox game Kohls Admin House (KAH).
 You can play KAH here: https://www.roblox.com/games/112420803/Kohls-Admin-House-NBC-Updated
