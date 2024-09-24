@@ -15,7 +15,7 @@ jobs:
 
       - name: Copy File to Target Repo
         run: |
-          cp "Luau/KAH/Main Scripts/KohlsLite.lua" ../target-repo/path/to/KohlsLite.lua
+          cp "Luau/KAH/Main Scripts/KohlsLite.lua" ../kohlslite/path/to/KohlsLite.lua
           cd ../kohlslite
           git config --local user.email "ts2021me@outlook.com"  # Change email
           git config --local user.name "S-PScripts"          # Change name
