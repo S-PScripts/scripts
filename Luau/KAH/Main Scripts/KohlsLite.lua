@@ -4386,6 +4386,30 @@ return
 	Remind("Changed the prefix!")
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'goodexec' then
+	Remind("Created by Tech (Tech-187)")
+
+	getgenv().scapproved = {
+		"Fluxus", -- provided you don't use the RAT one (non silent caliber)
+		"Delta" -- i agree with these, codex and arceus x (and probably vega x too) suck
+	}
+
+	local function check(d, e)
+		for f, g in ipairs(e) do
+			if g == d then
+				return true
+			end
+		end;
+		return false
+	end;
+
+	if check(identifyexecutor(), scapproved) then
+		print("Your executor is SC Approved!")
+	else
+		print("Your executor is NOT SC Approved.")
+	end
+    end
+
     if string.sub(msg:lower(), 1, 7) == 'cprefix' then
         Remind("Your current prefix is "..prefix)
     end
