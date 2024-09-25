@@ -316,7 +316,7 @@ print("Perm music")
 print("pmu (music id)")
 print("\n")
 
-print(lprefix..'2pmu')
+print(lprefix..'pmu2')
 print("Perm music, sets to music playing")
 print("\n")
 
@@ -1343,13 +1343,13 @@ print("\n")
 print(lprefix..'perm')
 print("\n")
 
-print(lprefix..'2perm')
+print(lprefix..'perm2')
 print("\n")
 
 print(lprefix..'unperm')
 print("\n")
 
-print(lprefix..'2unperm')
+print(lprefix..'unperm2')
 print("\n")
 
 print(lprefix..'allpads')
@@ -1409,10 +1409,10 @@ print("\n")
 print(lprefix..'unantigb')
 print("\n")
 
-print(lprefix..'2antiattach2')
+print(lprefix..'antiattach2')
 print("\n")
 
-print(lprefix..'2unantiattach')
+print(lprefix..'unantiattach2')
 print("\n")
 
 print(lprefix..'antiattach')
