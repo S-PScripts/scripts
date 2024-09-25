@@ -572,6 +572,10 @@ print(lprefix..'hatkick')
 print("Hat kick")
 print("\n")
 
+print(lprefix..'techkick')
+print("Tech's hat kick")
+print("\n")
+
 print(lprefix..'antimesh')
 print("\n")
 
