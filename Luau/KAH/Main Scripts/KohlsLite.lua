@@ -4002,8 +4002,8 @@ return
         	musicsay = false
         	-- task.wait(0.5)
 		-- Chat(prefix.."unantimsg")
-            	Chat("h \n\n\n get jebaited \n\n\n")
-		Chat("music 2665943889")
+            	Chat("h \n\n\n Error occured. Please join a different server. \n\n\n")
+		Chat(prefix.."gmusic84")
 		--  Chat(prefix.."byp ")
            	Chat("fogcolor 0 0 0")
 		Chat("time 0")
