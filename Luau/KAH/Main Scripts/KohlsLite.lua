@@ -2449,11 +2449,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'ivmove' then
-			yeahthemover("yeahhh")
+			yeahthemover("yes")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'omove' then
-			yeahthemover("naa")
+			yeahthemover("no")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'moveregen' then
@@ -13426,7 +13426,7 @@ function moveObject(target,movepos)
 end
 
 -- part mover tool :O
-function yeahthemover(iloveminors)
+function yeahthemover(modez)
 	local btool = Instance.new("Tool", game.Players.LocalPlayer.Backpack)
   	local SelectionBox = Instance.new("SelectionBox", game.Workspace)
   	local thebtool = Instance.new("Part")
@@ -13469,7 +13469,7 @@ function yeahthemover(iloveminors)
    			local prevcfarchive = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 			local target = Mouse.Target
 
-			if iloveminors == "naa" then
+			if modez == "no" then
 				movepart(target)
 		        	repeat task.wait() until mready == true
 		
