@@ -3151,7 +3151,7 @@ return
 		Chat("unpunish me")
     end
 
-   if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'meshkick' then  -- mesh kick haha
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'meshkick' then  -- mesh kick haha
 		local dasplayer = string.sub(msg:lower(), #prefix + 10)
                 PLAYERCHECK(dasplayer)
 	
@@ -3159,7 +3159,7 @@ return
 			kickin = cplr
 			kickinplr = player
                         Remind("Kicking "..player)
-			meshkick(kickin, kickinplr)
+			hatkick(kickin, kickinplr)
                 elseif table.find(nokick, player) then
                         return Remind("Sorry, this player cannot be kicked!")
                 else                        
@@ -3168,7 +3168,24 @@ return
 	
     end
 
-   if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'techkick' then  -- tech kick
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'hatkick' then  -- hat kick haha
+		local dasplayer = string.sub(msg:lower(), #prefix + 9)
+                PLAYERCHECK(dasplayer)
+	
+                if player ~= nil and not table.find(nokick, player) then
+			kickin = cplr
+			kickinplr = player
+                        Remind("Kicking "..player)
+			hatkick(kickin, kickinplr)
+                elseif table.find(nokick, player) then
+                        return Remind("Sorry, this player cannot be kicked!")
+                else                        
+                        return Remind('Cannot find player with the name: '..dasplayer)
+                end
+	
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'techkick' then  -- tech kick
 		local dasplayer = string.sub(msg:lower(), #prefix + 10)
                 PLAYERCHECK(dasplayer)
 	
@@ -3177,23 +3194,6 @@ return
 			kickinplr = player
                         Remind("Kicking "..player)
 			techkick(kickin, kickinplr)
-                elseif table.find(nokick, player) then
-                        return Remind("Sorry, this player cannot be kicked!")
-                else                        
-                        return Remind('Cannot find player with the name: '..dasplayer)
-                end
-	
-    end
-
- if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'hatkick' then  -- hat kick haha
-		local dasplayer = string.sub(msg:lower(), #prefix + 9)
-                PLAYERCHECK(dasplayer)
-	
-                if player ~= nil and not table.find(nokick, player) then
-			kickin = cplr
-			kickinplr = player
-                        Remind("Kicking "..player)
-			meshkick(kickin, kickinplr)
                 elseif table.find(nokick, player) then
                         return Remind("Sorry, this player cannot be kicked!")
                 else                        
@@ -9920,8 +9920,8 @@ function dkick(dk, dkicked)
             end
 end
 
--- mesh kick
-function meshkick(kickin, kickinplr) -- v, V.Name
+-- hat (mesh) kick
+function hatkick(kickin, kickinplr) -- v, V.Name
 		Chat("respawn "..kickinplr)
 		task.wait(.25)
  		Chat("tp me  "..kickinplr)
@@ -9931,7 +9931,7 @@ function meshkick(kickin, kickinplr) -- v, V.Name
 		for i = 1, 10 do
 			if game.Players:FindFirstChild(kickinplr) then
 				for i = 1, 100 do
-   					 Chat("hat me 1810126502")
+   					 Chat("hat me 18137588505")
 					 task.wait(.5)
    					 Chat("clone me")
 				end
@@ -9941,7 +9941,7 @@ function meshkick(kickin, kickinplr) -- v, V.Name
 end
 
 function techkick(kickin, kickinplr) -- Tech's hatkick
-	        spammer = true
+	        hatspammingz = true
 		Chat("respawn "..kickinplr)
 		Chat("blind "..kickinplr.."                                                                                                                                                                      discord")
 		Chat("invis "..kickinplr.."                                                                                                                                                                      discord")
@@ -9951,18 +9951,20 @@ function techkick(kickin, kickinplr) -- Tech's hatkick
 		Chat("size "..kickinplr.." 9.9")
 		Chat("size "..kickinplr.." 9.9")
 		chatt("spin                                                                                                                                                                      "..kickinplr.." discord")
-		wait(0.15)
+		task.wait(0.15)
 		Chat("setgrav "..kickinplr.." -251.2")
+
 		task.delay(3.65, function()
-			spammer = false
+			hatspammingz = false
 		end)
+
 		for i = 1, 103 do
 			chatt("hat "..kickinplr.." 18137588505")
 		end
-		while spammer do task.wait()
+
+		while hatspammingz do task.wait()
 			chatt("hat "..kickinplr.." 18137588505")
 		end
-
 end
 
 
