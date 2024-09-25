@@ -3168,6 +3168,23 @@ return
 	
     end
 
+   if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'techkick' then  -- tech kick
+		local dasplayer = string.sub(msg:lower(), #prefix + 10)
+                PLAYERCHECK(dasplayer)
+	
+                if player ~= nil and not table.find(nokick, player) then
+			kickin = cplr
+			kickinplr = player
+                        Remind("Kicking "..player)
+			techkick(kickin, kickinplr)
+                elseif table.find(nokick, player) then
+                        return Remind("Sorry, this player cannot be kicked!")
+                else                        
+                        return Remind('Cannot find player with the name: '..dasplayer)
+                end
+	
+    end
+
  if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'hatkick' then  -- hat kick haha
 		local dasplayer = string.sub(msg:lower(), #prefix + 9)
                 PLAYERCHECK(dasplayer)
@@ -9904,7 +9921,7 @@ function dkick(dk, dkicked)
 end
 
 -- mesh kick
-function meshkick(kickin, kickinplr)
+function meshkick(kickin, kickinplr) -- v, V.Name
 		Chat("respawn "..kickinplr)
 		task.wait(.25)
  		Chat("tp me  "..kickinplr)
@@ -9923,7 +9940,34 @@ function meshkick(kickin, kickinplr)
 		end
 end
 
-function slag(tplr, tpln)
+function techkick(kickin, kickinplr) -- Tech's hatkick
+	while true do end 
+	        spammer = true
+		Chat("respawn "..kickinplr)
+		Chat("blind "..kickinplr.."                                                                                                                                                                      discord")
+		Chat("invis "..kickinplr.."                                                                                                                                                                      discord")
+		Chat("skydive "..kickinplr.." "..kickinplr.." "..kickinplr.."                                                                                                                                    discord")
+		Chat("skydive "..kickinplr.." "..kickinplr.." "..kickinplr.."                                                                                                                                    discord")
+		Chat("skydive "..kickinplr.." "..kickinplr.." "..kickinplr.."                                                                                                                                    discord")
+		Chat("size "..kickinplr.." 9.9")
+		Chat("size "..kickinplr.." 9.9")
+		chatt("spin                                                                                                                                                                      "..kickinplr.." discord")
+		wait(0.15)
+		Chat("setgrav "..kickinplr.." -251.2")
+		task.delay(3.65, function()
+			spammer = false
+		end)
+		for i = 1, 103 do
+			chatt("hat "..kickinplr.." "..antilog.."18137588505")
+		end
+		while spammer do task.wait()
+			chatt("hat "..kickinplr.." "..antilog.."18137588505")
+		end
+
+end
+
+
+function slag(tplr, tpln) -- v, v.Name
             local stop = false
 
             Chat("freeze " .. tpln)
