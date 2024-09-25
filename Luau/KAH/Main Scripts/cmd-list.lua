@@ -468,9 +468,11 @@ print(lprefix..'rparts')
 print("\n")
 
 print(lprefix..'lrobb')
+print("Local remove obby")
 print("\n")
 
 print(lprefix..'laobb')
+print("Local add obby")
 print("\n")
 
 print(lprefix..'findregen')
@@ -501,36 +503,47 @@ print(lprefix..'remusic')
 print("\n")
 
 print(lprefix..'equipall')
+print("Equip all")
 print("\n")
 
 print(lprefix..'actall')
+print("Activate all")
 print("\n")
 
 print(lprefix..'invall')
+print("Inventory all")
 print("\n")
 
 print(lprefix..'dropall')
+print("Drop all")
 print("\n")
 
 print(lprefix..'vgcrash')
+print("Vamp Crash")
 print("\n")
 
 print(lprefix..'cocrash')
+print("Vamp Crash 2")
 print("\n")
 
 print(lprefix..'emcrash')
+print("Emerald Crash")
 print("\n")
 
 print(lprefix..'pcrash')
+print("Sword and Shield Crash")
 print("\n")
 
 print(lprefix..'fcrash')
+print("Freeze Crash")
 print("\n")
 
 print(lprefix..'dcrash')
+print("Dog Crash")
 print("\n")
 
 print(lprefix..'scrash')
+print("Shield Crash")
 print("\n")
 
 print(lprefix..'swc')
@@ -1882,7 +1895,7 @@ print("\n")
 print("--- INFORMATION ---")
 print("KohlsLite, since 2023. Created by ScriptingProgrammer/ts2021")
 print("For help, please contact me on Discord at ts2021")
-print("The version you are using is v"..getgenv().klversion..". This build was created on 23rd September 2024")
+print("The version you are using is v"..getgenv().klversion..". This build was created on 25th September 2024")
 print("Better than scv1 and scv2 - approved by Tech!")
 print("\n")
 
