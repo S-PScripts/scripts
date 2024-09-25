@@ -2203,11 +2203,13 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'pmu' then
-        musicoff = false
-        mymusiconly = true
-        gottenmode = 2
-        mymusiconlyid = tonumber(string.sub(msg:lower(), #prefix + 11))
-        Remind("Perm music is on")
+	if not string.sub(msg:lower(), 1, #prefix + 4) == prefix..'pmu2' then
+        	musicoff = false
+        	mymusiconly = true
+        	gottenmode = 2
+        	mymusiconlyid = tonumber(string.sub(msg:lower(), #prefix + 5))
+        	Remind("Perm music is on")
+	end
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'2pmu' then
@@ -5313,21 +5315,25 @@ return
     end
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'perm' then
-        perm = true
-	Remind("You now have a perm pad!")
+	if not string.sub(msg:lower(), 1, #prefix + 5) == prefix..'perm2' then
+        	perm = true
+		Remind("You now have a perm pad!")
+	end
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'2perm' then
+    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'perm2' then
         perm2 = true
 	Remind("You now have a perm pad (2)!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'unperm' then
-        perm = false
-	Remind("You no longer have a perm pad!")
+	if not string.sub(msg:lower(), 1, #prefix + 7) == prefix..'unperm2' then
+        	perm = false
+		Remind("You no longer have a perm pad!")
+	end
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'2unperm' then
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'unperm2' then
         perm2 = false
 	Remind("You no longer have a perm pad (2)!")
     end
@@ -5433,24 +5439,28 @@ return
 	Remind("Anti gearban is now disabled.")
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'2antiattach2' then
+    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'antiattach2' then
         antiattach2 = true
 	Remind("Anti ivory is now enabled.")
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 13) == prefix..'2unantiattach' then
+    if string.sub(msg:lower(), 1, #prefix + 13) == prefix..'unantiattach2' then
         antiattach2 = false
 	Remind("Anti ivory is now disabled.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'antiattach' then
-        antiattach = true
-	Remind("Anti attach is now enabled.")
+	if not string.sub(msg:lower(), 1, #prefix + 11) == prefix..'antiattach2' then
+        	antiattach = true
+		Remind("Anti attach is now enabled.")
+	end
     end
 
     if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'unantiattach' then
-        antiattach = false
-	Remind("Anti attach is now disabled.")
+	if not string.sub(msg:lower(), 1, #prefix + 13) == prefix..'unantiattach2' then
+        	antiattach = false
+		Remind("Anti attach is now disabled.")
+	end
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antifling' then
