@@ -9941,7 +9941,6 @@ function meshkick(kickin, kickinplr) -- v, V.Name
 end
 
 function techkick(kickin, kickinplr) -- Tech's hatkick
-	while true do end 
 	        spammer = true
 		Chat("respawn "..kickinplr)
 		Chat("blind "..kickinplr.."                                                                                                                                                                      discord")
@@ -9958,10 +9957,10 @@ function techkick(kickin, kickinplr) -- Tech's hatkick
 			spammer = false
 		end)
 		for i = 1, 103 do
-			chatt("hat "..kickinplr.." "..antilog.."18137588505")
+			chatt("hat "..kickinplr.." 18137588505")
 		end
 		while spammer do task.wait()
-			chatt("hat "..kickinplr.." "..antilog.."18137588505")
+			chatt("hat "..kickinplr.." 18137588505")
 		end
 
 end
