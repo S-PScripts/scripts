@@ -374,13 +374,13 @@ print("\n")
 print(lprefix..'cagespawn')
 print("\n")
 
-print(lprefix..'2fixpads')
+print(lprefix..'fixpads2')
 print("\n")
 
-print(lprefix..'2fixreg')
+print(lprefix..'fixregen2')
 print("\n")
 
-print(lprefix..'2fixbp')
+print(lprefix..'fixbp2')
 print("\n")
 
 print(lprefix..'fcam')
