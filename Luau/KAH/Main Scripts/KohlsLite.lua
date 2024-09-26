@@ -179,18 +179,8 @@ end
 -- Serverlocked users
 local blacklist = {
     "SlenderMan990921",
-    "e5usp",
-    "Asphetto",
-    "91txt",
-    "LeanConsumer69",
-    "Fixydrqma",
-    "Robloxian577226532",
-    "jjthejoker7",
-    "cihanahmet1670",
-    "Fu14r",
-    "bbgurrrrl",
-    "He4rt_4",
-    "aliihsan12345Bloxy"
+    "aliihsan12345Bloxy",
+    "jhjssikeksms"
 }
 
 -- Users not affected by serverlock
@@ -406,13 +396,28 @@ antikill = {}
 permusers = {} -- users that use perm will be placed here
 personsusers = {} -- users that use persons will be placed here
 
--- Auto stuff relating to users
-rkick_on_sight = {} -- rocket kick player when they join ONLY WORKS WITH ONE PLAYER
-crash_on_sight = {"jhjssikeksms","aliihsan12345Bloxy"} -- crash server when player joins
-mkick_on_sight = {"He4rt_4","hellokitty2kute"} -- kick player with pm spam when they join ONLY WORKS WITH ONE PLAYER
-suser_on_sight = {} -- slow a user when they join with car gear ONLY WORKS WITH ONE PLAYER
+-- Auto stuff upon user joining
+
+-- Rocket kick player
+rkick_on_sight = {} 
+
+-- Crash server
+crash_on_sight = {"jhjssikeksms","aliihsan12345Bloxy"}
+
+-- Message kick
+mkick_on_sight = {} 
+
+-- Hat kick
+hatkick_on_sight = {}
+
+-- Slow user
+suser_on_sight = {}
+
+-- Furry user
 furry_on_sight = {} -- 9jn
-gb_on_sight = {} -- gearban upon a user joining
+
+-- Gearban user
+gb_on_sight = {}
 
 -- Variables for moving
 local movestatus = false
@@ -11352,9 +11357,7 @@ function onPlayerAdded(player)
 			end
 			print(player.Name.." joined the server. They are being rocket kicked as they were on the rkick_on_sight list.")
 			Remind(player.Name.." joined the server. They are being rocket kicked as they were on the rkick_on_sight list.")
-                	srkick = true
-                	rkicks = player.Name
-                	rkicker = player
+			rkickplr(player, player.Name)
 			check_con = true
 		end
 
@@ -11380,6 +11383,16 @@ function onPlayerAdded(player)
                 	acplr = player.Name
 			check_con = true
     		end
+
+		if table.find(hatkick_on_sight, player.Name) then
+        		if welcomemsg == true then 
+				Chat("h \n\n\n Hat kicking "..player.Name.." as they are blacklisted. \n\n\n")
+			end
+			print(player.Name.." joined the server. They are being hat kicked as they were on the hatkick_on_sight list.")
+			Remind(player.Name.." joined the server. They are being hat kicked as they were on the hatkick_on_sight list.")
+			hatkick(player, player.Name)
+			check_con = true
+		end
 
     		if table.find(furry_on_sight, player.Name) then
                 	Chat(prefix.."char "..player.Name.." furry")
@@ -11466,7 +11479,7 @@ function onPlayerLeaving(player)
     end
 
     if table.find(rkick_on_sight, player.Name) then
-                srkick = false
+                kicking = false
     end
 
     if table.find(suser_on_sight, player.Name) then
@@ -13843,9 +13856,7 @@ for i, v in pairs(game.Players:GetPlayers()) do
 
         if table.find(rkick_on_sight, v.Name) then
                 Chat("h \n\n\n Auto rocket kicking "..v.Name.." as they are blacklisted. \n\n\n")
-                srkick = true
-                rkicks = v.Name
-                rkicker = v
+                rkickplr(v, v.Name)
         end
 
         if table.find(suser_on_sight, v.Name) then
