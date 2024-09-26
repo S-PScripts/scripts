@@ -11298,6 +11298,7 @@ function CoCrash()
       PtSH()
 end
 
+-- emerald crash
 function EmCrash()
       Chat("gear me 000000000000000178076749")
       repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("Emerald Knights of the Seventh Sanctum Sword and Shield")
@@ -11313,6 +11314,7 @@ function EmCrash()
       PtSH()
 end
 
+-- sword and shield crash
 function PCrash() -- buggy
 	for i = 1, 2 do
               Chat("gear me 00000000000000092628079")
