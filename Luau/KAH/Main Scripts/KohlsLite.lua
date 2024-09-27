@@ -3861,6 +3861,16 @@ return
 	Remind("Disable this anti!")
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'antiplant' then
+	antiplant = true
+	Remind("Disable this anti!")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantiplant' then
+	antiplant = false
+	Remind("Disable this anti!")
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'antibright' then
         antibrightness = true
 	Remind("Enabled this anti!")
@@ -7647,6 +7657,14 @@ task.spawn(function()
               Chat("clr")
            end
         end
+
+        if antiplant == true then
+           if workspace:FindFirstChild("BitePlant") then
+              workspace:FindFirstChild("BitePlant"):Destroy()
+              Chat("clr")
+           end
+        end
+
         if antiambient == true then
                 if game.Lighting.Ambient ~= Color3.new(0,0,0) then
                         Chat("ambient 0 0 0")
