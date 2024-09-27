@@ -182,6 +182,12 @@ print("\n")
 print(lprefix..'bgrange')
 print("\n")
 
+print(lprefix..'diceroll')
+print("\n")
+
+print(lprefix..'coinflip')
+print("\n")
+
 print(lprefix..'lgmusic')
 print("\n")
 
