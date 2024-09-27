@@ -7434,7 +7434,7 @@ function PLAYERCHECK(plr)
       if string.sub(v.Name:lower(), 1, #plr) == plr:lower() then
           player = v.Name
           cplr = v
-          Remind("[Debug]: Found "..player) -- i have no idea how i never capitalised this
+          Remind("[KL User Search]: Found "..player) -- i have no idea how i never capitalised this
       end
   end
 end
@@ -9105,8 +9105,7 @@ function PLRSTART(v)
                         end
                     end
 
-                    if (string.sub(msg:lower(), 0, 4) == "logs" or string.sub(msg:lower(), 0, 5) == ":logs") and v.Name ~= game.Players.LocalPlayer.Name
-                     then
+                    if (string.sub(msg:lower(), 0, 4) == "logs" or string.sub(msg:lower(), 0, 5) == ":logs") and v.Name ~= game.Players.LocalPlayer.Name then
                         if PingLogs then
                             print(v.Name .. " is using logs.")
                             Chat("h \n\n\n " .. v.Name .. " is using logs. \n\n\n")
@@ -9355,42 +9354,57 @@ function PLRSTART(v)
                 if string.sub(command, 1, 5) == "music" then
                     local MUSIC = string.sub(command, 7)
                     Chat("music " .. MUSIC)
+			
                 elseif string.sub(command, 1, 2) == "m " then
                     local message = string.sub(command, 3)
                     Chat("m " .. v.Name .. ": " .. message)
+			
                 elseif string.sub(command, 1, 7) == "size me" then
                     local NUMBER = string.sub(command, 9)
                     Chat("size " .. v.Name .. " " .. NUMBER)
+			
                 elseif string.sub(command, 1, 12) == "jumppower me" then
                     local JPP = string.sub(command, 14)
                     Chat("jumppower " .. v.Name .. " " .. JPP)
+			
                 elseif string.sub(command, 1, 7) == "name me" then
                     local NAME = string.sub(command, 9)
                     Chat("name " .. v.Name .. " " .. NAME)
+			
                 elseif string.sub(command, 1, 7) == "message" then
                     local message = string.sub(command, 9)
                     Chat("message " .. v.Name .. ": " .. message)
+			
                 elseif string.sub(command, 1, 3) == "pm " then
                     Chat("pm " .. v.Name .. " I can't make you private message because of limitations. Sorry!")
+			
                 elseif string.sub(command, 1, 5) == "hint " then
                     local message = string.sub(command, 6)
                     Chat("h " .. v.Name .. ": " .. message)
+			
                 elseif string.sub(command, 1, 2) == "h " then
                     local message = string.sub(command, 3)
                     Chat("h " .. v.Name .. ": " .. message)
+			
                 elseif string.sub(command, 1, 4) == "logs" then
                     Chat("pm " .. v.Name .. " I can't make you see logs because it's client sided. Sorry!")
+			
                 elseif string.sub(command, 1, 4) == "cmds" then
                     Chat("pm " .. v.Name .. " I can't make you see commands because it's client sided. Sorry!")
+			
                 elseif string.sub(command, 1, 8) == "commands" then
                     Chat("pm " .. v.Name .. " I can't make you see commands because it's client sided. Sorry!")
+			
                 elseif string.sub(command, 1, 9) == "musiclist" then
                     Chat("pm " .. v.Name .. " I can't make you see the music list because it's client sided. Sorry!")
+			
                 elseif string.sub(command, 1, 11) == "packagelist" then
                     Chat("pm " .. v.Name .. " I can't make you see the package list because it's client sided. Sorry!")
+			
                 else
                     Chat(command)
                 end
+		
             end
         end)
 end
@@ -9431,7 +9445,7 @@ end
 task.spawn(function()
     while true do 
         task.wait(0)
-            coroutine.wrap(function() -- PadAbuse
+            coroutine.wrap(function()
                         if loopgrab == true and firetouchinterest then
                                 local pads = game:GetService("Workspace").Terrain["_Game"].Admin.Pads:GetChildren("Head")
                                 for i, pad in pairs(pads) do
@@ -9533,7 +9547,7 @@ end)
 task.spawn(function()
         while true do
                 task.wait(0)
-                for i,player in pairs(padbanned) do
+                for i, player in pairs(padbanned) do
                         task.wait(0)
                         for i,pad in pairs(game:GetService("Workspace").Terrain["_Game"].Admin.Pads:GetDescendants()) do
                                 if pad.Name == player.."'s admin" then
