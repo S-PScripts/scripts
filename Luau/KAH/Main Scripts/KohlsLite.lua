@@ -1770,7 +1770,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'coinflip' then
-	cflip = "Heads" or "Tails" -- never used this until now, lol
+	if math.random(1, 2) == 1 then cflip = "Heads" else cflip =  "Tails" end
 	Remind("Coin flip: "..cflip)
     end
 		
