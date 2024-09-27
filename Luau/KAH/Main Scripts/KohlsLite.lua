@@ -1756,6 +1756,24 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		bgrange = tonumber(string.sub(msg:lower(), #prefix + 9))
       end
 
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'diceroll' then
+ 	local args = string.split(msg, " ")
+        if #args == 3 then
+                local min = tonumber(args[2])
+		local max = tonumber(args[3])
+		local diroll = math.random(min, max)
+		Remind("Dice roll: ".. diroll)
+	else
+		diroll = math.random(1, 6) -- USE DEFAULT
+		Remind("Dice roll: ".. diroll)
+	end
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'coinflip' then
+	cflip = "Heads" or "Tails" -- never used this until now, lol
+	Remind("Coin flip: "..cflip)
+    end
+		
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'lgmusic' then
         ieatkids = string.sub(msg, #prefix + 8)
         if workspace.Terrain["_Game"].Folder:FindFirstChild("localsound") then
