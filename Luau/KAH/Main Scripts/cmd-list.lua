@@ -774,6 +774,12 @@ print("\n")
 print(lprefix..'unantiegg')
 print("\n")
 
+print(lprefix.."antiplant")
+print("\n")
+
+print(lprefix..'unantiplant')
+print("\n")
+
 print(lprefix..'antibright')
 print("\n")
 
