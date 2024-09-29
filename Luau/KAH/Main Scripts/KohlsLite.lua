@@ -1579,6 +1579,29 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          end
        end
 
+       if string.sub(msg, 1, #prefix + 7) == prefix..'coinlag' then
+		local response = Instance.new("BindableFunction")
+		function response.OnInvoke(answer)
+			if answer == "Yes" then
+				SuperCMD("gear me 24015579")
+                		local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
+                		for _, v in ipairs(Backpack:GetChildren()) do
+					v.Parent = game.Players.LocalPlayer.Character
+					task.wait(0)
+					v:Activate() 
+				end 
+			end
+		end
+		game:GetService("StarterGui"):SetCore("SendNotification", {
+			Title = "KohlsLite Manager",
+			Text = "This might lag you. Are you sure about this?",
+			Duration = math.huge,
+			Callback = response,
+			Button1 = "Yes",
+			Button2 = "No"
+		})
+	end
+		
        if string.sub(msg, 1, #prefix + 6) == prefix..'report' then
          local dasplayer = string.sub(msg:lower(), #prefix + 8)
          PLAYERCHECK(dasplayer)
