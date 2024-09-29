@@ -1690,6 +1690,9 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'timeout' then
                 Remind("no")
        end
+
+		-- obfuscate command
+		
 		
        if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'slock' then
 	if blwl_an then
