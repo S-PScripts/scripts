@@ -14278,6 +14278,11 @@ if getgenv().kohlsgui then
 	)
 end
 
+if math.random(1,2) == 1 then
+Remind("when i set a variable wrong and break the script again jajaja")
+else
+Remind("mhm means my hot man")
+end
 --[[
 Things to add/fix. Feel free to fix these and send the code and I'll credit you
 -> Auto crasher
