@@ -73,6 +73,16 @@ if getgenv().kohlsexecuted then
         Remind("You've already executed KohlsLite!") 
 end
 
+getgenv().autocrasher = true
+
+if autocrasher then
+	--
+end
+
+if autocrasher then
+	return 
+end
+
 -- Loader
 if not game:IsLoaded() then
     local notLoaded = Instance.new("Message")
@@ -14270,12 +14280,15 @@ end
 
 --[[
 Things to add/fix. Feel free to fix these and send the code and I'll credit you
--> Visualiser and drawer
+-> Auto crasher
+-> Part visualiser
+-> Part drawer
 -> Boombox visualiser
 -> Part builder
 -> Object mover (cmd pi version)
--> Fix ncontrol
--> Can't fix these until I get a windows PC, this might be a long time... ;(
+-> Fix control
+
+-> Can't fix these until I get a Windows PC, this might be a long time... ;(
 ]]
 
 -- KohlsLite on top
