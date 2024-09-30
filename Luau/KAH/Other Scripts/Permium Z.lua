@@ -96,10 +96,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		
 end)
 
-if string.sub(msg, 1, 9) == "rocontrol" then
-nbc = false
-bc = true
-end
 -- Perm
 task.spawn(function()
     while true do 
