@@ -73,7 +73,7 @@ if getgenv().kohlsexecuted then
         Remind("You've already executed KohlsLite!") 
 end
 
-getgenv().autocrasher = true
+getgenv().autocrasher = false
 
 if autocrasher then
 	--
