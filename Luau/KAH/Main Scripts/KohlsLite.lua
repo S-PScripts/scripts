@@ -14129,8 +14129,6 @@ else
 	Remind("Support my script by buying my gamepass! Just do .purchase.")
 end
 
-Remind("me when discord limits me till 26/9/24 for repling to someone saying cee pee... just like tech :p")
-
 --[[
 Things to add/fix. Feel free to fix these and send the code and I'll credit you
 -> Visualiser and drawer
