@@ -1,4 +1,6 @@
 // I don't care what you do with this anymore
+// If you need more help, check my YT video on my YT channel.
+// If you still can't figure it out, you're a skid.
 
 // This Scratch Javascript remix bomb was made by RCUTB, not me (TS2021).
 // To use this, execute the code below into your console (Inspect Element - Console section)
