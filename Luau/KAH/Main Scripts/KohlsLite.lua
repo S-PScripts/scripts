@@ -1172,8 +1172,12 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         end
 		
         if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'cmdpi' then -- well, you need that visualiser, do you?
-                GExecute("https://raw.githubusercontent.com/S-PScripts/KAH/main/CMD%20v3.lua")
-		Remind("Executed CMD PI/V3. Created by quiving. CMD PI/V3 doesn't work for mobile executors by the way.")
+		if IsOnMobile then
+			Remind("CMD PI/V3 does not work on mobile executors.")
+		else
+                	GExecute("https://raw.githubusercontent.com/S-PScripts/KAH/main/CMD%20v3.lua")
+			Remind("Executed CMD PI/V3. Created by quiving..")
+		end
         end
 
         if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'prsc' then -- PR Script ~ atprog
