@@ -14278,11 +14278,16 @@ if getgenv().kohlsgui then
 	)
 end
 
-if math.random(1,2) == 1 then
-Remind("when i set a variable wrong and break the script again jajaja")
+-- Random quotes jajaja
+aqwerty = math.random(1,3)
+if aqwerty == 1 then
+	Remind("when i set a variable wrong and break the script again jajaja")
+elseif aqwerty == 2 then
+	Remind("mhm means my hot man")
 else
-Remind("mhm means my hot man")
+	Remind("i stepped on a slug yuckkkk")
 end
+
 --[[
 Things to add/fix. Feel free to fix these and send the code and I'll credit you
 -> Auto crasher
