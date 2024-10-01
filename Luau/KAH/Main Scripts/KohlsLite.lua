@@ -14271,13 +14271,27 @@ if getgenv().kohlsgui then
 end
 
 -- Random quotes jajaja
-aqwerty = math.random(1,3)
+aqwerty = math.random(1,10)
 if aqwerty == 1 then
 	Remind("when i set a variable wrong and break the script again jajaja")
 elseif aqwerty == 2 then
 	Remind("mhm means my hot man")
-else
+elseif aqwerty == 3 then
 	Remind("i stepped on a slug yuckkkk")
+elseif aqwerty == 4 then
+	Remind("KohlsLite is the best script to morbius all over")
+elseif aqwerty == 5 then
+	Remind("Solonium + PR Script better than skidlite")
+elseif aqwerty == 6 then
+	Remind("oh my you found secret!")
+elseif aqwerty == 7 then
+	Remind("Where's the nearest 7/11?")
+elseif aqwerty == 8 then
+	Remind("whats math.random? what's wrong with 10 elseifs!")
+elseif aqwerty == 9 then
+	Remind("shortcutv3 var better than kohlsplus")
+else
+	Remind("you shouldnt get this message hecker (jk)")
 end
 
 --[[
