@@ -444,7 +444,6 @@ local musicplay
 -- PLEASE NOTE THAT "GMUSIC1" ETC. IS INTENTIONAL. THE MISSING SPACE BETWEEN GMUSIC AND 1 IS INTENTIONAL.
 -- exfamous stole this grrr
 
-
 local musictable = {
     ["1"] = { id = "9048375035", name = "All dropping 8 beats" },
     ["2"] = { id = "1839029458", name = "Exotico Speedo" },
@@ -1963,7 +1962,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'themelist' then
                 Remind("Check your console by running /console!")
-		for key, theme in pairs(themecode) do
+		for key, theme in pairs(themecode) do -- doesn't work properly :( tried using ipairs but errors
     			print(key .. " - " .. theme.name .. " - " .. theme.code)
 		end
     end
@@ -2040,23 +2039,23 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		
 -- SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND --
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'pausem' then
-       for i,v in pairs(game:GetService("Workspace").Terrain["_Game"].Folder:GetDescendants()) do
-                  if v:IsA("Sound") and v.Playing then
-                           v.Playing = false
-                    end
-       end
+       	for i,v in pairs(game:GetService("Workspace").Terrain["_Game"].Folder:GetDescendants()) do
+                if v:IsA("Sound") and v.Playing then
+                        v.Playing = false
+                end
+        end
        Remind("Paused the music!")
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'playm' then
-              for i,v in pairs(game:GetService("Workspace").Terrain["_Game"].Folder:GetDescendants()) do
-                    if v:IsA("Sound") and not v.Playing then
-                           v.Playing = true
-                  end
-              end
+        for i,v in pairs(game:GetService("Workspace").Terrain["_Game"].Folder:GetDescendants()) do
+                if v:IsA("Sound") and not v.Playing then
+                        v.Playing = true
+                end
+        end
 	      Remind("Playing the music!")
     end
--- SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND --
+
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'stopm' then
         for i, v in pairs(game:GetService("Workspace").Terrain["_Game"].Folder:GetDescendants()) do
                 if v:IsA("Sound") then
@@ -2074,7 +2073,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         end   
         Remind("Started the music!")
     end
--- SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND --
+		
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'stops' then
         for i, v in pairs(game:GetDescendants()) do
                 if v:IsA("Sound") then
@@ -2092,7 +2091,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         end   
         Remind("Started sounds!")
     end
--- MOVING ON MOVING ON MOVING ON MOVING ON MOVING ON MOVING ON MOVING ON MOVING ON MOVING ON MOVING ON MOVING ON --
+
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'deiv' then -- ported from simplekah
 			gjdelock = false
                         Chat("h \n\n\n Domain Expansion: Infinity Void \n\n\n")
@@ -7751,18 +7750,11 @@ task.spawn(function()
         while true do
         task.wait(0.1)
                 if antichat == true then
-                        --if haspersons == true then
-                        --        Chat("m/ 😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭")
-                        --else
                                 Chat("m 😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭")
-                        --end
                 end
+
                 if antichatplr == true then
-                        -- if haspersons == true then
-                                  -- Chat("pm/"..acplr.." 😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭")
-                        -- else
                                 Chat("pm "..acplr.." 😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭💀💀💀💀💀💀💀💀💀😀😃😄😁😆😅😂🤣😭")
-                        -- end
                 end
         end
 end)
