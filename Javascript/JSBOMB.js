@@ -1,4 +1,5 @@
 // I don't care what you do with this anymore
+// you need to do something different to find x-token but its similar ok
 // If you need more help, check my YT video on my YT channel.
 // If you still can't figure it out, you're a skid.
 
