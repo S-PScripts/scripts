@@ -543,14 +543,28 @@ local musictable = {
 -- Saved gears
 local gearlist = {
     ["boombox"] = { gearid = "212641536" },
+	
     ["vg"] = { gearid = "94794847" },
+    ["vampire"] = { gearid = "94794847" },
+    ["vanquisher"] = { gearid = "94794847" },
+    ["vampirevanquisher"] = { gearid = "94794847" },
+    ["vampire vanquisher"] = { gearid = "94794847" },
+	
     ["osas"] = { gearid = "92628079" },
+	
     ["gb"] = { gearid = "82357101" },
+    ["gearban"] = { gearid = "82357101" },
+    ["portable justice"] = { gearid = "82357101" },
+    ["portablejustice"] = { gearid = "82357101" },
+	
     ["bhbomb"] = { gearid = "28277486" },
     ["tictac"] = { gearid = "16924676" },
     ["pgun"] = { gearid = "34870758" },
     ["camfixer"] = { gearid = "79736563" },
+	
     ["painter"] = { gearid = "18474459" },
+    ["paint bucket"] = { gearid = "18474459" },
+	
     ["telemon"] = { gearid = "93136746" },
     ["trapmine"] = { gearid = "11999247" },
     ["timegears"] = { gearid = "77443461" },
@@ -673,6 +687,35 @@ local themecode = {
     ["21"] = {name = "noir swamp", code = "fix,time 100,outdoorambient 0 0 099,brightness 0"},
     ["22"] = {name = "snow", code = "fix,time 17.4,colorshifttop 255 255 255,colorshiftbottom 255 255 255"},
     ["23"] = {name = "blue sky", code = "ambient 0 0 256,colorshifttop 0 0 256,fogcolor 0 0 256,fogend 50"}
+}
+
+-- Acton list
+local actions = {
+        clone = Clone,
+        table = Table,
+        raig = Table,
+        potion = Potion,
+        dance = Potion,
+        tripmine = MineTrip,
+        trip = MineTrip,
+        spike = Spike,
+        cannon = Cannon,
+        zombie = Zombie,
+        alpaca = Alpaca,
+        piano = Piano,
+        mozart = Piano,
+        bdrop = Bassdrop,
+        bassdrop = Bassdrop,
+        cstory = Coolstory,
+        coolstory = Coolstory,
+        banana = Banana,
+        tguitar = TankGuitar,
+        tankguitar = TankGuitar,
+        sfriend = SkeleFriend,
+        skelefriend = SkeleFriend,
+        skele = SkeleFriend,
+        spray = Spray,
+        nozzle = Spray
 }
 
 -- Parts
@@ -4924,61 +4967,22 @@ return
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'acton' then
-		local args = string.split(msg, " ")
-        	if #args == 3 then
-			local act = args[2]
-			local getnumber = args[3]
-			if act == "clone" then
-				Clone(getnumber)
-				Remind("Action: Clone")
-			elseif act == "table" or act == "raig" then
-		                Table(getnumber)
-				Remind("Action: Table")
-			elseif act == "potion" or act == "dance" then
-				Potion(getnumber)
-				Remind("Action: Potion")
-			elseif act == "tripmine" or act == "trip" then
-				MineTrip(getnumber)
-				Remind("Action: Tripmine")
-			elseif act == "spike" then
-                		Spike(getnumber)
-		 		Remind("Action: Spike")
-			elseif act == "cannon" then
-		                Cannon(getnumber)
-				Remind("Action: Cannon")
-			elseif act == "zombie" then
-				Zombie(getnumber)
-				Remind("Action: Zombie")
-			elseif act == "alpaca" then
-				Alpaca(getnumber)
-				Remind("Action: Alpaca")
-			elseif act == "piano" or act == "mozart" then
-		                Piano(getnumber)
-				Remind("Action: Piano")
-			elseif act == "bdrop" or act == "bassdrop" then
-		                Bassdrop(getnumber)
-				Remind("Action: Bassdrop")
-			elseif act == "cstory" or act == "coolstory" then
-		                Coolstory(getnumber)
-				Remind("Action: Coolstory")
-			elseif act == "banana" then
-		                Banana(getnumber)
-				Remind("Action: Banana")
-			elseif act == "tguitar" or act == "tankguitar" then
-				TankGuitar(getnumber)
-				Remind("Action: Tank Guitar")
-			elseif act == "sfriend" or act == "skelefriend" or act == "skele" then
-				SkeleFriend(getnumber)
-				Remind("Action: Skele Friend")
-			elseif act == "spray" or act == "nozzle" then
-				Spray(getnumber)
-				Remind("Action: Spray")
-			else
-				Remind("Invalid action!")
-			end
-		else
-			Remind("Invalid amount of arguments. (it should be 3)")
-		end
+    		local args = string.split(msg, " ")
+    
+    		if #args ~= 3 then
+        		Remind("Invalid amount of arguments. (it should be 3)")
+        		return
+    		end
+
+    		local act = args[2]
+    		local getnumber = args[3]
+
+    		if actions[act] then
+        		actions[act](getnumber)
+        		Remind("Action: " .. act)
+    		else
+        		Remind("Invalid action!")
+    		end
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'rfgun' then
