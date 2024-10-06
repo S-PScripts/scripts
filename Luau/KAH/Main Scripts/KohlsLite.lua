@@ -199,9 +199,8 @@ local blacklist = {
 local whitelist = {}
 
 -- Perm Whitelist
-local pwl = {
-
  -- yeah i know i should use user ids instead just wait for that update that will come out in 2030 --
+local pwl = {
     "me_123eq",
     "me_crashking",
     "ScriptingProgrammer",
@@ -1166,7 +1165,7 @@ Remind("Say .kcmds to list some of the commands. DM me at ts2021 for help.")
 
 -- Chat("h \n\n\n KohlsLite executed! Version: "..getgenv().klversion.." \n\n\n")
 
-print("\n\n\n")
+print("\n")
 print("- Perm check -")
 if game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 66254) or game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 64354) then
         perm = false 
@@ -1178,7 +1177,7 @@ else
         print("A perm pad was given - you don't have the Perm Admin gamepass!")
 end
 
-print("\n\n\n")
+print("\n")
 print("- Persons check -")
 if game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 35748) or game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 37127) then
         haspersons = true -- used!
@@ -14015,7 +14014,7 @@ ___  __    ________  ___  ___  ___       ________  ___       ___  _________  ___
 
 Stats.loadedtime = string.format("%.2f", os.clock() - Stats.starttime)
 
-print("\n\n\n")
+print("\n")
 print("- Debug information -")
 print("Loaded in " .. Stats.loadedtime .. "ms.")
 
