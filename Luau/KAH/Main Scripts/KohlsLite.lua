@@ -1751,12 +1751,9 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                 game.Players.LocalPlayer:Kick("you: 'i use adminjoy trash!' Anyways, ask ME to add the colourful seizure crap, don't use THAT!")
        end
 
-	if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'timeout' then
-                Remind("no")
-       end
-
-		-- obfuscate command
-		
+       if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'timeout' then
+                Remind("Go use ii's stupid admin for that.")
+       end		
 		
        if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'slock' then
 	if blwl_an then
@@ -1793,7 +1790,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
        if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unautoblvgc' then
                 Remind("No longer auto blacklisting users using the VG!")
-                  autoblvgc = false
+                autoblvgc = false
        end
 
         if string.sub(msg, 1, #prefix + 7)  == prefix..'npslist' then
@@ -1869,14 +1866,14 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 		
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'lgmusic' then
-        ieatkids = string.sub(msg, #prefix + 8)
+        thevariablewastoomean = string.sub(msg, #prefix + 8)
         if workspace.Terrain["_Game"].Folder:FindFirstChild("localsound") then
                         lsound:Stop()
                         lsound:Destroy()
         end
         lsound = Instance.new("Sound", workspace.Terrain["_Game"].Folder)
         lsound.Name = "localsound"
-        lsound.SoundId = "rbxassetid://"..musictable[ieatkids].id
+        lsound.SoundId = "rbxassetid://"..musictable[thevariablewastoomean].id
         lsound:Play()
 	Remind("Local gmusic playing.")
     end
