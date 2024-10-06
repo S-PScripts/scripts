@@ -691,6 +691,7 @@ local themecode = {
 -- Acton list
 local actions = {
         clone = Clone,
+	cloneai = Clone,
         table = Table,
         raig = Table,
         potion = Potion,
@@ -714,7 +715,8 @@ local actions = {
         skelefriend = SkeleFriend,
         skele = SkeleFriend,
         spray = Spray,
-        nozzle = Spray
+        nozzle = Spray,
+	party = Party
 }
 
 -- Parts
@@ -13263,6 +13265,21 @@ function Spray(getnum)
 	Chat("ungear me");task.wait(0.5)
         for i = 1, tonumber(getnum) do
                 Chat("gear me 273795078");task.wait(0.01)
+        end
+     --   local oldchild = #workspace:GetChildren()
+        repeat task.wait() until #game.Players.LocalPlayer.Backpack:GetChildren() >= tonumber(getnum) 
+        local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
+        for _, v in ipairs(Backpack:GetChildren()) do
+                            v.Parent = game.Players.LocalPlayer.Character
+                            task.wait(0.01)
+                            v:Activate()
+        end
+end 
+
+function Party(getnum)
+	Chat("ungear me");task.wait(0.5)
+        for i = 1, tonumber(getnum) do
+                Chat("gear me 151777652");task.wait(0.01)
         end
      --   local oldchild = #workspace:GetChildren()
         repeat task.wait() until #game.Players.LocalPlayer.Backpack:GetChildren() >= tonumber(getnum) 
