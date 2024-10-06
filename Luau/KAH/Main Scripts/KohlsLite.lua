@@ -4491,14 +4491,14 @@ return
 	end;
 
 	if check(identifyexecutor(), scapproved) then
-		print("Your executor is SC Approved!")
+		Remind("Your executor is SC Approved!")
 	else
-		print("Your executor is NOT SC Approved.")
+		Remind("Your executor is NOT SC Approved.")
 	end
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'circa' then
-	Remind("Warning! broken command.")
+	Remind("Warning! Experimental command.")
 	local radius = 5 
 	local ic = 0
 
@@ -4506,7 +4506,7 @@ return
         	if item:IsA("Tool") then
             		item.Parent = game.Players.LocalPlayer.Character
             		ic = ic + 1
-		        local angle = (ic - 1) * (360 / game.Players.LocalPlayer.Backpack:GetChildren():len()) * (math.pi / 180)
+		        local angle = (ic - 1) * (360 / #game.Players.LocalPlayer.Backpack:GetChildren()) * (math.pi / 180)
             		local x = radius * math.cos(angle)
             		local z = radius * math.sin(angle)
             		item.GripPos = Vector3.new(x, 1, z)
