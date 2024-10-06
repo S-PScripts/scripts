@@ -4498,7 +4498,7 @@ return
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'circa' then
-	Remind("Warning! Experimental command.")
+	Remind("Warning! broken command.")
 	local radius = 5 
 	local ic = 0
 
