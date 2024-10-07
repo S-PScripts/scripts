@@ -6232,7 +6232,17 @@ return
         Remind("Turned this anti off for you!")
     end
 
-  if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antivoid' then
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'antiafk' then
+        antiafk = true
+        Remind("Turned this anti on for you!")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'unantiafk' then
+        antiafk = false
+        Remind("Turned this anti off for you!")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antivoid' then
         antis.antivoid = true
         Remind("Turned this anti on for you!")
     end
@@ -8225,7 +8235,7 @@ connections[#connections + 1] =
         end)
     end)
 else
-	print("nbc patch bug")
+	print("Anti-fling disabled (BC) due to minor differences compared to NBC")
 end
 
 -- Anti mesh
@@ -8234,9 +8244,9 @@ connections[#connections + 1] =
 	task.wait()
 	if antis.antimesh then
         	for i, v in pairs(game.Workspace:GetDescendants()) do
-                	if v:IsA("Accessory") and (v.Name == "Accessory (Pointy)" or v.Name == "Accessory (happy)" or v.Name == "Accessory (SUN)"  or v.Name == "Accessory (MeshPart)" or v.Name == "") then
-                    		v:Destroy()
-			end
+    			if v:IsA("Accessory") and (v.Name == "Accessory (Pointy)" or v.Name == "Accessory (happy)" or v.Name == "Accessory (SUN)" or v.Name == "Accessory (MeshPart)" or v.Name == "") then
+        			v:Destroy()
+    			end
 		end
 	end
 end)
@@ -8928,27 +8938,28 @@ connections[#connections + 1] =
 end)
 
 -- anti tp 
-game:GetService("RunService").RenderStepped:Connect(function()
-        task.wait(0)
-	if antitp then
-		local lplr = game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait()
-		local hrp = lplr:WaitForChild("HumanoidRootPart")
+connections[#connections + 1] =
+	game:GetService("RunService").RenderStepped:Connect(function()
+        	task.wait(0)
+		if antitp then
+			local lplr = game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait()
+			local hrp = lplr:WaitForChild("HumanoidRootPart")
 
-		if pos1 == nil then
-			pos1 = hrp.CFrame
-			pos2 = hrp.CFrame
-		end
+			if pos1 == nil then
+				pos1 = hrp.CFrame
+				pos2 = hrp.CFrame
+			end
 
-		local distance = (Vector3.new(pos1.x, pos1.y, pos1.z) - Vector3.new(pos2.x, pos2.y, pos2.z)).Magnitude
-		if math.floor(distance) > 8 then
-			hrp.CFrame = CFrame.new(Vector3.new(pos1.x, pos1.y, pos1.z))
-			pos1 = hrp.CFrame
-			pos2 = hrp.CFrame
-		else
-			pos1 = pos2
-			pos2 = hrp.CFrame
+			local distance = (Vector3.new(pos1.x, pos1.y, pos1.z) - Vector3.new(pos2.x, pos2.y, pos2.z)).Magnitude
+			if math.floor(distance) > 8 then
+				hrp.CFrame = CFrame.new(Vector3.new(pos1.x, pos1.y, pos1.z))
+				pos1 = hrp.CFrame
+				pos2 = hrp.CFrame
+			else
+				pos1 = pos2
+				pos2 = hrp.CFrame
+			end
 		end
-	end
 end)
 
 -- CHAT F*CK
@@ -11700,12 +11711,16 @@ UserInputService.WindowFocused:Connect(function()
 end)
 
 -- Anti-AFK
+
+antiafk = false
 local vplr = game:GetService("Players")
 local virtualUser = game:GetService("VirtualUser")
 
 vplr.LocalPlayer.Idled:Connect(function()
-        virtualUser:CaptureController()
-        virtualUser:ClickButton2(Vector2.new())
+	if antiafk then
+        	virtualUser:CaptureController()
+        	virtualUser:ClickButton2(Vector2.new())
+	end
 end)
 
 -- CLICK
