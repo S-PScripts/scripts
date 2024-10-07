@@ -121,7 +121,7 @@ getgenv().kohlsexecuted = true
 getgenv().deprefix = "." 
 
 -- The version of KohlsLite
-getgenv().klversion = "1.82e"
+getgenv().klversion = "1.82z"
 
 getgenv().kohlsgui = false -- this exists i guess
 
@@ -164,6 +164,9 @@ editedjump = true
 
 -- Boombox range
 bgrange = 128
+
+-- Circa range
+circrad = 10
 
 -- Mobile checker
 IsOnMobile = table.find({Enum.Platform.IOS, Enum.Platform.Android}, game:GetService("UserInputService"):GetPlatform()) -- infinite yield duh
@@ -4540,7 +4543,6 @@ return
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'circa' then
 	Remind("Warning! Experimental command.")
-	testingvariablelol = 5 
 	local ic = 0
 
     	for _, item in ipairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
@@ -4548,8 +4550,8 @@ return
             		item.Parent = game.Players.LocalPlayer.Character
             		ic = ic + 1
 		        local angle = (ic - 1) * (360 / #game.Players.LocalPlayer.Backpack:GetChildren()) * (math.pi / 180)
-            		local x = radius * math.cos(angle)
-            		local z = radius * math.sin(angle)
+            		local x = circrad * math.cos(angle)
+            		local z = circrad * math.sin(angle)
             		item.GripPos = Vector3.new(x, 1, z)
         	end
     	end
@@ -4557,8 +4559,8 @@ return
     end
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'crad' then
-	testingvariablelol = tonumber(string.sub(msg:lower(), #prefix + 6))
-end
+		circrad = tonumber(string.sub(msg:lower(), #prefix + 6))
+    end
 		
     if string.sub(msg:lower(), 1, 7) == 'cprefix' then
         Remind("Your current prefix is "..prefix)
