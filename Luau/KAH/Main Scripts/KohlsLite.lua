@@ -8920,11 +8920,12 @@ connections[#connections + 1] =
         	if not seen[player] then
             		seen[player] = true 
             		table.insert(variablehostinger, player)
-        	end
+		else
+			print('removed duplicate')
+		end
     	end
 
     	blacklist = variablehostinger
-	print('removed duplicate')
 end)
 
 -- anti tp 
