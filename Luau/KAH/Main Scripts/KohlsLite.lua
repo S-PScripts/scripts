@@ -8171,6 +8171,8 @@ connections[#connections + 1] =
     end)
 
 -- Credits to trollfacenan (bumanoid)!
+
+if game.PlaceId == 115670532 then
 local lplr = game:GetService("Players").LocalPlayer
 local char = lplr.Character
 local tor = char:WaitForChild("Torso")
@@ -8236,6 +8238,9 @@ connections[#connections + 1] =
         	end
 	end
 end)
+else
+	print("nbc patch bug")
+end
 
 -- ANTIS FOR EVERYONE
 connections[#connections + 1] =
