@@ -195,7 +195,8 @@ end
 local blacklist = {
     "SlenderMan990921",
     "aliihsan12345Bloxy",
-    "jhjssikeksms"
+    "jhjssikeksms",
+    "grudgingDinosaur1"
 }
 
 -- Users not affected by serverlock
