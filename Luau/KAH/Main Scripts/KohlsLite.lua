@@ -8,7 +8,7 @@
     \|__| \|__|\|_______|\|__|\|__|\|_______|\_________\|_______|\|__|    \|__|  \|_______|
                                             \|_________|                                   
                                                                                            
-                                                                                           v1.82 ]]
+                                                                                           v1.83 ]]
 
 --[[
 https://kohlslite.pages.dev/source.txt
@@ -61,7 +61,7 @@ I know this script is inconsistent with the fact it uses Game with and without G
 -- Notifications
 local function Remind(msg)
         game.StarterGui:SetCore("SendNotification", {
-                Title = "KohlsLite v1.82",
+                Title = "KohlsLite v1.83",
                 Text = msg,
                 Duration = 1
         })
@@ -121,7 +121,7 @@ getgenv().kohlsexecuted = true
 getgenv().deprefix = "." 
 
 -- The version of KohlsLite
-getgenv().klversion = "1.82z"
+getgenv().klversion = "1.83"
 
 getgenv().kohlsgui = false -- this exists i guess
 
@@ -1109,13 +1109,13 @@ local loopgrab = false
 local loopgrab2 = false
 
 -- Antis
-local anticrash = false
+local anticrash = true
 local antigear = false
 local antigb = true
 local antipaint = false
 local antiattach2 = false
 
-local emranticrash = true
+local emranticrash = false
 
 -- Antis (workspace)
 local antiflash = false
@@ -8907,6 +8907,24 @@ game:GetService("RunService").RenderStepped:Connect(function()
                             end
         	end
 
+end)
+
+-- stop dupe blacklist 
+connections[#connections + 1] =
+    game:GetService("RunService").RenderStepped:Connect(function()
+	task.wait()
+	local seen = {}
+    	local variablehostinger = {} 
+
+    	for _, player in ipairs(blacklist) do
+        	if not seen[player] then
+            		seen[player] = true 
+            		table.insert(variablehostinger, player)
+        	end
+    	end
+
+    	blacklist = variablehostinger
+	print('removed duplicate')
 end)
 
 -- anti tp 
