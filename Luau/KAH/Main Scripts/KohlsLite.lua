@@ -3274,6 +3274,7 @@ return
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'meshkick' then  -- mesh kick haha
+		dzjecraft = false
 		local dasplayer = string.sub(msg:lower(), #prefix + 10)
                 PLAYERCHECK(dasplayer)
 	
@@ -3290,7 +3291,13 @@ return
 	
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unmeshkick' then 
+	dzjecraft = true
+	Remind("Ended mesh-kick")
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'hatkick' then  -- hat kick haha
+		dzjecraft = false
 		local dasplayer = string.sub(msg:lower(), #prefix + 9)
                 PLAYERCHECK(dasplayer)
 	
@@ -3305,6 +3312,11 @@ return
                         return Remind('Cannot find player with the name: '..dasplayer)
                 end
 	
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'unhatkick' then 
+	dzjecraft = true
+	Remind("Ended hat-kick")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'techkick' then  -- tech kick
@@ -9979,6 +9991,7 @@ task.spawn(function()
 end)
 
 -- FIND REGEN
+-- yes i will rewrite this
 task.spawn(function()
         while true do
                 task.wait(0)
@@ -10058,12 +10071,12 @@ end
 
 -- LUA CMDS
 function Execute(testcode)
-      loadstring(testcode)()
+	loadstring(testcode)()
 end
 
 -- LUA EXECUTE
 function GExecute(myscript)
-                loadstring(game:HttpGet((myscript),true))()
+        loadstring(game:HttpGet((myscript),true))()
 end
 
 -- ANNOUNCEMENTS
@@ -10117,8 +10130,11 @@ function hatkick(kickin, kickinplr) -- v, V.Name
 	        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = kickin.Character.HumanoidRootPart.CFrame * CFrame.new(0,0,5) * CFrame.Angles(0,math.rad(180),0)
 
 		for i = 1, 10 do
+			if dzjecraft then break end
 			if game.Players:FindFirstChild(kickinplr) then
+				if dzjecraft then break end
 				for i = 1, 100 do
+					if dzjecraft then break end
    					 Chat("hat me 18137588505")
 					 task.wait(.5)
    					 Chat("clone me")
