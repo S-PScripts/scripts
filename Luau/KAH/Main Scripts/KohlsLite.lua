@@ -8223,24 +8223,22 @@ connections[#connections + 1] =
                 end
         end)
     end)
+else
+	print("nbc patch bug")
+end
 
 -- Anti mesh
 connections[#connections + 1] =
     game:GetService("RunService").RenderStepped:Connect(function()
 	task.wait()
 	if antis.antimesh then
-        	for i,v in pairs(workspace:GetDescendants()) do
-            		if v:IsA("Accessory") then
-                		if tostring(v.AccessoryType) == "Enum.AccessoryType.Unknown" then -- he knocks
-                    			v:Destroy()
-                		end
-            		end
-        	end
+        	for i, v in pairs(game.Workspace:GetDescendants()) do
+                	if v:IsA("Accessory") and (v.Name == "Accessory (Pointy)" or v.Name == "Accessory (happy)" or v.Name == "Accessory (SUN)"  or v.Name == "Accessory (MeshPart)" or v.Name == "") then
+                    		v:Destroy()
+			end
+		end
 	end
 end)
-else
-	print("nbc patch bug")
-end
 
 -- ANTIS FOR EVERYONE
 connections[#connections + 1] =
