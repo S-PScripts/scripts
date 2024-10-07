@@ -121,7 +121,7 @@ getgenv().kohlsexecuted = true
 getgenv().deprefix = "." 
 
 -- The version of KohlsLite
-getgenv().klversion = "1.82"
+getgenv().klversion = "1.82e"
 
 getgenv().kohlsgui = false -- this exists i guess
 
@@ -4540,7 +4540,7 @@ return
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'circa' then
 	Remind("Warning! Experimental command.")
-	local radius = 5 
+	testingvariablelol = 5 
 	local ic = 0
 
     	for _, item in ipairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
@@ -4555,6 +4555,10 @@ return
     	end
 
     end
+
+    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'crad' then
+	testingvariablelol = tonumber(string.sub(msg:lower(), #prefix + 6))
+end
 		
     if string.sub(msg:lower(), 1, 7) == 'cprefix' then
         Remind("Your current prefix is "..prefix)
