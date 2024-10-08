@@ -3126,21 +3126,29 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'findregen' then -- i know it sucks but perm exists lol
+	failsafe3 = false
         regenfind = true
+	task.wait(0)
+	findregen()
 	Remind("Finding the regen (skydived)")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'nofindregen' then
+	failsafe3 = true
         regenfind = false
 	Remind("Stopped the regen (skydived)")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'2findregen' then -- i know it sucks but perm exists lol
-        regenfind2 = true
+        failsafe3 = false
+	regenfind2 = true
+	task.wait(0)
+	findregen2()
 	Remind("Finding the regen (KL/CMD-Y)")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'2nofindregen' then
+	failsafe3 = true
         regenfind2 = false
 	Remind("Stopped the regen (KL/CMD-Y)")
     end
@@ -10314,39 +10322,42 @@ task.spawn(function()
 end)
 
 -- FIND REGEN
--- yes i will rewrite this
-task.spawn(function()
-        while true do
-                task.wait(0)
-                if regenfind == true then
-                        local root = game.Players.LocalPlayer.Character.HumanoidRootPart
-                        root.Anchored = true
-                        repeat
-                                wait(.15)
-                                root.CFrame = CFrame.new(-7.165, root.Position.Y + 2500 , 94.743)
-                        until workspace.Terrain._Game.Admin:FindFirstChild("Regen") or regenfind == false
-                        root.Anchored = false
-                        root.CFrame = workspace.Terrain._Game.Admin:FindFirstChild("Regen").CFrame + Vector3.new(0, 3, 0)
-                        regenfind = false
-                        Chat("respawn me");Remind("Found the regen (skydived)")
-                end
-                if regenfind2 == true then
-			local Player = game.Players.LocalPlayer
-			local PlayerService = game:GetService("Players")
-                        local root = game.Players.LocalPlayer.Character.HumanoidRootPart
-                        root.Anchored = true
-                        repeat
-                                task.wait(.15)
-                                root.CFrame = CFrame.new(math.random(-30593, -23388), math.random(-30593, -10455), math.random(-30593, -10455))
-                        until workspace.Terrain._Game.Admin:FindFirstChild("Regen") or regenfind2 == false
-			PlayerService.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0, 0, 0)
-                        root.Anchored = false
-                        root.CFrame = workspace.Terrain._Game.Admin:FindFirstChild("Regen").CFrame + Vector3.new(0, 3, 0)
-                        regenfind2 = false
-                        Chat("respawn me");Remind("Found the regen (KL)")
-                end
-        end
-end)
+function findregen()
+	local root = game.Players.LocalPlayer.Character.HumanoidRootPart
+        root.Anchored = true
+        repeat
+        	wait(.15)
+                root.CFrame = CFrame.new(-7.165, root.Position.Y + 2500 , 94.743)
+        until workspace.Terrain._Game.Admin:FindFirstChild("Regen") or regenfind == false or failsafe3
+	if failsafe3 then
+		--
+	else
+       		root.Anchored = false
+     		root.CFrame = workspace.Terrain._Game.Admin:FindFirstChild("Regen").CFrame + Vector3.new(0, 3, 0)
+      		regenfind = false
+      		Chat("respawn me");Remind("Found the regen (skydived)")
+	end
+end
+
+function findregen2()
+	local Player = game.Players.LocalPlayer
+	local PlayerService = game:GetService("Players")
+        local root = game.Players.LocalPlayer.Character.HumanoidRootPart
+        root.Anchored = true
+        repeat
+                task.wait(.15)
+                root.CFrame = CFrame.new(math.random(-30593, -23388), math.random(-30593, -10455), math.random(-30593, -10455))
+        until workspace.Terrain._Game.Admin:FindFirstChild("Regen") or regenfind2 == false or failsafe3
+	if failsafe3 then
+		--
+	else
+		PlayerService.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0, 0, 0)
+        	root.Anchored = false
+        	root.CFrame = workspace.Terrain._Game.Admin:FindFirstChild("Regen").CFrame + Vector3.new(0, 3, 0)
+        	regenfind2 = false
+		Chat("respawn me");Remind("Found the regen (KL)")
+	end
+end
 
 -- leaked regen
 function leakedcords()
