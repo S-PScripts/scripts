@@ -575,15 +575,36 @@ local gearlist = {
     ["pgun"] = { gearid = "34870758" },
     ["camfixer"] = { gearid = "79736563" },
 	
+    ["ar"] = { gearid = "4842207161" },
+    ["cambreak"] = { gearid = "4842207161" },
+
     ["painter"] = { gearid = "18474459" },
     ["paint bucket"] = { gearid = "18474459" },
 	
     ["telemon"] = { gearid = "93136746" },
     ["trapmine"] = { gearid = "11999247" },
     ["timegears"] = { gearid = "77443461" },
-    ["admslayer"] = { gearid = { "268586231", "1103011681"} },
-    ["kp"] = { gearid = {"583030187, 68539623"} },
-    ["icebreaker"] = { gearid = {"87361662", "66896601"} },
+	
+    ["admslayer"] = 
+	{ gearid = { 
+			"268586231",
+			"1103011681"
+		} 
+	},
+	
+    ["kp"] = 
+	{ gearid = {
+			"583030187", 
+			"68539623"
+		} 
+	},
+	
+    ["icebreaker"] = 
+	{ gearid = {
+			"87361662",
+			"66896601"
+		}
+	},
 	
     ["periastrons"] = 
 	{gearid = {
@@ -734,6 +755,7 @@ local turnlist = {
 		"pants [args2] 10571468508"
 		}
 	},
+	
     ["female"] = 
 	{name = {
 		"char [args2] 31342830", 
@@ -745,6 +767,7 @@ local turnlist = {
 		"pants [args2] 7219538593"
 		}
 	},
+	
     ["cop"] = 
 	{name = {
 		"unhat [args2]", 
@@ -754,6 +777,7 @@ local turnlist = {
 		"pants [args2] 6214369602"
 		}
 	},
+	
     ["hacker"] = 
 	{name = {
 		"unhat [args2]", 
@@ -765,6 +789,7 @@ local turnlist = {
 		"paint [args2] black"
 		}
 	},
+	
     ["thief"] = 
 	{name = {
 		"unhat [args2]", 
