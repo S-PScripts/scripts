@@ -842,6 +842,7 @@ function Alpaca() end
 function Piano() end
 function Bassdrop() end
 function Coolstory() end
+function Banana() end
 function TankGuitar() end
 function SkeleFriend() end
 function Spray() end
