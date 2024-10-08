@@ -10026,64 +10026,66 @@ task.spawn(function()
     end
 
     if mymusiconly == true then -- ii's admin since mine had a small bug and was also messy
-            local soundlock = tonumber(mymusiconlyid)
-            local origsound = soundlock
-            soundlock = "http://www.roblox.com/asset/?id="..tostring(soundlock)
-            local lastUpdateTime = tick()
-        local music = workspace.Terrain["_Game"].Folder:FindFirstChild("Sound")
-        if gottenmode == 1 then
-                    denumba = tonumber(music.TimePosition)
-                print(music.TimePosition)
-        else 
-                denumba = 0
-        end
-            repeat 
-                task.wait(0.1)
-                local currentTime = tick() 
-                local elapsedTime = currentTime - lastUpdateTime 
-                lastUpdateTime = currentTime 
+        	local soundlock = tonumber(mymusiconlyid)
+            	local origsound = soundlock
+            	soundlock = "http://www.roblox.com/asset/?id="..tostring(soundlock)
+           	local lastUpdateTime = tick()
+        	local music = workspace.Terrain["_Game"].Folder:FindFirstChild("Sound")
+
+        	if gottenmode == 1 then
+                    	denumba = tonumber(music.TimePosition)
+                	print(music.TimePosition)
+        	else 
+                	denumba = 0
+        	end
+
+            	repeat 
+                	task.wait(0.1)
+                	local currentTime = tick() 
+                	local elapsedTime = currentTime - lastUpdateTime 
+                	lastUpdateTime = currentTime 
 
                         denumba = denumba + elapsedTime 
 
-                if workspace.Terrain["_Game"].Folder:FindFirstChild("Sound") and musicoff == false then
-                            local music = workspace.Terrain["_Game"].Folder:FindFirstChild("Sound")
-                            if music.IsLoaded and music.SoundId == soundlock then
+                	if workspace.Terrain["_Game"].Folder:FindFirstChild("Sound") and musicoff == false then
+                            	local music = workspace.Terrain["_Game"].Folder:FindFirstChild("Sound")
+                            	if music.IsLoaded and music.SoundId == soundlock then
                                 -- print(music.TimePosition);print(denumba)
-                                if denumba > music.TimeLength then 
-                                            denumba = 0 
-                                end 
+                                	if denumba > music.TimeLength then 
+                                            	denumba = 0 
+                                	end 
 
-                                if math.abs(music.TimePosition - denumba) > 0.5 then
-                                            if denumba < music.TimePosition - 1 or denumba > music.TimePosition + 1 then
-                                                       print(music.TimePosition) ; print(denumba)
-                                                       music.TimePosition = denumba ; Remind("Fixed the time position!")
-                                           end
-                                end
-                            end
+                                	if math.abs(music.TimePosition - denumba) > 0.5 then
+                                        	if denumba < music.TimePosition - 1 or denumba > music.TimePosition + 1 then
+                                                	print(music.TimePosition) ; print(denumba)
+                                                        music.TimePosition = denumba ; Remind("Fixed the time position!")
+                                           	end
+                                	end
+                            	end
 
-                            if music.SoundId ~= soundlock then
-                                if musicoff == false then
-                                        if antimlog then
-                                                    Chat("music 00000000000000000000000000000"..tostring(origsound))
-                                        else
-                                                    Chat("music "..tostring(origsound))
-                                        end
-                                end                    
-                            end
+                            	if music.SoundId ~= soundlock then
+                                	if musicoff == false then
+                                        	if antimlog then
+                                                	Chat("music 00000000000000000000000000000"..tostring(origsound))
+                                        	else
+                                                    	Chat("music "..tostring(origsound))
+                                        	end
+                                	end                    
+                            	end
 
-                            if music.Playing == false and musicoff == false then
+                            	if music.Playing == false and musicoff == false then
                                         music:Play() 
-                            end
-                else
-                        if musicoff == false then
-                                    if antimlog then
-                                        Chat("music 00000000000000000000000000000"..tostring(origsound))
-                                    else
-                                                Chat("music "..tostring(origsound))
-                                end
-                            end
-                end
-                    until not mymusiconly
+                            	end
+                	else
+                        	if musicoff == false then
+                                	if antimlog then
+                                        	Chat("music 00000000000000000000000000000"..tostring(origsound))
+                                    	else
+                                        	Chat("music "..tostring(origsound))
+                                	end
+                            	end
+                	end
+                until not mymusiconly
         end
   end
 
