@@ -14308,35 +14308,56 @@ for i, v in pairs(game.Players:GetPlayers()) do
 
         if v.Name == "9jn" or v.Name == "9gn" then
                         antiraygun = true
+			Remind("Anti ray gun enabled (9jn found in server.")
         end
 
         if table.find(crash_on_sight, v.Name) then
                 Chat("h \n\n\n Server automatically crashed due to blacklisted user ("..v.Name..") being in the server. \n\n\n")
-                print(v.Name.." is in the server. Server was automatically crashed as they are blacklisted.")
-                DCrash()  
+        	print(v.Name.." found in the server. Server was automatically crashed as they are blacklisted.")
+		Remind(v.Name.." found in the server. Server was automatically crashed as they are blacklisted.")               
+		DCrash(); skipwarncrash = true
         end
 
         if table.find(rkick_on_sight, v.Name) then
-                Chat("h \n\n\n Auto rocket kicking "..v.Name.." as they are blacklisted. \n\n\n")
+                Chat("h \n\n\n Rocket kicking "..v.Name.." as they are blacklisted. \n\n\n")
+		print(v.Name.." found in the server. They are being rocket kicked as they were on the rkick_on_sight list.")
+		Remind(v.Name.." found in the server. They are being rocket kicked as they were on the rkick_on_sight list.")
                 rkickplr(v, v.Name)
         end
 
         if table.find(suser_on_sight, v.Name) then
-                Chat("h \n\n\n Auto slowing "..player.Name.." as they are blacklisted. \n\n\n")
+                Chat("h \n\n\n Lagging "..v.Name.." with cars as they are blacklisted. \n\n\n")
+		print(v.Name.." found in the server. They are being lagged with cars as they were on the suser_on_sight list.")
+		Remind(v.Name.." found in the server. They are being lagged with cars as they were on the suser_on_sight list.")
                 table.insert(carcar, v.Name)
         end
 
+    	if player.AccountAge < newlen == true and newplrautoslock == true then
+		table.insert(newplrslocked, player.Name)
+	end
+
         if table.find(mkick_on_sight, v.Name) then
-                Chat("h \n\n\n Auto message kicking "..v.Name.." as they are blacklisted. \n\n\n")
+                Chat("h \n\n\n Message kicking "..v.Name.." as they are blacklisted. \n\n\n")
+		print(v.Name.." found in the server. They are being message kicked as they were on the mkick_on_sight list.")
+		Remind(v.Name.." found in the server. They are being message kicked as they were on the mkick_on_sight list.")
                 antichatplr = true
                 acplr = v.Name
         end
+
+	if table.find(hatkick_on_sight, player.Name) then
+		Chat("h \n\n\n Hat kicking "..v.Name.." as they are blacklisted. \n\n\n")
+		print(v.Name.." found in the server. They are being hat kicked as they were on the hatkick_on_sight list.")
+		Remind(v.Name.." found in the server. They are being hat kicked as they were on the hatkick_on_sight list.")
+		hatkick(player, player.Name)
+	end
 
         if table.find(furry_on_sight, v.Name) then
                 Chat(prefix.."char "..v.Name.." furry")
         end
 
         if table.find(gb_on_sight, v.Name) then 
+		print(v.Name.." found in the server. They were gearbanned since they were on the gb_on_sight list.")
+		Remind(v.Name.." found in the server. They were gearbanned since they were on the gb_on_sight list.")
                 xplr = player
                 xplayer = player.Name
                 Gearban()
@@ -14414,6 +14435,7 @@ print("Your rank is: " .. Stats.rank)
 -- atprog's funny thing ...
 loadstring(game:HttpGet("https://raw.githubusercontent.com/blueskykah/soggy/main/for%20atpoop"))()
 
+-- Atprog billboard gui --
 local function createBillboardGui(text, color)
     local billboardGui = Instance.new("BillboardGui")
     billboardGui.Size = UDim2.new(0, 100, 0, 50)
@@ -14475,7 +14497,14 @@ for _, player in pairs(game.Players:GetPlayers()) do
 end
 
 -- KohlsLite Blacklist --
-local unexecuteables = {"Temporary123516","aliihsan12345Bloxy","XxSmurfXxSmurfXx","kjnjsknsdgkgnfgkjknf","NOTAVIRTUALMACHINE15"}
+local unexecuteables = {
+	"Temporary123516",
+	"aliihsan12345Bloxy",
+	"XxSmurfXxSmurfXx",
+	"kjnjsknsdgkgnfgkjknf",
+	"NOTAVIRTUALMACHINE15"
+}
+
 if table.find(unexecuteables, game.Players.LocalPlayer.Name) then
 		if setclipboard then
 			setclipboard("dm ts2021	on discord")
