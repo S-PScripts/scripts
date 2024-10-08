@@ -13297,6 +13297,7 @@ function SKCRAZE()
         
         for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
                 v.Parent = game.Players.LocalPlayer.Character
+		task.wait(0)
                 v:Activate()
         end
         
