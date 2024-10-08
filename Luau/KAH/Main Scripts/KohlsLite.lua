@@ -123,7 +123,8 @@ getgenv().deprefix = "."
 -- The version of KohlsLite
 getgenv().klversion = "1.83"
 
-getgenv().kohlsgui = false -- this exists i guess
+-- KohlsLite Start Gui
+getgenv().kohlsgui = fals
 
 -- Chat function
 local function Chat(msg)
@@ -135,9 +136,9 @@ local function Speak(msg)
     game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(msg, "All")
 end
 
+-- Prefix checker
 local prefix 
 
--- Prefix checker
 if getgenv().theprefix then
 	prefix = getgenv().theprefix
 else
@@ -155,27 +156,27 @@ local eincrash -- ignore
 local notifiedRespectFiltering = false
 
 -- Perm spoofer (speed)
-editedspeedis = 16
-editedspeed = true
+local editedspeedis = 16
+local editedspeed = true
 
 -- Perm spoofer (jumppower)
-editedjumpis = 50
-editedjump = true
+local editedjumpis = 50
+local editedjump = true
 
 -- Boombox range
-bgrange = 128
+local bgrange = 128
 
 -- Circa range
-circrad = 10
+local circrad = 10
 
 -- Mobile checker
-IsOnMobile = table.find({Enum.Platform.IOS, Enum.Platform.Android}, game:GetService("UserInputService"):GetPlatform()) -- infinite yield duh
+local IsOnMobile = table.find({Enum.Platform.IOS, Enum.Platform.Android}, game:GetService("UserInputService"):GetPlatform()) -- infinite yield duh
 
 -- Auto rejoin
-autorejoin = false
+local autorejoin = false
 
 -- Stats when loading
-Stats = {}
+local Stats = {}
 Stats.starttime = os.clock()
 
 -- Start up scripts
@@ -391,25 +392,34 @@ local newlen = 21 -- control what is considered as a new account
 -- Serverlock
 local slockenabled = false
 
--- auto char
-autocharid = "nll"
-autochar = false
+-- Auto char
+local autocharid = "nll"
+local autochar = false
 
--- watermark
-watermark_kl = false
+-- Watermark
+local watermark_kl = false
 -- watermarK_text = "KohlsLite" (unused)
 
--- Other stuff
+-- Loopkill
 local loopkill = {}
+
+-- Name spam
 local byecam = {}
+
+-- Car lag
 local carcar = {}
 
--- anti kill list i didn't make it for any other antis so cryyy!
-antikill = {}
+-- Anti kill list, I didn't make it for any other antis so cry!
+local antikill = {}
 
--- Gamepass saving
-permusers = {} -- users that use perm will be placed here
-personsusers = {} -- users that use persons will be placed here
+-- Gamepass saving 
+
+-- Users that use perm will be placed here
+local permusers = {}
+
+ -- Users that use persons will be placed here
+local personsusers = {}
+
 
 -- Auto stuff upon user joining
 
@@ -436,16 +446,16 @@ gb_on_sight = {}
 
 -- Variables for moving
 local movestatus = false
-Kohls = workspace.Terrain:WaitForChild("_Game")
-Admin = Kohls:WaitForChild("Admin")
-Pads = Admin:WaitForChild("Pads"):GetChildren()
+local Kohls = workspace.Terrain:WaitForChild("_Game")
+local Admin = Kohls:WaitForChild("Admin")
+local Pads = Admin:WaitForChild("Pads"):GetChildren()
 
-local musicplay
 
 -- These are all of the music ids I've saved
 -- Thanks to Dizzy for this idea of writing my musiclist
--- PLEASE NOTE THAT "GMUSIC1" ETC. IS INTENTIONAL. THE MISSING SPACE BETWEEN GMUSIC AND 1 IS INTENTIONAL.
--- exfamous stole this grrr
+-- It being gmusic1 instead of gmusic 1 is intentional!
+
+local musicplay
 
 local musictable = {
     ["1"] = { id = "9048375035", name = "All dropping 8 beats" },
@@ -820,36 +830,54 @@ local themecode = {
     ["23"] = {name = "blue sky", code = "ambient 0 0 256,colorshifttop 0 0 256,fogcolor 0 0 256,fogend 50"}
 }
 
+-- Acton fix
+function Clone() end
+function Table() end
+function Potion() end
+function MineTrip() end
+function Spike() end
+function Cannon() end
+function Zombie() end
+function Alpaca() end
+function Piano() end
+function Bassdrop() end
+function Coolstory() end
+function TankGuitar() end
+function SkeleFriend() end
+function Spray() end
+function Party() end
+
 -- Acton list
 local actions = {
-        clone = Clone,
-	cloneai = Clone,
-        table = Table,
-        raig = Table,
-        potion = Potion,
-        dance = Potion,
-        tripmine = MineTrip,
-        trip = MineTrip,
-        spike = Spike,
-        cannon = Cannon,
-        zombie = Zombie,
-        alpaca = Alpaca,
-        piano = Piano,
-        mozart = Piano,
-        bdrop = Bassdrop,
-        bassdrop = Bassdrop,
-        cstory = Coolstory,
-        coolstory = Coolstory,
-        banana = Banana,
-        tguitar = TankGuitar,
-        tankguitar = TankGuitar,
-        sfriend = SkeleFriend,
-        skelefriend = SkeleFriend,
-        skele = SkeleFriend,
-        spray = Spray,
-        nozzle = Spray,
-	party = Party
+    clone = Clone,
+    cloneai = Clone,
+    table = Table,
+    raig = Table,
+    potion = Potion,
+    dance = Potion,
+    tripmine = MineTrip,
+    trip = MineTrip,
+    spike = Spike,
+    cannon = Cannon,
+    zombie = Zombie,
+    alpaca = Alpaca,
+    piano = Piano,
+    mozart = Piano,
+    bdrop = Bassdrop,
+    bassdrop = Bassdrop,
+    cstory = Coolstory,
+    coolstory = Coolstory,
+    banana = Banana,
+    tguitar = TankGuitar,
+    tankguitar = TankGuitar,
+    sfriend = SkeleFriend,
+    skelefriend = SkeleFriend,
+    skele = SkeleFriend,
+    spray = Spray,
+    nozzle = Spray,
+    party = Party
 }
+
 
 -- Parts
 local ogcframes = {
@@ -1284,7 +1312,7 @@ local logmode = "default"
 -- local personpassid = 35748 or 37127 --> NBC, BC
 
 -- Mover 
-Mover = {}
+local Mover = {}
 
 Mover.Attached = {Value = false}
 Mover.Finished = {Value = false}
@@ -2221,7 +2249,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
             end
     end
 		
--- SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND SOUND --
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'pausem' then
        	for i,v in pairs(game:GetService("Workspace").Terrain["_Game"].Folder:GetDescendants()) do
                 if v:IsA("Sound") and v.Playing then
