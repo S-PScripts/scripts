@@ -3126,20 +3126,32 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'findregen' then -- i know it sucks but perm exists lol
-	failsafe3 = false
-        regenfind = true
-	task.wait(0)
-	findregen()
-	Remind("Finding the regen (skydived)")
+	if not string.sub(msg:lower(), 1, #prefix + 10) == prefix..'findregen2' then
+		failsafe3 = false
+        	regenfind = true
+		task.wait(0)
+		findregen()
+		Remind("Finding the regen (skydived)")
+	end
     end
 
     if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'nofindregen' then
-	failsafe3 = true
-        regenfind = false
-	Remind("Stopped the regen (skydived)")
+	if not string.sub(msg:lower(), 1, #prefix + 12) == prefix..'nofindregen2' then
+		failsafe3 = true
+        	regenfind = false
+		Remind("Stopped the regen (skydived)")
+	end
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'2findregen' then -- i know it sucks but perm exists lol
+    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unfindregen' then
+	if not string.sub(msg:lower(), 1, #prefix + 12) == prefix..'unfindregen2' then
+		failsafe3 = true
+        	regenfind = false
+		Remind("Stopped the regen (skydived)")
+	end
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'findregen' then -- i know it sucks but perm exists lol
         failsafe3 = false
 	regenfind2 = true
 	task.wait(0)
@@ -3147,7 +3159,13 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	Remind("Finding the regen (KL/CMD-Y)")
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'2nofindregen' then
+    if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'nofindregen2' then
+	failsafe3 = true
+        regenfind2 = false
+	Remind("Stopped the regen (KL/CMD-Y)")
+    end
+		
+    if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'unfindregen2' then
 	failsafe3 = true
         regenfind2 = false
 	Remind("Stopped the regen (KL/CMD-Y)")
@@ -5747,15 +5765,31 @@ return
 		Remind("Ungeared yourself... and everyone.")
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'nowater' then
-                SuperCMD("gear me 88146497")
-		Chat("Do actall on water places")
-    end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'watermap' then
                 SuperCMD("gear me 236438668")
 		Chat("Do actall then ungear so they don't retract")
     end
+
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'nowater' then
+                removewater()
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'removewater' then
+                removewater()
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'rwater' then
+                removewater()
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'clrwater' then
+                removewater()
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'clearwater' then
+                removewater()
+end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'fixpaint' then
 	Remind("Fixing paint...")
@@ -10506,7 +10540,7 @@ function techkick(kickin, kickinplr) -- Tech's hatkick
 end
 
 
-function slag(tplr, tpln) -- v, v.Name
+function slag(tplr, tpln) -- v, v.Name [cmd v3]
             local stop = false
 
             Chat("freeze " .. tpln)
@@ -13288,7 +13322,7 @@ function RNuke(amount, range)
 	     end
 end
 
-function SKCRAZE()
+function SKCRAZE() -- cmd v3
  	for i = 1,50 do
             Chat("gear me 200237939")
         end
@@ -13310,6 +13344,115 @@ function SKCRAZE()
 
 	repeat task.wait(0) until skf == false
 	conn:Disconnect()
+end
+
+function removewater() -- cmd v3
+        local regpart = Instance.new("Part", workspace.Terrain)
+        regpart.Anchored = true
+        regpart.Transparency = .5
+        regpart.Size = Vector3.new(28,28,28)
+        regpart.BrickColor = BrickColor.new("Really red")
+        regpart.CanCollide = false
+
+	local wt = workspace.Terrain
+	local kgf = Terrain:FindFirstChild("_Game")
+	local kw = kgf:FindFirstChild("Workspace")
+        kw.Parent = workspace
+
+        local llfc = -regpart.Size/2
+        local fbp = llfc + Vector3.new(1.5, 1.5, 1.5)
+
+        local MMC
+        local MBC
+
+	local mouse = game.Players.LocalPlayer:GetMouse()
+        Mouse.TargetFilter = workspace.Terrain
+
+        local function fill()
+            local currentpos
+            local currenttool
+
+            local iter = 0
+            for i = 1,128 do
+                task.wait()
+                Chat("gear me 88146497")
+            end
+
+            local nextiter = false
+
+            repeat task.wait() 
+			Chat("gear me 88146497") 
+	    until #game.Players.LocalPlayer.Backpack:GetChildren() >= 128
+
+            local oldamt = #game.Players.LocalPlayer.Character:GetChildren()
+
+            for _,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+                if v.Name == "ClownBomb" then
+                    v.Parent = game.Players.LocalPlayer.Character
+                end
+            end
+            
+            repeat task.wait() until (#game.Players.LocalPlayer.Character:GetChildren() - oldamt) >= 128
+
+            for xx = 0, regpart.Size.X - 5, 5 do
+                for yy = 0, regpart.Size.Y - 5, 5 do
+                    for zz = 0, regpart.Size.Z - 5, 5 do
+                        iter = iter + 1
+                        local tempconn
+                        local doned = false
+					
+                        tempconn = workspace.ChildAdded:Connect(function(c)
+                            if doned then 
+				tempconn:Disconnect()
+			    end
+				
+                            doned = true
+							
+                            if c.Name == "FuseBomb" and not c:GetAttribute("KL") then
+                                c:SetAttribute("KL", true)
+                                local block_offset_objectspace = Vector3.new(xx, yy, zz)
+                                local cf = regpart.CFrame * CFrame.new(fbp + block_offset_objectspace)
+                                
+                                c.CanCollide = false
+                                c.Locked = false
+                                c.CanTouch = false
+                                c.Massless = true
+                                -- sethiddenproperty(c, "NetworkIsSleeping", false)
+
+                                game:GetService("RunService").Heartbeat:Connect(function() 
+                                    c.Velocity = Vector3.new(54,34,0)
+                                    c.CFrame = cf
+                                end)
+                            end		
+                        end)
+					
+                        local d = game.Players.LocalPlayer.Character.ClownBomb
+                        d:Activate()
+                        d.Parent = game.ReplicatedStorage
+                        repeat task.wait() until done
+					
+                    end
+                end
+            end
+
+            regpart:Destroy()
+            kw.Parent = workspace.Terrain
+        end
+
+        MMC = Mouse.Move:Connect(function()
+            local mouseHit = Mouse.Hit
+            local mouseTarget = Mouse.Target
+            task.wait()
+            if Mouse.Target then
+                regpart.CFrame = CFrame.new(mouseHit.Position.X, mouseHit.Position.Y + ((mouseTarget.Size.Y / 2) + (regpart.Size.Y / 2)), mouseHit.Position.Z) * CFrame.fromEulerAnglesXYZ(math.rad(0),math.rad(0),math.rad(0))
+            end
+        end)
+
+        MBC = Mouse.Button1Down:Connect(function()
+            task.spawn(fill)
+            MMC:Disconnect()
+            MBC:Disconnect()       
+        end)
 end
 
 function lagify(plr, pln)
