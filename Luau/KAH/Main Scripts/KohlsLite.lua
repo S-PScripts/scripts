@@ -2198,12 +2198,12 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
     if string.sub(msg, 1, #prefix + 8)  == prefix..'gearlist' then
          Remind("Check your console by running /console!")
-         local sortedGearNames = {}
+         local sgn = {}
          for gearname, _ in pairs(gearlist) do
-                    table.insert(sortedGearNames, gearname)
+                    table.insert(sgn, gearname)
          end
-         table.sort(sortedGearNames)
-         for _, gearname in ipairs(sortedGearNames) do
+         table.sort(sgn)
+         for _, gearname in ipairs(sgn) do
                      local gearid = gearlist[gearname].gearid
                      if type(gearid) == "table" then
                         gearid = table.concat(gearid, ", ")
@@ -2218,18 +2218,18 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                     local target = args[2]
                     local charName = table.concat(args, " ", 3)
                     local china = charlist[charName].charid
-                Chat("char " .. target .. " " .. china)
+                    Chat("char " .. target .. " " .. china)
         end
     end
 
     if string.sub(msg, 1, #prefix + 8)  == prefix..'charlist' then
          Remind("Check your console by running /console!")
-         local sortedNames = {}
+         local sn = {}
          for charname, _ in pairs(charlist) do
-                    table.insert(sortedNames, charname)
+                    table.insert(sn, charname)
          end
-         table.sort(sortedNames)
-         for _, charname in ipairs(sortedNames) do
+         table.sort(sn)
+         for _, charname in ipairs(sn) do
                     print(charname .. " - IDS: " .. charlist[charname].charid)
          end
     end
@@ -5157,6 +5157,20 @@ return
     		else
         		Remind("Invalid action!")
     		end
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'listacton' then
+		local anz = {}
+
+		for an in pairs(actions) do
+    			table.insert(anz, an)
+		end
+
+		table.sort(anz)
+
+		for _, an in ipairs(anz) do
+    			print(an)
+		end
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'rfgun' then
