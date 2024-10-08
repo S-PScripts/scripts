@@ -6460,6 +6460,16 @@ return
         Remind("Turned this anti off for you!")
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'autoungb' then
+	autoungb = true
+	Remind("You will automatically get ungearbanned if gearbanned.")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unautoungb' then
+	autoungb = false
+	Remind("You will no longer automatically get ungearbanned if gearbanned.")
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antivoid' then
         antis.antivoid = true
         Remind("Turned this anti on for you!")
@@ -12051,6 +12061,16 @@ vplr.LocalPlayer.Idled:Connect(function()
         	virtualUser:ClickButton2(Vector2.new())
 	end
 end)
+
+autoungb = true
+game:GetService("CoreGui").RobloxGui.Backpack:GetPropertyChangedSignal("Visible"):Connect(function()
+                if not game:GetService("CoreGui").RobloxGui.Backpack.Visible then
+		    	if autoungb == true then
+                    		game:GetService("CoreGui").RobloxGui.Backpack.Visible = true
+			end
+                end
+end)
+-- game:GetService("CoreGui").RobloxGui.Backpack.Visible = true
 
 -- CLICK
 local mouse = game.Players.LocalPlayer:GetMouse()
