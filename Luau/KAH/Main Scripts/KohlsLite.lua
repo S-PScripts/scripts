@@ -5162,14 +5162,14 @@ return
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'listacton' then
 		local anz = {}
 
-		for an in pairs(actions) do
-    			table.insert(anz, an)
+		for actname in pairs(actions) do
+    			table.insert(anz, actname)
 		end
 
 		table.sort(anz)
 
-		for _, an in ipairs(anz) do
-    			print(an)
+		for _, actname in ipairs(anz) do
+    			print(actname)
 		end
     end
 
