@@ -574,14 +574,142 @@ local gearlist = {
     ["admslayer"] = { gearid = { "268586231", "1103011681"} },
     ["kp"] = { gearid = {"583030187, 68539623"} },
     ["icebreaker"] = { gearid = {"87361662", "66896601"} },
-    ["periastrons"] = { gearid = {"108158379", "80661504", "233520257", "73829193", "69499437", "139577901", "2544549379", "120307951", "99119240", "93136802", "80597060", "159229806", "77443461"} },
-    ["melees"] = { gearid = {"121946387", "12187348", "170897263", "427947884", "306971294", "306971294", "11999235", "28275809", "10758456", "243790334", "14719505", "13207169", "11956382", "10469910", "124472052", "20721924"} },
-    ["guns"] = { gearid = {"243007180", "116693764", "212296936", "168143042", "467138029", "42845609", "130113146", "26017478", "26014536", "9360722592", "18268645"} },
-    ["fungears"] = { gearid = {"111876831", "90718686", "283755431", "139578061", "90718686", "212641536", "392057539", "323477973", "78730532", "47597835", "212641536", "88143093", "73265108", "115377964", "98411393" } },
-    ["explosives"] = { gearid = {"88885539", "88885524", "73888479", "110337853", "101110605", "29957963", "503955938", "243788010", "88146497"} },
-    ["destructives"] = { gearid = {"125013830", "225921650", "60357972", "108158379"} },
-    ["swords"] = { gearid = {"25740034", "638089422", "170903610", "319655422", "125013769", "108158379", "2470750640", "2041982658", "361950297", "2103274863", "181356054", "163491866", "108158439"} },
-    ["rideables"] = { gearid = {"304719869", "2568114215", "158069143", "185422295", "346687565", "553939167", "820013867", "387285940", "163348575", "206799274", "928805891", "124127383", "125013849", "2445089071", "253519495"} }
+	
+    ["periastrons"] = 
+	{gearid = {
+			"108158379",
+			"80661504", 
+			"233520257", 
+			"73829193", 
+			"69499437", 
+			"139577901", 
+			"2544549379", 
+			"120307951", 
+			"99119240", 
+			"93136802", 
+			"80597060", 
+			"159229806", 
+			"77443461"
+		}
+	},
+	
+    ["melees"] = 
+	{gearid = {
+			"121946387", 
+			"12187348", 
+			"170897263", 
+			"427947884", 
+			"306971294", 
+			"306971294", 
+			"11999235", 
+			"28275809", 
+			"10758456", 
+			"243790334", 
+			"14719505",
+			"13207169",
+			"11956382",
+			"10469910", 
+			"124472052",
+			"20721924"
+		} 
+	},
+	
+    ["guns"] = 
+	{gearid = {
+			"243007180", 
+			"116693764", 
+			"212296936", 
+			"168143042", 
+			"467138029", 
+			"42845609",
+			"130113146",
+			"26017478", 
+			"26014536",
+			"9360722592",
+			"18268645"
+		} 
+	},
+	
+    ["fungears"] = 
+	{gearid = {
+			"111876831", 
+			"90718686", 
+			"283755431", 
+			"139578061", 
+			"90718686", 
+			"212641536",
+			"392057539",
+			"323477973",
+			"78730532", 
+			"47597835", 
+			"212641536",
+			"88143093", 
+			"73265108",
+			"115377964",
+			"98411393" 
+		}
+	},
+	
+    ["explosives"] = 
+	{gearid = {
+			"88885539", 
+			"88885524",
+			"73888479",
+			"110337853", 
+			"101110605", 
+			"29957963",
+			"503955938", 
+			"243788010", 
+			"88146497"
+		} 
+	},
+	
+    ["destructives"] = 
+	{gearid = {
+			"125013830", 
+			"225921650", 
+			"60357972", 
+			"108158379"
+		}
+	},
+	
+    ["swords"] = 
+	{gearid = {
+			"25740034",
+			"638089422", 
+			"170903610", 
+			"319655422", 
+			"125013769",
+			"108158379", 
+			"2470750640",
+			"2041982658", 
+			"361950297",
+			"2103274863",
+			"181356054", 
+			"163491866",
+			"108158439"
+		} 
+	},
+	
+    ["rideables"] = 
+	{gearid = {
+			"304719869", 
+			"2568114215", 
+			"158069143",
+			"185422295",
+			"346687565", 
+			"553939167",
+			"820013867", 
+			"387285940",
+			"163348575",
+			"206799274", 
+			"928805891", 
+			"124127383", 
+			"125013849", 
+			"2445089071", 
+			"253519495"
+		} 
+	}
 }
 
 -- Saved turns
@@ -1115,6 +1243,8 @@ local antigear = false
 local antigb = true
 local antipaint = false
 local antiattach2 = false
+local antiperi = true
+local noblt = false
 
 local emranticrash = false
 
@@ -1124,7 +1254,6 @@ local antidisco = false
 local antifogend = false
 local antichat = false
 local antiattach = false
-local noblt = false
 
 -- Gojo server lock
 local gjdelock = false
@@ -1138,7 +1267,7 @@ local AntiLogs = false
 local noobdetect = true
 local welcomemsg = true
 
--- anti announcer (antigear/anticrash/antipaint/antigb/antiattach2/antiraygun...)
+-- anti announcer (antigear/anticrash/antipaint/antigb/antiattach2/antiperi/antiraygun...)
 local crash_an = false
 
 -- slock/bl/wl/gearwl/padban etc...
@@ -5628,6 +5757,16 @@ return
 	Remind("Anti ivory is now disabled.")
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'antiperi' then
+		antiperi = true
+		Remind("Anti periastron is now enabled.")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unantiperi' then
+		antiperi = false
+		Remind("Anti periastron is now disabled.")
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'antiattach' then
 	if not string.sub(msg:lower(), 1, #prefix + 11) == prefix..'antiattach2' then
         	antiattach = true
@@ -6870,7 +7009,19 @@ return
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'freerobux' then 
-		Chat("h \n\n\n [agspureiam]: Hey KAH users! Give me your passsword and I can give you robux for FREE! \n\n\n")
+	Speak("I have a really cool script that can give me free robux")
+	task.wait(4)
+	Speak("while true do end"); Remind("wow you're so smart")
+	task.wait(1)
+	while true do end
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'febypass' then 
+	Speak("I have a really cool script that bypasses fe")
+	task.wait(4)
+	Speak("while true do end"); Remind("wow you're so smart")
+	task.wait(1)
+	while true do end
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'reserver' then -- kohlsnoob and betterpersons (tech)
@@ -8256,7 +8407,7 @@ connections[#connections + 1] =
 	task.wait()
 	if antis.antimesh then
         	for i, v in pairs(game.Workspace:GetDescendants()) do
-    			if v:IsA("Accessory") and (v.Name == "Accessory (Pointy)" or v.Name == "Accessory (happy)" or v.Name == "Accessory (SUN)" or v.Name == "Accessory (MeshPart)" or v.Name == "") then
+    			if v:IsA("Accessory") and (v.Name == "Accessory (Pointy)" or v.Name == "Accessory (happy)" or v.Name == "Accessory (SUN)" or v.Name == "Accessory (MeshPart)" or v.Name == "") then -- cxo
         			v:Destroy()
     			end
 		end
@@ -8484,13 +8635,52 @@ connections[#connections + 1] =
 end)
 
 -- Antis (tool related)
-local crashTools = {"OrinthianSwordAndShield", "VampireVanquisher","Emerald Knights of the Seventh Sanctum Sword and Shield"}
-local attachTools = {"IvoryPeriastron"}
-local nogearTools = {"PortableJustice"}
-local colourTools = {"PaintBucket", "SubspaceTripmine"}
-local miscTools = {"DaggerofShatteredDimensions", "SledgeHammer", "AR", "Transmorpher"}
-local ninejntools = {"HyperlaserGun","Transmorpher","ConfusoRay-672"}
-local crashToolsLP = {"DriveBloxUltimateCar","BlueBucket","HotPotato"}
+local crashTools = 
+	{"OrinthianSwordAndShield", 
+	"VampireVanquisher",
+	"Emerald Knights of the Seventh Sanctum Sword and Shield"}
+
+local attachTools = 
+		{"IvoryPeriastron"}
+
+-- Sin X List!
+local PeriastronTools = {
+    "AmethystPeriastron", --      93136802
+    "AzurePeriastron", --         69499437
+    "ChartreusePeriastron", --    80661504
+    "CrimsonPeriastron", --       99119240
+    "FakeChartreusePeriastron",-- 80597060
+    "FallPeriastron", --          2544549379
+    "FestivePeriastron", --       139577901
+    "GrimgoldPeriastron", --      73829193
+    "IvoryPeriastron", --         108158379
+    "JoyfulPeriastron", --        233520257
+    "NoirPeriastron", --          120307951
+    "RainbowPeriastron" --        159229806
+} 
+
+local nogearTools = 
+		{"PortableJustice"}
+
+local colourTools = 
+		{"PaintBucket", 
+		"SubspaceTripmine"}
+
+local miscTools = 
+		{"DaggerofShatteredDimensions", 
+		"SledgeHammer", 
+		"AR", 
+		"Transmorpher"}
+
+local ninejntools = 
+		{"HyperlaserGun",
+		"Transmorpher",
+		"ConfusoRay-672"}
+
+local crashToolsLP = 
+		{"DriveBloxUltimateCar",
+		"BlueBucket",
+		"HotPotato"}
 
 -- Function for the antis
 game:GetService("RunService").RenderStepped:Connect(function()
@@ -8683,6 +8873,60 @@ game:GetService("RunService").RenderStepped:Connect(function()
 
 					Remind("Anti-attach2 tool found on workplace")
 					print("Anti-attach2 tool found on workplace")
+				end
+		end
+
+		for i, tool in PeriastronTools do
+				for i, v in game.Players:GetPlayers() do
+					if v.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name)) then
+						if v.Backpack:FindFirstChild(tool) then
+							if antiperi then
+								Chat("ungear " .. v.Name)
+								Chat("punish " .. v.Name)
+								Chat("clr")
+								Chat(prefix .. "regen")
+
+								if crash_an then
+									Chat("h \n\n\n "..v.Name.." tried using a periastron with anti-periastron enabled. \n\n\n")
+								end
+
+								Remind("Anti-periastron triggered by "..v.Name)
+								print("Anti-periastron triggered by "..v.Name)
+							end
+						end
+					end
+
+					if v.Name ~= game.Players.LocalPlayer.Name and (not table.find(GWhitelisted, v.Name) and not table.find(pgwl, v.Name)) then
+						if v.Character and v.Character:FindFirstChild(tool) then
+							if antiperi then
+								Chat("ungear " .. v.Name)
+								Chat("punish " .. v.Name)
+								Chat("clr")
+								Chat(prefix .. "regen")
+
+								if crash_an then
+									Chat("h \n\n\n "..v.Name.." tried using a periastron with anti-periastron enabled. \n\n\n")
+								end
+
+								Remind("Anti-periastron triggered by "..v.Name)
+								print("Anti-periastron triggered by "..v.Name)
+							end
+						end
+					end
+				end
+
+				if workspace:FindFirstChild(tool) then
+					Chat("ungear others")
+					Chat("punish others")
+					Chat("clr")
+					Chat(prefix .. "regen")
+
+					if crash_an then
+						Chat("h \n\n\n Periastron found on workspace with anti-periastron enabled. \n\n\n")
+					end
+
+					Remind("Anti-periastron tool found on workplace")
+					print("Anti-periastron tool found on workplace")
 				end
 		end
 
