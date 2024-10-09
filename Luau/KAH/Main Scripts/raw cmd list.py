@@ -6511,6 +6511,6 @@ commands_from_lua = re.findall(r"prefix\.\.'(.*?)'", lua_code)
 # Print the extracted commands in the desired format
 for command in commands_from_lua:
     print(f"print(prefix..'{command}')")
-    print("\n")
+    print("print('\n')")
 
 
