@@ -7630,9 +7630,19 @@ end
 		Remind("You are now sitting! To stop sitting, jump... or do unsit.")
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'stun' then
+		game.Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid').PlatformStand = true
+		Remind("You are now stunned! To stop being stunned, run unstun.")
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'unsit' then
 		game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").Sit = false
-		Remind("Were you too lazy to jump, or were you so stupid you didn't know how to so you had to use this command?")
+		Remind("You actually ran it?")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'unstun' then
+		game.Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid').PlatformStand = false
+		Remind("You are now unstunned!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'trip' then
