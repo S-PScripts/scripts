@@ -1971,6 +1971,16 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	    bom.Remote:FireServer("PlaySong", tonumber(myplay))
       end
 
+      if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'bcirca' then -- not finished yet
+		for i, v  in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+    			if v:IsA("Tool") then
+        			pcall(function()
+            				v.Remote:FireServer("PlaySong",18841891575)
+        			end)
+   		 	end
+		end
+      end
+		
       if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'mboombox' then
             Chat("gear me 212641536")
             task.wait(0.5)
