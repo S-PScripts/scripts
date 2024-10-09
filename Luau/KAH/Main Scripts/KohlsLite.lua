@@ -14822,13 +14822,21 @@ if table.find(unexecuteables, game.Players.LocalPlayer.Name) then
                 task.wait(2.5); while true do end
 end
 
+script_is_off = false
+if script_is_off then
+	if setclipboard then
+			setclipboard("dm ts2021	on discord")
+	end
+	game.Players.LocalPlayer:Kick("[KohlsLite]: Major update in process! Script will be back up soon (I hope).") 
+end
+
 local atprogcakeday = "08/23" -- atprog's birthday
 local spcakeday = "04/28" --
 
 local ctime = os.date("%m/%d")
 
 if ctime == atprogcakeday then			
-	Remind("It's atprog birthday! If you see him, do .cakeday!")
+	Remind("It's atprog's birthday! If you see him, do .cakeday!")
 elseif ctime == spcakeday then
 	Remind("It's my birthday! If you see me, do .cakeday!")
 else
@@ -14987,25 +14995,25 @@ end
 -- Random quotes jajaja
 aqwerty = math.random(1,10)
 if aqwerty == 1 then
-	Remind("when i set a variable wrong and break the script again jajaja")
+	Remind("When I set a variable wrong and break the script (again)-")
 elseif aqwerty == 2 then
-	Remind("mhm means my hot man")
+	Remind("mhm means my hot man.")
 elseif aqwerty == 3 then
-	Remind("i stepped on a slug yuckkkk")
+	Remind("I stepped on a slug before writing this EW!")
 elseif aqwerty == 4 then
-	Remind("KohlsLite is the best script to morbius all over")
+	Remind("KohlsLite is the best script to bleugh all over!")
 elseif aqwerty == 5 then
-	Remind("Solonium + PR Script better than skidlite")
+	Remind("Solonium + PR Script better than SkidLite.")
 elseif aqwerty == 6 then
-	Remind("oh my you found secret!")
+	Remind("Oh my, you found a secret!")
 elseif aqwerty == 7 then
 	Remind("Where's the nearest 7/11?")
 elseif aqwerty == 8 then
-	Remind("whats math.random? what's wrong with 10 elseifs!")
+	Remind("What's math.random? There's nothing wrong with a bunch of elseifs!")
 elseif aqwerty == 9 then
-	Remind("shortcutv3 var better than kohlsplus")
+	Remind("Shortcut v3-var is better than SkidLite!")
 else
-	Remind("you shouldnt get this message hecker (jk)")
+	Remind("You shouldn't get this message, hecker (jk)")
 end
 
 --[[
@@ -15015,7 +15023,7 @@ Things to add/fix. Feel free to fix these and send the code and I'll credit you
 -> Part drawer
 -> Boombox visualiser
 -> Part builder
--> Object mover (cmd pi version)
+-> Object mover (cmd pi version) (do i really need this? also, i think i'm talking about the btools, not the mover)
 -> Fix control
 
 -> Can't fix these until I get a Windows PC, this might be a long time... ;(
