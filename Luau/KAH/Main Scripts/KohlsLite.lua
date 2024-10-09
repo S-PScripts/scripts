@@ -1212,10 +1212,19 @@ local Workspace_Folder = Game_Folder.Workspace
 local Admin_Folder = Game_Folder.Admin
 
 -- Keybinds
-local housekeybind = "h" -- house keybind
-local rekeybind = "r" -- reset keybind
-local flykeybind = "f" -- fly keybind
--- local crashkey = "e"  -- crash keybind (unused)
+
+-- Teleport to house
+local housekeybind = "h"
+
+-- Reset
+local rekeybind = "r" 
+
+-- Fly (KAH)
+local flykeybind = "f"
+
+-- Dog crash
+local crashkey = "e"  
+
 local keybindz = true
 local keybindz_unsafe = false
 
@@ -4885,6 +4894,28 @@ return
 	Remind("UNSAFE Key binds disabled.")
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'setkey' then
+		local args = string.split(msg, " ")
+        	if #args == 3 then
+                	keyb = args[2]
+			kmart = args[3]
+			if keyb == "house" then
+				housekeybind =args[3]
+			elseif keyb == "reset" then
+				rekeybind = args[3]
+			elseif keyb == "fly" then
+				flykeybind = args[3]
+			elseif keyb == "crash" then
+				crashkey = args[3]
+			else
+				Remind("Argument 2 invalid [must be house/reset/fly/crash]")
+			end
+				
+		else
+			Remind("Invalid amount of arguments (must be 3)")
+		end
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unalladmin' then
 	alladmin = false
         Chat("h \n\n\n Free admin is off. \n\n\n")
@@ -4892,17 +4923,19 @@ return
     end
 
     if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'nok' then
-                NOK()
-		Remind("You will no longer die to the obby!")
+		if not (string.sub(msg:lower(), 1, #prefix + 4) == prefix..'nok2' or string.sub(msg:lower(), 1, #prefix + 4) == prefix..'nok3') then
+                	NOK()
+			Remind("You will no longer die to the obby!")
+		end
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'2nok' then
-                NOK2()
-		Remind("You will no longer die to the obby! (2)")
+    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'nok2' then
+        	NOK2()
+		Remind("You will no longer die to the obby! (2)")	
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'3nok' then
-                NOK3()
+    if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'nok3' then
+		NOK3()
 		Remind("You will no longer die to the obby! (3)")
     end
 
