@@ -855,66 +855,6 @@ local themecode = {
     ["23"] = {name = "blue sky", code = "ambient 0 0 256,colorshifttop 0 0 256,fogcolor 0 0 256,fogend 50"}
 }
 
-local actions = {}
-
-actions.clone = function() 
-    Clone() 
-end
-
-actions.cloneai = actions.clone
-actions.table = function() 
-    Table() 
-end
-
-actions.raig = actions.table
-actions.potion = function() 
-	Potion()
-end
-actions.dance = actions.potion
-actions.tripmine = function() 
-	MineTrip()
-end
-actions.trip = actions.tripmine
-actions.spike = function() 
-	Spike()
-end
-actions.cannon = function() 
-	Cannon()
-end
-actions.zombie = function() 
-	Zombie()
-end
-actions.alpaca = function() 
-	Alpaca()
-end
-actions.piano = function() 
-	Piano()
-end
-actions.bassdrop = function() 
-	Bassdrop()
-end
-actions.coolstory = function() 
-	Coolstory()
-end
-actions.banana = function() 
-	Banana()
-end
-actions.tankguitar = function() 
-	TankGuitar()
-end
-actions.sfriend = function() 
-	SkeleFriend()
-end
-actions.skelefriend = actions.sfriend
-actions.skele = actions.sfriend
-actions.spray = function() 
-	Spray()
-end
-actions.nozzle = actions.spray
-actions.party = function() 
-	Party()
-end
-
 -- Parts
 local ogcframes = {
                 ["SmoothBlockModel178"] = {-13.0650005, 45.4300003, 57.2430038, 1, 0, 0, 0, 1, 0, 0, 0, 1},
@@ -1276,6 +1216,8 @@ local housekeybind = "h" -- house keybind
 local rekeybind = "r" -- reset keybind
 local flykeybind = "f" -- fly keybind
 -- local crashkey = "e"  -- crash keybind (unused)
+local keybindz = true
+local keybindz_unsafe = false
 
 -- Auto things when people join
 local autogpcheck = true -- automatically check for player's gamepasses
@@ -4921,6 +4863,26 @@ return
 	alladmin = true
 	Chat("h \n\n\n Everyone has been given admin! Chat any command. \n\n\n")
 	Remind("All admin enabled.")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'keybind' then
+	keybindz = true
+	Remind("Key binds enabled.")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'vkeybind' then
+	keybindz_unsafe = true
+	Remind("UNSAFE Key binds enabled (include crash keybind).")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'unkeybind' then
+	keybindz = false
+	Remind("Key binds disabled.")
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unvkeybind' then
+	keybindz_unsafe = false
+	Remind("UNSAFE Key binds disabled.")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unalladmin' then
@@ -9575,20 +9537,25 @@ end
 -- keybinds
 game.Players.LocalPlayer:GetMouse().KeyDown:connect(function(key)
         task.wait(0)
-        if key:lower() == housekeybind then
-                House()
-        end
-        if key:lower() == rekeybind then
-                Chat("reset me")
-        end        
+	if keybindz then
+        	if key:lower() == housekeybind then
+                	House()
+        	end
+			
+        	if key:lower() == rekeybind then
+                	Chat("reset me")
+        	end        
 
-	if key:lower() == flykeybind then
-                Chat(prefix.."ufly")
-        end   
-
-	--[[if key:lower() == crashkey then
-                DCrash()
-        end     ]]
+		if key:lower() == flykeybind then
+                	Chat(prefix.."ufly")
+        	end   
+	end
+		
+	if keybindz_unsafe then
+		if key:lower() == crashkey then
+                	DCrash()
+        	end
+	end
 end)
 
 -- some antis and admin system
@@ -11164,6 +11131,66 @@ function Playlist(shazam) -- cmd v3
             repeat task.wait() until musicskip
             Chat("music 0") 
         end
+end
+
+local actions = {}
+
+actions.clone = function() 
+    Clone() 
+end
+
+actions.cloneai = actions.clone
+actions.table = function() 
+    Table() 
+end
+
+actions.raig = actions.table
+actions.potion = function() 
+	Potion()
+end
+actions.dance = actions.potion
+actions.tripmine = function() 
+	MineTrip()
+end
+actions.trip = actions.tripmine
+actions.spike = function() 
+	Spike()
+end
+actions.cannon = function() 
+	Cannon()
+end
+actions.zombie = function() 
+	Zombie()
+end
+actions.alpaca = function() 
+	Alpaca()
+end
+actions.piano = function() 
+	Piano()
+end
+actions.bassdrop = function() 
+	Bassdrop()
+end
+actions.coolstory = function() 
+	Coolstory()
+end
+actions.banana = function() 
+	Banana()
+end
+actions.tankguitar = function() 
+	TankGuitar()
+end
+actions.sfriend = function() 
+	SkeleFriend()
+end
+actions.skelefriend = actions.sfriend
+actions.skele = actions.sfriend
+actions.spray = function() 
+	Spray()
+end
+actions.nozzle = actions.spray
+actions.party = function() 
+	Party()
 end
 
 -- R15 checker
