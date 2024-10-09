@@ -4742,17 +4742,25 @@ return
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'circa' then
 	Remind("Warning! Experimental command.")
 	local ic = 0
+	local tools = game.Players.LocalPlayer.Backpack:GetChildren()
+	local toolCount = 0
 
-    	for _, item in ipairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
-        	if item:IsA("Tool") then
-            		item.Parent = game.Players.LocalPlayer.Character
-            		ic = ic + 1
-		        local angle = (ic - 1) * (360 / #game.Players.LocalPlayer.Backpack:GetChildren()) * (math.pi / 180)
-            		local x = circrad * math.cos(angle)
-            		local z = circrad * math.sin(angle)
-            		item.GripPos = Vector3.new(x, 1, z)
-        	end
-    	end
+for _, item in ipairs(tools) do
+    if item:IsA("Tool") then
+        toolCount = toolCount + 1
+    end
+end
+
+for _, item in ipairs(tools) do
+    if item:IsA("Tool") then
+        item.Parent = game.Players.LocalPlayer.Character
+        ic = ic + 1
+        local angle = (ic - 1) * (360 / toolCount) * (math.pi / 180)
+        local x = circrad * math.cos(angle)
+        local z = circrad * math.sin(angle)
+        item.GripPos = Vector3.new(x, 1, z) 
+    end
+end
 
     end
 
