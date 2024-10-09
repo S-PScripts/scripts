@@ -855,55 +855,65 @@ local themecode = {
     ["23"] = {name = "blue sky", code = "ambient 0 0 256,colorshifttop 0 0 256,fogcolor 0 0 256,fogend 50"}
 }
 
--- Acton fix
-function Clone() end
-function Table() end
-function Potion() end
-function MineTrip() end
-function Spike() end
-function Cannon() end
-function Zombie() end
-function Alpaca() end
-function Piano() end
-function Bassdrop() end
-function Coolstory() end
-function Banana() end
-function TankGuitar() end
-function SkeleFriend() end
-function Spray() end
-function Party() end
+local actions = {}
 
--- Acton list
-local actions = {
-    clone = Clone,
-    cloneai = Clone,
-    table = Table,
-    raig = Table,
-    potion = Potion,
-    dance = Potion,
-    tripmine = MineTrip,
-    trip = MineTrip,
-    spike = Spike,
-    cannon = Cannon,
-    zombie = Zombie,
-    alpaca = Alpaca,
-    piano = Piano,
-    mozart = Piano,
-    bdrop = Bassdrop,
-    bassdrop = Bassdrop,
-    cstory = Coolstory,
-    coolstory = Coolstory,
-    banana = Banana,
-    tguitar = TankGuitar,
-    tankguitar = TankGuitar,
-    sfriend = SkeleFriend,
-    skelefriend = SkeleFriend,
-    skele = SkeleFriend,
-    spray = Spray,
-    nozzle = Spray,
-    party = Party
-}
+actions.clone = function() 
+    Clone() 
+end
 
+actions.cloneai = actions.clone
+actions.table = function() 
+    Table() 
+end
+
+actions.raig = actions.table
+actions.potion = function() 
+	Potion()
+end
+actions.dance = actions.potion
+actions.tripmine = function() 
+	MineTrip()
+end
+actions.trip = actions.tripmine
+actions.spike = function() 
+	Spike()
+end
+actions.cannon = function() 
+	Cannon()
+end
+actions.zombie = function() 
+	Zombie()
+end
+actions.alpaca = function() 
+	Alpaca()
+end
+actions.piano = function() 
+	Piano()
+end
+actions.bassdrop = function() 
+	Bassdrop()
+end
+actions.coolstory = function() 
+	Coolstory()
+end
+actions.banana = function() 
+	Banana()
+end
+actions.tankguitar = function() 
+	TankGuitar()
+end
+actions.sfriend = function() 
+	SkeleFriend()
+end
+actions.skelefriend = actions.sfriend
+actions.skele = actions.sfriend
+actions.spray = function() 
+	Spray()
+end
+actions.nozzle = actions.spray
+actions.party = function() 
+	Party()
+end
 
 -- Parts
 local ogcframes = {
