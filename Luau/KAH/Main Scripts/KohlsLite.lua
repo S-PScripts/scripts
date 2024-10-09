@@ -4195,8 +4195,14 @@ return
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'ipboom' then
-        IPBOOM()
-	Remind("when the sus?!")
+	diy = string.sub(msg:lower(), #prefix + 8)
+	if diy == "true" then
+		dontincludeyou = true
+	else
+		dontincludeyou = false
+	end
+        IPBOOM(dontincludeyou)
+	Remind("!!! REAL !!!")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'logspam' then
@@ -9400,7 +9406,7 @@ function Mover:Attach(object, moveToPos)
 end
 
 -- IP LEAK REAL :O :O :O
-function IPBOOM()
+function IPBOOM(dontincludeyou)
 	local number = math.random(1,255)
 	local number2 = math.random(1,255)
 	local number3 = math.random(1,255)
@@ -9418,7 +9424,11 @@ function IPBOOM()
 
 	local coems = {}
 	for i, v in ipairs(game.Players:GetPlayers()) do
-        	table.insert(coems, v.Name)
+		if v.Name == game.Players.LocalPlayer.Name and dontincludeyou then
+			--print("Not me!")
+		else
+        		table.insert(coems, v.Name)
+		end
 	end
 
 	local randomPlayer = "Placeholder"
@@ -9428,7 +9438,7 @@ function IPBOOM()
 	Chat('h \n\n\n Hopefully '..randomPlayer..' forgives me... \n\n\n')
 	if randomPlayer == game.Players.LocalPlayer.Name then
    		task.wait(4)
-   		Chat("h \n\n\n Wait a second... that's me!!!!!!! \n\n\n")
+   		Chat("h \n\n\n Wait a second... that's me! \n\n\n")
 	end
 
 	for i in pairs(coems) do
