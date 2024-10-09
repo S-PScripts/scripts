@@ -5203,6 +5203,10 @@ return
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'acton' then
+
+		return print("i broke this command, I'll revert my buggy changes later")
+
+--[[
     		local args = string.split(msg, " ")
     
     		if #args ~= 3 then
@@ -5218,7 +5222,7 @@ return
         		Remind("Action: " .. act)
     		else
         		Remind("Invalid action!")
-    		end
+    		end ]]
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'listacton' then
@@ -14639,8 +14643,8 @@ for i, v in pairs(game.Players:GetPlayers()) do
                 table.insert(carcar, v.Name)
         end
 
-    	if player.AccountAge < newlen == true and newplrautoslock == true then
-		table.insert(newplrslocked, player.Name)
+    	if v.AccountAge < newlen == true and newplrautoslock == true then
+		table.insert(newplrslocked, v.Name)
 	end
 
         if table.find(mkick_on_sight, v.Name) then
@@ -14651,11 +14655,11 @@ for i, v in pairs(game.Players:GetPlayers()) do
                 acplr = v.Name
         end
 
-	if table.find(hatkick_on_sight, player.Name) then
+	if table.find(hatkick_on_sight, v.Name) then
 		Chat("h \n\n\n Hat kicking "..v.Name.." as they are blacklisted. \n\n\n")
 		print(v.Name.." found in the server. They are being hat kicked as they were on the hatkick_on_sight list.")
 		Remind(v.Name.." found in the server. They are being hat kicked as they were on the hatkick_on_sight list.")
-		hatkick(player, player.Name)
+		hatkick(player, v.Name)
 	end
 
         if table.find(furry_on_sight, v.Name) then
@@ -14666,7 +14670,7 @@ for i, v in pairs(game.Players:GetPlayers()) do
 		print(v.Name.." found in the server. They were gearbanned since they were on the gb_on_sight list.")
 		Remind(v.Name.." found in the server. They were gearbanned since they were on the gb_on_sight list.")
                 xplr = player
-                xplayer = player.Name
+                xplayer = v.Name
                 Gearban()
         end
 
