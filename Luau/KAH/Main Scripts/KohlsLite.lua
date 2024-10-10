@@ -170,7 +170,7 @@ local bgrange = 128
 local circrad = 10
 
 -- Mobile checker
-local IsOnMobile = table.find({Enum.Platform.IOS, Enum.Platform.Android}, game:GetService("UserInputService"):GetPlatform()) -- infinite yield duh
+local IsOnMobile = table.find({Enum.Platform.IOS, Enum.Platform.Android}, game:GetService("UserInputService"):GetPlatform()) -- From Infinite Yield
 
 -- Auto rejoin
 local autorejoin = false
