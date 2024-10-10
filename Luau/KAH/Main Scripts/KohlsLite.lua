@@ -1996,7 +1996,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
     			if v:IsA("Tool") then
         			pcall(function()
-            				v.Remote:FireServer("PlaySong",song)
+            				v.Remote:FireServer("PlaySong",myplay)
         			end)
    		 	end
 		end
@@ -2067,13 +2067,15 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
             	end
 			-- broken, fixes coming soon
 		for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
-            		v.GripPos = Vector3.new(rng(), 1, rng())
+			if v:IsA("Tool") then
+				v.GripPos = Vector3.new(rng(), 1, rng())
+			end
 		end
 		
 		for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
     			if v:IsA("Tool") then
         			pcall(function()
-            				v.Remote:FireServer("PlaySong",song)
+            				v.Remote:FireServer("PlaySong",myplay)
         			end)
    		 	end
 		end
