@@ -1971,16 +1971,54 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	    bom.Remote:FireServer("PlaySong", tonumber(myplay))
       end
 
-      if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'bcirca' then -- not finished yet
-		for i, v  in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+      if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'synpbb' then
+		Remind("Setting up...")
+		SuperCMD(prefix.."gear me boombox")
+		task.wait(0.5)
+  		local check = string.sub(msg:lower(), #prefix + 8, #prefix + 8)
+	    	if check == "g" then
+			local idrinkrum = string.sub(msg, #prefix + 9) ; task.wait(0)
+			myplay = musictable[idrinkrum].id
+	    	else
+			myplay = string.sub(msg:lower(), 8 + #prefix)
+	    	end	
+		task.wait(0.5)
+			
+  		local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
+                for _, v in ipairs(Backpack:GetChildren()) do
+                            v.Parent = game.Players.LocalPlayer.Character
+                end
+		task.wait(0.5)
+			
+		for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
     			if v:IsA("Tool") then
         			pcall(function()
-            				v.Remote:FireServer("PlaySong",18841891575)
+            				v.Remote:FireServer("PlaySong",song)
         			end)
    		 	end
 		end
       end
 		
+      if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'bcirca' then
+		Remind("Ensure boomboxes are equipped.")
+           	local check = string.sub(msg:lower(), #prefix + 8, #prefix + 8)
+	   	if check == "g" then
+			local idrinkrum = string.sub(msg, #prefix + 9) ; task.wait(0)
+			myplay = musictable[idrinkrum].id
+	    	else
+			myplay = string.sub(msg:lower(), 8 + #prefix)
+	    	end
+		song = tonumber(myplay)
+			
+		for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+    			if v:IsA("Tool") then
+        			pcall(function()
+            				v.Remote:FireServer("PlaySong",song)
+        			end)
+   		 	end
+		end
+      end
+
       if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'mboombox' then
             Chat("gear me 212641536")
             task.wait(0.5)
@@ -2002,6 +2040,38 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
             bom.GripPos = Vector3.new(rng(), 1, rng())
       end
 
+      if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'synmbb' then
+		Remind("Setting up...")
+		SuperCMD(prefix.."gear me boombox")
+		task.wait(0.5)
+  		local check = string.sub(msg:lower(), #prefix + 8, #prefix + 8)
+	    	if check == "g" then
+			local idrinkrum = string.sub(msg, #prefix + 9) ; task.wait(0)
+			myplay = musictable[idrinkrum].id
+	    	else
+			myplay = string.sub(msg:lower(), 8 + #prefix)
+	    	end	
+		task.wait(0.5)
+			
+  		local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
+                for _, v in ipairs(Backpack:GetChildren()) do
+                            v.Parent = game.Players.LocalPlayer.Character
+                end
+		task.wait(0.5)
+			
+		for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+    			if v:IsA("Tool") then
+        			pcall(function()
+            				v.Remote:FireServer("PlaySong",song)
+        			end)
+   		 	end
+		end
+
+	  	function rng() 
+                	return math.random(-bgrange, bgrange)
+            	end
+            	bom.GripPos = Vector3.new(rng(), 1, rng())
+      end
       if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'bgrange' then
 		bgrange = tonumber(string.sub(msg:lower(), #prefix + 9))
       end
