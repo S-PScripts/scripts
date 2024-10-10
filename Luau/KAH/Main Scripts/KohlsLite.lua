@@ -2055,22 +2055,18 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 			myplay = string.sub(msg:lower(), 8 + #prefix)
 	    	end	
 		task.wait(1)
-			
-  		local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
-                for _, v in ipairs(Backpack:GetChildren()) do
-                            v.Parent = game.Players.LocalPlayer.Character
-                end
-		task.wait(0.5)
-	
+				
 	  	function rng() 
                 	return math.random(-bgrange, bgrange)
             	end
-			-- broken, fixes coming soon
-		for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
-			if v:IsA("Tool") then
-				v.GripPos = Vector3.new(rng(), 1, rng())
-			end
-		end
+			
+  		local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
+                for _, v in ipairs(Backpack:GetChildren()) do
+			    v.GripPos = Vector3.new(rng(), 1, rng())
+                            v.Parent = game.Players.LocalPlayer.Character
+                end
+		task.wait(0.5)
+
 		
 		for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
     			if v:IsA("Tool") then
