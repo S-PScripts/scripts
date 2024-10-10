@@ -3490,7 +3490,7 @@ return
 		Chat("removejails")
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'seedkick' then 
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'seedkick' then -- could be better in a seedkick() function i guess
 		Remind("This kick was found by Digitality.") 
 		local dasplayer = string.sub(msg:lower(), #prefix + 10)
                 PLAYERCHECK(dasplayer)
@@ -3603,7 +3603,6 @@ return
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'unantihat' then 
 		antimesh = false
 		Remind("Anti mesh/hat kick disabled.")
-
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'welmsg' then
@@ -5291,10 +5290,6 @@ end
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'acton' then
-
-		return print("i broke this command, I'll revert my buggy changes later")
-
---[[
     		local args = string.split(msg, " ")
     
     		if #args ~= 3 then
@@ -5305,26 +5300,92 @@ end
     		local act = args[2]
     		local getnumber = args[3]
 
-    		if actions[act] then
-        		actions[act](getnumber)
-        		Remind("Action: " .. act)
-    		else
-        		Remind("Invalid action!")
-    		end ]]
+		if act == "clone" or act == "cloneai" then
+				Clone(getnumber)
+				Remind("Action: Clone")
+
+		elseif act == "table" or act == "raig" then
+		                Table(getnumber)
+				Remind("Action: Table")
+
+		elseif act == "potion" or act == "dance" then
+				Potion(getnumber)
+				Remind("Action: Potion")
+
+		elseif act == "tripmine" or act == "trip" or act == "minetrip" then
+				TripMine(getnumber)
+				Remind("Action: Tripmine")
+
+		elseif act == "spike" then
+                		Spike(getnumber)
+		 		Remind("Action: Spike")
+
+		elseif act == "cannon" then
+		                Cannon(getnumber)
+				Remind("Action: Cannon")
+
+		elseif act == "zombie" then
+				Zombie(getnumber)
+				Remind("Action: Zombie")
+
+		elseif act == "alpaca" or act == "llama" then
+				Alpaca(getnumber)
+				Remind("Action: Alpaca")
+
+		elseif act == "piano" or act == "mozart" then
+		                Piano(getnumber)
+				Remind("Action: Piano")
+
+		elseif act == "bdrop" or act == "bassdrop" then
+		                Bassdrop(getnumber)
+				Remind("Action: Bassdrop")
+
+		elseif act == "cstory" or act == "coolstory" then
+		                Coolstory(getnumber)
+				Remind("Action: Coolstory")
+
+		elseif act == "banana" then
+		                Banana(getnumber)
+				Remind("Action: Banana")
+
+		elseif act == "tguitar" or act == "tankguitar" or act == "guitar" then
+				TankGuitar(getnumber)
+				Remind("Action: Tank Guitar")
+
+		elseif act == "sfriend" or act == "skelefriend" or act == "skele" then
+				SkeleFriend(getnumber)
+				Remind("Action: Skele Friend")
+
+		elseif act == "spray" or act == "nozzle" then
+				Spray(getnumber)
+				Remind("Action: Spray")
+
+		elseif act == "party" then
+				Party(getnumber)
+				Remind("Action: Party")
+
+		else
+				Remind("Invalid action!")
+		end
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'listacton' then
-		local anz = {}
-
-		for actname in pairs(actions) do
-    			table.insert(anz, actname)
-		end
-
-		table.sort(anz)
-
-		for _, actname in ipairs(anz) do
-    			print(actname)
-		end
+    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'listacton' then -- yeah this is a lazy solution but cant be bothered to recode it
+		print([[clone/cloneai, 
+table/raig, 
+potion/dance, 
+tripmine/trip/minetrip, 
+spike, 
+cannon, 
+zombie,
+alpaca/llama, 
+piano/mozart,
+bdrop/bassdrop, 
+cstory/coolstory, 
+banana,
+tguitar/tankguitar/guitar,
+sfriend/skelefriend/skele, 
+spray/nozzle, 
+party]])
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'rfgun' then
@@ -5934,7 +5995,7 @@ end
 	Remind("Anti paint is now enabled.")
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'unantipaint' then
+    if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unantipaint' then
         antipaint = false
 	Remind("Anti paint is now disabled.")
     end
@@ -11278,66 +11339,6 @@ function Playlist(shazam) -- cmd v3
         end
 end
 
-local actions = {}
-
-actions.clone = function() 
-    Clone() 
-end
-
-actions.cloneai = actions.clone
-actions.table = function() 
-    Table() 
-end
-
-actions.raig = actions.table
-actions.potion = function() 
-	Potion()
-end
-actions.dance = actions.potion
-actions.tripmine = function() 
-	MineTrip()
-end
-actions.trip = actions.tripmine
-actions.spike = function() 
-	Spike()
-end
-actions.cannon = function() 
-	Cannon()
-end
-actions.zombie = function() 
-	Zombie()
-end
-actions.alpaca = function() 
-	Alpaca()
-end
-actions.piano = function() 
-	Piano()
-end
-actions.bassdrop = function() 
-	Bassdrop()
-end
-actions.coolstory = function() 
-	Coolstory()
-end
-actions.banana = function() 
-	Banana()
-end
-actions.tankguitar = function() 
-	TankGuitar()
-end
-actions.sfriend = function() 
-	SkeleFriend()
-end
-actions.skelefriend = actions.sfriend
-actions.skele = actions.sfriend
-actions.spray = function() 
-	Spray()
-end
-actions.nozzle = actions.spray
-actions.party = function() 
-	Party()
-end
-
 -- R15 checker
 function checkforR15()
 	if game.Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid').RigType == Enum.HumanoidRigType.R15 then
@@ -13818,7 +13819,7 @@ function Potion(getnum)
         end
 end
 
-function MineTrip(getnum)
+function TripMine(getnum)
 	Chat("ungear me");task.wait(0.5)
         for i = 1, tonumber(getnum) do
                 Chat("gear me 11999247");task.wait(0.01)
