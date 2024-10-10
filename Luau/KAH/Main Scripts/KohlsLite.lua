@@ -385,9 +385,13 @@ local atprogperms = {
 }
 
 -- New users get blacklisted (prevent crashers)
-local newplrslocked = {} -- don't edit!!
-local newplrautoslock = true -- if new players under 21 days join they get blacklisted
-local newlen = 21 -- control what is considered as a new account
+local newplrslocked = {}
+
+-- if new players under 21 days join they get blacklisted
+local newplrautoslock = true 
+
+-- Control what is considered as a new account
+local newlen = 21
 
 -- Serverlock
 local slockenabled = false
@@ -438,8 +442,8 @@ hatkick_on_sight = {}
 -- Slow user
 suser_on_sight = {}
 
--- Furry user
-furry_on_sight = {} -- 9jn
+-- Furry user (9jn)
+furry_on_sight = {}
 
 -- Gearban user
 gb_on_sight = {}
@@ -449,7 +453,6 @@ local movestatus = false
 local Kohls = workspace.Terrain:WaitForChild("_Game")
 local Admin = Kohls:WaitForChild("Admin")
 local Pads = Admin:WaitForChild("Pads"):GetChildren()
-
 
 -- These are all of the music ids I've saved
 -- Thanks to Dizzy for this idea of writing my musiclist
@@ -1192,7 +1195,9 @@ local ogcframes = {
 }
 
 -- Auto blacklisting for stuff
-local autoblvgc = true -- retards kept gearing everyone so here's a quick fix
+
+-- People keep gearing everyone so here's a quick fix
+local autoblvgc = true
 
 -- Skip anti crash warning
 local skipwarncrash = true
@@ -1229,19 +1234,31 @@ local keybindz = true
 local keybindz_unsafe = false
 
 -- Auto things when people join
-local autogpcheck = true -- automatically check for player's gamepasses
-local autogb = false -- auto gear ban
+
+-- Automatically check for player's gamepasses
+local autogpcheck = true
+
+-- Auto gear ban
+local autogb = false
 
 -- Clicking
-local clickexplode = false -- yeah
+local clickexplode = false
 
 -- Admin things relating to users
-local FAdmins = {} -- all admin but for individual users
-local alladmin = false -- all admin
+
+-- All admin but for individual users
+local FAdmins = {}
+
+-- All admin
+local alladmin = false
 
 -- Super commands and spamming
-local amon = 100 -- super command times
-local spamwait = 0 -- spam command wait
+
+-- Super commmand times
+local amon = 100 
+
+-- Spam command wait
+local spamwait = 0
 
 -- Music telling
 local musicsay = true
