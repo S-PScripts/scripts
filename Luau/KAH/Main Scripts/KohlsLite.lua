@@ -2065,7 +2065,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	  	function rng() 
                 	return math.random(-bgrange, bgrange)
             	end
-			
+			-- broken, fixes coming soon
 		for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
             		v.GripPos = Vector3.new(rng(), 1, rng())
 		end
