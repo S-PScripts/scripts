@@ -5321,7 +5321,7 @@ end
 				TripMine(getnumber)
 				Remind("Action: Tripmine")
 
-		elseif act == "spike" then
+		elseif act == "spike" or act == "spikespam" then
                 		Spike(getnumber)
 		 		Remind("Action: Spike")
 
@@ -5329,7 +5329,7 @@ end
 		                Cannon(getnumber)
 				Remind("Action: Cannon")
 
-		elseif act == "zombie" then
+		elseif act == "zombie" or act == "spawnzombies" then
 				Zombie(getnumber)
 				Remind("Action: Zombie")
 
@@ -5345,11 +5345,11 @@ end
 		                Bassdrop(getnumber)
 				Remind("Action: Bassdrop")
 
-		elseif act == "cstory" or act == "coolstory" then
+		elseif act == "cstory" or act == "coolstory" or act == "coolstoryman" then
 		                Coolstory(getnumber)
 				Remind("Action: Coolstory")
 
-		elseif act == "banana" then
+		elseif act == "banana" or act == "bananapeel" then
 		                Banana(getnumber)
 				Remind("Action: Banana")
 
@@ -5379,14 +5379,14 @@ end
 table/raig, 
 potion/dance, 
 tripmine/trip/minetrip, 
-spike, 
+spike/spikespam, 
 cannon, 
-zombie,
+zombie/spawnzombies,
 alpaca/llama, 
 piano/mozart,
 bdrop/bassdrop, 
-cstory/coolstory, 
-banana,
+cstory/coolstory/coolstoryman, 
+banana/bananapeel,
 tguitar/tankguitar/guitar,
 sfriend/skelefriend/skele, 
 spray/nozzle, 
