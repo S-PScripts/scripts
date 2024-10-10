@@ -1407,7 +1407,8 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         end
 
         if string.sub(msg, 1, #prefix + 2)  == prefix..'wl' then
-         local dasplayer = string.sub(msg:lower(), #prefix + 4)
+	 local args = string.split(msg, " ")
+         local dasplayer = args[2]
          PLAYERCHECK(dasplayer)
          if player ~= nil then
 		if player == game.Players.LocalPlayer.Name then 
@@ -1443,11 +1444,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
        if string.sub(msg, 1, #prefix + 9)  == prefix..'whitelist' then
 		local dasplayer = string.sub(msg:lower(), #prefix + 11)
 		Chat(prefix.."wl "..dasplayer)
-		-- Remind("ERROR: Use 'wl' instead of 'whitelist'!") -- woz gonna be lazy
        end
 
        if string.sub(msg, 1, #prefix + 4) == prefix..'unwl' then
-         local dasplayer = string.sub(msg:lower(), #prefix + 6)
+	 local args = string.split(msg, " ")
+         local dasplayer = args[2]
          PLAYERCHECK(dasplayer)
          if player ~= nil then
                 if table.find(whitelist, player) then	
@@ -1474,7 +1475,8 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	end
 
 	if string.sub(msg, 1, #prefix + 2) == prefix..'bl' then
-         local dasplayer = string.sub(msg:lower(), #prefix + 4)
+	 local args = string.split(msg, " ")
+         local dasplayer = args[2]
          PLAYERCHECK(dasplayer)
          if player ~= nil then
 		if player == game.Players.LocalPlayer.Name then 
@@ -1510,7 +1512,8 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	end
 		
         if string.sub(msg, 1, #prefix + 4) == prefix..'unbl' then
-         local dasplayer = string.sub(msg:lower(), #prefix + 6)
+ 	 local args = string.split(msg, " ")
+         local dasplayer = args[2]
          PLAYERCHECK(dasplayer)
          if player ~= nil then
                 if table.find(blacklist, player) then
@@ -1664,14 +1667,14 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         if string.sub(msg, 1, #prefix + 4)  == prefix..'ccol' then
                 Chat("fogend 0")
                 ccolours = true
-		Remind("CrAzY cOlOuRs!")
+		Remind("Crazy colours!")
         end
 
         if string.sub(msg, 1, #prefix + 6)  == prefix..'unccol' then
                 ccolours = false
                 task.wait(0.5)
                 Chat("fix")
-		Remind("No more crazy colours, phew!")
+		Remind("No more crazy colours!")
         end
 		
         if string.sub(msg, 1, #prefix + 6)  == prefix..'blwlan' then
@@ -2043,7 +2046,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
       if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'synmbb' then
 		Remind("Setting up...")
 		SuperCMD(prefix.."gear me boombox")
-		task.wait(0.5)
+		task.wait(0)
   		local check = string.sub(msg:lower(), #prefix + 8, #prefix + 8)
 	    	if check == "g" then
 			local idrinkrum = string.sub(msg, #prefix + 9) ; task.wait(0)
@@ -2051,14 +2054,22 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	    	else
 			myplay = string.sub(msg:lower(), 8 + #prefix)
 	    	end	
-		task.wait(0.5)
+		task.wait(1)
 			
   		local Backpack = game.Players.LocalPlayer:FindFirstChildOfClass("Backpack")
                 for _, v in ipairs(Backpack:GetChildren()) do
                             v.Parent = game.Players.LocalPlayer.Character
                 end
 		task.wait(0.5)
+	
+	  	function rng() 
+                	return math.random(-bgrange, bgrange)
+            	end
 			
+		for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+            		v.GripPos = Vector3.new(rng(), 1, rng())
+		end
+		
 		for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
     			if v:IsA("Tool") then
         			pcall(function()
@@ -2066,12 +2077,8 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         			end)
    		 	end
 		end
-
-	  	function rng() 
-                	return math.random(-bgrange, bgrange)
-            	end
-            	bom.GripPos = Vector3.new(rng(), 1, rng())
       end
+		
       if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'bgrange' then
 		bgrange = tonumber(string.sub(msg:lower(), #prefix + 9))
       end
