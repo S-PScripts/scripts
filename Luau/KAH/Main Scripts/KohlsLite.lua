@@ -5313,7 +5313,7 @@ end
 		                Table(getnumber)
 				Remind("Action: Table")
 
-		elseif act == "potion" or act == "dance" then
+		elseif act == "potion" or act == "dance" or act == "danceball" or act == "discoball" then
 				Potion(getnumber)
 				Remind("Action: Potion")
 
@@ -5377,7 +5377,7 @@ end
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'listacton' then -- yeah this is a lazy solution but cant be bothered to recode it
 		print([[clone/cloneai, 
 table/raig, 
-potion/dance, 
+potion/dance/danceball/discoball, 
 tripmine/trip/minetrip, 
 spike/spikespam, 
 cannon, 
