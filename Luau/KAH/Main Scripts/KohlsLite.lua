@@ -1533,7 +1533,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          local dasplayer = args[2]
          PLAYERCHECK(dasplayer)
          if player ~= nil then
-                if table.find(blacklist, player) then
+                if table.find(blacklist, player) or table.find(newplrslocked, player) then
 			if blwl_an then
 				if watermark_kl then
 					Chat("h \n\n\n [KohlsLite]: "..player.." has been unblacklisted! \n\n\n")
@@ -1541,14 +1541,16 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                         		Chat("h \n\n\n "..player.." has been unblacklisted! \n\n\n")
 				end
 			end
-                        table.remove(blacklist, table.find(blacklist, player))
+			if table.find(blacklist, player) then
+ 				table.remove(blacklist, table.find(blacklist, player))
+			end
 			if table.find(newplrslocked, player) then
-				 table.remove(newplrslocked, table.find(newplrslocked, player))
+				table.remove(newplrslocked, table.find(newplrslocked, player))
 			end
                         Remind("Unblacklisted "..player)
                         Chat('unblind '..player)
                         Chat('unpunish '..player)
-                else
+		else	
                         Remind(player.." was never blacklisted!")        
                 end
 
