@@ -2071,7 +2071,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	    	else
 			myplay = string.sub(msg:lower(), 8 + #prefix)
 	    	end	
-		task.wait(1)
+		task.wait(0.5)
 				
 	  	function rng() 
                 	return math.random(-bgrange, bgrange)
@@ -4834,25 +4834,24 @@ return
 	Remind("Warning! Experimental command.")
 	local ic = 0
 	local tools = game.Players.LocalPlayer.Backpack:GetChildren()
-	local toolCount = 0
+	local tc = 0
 
-for _, item in ipairs(tools) do
-    if item:IsA("Tool") then
-        toolCount = toolCount + 1
-    end
-end
+	for _, item in ipairs(tools) do
+    		if item:IsA("Tool") then
+        		tc = tc + 1
+    		end
+	end
 
-for _, item in ipairs(tools) do
-    if item:IsA("Tool") then
-        item.Parent = game.Players.LocalPlayer.Character
-        ic = ic + 1
-        local angle = (ic - 1) * (360 / toolCount) * (math.pi / 180)
-        local x = circrad * math.cos(angle)
-        local z = circrad * math.sin(angle)
-        item.GripPos = Vector3.new(x, 1, z) 
-    end
-end
-
+	for _, item in ipairs(tools) do
+    		if item:IsA("Tool") then
+        		item.Parent = game.Players.LocalPlayer.Character
+        		ic = ic + 1
+        		local angle = (ic - 1) * (360 / tc) * (math.pi / 180)
+        		local x = circrad * math.cos(angle)
+        		local z = circrad * math.sin(angle)
+        		item.GripPos = Vector3.new(x, 1, z) 
+    		end
+	end
     end
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'crad' then
