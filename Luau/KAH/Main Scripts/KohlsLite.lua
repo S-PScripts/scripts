@@ -2719,6 +2719,52 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         Remind("WIP")
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'cmdbar' then
+	local Players = game:GetService("Players")
+	local UserInputService = game:GetService("UserInputService")
+
+	local player = Players.LocalPlayer
+
+	local function createGUI()
+    		local screenGui = Instance.new("ScreenGui")
+    		screenGui.Name = "CommandBarGui"
+    		screenGui.Parent = player:WaitForChild("PlayerGui")
+
+    		local frame = Instance.new("Frame")
+    		frame.Size = UDim2.new(0.3, 0, 0, 50)
+    		frame.Position = UDim2.new(0, 10, 1, -60)
+    		frame.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+    		frame.Parent = screenGui
+
+    		local textBox = Instance.new("TextBox")
+    		textBox.Size = UDim2.new(1, 0, 1, 0)
+    		textBox.PlaceholderText = "Type your command here"
+    		textBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    		textBox.Text = ""
+    		textBox.Parent = frame
+
+    		textBox.FocusLost:Connect(function(enterPressed)
+        		if enterPressed then
+            			local command = textBox.Text
+            			if command and command ~= "" then
+                			game.Players:Chat(command)
+                			textBox.Text = ""
+            			end
+        		end
+    		end)
+	end
+
+	local function onCharacterAdded(character)
+    		createGUI()
+	end
+
+	player.CharacterAdded:Connect(onCharacterAdded)
+
+	if player.Character then
+    		onCharacterAdded(player.Character)
+	end
+    end
+
     if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'bok' then
           bokme = (string.sub(msg:lower(), #prefix + 5))
           SuperCMD("dog "..bokme)
