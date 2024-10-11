@@ -61,7 +61,7 @@ I know this script is inconsistent with the fact it uses Game with and without G
 -- Notifications
 local function Remind(msg)
         game.StarterGui:SetCore("SendNotification", {
-                Title = "KohlsLite v1.86dave",
+                Title = "KohlsLite v1.86birling",
                 Text = msg,
                 Duration = 1
         })
@@ -2070,32 +2070,27 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
       end
 
  if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'boomce' then
-		-- Create boomboxes
 		SuperCMD(prefix.."gear me boombox")
 
 		-- Circa command
 		task.wait(0.5)
-		local ic = 0
 		local tools = game.Players.LocalPlayer.Backpack:GetChildren()
 		local tc = 0
 
 		for _, item in ipairs(tools) do
     			if item:IsA("Tool") then
-        			tc = tc + 1
+       				tc = tc + 1
     			end
 		end
 
+		local stackHeight = 0 
+		local stackOffset = Vector3.new(0, stackHeight, 0)
+
 		for i = 1, tc do
     			local item = tools[i]
-    			if item:IsA("Tool") then
+   			if item:IsA("Tool") then
         			item.Parent = game.Players.LocalPlayer.Character
-        			local angle = math.rad(i * (360 / tc))
-        			local x = math.cos(angle) * circrad
-       		 		local z = math.sin(angle) * circrad
-                		-- item.GripPos = (CFrame.Angles(0, 0, angle) * CFrame.new(x, 1, z)).p
-				-- item.GripPos = (CFrame.Angles(0, angle, 0) * CFrame.new(x, 1, z)).p
-				-- item.GripPos = (CFrame.new(x, 1, z) * CFrame.Angles(0, math.rad(90), 0)).p
-				item.GripPos = (CFrame.new(x, 1, z) * CFrame.Angles(0, angle, 0)).p
+        			item.Handle.Position = item.Handle.Position + (i - 1) * stackOffset
     			end
 		end
 
