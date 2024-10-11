@@ -1,7 +1,6 @@
 // I don't care what you do with this anymore
-// you need to do something different to find x-token but its similar ok
-// If you need more help, check my YT video on my YT channel.
-// If you still can't figure it out, you're a skid.
+// If you need help, check my YT video on my YT channel.
+// If you can't figure it out, you're a skid.
 
 // This Scratch Javascript remix bomb was made by RCUTB, not me (TS2021).
 // To use this, execute the code below into your console (Inspect Element - Console section)
@@ -113,14 +112,15 @@ jsbomb();
 // 2. Go to inspect element 
 // 3. Go to the network section
 // 4. Find /session
-// 5. Copy the token
+// 5. Copy the token (Cookies section)
 // Note: This X-CSRFToken will change so you'll need to do this every time you're JSBOMBing.
 
 // How to get your scratch x-token
 // 1. Comment something
-// 2. Go to scratch.mit.edu/session
-// 3. View the page's source
-// 4. Copy the x-token
+// 2. Go to inspect element 
+// 3. Go to the network section
+// 4. Find /session
+// 5. Copy the token (Headers section)
 // Note: This x-token will always stay the same
 
 // How to get the project.json
