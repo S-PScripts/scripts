@@ -8,7 +8,7 @@
     \|__| \|__|\|_______|\|__|\|__|\|_______|\_________\|_______|\|__|    \|__|  \|_______|
                                             \|_________|                                   
                                                                                            
-                                                                                           v1.86 ]]
+                                                                                           v1.861 ]]
 
 --[[
 https://kohlslite.pages.dev/source.txt
@@ -61,7 +61,7 @@ I know this script is inconsistent with the fact it uses Game with and without G
 -- Notifications
 local function Remind(msg)
         game.StarterGui:SetCore("SendNotification", {
-                Title = "KohlsLite v1.86",
+                Title = "KohlsLite v1.861",
                 Text = msg,
                 Duration = 1
         })
@@ -121,7 +121,7 @@ getgenv().kohlsexecuted = true
 getgenv().deprefix = "." 
 
 -- The version of KohlsLite
-getgenv().klversion = "1.86"
+getgenv().klversion = "1.861"
 
 -- KohlsLite Start Gui
 getgenv().kohlsgui = fals
@@ -2085,17 +2085,16 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     			end
 		end
 
-		for _, item in ipairs(tools) do
+		for i = 1, tc do
+    			local item = tools[i]
     			if item:IsA("Tool") then
-      				item.Parent = game.Players.LocalPlayer.Character
-			        ic = ic + 1
-      				local angle = (ic - 1) * (360 / tc) * (math.pi / 180)
-    				local x = circrad * math.cos(angle)
-  				local z = circrad * math.sin(angle)
-      				item.GripPos = Vector3.new(x, 1, z) * CFrame.Angles(0, angle + math.pi/2, 0)
+        			item.Parent = game.Players.LocalPlayer.Character
+        			local angle = math.rad(i * (360 / tc))
+        			local x = math.cos(angle) * circrad
+       		 		local z = math.sin(angle) * circrad
+                		item.GripPos = (CFrame.Angles(0, 0, angle) * CFrame.new(x, 1, z)).p
     			end
 		end
-
 
 		task.wait(0.5)
 
