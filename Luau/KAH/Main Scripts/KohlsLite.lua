@@ -8,7 +8,7 @@
     \|__| \|__|\|_______|\|__|\|__|\|_______|\_________\|_______|\|__|    \|__|  \|_______|
                                             \|_________|                                   
                                                                                            
-                                                                                           v1.85 ]]
+                                                                                           v1.86 ]]
 
 --[[
 https://kohlslite.pages.dev/source.txt
@@ -61,7 +61,7 @@ I know this script is inconsistent with the fact it uses Game with and without G
 -- Notifications
 local function Remind(msg)
         game.StarterGui:SetCore("SendNotification", {
-                Title = "KohlsLite v1.85",
+                Title = "KohlsLite v1.86",
                 Text = msg,
                 Duration = 1
         })
@@ -121,7 +121,7 @@ getgenv().kohlsexecuted = true
 getgenv().deprefix = "." 
 
 -- The version of KohlsLite
-getgenv().klversion = "1.85"
+getgenv().klversion = "1.86"
 
 -- KohlsLite Start Gui
 getgenv().kohlsgui = fals
@@ -2047,6 +2047,55 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         			item.GripPos = Vector3.new(x, 1, z) 
     			end
 		end
+
+		task.wait(0.5)
+
+		-- Bcirca command
+        	local check = string.sub(msg:lower(), #prefix + 8, #prefix + 8)
+	   	if check == "g" then
+			local idrinkrum = string.sub(msg, #prefix + 9) ; task.wait(0)
+			myplay = musictable[idrinkrum].id
+	    	else
+			myplay = string.sub(msg:lower(), 8 + #prefix)
+	    	end
+		song = tonumber(myplay)
+			
+		for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+    			if v:IsA("Tool") then
+        			pcall(function()
+            				v.Remote:FireServer("PlaySong",song)
+        			end)
+   		 	end
+		end
+      end
+
+ if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'boomce' then
+		-- Create boomboxes
+		SuperCMD(prefix.."gear me boombox")
+
+		-- Circa command
+		task.wait(0.5)
+		local ic = 0
+		local tools = game.Players.LocalPlayer.Backpack:GetChildren()
+		local tc = 0
+
+		for _, item in ipairs(tools) do
+    			if item:IsA("Tool") then
+        			tc = tc + 1
+    			end
+		end
+
+		for _, item in ipairs(tools) do
+    			if item:IsA("Tool") then
+      				item.Parent = game.Players.LocalPlayer.Character
+			        ic = ic + 1
+      				local angle = (ic - 1) * (360 / tc) * (math.pi / 180)
+    				local x = circrad * math.cos(angle)
+  				local z = circrad * math.sin(angle)
+      				item.GripPos = Vector3.new(x, 1, z) * CFrame.Angles(0, angle + math.pi/2, 0)
+    			end
+		end
+
 
 		task.wait(0.5)
 
