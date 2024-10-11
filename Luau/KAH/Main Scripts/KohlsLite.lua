@@ -2092,7 +2092,8 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         			local angle = math.rad(i * (360 / tc))
         			local x = math.cos(angle) * circrad
        		 		local z = math.sin(angle) * circrad
-                		item.GripPos = (CFrame.Angles(0, 0, angle) * CFrame.new(x, 1, z)).p
+                		-- item.GripPos = (CFrame.Angles(0, 0, angle) * CFrame.new(x, 1, z)).p
+				item.GripPos = (CFrame.Angles(0, angle, 0) * CFrame.new(x, 1, z)).p
     			end
 		end
 
