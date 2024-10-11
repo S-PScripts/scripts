@@ -61,7 +61,7 @@ I know this script is inconsistent with the fact it uses Game with and without G
 -- Notifications
 local function Remind(msg)
         game.StarterGui:SetCore("SendNotification", {
-                Title = "KohlsLite nen",
+                Title = "KohlsLite ihatethis",
                 Text = msg,
                 Duration = 1
         })
@@ -2127,9 +2127,35 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                     	end)
  
                     v.Handle.Position = v.Handle.Position + (i - 1) * stackOffset
+
+				local Speed
+               			local Height
+				local Angle
+               			local targetPos
+               			local Radius
+                		local Base
+				local Root = game.Players[game.Players.LocalPlayer.Name].Character.HumanoidRootPart.Position
+					
+				Speed = 5
+				Height = 0
+				Base = (tick() * 15 * Speed)
+				Angle = math.rad(Base + (i * (360 / #tools)))
+				Radius = 5
+                    		stackHeight = 0
+
+				local targetPos = Root + Vector3.new(
+                                math.cos(Angle) * Radius,
+                                Height + (i - 1) * stackHeight,
+                                math.sin(Angle) * Radius
+                                ) + Vector3.new(0,0,0)
+
+				v.Handle.BodyPosition.Position = targetPos
+				print("e1")
+                		v.Handle.BodyGyro.CFrame = CFrame.new(v.Handle.Position, Root) * CFrame.Angles(0, 0, 0)
+				print("e2")
                 end
 
-			
+			--[[
 	        for i, v in next, char:GetChildren() do
                     	if v:FindFirstChild("Handle") then
 				local Speed
@@ -2158,7 +2184,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                 		v.Handle.BodyGyro.CFrame = CFrame.new(v.Handle.Position, Root) * CFrame.Angles(0, 0, 0)
 				print("e2")
 			end
-		end
+		end]]
 
 		task.wait(0.5)
 
