@@ -61,7 +61,7 @@ I know this script is inconsistent with the fact it uses Game with and without G
 -- Notifications
 local function Remind(msg)
         game.StarterGui:SetCore("SendNotification", {
-                Title = "KohlsLite v1.86ender",
+                Title = "KohlsLite v1.86X",
                 Text = msg,
                 Duration = 1
         })
@@ -2139,7 +2139,9 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                                 ) + Vector3.new(0,0,0)
 
 				v.Handle.BodyPosition.Position = targetPos
+				print("e1")
                 		v.Handle.BodyGyro.CFrame = CFrame.new(v.Handle.Position, Root) * CFrame.Angles(0, 0, 0)
+				print("e2")
 			end
 		end
 
