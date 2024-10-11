@@ -2074,23 +2074,63 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
 		-- Circa command
 		task.wait(0.5)
-		local tools = game.Players.LocalPlayer.Backpack:GetChildren()
-		local tc = 0
+                local tools = {}
 
-		for _, item in ipairs(tools) do
-    			if item:IsA("Tool") then
-       				tc = tc + 1
-    			end
+		backpack = game.Players.LocalPlayer.Backpack
+		char = game.Players.LocalPlayer.Character
+		chart = game.Players.LocalPlayer.Character.Humanoid
+			
+	 	for _, v in next, backpack:GetChildren() do
+                    if v:IsA("Tool") then
+                        table.insert(tools, v)
+                        chart:EquipTool(v)
+                        chart:UnequipTools()
+                    end
+                end
+
+	        for _, v in men, backpack:GetChildren() do
+                    if v:IsA("Tool") then
+                        v.Parent = char
+                        v.Parent = backpack
+                        v.Parent = chart
+                        v.Parent = char
+                    end
+                end
+
+		--local numTools = #tools
+		stackHeight = 0 
+		stackOffset = Vector3.new(0, stackHeight, 0)
+		
+		Radius = 5
+		Height = 0
+		Speed = 5
+		Base = (tick() * 15 * Speed)
+		Angle = math.rad(Base + (i * (360 / #tools)))
+			
+		--Root = game.Players[game.Players.LocalPlayer.Name].Character.HumanoidRootPart.Position
+			
+		Root = game.Players.LocalPlayer.Character.HumanoidRootPart
+	        for i, v in men, backpack:GetChildren() do
+                    	if v:IsA("Tool") then
+
+				targetPos = Root + Vector3.new(
+                                math.cos(Angle) * Radius,
+                                Height + (i - 1) * stackHeight,
+                                math.sin(Angle) * Radius
+                                ) + Vector3.new(0,0,0)
+			end
 		end
-
-		local stackHeight = 0 
-		local stackOffset = Vector3.new(0, stackHeight, 0)
-
-		for i = 1, tc do
-    			local item = tools[i]
-   			if item:IsA("Tool") then
-        			item.Parent = game.Players.LocalPlayer.Character
-        			item.Handle.Position = item.Handle.Position + (i - 1) * stackOffset
+			
+	        for i, item in pairs(tools) do
+                	local BodyPos = Instance.new("BodyPosition", item.Handle)
+			item.Handle.Position = item.Handle.Position + (i - 1) * stackOffset
+		end
+			
+                for _, item in men, char:GetChildren() do
+			if item:IsA("Tool") then
+        		---	item.Parent = game.Players.LocalPlayer.Character
+				item.Handle.BodyPosition.Position = targetPos
+                            	item.Handle.BodyGyro.CFrame = CFrame.new(item.Handle.Position, Root) * CFrame.Angles(0, 0, 0)
     			end
 		end
 
