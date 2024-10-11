@@ -61,7 +61,7 @@ I know this script is inconsistent with the fact it uses Game with and without G
 -- Notifications
 local function Remind(msg)
         game.StarterGui:SetCore("SendNotification", {
-                Title = "KohlsLite v1.86FORTRESS",
+                Title = "KohlsLite v1.864",
                 Text = msg,
                 Duration = 1
         })
@@ -124,7 +124,7 @@ getgenv().deprefix = "."
 getgenv().klversion = "1.861"
 
 -- KohlsLite Start Gui
-getgenv().kohlsgui = fals
+getgenv().kohlsgui = false
 
 -- Chat function
 local function Chat(msg)
@@ -181,14 +181,14 @@ Stats.starttime = os.clock()
 
 -- Start up scripts
 local function startupScripts()
-           if not getgenv().autoruncmds then
-                for i = 1, #defaults do
+        if not getgenv().autoruncmds then
+        	for i = 1, #defaults do
                         Chat(defaults[i]) 
                 end
         else
-            for i = 1, #getgenv().autoruncmds do
+        	for i = 1, #getgenv().autoruncmds do
                         Chat(getgenv().autoruncmds[i])
-            end
+            	end
         end
 end
 
@@ -2088,7 +2088,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                     end
                 end
 
-	        for _, v in men, backpack:GetChildren() do
+	        for _, v in next, backpack:GetChildren() do
                     if v:IsA("Tool") then
                         v.Parent = char
                         v.Parent = backpack
@@ -2115,7 +2115,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 			v.Handle.Position = v.Handle.Position + (i - 1) * stackOffset
 		end
 			
-	        for i, v in men, char:GetChildren() do
+	        for i, v in next, char:GetChildren() do
                     	if v:FindFirstChild("Handle") then
 				local Speed
                			local Height
