@@ -61,7 +61,7 @@ I know this script is inconsistent with the fact it uses Game with and without G
 -- Notifications
 local function Remind(msg)
         game.StarterGui:SetCore("SendNotification", {
-                Title = "KohlsLite v1.864",
+                Title = "KohlsLite v1.86ender",
                 Text = msg,
                 Duration = 1
         })
@@ -2101,7 +2101,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		local stackHeight = 0 
 		local stackOffset = Vector3.new(0, stackHeight, 0)
 
-		Root = game.Players.LocalPlayer.Character.HumanoidRootPart
+		-- Root = game.Players.LocalPlayer.Character.HumanoidRootPart
 
 		--Root = game.Players[game.Players.LocalPlayer.Name].Character.HumanoidRootPart.Position
 
@@ -2123,7 +2123,8 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                			local targetPos
                			local Radius
                 		local Base
-
+				local Root = game.Players[game.Players.LocalPlayer.Name].Character.HumanoidRootPart.Position
+					
 				Speed = 5
 				Height = 0
 				Base = (tick() * 15 * Speed)
