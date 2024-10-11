@@ -61,7 +61,7 @@ I know this script is inconsistent with the fact it uses Game with and without G
 -- Notifications
 local function Remind(msg)
         game.StarterGui:SetCore("SendNotification", {
-                Title = "KohlsLite v1.86d",
+                Title = "KohlsLite v1.86dave",
                 Text = msg,
                 Duration = 1
         })
@@ -2094,7 +2094,8 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
        		 		local z = math.sin(angle) * circrad
                 		-- item.GripPos = (CFrame.Angles(0, 0, angle) * CFrame.new(x, 1, z)).p
 				-- item.GripPos = (CFrame.Angles(0, angle, 0) * CFrame.new(x, 1, z)).p
-				item.GripPos = (CFrame.new(x, 1, z) * CFrame.Angles(0, math.rad(90), 0)).p
+				-- item.GripPos = (CFrame.new(x, 1, z) * CFrame.Angles(0, math.rad(90), 0)).p
+				item.GripPos = (CFrame.new(x, 1, z) * CFrame.Angles(0, angle, 0)).p
     			end
 		end
 
