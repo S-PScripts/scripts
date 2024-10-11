@@ -2019,7 +2019,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		end
       end
 		
-      if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'bcirca' then
+      if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'bcirca' then -- .supercmd .gear me boombox -> .circa -> .bcirca
 		Remind("Ensure boomboxes are equipped.")
            	local check = string.sub(msg:lower(), #prefix + 8, #prefix + 8)
 	   	if check == "g" then
