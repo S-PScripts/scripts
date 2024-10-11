@@ -61,7 +61,7 @@ I know this script is inconsistent with the fact it uses Game with and without G
 -- Notifications
 local function Remind(msg)
         game.StarterGui:SetCore("SendNotification", {
-                Title = "KohlsLite v1.86birling",
+                Title = "KohlsLite v1.86FORTRESS",
                 Text = msg,
                 Duration = 1
         })
@@ -2079,7 +2079,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		backpack = game.Players.LocalPlayer.Backpack
 		char = game.Players.LocalPlayer.Character
 		chart = game.Players.LocalPlayer.Character.Humanoid
-			
+		
 	 	for _, v in next, backpack:GetChildren() do
                     if v:IsA("Tool") then
                         table.insert(tools, v)
@@ -2098,40 +2098,48 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                 end
 
 		--local numTools = #tools
-		stackHeight = 0 
-		stackOffset = Vector3.new(0, stackHeight, 0)
-		
-		Radius = 5
-		Height = 0
-		Speed = 5
-		Base = (tick() * 15 * Speed)
-		Angle = math.rad(Base + (i * (360 / #tools)))
-			
-		--Root = game.Players[game.Players.LocalPlayer.Name].Character.HumanoidRootPart.Position
-			
-		Root = game.Players.LocalPlayer.Character.HumanoidRootPart
-	        for i, v in men, backpack:GetChildren() do
-                    	if v:IsA("Tool") then
+		local stackHeight = 0 
+		local stackOffset = Vector3.new(0, stackHeight, 0)
 
-				targetPos = Root + Vector3.new(
+		Root = game.Players.LocalPlayer.Character.HumanoidRootPart
+
+		--Root = game.Players[game.Players.LocalPlayer.Name].Character.HumanoidRootPart.Position
+
+		for i, v in pairs(tools) do
+                	local BodyPos = Instance.new("BodyPosition", v.Handle)
+			BodyPos.MaxForce = Vector3.new(math.huge, math.huge, math.huge)
+                    	BodyPos.D = 1250
+                    	BodyPos.P = 1.0e5
+                    	local BodyGy = Instance.new("BodyGyro", v.Handle)
+                    	BodyGy.MaxTorque = Vector3.new(math.huge, math.huge, math.huge)
+			v.Handle.Position = v.Handle.Position + (i - 1) * stackOffset
+		end
+			
+	        for i, v in men, char:GetChildren() do
+                    	if v:FindFirstChild("Handle") then
+				local Speed
+               			local Height
+				local Angle
+               			local targetPos
+               			local Radius
+                		local Base
+
+				Speed = 5
+				Height = 0
+				Base = (tick() * 15 * Speed)
+				Angle = math.rad(Base + (i * (360 / #tools)))
+				Radius = 5
+                    		stackHeight = 0
+
+				local targetPos = Root + Vector3.new(
                                 math.cos(Angle) * Radius,
                                 Height + (i - 1) * stackHeight,
                                 math.sin(Angle) * Radius
                                 ) + Vector3.new(0,0,0)
+
+				v.Handle.BodyPosition.Position = targetPos
+                		v.Handle.BodyGyro.CFrame = CFrame.new(v.Handle.Position, Root) * CFrame.Angles(0, 0, 0)
 			end
-		end
-			
-	        for i, item in pairs(tools) do
-                	local BodyPos = Instance.new("BodyPosition", item.Handle)
-			item.Handle.Position = item.Handle.Position + (i - 1) * stackOffset
-		end
-			
-                for _, item in men, char:GetChildren() do
-			if item:IsA("Tool") then
-        		---	item.Parent = game.Players.LocalPlayer.Character
-				item.Handle.BodyPosition.Position = targetPos
-                            	item.Handle.BodyGyro.CFrame = CFrame.new(item.Handle.Position, Root) * CFrame.Angles(0, 0, 0)
-    			end
 		end
 
 		task.wait(0.5)
