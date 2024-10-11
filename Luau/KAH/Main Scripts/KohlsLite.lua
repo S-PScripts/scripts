@@ -1859,7 +1859,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
        end
 
        if string.sub(msg, 1, #prefix + 10) == prefix..'fcheckperm' then -- cool amirite
-	  Remind("Wait 5 seconds then check logs...")
+	  Remind("Wait 5 seconds then check logs and console...")
           Chat("reset all")
           Regen()
           task.wait(1)
@@ -1917,7 +1917,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         end
 
        if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'adminjoy' then
-                game.Players.LocalPlayer:Kick("you: 'i use adminjoy trash!' Anyways, ask ME to add the colourful seizure crap, don't use THAT!")
+                game.Players.LocalPlayer:Kick("You: 'I use adminjoy trash!' Anyways, ask ME to add the colourful seizure stuff, don't use THAT!")
        end
 
        if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'timeout' then
@@ -4365,8 +4365,8 @@ return
 
    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'supercmd' then
         supermessage = string.sub(msg, #prefix + 10)
-        SuperCMD(supermessage)
 	Remind("Supercmding your message...")
+        SuperCMD(supermessage)
     end
 
    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'supert' then
@@ -4389,7 +4389,7 @@ return
 
    if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'chatz' then
         ChatFudge()
-	Remind("Crapping on the chat filter.")
+	Remind("Messing up the chat.")
    end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'spamw' then
@@ -8132,7 +8132,7 @@ task.spawn(function()
                     elseif table.find(blacklist, v.Name) then
                         if not game.Lighting:FindFirstChild(v.Name) then
                                 local isB,spe = bypassattemptcheck(v.Name)
-                                if isB then -- i added because of some guy called m_artin who did crap
+                                if isB then
                                         Chat('punish '.. spe)
                                         Chat('blind '.. spe)
 					Chat('skydive '.. spe)
@@ -8803,6 +8803,7 @@ connections[#connections + 1] =
                                          if v.Character and v.Character:FindFirstChild("ForceField") then
                                                 if not table.find(permusers, v.Name) then
                                                         print(v.Name.." has perm.")
+							Remind(v.Name.." has perm.")
                                                         table.insert(permusers, v.Name)
                                                         Chat("unff "..v.Name)
                                                 end
@@ -9008,6 +9009,7 @@ local crashToolsLP =
 		"HotPotato"}
 
 -- Function for the antis
+-- Might add isB functionality
 game:GetService("RunService").RenderStepped:Connect(function()
         task.wait(0)
 
@@ -11748,7 +11750,7 @@ function isNumber(str)
 	end
 end
 
--- camera crap (messy I know) -- 
+-- camera stuff (messy I know) -- 
 RunService = game:GetService("RunService")
 UserInputService = game:GetService("UserInputService")
 ContextActionService = game:GetService("ContextActionService")
