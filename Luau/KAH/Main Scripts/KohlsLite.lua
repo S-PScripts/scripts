@@ -61,7 +61,7 @@ I know this script is inconsistent with the fact it uses Game with and without G
 -- Notifications
 local function Remind(msg)
         game.StarterGui:SetCore("SendNotification", {
-                Title = "KohlsLite v1.86X",
+                Title = "KohlsLite nen",
                 Text = msg,
                 Duration = 1
         })
@@ -2072,6 +2072,14 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
  if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'boomce' then
 		SuperCMD(prefix.."gear me boombox")
 
+		local Physics = game:GetService("PhysicsSettings")
+                pcall(function()
+                	sethiddenproperty(char.Humanoid, "InternalBodyScale", Vector3.new(9e9,9e9,9e9))
+               	 	sethiddenproperty(workspace, "SignalBehavior", "Immediate")
+                	Physics.PhysicsEnvironmentalThrottle = Enum.EnviromentalPhysicsThrottle.Disabled
+                	Physics.AllowSleep = false
+                	Physics.ThrottleAdjustTime = math.huge
+                end)
 		-- Circa command
 		task.wait(0.5)
                 local tools = {}
@@ -2105,15 +2113,22 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
 		--Root = game.Players[game.Players.LocalPlayer.Name].Character.HumanoidRootPart.Position
 
-		for i, v in pairs(tools) do
+                for i, v in pairs(tools) do
                 	local BodyPos = Instance.new("BodyPosition", v.Handle)
-			BodyPos.MaxForce = Vector3.new(math.huge, math.huge, math.huge)
+                    	BodyPos.MaxForce = Vector3.new(math.huge, math.huge, math.huge)
                     	BodyPos.D = 1250
                     	BodyPos.P = 1.0e5
                     	local BodyGy = Instance.new("BodyGyro", v.Handle)
                     	BodyGy.MaxTorque = Vector3.new(math.huge, math.huge, math.huge)
-			v.Handle.Position = v.Handle.Position + (i - 1) * stackOffset
-		end
+                    	task.spawn(function()
+                    		while task.wait() do
+                    			BodyGy.P = 1000
+                    		end
+                    	end)
+ 
+                    v.Handle.Position = v.Handle.Position + (i - 1) * stackOffset
+                end
+
 			
 	        for i, v in next, char:GetChildren() do
                     	if v:FindFirstChild("Handle") then
