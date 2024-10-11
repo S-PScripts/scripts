@@ -61,7 +61,7 @@ I know this script is inconsistent with the fact it uses Game with and without G
 -- Notifications
 local function Remind(msg)
         game.StarterGui:SetCore("SendNotification", {
-                Title = "KohlsLite ihatethis",
+                Title = "KohlsLite traig",
                 Text = msg,
                 Duration = 1
         })
@@ -2117,14 +2117,14 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                 	local BodyPos = Instance.new("BodyPosition", v.Handle)
                     	BodyPos.MaxForce = Vector3.new(math.huge, math.huge, math.huge)
                     	BodyPos.D = 1250
-                    	BodyPos.P = 1.0e5
+                    	BodyPos.P = 1000
                     	local BodyGy = Instance.new("BodyGyro", v.Handle)
                     	BodyGy.MaxTorque = Vector3.new(math.huge, math.huge, math.huge)
-                    	task.spawn(function()
+                    --[[	task.spawn(function()
                     		while task.wait() do
                     			BodyGy.P = 1000
                     		end
-                    	end)
+                    	end) ]]
  
                     v.Handle.Position = v.Handle.Position + (i - 1) * stackOffset
 
@@ -2150,9 +2150,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                                 ) + Vector3.new(0,0,0)
 
 				v.Handle.BodyPosition.Position = targetPos
-				print("e1")
                 		v.Handle.BodyGyro.CFrame = CFrame.new(v.Handle.Position, Root) * CFrame.Angles(0, 0, 0)
-				print("e2")
                 end
 
 			--[[
