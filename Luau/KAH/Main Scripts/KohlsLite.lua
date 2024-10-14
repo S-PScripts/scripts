@@ -2747,7 +2747,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         		if enterPressed then
             			local command = textBox.Text
             			if command and command ~= "" then
-                			game.Players:Chat(command)
+                			Chat(command)
                 			textBox.Text = ""
             			end
         		end
@@ -2774,7 +2774,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'cgoto' then
-           local dasplayer = string.sub(msg:lower(), #prefix + 7)
+         local dasplayer = string.sub(msg:lower(), #prefix + 7)
          PLAYERCHECK(dasplayer)
          if player ~= nil then
                 gotou = cplr
