@@ -24,7 +24,7 @@ This script was built from the ground up. KohlsLite is NOT a fork of any other s
 KohlsLite is LIKE a mixture of all the scripts that already exist in KAH such as:
   -- > CMD (v1)
   -- > CMD Y
-  -- > CMD v3
+  -- > CMD v3 (Pi)
   -- > Shortcut v1
   -- > Shortcut v2
   -- > Shortcut v3
