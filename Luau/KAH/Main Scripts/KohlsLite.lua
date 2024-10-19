@@ -67,6 +67,7 @@ local function Remind(msg)
         })
 end;
 
+Remind("i broke the blacklist")
 -- Check if KohlsLite is already executed
 if getgenv().kohlsexecuted then 
         return 
