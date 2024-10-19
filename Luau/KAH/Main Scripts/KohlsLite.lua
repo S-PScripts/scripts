@@ -61,7 +61,7 @@ I know this script is inconsistent with the fact it uses Game with and without G
 -- Notifications
 local function Remind(msg)
         game.StarterGui:SetCore("SendNotification", {
-                Title = "KohlsLite v1.861",
+                Title = "KohlsLite v1.87",
                 Text = msg,
                 Duration = 1
         })
@@ -121,7 +121,7 @@ getgenv().kohlsexecuted = true
 getgenv().deprefix = "." 
 
 -- The version of KohlsLite
-getgenv().klversion = "1.861"
+getgenv().klversion = "1.87"
 
 -- KohlsLite Start Gui
 getgenv().kohlsgui = false
@@ -2913,9 +2913,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'fixregen' then
 			print 'work'
-	if not string.sub(msg:lower(), 1, #prefix + 9) == prefix..'fixregen2' then
-print 'it shalt'
-                if movestatus == true then 
+	if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'fixregen2' then
+            print 'it shalt' 
+        else
+				print 'aghsnsjdjdjdj'
+                if movestatus == true then
                         return 
                 end
                 DisCol()
