@@ -1497,11 +1497,13 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
          local dasplayer = args[2]
          PLAYERCHECK(dasplayer)
          if player ~= nil then
+		print(player)
 		if player == game.Players.LocalPlayer.Name then 
 			return Remind("You cannot blacklist yourself.")
 		end
 				
                 if not table.find(blacklist, player) then
+			print("adding...")
 			if blwl_an then
 				if watermark_kl then
 					Chat("h \n\n\n [KohlsLite]: "..player.." has been blacklisted. \n\n\n");Regen()
@@ -1516,6 +1518,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                         	Remind("Blacklisted "..player)
 			end
                         table.insert(blacklist, player)
+			print("added...")
                 else
                         Remind(player.." is already blacklisted!")        
                 end
