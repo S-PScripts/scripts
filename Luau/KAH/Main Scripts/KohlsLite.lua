@@ -450,9 +450,9 @@ gb_on_sight = {}
 
 -- Variables for moving
 local movestatus = false
-local Kohls = workspace.Terrain:WaitForChild("_Game")
-local Admin = Kohls:WaitForChild("Admin")
-local Pads = Admin:WaitForChild("Pads"):GetChildren()
+ Kohls = workspace.Terrain:WaitForChild("_Game")
+ Admin = Kohls:WaitForChild("Admin")
+ Pads = Admin:WaitForChild("Pads"):GetChildren()
 
 -- These are all of the music ids I've saved
 -- Thanks to Dizzy for this idea of writing my musiclist
@@ -1212,9 +1212,9 @@ local padbanned = {}
 local padreinforcements = false 
 
 -- Variables for moving [old]
-local Game_Folder = game:GetService("Workspace").Terrain["_Game"]
-local Workspace_Folder = Game_Folder.Workspace
-local Admin_Folder = Game_Folder.Admin
+Game_Folder = game:GetService("Workspace").Terrain["_Game"]
+Workspace_Folder = Game_Folder.Workspace 
+Admin_Folder = Game_Folder.Admin
 
 -- Keybinds
 
@@ -2912,8 +2912,9 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'fixregen' then
+			print 'work'
 	if not string.sub(msg:lower(), 1, #prefix + 9) == prefix..'fixregen2' then
-
+print 'it shalt'
                 if movestatus == true then 
                         return 
                 end
