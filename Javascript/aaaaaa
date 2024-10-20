@@ -1,0 +1,12 @@
+const dSI = '31659696'; // Replace with your donor studio ID
+
+// Step 1: Fetch projects from the donor studio
+fetch(`https://api.scratch.mit.edu/studios/${dSI}/projects`)
+    .then(response => response.json())
+    .then(data => {
+        // Print the project titles from the donor studio
+        data.forEach(project => {
+            console.log(`Project ID: ${project.id}, Title: ${project.title}`); // Print each project's ID and title
+        });
+    })
+    .catch(error => console.error('Error fetching projects:', error));
