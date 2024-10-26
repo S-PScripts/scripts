@@ -2789,7 +2789,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'fixbp' then
-	if not string.sub(msg:lower(), 1, #prefix + 6) == prefix..'fixbp2' then
+	print("a")
+	if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'fixbp2' then
+		print("b")
+	else
+		print("c")
                 if movestatus == true then 
                         return 
                 end
@@ -2916,11 +2920,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'fixregen' then
-			print 'work'
+	print("a")
 	if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'fixregen2' then
-            print 'it shalt' 
+            	print("b")
         else
-				print 'aghsnsjdjdjdj'
+		print("c")
                 if movestatus == true then
                         return 
                 end
