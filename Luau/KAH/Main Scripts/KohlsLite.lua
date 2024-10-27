@@ -5988,6 +5988,14 @@ party]])
 		Remind("Breaking everyone's velocity...")
      end
 
+     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'desvelo' then
+		Chat("gear me 273795078")
+		Chat("gear me 110789105")
+		Chat("gear me 1215515248")
+		Chat("gear me 208659586")
+		Remind("These gears can break the velocity if used together.")
+     end
+
      if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'breakvelo' then
                 NoVelo()
 		Remind("Breaking everyone's velocity...")
