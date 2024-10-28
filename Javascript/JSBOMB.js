@@ -2,7 +2,7 @@
 // If you need help, check my YT video on my YT channel.
 // If you can't figure it out, you're a skid.
 
-// This Scratch Javascript remix bomb was made by RCUTB, not me (TS2021).
+// This Scratch Javascript remix bomb was made by Derv, not me (TS2021).
 // To use this, execute the code below into your console (Inspect Element - Console section)
 
 // You will need to include the project.json (check the bottom of this page to see how to get this)
