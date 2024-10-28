@@ -8278,7 +8278,39 @@ task.spawn(function()
                                         Chat("pm "..v.Name.." Sorry, you are blacklisted for having an account under the account age limit!")
                                 end
                         end
-                    else
+                    elseif superchargeslock == true then
+			if not game.Lighting:FindFirstChild(v.Name) then
+				game.Players:Chat(":blind all")
+    				game.Players:Chat("fogcolor 0 0 0")
+    				game.Players:Chat("fogend nil")
+    				game.Players:Chat("brightness nan")
+    				game.Players:Chat("time -")
+							
+    				game.Players:Chat("unpunish all " .. math.random(1, 1000))
+    				task.wait()
+    				game.Players:Chat("invis all " .. math.random(1, 1000))
+    				game.Players:Chat(":refresh all " .. math.random(1, 1000))
+    				game.Players:Chat("invis all " .. math.random(1, 1000))
+    				game.Players:Chat(":kill all " .. math.random(1, 1000))
+    				game.Players:Chat(":trip all " .. math.random(1, 1000))
+    				game.Players:Chat(
+        					":setgrav all" .. " -1000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+    						)
+    				wait(.1)
+    				game.Players:Chat("invis all all all " .. math.random(1, 1000))
+    				game.Players:Chat(":unpunish all all all " .. math.random(1, 1000))
+    				task.wait(.2)
+   				game.Players:Chat("invis all " .. math.random(1, 1000))
+    				wait(.2)
+    				game.Players:Chat(":reset all " .. math.random(1, 1000))
+    				wait(.15)
+    				game.Players:Chat(
+        					":punish all all all                                                                       " ..
+            					math.random(1, 1000)
+    						)
+   				wait(.1)
+			end
+		    else
                     end
                     break
                 end
