@@ -6192,14 +6192,14 @@ end
     end
 
     if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'antiattach' then
-	if not string.sub(msg:lower(), 1, #prefix + 11) == prefix..'antiattach2' then
+	if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'antiattach2' then else
         	antiattach = true
 		Remind("Anti attach is now enabled.")
 	end
     end
 
     if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'unantiattach' then
-	if not string.sub(msg:lower(), 1, #prefix + 13) == prefix..'unantiattach2' then
+	if string.sub(msg:lower(), 1, #prefix + 13) == prefix..'unantiattach2' then else
         	antiattach = false
 		Remind("Anti attach is now disabled.")
 	end
