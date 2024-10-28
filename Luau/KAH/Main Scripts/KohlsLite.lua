@@ -6002,14 +6002,14 @@ party]])
      end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'loopgrab' then
-    	if not string.sub(msg:lower(), 1, #prefix + 9) == prefix..'loopgrab2' then
+    	if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'loopgrab2' then else
         	loopgrab = true
 		Remind("Loopgrabbing the pads!")
 	end
     end
 
     if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unloopgrab' then
-	if not string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unloopgrab2' then
+	if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'unloopgrab2' then else
 		loopgrab = false
 		Remind("Stopped loopgrabbing the pads!")
 	end
