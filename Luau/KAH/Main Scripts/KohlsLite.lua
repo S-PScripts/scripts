@@ -67,7 +67,14 @@ local function Remind(msg)
         })
 end;
 
-Remind("i broke the blacklist")
+local function LRemind(msg, length)
+        game.StarterGui:SetCore("SendNotification", {
+                Title = "KohlsLite v1.87",
+                Text = msg,
+                Duration = length
+        })
+end;
+
 -- Check if KohlsLite is already executed
 if getgenv().kohlsexecuted then 
         return 
@@ -396,6 +403,7 @@ local newlen = 21
 
 -- Serverlock
 local slockenabled = false
+local superchargeslock = false -- insane slock
 
 -- Auto char
 local autocharid = "nll"
@@ -1397,7 +1405,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 			Remind("CMD PI/V3 does not work on mobile executors.")
 		else
                 	GExecute("https://raw.githubusercontent.com/S-PScripts/KAH/main/CMD%20v3.lua")
-			Remind("Executed CMD PI/V3. Created by quiving..")
+			Remind("Executed CMD PI/V3. Created by quiving.")
 		end
         end
 
@@ -1508,7 +1516,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		end
 				
                 if not table.find(blacklist, player) then
-			print("adding...")
+		--	print("adding...")
 			if blwl_an then
 				if watermark_kl then
 					Chat("h \n\n\n [KohlsLite]: "..player.." has been blacklisted. \n\n\n");Regen()
@@ -1523,7 +1531,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                         	Remind("Blacklisted "..player)
 			end
                         table.insert(blacklist, player)
-			print("added...")
+		--	print("added...") debug msg
                 else
                         Remind(player.." is already blacklisted!")        
                 end
@@ -1928,7 +1936,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         end
 
        if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'adminjoy' then
-                game.Players.LocalPlayer:Kick("You: 'I use adminjoy trash!' Anyways, ask ME to add the colourful seizure stuff, don't use THAT!")
+                LRemind("You: 'I use adminjoy trash!' Anyways, ask ME to add the colourful seizure stuff, don't use THAT!", 3)
        end
 
        if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'timeout' then
@@ -1943,6 +1951,14 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	Remind("Turned on the serverlock!")
        end
 
+       if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'serverlock' then
+		Chat(prefix.."slock")
+       end
+
+       if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'unserverlock' then
+	       Chat(prefix.."unslock")
+       end
+
        if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'unslock' then
         slockenabled = false
 	if blwl_an then
@@ -1953,6 +1969,16 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	Remind("Turned off the serverlock!")
        end
 
+       if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'scslock' then
+			superchargeslock = true
+			Remind("SUPER LOCK ENABLED")
+       end
+
+       if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'unscslock' then
+			superchargeslock = false
+			Remind("SUPER LOCK DISABLED")
+       end
+		
        if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'newplrslock' then
           newplrautoslock = true
 	  Remind("New player auto slock is now enabled!")
