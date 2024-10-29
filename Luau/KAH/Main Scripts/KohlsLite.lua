@@ -259,7 +259,9 @@ local pwl = {
     "whatveidone",
     "yeyeyeweweweye",
     "siga5167",
-    "3akakauuky"
+    "3akakauuky",
+    "dawninja21",
+    "Dawninja21alt"
 }
 
 -- Players you cannot kick
@@ -309,7 +311,9 @@ local nokick = {
     "whatveidone",
     "yeyeyeweweweye",
     "siga5167",
-    "3akakauuky"
+    "3akakauuky",
+    "dawninja21",
+    "Dawninja21alt"
 }
 
 -- Users that can use blacklisted gears (or gears when antigear is on)
@@ -362,7 +366,9 @@ local pgwl = {
     "whatveidone",
     "yeyeyeweweweye",
     "siga5167",
-    "3akakauuky"
+    "3akakauuky",
+    "dawninja21",
+    "Dawninja21alt"
 }
 
 -- Developers of KL
