@@ -8,7 +8,7 @@
     \|__| \|__|\|_______|\|__|\|__|\|_______|\_________\|_______|\|__|    \|__|  \|_______|
                                             \|_________|                                   
                                                                                            
-                                                                                           v1.861 ]]
+                                                                                           v1.88 ]]
 
 --[[
 https://kohlslite.pages.dev/source.txt
@@ -61,7 +61,7 @@ I know this script is inconsistent with the fact it uses Game with and without G
 -- Notifications
 local function Remind(msg)
         game.StarterGui:SetCore("SendNotification", {
-                Title = "KohlsLite v1.87",
+                Title = "KohlsLite v1.88",
                 Text = msg,
                 Duration = 1
         })
@@ -69,7 +69,7 @@ end;
 
 local function LRemind(msg, length)
         game.StarterGui:SetCore("SendNotification", {
-                Title = "KohlsLite v1.87",
+                Title = "KohlsLite v1.88",
                 Text = msg,
                 Duration = length
         })
@@ -129,7 +129,7 @@ getgenv().kohlsexecuted = true
 getgenv().deprefix = "." 
 
 -- The version of KohlsLite
-getgenv().klversion = "1.87"
+getgenv().klversion = "1.88"
 
 -- KohlsLite Start Gui
 getgenv().kohlsgui = false
