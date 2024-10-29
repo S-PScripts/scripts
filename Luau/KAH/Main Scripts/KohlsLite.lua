@@ -481,10 +481,10 @@ local musictable = {
     ["17"] = { id = "9038845849", name = "dubstep" },
     ["18"] = { id = "1843622301", name = "Mumbai Moon" },
     ["19"] = { id = "14145620056", name = "The Final Phonk" },
-    ["20"] = { id = "13530437708", name = "Phonk Vol 2 - The Final Phonk" },
+    ["20"] = { id = "13530437708", name = "0to8,1xmxxd - in ohio" },
     ["21"] = { id = "14145627857", name = "Catch My Drift" },
-    ["22"] = { id = "14145624031", name = "Phonk Vol. 1" },
-    ["23"] = { id = "13530438299", name = "stop posting about baller" },
+    ["22"] = { id = "14145624031", name = "Phonk Vol. 1 - Step Up Or Step Back" },
+    ["23"] = { id = "13530438299", name = "0to8,1xmxxd - stop posting about baller" },
     ["24"] = { id = "1838028467", name = "VIP Me" },
     ["25"] = { id = "1848354536", name = "James Clarke - Relaxed Scene" }, -- chill back (alt name before i found the actual original music)
     ["26"] = { id = "45819151", name = "sad depressing music 4am" },
@@ -554,7 +554,12 @@ local musictable = {
     ["90"] = { id = "15689448519", name = "Din1c - can you"},
     ["91"] = { id = "1847588120", name = "Epic Steps A"},
     ["92"] = { id = "1841277657", name = "All I Want Is You (a)"},
-    ["93"] = { id = "14145627144", name = "Phonk Vol. 1 - Antifreeze"} -- roblox makes phonk??
+    ["93"] = { id = "14145627144", name = "Phonk Vol. 1 - Antifreeze"}, -- roblox makes phonk??
+    ["94"] = { id = "16190784875", name = "Din1c X QWERRXR - Infinite"},
+    ["95"] = { id = "15689453529", name = "Din1c - INVASION"},
+    ["96"] = { id = "16831108393", name = "Blessed Mane - Death Is No More"},
+    ["97"] = { id = "16190760005", name = "Din1c X dxstrxcted! X QWERRXR - Cowbell God"},
+    ["98"] = { id = "13530438929", name = "1xmxxd - in ohio - spedup" }
 }
 
 -- Saved gears
