@@ -606,6 +606,41 @@ local gearlist = {
     ["telemon"] = {gearid = "93136746"},
     ["trapmine"] = {gearid = "11999247"},
     ["timegears"] = {gearid = "77443461"},
+
+    ["hyperlaser"] = {gearid = "130113146"},
+    ["mine"] = {gearid = "33383241"},
+    ["dsd"] = {gearid = "71037101"},
+    ["cresendo"] = {gearid = "94794774"},
+    ["rainbow"] = {gearid = "159229806"},
+    ["ivory"] = {gearid = "108158379"},
+    ["azure"] = {gearid = "69499437"},
+    ["crimson"] = {gearid = "99119240"},
+    ["chartreuse"] = {gearid = "80661504"},
+    ["amethyst"] = {gearid = "93136802"},
+    ["noir"] = {gearid = "120307951"},
+    ["grimgold"] = {gearid = "73829193"},
+    ["sledgehammer"] = {gearid = "45177979"},
+    ["carpet"] = {gearid = "225921000"},
+    ["dualdarkheart"] = {gearid = "108149175"},
+    ["darkheart"] = {gearid = "16895215"},
+    ["dualillumina"] = {gearid = "101191388"},
+    ["illumina"] = {gearid = "16641274"},
+    ["tommy"] = {gearid = "116693764"},
+    ["M1"] = {gearid = "130113146"},
+    ["luger"] = {gearid = "95354288"},
+    ["mauser"] = {gearid = "97885552"},
+    ["revolver"] = {gearid = "97885508"},
+    ["whip"] = {gearid = "255800146"},
+    ["jetpack"] = {gearid = "31314966"},
+    ["katana"] = {gearid = "11453385"},
+    ["chaos"] = {gearid = "93136746"},
+    ["lock"] = {gearid = "82357101"},
+	
+    ["ld"] = {gearid = "77443461"},
+    ["light"] = {gearid = "77443461"},
+	
+    ["dark"] = {gearid = "77443491"},
+    ["batsword"] = {gearid = "17680660"},
 	
     ["admslayer"] = {
         gearid = {
@@ -629,6 +664,24 @@ local gearlist = {
     },
 	
     ["periastrons"] = {
+        gearid = {
+            "108158379",
+            "80661504",
+            "233520257",
+            "73829193",
+            "69499437",
+            "139577901",
+            "2544549379",
+            "120307951",
+            "99119240",
+            "93136802",
+            "80597060",
+            "159229806",
+            "77443461"
+        }
+    },
+
+    ["ivories"] = {
         gearid = {
             "108158379",
             "80661504",
