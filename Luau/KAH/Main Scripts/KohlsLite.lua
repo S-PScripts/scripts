@@ -476,294 +476,525 @@ local movestatus = false
 local musicplay
 
 local musictable = {
-    ["1"] = { id = "9048375035", name = "All dropping 8 beats" },
-    ["2"] = { id = "1839029458", name = "Exotico Speedo" },
-    ["3"] = { id = "35930009", name = "Monster Mash" },
-    ["4"] = { id = "11808880515", name = "women song" },
-    ["5"] = { id = "1841647093", name = "Life in an Elevator" },
-    ["6"] = { id = "1837070127", name = "Prima Bossa" },
-    ["7"] = { id = "2042581436", name = "annoying citizen" },
-    ["8"] = { id = "5216738441", name = "big obama the real g" },
-    ["9"] = { id = "9038620433", name = "Out Of My Head" },
-    ["10"] = { id = "8147012902", name = "gigachad loop" },
-    ["11"] = { id = "9124780123", name = "Miss the rage Loop (Sparo Loop)" },
-    ["12"] = { id = "142376088", name = "Raining Tacos" },
-    ["13"] = { id = "1846368080", name = "Stadium Rave (A)" },
-    ["14"] = { id = "1840511219", name = "Funky Fanfare" },
-    ["15"] = { id = "1839404854", name = "Rock In" },
-    ["16"] = { id = "1838097718", name = "Royal Dedication" },
-    ["17"] = { id = "9038845849", name = "dubstep" },
-    ["18"] = { id = "1843622301", name = "Mumbai Moon" },
-    ["19"] = { id = "14145620056", name = "The Final Phonk" },
-    ["20"] = { id = "13530437708", name = "0to8,1xmxxd - in ohio" },
-    ["21"] = { id = "14145627857", name = "Catch My Drift" },
-    ["22"] = { id = "14145624031", name = "Phonk Vol. 1 - Step Up Or Step Back" },
-    ["23"] = { id = "13530438299", name = "0to8,1xmxxd - stop posting about baller" },
-    ["24"] = { id = "1838028467", name = "VIP Me" },
-    ["25"] = { id = "1848354536", name = "James Clarke - Relaxed Scene" },
-    ["26"] = { id = "45819151", name = "sad depressing music 4am" },
-    ["27"] = { id = "5410084188", name = "WRLD - Hang Up" },
-    ["28"] = { id = "7612400047", name = "SEGAAA" },
-    ["29"] = { id = "16190783444", name = "Dubidubidu (Techno Remix)" },
-    ["30"] = { id = "16190782786", name = "Lil Kuudere X sukoyomi" },
-    ["31"] = { id = "15689455422", name = "kirkiimad - i love (slow+reverb version)" },
-    ["32"] = { id = "1841668624", name = "Have a Lazy Day a" },
-    ["33"] = { id = "1848350335", name = "Desert Sands" },
-    ["34"] = { id = "1837853076", name = "SEE YOU IN HELL!" },
-    ["35"] = { id = "5410085763", name = "TOKYO MACHINE - PLAY!"},
-    ["36"] = { id = "1838635121", name = "Sad End"},
-    ["37"] = { id = "1839817591", name = "Animation Opening"},
-    ["38"] = { id = "1837879082", name = "Paradise Falls"},
-    ["39"] = { id = "1837392641", name = "Cannibal Collection"},
-    ["40"] = { id = "16662831858", name = "WahRA - Idk Remix"},
-    ["41"] = { id = "7764369437", name = "BEEP"},
-    ["42"] = { id = "1845458027", name = "Smooth Nylons"},
-    ["43"] = { id = "9047105533", name = "No Smoking"},
-    ["44"] = { id = "1846808350", name = "Get Up And Boogie"},
-    ["45"] = { id = "14366981962", name = "Diss na Hagi Łagi"},
-    ["46"] = { id = "11265157079", name = "Advance Slayer"},
-    ["47"] = { id = "11265140685", name = "Untitled"},
-    ["48"] = { id = "11265166921", name = "Pierniki"},
-    ["49"] = { id = "11265137944", name = "Slayers Hatred"},
-    ["50"] = { id = "11265148479", name = "Amogus"},
-    ["51"] = { id = "11265145737", name = "Blaze You"},
-    ["52"] = { id = "11265173310", name = "Biszkopty"},
-    ["53"] = { id = "11265164947", name = "Chipsy"},
-    ["54"] = { id = "11496561844", name = "Fresh New Age"},
-    ["55"] = { id = "14884822656", name = "CyPhrix - StartUpSequence.cprx"},
-    ["56"] = { id = "14884819670", name = "CyPhrix - Wobble"},
-    ["57"] = { id = "14884823796", name = "XRAY"},
-    ["58"] = { id = "14884823178", name = "Three Dimensions"},
-    ["59"] = { id = "14884817162", name = "Angel Hour"},
-    ["60"] = { id = "14884823527", name = "Outcome"},
-    ["61"] = { id = "14366982317", name = "GTA"},
-    ["62"] = { id = "15689442195", name = "CEO"},
-    ["63"] = { id = "15689441772", name = "HELLFIRE" },
-    ["64"] = { id = "15689451512", name = "Nothing Bad Is Going to Happen" },
-    ["65"] = { id = "15689446882", name = "EXISTANCE"},
-    ["66"] = { id = "16190782511", name = "uzipack"},
-    ["67"] = { id = "9043887091", name = "Lo-fi Chill A"},
-    ["68"] = { id = "1837768517", name = "Bossa Me (a)"},
-    ["69"] = { id = "9039445224", name = "8 Bitty Kitty - Underscore"},
-    ["70"] = { id = "9046863579", name = "City Lights - Roblox"},
-    ["71"] = { id = "15689457918", name = "nMisaki - Dream Girl (sped up)"},
-    ["72"] = { id = "1845742414", name = "Appetizer"},
-    ["73"] = { id = "7029024726", name = "Throttle - Bloom"},
-    ["74"] = { id = "1840612595", name = "A New Renaissance"},  
-    ["75"] = { id = "1836054144", name = "Upbeat Dude"},
-    ["76"] = { id = "1837275138", name = "Never Enough"},
-    ["77"] = { id = "1839917800", name = "Unknown"},
-    ["78"] = { id = "1840221593", name = "Fit For Life (A)"},
-    ["79"] = { id = "9041863801", name = "Unknown"},
-    ["80"] = { id = "1836711447", name = "Just Like Me"},
-    ["81"] = { id = "1845070869", name = "Eye Open"},
-    ["82"] = { id = "1847863129", name = "Tech Synth A"},
-    ["83"] = { id = "1845073388", name = "Need For Speed"},
-    ["84"] = { id = "1845092143", name = "Super Nova"},
-    ["85"] = { id = "1840006904", name = "Tricky (a)"},
-    ["86"] = { id = "2665943889", name = "get jebaited"},
-    ["87"] = { id = "18841891575", name = "d3r, m1v, asteria - no escape"},
-    ["88"] = { id = "17422208483", name = "osquinn x luvbackpack - Drama"},
-    ["89"] = { id = "5616761718", name = "henry stickman"},
-    ["90"] = { id = "15689448519", name = "Din1c - can you"},
-    ["91"] = { id = "1847588120", name = "Epic Steps A"},
-    ["92"] = { id = "1841277657", name = "All I Want Is You (a)"},
-    ["93"] = { id = "14145627144", name = "Phonk Vol. 1 - Antifreeze"},
-    ["94"] = { id = "16190784875", name = "Din1c X QWERRXR - Infinite"},
-    ["95"] = { id = "15689453529", name = "Din1c - INVASION"},
-    ["96"] = { id = "16831108393", name = "Blessed Mane - Death Is No More"},
-    ["97"] = { id = "16190760005", name = "Din1c X dxstrxcted! X QWERRXR - Cowbell God"},
-    ["98"] = { id = "13530438929", name = "1xmxxd - in ohio - spedup" }
+    ["1"] = {id = "9048375035", name = "All dropping 8 beats"},
+    ["2"] = {id = "1839029458", name = "Exotico Speedo"},
+    ["3"] = {id = "35930009", name = "Monster Mash"},
+    ["4"] = {id = "11808880515", name = "women song"},
+    ["5"] = {id = "1841647093", name = "Life in an Elevator"},
+    ["6"] = {id = "1837070127", name = "Prima Bossa"},
+    ["7"] = {id = "2042581436", name = "annoying citizen"},
+    ["8"] = {id = "5216738441", name = "big obama the real g"},
+    ["9"] = {id = "9038620433", name = "Out Of My Head"},
+    ["10"] = {id = "8147012902", name = "gigachad loop"},
+    ["11"] = {id = "9124780123", name = "Miss the rage Loop (Sparo Loop)"},
+    ["12"] = {id = "142376088", name = "Raining Tacos"},
+    ["13"] = {id = "1846368080", name = "Stadium Rave (A)"},
+    ["14"] = {id = "1840511219", name = "Funky Fanfare"},
+    ["15"] = {id = "1839404854", name = "Rock In"},
+    ["16"] = {id = "1838097718", name = "Royal Dedication"},
+    ["17"] = {id = "9038845849", name = "dubstep"},
+    ["18"] = {id = "1843622301", name = "Mumbai Moon"},
+    ["19"] = {id = "14145620056", name = "The Final Phonk"},
+    ["20"] = {id = "13530437708", name = "0to8,1xmxxd - in ohio"},
+    ["21"] = {id = "14145627857", name = "Catch My Drift"},
+    ["22"] = {id = "14145624031", name = "Phonk Vol. 1 - Step Up Or Step Back"},
+    ["23"] = {id = "13530438299", name = "0to8,1xmxxd - stop posting about baller"},
+    ["24"] = {id = "1838028467", name = "VIP Me"},
+    ["25"] = {id = "1848354536", name = "James Clarke - Relaxed Scene"},
+    ["26"] = {id = "45819151", name = "sad depressing music 4am"},
+    ["27"] = {id = "5410084188", name = "WRLD - Hang Up"},
+    ["28"] = {id = "7612400047", name = "SEGAAA"},
+    ["29"] = {id = "16190783444", name = "Dubidubidu (Techno Remix)"},
+    ["30"] = {id = "16190782786", name = "Lil Kuudere X sukoyomi"},
+    ["31"] = {id = "15689455422", name = "kirkiimad - i love (slow+reverb version)"},
+    ["32"] = {id = "1841668624", name = "Have a Lazy Day a"},
+    ["33"] = {id = "1848350335", name = "Desert Sands"},
+    ["34"] = {id = "1837853076", name = "SEE YOU IN HELL!"},
+    ["35"] = {id = "5410085763", name = "TOKYO MACHINE - PLAY!"},
+    ["36"] = {id = "1838635121", name = "Sad End"},
+    ["37"] = {id = "1839817591", name = "Animation Opening"},
+    ["38"] = {id = "1837879082", name = "Paradise Falls"},
+    ["39"] = {id = "1837392641", name = "Cannibal Collection"},
+    ["40"] = {id = "16662831858", name = "WahRA - Idk Remix"},
+    ["41"] = {id = "7764369437", name = "BEEP"},
+    ["42"] = {id = "1845458027", name = "Smooth Nylons"},
+    ["43"] = {id = "9047105533", name = "No Smoking"},
+    ["44"] = {id = "1846808350", name = "Get Up And Boogie"},
+    ["45"] = {id = "14366981962", name = "Diss na Hagi Łagi"},
+    ["46"] = {id = "11265157079", name = "Advance Slayer"},
+    ["47"] = {id = "11265140685", name = "Untitled"},
+    ["48"] = {id = "11265166921", name = "Pierniki"},
+    ["49"] = {id = "11265137944", name = "Slayers Hatred"},
+    ["50"] = {id = "11265148479", name = "Amogus"},
+    ["51"] = {id = "11265145737", name = "Blaze You"},
+    ["52"] = {id = "11265173310", name = "Biszkopty"},
+    ["53"] = {id = "11265164947", name = "Chipsy"},
+    ["54"] = {id = "11496561844", name = "Fresh New Age"},
+    ["55"] = {id = "14884822656", name = "CyPhrix - StartUpSequence.cprx"},
+    ["56"] = {id = "14884819670", name = "CyPhrix - Wobble"},
+    ["57"] = {id = "14884823796", name = "XRAY"},
+    ["58"] = {id = "14884823178", name = "Three Dimensions"},
+    ["59"] = {id = "14884817162", name = "Angel Hour"},
+    ["60"] = {id = "14884823527", name = "Outcome"},
+    ["61"] = {id = "14366982317", name = "GTA"},
+    ["62"] = {id = "15689442195", name = "CEO"},
+    ["63"] = {id = "15689441772", name = "HELLFIRE"},
+    ["64"] = {id = "15689451512", name = "Nothing Bad Is Going to Happen"},
+    ["65"] = {id = "15689446882", name = "EXISTANCE"},
+    ["66"] = {id = "16190782511", name = "uzipack"},
+    ["67"] = {id = "9043887091", name = "Lo-fi Chill A"},
+    ["68"] = {id = "1837768517", name = "Bossa Me (a)"},
+    ["69"] = {id = "9039445224", name = "8 Bitty Kitty - Underscore"},
+    ["70"] = {id = "9046863579", name = "City Lights - Roblox"},
+    ["71"] = {id = "15689457918", name = "nMisaki - Dream Girl (sped up)"},
+    ["72"] = {id = "1845742414", name = "Appetizer"},
+    ["73"] = {id = "7029024726", name = "Throttle - Bloom"},
+    ["74"] = {id = "1840612595", name = "A New Renaissance"},
+    ["75"] = {id = "1836054144", name = "Upbeat Dude"},
+    ["76"] = {id = "1837275138", name = "Never Enough"},
+    ["77"] = {id = "1839917800", name = "Unknown"},
+    ["78"] = {id = "1840221593", name = "Fit For Life (A)"},
+    ["79"] = {id = "9041863801", name = "Unknown"},
+    ["80"] = {id = "1836711447", name = "Just Like Me"},
+    ["81"] = {id = "1845070869", name = "Eye Open"},
+    ["82"] = {id = "1847863129", name = "Tech Synth A"},
+    ["83"] = {id = "1845073388", name = "Need For Speed"},
+    ["84"] = {id = "1845092143", name = "Super Nova"},
+    ["85"] = {id = "1840006904", name = "Tricky (a)"},
+    ["86"] = {id = "2665943889", name = "get jebaited"},
+    ["87"] = {id = "18841891575", name = "d3r, m1v, asteria - no escape"},
+    ["88"] = {id = "17422208483", name = "osquinn x luvbackpack - Drama"},
+    ["89"] = {id = "5616761718", name = "henry stickman"},
+    ["90"] = {id = "15689448519", name = "Din1c - can you"},
+    ["91"] = {id = "1847588120", name = "Epic Steps A"},
+    ["92"] = {id = "1841277657", name = "All I Want Is You (a)"},
+    ["93"] = {id = "14145627144", name = "Phonk Vol. 1 - Antifreeze"},
+    ["94"] = {id = "16190784875", name = "Din1c X QWERRXR - Infinite"},
+    ["95"] = {id = "15689453529", name = "Din1c - INVASION"},
+    ["96"] = {id = "16831108393", name = "Blessed Mane - Death Is No More"},
+    ["97"] = {id = "16190760005", name = "Din1c X dxstrxcted! X QWERRXR - Cowbell God"},
+    ["98"] = {id = "13530438929", name = "1xmxxd - in ohio - spedup"}
 }
 
 -- Saved gears
 local gearlist = {
-    ["boombox"] = { gearid = "212641536" },
+    ["boombox"] = {gearid = "212641536"},
 	
-    ["vg"] = { gearid = "94794847" },
-    ["vampire"] = { gearid = "94794847" },
-    ["vanquisher"] = { gearid = "94794847" },
-    ["vampirevanquisher"] = { gearid = "94794847" },
-    ["vampire vanquisher"] = { gearid = "94794847" },
+    ["vg"] = {gearid = "94794847"},
+    ["vampire"] = {gearid = "94794847"},
+    ["vanquisher"] = {gearid = "94794847"},
+    ["vampirevanquisher"] = {gearid = "94794847"},
+    ["vampire vanquisher"] = {gearid = "94794847"},
 	
-    ["osas"] = { gearid = "92628079" },
+    ["osas"] = {gearid = "92628079"},
+    ["gb"] = {gearid = "82357101"},
+    ["gearban"] = {gearid = "82357101"},
+    ["portable justice"] = {gearid = "82357101"},
+    ["portablejustice"] = {gearid = "82357101"},
 	
-    ["gb"] = { gearid = "82357101" },
-    ["gearban"] = { gearid = "82357101" },
-    ["portable justice"] = { gearid = "82357101" },
-    ["portablejustice"] = { gearid = "82357101" },
+    ["bhbomb"] = {gearid = "28277486"},
+    ["tictac"] = {gearid = "16924676"},
+    ["pgun"] = {gearid = "34870758"},
+    ["camfixer"] = {gearid = "79736563"},
 	
-    ["bhbomb"] = { gearid = "28277486" },
-    ["tictac"] = { gearid = "16924676" },
-    ["pgun"] = { gearid = "34870758" },
-    ["camfixer"] = { gearid = "79736563" },
+    ["ar"] = {gearid = "4842207161"},
+    ["cambreak"] = {gearid = "4842207161"},
 	
-    ["ar"] = { gearid = "4842207161" },
-    ["cambreak"] = { gearid = "4842207161" },
+    ["painter"] = {gearid = "18474459"},
+    ["paint bucket"] = {gearid = "18474459"},
+	
+    ["telemon"] = {gearid = "93136746"},
+    ["trapmine"] = {gearid = "11999247"},
+    ["timegears"] = {gearid = "77443461"},
+	
+    ["admslayer"] = {
+        gearid = {
+            "268586231",
+            "1103011681"
+        }
+    },
+	
+    ["kp"] = {
+        gearid = {
+            "583030187",
+            "68539623"
+        }
+    },
+	
+    ["icebreaker"] = {
+        gearid = {
+            "87361662",
+            "66896601"
+        }
+    },
+	
+    ["periastrons"] = {
+        gearid = {
+            "108158379",
+            "80661504",
+            "233520257",
+            "73829193",
+            "69499437",
+            "139577901",
+            "2544549379",
+            "120307951",
+            "99119240",
+            "93136802",
+            "80597060",
+            "159229806",
+            "77443461"
+        }
+    },
+	
+    ["melees"] = {
+        gearid = {
+            "121946387",
+            "12187348",
+            "170897263",
+            "427947884",
+            "306971294",
+            "306971294",
+            "11999235",
+            "28275809",
+            "10758456",
+            "243790334",
+            "14719505",
+            "13207169",
+            "11956382",
+            "10469910",
+            "124472052",
+            "20721924"
+        }
+    },
+	
+    ["guns"] = {
+        gearid = {
+            "243007180",
+            "116693764",
+            "212296936",
+            "168143042",
+            "467138029",
+            "42845609",
+            "130113146",
+            "26017478",
+            "26014536",
+            "9360722592",
+            "18268645"
+        }
+    },
+	
+    ["fungears"] = {
+        gearid = {
+            "111876831",
+            "90718686",
+            "283755431",
+            "139578061",
+            "90718686",
+            "212641536",
+            "392057539",
+            "323477973",
+            "78730532",
+            "47597835",
+            "212641536",
+            "88143093",
+            "73265108",
+            "115377964",
+            "98411393"
+        }
+    },
+	
+    ["explosives"] = {
+        gearid = {
+            "88885539",
+            "88885524",
+            "73888479",
+            "110337853",
+            "101110605",
+            "29957963",
+            "503955938",
+            "243788010",
+            "88146497"
+        }
+    },
+	
+    ["destructives"] = {
+        gearid = {
+            "125013830",
+            "225921650",
+            "60357972",
+            "108158379"
+        }
+    },
+	
+    ["swords"] = {
+        gearid = {
+            "25740034",
+            "638089422",
+            "170903610",
+            "319655422",
+            "125013769",
+            "108158379",
+            "2470750640",
+            "2041982658",
+            "361950297",
+            "2103274863",
+            "181356054",
+            "163491866",
+            "108158439"
+        }
+    },
+	
+    ["rideables"] = {
+        gearid = {
+            "304719869",
+            "2568114215",
+            "158069143",
+            "185422295",
+            "346687565",
+            "553939167",
+            "820013867",
+            "387285940",
+            "163348575",
+            "206799274",
+            "928805891",
+            "124127383",
+            "125013849",
+            "2445089071",
+            "253519495"
+        }
+    },
+	
+    ["guns2"] = {
+        gearid = {
+            "94233344",
+            "94233286",
+            "95354288",
+            "97885552",
+            "116693764",
+            "97885508",
+            "130113146"
+        }
+    },
 
-    ["painter"] = { gearid = "18474459" },
-    ["paint bucket"] = { gearid = "18474459" },
+    ["knife"] = {
+        gearid = {
+            "121946387",
+            "1215515248",
+            "208659586"
+        }
+    },
 	
-    ["telemon"] = { gearid = "93136746" },
-    ["trapmine"] = { gearid = "11999247" },
-    ["timegears"] = { gearid = "77443461" },
+    ["knives"] = {
+        gearid = {
+            "121946387",
+            "1215515248",
+            "208659586"
+        }
+    },
 	
-    ["admslayer"] = 
-	{ gearid = { 
-			"268586231",
-			"1103011681"
-		} 
-	},
+    ["dagger"] = {
+        gearid = {
+            "62350856",
+            "65079090",
+            "64220952",
+            "71037101",
+            "168142394",
+            "51760061"
+        }
+    },
 	
-    ["kp"] = 
-	{ gearid = {
-			"583030187", 
-			"68539623"
-		} 
-	},
+    ["daggers"] = {
+        gearid = {
+            "62350856",
+            "65079090",
+            "64220952",
+            "71037101",
+            "168142394",
+            "51760061"
+        }
+    },
 	
-    ["icebreaker"] = 
-	{ gearid = {
-			"87361662",
-			"66896601"
-		}
-	},
+    ["bow"] = {
+        gearid = {
+            "1180418251",
+            "92142841",
+            "2136389582",
+            "346687267",
+            "356213494",
+            "2568113462"
+        }
+    },
+
+    ["bows"] = {
+        gearid = {
+            "1180418251",
+            "92142841",
+            "2136389582",
+            "346687267",
+            "356213494",
+            "2568113462"
+        }
+    },
 	
-    ["periastrons"] = 
-	{gearid = {
-			"108158379",
-			"80661504", 
-			"233520257", 
-			"73829193", 
-			"69499437", 
-			"139577901", 
-			"2544549379", 
-			"120307951", 
-			"99119240", 
-			"93136802", 
-			"80597060", 
-			"159229806", 
-			"77443461"
-		}
-	},
+    ["crossbow"] = {
+        gearid = {
+            "174752245",
+            "1587175338",
+            "206566653",
+            "178076831",
+            "2163551089"
+        }
+    },
+
+    ["crossbows"] = {
+        gearid = {
+            "174752245",
+            "1587175338",
+            "206566653",
+            "178076831",
+            "2163551089"
+        }
+    },
 	
-    ["melees"] = 
-	{gearid = {
-			"121946387", 
-			"12187348", 
-			"170897263", 
-			"427947884", 
-			"306971294", 
-			"306971294", 
-			"11999235", 
-			"28275809", 
-			"10758456", 
-			"243790334", 
-			"14719505",
-			"13207169",
-			"11956382",
-			"10469910", 
-			"124472052",
-			"20721924"
-		} 
-	},
+    ["magic"] = {
+        gearid = {
+            "2316760298",
+            "127506105",
+            "10760425",
+            "66416616",
+            "2261167878",
+            "27860496"
+        }
+    },
 	
-    ["guns"] = 
-	{gearid = {
-			"243007180", 
-			"116693764", 
-			"212296936", 
-			"168143042", 
-			"467138029", 
-			"42845609",
-			"130113146",
-			"26017478", 
-			"26014536",
-			"9360722592",
-			"18268645"
-		} 
-	},
+    ["swords2"] = {
+        gearid = {
+            "1981813154",
+            "77443461",
+            "77443491",
+            "1340206957",
+            "155661985",
+            "532254782",
+            "88885481",
+            "93136746"
+        }
+    },
+
+    ["scythe"] = {
+        gearid = {
+            "1609498185",
+            "2506365260",
+            "28275809",
+            "846792499",
+            "95951330",
+            "218631128",
+            "50938765",
+            "517827255"
+        }
+    },
+
+    ["scythes"] = {
+        gearid = {
+            "1609498185",
+            "2506365260",
+            "28275809",
+            "846792499",
+            "95951330",
+            "218631128",
+            "50938765",
+            "517827255"
+        }
+    },
 	
-    ["fungears"] = 
-	{gearid = {
-			"111876831", 
-			"90718686", 
-			"283755431", 
-			"139578061", 
-			"90718686", 
-			"212641536",
-			"392057539",
-			"323477973",
-			"78730532", 
-			"47597835", 
-			"212641536",
-			"88143093", 
-			"73265108",
-			"115377964",
-			"98411393" 
-		}
-	},
+    ["ninja"] = {
+        gearid = {
+            "86494914",
+            "11377306",
+            "11115851",
+            "1304339797",
+            "51346336",
+            "233519998"
+        }
+    },
 	
-    ["explosives"] = 
-	{gearid = {
-			"88885539", 
-			"88885524",
-			"73888479",
-			"110337853", 
-			"101110605", 
-			"29957963",
-			"503955938", 
-			"243788010", 
-			"88146497"
-		} 
-	},
+    ["potion"] = {
+        gearid = {
+            "11450664",
+            "56561593",
+            "55917420",
+            "65082246",
+            "11419319",
+            "47597835"
+        }
+    },
+
+    ["potions"] = {
+        gearid = {
+            "11450664",
+            "56561593",
+            "55917420",
+            "65082246",
+            "11419319",
+            "47597835"
+        }
+    },
 	
-    ["destructives"] = 
-	{gearid = {
-			"125013830", 
-			"225921650", 
-			"60357972", 
-			"108158379"
-		}
-	},
+    ["flying"] = {
+        gearid = {
+            "225921000",
+            "31314966",
+            "477910063",
+            "511930668",
+            "223785473"
+        }
+    },
 	
-    ["swords"] = 
-	{gearid = {
-			"25740034",
-			"638089422", 
-			"170903610", 
-			"319655422", 
-			"125013769",
-			"108158379", 
-			"2470750640",
-			"2041982658", 
-			"361950297",
-			"2103274863",
-			"181356054", 
-			"163491866",
-			"108158439"
-		} 
-	},
+    ["bomb"] = {
+        gearid = {
+            "11999247",
+            "12890798",
+            "243788010",
+            "88885539"
+        }
+    },
+
+    ["bombs"] = {
+        gearid = {
+            "11999247",
+            "12890798",
+            "243788010",
+            "88885539"
+        }
+    },
 	
-    ["rideables"] = 
-	{gearid = {
-			"304719869", 
-			"2568114215", 
-			"158069143",
-			"185422295",
-			"346687565", 
-			"553939167",
-			"820013867", 
-			"387285940",
-			"163348575",
-			"206799274", 
-			"928805891", 
-			"124127383", 
-			"125013849", 
-			"2445089071", 
-			"253519495"
-		} 
-	}
+    ["troll"] = {
+        gearid = {
+            "82357101",
+            "94794847",
+            "243788010",
+            "268586231"
+        }
+    },
+
+    ["trolls"] = {
+        gearid = {
+            "82357101",
+            "94794847",
+            "243788010",
+            "268586231"
+        }
+    },
+	
+    ["heal"] = {
+        gearid = {
+            "11419319",
+            "61916132",
+            "115377964",
+            "2316760298",
+            "2103276507"
+        }
+    }
+	
 }
 
 -- Saved turns
