@@ -486,11 +486,11 @@ local musictable = {
     ["22"] = { id = "14145624031", name = "Phonk Vol. 1 - Step Up Or Step Back" },
     ["23"] = { id = "13530438299", name = "0to8,1xmxxd - stop posting about baller" },
     ["24"] = { id = "1838028467", name = "VIP Me" },
-    ["25"] = { id = "1848354536", name = "James Clarke - Relaxed Scene" }, -- chill back (alt name before i found the actual original music)
+    ["25"] = { id = "1848354536", name = "James Clarke - Relaxed Scene" },
     ["26"] = { id = "45819151", name = "sad depressing music 4am" },
     ["27"] = { id = "5410084188", name = "WRLD - Hang Up" },
     ["28"] = { id = "7612400047", name = "SEGAAA" },
-    ["29"] = { id = "16190783444", name = "Dubidubidu (Techno Remix)" }, -- chipi chipi chapa chapa (alt name before i found clipply)
+    ["29"] = { id = "16190783444", name = "Dubidubidu (Techno Remix)" },
     ["30"] = { id = "16190782786", name = "Lil Kuudere X sukoyomi" },
     ["31"] = { id = "15689455422", name = "kirkiimad - i love (slow+reverb version)" },
     ["32"] = { id = "1841668624", name = "Have a Lazy Day a" },
@@ -554,7 +554,7 @@ local musictable = {
     ["90"] = { id = "15689448519", name = "Din1c - can you"},
     ["91"] = { id = "1847588120", name = "Epic Steps A"},
     ["92"] = { id = "1841277657", name = "All I Want Is You (a)"},
-    ["93"] = { id = "14145627144", name = "Phonk Vol. 1 - Antifreeze"}, -- roblox makes phonk??
+    ["93"] = { id = "14145627144", name = "Phonk Vol. 1 - Antifreeze"},
     ["94"] = { id = "16190784875", name = "Din1c X QWERRXR - Infinite"},
     ["95"] = { id = "15689453529", name = "Din1c - INVASION"},
     ["96"] = { id = "16831108393", name = "Blessed Mane - Death Is No More"},
