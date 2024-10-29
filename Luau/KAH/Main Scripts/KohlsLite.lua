@@ -2358,12 +2358,28 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'themelist' then
                 Remind("Check your console by running /console!")
-		for key, theme in pairs(themecode) do -- doesn't work properly :( tried using ipairs but errors
+		for key, theme in pairs(themecode) do -- doesn't work properly :( tried using ipairs but errors (did i seriously say ipairs? yeah im stupid but anyways i'll fix this in uh... i forgor)
     			print(key .. " - " .. theme.name .. " - " .. theme.code)
 		end
     end
 
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'gear' then
+             local args = string.split(msg, " ")
+             if #args >= 3 then
+                local target = args[2]
+                local gearName = table.concat(args, " ", 3)
+                local gearIDs = gearlist[gearName].gearid 
+                if type(gearIDs) == "table" then
+                            for _, selectedGearID in ipairs(gearIDs) do
+                                Chat("gear " .. target .. " " .. selectedGearID)
+                            end
+                else
+                            Chat("gear " .. target .. " " .. gearIDs)
+                end
+         end
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'kit' then -- If you came from AdminJoy i guess
              local args = string.split(msg, " ")
              if #args >= 3 then
                 local target = args[2]
