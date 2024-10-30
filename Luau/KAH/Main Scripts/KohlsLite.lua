@@ -4913,13 +4913,10 @@ return
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'ecrash' then
-        	Chat("fix") -- ;Chat(prefix.."perm2")
+        	Chat("fix")
         	musicsay = false
-        	-- task.wait(0.5)
-		-- Chat(prefix.."unantimsg")
             	Chat("h \n\n\n Error occured. Please join a different server. \n\n\n")
 		Chat(prefix.."gmusic87")
-		--  Chat(prefix.."byp ")
            	Chat("fogcolor 0 0 0")
 		Chat("time 0")
 		Chat("fogend 0")
@@ -4927,6 +4924,24 @@ return
             	task.wait(1.5)
 		skipwarncrash = true
             	DCrash()        
+    end
+
+
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'jcrash' then
+        	Chat("h/lol get crashed nerd")
+	        musicsay = false
+		Chat(prefix.."gmusic11")
+		Chat("fogend 500")
+		Chat("time -")
+		Chat("colorshiftbottom 200 0 400")
+		Chat("fogcolor 75 0 0")
+		Chat("outdoorambient 250 0 0")
+		Chat("ambient 200 0 400")
+		Chat("colorshifttop 200 0 400")
+		Chat("respawn all")
+		task.wait(1.5)
+		skipwarncrash = true
+		DCrash()
     end
   
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'dicrash' then
