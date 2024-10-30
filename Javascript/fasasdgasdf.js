@@ -46,10 +46,14 @@ jsbomb = async function() {
     console.log(newProject);
 
     newProject = await newProject.json();
-    var newProjectId = newProject["content-name"]; // Get the project ID from the response
+    e = newProject["content-name"]; // Get the project ID from the response
+
+    h = h + 1; // Increment the remix number
+    console.log(h - 1); // Log the project's remix number
+    console.log(e); // Log the project's id
 
     // Update the project that was just shared with the new title
-    fetch('https://api.scratch.mit.edu/projects/' + newProjectId, { // Use the ID of the newly created project
+    fetch('https://api.scratch.mit.edu/projects/' + e, { // Use the ID of the newly created project
         method: 'PUT',
         headers: {
             "X-CSRFToken": csrf,
@@ -65,10 +69,6 @@ jsbomb = async function() {
     .then(response => response.json())
     .then(data => console.log(data))
     .catch(error => console.error('Error:', error));
-
-    h++; // Increment the remix number for the next project
-    console.log(h - 1); // Log the project's remix number
-    console.log(newProjectId); // Log the project's id
 
     jsbomb(); // Call jsbomb again for the next remix
 }
