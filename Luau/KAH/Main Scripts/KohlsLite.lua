@@ -470,6 +470,7 @@ local movestatus = false
  Pads = Admin:WaitForChild("Pads"):GetChildren()
 
 -- These are all of the music ids I've saved
+-- YOU SHOULD DO song instead of gmusic FOR BETTER ONES THESE ARE ONLY ONES I GOT FROM VIDEOS AND THEY SUCK
 -- Thanks to Dizzy for this idea of writing my musiclist
 -- It being gmusic1 instead of gmusic 1 is intentional!
 
@@ -536,7 +537,7 @@ local musictable = {
     ["58"] = {id = "14884823178", name = "Three Dimensions"},
     ["59"] = {id = "14884817162", name = "Angel Hour"},
     ["60"] = {id = "14884823527", name = "Outcome"},
-    ["61"] = {id = "14366982317", name = "GTA"},
+    ["61"] = {id = "14366982317", name = "SAKU - GTA"},
     ["62"] = {id = "15689442195", name = "CEO"},
     ["63"] = {id = "15689441772", name = "HELLFIRE"},
     ["64"] = {id = "15689451512", name = "Nothing Bad Is Going to Happen"},
@@ -573,7 +574,9 @@ local musictable = {
     ["95"] = {id = "15689453529", name = "Din1c - INVASION"},
     ["96"] = {id = "16831108393", name = "Blessed Mane - Death Is No More"},
     ["97"] = {id = "16190760005", name = "Din1c X dxstrxcted! X QWERRXR - Cowbell God"},
-    ["98"] = {id = "13530438929", name = "1xmxxd - in ohio - spedup"}
+    ["98"] = {id = "13530438929", name = "1xmxxd - in ohio - spedup"},
+    ["99"] = {id = "13629050392", name = "alajsonn - Kitty"},
+    ["100"] = {id = "14366981664", name = "SAKU - GTA (Nightcore)"} --,
 }
 
 -- Saved gears
