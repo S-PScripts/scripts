@@ -1,3 +1,8 @@
+-- A year since I archived the roblox exploits repo, and almost a year since I started development on KohlsLite
+-- Today marks the end of an era, as I use a new chromebook
+-- Thanks for everything so far
+-- (note - i'm not ded just kinda inactive rn, i'll be back soon i hope)
+
 --[[
  ___  __    ________  ___  ___  ___       ________  ___       ___  _________  _______      
 |\  \|\  \ |\   __  \|\  \|\  \|\  \     |\   ____\|\  \     |\  \|\___   ___\\  ___ \     
