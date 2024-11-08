@@ -15531,10 +15531,14 @@ end
 -- KohlsLite Blacklist --
 local unexecuteables = {
 	"Temporary123516",
-	"aliihsan12345Bloxy",
 	"XxSmurfXxSmurfXx",
 	"kjnjsknsdgkgnfgkjknf",
 	"NOTAVIRTUALMACHINE15"
+}
+
+local mentalhospital = {
+	"aliihsan12345Bloxy",
+	"Unknown35864"
 }
 
 if table.find(unexecuteables, game.Players.LocalPlayer.Name) then
@@ -15543,6 +15547,16 @@ if table.find(unexecuteables, game.Players.LocalPlayer.Name) then
 		end
                 pcall(function() -- thanks tech
 		        game.Players.LocalPlayer:Kick("[KohlsLite]: You have been blacklisted from KohlsLite. Contact ts2021 to contest this.") 
+                end)
+                task.wait(2.5); while true do end
+end
+
+if table.find(mentalhospital, game.Players.LocalPlayer.Name) then
+		if setclipboard then
+			setclipboard("dm ts2021	on discord")
+		end
+                pcall(function() -- thanks tech
+		        game.Players.LocalPlayer:Kick("[KohlsLite]: imagine skidding, claiming my script as yours, then blacklisting me from it. contact me (ts2021) so i can berate you more") 
                 end)
                 task.wait(2.5); while true do end
 end
