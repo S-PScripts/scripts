@@ -453,7 +453,18 @@ local personsusers = {}
 rkick_on_sight = {} 
 
 -- Crash server
-crash_on_sight = {"jhjssikeksms","aliihsan12345Bloxy"}
+crash_on_sight = {
+	"jhjssikeksms",
+	"aliihsan12345",
+	"aliihsan12345Bloxy",
+	"Unknown35864",
+	"UnknownHasComeBack",
+	"OhMyAlt000",
+	"Roblox_girlsfree",
+	"aliihsan12345isafurry", -- DID LIL BRO COPY S_PISAFURRY ???!!!
+    	"IIIdev",
+    	"ihateyou"
+}
 
 -- Message kick
 mkick_on_sight = {} 
@@ -15537,8 +15548,15 @@ local unexecuteables = {
 }
 
 local mentalhospital = {
+	"aliihsan12345",
 	"aliihsan12345Bloxy",
-	"Unknown35864"
+	"Unknown35864",
+	"UnknownHasComeBack",
+	"OhMyAlt000",
+	"Roblox_girlsfree",
+	"aliihsan12345isafurry", -- DID LIL BRO COPY S_PISAFURRY ???!!!
+    	"IIIdev",
+    	"ihateyou"
 }
 
 if table.find(unexecuteables, game.Players.LocalPlayer.Name) then
