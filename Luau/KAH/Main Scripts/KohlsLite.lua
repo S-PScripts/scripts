@@ -11341,7 +11341,7 @@ function hatkick(kickin, kickinplr) -- v, V.Name
 				if dzjecraft then break end
 				for i = 1, 100 do
 					if dzjecraft then break end
-   					 Chat("hat me 18137588505")
+   					 Chat("hat me 18219890448")
 					 task.wait(.5)
    					 Chat("clone me")
 				end
@@ -11369,11 +11369,11 @@ function techkick(kickin, kickinplr) -- Tech's hatkick
 		end)
 
 		for i = 1, 103 do
-			chatt("hat "..kickinplr.." 18137588505")
+			chatt("hat "..kickinplr.." 18219890448")
 		end
 
 		while hatspammingz do task.wait()
-			chatt("hat "..kickinplr.." 18137588505")
+			chatt("hat "..kickinplr.." 18219890448")
 		end
 end
 
