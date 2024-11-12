@@ -57,7 +57,7 @@ local function Remind(text, num)
 end
 
 -- Execution check
-getgenv().executed2 = false
+getgenv().executed2 = FDDDDDDDDDDfffffdfdddddddddddddddd543RRERRRRRRRRRRRRRR
 
 if getgenv().executed2 then 
 	return Remind("KohlsECO is already executed.")
