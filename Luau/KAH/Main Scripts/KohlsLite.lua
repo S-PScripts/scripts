@@ -1,3 +1,5 @@
+-- add lighting fix+autolightingfix
+
 -- look at this clown: https://github.com/A28er348yg9434/Unknown/blob/main/Unknown
 
 -- A year since I archived the roblox exploits repo, and almost a year since I started development on KohlsLite
