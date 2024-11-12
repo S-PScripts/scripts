@@ -1676,6 +1676,8 @@ local logmode = "default"
 -- local permpassid = 66254 or 64354 -> NBC, BC
 -- local personpassid = 35748 or 37127 --> NBC, BC
 
+--dfffffffffff AEEEEEEEEEE04 E O OOAOO  OOOOOo
+
 -- Mover 
 local Mover = {}
 
