@@ -1,4 +1,4 @@
--- add lighting fix+autolightingfix
+-- add lighting fix + auto-lighting fix
 -- look at this clown: https://github.com/A28er348yg9434/Unknown/blob/main/Unknown
 
 -- A year since I archived the roblox exploits repo, and almost a year since I started development on KohlsLite
@@ -127,7 +127,6 @@ if game.PlaceId ~= 112420803 and game.PlaceId ~= 115670532  then
 	return
 end
 
--- IY Auto Executor (Sorry if this is annoying but there's a bug in the lines for the prefix checker above which causes my script to break if IY is loaded after KL that I can't debug as of now
 --loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 
 -- Don't touch this!
@@ -3117,6 +3116,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'cmdbar' then
+	Remind("Created command bar! To remove it, you can't!")
 	local Players = game:GetService("Players")
 	local UserInputService = game:GetService("UserInputService")
 
