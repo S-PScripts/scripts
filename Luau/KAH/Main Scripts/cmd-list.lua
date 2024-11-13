@@ -6,1966 +6,1966 @@ print("Default prefix is .")
 print("\n")
 
 print(prefix..'kcmds')
-print('\n')
+print('')
 
 print(prefix..'iy')
-print('\n')
+print('')
 
 print(prefix..'myvis')
-print('\n')
+print('')
 
 print(prefix..'mydraw')
-print('\n')
+print('')
 
 print(prefix..'cmdpi')
-print('\n')
+print('')
 
 print(prefix..'prsc')
-print('\n')
+print('')
 
 print(prefix..'cmdy')
-print('\n')
+print('')
 
 print(prefix..'tricky')
-print('\n')
+print('')
 
 print(prefix..'ilove')
-print('\n')
+print('')
 
 print(prefix..'wl')
-print('\n')
+print('')
 
 print(prefix..'whitelist')
-print('\n')
+print('')
 
 print(prefix..'unwl')
-print('\n')
+print('')
 
 print(prefix..'unwhitelist')
-print('\n')
+print('')
 
 print(prefix..'bl')
-print('\n')
+print('')
 
 print(prefix..'blacklist')
-print('\n')
+print('')
 
 print(prefix..'unbl')
-print('\n')
+print('')
 
 print(prefix..'unblacklist')
-print('\n')
+print('')
 
 print(prefix..'listwl')
-print('\n')
+print('')
 
 print(prefix..'antimlog')
-print('\n')
+print('')
 
 print(prefix..'unantimlog')
-print('\n')
+print('')
 
 print(prefix..'admin')
-print('\n')
+print('')
 
 print(prefix..'unadmin')
-print('\n')
+print('')
 
 print(prefix..'listadmins')
-print('\n')
+print('')
 
 print(prefix..'gearwl')
-print('\n')
+print('')
 
 print(prefix..'ungearwl')
-print('\n')
+print('')
 
 print(prefix..'listgearwl')
-print('\n')
+print('')
 
 print(prefix..'fogvis')
-print('\n')
+print('')
 
 print(prefix..'unfogvis')
-print('\n')
+print('')
 
 print(prefix..'ccol')
-print('\n')
+print('')
 
 print(prefix..'unccol')
-print('\n')
+print('')
 
 print(prefix..'blwlan')
-print('\n')
+print('')
 
 print(prefix..'unblwlan')
-print('\n')
+print('')
 
 print(prefix..'loopkill')
-print('\n')
+print('')
 
 print(prefix..'unloopkill')
-print('\n')
+print('')
 
 print(prefix..'names')
-print('\n')
+print('')
 
 print(prefix..'unnames')
-print('\n')
+print('')
 
 print(prefix..'lagged')
-print('\n')
+print('')
 
 print(prefix..'unlagged')
-print('\n')
+print('')
 
 print(prefix..'coinlag')
-print('\n')
+print('')
 
 print(prefix..'report')
-print('\n')
+print('')
 
 print(prefix..'checkperm')
-print('\n')
+print('')
 
 print(prefix..'fcheckperm')
-print('\n')
+print('')
 
 print(prefix..'checkpersons')
-print('\n')
+print('')
 
 print(prefix..'checkgps')
-print('\n')
+print('')
 
 print(prefix..'listbl')
-print('\n')
+print('')
 
 print(prefix..'permusers')
-print('\n')
+print('')
 
 print(prefix..'personsusers')
-print('\n')
+print('')
 
 print(prefix..'adminjoy')
-print('\n')
+print('')
 
 print(prefix..'timeout')
-print('\n')
+print('')
 
 print(prefix..'slock')
-print('\n')
+print('')
 
 print(prefix..'unslock')
-print('\n')
+print('')
 
 print(prefix..'newplrslock')
-print('\n')
+print('')
 
 print(prefix..'unnewplrslock')
-print('\n')
+print('')
 
 print(prefix..'autoblvgc')
-print('\n')
+print('')
 
 print(prefix..'unautoblvgc')
-print('\n')
+print('')
 
 print(prefix..'npslist')
-print('\n')
+print('')
 
 print(prefix..'plrnewlen')
-print('\n')
+print('')
 
 print(prefix..'pboombox')
-print('\n')
+print('')
 
 print(prefix..'mboombox')
-print('\n')
+print('')
 
 print(prefix..'bgrange')
-print('\n')
+print('')
 
 print(prefix..'diceroll')
-print('\n')
+print('')
 
 print(prefix..'coinflip')
-print('\n')
+print('')
 
 print(prefix..'lgmusic')
-print('\n')
+print('')
 
 print(prefix..'unlgmusic')
-print('\n')
+print('')
 
 print(prefix..'msay')
-print('\n')
+print('')
 
 print(prefix..'unmsay')
-print('\n')
+print('')
 
 print(prefix..'gmusic')
-print('\n')
+print('')
 
 print(prefix..'rgmusic')
-print('\n')
+print('')
 
 print(prefix..'nmusic')
-print('\n')
+print('')
 
 print(prefix..'pmusic')
-print('\n')
+print('')
 
 print(prefix..'musiclist')
-print('\n')
+print('')
 
 print(prefix..'theme')
-print('\n')
+print('')
 
 print(prefix..'themelist')
-print('\n')
+print('')
 
 print(prefix..'gear')
-print('\n')
+print('')
 
 print(prefix..'gearlist')
-print('\n')
+print('')
 
 print(prefix..'char')
-print('\n')
+print('')
 
 print(prefix..'charlist')
-print('\n')
+print('')
 
 print(prefix..'turn')
-print('\n')
+print('')
 
 print(prefix..'pausem')
-print('\n')
+print('')
 
 print(prefix..'playm')
-print('\n')
+print('')
 
 print(prefix..'stopm')
-print('\n')
+print('')
 
 print(prefix..'startm')
-print('\n')
+print('')
 
 print(prefix..'stops')
-print('\n')
+print('')
 
 print(prefix..'starts')
-print('\n')
+print('')
 
 print(prefix..'deiv')
-print('\n')
+print('')
 
 print(prefix..'undeiv')
-print('\n')
+print('')
 
 print(prefix..'tropics')
-print('\n')
+print('')
 
 print(prefix..'sclr')
-print('\n')
+print('')
 
 print(prefix..'volm')
-print('\n')
+print('')
 
 print(prefix..'musicid')
-print('\n')
+print('')
 
 print(prefix..'cmusicid')
-print('\n')
+print('')
 
 print(prefix..'audiolog')
-print('\n')
+print('')
 
 print(prefix..'unaudiolog')
-print('\n')
+print('')
 
 print(prefix..'cvol')
-print('\n')
+print('')
 
 print(prefix..'timepos')
-print('\n')
+print('')
 
 print(prefix..'timeis')
-print('\n')
+print('')
 
 print(prefix..'timedur')
-print('\n')
+print('')
 
 print(prefix..'timeps')
-print('\n')
+print('')
 
 print(prefix..'timeplay')
-print('\n')
+print('')
 
 print(prefix..'audiolol')
-print('\n')
+print('')
 
 print(prefix..'unaudiolol')
-print('\n')
+print('')
 
 print(prefix..'antimusic')
-print('\n')
+print('')
 
 print(prefix..'unantimusic')
-print('\n')
+print('')
 
 print(prefix..'pmu')
-print('\n')
+print('')
 
 print(prefix..'pmu2')
-print('\n')
+print('')
 
 print(prefix..'2pmu')
-print('\n')
+print('')
 
 print(prefix..'bring')
-print('\n')
+print('')
 
 print(prefix..'goto')
-print('\n')
+print('')
 
 print(prefix..'song')
-print('\n')
+print('')
 
 print(prefix..'ssong')
-print('\n')
+print('')
 
 print(prefix..'esong')
-print('\n')
+print('')
 
 print(prefix..'ggear')
-print('\n')
+print('')
 
 print(prefix..'gchar')
-print('\n')
+print('')
 
 print(prefix..'antiabuse')
-print('\n')
+print('')
 
 print(prefix..'unantiabuse')
-print('\n')
+print('')
 
 print(prefix..'bok')
-print('\n')
+print('')
 
 print(prefix..'cgoto')
-print('\n')
+print('')
 
 print(prefix..'fixbp')
-print('\n')
+print('')
 
 print(prefix..'fixbp2')
-print('\n')
+print('')
 
 print(prefix..'movebp')
-print('\n')
+print('')
 
 print(prefix..'spawnkill')
-print('\n')
+print('')
 
 print(prefix..'cagespawn')
-print('\n')
+print('')
 
 print(prefix..'fixpads2')
-print('\n')
+print('')
 
 print(prefix..'fixregen2')
-print('\n')
+print('')
 
 print(prefix..'fixbp2')
-print('\n')
+print('')
 
 print(prefix..'fcam')
-print('\n')
+print('')
 
 print(prefix..'fixspawn')
-print('\n')
+print('')
 
 print(prefix..'movespawn')
-print('\n')
+print('')
 
 print(prefix..'fixregen')
-print('\n')
+print('')
 
 print(prefix..'fixregen2')
-print('\n')
+print('')
 
 print(prefix..'ivmove')
-print('\n')
+print('')
 
 print(prefix..'omove')
-print('\n')
+print('')
 
 print(prefix..'moveregen')
-print('\n')
+print('')
 
 print(prefix..'saveregen')
-print('\n')
+print('')
 
 print(prefix..'cusername')
-print('\n')
+print('')
 
 print(prefix..'fixpads')
-print('\n')
+print('')
 
 print(prefix..'fixpads2')
-print('\n')
+print('')
 
 print(prefix..'movepads')
-print('\n')
+print('')
 
 print(prefix..'fixfl')
-print('\n')
+print('')
 
 print(prefix..'movefl')
-print('\n')
+print('')
 
 print(prefix..'fixobby')
-print('\n')
+print('')
 
 print(prefix..'moveobby')
-print('\n')
+print('')
 
 print(prefix..'fixkb')
-print('\n')
+print('')
 
 print(prefix..'movekb')
-print('\n')
+print('')
 
 print(prefix..'fixobox')
-print('\n')
+print('')
 
 print(prefix..'moveobox')
-print('\n')
+print('')
 
 print(prefix..'fixadv')
-print('\n')
+print('')
 
 print(prefix..'moveadv')
-print('\n')
+print('')
 
 print(prefix..'fixhouse')
-print('\n')
+print('')
 
 print(prefix..'movehouse')
-print('\n')
+print('')
 
 print(prefix..'fixbb')
-print('\n')
+print('')
 
 print(prefix..'movebb')
-print('\n')
+print('')
 
 print(prefix..'toregen')
-print('\n')
+print('')
 
 print(prefix..'rparts')
-print('\n')
+print('')
 
 print(prefix..'lrobb')
-print('\n')
+print('')
 
 print(prefix..'laobb')
-print('\n')
+print('')
 
 print(prefix..'findregen')
-print('\n')
+print('')
 
 print(prefix..'findregen2')
-print('\n')
+print('')
 
 print(prefix..'nofindregen')
-print('\n')
+print('')
 
 print(prefix..'nofindregen2')
-print('\n')
+print('')
 
 print(prefix..'unfindregen')
-print('\n')
+print('')
 
 print(prefix..'unfindregen2')
-print('\n')
+print('')
 
 print(prefix..'findregen')
-print('\n')
+print('')
 
 print(prefix..'nofindregen2')
-print('\n')
+print('')
 
 print(prefix..'unfindregen2')
-print('\n')
+print('')
 
 print(prefix..'leakedreg')
-print('\n')
+print('')
 
 print(prefix..'unpmu')
-print('\n')
+print('')
 
 print(prefix..'offmusic')
-print('\n')
+print('')
 
 print(prefix..'onmusic')
-print('\n')
+print('')
 
 print(prefix..'remusic')
-print('\n')
+print('')
 
 print(prefix..'equipall')
-print('\n')
+print('')
 
 print(prefix..'actall')
-print('\n')
+print('')
 
 print(prefix..'invall')
-print('\n')
+print('')
 
 print(prefix..'dropall')
-print('\n')
+print('')
 
 print(prefix..'vgcrash')
-print('\n')
+print('')
 
 print(prefix..'cocrash')
-print('\n')
+print('')
 
 print(prefix..'emcrash')
-print('\n')
+print('')
 
 print(prefix..'pcrash')
-print('\n')
+print('')
 
 print(prefix..'fcrash')
-print('\n')
+print('')
 
 print(prefix..'dcrash')
-print('\n')
+print('')
 
 print(prefix..'scrash')
-print('\n')
+print('')
 
 print(prefix..'swc')
-print('\n')
+print('')
 
 print(prefix..'unswc')
-print('\n')
+print('')
 
 print(prefix..'rkick')
-print('\n')
+print('')
 
 print(prefix..'unrkick')
-print('\n')
+print('')
 
 print(prefix..'seedkick')
-print('\n')
+print('')
 
 print(prefix..'meshkick')
-print('\n')
+print('')
 
 print(prefix..'unmeshkick')
-print('\n')
+print('')
 
 print(prefix..'hatkick')
-print('\n')
+print('')
 
 print(prefix..'unhatkick')
-print('\n')
+print('')
 
 print(prefix..'techkick')
-print('\n')
+print('')
 
 print(prefix..'antimesh')
-print('\n')
+print('')
 
 print(prefix..'unantimesh')
-print('\n')
+print('')
 
 print(prefix..'antihat')
-print('\n')
+print('')
 
 print(prefix..'unantihat')
-print('\n')
+print('')
 
 print(prefix..'welmsg')
-print('\n')
+print('')
 
 print(prefix..'unwelmsg')
-print('\n')
+print('')
 
 print(prefix..'antian')
-print('\n')
+print('')
 
 print(prefix..'unantian')
-print('\n')
+print('')
 
 print(prefix..'clickexplode')
-print('\n')
+print('')
 
 print(prefix..'unclickexplode')
-print('\n')
+print('')
 
 print(prefix..'cakeday')
-print('\n')
+print('')
 
 print(prefix..'control')
-print('\n')
+print('')
 
 print(prefix..'ncontrol')
-print('\n')
+print('')
 
 print(prefix..'iceblock')
-print('\n')
+print('')
 
 print(prefix..'glitch')
-print('\n')
+print('')
 
 print(prefix..'headrise')
-print('\n')
+print('')
 
 print(prefix..'headroot')
-print('\n')
+print('')
 
 print(prefix..'skybox')
-print('\n')
+print('')
 
 print(prefix..'amputate')
-print('\n')
+print('')
 
 print(prefix..'icetower')
-print('\n')
+print('')
 
 print(prefix..'coconut')
-print('\n')
+print('')
 
 print(prefix..'cube')
-print('\n')
+print('')
 
 print(prefix..'tank')
-print('\n')
+print('')
 
 print(prefix..'ufo')
-print('\n')
+print('')
 
 print(prefix..'rat')
-print('\n')
+print('')
 
 print(prefix..'titan')
-print('\n')
+print('')
 
 print(prefix..'speaker')
-print('\n')
+print('')
 
 print(prefix..'dogrock')
-print('\n')
+print('')
 
 print(prefix..'rdogrock')
-print('\n')
+print('')
 
 print(prefix..'taxi')
-print('\n')
+print('')
 
 print(prefix..'smoothie')
-print('\n')
+print('')
 
 print(prefix..'tnt')
-print('\n')
+print('')
 
 print(prefix..'headfloat')
-print('\n')
+print('')
 
 print(prefix..'space')
-print('\n')
+print('')
 
 print(prefix..'tripin')
-print('\n')
+print('')
 
 print(prefix..'ascend')
-print('\n')
+print('')
 
 print(prefix..'bed')
-print('\n')
+print('')
 
 print(prefix..'kitten')
-print('\n')
+print('')
 
 print(prefix..'smack')
-print('\n')
+print('')
 
 print(prefix..'dumb')
-print('\n')
+print('')
 
 print(prefix..'bend')
-print('\n')
+print('')
 
 print(prefix..'ruin')
-print('\n')
+print('')
 
 print(prefix..'fspin')
-print('\n')
+print('')
 
 print(prefix..'yeet')
-print('\n')
+print('')
 
 print(prefix..'creeper')
-print('\n')
+print('')
 
 print(prefix..'gbreak')
-print('\n')
+print('')
 
 print(prefix..'antidisco')
-print('\n')
+print('')
 
 print(prefix..'unantidisco')
-print('\n')
+print('')
 
 print(prefix..'antiflash')
-print('\n')
+print('')
 
 print(prefix..'unantiflash')
-print('\n')
+print('')
 
 print(prefix..'antifogend')
-print('\n')
+print('')
 
 print(prefix..'unantifogend')
-print('\n')
+print('')
 
 print(prefix..'antiilight')
-print('\n')
+print('')
 
 print(prefix..'unantiilight')
-print('\n')
+print('')
 
 print(prefix..'antifogstart')
-print('\n')
+print('')
 
 print(prefix..'unantifogstart')
-print('\n')
+print('')
 
 print(prefix..'antifogc')
-print('\n')
+print('')
 
 print(prefix..'unantifogc')
-print('\n')
+print('')
 
 print(prefix..'antitime')
-print('\n')
+print('')
 
 print(prefix..'unantitime')
-print('\n')
+print('')
 
 print(prefix..'antiamb')
-print('\n')
+print('')
 
 print(prefix..'unantiamb')
-print('\n')
+print('')
 
 print(prefix..'antitrip')
-print('\n')
+print('')
 
 print(prefix..'unantitrip')
-print('\n')
+print('')
 
 print(prefix..'antiegg')
-print('\n')
+print('')
 
 print(prefix..'unantiegg')
-print('\n')
+print('')
 
 print(prefix..'antiplant')
-print('\n')
+print('')
 
 print(prefix..'unantiplant')
-print('\n')
+print('')
 
 print(prefix..'antibright')
-print('\n')
+print('')
 
 print(prefix..'unantibright')
-print('\n')
+print('')
 
 print(prefix..'antioutamb')
-print('\n')
+print('')
 
 print(prefix..'unantioutamb')
-print('\n')
+print('')
 
 print(prefix..'adv')
-print('\n')
+print('')
 
 print(prefix..'cadv')
-print('\n')
+print('')
 
 print(prefix..'ipboom')
-print('\n')
+print('')
 
 print(prefix..'logspam')
-print('\n')
+print('')
 
 print(prefix..'logtrap')
-print('\n')
+print('')
 
 print(prefix..'logmode')
-print('\n')
+print('')
 
 print(prefix..'persons')
-print('\n')
+print('')
 
 print(prefix..'unpersons')
-print('\n')
+print('')
 
 print(prefix..'peadmin')
-print('\n')
+print('')
 
 print(prefix..'unpeadmin')
-print('\n')
+print('')
 
 print(prefix..'tptool')
-print('\n')
+print('')
 
 print(prefix..'supercmd')
-print('\n')
+print('')
 
 print(prefix..'supert')
-print('\n')
+print('')
 
 print(prefix..'spamt')
-print('\n')
+print('')
 
 print(prefix..'unspamt')
-print('\n')
+print('')
 
 print(prefix..'chatz')
-print('\n')
+print('')
 
 print(prefix..'spamw')
-print('\n')
+print('')
 
 print(prefix..'spamwait')
-print('\n')
+print('')
 
 print(prefix..'spamoff')
-print('\n')
+print('')
 
 print(prefix..'spamon')
-print('\n')
+print('')
 
 print(prefix..'cbtools')
-print('\n')
+print('')
 
 print(prefix..'ecrash')
-print('\n')
+print('')
 
 print(prefix..'dicrash')
-print('\n')
+print('')
 
 print(prefix..'fredcrash')
-print('\n')
+print('')
 
 print(prefix..'chcrash')
-print('\n')
+print('')
 
 print(prefix..'rockmap')
-print('\n')
+print('')
 
 print(prefix..'stonemap')
-print('\n')
+print('')
 
 print(prefix..'hammer')
-print('\n')
+print('')
 
 print(prefix..'platform')
-print('\n')
+print('')
 
 print(prefix..'noplatform')
-print('\n')
+print('')
 
 print(prefix..'float')
-print('\n')
+print('')
 
 print(prefix..'unfloat')
-print('\n')
+print('')
 
 print(prefix..'icemap')
-print('\n')
+print('')
 
 print(prefix..'byp')
-print('\n')
+print('')
 
 print(prefix..'nbyp')
-print('\n')
+print('')
 
 print(prefix..'sregen')
-print('\n')
+print('')
 
 print(prefix..'unsregen')
-print('\n')
+print('')
 
 print(prefix..'autogpc')
-print('\n')
+print('')
 
 print(prefix..'unautogpc')
-print('\n')
+print('')
 
 print(prefix..'padban')
-print('\n')
+print('')
 
 print(prefix..'unpadban')
-print('\n')
+print('')
 
 print(prefix..'padreinf')
-print('\n')
+print('')
 
 print(prefix..'unpadreinf')
-print('\n')
+print('')
 
 print(prefix..'qattach')
-print('\n')
+print('')
 
 print(prefix..'biglogs')
-print('\n')
+print('')
 
 print(prefix..'regen')
-print('\n')
+print('')
 
 print(prefix..'house')
-print('\n')
+print('')
 
 print(prefix..'spawn')
-print('\n')
+print('')
 
 print(prefix..'hhouse')
-print('\n')
+print('')
 
 print(prefix..'phelp')
-print('\n')
+print('')
 
 print(prefix..'void')
-print('\n')
+print('')
 
 print(prefix..'execute')
-print('\n')
+print('')
 
 print(prefix..'announce')
-print('\n')
+print('')
 
 print(prefix..'cannounce')
-print('\n')
+print('')
 
 print(prefix..'shlong')
-print('\n')
+print('')
 
 print(prefix..'unshlong')
-print('\n')
+print('')
 
 print(prefix..'dncycle')
-print('\n')
+print('')
 
 print(prefix..'undncycle')
-print('\n')
+print('')
 
 print(prefix..'arena')
-print('\n')
+print('')
 
 print(prefix..'prefix')
-print('\n')
+print('')
 
 print(prefix..'goodexec')
-print('\n')
+print('')
 
 print(prefix..'circa')
-print('\n')
+print('')
 
 print(prefix..'crad')
-print('\n')
+print('')
 
 print(prefix..'pmap')
-print('\n')
+print('')
 
 print(prefix..'paintmap')
-print('\n')
+print('')
 
 print(prefix..'messpaint')
-print('\n')
+print('')
 
 print(prefix..'rbgmap')
-print('\n')
+print('')
 
 print(prefix..'rmap')
-print('\n')
+print('')
 
 print(prefix..'rbase')
-print('\n')
+print('')
 
 print(prefix..'rfog')
-print('\n')
+print('')
 
 print(prefix..'unrmap')
-print('\n')
+print('')
 
 print(prefix..'unrbase')
-print('\n')
+print('')
 
 print(prefix..'unrfog')
-print('\n')
+print('')
 
 print(prefix..'autoafk')
-print('\n')
+print('')
 
 print(prefix..'unautoafk')
-print('\n')
+print('')
 
 print(prefix..'antilag')
-print('\n')
+print('')
 
 print(prefix..'unantilag')
-print('\n')
+print('')
 
 print(prefix..'capfps')
-print('\n')
+print('')
 
 print(prefix..'alladmin')
-print('\n')
+print('')
 
 print(prefix..'keybind')
-print('\n')
+print('')
 
 print(prefix..'vkeybind')
-print('\n')
+print('')
 
 print(prefix..'unkeybind')
-print('\n')
+print('')
 
 print(prefix..'unvkeybind')
-print('\n')
+print('')
 
 print(prefix..'setkey')
-print('\n')
+print('')
 
 print(prefix..'unalladmin')
-print('\n')
+print('')
 
 print(prefix..'nok')
-print('\n')
+print('')
 
 print(prefix..'nok2')
-print('\n')
+print('')
 
 print(prefix..'nok3')
-print('\n')
+print('')
 
 print(prefix..'nok2')
-print('\n')
+print('')
 
 print(prefix..'nok3')
-print('\n')
+print('')
 
 print(prefix..'tnok')
-print('\n')
+print('')
 
 print(prefix..'untnok')
-print('\n')
+print('')
 
 print(prefix..'getping')
-print('\n')
+print('')
 
 print(prefix..'autogb')
-print('\n')
+print('')
 
 print(prefix..'unautogb')
-print('\n')
+print('')
 
 print(prefix..'qpunish')
-print('\n')
+print('')
 
 print(prefix..'spunish')
-print('\n')
+print('')
 
 print(prefix..'gpunish')
-print('\n')
+print('')
 
 print(prefix..'ungearban')
-print('\n')
+print('')
 
 print(prefix..'gearban')
-print('\n')
+print('')
 
 print(prefix..'rail')
-print('\n')
+print('')
 
 print(prefix..'lemonman')
-print('\n')
+print('')
 
 print(prefix..'laser')
-print('\n')
+print('')
 
 print(prefix..'surround')
-print('\n')
+print('')
 
 print(prefix..'rnuke')
-print('\n')
+print('')
 
 print(prefix..'dnuke')
-print('\n')
+print('')
 
 print(prefix..'jnuke')
-print('\n')
+print('')
 
 print(prefix..'rcannon')
-print('\n')
+print('')
 
 print(prefix..'wrcannon')
-print('\n')
+print('')
 
 print(prefix..'uncannon')
-print('\n')
+print('')
 
 print(prefix..'astrike')
-print('\n')
+print('')
 
 print(prefix..'unastrike')
-print('\n')
+print('')
 
 print(prefix..'skcraze')
-print('\n')
+print('')
 
 print(prefix..'unskcraze')
-print('\n')
+print('')
 
 print(prefix..'weld')
-print('\n')
+print('')
 
 print(prefix..'nweld')
-print('\n')
+print('')
 
 print(prefix..'hfreeze')
-print('\n')
+print('')
 
 print(prefix..'tattach')
-print('\n')
+print('')
 
 print(prefix..'acton')
-print('\n')
+print('')
 
 print(prefix..'listacton')
-print('\n')
+print('')
 
 print(prefix..'rfgun')
-print('\n')
+print('')
 
 print(prefix..'unrfgun')
-print('\n')
+print('')
 
 print(prefix..'sjail')
-print('\n')
+print('')
 
 print(prefix..'nuke')
-print('\n')
+print('')
 
 print(prefix..'age')
-print('\n')
+print('')
 
 print(prefix..'jdate')
-print('\n')
+print('')
 
 print(prefix..'dkick')
-print('\n')
+print('')
 
 print(prefix..'undkick')
-print('\n')
+print('')
 
 print(prefix..'slag')
-print('\n')
+print('')
 
 print(prefix..'nslag')
-print('\n')
+print('')
 
 print(prefix..'rpaintui')
-print('\n')
+print('')
 
 print(prefix..'sspawn')
-print('\n')
+print('')
 
 print(prefix..'cpos')
-print('\n')
+print('')
 
 print(prefix..'gsspawn')
-print('\n')
+print('')
 
 print(prefix..'frespawn')
-print('\n')
+print('')
 
 print(prefix..'mrespawn')
-print('\n')
+print('')
 
 print(prefix..'dummy')
-print('\n')
+print('')
 
 print(prefix..'ffix')
-print('\n')
+print('')
 
 print(prefix..'rejoin')
-print('\n')
+print('')
 
 print(prefix..'rj')
-print('\n')
+print('')
 
 print(prefix..'autorj')
-print('\n')
+print('')
 
 print(prefix..'unautorj')
-print('\n')
+print('')
 
 print(prefix..'prj')
-print('\n')
+print('')
 
 print(prefix..'prejoin')
-print('\n')
+print('')
 
 print(prefix..'shop')
-print('\n')
+print('')
 
 print(prefix..'serverhop')
-print('\n')
+print('')
 
 print(prefix..'iyshop')
-print('\n')
+print('')
 
 print(prefix..'scshop')
-print('\n')
+print('')
 
 print(prefix..'rshop')
-print('\n')
+print('')
 
 print(prefix..'infjump')
-print('\n')
+print('')
 
 print(prefix..'uninfjump')
-print('\n')
+print('')
 
 print(prefix..'speed')
-print('\n')
+print('')
 
 print(prefix..'editsp')
-print('\n')
+print('')
 
 print(prefix..'uneditsp')
-print('\n')
+print('')
 
 print(prefix..'jp')
-print('\n')
+print('')
 
 print(prefix..'editjp')
-print('\n')
+print('')
 
 print(prefix..'uneditjp')
-print('\n')
+print('')
 
 print(prefix..'minzoom')
-print('\n')
+print('')
 
 print(prefix..'maxzoom')
-print('\n')
+print('')
 
 print(prefix..'hlth')
-print('\n')
+print('')
 
 print(prefix..'fov')
-print('\n')
+print('')
 
 print(prefix..'grav')
-print('\n')
+print('')
 
 print(prefix..'unlockws')
-print('\n')
+print('')
 
 print(prefix..'lockws')
-print('\n')
+print('')
 
 print(prefix..'noclip')
-print('\n')
+print('')
 
 print(prefix..'clip')
-print('\n')
+print('')
 
 print(prefix..'ufly')
-print('\n')
+print('')
 
 print(prefix..'isc')
-print('\n')
+print('')
 
 print(prefix..'checkc')
-print('\n')
+print('')
 
 print(prefix..'breakanims')
-print('\n')
+print('')
 
 print(prefix..'nocam')
-print('\n')
+print('')
 
 print(prefix..'wbcam')
-print('\n')
+print('')
 
 print(prefix..'wfcam')
-print('\n')
+print('')
 
 print(prefix..'breakcam')
-print('\n')
+print('')
 
 print(prefix..'fixcam')
-print('\n')
+print('')
 
 print(prefix..'fixvelo')
-print('\n')
+print('')
 
 print(prefix..'obpfixv')
-print('\n')
+print('')
 
 print(prefix..'bpfixv')
-print('\n')
+print('')
 
 print(prefix..'flipbp')
-print('\n')
+print('')
 
 print(prefix..'fakebp')
-print('\n')
+print('')
 
 print(prefix..'nofakebp')
-print('\n')
+print('')
 
 print(prefix..'fixcol')
-print('\n')
+print('')
 
 print(prefix..'fixgrav')
-print('\n')
+print('')
 
 print(prefix..'novelo')
-print('\n')
+print('')
 
 print(prefix..'breakvelo')
-print('\n')
+print('')
 
 print(prefix..'loopgrab')
-print('\n')
+print('')
 
 print(prefix..'loopgrab2')
-print('\n')
+print('')
 
 print(prefix..'unloopgrab')
-print('\n')
+print('')
 
 print(prefix..'unloopgrab2')
-print('\n')
+print('')
 
 print(prefix..'fastpads')
-print('\n')
+print('')
 
 print(prefix..'loopgrab2')
-print('\n')
+print('')
 
 print(prefix..'unloopgrab2')
-print('\n')
+print('')
 
 print(prefix..'perm')
-print('\n')
+print('')
 
 print(prefix..'perm2')
-print('\n')
+print('')
 
 print(prefix..'unperm')
-print('\n')
+print('')
 
 print(prefix..'unperm2')
-print('\n')
+print('')
 
 print(prefix..'perm2')
-print('\n')
+print('')
 
 print(prefix..'unperm2')
-print('\n')
+print('')
 
 print(prefix..'allpads')
-print('\n')
+print('')
 
 print(prefix..'checkbp')
-print('\n')
+print('')
 
 print(prefix..'gotosky')
-print('\n')
+print('')
 
 print(prefix..'ungearme')
-print('\n')
+print('')
 
 print(prefix..'watermap')
-print('\n')
+print('')
 
 print(prefix..'nowater')
-print('\n')
+print('')
 
 print(prefix..'removewater')
-print('\n')
+print('')
 
 print(prefix..'rwater')
-print('\n')
+print('')
 
 print(prefix..'clrwater')
-print('\n')
+print('')
 
 print(prefix..'clearwater')
-print('\n')
+print('')
 
 print(prefix..'fixpaint')
-print('\n')
+print('')
 
 print(prefix..'anticrash')
-print('\n')
+print('')
 
 print(prefix..'unanticrash')
-print('\n')
+print('')
 
 print(prefix..'emranticrash')
-print('\n')
+print('')
 
 print(prefix..'unemranticrash')
-print('\n')
+print('')
 
 print(prefix..'antigs')
-print('\n')
+print('')
 
 print(prefix..'unantigs')
-print('\n')
+print('')
 
 print(prefix..'antipaint')
-print('\n')
+print('')
 
 print(prefix..'unantipaint')
-print('\n')
+print('')
 
 print(prefix..'antigear')
-print('\n')
+print('')
 
 print(prefix..'unantigear')
-print('\n')
+print('')
 
 print(prefix..'antigb')
-print('\n')
+print('')
 
 print(prefix..'unantigb')
-print('\n')
+print('')
 
 print(prefix..'antiattach2')
-print('\n')
+print('')
 
 print(prefix..'unantiattach2')
-print('\n')
+print('')
 
 print(prefix..'antiperi')
-print('\n')
+print('')
 
 print(prefix..'unantiperi')
-print('\n')
+print('')
 
 print(prefix..'antiattach')
-print('\n')
+print('')
 
 print(prefix..'antiattach2')
-print('\n')
+print('')
 
 print(prefix..'unantiattach')
-print('\n')
+print('')
 
 print(prefix..'unantiattach2')
-print('\n')
+print('')
 
 print(prefix..'antifling')
-print('\n')
+print('')
 
 print(prefix..'unantifling')
-print('\n')
+print('')
 
 print(prefix..'noblt')
-print('\n')
+print('')
 
 print(prefix..'unnoblt')
-print('\n')
+print('')
 
 print(prefix..'antiray')
-print('\n')
+print('')
 
 print(prefix..'unantiray')
-print('\n')
+print('')
 
 print(prefix..'novoid')
-print('\n')
+print('')
 
 print(prefix..'fixvoid')
-print('\n')
+print('')
 
 print(prefix..'cvoid')
-print('\n')
+print('')
 
 print(prefix..'pinglogs')
-print('\n')
+print('')
 
 print(prefix..'unpinglogs')
-print('\n')
+print('')
 
 print(prefix..'antilogs')
-print('\n')
+print('')
 
 print(prefix..'unantilogs')
-print('\n')
+print('')
 
 print(prefix..'pingcsys')
-print('\n')
+print('')
 
 print(prefix..'unpingcsys')
-print('\n')
+print('')
 
 print(prefix..'noobdetect')
-print('\n')
+print('')
 
 print(prefix..'unnoobdetect')
-print('\n')
+print('')
 
 print(prefix..'antiblind')
-print('\n')
+print('')
 
 print(prefix..'unantiblind')
-print('\n')
+print('')
 
 print(prefix..'antiaddon')
-print('\n')
+print('')
 
 print(prefix..'unantiaddon')
-print('\n')
+print('')
 
 print(prefix..'anticlone')
-print('\n')
+print('')
 
 print(prefix..'unanticlone')
-print('\n')
+print('')
 
 print(prefix..'antidog')
-print('\n')
+print('')
 
 print(prefix..'unantidog')
-print('\n')
+print('')
 
 print(prefix..'antifire')
-print('\n')
+print('')
 
 print(prefix..'unantifire')
-print('\n')
+print('')
 
 print(prefix..'antifreeze')
-print('\n')
+print('')
 
 print(prefix..'unantifreeze')
-print('\n')
+print('')
 
 print(prefix..'antiff')
-print('\n')
+print('')
 
 print(prefix..'unantiff')
-print('\n')
+print('')
 
 print(prefix..'antiglow')
-print('\n')
+print('')
 
 print(prefix..'unantiglow')
-print('\n')
+print('')
 
 print(prefix..'antihc')
-print('\n')
+print('')
 
 print(prefix..'unantihc')
-print('\n')
+print('')
 
 print(prefix..'antijail')
-print('\n')
+print('')
 
 print(prefix..'unantijail')
-print('\n')
+print('')
 
 print(prefix..'antijump')
-print('\n')
+print('')
 
 print(prefix..'unantijump')
-print('\n')
+print('')
 
 print(prefix..'antikill')
-print('\n')
+print('')
 
 print(prefix..'unantikill')
-print('\n')
+print('')
 
 print(prefix..'antifly')
-print('\n')
+print('')
 
 print(prefix..'unantifly')
-print('\n')
+print('')
 
 print(prefix..'antinoc')
-print('\n')
+print('')
 
 print(prefix..'unantinoc')
-print('\n')
+print('')
 
 print(prefix..'antichar')
-print('\n')
+print('')
 
 print(prefix..'unantichar')
-print('\n')
+print('')
 
 print(prefix..'antimsg')
-print('\n')
+print('')
 
 print(prefix..'unantimsg')
-print('\n')
+print('')
 
 print(prefix..'antitp')
-print('\n')
+print('')
 
 print(prefix..'unantitp')
-print('\n')
+print('')
 
 print(prefix..'antiafk')
-print('\n')
+print('')
 
 print(prefix..'unantiafk')
-print('\n')
+print('')
 
 print(prefix..'autoungb')
-print('\n')
+print('')
 
 print(prefix..'unautoungb')
-print('\n')
+print('')
 
 print(prefix..'antivoid')
-print('\n')
+print('')
 
 print(prefix..'unantivoid')
-print('\n')
+print('')
 
 print(prefix..'antisky')
-print('\n')
+print('')
 
 print(prefix..'unantisky')
-print('\n')
+print('')
 
 print(prefix..'antiname')
-print('\n')
+print('')
 
 print(prefix..'unantiname')
-print('\n')
+print('')
 
 print(prefix..'antiparticles')
-print('\n')
+print('')
 
 print(prefix..'unantiparticles')
-print('\n')
+print('')
 
 print(prefix..'antipunish')
-print('\n')
+print('')
 
 print(prefix..'unantipunish')
-print('\n')
+print('')
 
 print(prefix..'antirocket')
-print('\n')
+print('')
 
 print(prefix..'unantirocket')
-print('\n')
+print('')
 
 print(prefix..'antikick')
-print('\n')
+print('')
 
 print(prefix..'unantikick')
-print('\n')
+print('')
 
 print(prefix..'antit')
-print('\n')
+print('')
 
 print(prefix..'unantit')
-print('\n')
+print('')
 
 print(prefix..'antisit')
-print('\n')
+print('')
 
 print(prefix..'unantisit')
-print('\n')
+print('')
 
 print(prefix..'antiseizure')
-print('\n')
+print('')
 
 print(prefix..'unantiseizure')
-print('\n')
+print('')
 
 print(prefix..'antismoke')
-print('\n')
+print('')
 
 print(prefix..'unantismoke')
-print('\n')
+print('')
 
 print(prefix..'antisparkles')
-print('\n')
+print('')
 
 print(prefix..'unantisparkles')
-print('\n')
+print('')
 
 print(prefix..'antispeed')
-print('\n')
+print('')
 
 print(prefix..'unantispeed')
-print('\n')
+print('')
 
 print(prefix..'antispin')
-print('\n')
+print('')
 
 print(prefix..'unantispin')
-print('\n')
+print('')
 
 print(prefix..'antistun')
-print('\n')
+print('')
 
 print(prefix..'unantistun')
-print('\n')
+print('')
 
 print(prefix..'antistg')
-print('\n')
+print('')
 
 print(prefix..'unantistg')
-print('\n')
+print('')
 
 print(prefix..'antiswag')
-print('\n')
+print('')
 
 print(prefix..'unantiswag')
-print('\n')
+print('')
 
 print(prefix..'antichat')
-print('\n')
+print('')
 
 print(prefix..'unantichat')
-print('\n')
+print('')
 
 print(prefix..'mkick')
-print('\n')
+print('')
 
 print(prefix..'unmkick')
-print('\n')
+print('')
 
 print(prefix..'pkick')
-print('\n')
+print('')
 
 print(prefix..'unpkick')
-print('\n')
+print('')
 
 print(prefix..'lkick')
-print('\n')
+print('')
 
 print(prefix..'unlkick')
-print('\n')
+print('')
 
 print(prefix..'autoff')
-print('\n')
+print('')
 
 print(prefix..'unautoff')
-print('\n')
+print('')
 
 print(prefix..'autogod')
-print('\n')
+print('')
 
 print(prefix..'unautogod')
-print('\n')
+print('')
 
 print(prefix..'autochar')
-print('\n')
+print('')
 
 print(prefix..'unautochar')
-print('\n')
+print('')
 
 print(prefix..'freerobux')
-print('\n')
+print('')
 
 print(prefix..'febypass')
-print('\n')
+print('')
 
 print(prefix..'reserver')
-print('\n')
+print('')
 
 print(prefix..'devcmd')
-print('\n')
+print('')
 
 print(prefix..'discord')
-print('\n')
+print('')
 
 print(prefix..'buy')
-print('\n')
+print('')
 
 print(prefix..'purchase')
-print('\n')
+print('')
 
 print(prefix..'r6')
-print('\n')
+print('')
 
 print(prefix..'r15')
-print('\n')
+print('')
 
 print(prefix..'dance')
-print('\n')
+print('')
 
 print(prefix..'undance')
-print('\n')
+print('')
 
 print(prefix..'spasm')
-print('\n')
+print('')
 
 print(prefix..'unspasm')
-print('\n')
+print('')
 
 print(prefix..'headthrow')
-print('\n')
+print('')
 
 print(prefix..'headsit')
-print('\n')
+print('')
 
 print(prefix..'carpet')
-print('\n')
+print('')
 
 print(prefix..'uncarpet')
-print('\n')
+print('')
 
 print(prefix..'uncarpet')
-print('\n')
+print('')
 
 print(prefix..'bang')
-print('\n')
+print('')
 
 print(prefix..'unbang')
-print('\n')
+print('')
 
 print(prefix..'mutebb')
-print('\n')
+print('')
 
 print(prefix..'unmutebb')
-print('\n')
+print('')
 
 print(prefix..'view')
-print('\n')
+print('')
 
 print(prefix..'unview')
-print('\n')
+print('')
 
 print(prefix..'spin')
-print('\n')
+print('')
 
 print(prefix..'unspin')
-print('\n')
+print('')
 
 print(prefix..'swim')
-print('\n')
+print('')
 
 print(prefix..'unswim')
-print('\n')
+print('')
 
 print(prefix..'tswim')
-print('\n')
+print('')
 
 print(prefix..'unswim')
-print('\n')
+print('')
 
 print(prefix..'swim')
-print('\n')
+print('')
 
 print(prefix..'fling')
-print('\n')
+print('')
 
 print(prefix..'unfling')
-print('\n')
+print('')
 
 print(prefix..'freecam')
-print('\n')
+print('')
 
 print(prefix..'unfreecam')
-print('\n')
+print('')
 
 print(prefix..'fcspeed')
-print('\n')
+print('')
 
 print(prefix..'stopanims')
-print('\n')
+print('')
 
 print(prefix..'noanim')
-print('\n')
+print('')
 
 print(prefix..'reanim')
-print('\n')
+print('')
 
 print(prefix..'sit')
-print('\n')
+print('')
 
 print(prefix..'stun')
-print('\n')
+print('')
 
 print(prefix..'unsit')
-print('\n')
+print('')
 
 print(prefix..'unstun')
-print('\n')
+print('')
 
 print(prefix..'trip')
-print('\n')
+print('')
 
 print(prefix..'animsp')
-print('\n')
+print('')
 
 print(prefix..'delvelo')
-print('\n')
+print('')
 
 print(prefix..'bvelo')
-print('\n')
+print('')
 
 print(prefix..'cfly')
-print('\n')
+print('')
 
 print(prefix..'uncfly')
-print('\n')
+print('')
 
 print(prefix..'cfspeed')
-print('\n')
+print('')
 
 print(prefix..'fly')
-print('\n')
+print('')
 
 print(prefix..'unfly')
-print('\n')
+print('')
 
 print(prefix..'fspeed')
-print('\n')
+print('')
 
 print(prefix..'qefly')
-print('\n')
+print('')
 
 print(prefix..'tfly')
-print('\n')
+print('')
 
 print(prefix..'weaken')
-print('\n')
+print('')
 
 print(prefix..'unweaken')
-print('\n')
+print('')
 
 print(prefix..'strengthen')
-print('\n')
+print('')
 
 print(prefix..'unstrengthen')
-print('\n')
+print('')
 
 print("--- ANTI INFORMATION ---")
 print("For antis relating to the player, do (antiname) me/others/all")
