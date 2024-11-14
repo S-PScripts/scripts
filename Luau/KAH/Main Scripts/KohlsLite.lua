@@ -3827,7 +3827,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		function response.OnInvoke(answer)
 			if answer == "Yes" then
 		    		VGCrash()
-				Remind("VG Crashed the server.")
+				Remind("VG Crashed the server. (VG IS TEMPORARY BTW)")
 			end
 		end
 		game:GetService("StarterGui"):SetCore("SendNotification", {
@@ -3850,7 +3850,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		function response.OnInvoke(answer)
 			if answer == "Yes" then
 		    		CoCrash()
-				Remind("VG Crashed (2) the server.")
+				Remind("VG Crashed (2) the server. (VG IS TEMPORARY BTW)")
 			end
 		end
 		game:GetService("StarterGui"):SetCore("SendNotification", {
