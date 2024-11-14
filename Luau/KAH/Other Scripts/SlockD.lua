@@ -1,9 +1,11 @@
 -- SlockD
+-- Basically the start of KohlsLite
+-- This script sucks
 
 print("SlockD by S_P. Since 2023.")
 
 local prefix = '-'
-local whitelist = {"scriptingprogrammer","me_123eq","me_crashking"}
+local whitelist = {"ScriptingProgrammer","me_123eq","me_crashking"}
 local blacklist = {}
 local slockenabled = false
 
