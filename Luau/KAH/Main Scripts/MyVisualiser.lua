@@ -1,4 +1,4 @@
-game.Players:Chat("pm me 19/09/2024: Hello. This visualizer (by quiving) is discontinued since I will add it to KL natively. Unfortunately, this may take a while. - TS")
+game.Players:Chat("pm me 19/09/2024: Hello. This visualizer (by quiving) is discontinued since turkey. - TS")
 
 
 --[[ 
