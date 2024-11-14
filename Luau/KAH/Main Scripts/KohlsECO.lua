@@ -1,28 +1,19 @@
-return Remind("discontinued")
+game.Players.LocalPlayer:Kick("No")
+
+--while true do end
+
 
 -- discontinued
 -- it would take too long to remake kohlslite with all of its features
 
-
--- kohlslite will get a large overhaul where i give every command the descriptions and fix many commands
--- i dont fking care about kah anymore to bother to remake kl
-
--- This script is currently dormant since im busy with other things - ts
-
 --[[
- █████   ████          █████      ████          ██████████   █████████     ███████   
-░░███   ███░          ░░███      ░░███         ░░███░░░░░█  ███░░░░░███  ███░░░░░███ 
- ░███  ███     ██████  ░███████   ░███   █████  ░███  █ ░  ███     ░░░  ███     ░░███
- ░███████     ███░░███ ░███░░███  ░███  ███░░   ░██████   ░███         ░███      ░███
- ░███░░███   ░███ ░███ ░███ ░███  ░███ ░░█████  ░███░░█   ░███         ░███      ░███
- ░███ ░░███  ░███ ░███ ░███ ░███  ░███  ░░░░███ ░███ ░   █░░███     ███░░███     ███ 
- █████ ░░████░░██████  ████ █████ █████ ██████  ██████████ ░░█████████  ░░░███████░  
-░░░░░   ░░░░  ░░░░░░  ░░░░ ░░░░░ ░░░░░ ░░░░░░  ░░░░░░░░░░   ░░░░░░░░░     ░░░░░░░   (KohlsLite v2) ]]
+kohlseco (KohlsLite v2) ]]
 
 -- Notes: --
--- This is a user friendly version of KohlsLite that aims to make it easier to edit
--- This won't have as many features but I'll add as many as possible.
+-- This was supposed to be a user friendly version of KohlsLite that aims to make it easier to edit
+-- you can use the handler i guess
 
+--[[
 -- Settings --
 getgenv().klprefix2 = "."
 
@@ -57,7 +48,7 @@ local function Remind(text, num)
 end
 
 -- Execution check
-getgenv().executed2 = FDDDDDDDDDDfffffdfdddddddddddddddd543RRERRRRRRRRRRRRRR
+getgenv().executed2 = false
 
 if getgenv().executed2 then 
 	return Remind("KohlsECO is already executed.")
@@ -1268,7 +1259,7 @@ special.gearwhitelisted = {"ScriptingProgrammer", "kevin3050ti"}
 -- People blacklisted from using gears
 special.gearbanned = {}
 
---[[ dev ]] --
+--[ dev ] --
 -- People who cannot be kicked
 special.protectedfromkick = {"ScriptingProgrammer", "kevin3050ti"}
 
@@ -1570,7 +1561,7 @@ connections[#connections + 1] =
         end
 
         if antis.antivoid == true then
-            if lp.Character --[[ and lp.Character.HumanoidRootPart]] then
+            if lp.Character --[ and lp.Character.HumanoidRootPart] then
                 if lp.Character.HumanoidRootPart.Position.Y < -7 then
                     lp.Character.HumanoidRootPart.CFrame = 
 					CFrame.new(lp.Character.HumanoidRootPart.Position.X,5,lp.Character.HumanoidRootPart.Position.Z)
@@ -1581,7 +1572,7 @@ connections[#connections + 1] =
         end
 
         if antis.antiskydive == true then
-            if lp.Character --[[ and lp.Character.HumanoidRootPart]] then
+            if lp.Character --[ and lp.Character.HumanoidRootPart ] then
                 if lp.Character.HumanoidRootPart.Position.Y > 256 then
                     lp.Character.HumanoidRootPart.CFrame =
                         CFrame.new(lp.Character.HumanoidRootPart.Position.X,5,lp.Character.HumanoidRootPart.Position.Z)
@@ -2038,6 +2029,8 @@ local antifeatures = {
     "message", "name", "char", "particles", "punish", "rocket", "sit", "seizure",
     "smoke", "sparkles", "speed", "spin", "stun", "setgrav", "swag"
 }
+
+]]
 
 for _, klantis in ipairs(antifeatures) do
     createanticommands(klantis)
