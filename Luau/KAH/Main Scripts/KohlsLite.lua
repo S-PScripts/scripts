@@ -1,3 +1,5 @@
+-- busy with my life updates might come soon idk
+
 -- add lighting fix + auto-lighting fix
 -- look at this clown: https://github.com/A28er348yg9434/Unknown/blob/main/Unknown
 
