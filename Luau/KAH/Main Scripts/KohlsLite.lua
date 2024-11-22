@@ -598,6 +598,7 @@ local musictable = {
     ["99"] = {id = "13629050392", name = "alajsonn - Kitty"},
     ["100"] = {id = "5410086218", name = "Noisestorm - Crab Rave"},
     ["101"] = {id = "14366981664", name = "SAKU - GTA (Nightcore)"} --,
+    ["102"] = {id = "15689445424", name = "Din1c - Dionic 2"}
 }
 
 -- Saved gears
