@@ -1,11 +1,7 @@
+-- One year since KohlsLite was created!
 -- busy with my life updates might come soon idk
-
--- add lighting fix + auto-lighting fix
 -- look at this clown: https://github.com/A28er348yg9434/Unknown/blob/main/Unknown
 
--- Today marks the end of an era, as I use a new chromebook
--- Thanks for everything so far
--- (note - i'm not ded just kinda inactive rn, i'll be back soon i hope)
 
 --[[
  ___  __    ________  ___  ___  ___       ________  ___       ___  _________  _______      
