@@ -3,7 +3,6 @@
 -- add lighting fix + auto-lighting fix
 -- look at this clown: https://github.com/A28er348yg9434/Unknown/blob/main/Unknown
 
--- A year since I archived the roblox exploits repo, and almost a year since I started development on KohlsLite
 -- Today marks the end of an era, as I use a new chromebook
 -- Thanks for everything so far
 -- (note - i'm not ded just kinda inactive rn, i'll be back soon i hope)
@@ -18,7 +17,7 @@
     \|__| \|__|\|_______|\|__|\|__|\|_______|\_________\|_______|\|__|    \|__|  \|_______|
                                             \|_________|                                   
                                                                                            
-                                                                                           v1.88 ]]
+                                                                                           v1Y ]]
 
 --[[
 https://kohlslite.pages.dev/source.txt
@@ -71,7 +70,7 @@ I know this script is inconsistent with the fact it uses Game with and without G
 -- Notifications
 local function Remind(msg)
         game.StarterGui:SetCore("SendNotification", {
-                Title = "KohlsLite v1.88",
+                Title = "KohlsLite 1Y",
                 Text = msg,
                 Duration = 1
         })
@@ -79,7 +78,7 @@ end;
 
 local function LRemind(msg, length)
         game.StarterGui:SetCore("SendNotification", {
-                Title = "KohlsLite v1.88",
+                Title = "KohlsLite 1Y,
                 Text = msg,
                 Duration = length
         })
@@ -138,7 +137,7 @@ getgenv().kohlsexecuted = true
 getgenv().deprefix = "." 
 
 -- The version of KohlsLite
-getgenv().klversion = "1.88"
+getgenv().klversion = "1Y"
 
 -- KohlsLite Start Gui
 getgenv().kohlsgui = false
@@ -15439,6 +15438,7 @@ ___  __    ________  ___  ___  ___       ________  ___       ___  _________  ___
     \|__| \|__|\|_______|\|__|\|__|\|_______|\_________\|_______|\|__|    \|__|  \|_______| 
                                             \|_________|                           
 ]])
+print("1 year!")
 
 Stats.loadedtime = string.format("%.2f", os.clock() - Stats.starttime)
 
@@ -15765,29 +15765,7 @@ if getgenv().kohlsgui then
 	)
 end
 
--- Random quotes jajaja
-aqwerty = math.random(1,10)
-if aqwerty == 1 then
-	Remind("When I set a variable wrong and break the script (again)-")
-elseif aqwerty == 2 then
-	Remind("mhm means my hot man.")
-elseif aqwerty == 3 then
-	Remind("I stepped on a slug before writing this EW!")
-elseif aqwerty == 4 then
-	Remind("KohlsLite is the best script to bleugh all over!")
-elseif aqwerty == 5 then
-	Remind("Solonium + PR Script better than SkidLite.")
-elseif aqwerty == 6 then
-	Remind("Oh my, you found a secret!")
-elseif aqwerty == 7 then
-	Remind("Where's the nearest 7/11?")
-elseif aqwerty == 8 then
-	Remind("What's math.random? There's nothing wrong with a bunch of elseifs!")
-elseif aqwerty == 9 then
-	Remind("Shortcut v3-var is better than SkidLite!")
-else
-	Remind("You shouldn't get this message, hecker (jk)")
-end
+Remind("One year of KohlsLite!")
 
 --[[
 Things to add/fix. Feel free to fix these and send the code and I'll credit you
