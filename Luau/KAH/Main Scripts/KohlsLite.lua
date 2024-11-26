@@ -15761,7 +15761,7 @@ if getgenv().kohlsgui then
 	)
 end
 
-Remind("One year of KohlsLite!")
+Remind("One year of KohlsLite! also there was downtime cuz I broke the script oops")
 
 --[[
 Things to add/fix. Feel free to fix these and send the code and I'll credit you
