@@ -74,7 +74,7 @@ end;
 
 local function LRemind(msg, length)
         game.StarterGui:SetCore("SendNotification", {
-                Title = "KohlsLite 1Y,
+                Title = "KohlsLite 1Y",
                 Text = msg,
                 Duration = length
         })
