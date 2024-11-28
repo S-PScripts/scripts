@@ -1,6 +1,3 @@
--- Crazy? I was crazy once. They locked me in a room. A rubber room. A rubber room with rats. And rats make me crazy.
--- Crazy? I was crazy once. They locked me in a room. A rubber room. A rubber room with rats. And rats make me crazy.
-
 -- One year since KohlsLite was created!
 -- busy with my life updates might come soon idk
 -- look at this clown: https://github.com/A28er348yg9434/Unknown/blob/main/Unknown
@@ -4458,6 +4455,14 @@ return
 		task.wait(2)
 		Chat("explode "..iduckingexplodedinmypants)
 		Remind("KABLAM!")
+    end
+
+   if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'knee' then
+	        local kneesurgery = string.sub(msg:lower(), #prefix + 6)
+		Chat("paint "..kneesurgery.. " blue")
+		Chat("gear "..kneesurgery.." guns")
+		Chat("h \n\n\n That feeling when knee surgery is today... \n\n\n")
+		Remind("that feeling when knee surgery is today")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'headfloat' then -- yeah im adding scv1 cmds lol
