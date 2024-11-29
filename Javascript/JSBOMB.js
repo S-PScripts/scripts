@@ -1,6 +1,7 @@
-// I don't care what you do with this anymore
+// I don't care what you do with this anymore. the spam remix era is gone anyways so there's no point
+
 // If you need help, check my YT video on my YT channel.
-// If you can't figure it out, you're a skid.
+// If you can't figure it out, you're a skid. Looking at you CATBIB remixer whoever you are
 
 // This Scratch Javascript remix bomb was made by Derv, not me (TS2021).
 // To use this, execute the code below into your console (Inspect Element - Console section)
