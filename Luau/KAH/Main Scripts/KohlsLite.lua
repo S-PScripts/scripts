@@ -1,5 +1,6 @@
+-- ill update at christmas maybe
 -- One year since KohlsLite was created!
--- busy with my life updates might come soon idk
+-- busy with my life
 -- look at this clown: https://github.com/A28er348yg9434/Unknown/blob/main/Unknown
 
 
