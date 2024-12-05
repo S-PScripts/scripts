@@ -14,7 +14,7 @@
     \|__| \|__|\|_______|\|__|\|__|\|_______|\_________\|_______|\|__|    \|__|  \|_______|
                                             \|_________|                                   
                                                                                            
-                                                                                           v1Y ]]
+                                                                                           vX1 ]]
 
 --[[
 https://kohlslite.pages.dev/source.txt
@@ -67,15 +67,15 @@ I know this script is inconsistent with the fact it uses Game with and without G
 -- Notifications
 local function Remind(msg)
         game.StarterGui:SetCore("SendNotification", {
-                Title = "KohlsLite 1Y",
+                Title = "KohlsLite X1",
                 Text = msg,
-                Duration = 1
+                Duration = 1 -- I know i could just do "1 or (a designated number) but I don't really care.")
         })
 end;
 
 local function LRemind(msg, length)
         game.StarterGui:SetCore("SendNotification", {
-                Title = "KohlsLite 1Y",
+                Title = "KohlsLite X1",
                 Text = msg,
                 Duration = length
         })
@@ -13378,9 +13378,12 @@ function dncycle() -- 9jn said so, inspired by simplekah and kohlsnoob too
         local dntime = 7
         local decdn = 0
         while Loops.dncycle do
+		if Loops.dncycle == false then break end
                 task.wait(0.1)
                 for i = 1,24 do
+			if Loops.dncycle == false then break end
                 	for i = 1,59 do
+				if Loops.dncycle == false then break end
                             task.wait(0.1)
                             decdn = decdn + 1
                             Chat("time " .. dntime .. ":".. decdn)
@@ -13674,6 +13677,8 @@ function SpHammer()
                                 local args = string.split(msg, " ")
                                 if #args == 2 then
                                         mode = args[2]
+				else
+					Remind("ARGUMENT ERROR: You need to use exactly 2 (hmode _).")
                                 end
                    end
                 
@@ -13690,20 +13695,20 @@ function SpHammer()
 		print("hmode - set the mode")
 
 		print("- Mode -")
-		print("kill - used by default")
-		print("anchor - freezes the player")
-		print("unanchor - unfreezes the player")
-		print("nil - punishes player")
-		print("nan - sets size to nan")
-		print("smack - smacks the player (unequip hammer right after hitting someone with this enabled)")
-		print("spin - spins the player and plays music")
-		print("smite - paints player black and explodes them")
-		print("fling - flings the player")
-		print("label - gives them a random name")
-		print("furry - rawr")
-		print("fem - maid outfit")
-		print("color - paints the player a random color")
-		print("duck - quack quack")
+		print("kill - This is used by default. It kills the player")
+		print("anchor - Freezes the player")
+		print("unanchor - Unfreezes the player")
+		print("nil - Punishes the player")
+		print("nan - Sets the player's size to NaN")
+		print("smack - Smacks the player (unequip hammer right after hitting someone with this enabled)")
+		print("spin - Spins the player and plays music")
+		print("smite - Paints the player black and explodes them")
+		print("fling - Flings the player")
+		print("label - Labels the player a random name from the list")
+		print("furry - Turns them into a rawrrrrrrrrrrrrrrrrrrrrrrrr (furry)")
+		print("fem - Turns the player into a maid")
+		print("color - Paints the player a random colour")
+		print("duck - Turns them into a quack quack (duck)")
 
 		print("- Script by iiDk, ported for KohlsLite. -")
 
@@ -13786,7 +13791,7 @@ function SpHammer()
 		        Chat("name "..p.Parent.Name.." "..phrases[math.random(1,#phrases)])
 	        end
                 
-	        if mode == "furry" then
+	        if mode == "furry" or mode == "fur" then
 	            sound = 4821245570
 	            spawn(function()
 	                v = game.Players[p.Parent.Name]
@@ -13806,7 +13811,7 @@ function SpHammer()
                     end)
 	        end
                 
-	        if mode == "fem" then
+	        if mode == "fem" or mode == "femboy" then
 	            sound = 5064301214
 	            spawn(function()
 	                Chat("char "..p.Parent.Name.." 31342830")
@@ -13829,7 +13834,7 @@ function SpHammer()
                     end)
 	        end
                 
-	        if mode == "color" then
+	        if mode == "color" or mode == "colour" then
 		        Chat("paint "..p.Parent.name.." "..BrickColor.Random().Name)
 	        end
                 
@@ -13840,7 +13845,7 @@ function SpHammer()
 		        Chat("speed "..p.Parent.Name.." 0")
 	        end
                 
-	        if mode == "color" then
+	        if mode == "color" or mode == "colour" then
 		        Chat("music 11900833")
 	        else
 		        Chat("music "..tostring(sound))
@@ -13882,8 +13887,9 @@ if writefile and readfile then
 		local file_text = "Thank you for using KohlsLite! If you need help, please DM me at ts2021." --
 		writefile(KL_FOLDER,file_text)
 
--- ye this will be da new feature 
--- don't have windows pc to do it rn maybe 2025 guys
+-- Yes, this will be the new feature 
+-- I don't have a windows PC to make it and phone is too hard.  Maybe 2039 guys
+-- Or when someone makes a free Mac exploit (hydrogen come backkkkkkk)
 --[[
 
 		local file_blacklist = "KohlsLite/Blacklisted.txt"
@@ -15096,7 +15102,7 @@ end
 
 -- // COLOR API \\ --
 -- // the reason why there's dupes is because of rainbow map needing the RGB instead of colour name and the api not having a conversion \\ --
-
+-- // and im a crap codaaaaaa \\ --
 colorAPI = {}
  
 colorAPI.color = function(Part, color)
@@ -15443,7 +15449,6 @@ ___  __    ________  ___  ___  ___       ________  ___       ___  _________  ___
     \|__| \|__|\|_______|\|__|\|__|\|_______|\_________\|_______|\|__|    \|__|  \|_______| 
                                             \|_________|                           
 ]])
-print("1 year!")
 
 Stats.loadedtime = string.format("%.2f", os.clock() - Stats.starttime)
 
@@ -15521,13 +15526,13 @@ local function addGuiToPlayer(player)
     local text, color
 
     if table.find(OWNER, player.Name) then
-        text = "KL OWNER"
+        text = "KL Owner"
         color = Color3.new(0, 0, 1)
     elseif table.find(DEVELOPER, player.Name) then
-        text = "KL DEVELOPER"
+        text = "KL Developer"
         color = Color3.new(0.5, 0, 0.5)
     elseif table.find(ADMIN, player.Name) then
-        text = "KL ADMIN"
+        text = "KL Admin"
         color = Color3.new(1, 0, 0)
     end
 
@@ -15609,17 +15614,35 @@ if script_is_off then
 end
 
 local atprogcakeday = "08/23" -- atprog's birthday
-local spcakeday = "04/28" --
+local spcakeday = "04/28" -- mine
+local christmas = "12/25" -- Christmas
+local happyny = "01/01" -- (Happy) New Year
+local hallows = "10/31" -- Halloween
+
 
 local ctime = os.date("%m/%d")
 
 if ctime == atprogcakeday then			
 	Remind("It's atprog's birthday! If you see him, do .cakeday!")
-elseif ctime == spcakeday then
-	Remind("It's my birthday! If you see me, do .cakeday!")
-else
-	-- funny filler
 end
+
+if ctime == spcakeday then
+	Remind("It's my birthday! If you see me, do .cakeday!")
+end
+
+if ctime == christmas then
+	if math.random(1,10) == 1 then Remind("Merry rizzmas!") else Remind("Merry Christmas!") end
+end
+
+if ctime == happyny then
+	Remind("Happy New Year!!!")
+end
+
+if ctime == hallows then
+	Remind("Happy Halloween!")
+end
+
+
 
 if game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 883283806) then
         purchased_kl = true 
@@ -15770,7 +15793,7 @@ if getgenv().kohlsgui then
 	)
 end
 
-Remind("One year of KohlsLite! also there was downtime cuz I broke the script oops")
+Remind("KohlsLite: Griefing KAH since November 2023")
 
 --[[
 Things to add/fix. Feel free to fix these and send the code and I'll credit you
@@ -15782,7 +15805,7 @@ Things to add/fix. Feel free to fix these and send the code and I'll credit you
 -> Object mover (cmd pi version) (do i really need this? also, i think i'm talking about the btools, not the mover)
 -> Fix control
 
--> Can't fix these until I get a Windows PC, this might be a long time... ;(
+-> Can't fix these until I get a Windows PC (which will be never)
 ]]
 
 -- KohlsLite on top
