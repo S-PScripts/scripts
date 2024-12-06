@@ -1,5 +1,6 @@
 -- Hat kick --
 
+hatkick_id = "18137588505" -- Put your hat id here
 hatkick = {} -- Insert your blacklisted users here
 
 antis = {}
@@ -7,16 +8,16 @@ antis.antimesh = true
 
 local connections = {}
 connections[#connections + 1] =
-    game:GetService("RunService").RenderStepped:Connect(function()
-	  task.wait()
-	  if antis.antimesh then
-        for i, v in pairs(game.Workspace:GetDescendants()) do
-    		    if v:IsA("Accessory") and (v.Name == "Accessory (Pointy)" or v.Name == "Accessory (happy)" or v.Name == "Accessory (SUN)" or v.Name == "Accessory (MeshPart)" or v.Name == "") then -- cxo
-        		    v:Destroy()
-    			  end
-		    end
-	  end
-end)
+	game:GetService("RunService").RenderStepped:Connect(function()
+		task.wait()
+	  	if antis.antimesh then
+        		for i, v in pairs(game.Workspace:GetDescendants()) do
+    		    		if v:IsA("Accessory") and (v.Name == "Accessory (Pointy)" or v.Name == "Accessory (happy)" or v.Name == "Accessory (SUN)" or v.Name == "Accessory (MeshPart)" or v.Name == "") then -- cxo
+        		    		v:Destroy()
+    			  	end
+		    	end
+	  	end
+	end)
 
 local function Chat(msg)
     game.Players:Chat(msg)
@@ -39,8 +40,8 @@ function begin(player)
 end
 
 function techkick(kickin, kickinplr) -- Tech's hatkick
-    hatspammingz = true
-    Chat("respawn "..kickinplr)
+    		hatspammingz = true
+    		Chat("respawn "..kickinplr)
 		Chat("blind "..kickinplr.."                                                                                                                                                                      discord")
 		Chat("invis "..kickinplr.."                                                                                                                                                                      discord")
 		Chat("skydive "..kickinplr.." "..kickinplr.." "..kickinplr.."                                                                                                                                    discord")
@@ -57,11 +58,11 @@ function techkick(kickin, kickinplr) -- Tech's hatkick
 		end)
 
 		for i = 1, 103 do
-			chatt("hat "..kickinplr.." 18137588505")
+			chatt("hat "..kickinplr.. hatkick_id)
 		end
 
 		while hatspammingz do task.wait()
-			chatt("hat "..kickinplr.." 18137588505")
+			chatt("hat "..kickinplr.. hatkick_id)
 		end
 end
 
