@@ -4460,7 +4460,15 @@ return
 		Chat("paint "..kneesurgery.. " blue")
 		Chat("gear "..kneesurgery.." guns")
 		Chat("h \n\n\n That feeling when knee surgery is today... \n\n\n")
-		Remind("that feeling when knee surgery is today")
+		Remind("That feeling when knee surgery is today...")
+    end
+
+   if string.sub(msg:lower(), 1, #prefix + 13) == prefix..'technoreaperx' then
+		Chat("char all 1702851506")
+		task.wait(1)
+		Speak("GROOMER DETECTED, TERMINATING SERVER")
+		task.wait(1)
+		Chat(prefix.."ecrash")
     end
 
     if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'headfloat' then -- yeah im adding scv1 cmds lol
