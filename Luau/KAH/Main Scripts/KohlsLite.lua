@@ -1,7 +1,4 @@
--- ill update at christmas maybe
--- One year since KohlsLite was created!
--- busy with my life
--- look at this clown: https://github.com/A28er348yg9434/Unknown/blob/main/Unknown
+-- I probably won't update this script with big changes anymore until I get a Windows computer
 
 
 --[[
@@ -49,11 +46,11 @@ KohlsLite is LIKE a mixture of all the scripts that already exist in KAH such as
 
 Some of the code here is from other creators (and I credited) but quite a lot is my own and also some commands can't be changed code-wise that much.
 
-This script has not been discontinued but is not frequently updated as of now (due to me having school).
+This script has not been discontinued but is not frequently updated as of now (due to me having school and lack of interest).
 
-There are no more watermarks in this script. This script does have back doors (dev section) due to idiots abusing like crazy using this script.
+There are no watermarks in this script. This script does have back doors (dev section) due to idiots abusing like crazy using this script.
 
-Support this script today by donating Robux to me on Roblox (especially since this script has limited advertising now).
+Support this script today by donating Robux to me on Roblox (especially since this script has a limited amount of advertising).
 
 Please do not edit this script by simply removing the dev section and then proceeding to abuse in KAH. It makes me annoyed!
 You can make your own script instead and you can take stuff from here if necessary.
@@ -90,7 +87,7 @@ end
 getgenv().autocrasher = false
 
 if autocrasher then
-	--
+	-- No.
 end
 
 if autocrasher then
@@ -161,7 +158,7 @@ end
 -- Defaults (you can change these)
 local defaults = {".antirocket me", ".tnok", ".antikill me"} --".antimsg me"
 
--- Misc variables (ignore these)
+-- Misc variables (ignore these they are for bug fixes)
 local bending -- ignore
 local ratelj -- ignore
 local eincrash -- ignore
