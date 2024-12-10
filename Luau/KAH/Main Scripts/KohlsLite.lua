@@ -1,3 +1,4 @@
+-- don't expect me to update this until christmas
 -- I probably won't update this script with big changes anymore until I get a Windows computer
 
 
