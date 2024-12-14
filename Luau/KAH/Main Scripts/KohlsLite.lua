@@ -1,6 +1,6 @@
--- don't expect me to update this until christmas
+-- I'll update this someday, maybe during the Christmas break
 -- I probably won't update this script with big changes anymore until I get a Windows computer
-
+-- S_P 14/12/24
 
 --[[
  ___  __    ________  ___  ___  ___       ________  ___       ___  _________  _______      
@@ -65,9 +65,9 @@ I know this script is inconsistent with the fact it uses Game with and without G
 -- Notifications
 local function Remind(msg)
         game.StarterGui:SetCore("SendNotification", {
-                Title = "KohlsLite X1",
+                Title = "KohlsLite X1", -- Why X1? Maybe because all the significant/main updates ae done.
                 Text = msg,
-                Duration = 1 -- I know i could just do "1 or (a designated number) but I don't really care.")
+                Duration = 1 -- I know i could just do "1 or (a designated number)" but I don't really care.
         })
 end;
 
@@ -15802,7 +15802,7 @@ end
 Remind("KohlsLite: Griefing KAH since November 2023")
 
 --[[
-Things to add/fix. Feel free to fix these and send the code and I'll credit you
+Things that this script is missing
 -> Auto crasher
 -> Part visualiser
 -> Part drawer
@@ -15814,5 +15814,5 @@ Things to add/fix. Feel free to fix these and send the code and I'll credit you
 -> Can't fix these until I get a Windows PC (which will be never)
 ]]
 
--- KohlsLite on top
+-- KohlsLite on top (once)
 -- Information about KohlsLite is at the top of the script
