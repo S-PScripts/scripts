@@ -13888,9 +13888,7 @@ if writefile and readfile then
 		local file_text = "Thank you for using KohlsLite! If you need help, please DM me at ts2021." --
 		writefile(KL_FOLDER,file_text)
 
--- Yes, this will be the new feature 
--- I don't have a windows PC to make it and phone is too hard.  Maybe 2039 guys
--- Or when someone makes a free Mac exploit (hydrogen come backkkkkkk)
+-- I really want to add this, I'll 99.9% add it during Christmas (No Joke!)
 --[[
 
 		local file_blacklist = "KohlsLite/Blacklisted.txt"
