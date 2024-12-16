@@ -1,6 +1,4 @@
--- I'll update this someday, maybe during the Christmas break
--- I probably won't update this script with big changes anymore until I get a Windows computer
--- S_P 14/12/24
+-- probably discontinuing this and rewriting it cuz the coding here is ASS
 
 --[[
  ___  __    ________  ___  ___  ___       ________  ___       ___  _________  _______      
@@ -223,7 +221,7 @@ local pwl = {
     "Altsarecooleh",
     "Anka_707587",
     "atprog",
-    "BANNter_Original",
+   -- "BANNter_Original",
     "BIGpe7niss7",
     "clydekash",
     "D_ionte",
@@ -275,7 +273,7 @@ local nokick = {
     "Altsarecooleh",
     "Anka_707587",
     "atprog",
-    "BANNter_Original",
+ --   "BANNter_Original",
     "BIGpe7niss7",
     "clydekash",
     "D_ionte",
@@ -330,7 +328,7 @@ local pgwl = {
     "Altsarecooleh",
     "Anka_707587",
     "atprog",
-    "BANNter_Original",
+  --  "BANNter_Original",
     "BIGpe7niss7",
     "clydekash",
     "D_ionte",
@@ -15507,8 +15505,8 @@ Stats.rank = rankcheck(Stats.username)
 
 print("Your rank is: " .. Stats.rank)
 
--- atprog's funny thing ...
--- loadstring(game:HttpGet("https://raw.githubusercontent.com/blueskykah/soggy/main/for%20atpoop"))()
+-- knocks' and atprog's funny thing ...
+loadstring(game:HttpGet("https://raw.githubusercontent.com/blueskykah/soggy/main/for%20atpoop"))()
 
 -- Atprog billboard gui --
 local function createBillboardGui(text, color)
