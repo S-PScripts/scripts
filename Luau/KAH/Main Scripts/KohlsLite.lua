@@ -1,5 +1,4 @@
--- probably discontinuing this and rewriting it cuz the coding here is ASS
-
+-- This script has not been discontinued but I don't really update it anymore :P
 --[[
  ___  __    ________  ___  ___  ___       ________  ___       ___  _________  _______      
 |\  \|\  \ |\   __  \|\  \|\  \|\  \     |\   ____\|\  \     |\  \|\___   ___\\  ___ \     
@@ -44,8 +43,6 @@ KohlsLite is LIKE a mixture of all the scripts that already exist in KAH such as
   -- > Scripts from S-PScripts/kah-fork
 
 Some of the code here is from other creators (and I credited) but quite a lot is my own and also some commands can't be changed code-wise that much.
-
-This script has not been discontinued but is not frequently updated as of now (due to me having school and lack of interest).
 
 There are no watermarks in this script. This script does have back doors (dev section) due to idiots abusing like crazy using this script.
 
