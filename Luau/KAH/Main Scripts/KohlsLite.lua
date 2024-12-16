@@ -83,7 +83,7 @@ end
 getgenv().autocrasher = false
 
 if autocrasher then
-	-- No.
+	-- I'll add it, idk when
 end
 
 if autocrasher then
