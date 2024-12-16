@@ -1,4 +1,4 @@
-game.Players.LocalPlayer:Kick("No")
+game.Players.LocalPlayer:Kick("maybe")
 
 --while true do end
 
