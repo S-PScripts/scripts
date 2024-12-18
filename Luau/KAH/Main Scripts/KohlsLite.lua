@@ -127,7 +127,7 @@ getgenv().kohlsexecuted = true
 getgenv().deprefix = "." 
 
 -- The version of KohlsLite
-getgenv().klversion = "X1.01"
+getgenv().klversion = "X1.011"
 
 -- KohlsLite Start Gui
 getgenv().kohlsgui = false
@@ -4943,7 +4943,7 @@ return
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'ecrash' then
         	Chat("fix")
         	musicsay = false
-            	Chat("h \n\n\n Error occured. Please join a different server. \n\n\n")
+            	Chat("h \n\n\n Server crashed as some guy broke the camera and baseplate. \n\n\n")
 		Chat(prefix.."gmusic87")
            	Chat("fogcolor 0 0 0")
 		Chat("time 0")
