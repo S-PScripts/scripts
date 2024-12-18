@@ -60,7 +60,7 @@ I know this script is inconsistent with the fact it uses Game with and without G
 -- Notifications
 local function Remind(msg)
         game.StarterGui:SetCore("SendNotification", {
-                Title = "KohlsLite X1", -- Why X1? Maybe because all the significant/main updates ae done.
+                Title = "KohlsLite X1.01", -- Why X1? Maybe because all the significant/main updates ae done.
                 Text = msg,
                 Duration = 1 -- I know i could just do "1 or (a designated number)" but I don't really care.
         })
@@ -127,7 +127,7 @@ getgenv().kohlsexecuted = true
 getgenv().deprefix = "." 
 
 -- The version of KohlsLite
-getgenv().klversion = "1Y"
+getgenv().klversion = "X1.01"
 
 -- KohlsLite Start Gui
 getgenv().kohlsgui = false
