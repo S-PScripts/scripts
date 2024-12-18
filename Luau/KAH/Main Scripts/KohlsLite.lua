@@ -9,7 +9,7 @@
     \|__| \|__|\|_______|\|__|\|__|\|_______|\_________\|_______|\|__|    \|__|  \|_______|
                                             \|_________|                                   
                                                                                            
-                                                                                           vX1 ]]
+                                                                                           vX1.01 ]]
 
 --[[
 https://kohlslite.pages.dev/source.txt
@@ -68,7 +68,7 @@ end;
 
 local function LRemind(msg, length)
         game.StarterGui:SetCore("SendNotification", {
-                Title = "KohlsLite X1",
+                Title = "KohlsLite X1.01",
                 Text = msg,
                 Duration = length
         })
@@ -6602,10 +6602,21 @@ end
 		Remind("Anti periastron is now enabled.")
     end
 
+    if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'antiiv' then
+		antiperi = true
+		Remind("Anti periastron is now enabled.")
+    end
+		
     if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'unantiperi' then
 		antiperi = false
 		Remind("Anti periastron is now disabled.")
     end
+
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'unantiiv' then
+		antiperi = false
+		Remind("Anti periastron is now disabled.")
+    end
+		
 
     if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'antiattach' then
 	if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'antiattach2' then else
