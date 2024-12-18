@@ -1976,7 +1976,7 @@ print("\n")
 print("--- INFORMATION ---")
 print("KohlsLite, since 2023. Created by ScriptingProgrammer/ts2021")
 print("For help, please contact me on Discord at ts2021")
-print("The version you are using is v"..getgenv().klversion..". This build was created on 10th October 2024")
+print("The version you are using is v"..getgenv().klversion..". This build was created on 18th December 2024")
 print("Better than SCV1 and SCV2 - approved by Tech!")
 print("\n")
 
