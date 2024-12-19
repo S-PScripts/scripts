@@ -127,7 +127,7 @@ getgenv().kohlsexecuted = true
 getgenv().deprefix = "." 
 
 -- The version of KohlsLite
-getgenv().klversion = "X1.011"
+getgenv().klversion = "X1.012"
 
 -- KohlsLite Start Gui
 getgenv().kohlsgui = false
@@ -4941,9 +4941,15 @@ return
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'ecrash' then
+ 		local args = string.split(msg, " ")
+		if #args == 2 then
+			custardmessage = args[2]
+		else
+			custardmessage = "Server crashed as some guy broke the camera and baseplate."
+		end
         	Chat("fix")
         	musicsay = false
-            	Chat("h \n\n\n Server crashed as some guy broke the camera and baseplate. \n\n\n")
+            	Chat("h \n\n\n "..custardmessage.." \n\n\n")
 		Chat(prefix.."gmusic87")
            	Chat("fogcolor 0 0 0")
 		Chat("time 0")
@@ -4953,7 +4959,6 @@ return
 		skipwarncrash = true
             	DCrash()        
     end
-
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'jcrash' then
         	Chat("h/lol get crashed nerd")
