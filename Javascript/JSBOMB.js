@@ -1,4 +1,4 @@
-// I don't care what you do with this anymore. the spam remix era is gone anyways so there's no point
+// Don't use this if you want to remix CATBIB or LOLCAPS. >:(
 
 // If you need help, check my YT video on my YT channel.
 // If you can't figure it out, you're a skid. Looking at you CATBIB remixer whoever you are
