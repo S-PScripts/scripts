@@ -13901,23 +13901,19 @@ if writefile and readfile then
 	else
 		makefolder("KohlsLite")
 		print("\n\n\n")
-		print("Created the KohlsLite folder! You can find in your workspace.")
+		print("Created the KohlsLite folder! You can find the folder in your workspace.")
+		repeat task.wait() until isfolder("KohlsLite")
 		local file_welcome = "KohlsLite/Welcome.txt"
 		local file_text = "Thank you for using KohlsLite! If you need help, please DM me at ts2021." --
 		writefile(KL_FOLDER,file_text)
 
--- I really want to add this, I'll 99.9% add it during Christmas (No Joke!)
+		repeat task.wait() until isfile("KohlsLite/Welcome.txt")
 --[[
-
-		local file_blacklist = "KohlsLite/Blacklisted.txt"
-		local file_whitelist = "KohlsLite/Whitelisted.txt"
-		local file_gearwhitelist = "KohlsLite/Gear whitelist.txt"
-
-		local file_bltext = "user etc etc"
-		-- this would be the new way of perm whitelist/blacklist/gearwhitelist
-
-
-		writefile(KL_FOLDER, ]]
+		writefile("KohlsLite/Blacklisted.
+    		writefile("KohlsLite/Whitelisted.
+    		writefile("KohlsLite/Gear Whitelisted."
+ 		writefile("KohlsLite/Hat Banned."
+]]
 	end
 end
 
