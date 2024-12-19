@@ -56,6 +56,9 @@ I know this script is inconsistent with the fact it uses Game with and without G
 
 ]]
 
+-- Script name = KohlsLite
+getgenv().scriptname = "KohlsLite"
+
 -- Notifications
 local function Remind(msg)
         game.StarterGui:SetCore("SendNotification", {
@@ -3812,7 +3815,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'vgcrash' then
 	if skipwarncrash then -- idea from sinx
 		VGCrash()
-		Remind("VG Crashed the server.")
+		Remind("VG Crashed the server. (VG IS TEMPORARY BTW)")
 	else
 		local response = Instance.new("BindableFunction")
 		function response.OnInvoke(answer)
@@ -3835,7 +3838,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
    if string.sub(msg:lower(), 1, #prefix + 7) == prefix..'cocrash' then
 	if skipwarncrash then -- idea from sinx
 		CoCrash()
-		Remind("VG Crashed (2) the server.")
+		Remind("VG Crashed (2) the server. (VG IS TEMPORARY BTW)")
 	else
 		local response = Instance.new("BindableFunction")
 		function response.OnInvoke(answer)
