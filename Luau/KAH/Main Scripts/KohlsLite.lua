@@ -4947,7 +4947,7 @@ return
 		if #args == 2 then
 			custardmessage = args[2]
 		else
-			custardmessage = "Server crashed as some guy broke the camera and baseplate."
+			custardmessage = "You have been kicked for suspicious behaviour."
 		end
         	Chat("fix")
         	musicsay = false
