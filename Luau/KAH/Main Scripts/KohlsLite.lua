@@ -1,4 +1,3 @@
--- This script has not been discontinued but I don't really update it anymore :P
 --[[
  ___  __    ________  ___  ___  ___       ________  ___       ___  _________  _______      
 |\  \|\  \ |\   __  \|\  \|\  \|\  \     |\   ____\|\  \     |\  \|\___   ___\\  ___ \     
