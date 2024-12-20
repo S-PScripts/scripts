@@ -1,5 +1,4 @@
 -- Returning soon
--- 12 minutes till the end of school
 
 --[[
  ___  __    ________  ___  ___  ___       ________  ___       ___  _________  _______      
