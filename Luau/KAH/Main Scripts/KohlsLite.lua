@@ -1,3 +1,5 @@
+-- Returning soon
+
 --[[
  ___  __    ________  ___  ___  ___       ________  ___       ___  _________  _______      
 |\  \|\  \ |\   __  \|\  \|\  \|\  \     |\   ____\|\  \     |\  \|\___   ___\\  ___ \     
@@ -4210,7 +4212,7 @@ return
                 Remind("You should be attached to the player!")
     end
 
-		-- broken command
+		-- broken command, idk why :P
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'ncontrol' then -- really funny ngl (cmdpi)
         	local dasplayer = string.sub(msg:lower(), #prefix + 10)
                 PLAYERCHECK(dasplayer)
@@ -13908,6 +13910,8 @@ if writefile and readfile then
 		writefile(KL_FOLDER,file_text)
 
 		repeat task.wait() until isfile("KohlsLite/Welcome.txt")
+		getgenv().kohlsgui = true
+
 --[[
 		writefile("KohlsLite/Blacklisted.
     		writefile("KohlsLite/Whitelisted.
@@ -15809,16 +15813,17 @@ end
 Remind("KohlsLite: Griefing KAH since November 2023")
 
 --[[
-Things that this script is missing
+Things that this script is missing (order of priority)
 -> Auto crasher
 -> Part visualiser
 -> Part drawer
 -> Boombox visualiser
 -> Part builder
 -> Object mover (cmd pi version) (do i really need this? also, i think i'm talking about the btools, not the mover)
--> Fix control
+-> Fix ncontrol
 
--> Can't fix these until I get a Windows PC (which will be never)
+-> I will probably only add the first 3 
+-> I will update KL over the next 2 weeks I hope.
 ]]
 
 -- KohlsLite on top (once)
