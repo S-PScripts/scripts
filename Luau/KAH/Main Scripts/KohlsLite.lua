@@ -383,7 +383,9 @@ local specialperms = {
     "IceStuds",
     "s_pisafurry",
     "kohlslitedev",
-    "yeyeyeweweweye"
+    "yeyeyeweweweye",
+    "dawninja21",
+    "Dawninja21alt"
 }
 
 -- atprog spexialpermz (Perms for non-developers)
@@ -15496,8 +15498,8 @@ local ADMIN = {
     "ripcxo",
     "grimAuxiliatrix",
     "undertaker629",
-   -- "dawninja21",
-  --  "dawninja21alt",
+    "dawninja21",
+    "dawninja21alt",
     "jjjuuikjjikkju"
 }
 
