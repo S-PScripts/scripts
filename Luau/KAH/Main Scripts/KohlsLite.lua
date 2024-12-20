@@ -65,7 +65,7 @@ getgenv().scriptname = "KohlsLite"
 -- Notifications
 local function Remind(msg)
         game.StarterGui:SetCore("SendNotification", {
-                Title = "KohlsLite X1.025", -- Why X1? Maybe because all the significant/main updates ae done.
+                Title = "KohlsLite X1.027", -- Why X1? Maybe because all the significant/main updates ae done.
                 Text = msg,
                 Duration = 1 -- I know i could just do "1 or (a designated number)" but I don't really care.
         })
@@ -73,7 +73,7 @@ end;
 
 local function LRemind(msg, length)
         game.StarterGui:SetCore("SendNotification", {
-                Title = "KohlsLite X1.025",
+                Title = "KohlsLite X1.027",
                 Text = msg,
                 Duration = length
         })
@@ -3735,7 +3735,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	end
     end
 
-    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'findregen' then -- i know it sucks but perm exists lol
+    if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'findregen2' then -- i know it sucks but perm exists lol
         failsafe3 = false
 	regenfind2 = true
 	task.wait(0)
