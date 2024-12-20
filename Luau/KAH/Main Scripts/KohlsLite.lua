@@ -1727,6 +1727,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
            Remind("Check your console by running /console!")
         end
 
+        if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'kcmd2' then
+           CMDPrint2()
+           Remind("Check your console by running /console!")
+        end
+
         if string.sub(msg:lower(), 1, #prefix + 2) == prefix..'iy' then -- the classic
                    GExecute("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source")
 		   Remind("Executed Infinite Yield (IY).")
@@ -8619,6 +8624,10 @@ end
 
 function CMDPrint()
 	GExecute("https://raw.githubusercontent.com/S-PScripts/scripts/refs/heads/main/Luau/KAH/Main%20Scripts/cmd-list.lua")
+end
+
+function CMDPrint2()
+	GExecute("https://raw.githubusercontent.com/S-PScripts/scripts/refs/heads/main/Luau/KAH/Main%20Scripts/cmd-list2.lua")
 end
 
 -- CHECK FOR PERM
