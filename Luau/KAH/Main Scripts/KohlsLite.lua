@@ -9261,7 +9261,7 @@ connections[#connections + 1] =
 
 -- Credits to trollfacenan (bumanoid)!
 
-if game.PlaceId == 115670532 then
+if game.PlaceId == 112420803 then
 local lplr = game:GetService("Players").LocalPlayer
 local char = lplr.Character
 local tor = char:WaitForChild("Torso")
