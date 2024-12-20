@@ -11,7 +11,7 @@
     \|__| \|__|\|_______|\|__|\|__|\|_______|\_________\|_______|\|__|    \|__|  \|_______|
                                             \|_________|                                   
                                                                                            
-                                                                                           vX1.01 ]]
+                                                                                           vX1.02 ]]
 
 --[[
 https://kohlslite.pages.dev/source.txt
@@ -24,24 +24,25 @@ The longest/largest Kohls Admin House script freely available. (SCV3-VAR and Koz
 
 This script was built from the ground up. KohlsLite is NOT a fork of any other scripts. 
 
-KohlsLite is LIKE a mixture of all the scripts that already exist in KAH such as:
-  -- > CMD (v1)
-  -- > CMD Y
-  -- > CMD v3 (Pi)
+KohlsLite is a bit like a mixture of all the scripts that already exist in KAH such as:
+  -- > CMD (v1) [by quiving]
+  -- > CMD Y [by quiving]
+  -- > CMD v3 (Pi) [by quiving]
   -- > Shortcut v1
   -- > Shortcut v2
   -- > Shortcut v3
-  -- > Shortcut v3 VAR [don't have the source]
-  -- > PR Script
-  -- > ii's Stupid Admin
+  -- > Shortcut v3 VAR [don't have the source] [by Tech]
+  -- > PR Script [by Atprog]
+  -- > ii's Stupid Admin [by iiDk]
   -- > KohlsNoob
-  -- > KohlsCool (maybe?)
+  -- > KohlsCool
   -- > Noobsploit
-  -- > Jotunnheim
-  -- > Shazam
-  -- > Route
-  -- > SimpleKAH
-  -- > XKah
+  -- > Jotunnheim [by Jotunn]
+  -- > Shazam [by Tokio]
+  -- > Route [by Dizzy]
+  -- > SimpleKAH [by lnfiniteCoder]
+  -- > XKah [by lnfiniteCoder
+  -- > Solinium [by Knocks]
   -- > Scripts from S-PScripts/kah-fork
 
 Some of the code here is from other creators (and I credited) but quite a lot is my own and also some commands can't be changed code-wise that much.
@@ -65,7 +66,7 @@ getgenv().scriptname = "KohlsLite"
 -- Notifications
 local function Remind(msg)
         game.StarterGui:SetCore("SendNotification", {
-                Title = "KohlsLite X1.01", -- Why X1? Maybe because all the significant/main updates ae done.
+                Title = "KohlsLite X1.02", -- Why X1? Maybe because all the significant/main updates ae done.
                 Text = msg,
                 Duration = 1 -- I know i could just do "1 or (a designated number)" but I don't really care.
         })
@@ -73,7 +74,7 @@ end;
 
 local function LRemind(msg, length)
         game.StarterGui:SetCore("SendNotification", {
-                Title = "KohlsLite X1.01",
+                Title = "KohlsLite X1.02",
                 Text = msg,
                 Duration = length
         })
@@ -132,7 +133,7 @@ getgenv().kohlsexecuted = true
 getgenv().deprefix = "." 
 
 -- The version of KohlsLite
-getgenv().klversion = "X1.012"
+getgenv().klversion = "X1.02"
 
 -- KohlsLite Start Gui
 getgenv().kohlsgui = false
@@ -13915,14 +13916,56 @@ if writefile and readfile then
 		repeat task.wait() until isfile("KohlsLite/Welcome.txt")
 		getgenv().kohlsgui = true
 
---[[
-		writefile("KohlsLite/Blacklisted.
-    		writefile("KohlsLite/Whitelisted.
-    		writefile("KohlsLite/Gear Whitelisted."
- 		writefile("KohlsLite/Hat Banned."
-]]
+
+		writefile("KohlsLite/Blacklisted.json", game:GetService("HttpService"):JSONEncode({})) -- The JSON comes from Knocks!
+    		writefile("KohlsLite/Whitelisted.json", game:GetService("HttpService"):JSONEncode({}))
+    		writefile("KohlsLite/Gear Whitelisted.json", game:GetService("HttpService"):JSONEncode({}))
+ 		writefile("KohlsLite/Hat Banned.json", game:GetService("HttpService"):JSONEncode({}))
+
+    		repeat task.wait() until 
+			isfile("KohlsLite/Blacklisted.json") and 
+			isfile("KohlsLite/Whitelisted.json") and 
+			isfile("KohlsLite/Gear Whitelisted.json") and 
+			isfile("KohlsLite/Hat Banned.json")
+
+		print("Created KohlsLite lists (Blacklist/Whitelist/Gear Whitelist/Hat Banned)")
 	end
 end
+
+function readfiles()
+    if readfile and writefile then
+
+	-- Read blacklist
+        for i, v in game:GetService("HttpService"):JSONDecode(readfile("KohlsLite/Blacklisted.json")) do
+            if not table.find(blacklist, v) then
+                table.insert(blacklist, v)
+            end
+        end
+
+	-- Read whitelist
+        for i, v in game:GetService("HttpService"):JSONDecode(readfile("KohlsLite/Whitelisted.json")) do
+            if not table.find(whitelist, v) then
+                table.insert(whitelist, v)
+            end
+        end
+
+	-- Read gear whitelist
+        for i, v in game:GetService("HttpService"):JSONDecode(readfile("KohlsLite/Gear Whitelisted.json")) do
+            if not table.find(GWhitelisted, v) then
+                table.insert(GWhitelisted, v)
+            end
+        end
+
+	-- Read hatkick on sight list
+        for i, v in game:GetService("HttpService"):JSONDecode(readfile("KohlsLite/Hat Banned.json")) do
+            if not table.find(hatkick_on_sight, v) then
+                table.insert(hatkick_on_sight, v)
+            end
+        end
+    end
+end
+
+readfiles()
 
 task.spawn(function()
 	while true do
@@ -15688,7 +15731,7 @@ function createKohlsUi(textTable)
 	local UIGridLayout = Instance.new("UIGridLayout")
 	local clearUi = Instance.new("TextButton")
 
-	--Properties:
+	-- Properties:
 
 	kohlsUI.Name = "kohlsUI"
 	kohlsUI.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
@@ -15822,12 +15865,8 @@ Things that this script is missing (order of priority)
 -> Part drawer
 -> Boombox visualiser
 -> Part builder
--> Object mover (cmd pi version) (do i really need this? also, i think i'm talking about the btools, not the mover)
 -> Fix ncontrol
-
--> I will probably only add the first 3 
--> I will update KL over the next 2 weeks I hope.
 ]]
 
--- KohlsLite on top (once)
+-- KohlsLite on top (still!)
 -- Information about KohlsLite is at the top of the script
