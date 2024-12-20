@@ -10,7 +10,7 @@
     \|__| \|__|\|_______|\|__|\|__|\|_______|\_________\|_______|\|__|    \|__|  \|_______|
                                             \|_________|                                   
                                                                                            
-                                                                                           vX1.02 ]]
+                                                                                           vX1.025 ]]
 
 --[[
 https://kohlslite.pages.dev/source.txt
@@ -65,7 +65,7 @@ getgenv().scriptname = "KohlsLite"
 -- Notifications
 local function Remind(msg)
         game.StarterGui:SetCore("SendNotification", {
-                Title = "KohlsLite X1.02", -- Why X1? Maybe because all the significant/main updates ae done.
+                Title = "KohlsLite X1.025", -- Why X1? Maybe because all the significant/main updates ae done.
                 Text = msg,
                 Duration = 1 -- I know i could just do "1 or (a designated number)" but I don't really care.
         })
@@ -73,7 +73,7 @@ end;
 
 local function LRemind(msg, length)
         game.StarterGui:SetCore("SendNotification", {
-                Title = "KohlsLite X1.02",
+                Title = "KohlsLite X1.025",
                 Text = msg,
                 Duration = length
         })
@@ -132,7 +132,7 @@ getgenv().kohlsexecuted = true
 getgenv().deprefix = "." 
 
 -- The version of KohlsLite
-getgenv().klversion = "X1.02"
+getgenv().klversion = "X1.025"
 
 -- KohlsLite Start Gui
 getgenv().kohlsgui = false
@@ -13902,7 +13902,7 @@ musiclog = {}
 KL_FOLDER = "KohlsLite"
 if writefile and readfile then
 	if isfolder(KL_FOLDER) then
-		-- filler
+		print("KohlsLite folder found.")
 	else
 		makefolder("KohlsLite")
 		print("\n\n\n")
@@ -13915,20 +13915,49 @@ if writefile and readfile then
 		repeat task.wait() until isfile("KohlsLite/Welcome.txt")
 		getgenv().kohlsgui = true
 
+	end
+else
+	print("writefile or/and readfile permissions missing.")
+end
 
-		writefile("KohlsLite/Blacklisted.json", game:GetService("HttpService"):JSONEncode({})) -- The JSON comes from Knocks!
-    		writefile("KohlsLite/Whitelisted.json", game:GetService("HttpService"):JSONEncode({}))
-    		writefile("KohlsLite/Gear Whitelisted.json", game:GetService("HttpService"):JSONEncode({}))
- 		writefile("KohlsLite/Hat Banned.json", game:GetService("HttpService"):JSONEncode({}))
+if writefile and readfile then
+	if isfolder(KL_FOLDER) then
+		if isfile("KohlsLite/Blacklisted.json") and isfile("KohlsLite/Whitelisted.json") and isfile("KohlsLite/Gear Whitelisted.json") and isfile("KohlsLite/Hat Banned.json") then
+			print("All KohlsLite list files were found.")
+		else
+			if not isfile("KohlsLite/Blacklisted.json") then
+				writefile("KohlsLite/Blacklisted.json", game:GetService("HttpService"):JSONEncode({})) -- The JSON comes from Knocks!
+				print("Blacklist list missing - created!")
+			end
 
-    		repeat task.wait() until 
+			if not isfile("KohlsLite/Whitelisted.json") then
+    				writefile("KohlsLite/Whitelisted.json", game:GetService("HttpService"):JSONEncode({}))
+				print("Whitelist list missing - created!")
+			end
+
+			if not isfile("KohlsLite/Gear Whitelisted.json") then
+    				writefile("KohlsLite/Gear Whitelisted.json", game:GetService("HttpService"):JSONEncode({}))
+				print("Gear whitelist list missing - created!")
+			end
+
+			if not isfile("KohlsLite/Hat Banned.json") then 
+ 				writefile("KohlsLite/Hat Banned.json", game:GetService("HttpService"):JSONEncode({}))
+				print("Hat banned list missing - created!")
+			end
+
+    			repeat task.wait() until 
 			isfile("KohlsLite/Blacklisted.json") and 
 			isfile("KohlsLite/Whitelisted.json") and 
 			isfile("KohlsLite/Gear Whitelisted.json") and 
 			isfile("KohlsLite/Hat Banned.json")
 
-		print("Created KohlsLite lists (Blacklist/Whitelist/Gear Whitelist/Hat Banned)")
+			print("Created KohlsLite file lists!")
+		end
+	else
+		print("KohlsLite folder not found. You should have it, so rejoin and re-execute KohlsLite.")
 	end
+else
+	print("writefile or/and readfile permissions missing.")
 end
 
 function readfiles()
