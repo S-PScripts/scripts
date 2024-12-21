@@ -21,7 +21,7 @@ You can also use it for KAH BC but barely anyone plays it. This script isn't rec
 
 KohlsLite is currently the longest/largest Kohls Admin House script freely available. SCV3-VAR and Kozy.Docx are longer than KL but they are paid and not public respectively.
 
-This script was built from the ground up. KohlsLite is not a fork of any other scripts. (Such as Shortcut v2 src1 being as extension to Shortcut v1) 
+This script was built from the ground up. KohlsLite is not a fork of any other scripts. (Such as Shortcut v2 src1 being an extension to Shortcut v1) 
 
 KohlsLite is a bit like a mixture of all the scripts that already exist in KAH such as:
   -- > CMD (v1) [by quiving]
