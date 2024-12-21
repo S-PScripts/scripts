@@ -1,5 +1,3 @@
--- Returning soon
-
 --[[
  ___  __    ________  ___  ___  ___       ________  ___       ___  _________  _______      
 |\  \|\  \ |\   __  \|\  \|\  \|\  \     |\   ____\|\  \     |\  \|\___   ___\\  ___ \     
@@ -13,15 +11,17 @@
                                                                                            vX1.025 ]]
 
 --[[
-https://kohlslite.pages.dev/source.txt
+View the source here: https://kohlslite.pages.dev/source.txt
 
-This free, open-source script is for the Roblox game Kohls Admin House (KAH).
-You can play KAH here: https://www.roblox.com/games/112420803/Kohls-Admin-House-NBC-Updated
+KohlsLite is a free, open-source script for the Roblox game Kohls Admin House (KAH).
 This script was created by ScriptingProgrammer (Roblox) / ts2021 (Discord) / S-PScripts (GitHub).
 
-The longest/largest Kohls Admin House script freely available. (SCV3-VAR and Kozy.Docx are longer than KL but paid and not public respectively)
+You can play KAH (NBC version) here: https://www.roblox.com/games/112420803/Kohls-Admin-House-NBC-Updated
+You can also use it for KAH BC but barely anyone plays it. This script isn't recommended for KAH NP (it's not owned by agspureiam, there's a lot of things different).
 
-This script was built from the ground up. KohlsLite is NOT a fork of any other scripts. 
+KohlsLite is currently the longest/largest Kohls Admin House script freely available. SCV3-VAR and Kozy.Docx are longer than KL but they are paid and not public respectively.
+
+This script was built from the ground up. KohlsLite is not a fork of any other scripts. (Such as Shortcut v2 src1 being as extension to Shortcut v1) 
 
 KohlsLite is a bit like a mixture of all the scripts that already exist in KAH such as:
   -- > CMD (v1) [by quiving]
@@ -31,8 +31,8 @@ KohlsLite is a bit like a mixture of all the scripts that already exist in KAH s
   -- > Shortcut v2
   -- > Shortcut v3
   -- > Shortcut v3 VAR [don't have the source] [by Tech]
-  -- > PR Script [by Atprog]
   -- > ii's Stupid Admin [by iiDk]
+  -- > PR Script old [by Atprog]
   -- > KohlsNoob
   -- > KohlsCool
   -- > Noobsploit
@@ -40,22 +40,26 @@ KohlsLite is a bit like a mixture of all the scripts that already exist in KAH s
   -- > Shazam [by Tokio]
   -- > Route [by Dizzy]
   -- > SimpleKAH [by lnfiniteCoder]
-  -- > XKah [by lnfiniteCoder
+  -- > XKah [by lnfiniteCoder]
   -- > Solinium [by Knocks]
-  -- > Scripts from S-PScripts/kah-fork
+  -- > Infinite Yield
+  -- > Proton Admin [by Digitality]
+  -- > Many scripts from the KAH script archive by Damix [View it here: S-PScripts/kah-fork]
 
-Some of the code here is from other creators (and I credited) but quite a lot is my own and also some commands can't be changed code-wise that much.
+Some of the code here is from other creators, credit has been given, but quite a lot is my own and also some commands can't be changed code-wise that much.
 
-There are no watermarks in this script. This script does have back doors (dev section) due to idiots abusing like crazy using this script.
+There are no watermarks in this script. There used to exist, but I wanted to make this script more 'premium'.
+However, this script DOES have back doors (dev section) due to idiots abusing like crazy using this script.
 
-Support this script today by donating Robux to me on Roblox (especially since this script has a limited amount of advertising).
+If you want to support this script, you can donate Robux to me on Roblox, especially since this script doesn't have much advertisements.
 
-Please do not edit this script by simply removing the dev section and then proceeding to abuse in KAH. It makes me annoyed!
-You can make your own script instead and you can take stuff from here if necessary.
+Please do not edit this script by simply removing the dev section and then proceeding to abuse in KAH. It makes me really annoying.
+Instead, you can make your own script and take stuff from here if necessary.
 
 Please don't go abusing like crazy using this script. I made this free/open-source and don't want idiots doing stuff that forces me to make this paid/obfuscated.
 
-I know this script is inconsistent with the fact it uses Game with and without GetService but I don't care.
+PS: I know my script is inconsistent when using Game with and without GetService... but I don't care.
+    Also, there is no command handler and this script looks terrible to be honest. I'm not rewriting this script (for the foreseeable future) as that would take ages.
 
 ]]
 
