@@ -13,7 +13,7 @@
 --[[
 View the source here: https://kohlslite.pages.dev/source.txt
 
-KohlsLite is a free, open-source script for the Roblox game Kohls Admin House (KAH).
+KohlsLite is a free, open-source script for the Roblox game created by agspureiam, Kohls Admin House (KAH).
 This script was created by ScriptingProgrammer (Roblox) / ts2021 (Discord) / S-PScripts (GitHub).
 
 You can play KAH (NBC version) here: https://www.roblox.com/games/112420803/Kohls-Admin-House-NBC-Updated
@@ -274,7 +274,7 @@ local pwl = {
     "vgcrash",
     "whatveidone",
     "witnessfox22",
-    "yeyeyeweweweye",
+    "agspureiamReal",
     "YT_MATHEUSMODZ5"
 }
 
@@ -326,7 +326,7 @@ local nokick = {
     "vgcrash",
     "whatveidone",
     "witnessfox22",
-    "yeyeyeweweweye",
+    "agspureiamReal",
     "YT_MATHEUSMODZ5"
 }
 
@@ -381,7 +381,7 @@ local pgwl = {
     "vgcrash",
     "whatveidone",
     "witnessfox22",
-    "yeyeyeweweweye",
+    "agspureiamReal",
     "YT_MATHEUSMODZ5"
 }
 
@@ -394,7 +394,7 @@ local specialperms = {
     "IceStuds",
     "s_pisafurry",
     "kohlslitedev",
-    "yeyeyeweweweye",
+    "agspureiamReal",
     "dawninja21",
     "Dawninja21alt"
 }
@@ -15617,7 +15617,7 @@ local OWNER = {
 	"s_pisafurry", 
 	"kohlslitedev", 
 	"IceStuds", 
-        "yeyeyeweweweye"
+        "agspureiamReal"
 }
 
 local DEVELOPER = {
