@@ -446,6 +446,7 @@ local carcar = {}
 
 -- Anti kill list, I didn't make it for any other antis so cry!
 local antikill = {}
+local antipunish = {}
 
 -- Gamepass saving 
 
@@ -7372,36 +7373,66 @@ end
 
     if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'antipunish' then
         local args = string.split(msg, " ")
-        if args[2] == "me" then
-                antis.antipunish = true
-                Remind("Turned this anti on for you!")
-        elseif args[2] == "others" then
-                ALLantipunish = true
-                Remind("Turned this anti on for others!")
-        elseif args[2] == "all" then
-                antis.antipunish = true
-                ALLantipunish = true
-                Remind("Turned this anti on for everyone!")
-        else
-                Remind("Invalid argument: Must be me, others, or all")
-        end         
+	if #args == 2 then
+        	if args[2] == "me" then
+                	antis.antipunish = true
+                	Remind("Turned this anti on for you!")
+        	elseif args[2] == "others" then
+                	ALLantipunish = true
+                	Remind("Turned this anti on for others!")
+        	elseif args[2] == "all" then
+               		antis.antipunish = true
+                	ALLantipunish = true
+                	Remind("Turned this anti on for everyone!")
+        	else
+		  	kia = args[2]
+           	  	PLAYERCHECK(kia)
+	         	if player ~= nil then
+				if not table.find(antipunish, player) then
+					Remind(player.." is on the list now!")
+					table.insert(antipunish, player)
+				else
+					Remind(player.." is already in the table!")
+				end
+                 	else                           
+                        	Remind('Cannot find player with the name: '..dasplayer)
+			end
+                end
+	else
+                Remind("Invalid amount of arguments: Must be me, others, all or a player!")
+        end
     end
 
     if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'unantipunish' then
         local args = string.split(msg, " ")
-        if args[2] == "me" then
-                antis.antipunish = false
-                Remind("Turned this anti off for you!")
-        elseif args[2] == "others" then
-                ALLantipunish = false
-                Remind("Turned this anti off for others!")
-        elseif args[2] == "all" then
-                antis.antipunish = false
-                ALLantipunish = false
-                Remind("Turned this anti off for everyone!")
-        else
-                Remind("Invalid argument: Must be me, others, or all")
-        end         
+        if #args == 2 then
+        	if args[2] == "me" then
+                	antis.antipunish = false
+                	Remind("Turned this anti off for you!")
+        	elseif args[2] == "others" then
+                	ALLantipunish = false
+                	Remind("Turned this anti off for others!")
+        	elseif args[2] == "all" then
+               		antis.antipunish = false
+                	ALLantipunish = false
+                	Remind("Turned this anti off for everyone!")
+        	else
+		  	kia = args[2]
+           	  	PLAYERCHECK(kia)
+	         	if player ~= nil then
+				if table.find(antipunish, player) then
+					Remind(player.." is no longer in the table!")
+					table.remove(antipunish, table.find(antipunish, player))
+				else
+					Remind(player.." was never in the list!")
+				end
+                 	else                           
+                        	Remind('Cannot find player with the name: '..dasplayer)
+			end
+                end
+	else
+                Remind("Invalid amount of arguments: Must be me, others, all or a player!")
+        end      
     end
 
     if string.sub(msg:lower(), 1, #prefix + 10) == prefix..'antirocket' then
@@ -9482,7 +9513,7 @@ connections[#connections + 1] =
                                             end
                                 end
 
-                                if ALLantipunish == true then
+                                if ALLantipunish == true or table.find(antipunish, v.Name) then
                                             if game.Lighting:FindFirstChild(v.Name) then
                                                         Chat("unpunish "..v.Name)
                                           else end
