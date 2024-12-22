@@ -3198,11 +3198,12 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'fixbp' then
-	print("a")
+	if workspace.Terrain._Game.Workspace:FindFirstChild("Baseplate") then
+		Remind("NOT LOADED!")
+		return
+	end
 	if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'fixbp2' then
-		print("b")
 	else
-		print("c")
                 if movestatus == true then 
                         return 
                 end
@@ -3329,11 +3330,12 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'fixregen' then
-	print("a")
+	if workspace.Terrain._Game.Admin:FindFirstChild("Regen") then
+		Remind("NOT LOADED!")
+		return
+	end
 	if string.sub(msg:lower(), 1, #prefix + 9) == prefix..'fixregen2' then
-            	print("b")
         else
-		print("c")
                 if movestatus == true then
                         return 
                 end
