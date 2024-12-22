@@ -1741,25 +1741,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                    GExecute("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source")
 		   Remind("Executed Infinite Yield (IY).")
         end
-
-	-- cmd v3
-	if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'myvis' then
-                if haspersons == true then
-                        Remind("The prefix is -")
-                        GExecute("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/Main%20Scripts/MyVisualiser.lua")
-                else 
-                        Remind("Sorry, you need persons for this command!")
-                end
-        end 
-
-        if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'mydraw' then
-                if haspersons == true then
-                        Remind("The prefix is -")
-                        GExecute("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/Main%20Scripts/MyVisualiser.lua")
-                else 
-                        Remind("Sorry, you need persons for this command!")
-                end
-        end
 		
         if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'cmdpi' then -- well, you need that visualiser, do you?
 		if IsOnMobile then
@@ -1770,11 +1751,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		end
         end
 
-        if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'prsc' then -- PR Script ~ atprog
-                GExecute("https://raw.githubusercontent.com/S-PScripts/scripts/main/Luau/KAH/People's%20Scripts/PR_Script.txt")
-		Remind("Executed PR Script. Created by atprog.")
-        end
-
         if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'cmdy' then -- you don't need this for attaching anymore ;)
                 GExecute("https://raw.githubusercontent.com/S-PScripts/KAH/main/CMD-Y%20(v1.56).lua")
 		Remind("Executed CMD Y/V2. Created by quiving.")
@@ -1782,6 +1758,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
         if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'tricky' then -- CREDITS TO TECH
                 Remind("This might not work if it's already been executed. Sorry! Created by Tech")
+		Remind("Turn this off by typing music")
                 if haspersons == true then
                         GExecute("https://raw.githubusercontent.com/Tech-187/Music-lyrics-on-time/main/Tricky%20lyrics.lua")
                 else
@@ -1791,6 +1768,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
         if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'ilove' then -- CREDITS TO TECH
                 Remind("This might not work if it's already been executed. Sorry! Created by Tech")
+		Remind("Turn this off by typing music")
                 if haspersons == true then
                         GExecute("https://raw.githubusercontent.com/Tech-187/Music-lyrics-on-time/main/I%20loveee.lua")
                 else
