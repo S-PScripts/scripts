@@ -3132,7 +3132,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 6) == prefix..'cmdbar' then
-	Remind("Created command bar! To remove it, you can't!")
+	Remind("Created command bar! To remove it, say uncmdbar.")
 	local Players = game:GetService("Players")
 	local UserInputService = game:GetService("UserInputService")
 
@@ -3176,6 +3176,16 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	if player.Character then
     		onCharacterAdded(player.Character)
 	end
+    end
+
+    if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'uncmdbar' then
+    	local existingGui = player:FindFirstChild("PlayerGui"):FindFirstChild("CommandBarGui")
+    	if existingGui then
+        	existingGui:Destroy()
+        	Remind("Command bar removed!")
+    	else
+        	Remind("No command bar to remove!")
+    	end
     end
 
     if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'bok' then
