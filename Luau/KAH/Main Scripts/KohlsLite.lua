@@ -8169,7 +8169,7 @@ end
         	PLAYERCHECK(dasplayer)
         	if player == nil then 
 			return Remind("Fail: User not found!")
-		elseif player == "ScriptingProgrammer" or player == "atprog" or player == "kohlslitedev" then
+		elseif player == "ScriptingProgrammer" or player == "atprog" or player == "kohlslitedev" or player == "agspureiamReal" then
 			Remind("You can't bang developers!")
 		else
 			banger = cplr
