@@ -3186,7 +3186,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'fixbp' then
-	if workspace.Terrain._Game.Workspace:FindFirstChild("Baseplate") then
+	if not workspace.Terrain._Game.Workspace:FindFirstChild("Baseplate") then
 		Remind("NOT LOADED!")
 		return
 	end
