@@ -3318,7 +3318,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'fixregen' then
-	if workspace.Terrain._Game.Admin:FindFirstChild("Regen") then
+	if not workspace.Terrain._Game.Admin:FindFirstChild("Regen") then
 		Remind("NOT LOADED!")
 		return
 	end
