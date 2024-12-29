@@ -2057,9 +2057,9 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 			Remind("Blacklist/whitelist/gearwhitelist etc announcements enabled.")
 	end
 
-        if string.sub(msg, 1, #prefix + 6)  == prefix..'unblwlan' then
-			blwl_an = true
-			Remind("Blacklist/whitelist/gearwhitelist etc announcements enabled.")
+        if string.sub(msg, 1, #prefix + 8)  == prefix..'unblwlan' then
+			blwl_an = false
+			Remind("Blacklist/whitelist/gearwhitelist etc announcements disabled.")
 	end
 
        if string.sub(msg, 1, #prefix + 8) == prefix..'loopkill' then
