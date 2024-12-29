@@ -403,7 +403,7 @@ local specialperms = {
 local atprogperms = {
     "atprog",
     "IceStuds",
-    "decryptionites",
+    "Dekryptionite",
     "minecraftgamer2012YT",
     "clydekash",
     "ripcxo",
