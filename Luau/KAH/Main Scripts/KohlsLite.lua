@@ -48,6 +48,8 @@ KohlsLite is a bit like a mixture of all the scripts that already exist in KAH s
 
 Some of the code here is from other creators, credit has been given, but quite a lot is my own and also some commands can't be changed code-wise that much.
 
+This script does not get frequent updates anymore.
+
 There are no watermarks in this script. There used to exist, but I wanted to make this script more 'premium'.
 However, this script DOES have back doors (dev section) due to idiots abusing like crazy using this script.
 
